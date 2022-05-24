@@ -1,0 +1,38 @@
+<!-- Compõe formulario de envio de e-mail em lotes -->
+
+     <IsisScript name="074.xis">
+     
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>     
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao que carrega tipos de usuarios -->
+     <include>phl84/tipo.usuario.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Chama funcao para a carga das variaveis de configuracao -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+<!-- Chama funcao que compoe tipos de usuarios  -->
+     <call name="tipo.usuario">now</call>
+
+<!--Apresenta formulario para composicao do texto do e-mail -->
+     <display><htmlpft><pft>,ref(['tab_fmx']254,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- Finaliza a secao -->
+     </section>
+
+<!-- Finaliza o script -->
+     </IsisScript>
+

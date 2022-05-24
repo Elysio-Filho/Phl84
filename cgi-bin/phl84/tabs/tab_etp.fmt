@@ -1,0 +1,76 @@
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'
+'<input type="hidden" name="999" value="'v999[1]'">'
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'
+'<input type="hidden" name="mfn" value="'v957'">'
+'<input type="hidden" name="opc" value="grava">'
+'<input type="hidden" name="dbvar" value="^aphl_etp^b46^cetp">'
+'<input type="hidden" name="200" value="',if p(v200) then v200 else 'folha' fi,'">'
+'<tr><td class="td1o"><b>'v229'</b></td><td class="topico"></td></tr>'
+'<tr><td class="td1o">Nome da etiqueta</a></td><td class="td2"><input type="text" class="textbox" name="229" value="',v229,'"></td></tr>'
+'<tr><td class="td1o">Largura da página</a></td><td class="td2"><input type="text" class="textbox" name="201" value="',v201,'"></td></tr>'
+'<tr><td class="td1o">Altura da página</a></td><td class="td2"><input type="text" class="textbox" name="202" value="',v202,'"></td></tr>'
+'<tr><td class="td1e">Escala</a></td><td class="td2">
+ <select size="1" name="203">
+ <option 'if s(v203)='cm' then 'selected' fi' value="cm">Centimetro</option>
+ <option 'if s(v203)='mm' then 'selected' fi' value="mm">Milimetro</option>
+ <option 'if s(v203)='pol' then 'selected' fi' value="pol">Polegada</option>
+ </select>
+ </td></tr>'
+'<tr><td class="td1e">Orientação</a></td><td class="td2">
+ <select size="1" name="204">
+ <option 'if s(v204)='P' then 'selected' fi' value="P">Retrato</option>
+ <option 'if s(v204)='L' then 'selected' fi' value="L">Paisagem</option>
+ </select>
+ </td></tr>'
+'<tr><td class="td1e">Tipo fonte</a></td><td class="td2">
+ <select size="1" name="205">
+ <option 'if s(v205)='arial' then 'selected' fi' value="arial">Arial</option>
+ <option 'if s(v205)='verdana' then 'selected' fi' value="verdana">Verdana</option>
+ </select>
+ </td></tr>'
+'<tr><td class="td1e">Tamanho fonte</a></td><td class="td2">
+ <select size="1" name="206">
+ <option 'if s(v206)='6' then 'selected' fi' value="6">6</option>
+ <option 'if s(v206)='8' then 'selected' fi' value="8">8</option>
+ <option 'if s(v206)='10' then 'selected' fi' value="10">10</option>
+ <option 'if s(v206)='12' then 'selected' fi' value="12">10</option>
+ <option 'if s(v206)='14' then 'selected' fi' value="14">10</option>
+ <option 'if s(v206)='16' then 'selected' fi' value="16">10</option>
+ </select>
+ </td></tr>'
+'<tr><td class="td1o">Estilo fonte</a></td><td class="td2"><input type="text" class="textbox" name="207" value="',v207,'"></td></tr>'/
+'<tr><td class="td1o">Margem superior</a></td><td class="td2"><input type="text" class="textbox" name="208" value="',v208,'"></td></tr>'/
+'<tr><td class="td1o">Margem esquerda</a></td><td class="td2"><input type="text" class="textbox" name="209" value="',v209,'"></td></tr>'/
+'<tr><td class="td1o">Densidade vertical</a></td><td class="td2"><input type="text" class="textbox" name="210" value="',v210,'"></td></tr>'/
+'<tr><td class="td1o">Densidade Horizontal</a></td><td class="td2"><input type="text" class="textbox" name="211" value="',v211,'"></td></tr>'/
+'<tr><td class="td1o">Altura da etiqueta</a></td><td class="td2"><input type="text" class="textbox" name="212" value="',v212,'"></td></tr>'/
+'<tr><td class="td1o">Largura da etiqueta</a></td><td class="td2"><input type="text" class="textbox" name="213" value="',v213,'"></td></tr>'/
+'<tr><td class="td1o">Etiquetas por linha</a></td><td class="td2"><input type="text" class="textbox" name="214" value="',v214,'"></td></tr>'/
+'<tr><td class="td1o">Linhas pos página</a></td><td class="td2"><input type="text" class="textbox" name="215" value="',v215,'"></td></tr>'/
+'<tr><td class="td1e">Código de barra</td><td class="td2"><input type="radio" value="barcode"',if v216='barcode' then 'checked' fi,' name="216">Sim<input type="radio" value=""',if v216='' then 'checked' fi,' name="216">Não</td></tr>'
+'<tr><td class="td1o">Estilo código de barra</a></td><td class="td2"><input type="text" class="textbox" name="217" value="',v217,'"></td></tr>'/
+'<tr><td class="td1o">Tipo código de barra</a></td><td class="td2"><input type="text" class="textbox" name="218" value="',v218,'"></td></tr>'/
+'<tr><td class="td1o">Tamanho fonte código de barra</a></td><td class="td2"><input type="text" class="textbox" name="219" value="',v219,'"></td></tr>'/
+'<tr><td class="td1o">Não sei</a></td><td class="td2"><input type="text" class="textbox" name="220" value="',v220,'"></td></tr>'/
+'<tr><td class="td1e">Alinhamento coluna etiqueta</a></td><td class="td2">
+ <select size="1" name="221">
+ <option 'if s(v221)='L' then 'selected' fi' value="L">Esquerda</option>
+ <option 'if s(v221)='R' then 'selected' fi' value="R">Direira</option>
+ <option 'if s(v221)='C' then 'selected' fi' value="C">Centralizado</option>
+ </select>
+ </td></tr>'
+'<tr><td class="td1o">Largura entre etiquetas</a></td><td class="td2"><input type="text" class="textbox" name="222" value="',v222,'"></td></tr>'/
+'<tr><td class="td1o">Altura da coluna</a></td><td class="td2"><input type="text" class="textbox" name="223" value="',v223,'"></td></tr>'/
+'<tr><td class="td1o">Número de linha por coluna</a></td><td class="td2"><input type="text" class="textbox" name="224" value="',v224,'"></td></tr>'/
+'<tr><td class="td1e">Coluna etiqueta</a></td><td class="td2">
+ <select size="1" name="225">
+ <option 'if s(v225)='L' then 'selected' fi' value="L">Esquerda</option>
+ <option 'if s(v225)='R' then 'selected' fi' value="R">Direira</option>
+ <option 'if s(v225)='C' then 'selected' fi' value="C">Centralizado</option>
+ </select>
+ </td></tr>'
+'<tr><td class="td1o">Largura etiqueta</a></td><td class="td2"><input type="text" class="textbox" name="226" value="',v226,'"></td></tr>'/
+'<tr><td class="td1o">Altura da coluna</a></td><td class="td2"><input type="text" class="textbox" name="227" value="',v227,'"></td></tr>'/
+'<tr><td class="td1o">Número de linhas por coluna</a></td><td class="td2"><input type="text" class="textbox" name="228" value="',v228,'"></td></tr>'/
+'</table>'

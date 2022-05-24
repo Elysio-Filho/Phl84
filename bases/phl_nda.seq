@@ -1,0 +1,47 @@
+!ID 000001
+!v301!Nível 0 = acervo da entidade custodiadora.
+!v302!Nível 0 = acervo da entidade custodiadora.
+!v303!Nível 0 = acervo da entidade custodiadora.
+!v304!Nível 0 = acervo da entidade custodiadora.
+!v305!Nível 0 = acervo da entidade custodiadora.
+!v999!^d20010501^belysio
+
+!ID 000002
+!v301!Nível 1 = fundo ou coleção
+!v302!Nível 1 = fundo ou coleção
+!v303!Nível 1 = fundo ou coleção
+!v304!Nível 1 = fundo ou coleção
+!v305!Nível 1 = fundo ou coleção
+!v999!^d20010501^belysio
+
+!ID 000003
+!v301!Nível 2= Seção
+!v302!Nível 2= Seção
+!v303!Nível 2= Seção
+!v304!Nível 2= Seção
+!v305!Nível 2= Seção
+!v999!^d20010501^belysio
+
+!ID 000004
+!v301!Nível 3= série
+!v302!Nível 3= série
+!v303!Nível 3= série
+!v304!Nível 3= série
+!v305!Nível 3= série
+!v999!^d20010501^belysio
+
+!ID 000005
+!v301!Nível 4= dossiê ou processo
+!v302!Nível 4= dossiê ou processo
+!v303!Nível 4= dossiê ou processo
+!v304!Nível 4= dossiê ou processo
+!v305!Nível 4= dossiê ou processo
+!v999!^d20010501^belysio
+
+!ID 000006
+!v301!Nível 5= item documental
+!v302!Nível 5= item documental
+!v303!Nível 5= item documental
+!v304!Nível 5= item documental
+!v305!Nível 5= item documental
+!v999!^d20010501^belysio

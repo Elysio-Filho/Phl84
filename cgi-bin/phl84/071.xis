@@ -1,0 +1,71 @@
+<!-- Edição de arquivos do phl -->
+     <IsisScript name="071.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega dados da sessao -->
+     <call name="001">now</call>
+
+     <field action="cgi" tag="300">file_name</field>
+
+     <field action="statusfile" tag="1091"><pft>,v300,</pft></field>
+
+     <flow action="jump">
+       <pft>
+         ,if v1091^s:'e' then 'verifica_tamanho' else 'nao_existe' fi,
+       </pft>
+     </flow>
+     <flow action="exit">1</flow>
+     
+     <label>verifica_tamanho</label>
+     <flow action="jump">
+      <pft>,if size(cat(v300))>30000 then 'limite_ultrapassado' fi,</pft>
+     </flow>
+
+     <field action="replace" tag="301"><pft>,cat(v300),</pft></field>
+
+     <field action="replace" tag="301"><pft>,replace(v301,'<','&lt;'),</pft></field>
+     <field action="replace" tag="301"><pft>,replace(v301,'>','&gt;'),</pft></field>
+     <field action="replace" tag="301" split="occ"><pft>,(v301/),</pft></field>   
+     
+     <display><htmlpft><pft>,ref(['tab_fmx']243,(v4/)),</pft></htmlpft></display>
+
+     <flow action="exit">1</flow>
+
+     <label>limite_ultrapassado</label>
+     <display>
+     <html>
+     <head>
+     <link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">
+     </head>
+     <body>
+     <center><div class="alerta"><b>Este arquivo não pode ser editado!<br>
+     Seu tamanho ultrapassa 30 Kb!</b></div></center>
+     </body></html>
+     </display>
+     <flow action="exit">0</flow>
+     
+     <label>nao_existe</label>
+     <display>
+     <html>
+     <head>
+     <link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">
+     </head>
+     <body>
+     <center>
+     <div class="alerta"><b>Este arquivo não existe!</b></div>
+     </center>
+     </body>
+     </html>
+     </display>
+     <flow action="exit">0</flow>
+   
+</section>
+</IsisScript>

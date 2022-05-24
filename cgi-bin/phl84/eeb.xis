@@ -1,0 +1,44 @@
+<!-- Empréstimo entre bibliotecas
+     15/06/2012 11:59:55  -->
+
+     <IsisScript name="eeb.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     <include>phl84/100.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     <field action="add" tag="951"><pft>,v3000^2,</pft></field>
+     
+     <call name="100">now</call>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="958">mfn</field>
+     
+     <field action="add" tag="871"><pft>,ref(['phl_acv']val(v958),(v16)),</pft></field>
+     <field action="add" tag="872"><pft>,ref(['phl_acv']val(v958),v18),</pft></field>
+     <field action="add" tag="873"><pft>,ref(['phl_acv']val(v958),v62,)</pft></field>
+     <field action="add" tag="874"><pft>,ref(['phl_acv']val(v958),v66,)</pft></field>
+     <field action="add" tag="875"><pft>,ref(['phl_acv']val(v958),v65,)</pft></field>
+     <field action="add" tag="876"><pft>,ref(['phl_acv']val(v958),v20,),</pft></field>
+     <field action="add" tag="870"><pft>,ref(['phl_acv']val(v958),v69,),</pft></field>
+
+     <field action="add" tag="960">027</field>
+     <field action="add" tag="891">eeb</field>
+     <field action="add" tag="883"><pft>,ref(['phl_acv']val(v958),v1,),</pft></field>
+     <field action="add" tag="892"><pft>,ref(['phl_set']val(v883),v602),</pft></field>
+
+     <field action="add" tag="123"><pft>,cat('tab_bibliotecas_eeb.txt'),</pft></field>
+     <field action="replace" tag="123" split="occ"><pft>,(v123/),</pft></field>
+         
+     <display><htmlpft><pft>,ref(['tab_fmt']6,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+
+</section>
+</IsisScript>

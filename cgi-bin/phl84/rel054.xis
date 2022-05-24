@@ -1,0 +1,387 @@
+<!-- Relatorios estatisticos da circulacao (XML) -->
+
+     <IsisScript name="rel054.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/xml; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inicia secao do script -->
+     <section>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="960">acv</field>
+     <field action="cgi" tag="100">top</field>
+     <field action="cgi" tag="101">ano</field>
+     <field action="cgi" tag="102">mes</field>
+     <field action="cgi" tag="103">dia</field>
+     <field action="cgi" tag="201">var1</field>
+     <field action="cgi" tag="202">var2</field>
+     <field action="cgi" tag="203">var3</field>
+     <field action="cgi" tag="204">var4</field>
+     <field action="cgi" tag="205">var5</field>
+     <field action="cgi" tag="200">campo</field>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+     <do task="search">
+       <parm name="db"><pft>,v3000^1'_log',</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <parm name="expression"><pft>,'TOP='v100,'*ANO='v101,'*MES='v102,'*DIA='v103</pft></parm>
+       <loop>
+         <field action="import" tag="list">201/205,4001</field>
+         <list action="load" type="freq">
+           <pft>,
+            (select v201[1]
+              case '01': '^1',v910^d.4,
+              case '02': '^1',ref(['phl_acv']val(v910^f),v85),
+              case '03': '^1',ref(['phl_acv']val(v910^f),if p(v16) then v16[1] else v17[1] fi,),
+              case '04': '^1',ref(['phl_usr']val(v910^k),v713,"?"n713,),
+              case '05': '^1',v910^d.8,
+              case '06': '^1',v910^d*6.2,
+              case '07': '^1',v910^b,
+              case '08': '^1',v910^h,
+              case '09': '^1',v910^d*4.2,
+              case '10': '^1',ref(['phl_usr']val(v910^k),v705,"?"n705,),
+              case '11': '^1',ref(['phl_acv']val(v910^f),v26,"?"n26,),
+              case '12': '^1',ref(['phl_acv']val(v910^f),v71,"?"n71,),
+              case '13': '^1',v910^e,
+              case '14': '^1',ref(['phl_acv']val(v910^f),v22,"?"n22,),
+              case '15': '^1',v910^c,
+              case '16': '^1',ref(['phl_acv']val(v910^f),if p(v18) then v18 else v30 fi,),
+              case '17': '^1',v910^t,
+             endsel,
+
+            select v202[1]
+              case '01': '^2',v910^d.4,
+              case '02': '^2'ref(['phl_acv']val(v910^f),v85),
+              case '03': '^2'ref(['phl_acv']val(v910^f),if p(v16) then v16[1] else v17[1] fi,),
+              case '04': '^2'ref(['phl_usr']val(v910^k),v713,"*"n713,),
+              case '05': '^2'v910^d.8,
+              case '06': '^2'v910^d*6.2,
+              case '07': '^2'v910^b,
+              case '08': '^2'v910^h,
+              case '09': '^2'v910^d*4.2,
+              case '10': '^2'ref(['phl_usr']val(v910^k),v705,"?"n705,),
+              case '11': '^2'ref(['phl_acv']val(v910^f),v26,"?"n26,),
+              case '12': '^2'ref(['phl_acv']val(v910^f),v71,"?"n71,),
+              case '13': '^2'v910^e,
+              case '14': '^2'ref(['phl_acv']val(v910^f),v22,"?"n22,),
+              case '15': '^2'v910^c,
+              case '16': '^2'ref(['phl_acv']val(v910^f),if p(v18) then v18 else v30 fi,),
+              case '17': '^2'v910^t,
+             endsel,
+
+            select v203[1]
+              case '01': '^3',v910^d.4,
+              case '02': '^3'ref(['phl_acv']val(v910^f),v85),
+              case '03': '^3'ref(['phl_acv']val(v910^f),if p(v16) then v16[1] else v17[1] fi,),
+              case '04': '^3'ref(['phl_usr']val(v910^k),v713,"?"n713,),
+              case '05': '^3'v910^d.8,
+              case '06': '^3'v910^d*6.2,
+              case '07': '^3'v910^b,
+              case '08': '^3'v910^h,
+              case '09': '^3'v910^d*4.2,
+              case '10': '^3'ref(['phl_usr']val(v910^k),v705,"?"n705,),
+              case '11': '^3'ref(['phl_acv']val(v910^f),v26,"?"n26,),
+              case '12': '^3'ref(['phl_acv']val(v910^f),v71,"?"n71,),
+              case '13': '^3'v910^e,
+              case '14': '^3'ref(['phl_acv']val(v910^f),v22,"?"n22,),
+              case '15': '^3'v910^c,
+              case '16': '^3'ref(['phl_acv']val(v910^f),if p(v18) then v18 else v30 fi,),
+              case '17': '^3'v910^t,
+             endsel,
+
+            select v204[1]
+              case '01': '^4',v910^d.4,
+              case '02': '^4'ref(['phl_acv']val(v910^f),v85),
+              case '03': '^4'ref(['phl_acv']val(v910^f),if p(v16) then v16[1] else v17[1] fi,),
+              case '04': '^4'ref(['phl_usr']val(v910^k),v713,"?"n713,),
+              case '05': '^4'v910^d.8,
+              case '06': '^4'v910^d*6.2,
+              case '07': '^4'v910^b,
+              case '08': '^4'v910^h,
+              case '09': '^4'v910^d*4.2,
+              case '10': '^4'ref(['phl_usr']val(v910^k),v705,"?"n705,),
+              case '11': '^4'ref(['phl_acv']val(v910^f),v26,"?"n26,),
+              case '12': '^4'ref(['phl_acv']val(v910^f),v71,"?"n71,),
+              case '13': '^4'v910^e,
+              case '14': '^4'ref(['phl_acv']val(v910^f),v22,"?"n22,),
+              case '15': '^4'v910^c,
+              case '16': '^4'ref(['phl_acv']val(v910^f),if p(v18) then v18 else v30 fi,),
+              case '17': '^4'v910^t,
+             endsel,
+
+            select v205[1]
+              case '01': '^5',v910^d.4,
+              case '02': '^5'ref(['phl_acv']val(v910^f),v85),
+              case '03': '^5'ref(['phl_acv']val(v910^f),if p(v16) then v16[1] else v17[1] fi,),
+              case '04': '^5'ref(['phl_usr']val(v910^k),v713,"?"n713,),
+              case '05': '^5'v910^d.8,
+              case '06': '^5'v910^d*6.2,
+              case '07': '^5'v910^b,
+              case '08': '^5'v910^h,
+              case '09': '^5'v910^d*4.2,
+              case '10': '^5'ref(['phl_usr']val(v910^k),v705,"?"n705,),
+              case '11': '^5'ref(['phl_acv']val(v910^f),v26,"?"n26,),
+              case '12': '^5'ref(['phl_acv']val(v910^f),v71,"?"n71,),
+              case '13': '^5'v910^e,
+              case '14': '^5'ref(['phl_acv']val(v910^f),v22,"?"n22,),
+              case '15': '^5'v910^c,
+              case '16': '^5'ref(['phl_acv']val(v910^f),if p(v18) then v18 else v30 fi,),
+              case '17': '^5'v910^t,
+             endsel,
+             )
+           </pft>
+         </list>
+       </loop>
+     </do>
+
+     <do task="list">
+       <field action="define" tag="1">Isis_Item</field>
+       <field action="define" tag="2">Isis_Value</field>
+       <field action="define" tag="4">Isis_Items</field>
+<display><pft>
+'<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="/phl84/xsl/mec6col.xsl"?>
+<db>
+<biblioteca><![CDATA[',ref(['phl_set']l(['phl_set'],'ACV='v3000^1,),v602,),']]></biblioteca>
+<cabecalho>Estatística da circulação</cabecalho>
+<periodo>Ano:'v101," - Mes: "v102," - Dia: "v103,'</periodo>
+<data_emissao><![CDATA[',v7003*6.2,'-'v7003*4.2,'-',v7003*0.4,']]></data_emissao>
+<c1txt>'
+ select v201
+  case '01' : 'Ano'
+  case '02' : 'Área do conhecimento'
+  case '03' : 'Autor'
+  case '04' : 'Curso do usuário'
+  case '05' : 'Data'
+  case '06' : 'Dia'
+  case '07' : 'Funcionário'
+  case '08' : 'Hora'
+  case '09' : 'Mês'
+  case '10' : 'Nome do usuário'
+  case '11' : 'Tipo de coleção'
+  case '12' : 'Tipo de conteudo'
+  case '13' : 'Tipo de documento'
+  case '14' : 'Tipo de suporte'
+  case '15' : 'Tipo de usuário'
+  case '16' : 'Título'
+  case '17' : 'Tombo'
+ endsel,
+'</c1txt>
+<c2txt>'
+ select v202
+  case '01' : 'Ano'
+  case '02' : 'Área do conhecimento'
+  case '03' : 'Autor'
+  case '04' : 'Curso do usuário'
+  case '05' : 'Data'
+  case '06' : 'Dia'
+  case '07' : 'Funcionário'
+  case '08' : 'Hora'
+  case '09' : 'Mês'
+  case '10' : 'Nome do usuário'
+  case '11' : 'Tipo de coleção'
+  case '12' : 'Tipo de conteudo'
+  case '13' : 'Tipo de documento'
+  case '14' : 'Tipo de suporte'
+  case '15' : 'Tipo de usuário'
+  case '16' : 'Título'
+  case '17' : 'Tombo'
+ endsel,
+'</c2txt>
+<c3txt>'
+ select v203
+  case '01' : 'Ano'
+  case '02' : 'Área do conhecimento'
+  case '03' : 'Autor'
+  case '04' : 'Curso do usuário'
+  case '05' : 'Data'
+  case '06' : 'Dia'
+  case '07' : 'Funcionário'
+  case '08' : 'Hora'
+  case '09' : 'Mês'
+  case '10' : 'Nome do usuário'
+  case '11' : 'Tipo de coleção'
+  case '12' : 'Tipo de conteudo'
+  case '13' : 'Tipo de documento'
+  case '14' : 'Tipo de suporte'
+  case '15' : 'Tipo de usuário'
+  case '16' : 'Título'
+  case '17' : 'Tombo'
+ endsel,
+'</c3txt>
+<c4txt>'
+ select v204
+  case '01' : 'Ano'
+  case '02' : 'Área do conhecimento'
+  case '03' : 'Autor'
+  case '04' : 'Curso do usuário'
+  case '05' : 'Data'
+  case '06' : 'Dia'
+  case '07' : 'Funcionário'
+  case '08' : 'Hora'
+  case '09' : 'Mês'
+  case '10' : 'Nome do usuário'
+  case '11' : 'Tipo de coleção'
+  case '12' : 'Tipo de conteudo'
+  case '13' : 'Tipo de documento'
+  case '14' : 'Tipo de suporte'
+  case '15' : 'Tipo de usuário'
+  case '16' : 'Título'
+  case '17' : 'Tombo'
+ endsel,
+'</c4txt>
+<c5txt>'
+ select v205
+  case '01' : 'Ano'
+  case '02' : 'Área do conhecimento'
+  case '03' : 'Autor'
+  case '04' : 'Curso do usuário'
+  case '05' : 'Data'
+  case '06' : 'Dia'
+  case '07' : 'Funcionário'
+  case '08' : 'Hora'
+  case '09' : 'Mês'
+  case '10' : 'Nome do usuário'
+  case '11' : 'Tipo de coleção'
+  case '12' : 'Tipo de conteudo'
+  case '13' : 'Tipo de documento'
+  case '14' : 'Tipo de suporte'
+  case '15' : 'Tipo de usuário'
+  case '16' : 'Título'
+  case '17' : 'Tombo'
+ endsel,
+'</c5txt>
+<qtdtxt>Qtde.</qtdtxt>
+<imprimir>/phl84/img/018.gif</imprimir>
+<voltar>/phl84/img/006.gif</voltar>
+<link_c1>
+<![CDATA[/cgi-bin/wxis.exe?IsisScript=phl84/rel054.xis&campo=c1&top='v100'&ano='v101'&mes='v102'&dia='v103'&var1='v201'&var2='v202'&var3='v203'&var4='v204'&var5='v205'&tmp='v4001']]>
+</link_c1>
+<link_c2>
+<![CDATA[/cgi-bin/wxis.exe?IsisScript=phl84/rel054.xis&campo=c2&top='v100'&ano='v101'&mes='v102'&dia='v103'&var1='v201'&var2='v202'&var3='v203'&var4='v204'&var5='v205'&tmp='v4001']]>
+</link_c2>
+<link_c3>
+<![CDATA[/cgi-bin/wxis.exe?IsisScript=phl84/rel054.xis&campo=c3&top='v100'&ano='v101'&mes='v102'&dia='v103'&var1='v201'&var2='v202'&var3='v203'&var4='v204'&var5='v205'&tmp='v4001']]>
+</link_c3>
+<link_c4>
+<![CDATA[/cgi-bin/wxis.exe?IsisScript=phl84/rel054.xis&campo=c4&top='v100'&ano='v101'&mes='v102'&dia='v103'&var1='v201'&var2='v202'&var3='v203'&var4='v204'&var5='v205'&tmp='v4001']]>
+</link_c4>
+<link_c5>
+<![CDATA[/cgi-bin/wxis.exe?IsisScript=phl84/rel054.xis&campo=c5&top='v100'&ano='v101'&mes='v102'&dia='v103'&var1='v201'&var2='v202'&var3='v203'&var4='v204'&var5='v205'&tmp='v4001']]>
+</link_c5>
+<link_qtd>
+<![CDATA[/cgi-bin/wxis.exe?IsisScript=phl84/rel054.xis&campo=qtd&top='v100'&ano='v101'&mes='v102'&dia='v103'&var1='v201'&var2='v202'&var3='v203'&var4='v204'&var5='v205'&tmp='v4001']]>
+</link_qtd>
+<link_anterior>
+<![CDATA[/cgi-bin/wxis.exe?IsisScript=phl84/054.xis&opc=opcoes&tmp='v4001']]>
+</link_anterior>'
+</pft>
+</display>
+<file action="close" type="database">phl_set</file>
+       <loop>
+       <field action="import" tag="list">20,200/205</field>
+       <field action="replace" tag="10"><pft>,f(val(v20)+val(v2),0,0),</pft></field>
+       
+       <field action="replace" tag="201">
+         <pft>,
+             select v201
+                   case '02': if v1^1<>'' then v1^1 else '*' fi
+                   case '11': ref(['phl_col']val(v1^1),@tab_txt.pft,)
+                    case '13': ref(['phl_tdo']val(v1^1),@tab_txt.pft,)
+                    case '15': ref(['phl_rgl']val(v1^1),@tab_txt.pft,)
+                   elsecase v1^1,
+                  endsel,
+         ,</pft>
+       </field>
+       
+       <field action="replace" tag="202">
+         <pft>,
+             select v202
+                   case '02': if v1^2<>'' then v1^2 else '*' fi
+                   case '11': ref(['phl_col']val(v1^2),@tab_txt.pft,)
+                   case '13': ref(['phl_tdo']val(v1^2),@tab_txt.pft,)
+                   case '15': ref(['phl_rgl']val(v1^2),@tab_txt.pft,)
+                   elsecase v1^2,
+                  endsel,
+         ,</pft>
+       </field>
+       
+       <field action="replace" tag="203">
+         <pft>,
+             select v203
+                   case '02': if v1^3<>'' then v1^3 else '*' fi
+                   case '11': ref(['phl_col']val(v1^3),@tab_txt.pft,)
+                   case '13': ref(['phl_tdo']val(v1^3),@tab_txt.pft,)
+                   case '15': ref(['phl_rgl']val(v1^3),@tab_txt.pft,)
+                   elsecase v1^3,
+                  endsel,
+         ,</pft>
+       </field>
+       
+       <field action="replace" tag="204">
+         <pft>,
+             select v204
+                   case '02': if v1^4<>'' then v1^4 else '*' fi
+                   case '11': ref(['phl_col']val(v1^4),@tab_txt.pft,)
+                   case '13': ref(['phl_tdo']val(v1^4),@tab_txt.pft,)
+                   case '15': ref(['phl_rgl']val(v1^4),@tab_txt.pft,)
+                   elsecase v1^4,
+                  endsel,
+         ,</pft>
+       </field>
+
+       <field action="replace" tag="205">
+         <pft>,
+             select v205
+                   case '02': if v1^5<>'' then v1^5 else '*' fi
+                   case '04': v1^5
+                   case '11': ref(['phl_col']val(v1^5),@tab_txt.pft,)
+                   case '12': v1^5
+                   case '13': ref(['phl_tdo']val(v1^5),@tab_txt.pft,)
+                   case '14': ref(['phl_spt']val(v1^5),@tab_txt.pft,)
+                   case '15': ref(['phl_rgl']val(v1^5),@tab_txt.pft,)
+                   elsecase v1^5,
+                  endsel,
+         ,</pft>
+       </field>
+
+         <display>
+           <pft>
+             '<mfn>
+              <ordem>'
+                select v200
+                 case 'c1' : '<![CDATA['v201']]>'
+                 case 'c2' : '<![CDATA['v202']]>'
+                 case 'c3' : '<![CDATA['v203']]>'
+                 case 'c4' : '<![CDATA['v204']]>'
+                 case 'c5' : '<![CDATA['v205']]>'
+                 case 'qtd' : '<![CDATA['f(val(v2),9,0)']]>'
+                 elsecase mfn(1)
+                endsel,
+              '</ordem>
+                <c1><![CDATA['v201']]></c1>
+                <c2><![CDATA['v202']]></c2>
+                <c3><![CDATA['v203']]></c3>
+                <c4><![CDATA['v204']]></c4>
+                <c5><![CDATA['v205']]></c5>
+                <qtd><![CDATA['v2']]></qtd>
+               </mfn>'
+           </pft>
+         </display>
+         <field action="replace" tag="20"><pft>,v10,</pft></field>
+         <field action="export" tag="list">20</field>
+       </loop>
+       <display><pft>,'<tot>',v20,'</tot>'/,</pft></display>
+       <display></db></display>
+     </do>
+     <flow action="exit">0</flow>
+
+</section>
+</IsisScript>

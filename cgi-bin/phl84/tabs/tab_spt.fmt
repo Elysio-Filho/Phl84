@@ -1,0 +1,63 @@
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'
+'<input type="hidden" name="opc" value="grava">'
+'<input type="hidden" name="dbvar" value="^aphl_spt^b41^cspt">'
+'<input type="hidden" name="999" value="'v999[1]'">'
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'
+'<input type="hidden" name="mfn" value="'v957'">'
+'<tr><td class="td1o">',if v960<>'027' then mfn(1) fi,'</td><td class="topico">Opções de Suporte</td></tr>'
+'<tr><td class="td1o">PT&nbsp;<a href=JavaScript:tab_man(301);>[301]</a></td><td class="td2"><input type="text" class="textbox" name="301" value="'v301'"></td></tr>'
+'<tr><td class="td1o">ES&nbsp;<a href=JavaScript:tab_man(302);>[302]</a></td><td class="td2"><input type="text" class="textbox" name="302" value="'v302'"></td></tr>'
+'<tr><td class="td1o">EN&nbsp;<a href=JavaScript:tab_man(303);>[303]</a></td><td class="td2"><input type="text" class="textbox" name="303" value="'v303'"></td></tr>'
+'<tr><td class="td1o">IT&nbsp;<a href=JavaScript:tab_man(304);>[304]</a></td><td class="td2"><input type="text" class="textbox" name="304" value="'v304'"></td></tr>'
+'<tr><td class="td1o">FR&nbsp;<a href=JavaScript:tab_man(305);>[305]</a></td><td class="td2"><input type="text" class="textbox" name="305" value="'v305'"></td></tr>'
+'<tr>
+  <td class="td1o" valign="top">Ícone:</td>
+  <td class="td2">
+    <input type="radio" value="/phl84/img/015.gif"',if v370='/phl84/img/015.gif' then 'checked' fi,' name="370"><img src="/phl84/img/015.gif" border="0">
+    <input type="radio" value="/phl84/img/017.gif"',if v370='/phl84/img/017.gif' then 'checked' fi,' name="370"><img src="/phl84/img/017.gif" border="0">
+    <input type="radio" value="/phl84/img/023.gif"',if v370='/phl84/img/023.gif' then 'checked' fi,' name="370"><img src="/phl84/img/023.gif" border="0">
+    <input type="radio" value="/phl84/img/058.gif"',if v370='/phl84/img/058.gif' then 'checked' fi,' name="370"><img src="/phl84/img/058.gif" border="0">
+    <input type="radio" value="/phl84/img/025.gif"',if v370='/phl84/img/025.gif' then 'checked' fi,' name="370"><img src="/phl84/img/025.gif" border="0">
+    <input type="radio" value="/phl84/img/026.gif"',if v370='/phl84/img/026.gif' then 'checked' fi,' name="370"><img src="/phl84/img/026.gif" border="0">
+    <input type="radio" value="/phl84/img/027.gif"',if v370='/phl84/img/027.gif' then 'checked' fi,' name="370"><img src="/phl84/img/027.gif" border="0">
+    <input type="radio" value="/phl84/img/028.gif"',if v370='/phl84/img/028.gif' then 'checked' fi,' name="370"><img src="/phl84/img/028.gif" border="0">
+    <input type="radio" value="/phl84/img/029.gif"',if v370='/phl84/img/029.gif' then 'checked' fi,' name="370"><img src="/phl84/img/029.gif" border="0">
+    <input type="radio" value="/phl84/img/030.gif"',if v370='/phl84/img/030.gif' then 'checked' fi,' name="370"><img src="/phl84/img/030.gif" border="0">
+    <input type="radio" value="/phl84/img/031.gif"',if v370='/phl84/img/031.gif' then 'checked' fi,' name="370"><img src="/phl84/img/031.gif" border="0">
+    <input type="radio" value="/phl84/img/032.gif"',if v370='/phl84/img/032.gif' then 'checked' fi,' name="370"><img src="/phl84/img/032.gif" border="0">
+    <input type="radio" value="/phl84/img/033.gif"',if v370='/phl84/img/033.gif' then 'checked' fi,' name="370"><img src="/phl84/img/033.gif" border="0">
+    <input type="radio" value="/phl84/img/034.gif"',if v370='/phl84/img/034.gif' then 'checked' fi,' name="370"><img src="/phl84/img/034.gif" border="0">
+    <input type="radio" value="/phl84/img/035.gif"',if v370='/phl84/img/035.gif' then 'checked' fi,' name="370"><img src="/phl84/img/035.gif" border="0">
+    <input type="radio" value="/phl84/img/036.gif"',if v370='/phl84/img/036.gif' then 'checked' fi,' name="370"><img src="/phl84/img/036.gif" border="0">
+    <input type="radio" value="/phl84/img/037.gif"',if v370='/phl84/img/037.gif' then 'checked' fi,' name="370"><img src="/phl84/img/037.gif" border="0">
+    <input type="radio" value="/phl84/img/038.gif"',if v370='/phl84/img/038.gif' then 'checked' fi,' name="370"><img src="/phl84/img/038.gif" border="0">
+    <input type="radio" value="/phl84/img/039.gif"',if v370='/phl84/img/039.gif' then 'checked' fi,' name="370"><img src="/phl84/img/039.gif" border="0">
+    <input type="radio" value="/phl84/img/040.gif"',if v370='/phl84/img/040.gif' then 'checked' fi,' name="370"><img src="/phl84/img/040.gif" border="0">
+    <input type="radio" value="/phl84/img/041.gif"',if v370='/phl84/img/041.gif' then 'checked' fi,' name="370"><img src="/phl84/img/041.gif" border="0">
+    <input type="radio" value="/phl84/img/042.gif"',if v370='/phl84/img/042.gif' then 'checked' fi,' name="370"><img src="/phl84/img/042.gif" border="0">
+    <input type="radio" value="/phl84/img/043.gif"',if v370='/phl84/img/043.gif' then 'checked' fi,' name="370"><img src="/phl84/img/043.gif" border="0">
+    <input type="radio" value="/phl84/img/044.gif"',if v370='/phl84/img/044.gif' then 'checked' fi,' name="370"><img src="/phl84/img/044.gif" border="0">
+    <input type="radio" value="/phl84/img/045.gif"',if v370='/phl84/img/045.gif' then 'checked' fi,' name="370"><img src="/phl84/img/045.gif" border="0">
+    <input type="radio" value="/phl84/img/046.gif"',if v370='/phl84/img/046.gif' then 'checked' fi,' name="370"><img src="/phl84/img/046.gif" border="0">
+    <input type="radio" value="/phl84/img/047.gif"',if v370='/phl84/img/047.gif' then 'checked' fi,' name="370"><img src="/phl84/img/047.gif" border="0">
+    <input type="radio" value="/phl84/img/048.gif"',if v370='/phl84/img/048.gif' then 'checked' fi,' name="370"><img src="/phl84/img/048.gif" border="0">
+    <input type="radio" value="/phl84/img/051.gif"',if v370='/phl84/img/051.gif' then 'checked' fi,' name="370"><img src="/phl84/img/051.gif" border="0">
+    <input type="radio" value="/phl84/img/052.gif"',if v370='/phl84/img/052.gif' then 'checked' fi,' name="370"><img src="/phl84/img/052.gif" border="0">
+    <input type="radio" value="/phl84/img/054.gif"',if v370='/phl84/img/054.gif' then 'checked' fi,' name="370"><img src="/phl84/img/054.gif" border="0">
+    <input type="radio" value="/phl84/img/055.gif"',if v370='/phl84/img/055.gif' then 'checked' fi,' name="370"><img src="/phl84/img/055.gif" border="0">
+    <input type="radio" value="/phl84/img/056.gif"',if v370='/phl84/img/056.gif' then 'checked' fi,' name="370"><img src="/phl84/img/056.gif" border="0">
+    <input type="radio" value="/phl84/img/057.gif"',if v370='/phl84/img/057.gif' then 'checked' fi,' name="370"><img src="/phl84/img/057.gif" border="0">
+    <input type="radio" value="/phl84/img/059.gif"',if v370='/phl84/img/059.gif' then 'checked' fi,' name="370"><img src="/phl84/img/059.gif" border="0">
+    <input type="radio" value="/phl84/img/060.gif"',if v370='/phl84/img/060.gif' then 'checked' fi,' name="370"><img src="/phl84/img/060.gif" border="0">
+    <input type="radio" value="/phl84/img/061.gif"',if v370='/phl84/img/061.gif' then 'checked' fi,' name="370"><img src="/phl84/img/061.gif" border="0">
+    <input type="radio" value="/phl84/img/062.gif"',if v370='/phl84/img/062.gif' then 'checked' fi,' name="370"><img src="/phl84/img/062.gif" border="0">
+    <input type="radio" value="/phl84/img/063.gif"',if v370='/phl84/img/063.gif' then 'checked' fi,' name="370"><img src="/phl84/img/063.gif" border="0">
+    <input type="radio" value="/phl84/img/064.gif"',if v370='/phl84/img/064.gif' then 'checked' fi,' name="370"><img src="/phl84/img/064.gif" border="0">
+    <input type="radio" value="/phl84/img/065.gif"',if v370='/phl84/img/065.gif' then 'checked' fi,' name="370"><img src="/phl84/img/065.gif" border="0">
+    <input type="radio" value="/phl84/img/066.gif"',if v370='/phl84/img/066.gif' then 'checked' fi,' name="370"><img src="/phl84/img/066.gif" border="0">
+    <input type="radio" value="/phl84/img/067.gif"',if v370='/phl84/img/067.gif' then 'checked' fi,' name="370"><img src="/phl84/img/067.gif" border="0">
+    <input type="radio" value="/phl84/img/068.gif"',if v370='/phl84/img/068.gif' then 'checked' fi,' name="370"><img src="/phl84/img/068.gif" border="0">
+    <input type="radio" value="/phl84/img/069.gif"',if v370='/phl84/img/069.gif' then 'checked' fi,' name="370"><img src="/phl84/img/069.gif" border="0">
+  </td>
+</tr>'

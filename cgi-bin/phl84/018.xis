@@ -1,0 +1,88 @@
+<!-- Controle de integridade de bases de dados
+     29/07/2007 - Revisado -->
+     
+     <IsisScript name="018.xis">
+
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+     <section>
+
+    <field action="cgi" tag="1">cipar</field>
+    <field action="cgi" tag="2">db</field>
+    <field action="cgi" tag="3">count</field>
+    <field action="cgi" tag="4">pwd</field>
+    <field action="cgi" tag="5">from</field>
+    <field action="cgi" tag="6">to</field>
+    <field action="cgi" tag="9997">pft</field>
+
+    <parm name="cipar"><pft>,cat(v1),</pft></parm>
+
+    <flow action="jump">
+     <pft>,if a(v1) then 'sintaxe' else 'continua' fi,</pft>
+    </flow>
+
+    <label>sintaxe</label>
+    <display>
+     <pre>
+      Sintaxe:
+      ============================
+               db=[base de dados]
+            cipar=[arquivo cisis]
+            count=[quantidade]
+             from=[mfn inicial]
+               to=[mfn final]
+              pft=[comandos da linguagem de formato cisis]
+              pwd=[chave]
+     </pre>
+    </display>
+    <flow action="exit">1</flow>
+
+    <label>continua</label>
+    <flow action="jump">
+      <pft>
+        ,if s(v4)=ref(['tab_fmx']1,v1.3) then 'dump' else fi,
+      </pft>
+    </flow>
+    <flow action="exit">1</flow>
+    
+    <label>dump</label>
+
+     <field action="statusdb" tag="2093"><pft>,v2,</pft></field>
+     <file action="close" type="database"><pft>,v2,</pft></file>
+     
+     <display>
+       <pft>,
+           '<ul>'
+           '<li>Base: 'v2,'</li>'
+           '<li>Registros: 'f(val(v2093^n)-1,0,0),'</li>'
+           '<li>Invertido: 'if v2093^s='mi' then 'sim' else 'não' fi,'</li>'
+           '<li>Bloqueada: 'if s(v2093^d,v2093^e)='00' then 'não' else 'sim' fi,'</li>'
+           '</ul>'
+       </pft>
+     </display>
+
+    <do task=mfnrange>
+      <parm name="db"><pft>,v2,</pft></parm>
+      <parm name="from"><pft>,v5,</pft></parm>
+      <parm name="to"><pft>,v6,</pft></parm>
+      <parm name="count"><pft>,v3,</pft></parm>
+      <loop>
+        <field action="import" tag="list">9997</field>
+        
+        <flow action="jump">
+          <pft>,if p(v9997) then 'formato_especifico' else 'formato_geral' fi,</pft>
+        </flow>
+
+        <label>formato_especifico</label>
+        <display><pft><pft>,v9997,</pft></pft></display>
+        <flow action="jump">loop</flow>
+
+        <label>formato_geral</label>
+        <display><pft>ALL</pft></display>
+        <label>loop</label>
+      </loop>
+    </do>
+    <flow action="exit">1</flow>
+  </section>
+
+</IsisScript>

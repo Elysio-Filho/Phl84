@@ -1,0 +1,981 @@
+<!-- Gráficos estatísticos
+     25/11/2010 16:31:28 -->
+
+     <IsisScript name="045.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+     
+<!-- Rede de bibliotecas -->
+     <include>phl84/rede.bibliotecas.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+     
+<!-- Carrega variáveis de configuração -->
+     <field action="cgi" tag="7001">lang</field>
+     <field action="cgi" tag="7002">cipar</field>
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>     
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="953">acv</field>
+
+<!-- Carrega variaveis de configuracao -->
+     <field action="add" tag="7013"><pft>,ref(['phl_set']l(['phl_set'],'ACV='v953),v602),</pft></field>
+     <file action="close" type="database">phl_set</file>
+
+<!-- Desvia fluxo conforme opcao do cliente -->
+     <flow action="jump"><pft>,v950,</pft></flow>
+
+<!-- Formulario para selecao da biblioteca -->
+     <label>sel_acv</label>
+     
+     <call name="rede.bibliotecas">now</call>
+     
+     <display><htmlpft><pft>,ref(['tab_fmx']6,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+    
+<!-- Lista de opcoes de graficos -->
+     <label>lista</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']173,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+
+<!-- Grafico de tipos de documento -->
+     <label>111</label>
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>'TG='v953'='</pft></parm>
+       <parm name="to"><pft>,'TG='v953'=Z',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <loop>
+         <list action="load" type="list">
+           <pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'ref(['phl_tdo']val(v1*7),@tab_txt.pft,),/,</pft>
+         </list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+     <flow action="jump">
+       <pft>
+         if size(v1)>1 then 'true111' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true111</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']170,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Ano de Publicação -->
+     <label>112</label>
+     <field action="add" tag="106"><pft>,s(date).4,</pft></field>     
+
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,v953'='f(val(s(date).4)-9,0,0),</pft></parm>
+       <parm name="to"><pft>,v953'='f(val(v106)+1,0,0),</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'right(v1,4),/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true112' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true112</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']171,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Áreas do conhecimento (monografias) -->
+     <label>113</label>
+
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,v953'ATE',</pft></parm>
+       <parm name="to"><pft>,v953'ATX',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c',v1*7/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true113' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true113</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']174,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+       <field action="export" tag="list">1</field>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Áreas do conhecimento (periodicos) -->
+     <label>114</label>
+
+     <do task="keyrange">
+       <parm name="db"><pft>,v953'_ser'</pft></parm>
+       <parm name="from">ATE=</parm>
+       <parm name="to">ATE=XX</parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*4,/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_ser',</pft></file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true114' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true114</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']172,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Idioma do documento -->
+     <label>115</label>
+     <field action="add" tag="109"><pft>,ref(['phl_cnf']1,(v228/))</pft></field>
+     <field action="replace" tag="109" split="occ"><pft>(v109/)</pft></field>   
+
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,v953'=IDM=',</pft></parm>
+       <parm name="to"><pft>,v953'=IDM=ZZ',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*8,/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+       <file action="close" type="database">phl_idm</file>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+     <flow action="jump">
+       <pft>
+         if size(v1)>1 then 'true115' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true115</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']175,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Tipo de conteúdo -->
+     <label>116</label>
+     <field action="add" tag="109"><pft>,ref(['phl_cnf']1,(v228/))</pft></field>
+     <field action="replace" tag="109" split="occ"><pft>(v109/)</pft></field>   
+
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,v953'=CNT=',</pft></parm>
+       <parm name="to"><pft>,v953'=CNT=ZZ',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*8/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+     <flow action="jump">
+       <pft>
+         if size(v1)>1 then 'true116' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true116</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']176,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+     
+<!-- Tipo de suporte -->
+     <label>117</label>
+     <field action="add" tag="109"><pft>,ref(['phl_cnf']1,(v228/))</pft></field>
+     <field action="replace" tag="109" split="occ"><pft>(v109/)</pft></field>   
+
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,v953'=SPT=',</pft></parm>
+       <parm name="to"><pft>,v953'=SPT=ZZ',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*8,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+     <flow action="jump">
+       <pft>
+         if size(v1)>1 then 'true117' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true117</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']177,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Tipos de usuários por curso -->
+     <label>221</label>
+
+     <do task="keyrange">
+       <parm name="db">phl_usr</parm>
+       <parm name="from">CUR=</parm>
+       <parm name="to">CUR=zzzz</parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*4,/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database">phl_usr</file>
+     
+     <flow action="jump">
+       <pft>
+         if size(v1)>1 then 'true221' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true221</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']178,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+    
+<!-- Grafico de tipos de usuário -->
+     <label>222</label>
+
+     <do task="keyrange">
+       <parm name="db">phl_usr</parm>
+       <parm name="from">COD=</parm>
+       <parm name="to">COD=z</parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'ref(['phl_rgl']val(v1*4),@tab_txt.pft,),/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database">phl_usr</file>
+     
+     <flow action="jump">
+       <pft>
+         if size(v1)>1 then 'true222' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true222</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']179,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+     
+<!-- Aquisições nos últimos 10 anos -->
+     <label>331</label>
+     <field action="add" tag="106"><pft>,s(date).4,</pft></field>
+     <do task="keyrange">
+       <parm name="db"><pft>,v953'_tbo',</pft></parm>
+       <parm name="from"><pft>,'A=',f(val(s(date).4)-9,0,0),</pft></parm>
+       <parm name="to"><pft>'A='f(val(v106)+1,0,0),</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*2.4,/,</pft></list>   
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_log',</pft></file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true331' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true331</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']180,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Aquisições no ano anterior -->
+     <label>332</label>
+     <field action="add" tag="106"><pft>,s(date).4,</pft></field>
+     <do task="keyrange">
+       <parm name="db"><pft>,v953'_tbo',</pft></parm>
+       <parm name="from"><pft>,'MAQ='f(val(v106)-1,0,0),'01',</pft></parm>
+       <parm name="to"><pft>'MAQ='f(val(v106)-1,0,0),'12',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*8.2,/,</pft></list>   
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_log',</pft></file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true332' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true332</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']181,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Aquisições no corrente ano -->
+     <label>333</label>
+     <field action="add" tag="106"><pft>,s(date).4,</pft></field>
+     <do task="keyrange">
+       <parm name="db"><pft>,v953'_tbo',</pft></parm>
+       <parm name="from"><pft>,'MAQ='v106'01',</pft></parm>
+       <parm name="to"><pft>'MAQ='v106'12',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*8.2,/,</pft></list>   
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_log',</pft></file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true333' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true333</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']182,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Titulos catalogados no ano anterior -->
+     <label>334</label>
+     <field action="add" tag="106"><pft>,s(date).4,</pft></field>
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,'GRF',v953.3,f(val(v106)-1,0,0)</pft></parm>
+       <parm name="to"><pft>,'GRF',v953.3,s(date).4,</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*10.2,/,</pft></list>   
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true334' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true334</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+       <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']183,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Títulos catalogados no ano corrente -->
+     <label>335</label>
+
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,'GRF',v953.3,s(date).4,</pft></parm>
+       <parm name="to"><pft>,'GRF',v953.3,s(date).4,'z',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*10.2,/,</pft></list>   
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true335' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true335</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+       <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']184,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Empréstimos nos últimos anos -->
+     <label>441</label>
+     <field action="add" tag="106"><pft>,s(date).4,</pft></field>
+     <do task="keyrange">
+       <parm name="db"><pft>,v953'_log',</pft></parm>
+       <parm name="from"><pft>,'GRF=EMP'f(val(v106)-1,0,0),</pft></parm>
+       <parm name="to"><pft>,'GRF=EMP'v106,</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*11.2,/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_log',</pft></file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true441' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true441</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']185,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+
+<!-- Empréstimos no ano corrente -->
+     <label>442</label>
+
+     <do task="keyrange">
+       <parm name="db"><pft>,v953'_log',</pft></parm>
+       <parm name="from"><pft>,'GRF=EMP',s(date).4,</pft></parm>
+       <parm name="to"><pft>,'GRF=EMPz',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*11.2,/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_log',</pft></file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true442' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true442</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']186,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Empréstimos no mês corrente -->
+     <label>443</label>
+
+     <do task="keyrange">
+       <parm name="db"><pft>,v953'_log',</pft></parm>
+       <parm name="from"><pft>,'EMP',s(date).6,</pft></parm>
+       <parm name="to"><pft>,'EMP',s(date).6,'z',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*9.2,/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_log',</pft></file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true443' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true443</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']187,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Reservas do ano anterior -->
+     <label>444</label>
+     <field action="add" tag="109"><pft>,s(date).4,</pft></field>
+     <do task="keyrange">
+       <parm name="db"><pft>,v953'_log',</pft></parm>
+       <parm name="from"><pft>,'GRF=RES'f(val(v109)-1,0,0),'01',</pft></parm>
+       <parm name="to"><pft>,'GRF=RES'f(val(v109)-1,0,0)'x',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*11.2,/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_log',</pft></file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true444' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true444</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']188,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+
+<!-- Reservas no ano corrente -->
+     <label>445</label>
+     <do task="keyrange">
+       <parm name="db"><pft>,v953'_log',</pft></parm>
+       <parm name="from"><pft>,'GRF=RES',s(date).4,'01'</pft></parm>
+       <parm name="to"><pft>,'GRF=RES',s(date).4,'x',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*11.2,/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_log',</pft></file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true445' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true445</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']189,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Reservas no mês corrente -->
+     <label>446</label>
+
+     <do task="keyrange">
+       <parm name="db"><pft>,v953'_log',</pft></parm>
+       <parm name="from"><pft>,'RES',s(date).6,</pft></parm>
+       <parm name="to"><pft>,'RES',s(date).6,'x',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*9.2,/,</pft></list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_log',</pft></file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true446' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true446</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']190,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+<!-- Horários de movimento da circulação -->
+     <label>447</label>
+
+     <do task="keyrange">
+       <parm name="db"><pft>,v953'_log',</pft></parm>
+       <parm name="from">DHR=</parm>
+       <parm name="to">DHR=25</parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <loop>
+         <list action="load" type="list"><pft>'^a'f(val(v1001)-1,0,0),'^b'v2,'^c'v1*4.2,/,</pft></list>   
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_log',</pft></file>
+
+     <flow action="jump">
+       <pft>
+         if val(v1)>0 then 'true447' else '1020' fi
+       </pft>
+     </flow>
+
+     <label>true447</label>
+
+     <field action="add" tag="105"><pft>,s(date).8,</pft></field>
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']191,v4),</pft></htmlpft></display>
+       <loop>
+        <display><pft>,('bg.xValues['v200^a'] = ['v200^b',"'v200^c'"];'),/</pft></display>
+       </loop>
+       <display><pft>
+         'bg.showLine = false;'/
+         'bg.showBar = true;'/
+         'bg.draw();'/
+         '</script>'/
+       </pft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+     <label>1020</label>
+     <field action="add" tag="250">913</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+
+</section>
+</IsisScript>

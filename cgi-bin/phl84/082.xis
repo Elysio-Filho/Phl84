@@ -1,0 +1,64 @@
+<!-- Mostra tabela auxiliar do conteudo da base de dados do vocabulario (phl_voc)
+     09/11/2008 06:11:13 -->
+
+     <IsisScript name="082.xis">
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+     <section>
+  
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+  
+     <field action="cgi" tag="10">q</field>
+
+     <do task="search">
+       <parm name="db">phl_voc</parm>
+       <parm name="expression"><pft>,v10,'$',</pft></parm>
+       <parm name="count">10</pft></parm>
+
+       <display>
+         <pft>
+           '<div id="title">
+              <div id="sidebar">
+                <div id="sidebar-content">Termo</div>
+              </div>
+              <div id="main">
+                <div id="main-content">Frequência</div>
+              </div>
+              <hr class="cleaner" />
+            </div>'
+         </pft>
+       </display>
+
+       <loop>
+         <list action="load" type="freq"><pft>,v401,</pft></list>
+       </loop>
+     </do>
+     
+     <do task="list">
+       <field action="define" tag="1">Isis_Item</field>
+       <field action="define" tag="2">Isis_Value</field>
+       <loop>
+         <display>
+           <pft>
+            '<div id="content">
+             <div id="sidebar">
+               <div id="sidebar-content">'v1'</div>
+             </div>
+             <div id="main">
+               <div id="main-content">'v2'</div>
+             </div>
+             <hr class="cleaner" />
+           </div>'
+           </pft>
+         </display>
+    </loop>
+
+  </do>
+  <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

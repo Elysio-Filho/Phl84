@@ -1,0 +1,259 @@
+'<html>'/
+'<head>'/
+'<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+'<script language="JavaScript" src="/phl84/js/submit.js"></script>'/
+'<script language="JavaScript" src="/phl84/js/isis_limite.js"></script>'/
+'<script language="JavaScript" src="/phl84/js/numerico.js"></script>'/
+'<script language="JavaScript" type="text/javascript">'/
+'<!--'/
+'        function validacpf() { '/
+'                cpf = document.formulario.CPF.value; '/
+'                erro = new String; '/
+'                if (cpf.length < 11) erro += "Sao necessarios 11 digitos para verificacao do CPF! \n\n"; '/
+'                var nonNumbers = /\D/; '/
+'                if (nonNumbers.test(cpf)) erro += "A verificacao de CPF suporta apenas numeros! \n\n"; '/
+'                if (cpf == "00000000000" || cpf == "11111111111" || cpf == "22222222222" || cpf == "33333333333" || cpf == "44444444444" || cpf == "55555555555" || cpf == "66666666666" || cpf == "77777777777" || cpf == "88888888888" || cpf == "99999999999"){ '/
+'                        erro += "Numero de CPF invalido!"  '/
+'               } '/
+'               var a = []; '/
+'               var b = new Number; '/
+'               var c = 11; '/
+'               for (i=0; i<11; i++){ '/
+'                       a[i] = cpf.charAt(i); '/
+'                       if (i < 9) b += (a[i] * --c);  '/
+'               } '/
+'               if ((x = b % 11) < 2) { a[9] = 0 } else { a[9] = 11-x } '/
+'               b = 0; '/
+'               c = 11; '/
+'               for (y=0; y<10; y++) b += (a[y] * c--); '/
+'               if ((x = b % 11) < 2) { a[10] = 0; } else { a[10] = 11-x; } '/
+'               if ((cpf.charAt(9) != a[9]) || (cpf.charAt(10) != a[10])){ '/
+'                       erro +="Digito verificador com problema!";  '/
+'               }  '/
+'               if (erro.length > 0){ '/
+'                       alert(erro); '/
+'                       return false; '/
+'               } '/
+'               return true; '/
+'       }  '/
+'function proibido_voltar(){history.go(1) == false;}'/
+'function tab_man(x) { '/
+' window.open("/cgi-bin/wxis.exe?IsisScript=phl84/049.xis&tmp='v4001'&mfn="+x,"janela","height=400,width=600,menubar=no,resizable=yes,scrollbars=no,status=no,location=no,titlebar=no,toolbar=no")'/
+'}'/
+'function getXmlHttpRequestObject() { '/
+'if (window.XMLHttpRequest) { '/
+'return new XMLHttpRequest();'/
+'} else if(window.ActiveXObject) { '/
+'return new ActiveXObject("Microsoft.XMLHTTP");'/
+'} else { '/
+'alert("Seu navegador necessita ser atualizado para uma versão mais recente!");'/
+'}'/
+'}'/
+'var searchReq = getXmlHttpRequestObject();'/
+
+'function buscaCidade() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("707").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_cidades_usuario.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestCidade;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function handleSearchSuggestCidade() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_cidade") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setCidade(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function suggestOver(div_value) { '/
+'div_value.className = "suggest_link_over"; '/
+'} '/
+'function suggestOut(div_value) { '/
+'div_value.className = "suggest_link"; '/
+'}'/
+
+'function setCidade(value) { '/
+'  if (value != "") { '/
+'  document.getElementById("707").value = value; '/
+'  document.getElementById("busca_cidade").innerHTML = ""; '/
+'} '/
+'} '/
+
+'-->'/
+'</script> '/
+'</head>'/
+'<body>'/
+'<script language=javascript>proibido_voltar()</script>'/
+'<table width="100%">'/
+'<form name="formulario" onSubmit="return count(30000)" action="/cgi-bin/wxis.exe" method="post">'/
+'<input type="hidden" name="tmp" value="'v4001'">'
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'
+'<input type="hidden" name="999" value="'v999[1]'">'
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="mfn" value="'v957'">'
+'<input type="hidden" name="998" value="'v998'">'
+'<input type="hidden" name="opc" value="grava">'
+'<input type="hidden" name="dbvar" value="^aphl_usr^b25^cusr^m'v957'">'
+'<tr><td class="td1o"></td><td class="topico">'ref(['tab_txt']383,@tab_txt.pft,)'</td></tr>'
+
+,if nocc(v3601)>1 then
+'<tr>
+  <td class="td1o">',,ref(['phl_usr_fmt']1,v730),'&nbsp;<a href=JavaScript:tab_man(730);>[730]</a></td>
+  <td class="td2">
+    <select name="730">',
+      (,'<option ',if v730[1]=v3601^a or v730=v3601^a then 'selected' fi,' value="'v3601^a'">'v3601^b'</option>'/),
+    '</select>
+  </td>
+</tr>'/
+else
+'<input type="hidden" name="730" value="'v730,"001"n730,'">'/
+,fi,
+
+'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v700),'&nbsp;<a href=JavaScript:tab_man(700);>[700]</a></td><td class="td2"><input type="text" class="textbox" name="700" value="',v700,'"></td></tr>'/,
+
+/* verifica se é um novo registro */
+   ,if v960='027' then
+    ,,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v701),'&nbsp;<a href=JavaScript:tab_man(701);>[701]</a></td><td class="td2"><input type="text" class="textbox" name="701" value="'v701'"></td></tr>'/
+    ,,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v705),'&nbsp;<a href=JavaScript:tab_man(705);>[705]</a></td><td class="td2"><input type="text" class="textbox" name="705" value="',v705,'"></td></tr>'/
+,,,,else,
+
+if npost([v3000^1'_emp'],'USR='v701)<1 then
+
+    ,,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v701),'&nbsp;<a href=JavaScript:tab_man(701);>[701]</a></td><td class="td2"><input type="text" class="textbox" name="701" value="'v701'"></td></tr>'/
+    ,,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v705),'&nbsp;<a href=JavaScript:tab_man(705);>[705]</a></td><td class="td2"><input type="text" class="textbox" name="705" value="',v705,'"></td></tr>'/
+
+else
+
+,,,,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v701),'&nbsp;<a href=JavaScript:tab_man(701);>[701]</a></td><td class="td2">'v701'</td></tr>'/
+,,,,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v705),'&nbsp;<a href=JavaScript:tab_man(705);>[705]</a></td><td class="td2">'v705'</td></tr>'/
+
+,,,,'<input type="hidden" name="701" value="'v701'">'
+,,,,'<input type="hidden" name="705" value="'v705'">'
+
+
+fi
+
+/*
+,,,,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v701),'&nbsp;<a href=JavaScript:tab_man(701);>[701]</a></td><td class="td2"><input type="text" class="textbox" name="701" value="'v701'"></td></tr>'/
+,,,,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v705),'&nbsp;<a href=JavaScript:tab_man(705);>[705]</a></td><td class="td2"><input type="text" class="textbox" name="705" value="',v705,'"></td></tr>'/
+*/
+
+,,,,'<input type="hidden" name="chk_numb" value="'v701'">'
+,,,,'<input type="hidden" name="chk_name" value="'v705'">'
+
+,fi
+,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v723),'&nbsp;<a href=JavaScript:tab_man(723);>[723]</a></td><td class="td2">'
+    
+    /* vefifica se usuário tem objeto emprestado. Se tiver, não permite editar o tipo de usuário */
+       
+       if npost([v3000^1'_emp'],'USR='v701)<1 then
+
+       '<select name="723">
+        <option selected value="'v723'">',ref(['phl_rgl']val(v723),@tab_txt.pft,),'</option>',
+        (,if val(v723[1])<>val(v3076^b) then '<option value="'v3076^b'">',v3076^a,'</option>' fi,),'</select></td></tr>'/
+   
+       else
+
+       '<input type="hidden" name="723" value="'v723'">',ref(['phl_rgl']val(v723),v301)
+   
+      ,fi,
+
+,if ref(['phl_cnf']1,v227)<>'N' then
+,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v702),'&nbsp;<a href=JavaScript:tab_man(702);>[702]</a></td><td class="td2"><input type="password" class="textbox" name="pwd" value="',v702,'"></td></tr>'/
+,else
+,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v702),'&nbsp;<a href=JavaScript:tab_man(702);>[702]</a></td><td class="td2"><input type="password" class="textbox" name="pwd" value="',v702,'" onkeyup="numerico(this.value)"></td></tr>'/
+,fi
+
+
+,if v960<>'042' then
+,,,,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v703),'&nbsp;<a href=JavaScript:tab_man(703);>[703]</a></td><td class="td2"><input type="radio" value="0"',if v703='0' or v703='' then 'checked' fi,' name="703">',ref(['tab_txt']21,@tab_txt.pft,),'<input type="radio" value="1"',if v703='1' then 'checked' fi,' name="703">',ref(['tab_txt']340,@tab_txt.pft,),'</td></tr>'/
+,,,,else
+,,,,'<input type="hidden" name="703" value="0">'
+,fi
+
+
+ if npost([v3000^1'_emp'],'USR='v701)<1 then
+,if ref(['phl_usr_fmt']1,v6704)<>'' then,'<tr><td class="td1f">',ref(['phl_usr_fmt']1,v704),'&nbsp;<a href=JavaScript:tab_man(704);>[704]</a></td><td class="td2"><input type="text" class="textbox" name="704" value="',if a(v704) then s(date).4,'1231' else v704 fi,'"></td></tr>',fi
+else
+,if ref(['phl_usr_fmt']1,v6704)<>'' then,'<tr><td class="td1f">',ref(['phl_usr_fmt']1,v704),'&nbsp;<a href=JavaScript:tab_man(704);>[704]</a></td><td class="td2">'v704'</td></tr>',fi
+,,,,'<input type="hidden" name="704" value="'v704'">'
+fi
+
+,if ref(['phl_usr_fmt']1,v6706)<>'' then '<tr><td class="td1e">',ref(['phl_usr_fmt']1,v706),'&nbsp;<a href=JavaScript:tab_man(706);>[706]</a></td><td class="td2"><input type="text" class="textbox" name="706" value="',v706,'"></td></tr>',fi
+
+,if ref(['phl_usr_fmt']1,v6707)<>'' then
+
+  '<tr>
+    <td class="td1e">',ref(['phl_usr_fmt']1,v707),'&nbsp;<a href=JavaScript:tab_man(707);>[707]</a></td>
+    <td class="td3">
+    <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="707" name="707" value="'v707'" onkeyup="buscaCidade();" autocomplete="off" />
+    <div id="busca_cidade"></div>
+    </td>
+  </tr>'
+  
+,fi
+
+,if ref(['phl_usr_fmt']1,v6709)<>'' then '<tr><td class="td1e">',ref(['phl_usr_fmt']1,v709),'&nbsp;<a href=JavaScript:tab_man(709);>[709]</a></td><td class="td2"><input type="text" class="textbox" name="709" value="',v709,'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6708)<>'' then '<tr><td class="td1e">',ref(['phl_usr_fmt']1,v708),'&nbsp;<a href=JavaScript:tab_man(708);>[708]</a></td><td class="td2"><input type="text" class="textbox" name="708" value="'v708'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6710)<>'' then '<tr><td class="td1e">',ref(['phl_usr_fmt']1,v710),'&nbsp;<a href=JavaScript:tab_man(710);>[710]</a></td><td class="td2"><textarea rows="2" name="710">',(v710/),'</textarea></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6714)<>'' then '<tr><td class="td1e">',ref(['phl_usr_fmt']1,v714),'&nbsp;<a href=JavaScript:tab_man(714);>[714]</a></td><td class="td2"><input type="email" class="textbox" name="714" pattern="[^ @]*@[^ @]*" value="',v714,'"</td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6711)<>'' then 
+  '<tr><td class="td1f">Período&nbsp;<a href=JavaScript:tab_man(711);>[711]</a></td>
+       <td class="td2">
+         <select size="1" name="711">
+           <option selected value="'v711'">'v711'</option>
+           <option value="Matutino">Matutino</option>
+           <option value="Vespertino">Vespertino</option>
+           <option value="Noturno">Noturno</option>
+           <option value="Diurno">Diurno</option>
+           <option value="Integral">Integral</option>
+           <option value="Outro">Outro</option>
+         </select></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6712)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v712),'&nbsp;<a href=JavaScript:tab_man(712);>[712]</a></td><td class="td2"><input type="text" class="textbox" name="712" value="',v712,'"></td></tr>',fi
+
+,if ref(['phl_usr_fmt']1,v6713)<>'' then
+
+'<tr>
+  <td class="td1o">Curso&nbsp;<a href=JavaScript:tab_man(713);>[713]</a></td>
+  <td class="td2">
+    <select name="713">
+      <option selected value="'v713'"></option>
+      <option selected value="'v713'">',v713,'</option>',
+      (,if v713[1]<>v3092 then '<option value="'v3092'">',v3092,'</option>' fi,),
+    '</select>
+  </td>
+</tr>'/
+
+,fi,/
+
+,if ref(['phl_usr_fmt']1,v6715)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v715),'&nbsp;[715]</td><td class="td2"><input type="text" class="textbox" name="715" value="'v715'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6716)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v716),'&nbsp;<a href=JavaScript:tab_man(716);>[716]</a></td><td class="td2"><input type="text" class="textbox" name="716" value="'v716'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6717)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v717),'&nbsp;<a href=JavaScript:tab_man(717);>[717]</a></td><td class="td2"><input type="text" class="textbox" name="717" value="'v717'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6718)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v718),'&nbsp;[718]</td><td class="td2"><input type="text" class="textbox" name="718" value="'v718'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6719)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v719),'&nbsp;<a href=JavaScript:tab_man(719);>[719]</a></td><td class="td2"><input type="text" class="textbox" name="719" value="',v719,'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6720)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v720),'&nbsp;<a href=JavaScript:tab_man(720);>[720]</a></td><td class="td2"><input type="text" class="textbox" name="720" value="',v720,'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6721)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v721),'&nbsp;[721]</td><td class="td2"><input type="text" class="textbox" name="721" value="'v721'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6722)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v722),'&nbsp;[722]</td><td class="td2"><input type="text" class="textbox" name="722" value="'v722'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6724)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v724),'&nbsp;<a href=JavaScript:tab_man(724);>[724]</a></td><td class="td2"><textarea rows="2" name="724">',(v724/),'</textarea></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6725)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v725),'&nbsp;<a href=JavaScript:tab_man(725);>[725]</a></td><td class="td2"><textarea rows="2" name="725">',(v725/),'</textarea></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6726)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v726),'&nbsp;<a href=JavaScript:tab_man(726);>[726]</a></td><td class="td2"><input type="text" class="textbox" name="726" value="',v726,'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6727)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v727),'&nbsp;<a href=JavaScript:tab_man(727);>[727]</a></td><td class="td2"><input type="text" class="textbox" name="727" value="',v727,'"></td></tr>',fi
+
+,if ref(['phl_usr_fmt']1,v6728)<>'' then
+  '<tr>
+    <td class="td1f">',ref(['phl_usr_fmt']1,v728),'&nbsp;<a href=JavaScript:tab_man(728);>[728]</a></td>
+    <td class="td2">
+    <input type="text" class="textbox" name="CPF" value="'v728'" onblur="return validacpf();"></td>
+  </tr>'
+,fi

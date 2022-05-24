@@ -1,0 +1,111 @@
+<!-- Relatorios estatisticos da circulacao (parametros) -->
+
+     <IsisScript name="054.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inicia secao do script -->
+     <section>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="950">opc</field>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+<!--Carrega permissões de entrada e edição do usuário -->
+    <field action="add" tag="2000"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>
+     
+     <flow action="jump">
+       <pft>,if s(v3000^3)='funcionario' then 'login_valido' else '251' fi,</pft>
+     </flow>
+     <flow action="exit">0</flow>
+     
+     <label>login_valido</label>
+     
+     <flow action="jump">
+       <pft>,if val(v7003*9.2)>7 then
+              ,if getenv('REMOTE_ADDR')='127.0.0.1' or val(v7003*16.1)=0 then 'no_horario'
+                else 'no_horario'
+              ,fi,
+            ,fi,
+       </pft>
+     </flow>
+
+     <label>no_horario</label>
+     <flow action="jump"><pft>,v950,</pft></flow>
+     <flow action="exit">1</flow>
+     
+     <label>opcoes</label>
+
+     <do task="keyrange">
+        <parm name="db"><pft>,v3000^1'_log',</pft></parm>
+        <parm name="from">ANO=</parm>
+        <parm name="to">ANO=Z</parm>
+        <field action="define" tag="1">Isis_Key</field>
+        <loop>
+          <field action="export" tag="1010">1010</field>
+          <field action="add" tag="1010"><pft>,v1*4</pft></field>
+          <field action="replace" split="occ" tag="1010"><pft>,(v1010/),</pft></field>
+          <field action="export" tag="1010">1010</field>
+        </loop>
+          <field action="export" tag="1010">1010</field>
+        </do>
+        <file action="close" type="database"><pft>,v3000^1'_log',</pft></file>
+        
+     <do task="keyrange">
+        <parm name="db"><pft>,v3000^1'_log',</pft></parm>
+        <parm name="from">MES=</parm>
+        <parm name="to">MES=Z</parm>
+        <field action="define" tag="1">Isis_Key</field>
+        <loop>
+          <field action="export" tag="1020">1020</field>
+          <field action="add" tag="1020"><pft>,v1*4</pft></field>
+          <field action="replace" split="occ" tag="1020"><pft>,(v1020/),</pft></field>
+          <field action="export" tag="1020">1020</field>
+        </loop>
+          <field action="export" tag="1020">1020</field>
+        </do>
+        <file action="close" type="database"><pft>,v3000^1'_log',</pft></file>
+        
+     <do task="keyrange">
+        <parm name="db"><pft>,v3000^1'_log',</pft></parm>
+        <parm name="from">DIA=</parm>
+        <parm name="to">DIA=Z</parm>
+        <field action="define" tag="1">Isis_Key</field>
+        <loop>
+          <field action="export" tag="1030">1030</field>
+          <field action="add" tag="1030"><pft>,v1*4</pft></field>
+          <field action="replace" split="occ" tag="1030"><pft>,(v1030/),</pft></field>
+          <field action="export" tag="1030">1030</field>
+        </loop>
+          <field action="export" tag="1030">1030</field>
+        </do>
+        <file action="close" type="database"><pft>,v3000^1'_log',</pft></file>
+        <display><htmlpft><pft>,ref(['tab_fmx']217,'[pft]',(v4/),'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- Mensagens de erro -->
+
+     <label>251</label>
+     <field action="add" tag="250">251</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),'</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+     <label>1115</label>
+     <field action="add" tag="250">1115</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),'</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+</section>
+</IsisScript>

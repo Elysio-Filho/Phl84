@@ -1,0 +1,48 @@
+<!-- Compõe menu da rotina de auto emprestimo
+     04/10/2008 10:38:28 -->
+
+     <IsisScript name="064.xis">
+     
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>     
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Chama funcao para a carga das variaveis de configuracao -->
+     <call name="001">now</call>
+     
+     <flow action="jump">
+       <pft>
+         ,if v3000^l:ref(['phl_set']l(['phl_set']'ACV='v3000^1),v615) then 'ip_ok' else 'ip_invalido' fi
+       </pft>
+     </flow>
+     <file action="close" type="database">phl_set</file>
+     <flow action="exit">1</flow>
+     
+<!-- Verifica estado de manutencao  -->
+     <label>ip_ok</label>
+     <call name="manutencao">now</call>
+       
+     <!--Apresenta menu da rotina de auto-emprestimo -->
+     <display><htmlpft><pft>,ref(['tab_fmx']234,v4),</pft></htmlpft></display>
+     <flow action="jump">sai</flow>
+     
+     <label>ip_invalido</label>
+     <field action="replace" tag="250">1148</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Finaliza a secao -->
+     <label>sai</label>
+     </section>
+
+<!-- Finaliza o script -->
+     </IsisScript>
+

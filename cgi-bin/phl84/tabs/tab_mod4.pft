@@ -1,0 +1,76 @@
+'<html>'/
+'<head>'/
+'<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+'<STYLE type="text/css">'/
+'DIV.pontilhado {'/
+'width: 540px;'/
+'border-style: dashed;'/
+'border-width: thin;'/
+'border-color: gray;'/
+'}'/
+'.C39 {color: #000000; font-family: Code 3of9; font-size: 'ref(['phl_cnf']1,v209)';}'
+'.F39 {color: #000000; font-family: Free 3 of 9; font-size: 'ref(['phl_cnf']1,v209)';}'
+'.F39X {color: #000000; font-family: Free 3 of 9 Extended; font-size: 'ref(['phl_cnf']1,v209)';}'
+'.IDC39 {color: #000000; font-family: IDAutomation.com Code39; font-size: 'ref(['phl_cnf']1,v209)';}'
+'</STYLE>'/
+'</head>'/
+'<body style="background-color:#FFFFFF;">'/
+'<font face=arial size=1><b>&nbsp;&nbsp;',v730,'</b></font>'/
+'<br>'/
+'<DIV CLASS="pontilhado">'/
+'<table border="0" width="538" height="135">'/
+'<tr>'/
+'<td>'/
+'<table cellspacing="2" cellpadding="2" border="0" width="269" height="135">'/
+'<tr>'/
+'<td width="100" height="105">',if p(v719) then,'<img border="0" src="'v719'" width="80" height="105">',fi,'</td>'/
+'<td width="169" height="105">'/
+'<center><img border="0" src="'v600^d'" width="80"><br><font face="arial,helvetica" size="-2" color="#000000">'v600^n'</center></font>'/
+'</td>'/
+'</tr>'/
+'<tr>'/
+'<td colspan="2" height="25" valign="top">'/
+'<font face="arial,helvetica" size="1" color="#000000"><b>&nbsp;&nbsp;'/
+,v705,
+'</b></font><br>'/
+'<font face="verdana" size="-2" color="#000000">'/
+'<font face="verdana" size="-2" color="#000000">',v713,' - 'v720,'<br>'/
+,if a(v713) and p(v725) then ,'&nbsp;&nbsp;&nbsp;&nbsp;',v725'<br>',fi,
+,if p(v727) then,'&nbsp;&nbsp;&nbsp;&nbsp;Ident. Funcional: ',v727,'<br>',fi
+,if p(v728) then,'&nbsp;&nbsp;&nbsp;&nbsp;Doc. Ident.: ',v728,'<br>',fi
+'</font>'/
+,if ref(['phl_cnf']1,v211.3)='PHP' then
+'<img src="http://www.elysio.com.br/grafico/image.php?&code='v701'&style=196&type='ref(['phl_cnf']1,v211*4)'&width=120&height=60&xres=1&font=2">'
+ else
+'<font class="'ref(['phl_cnf']1,v211*4)'">*'v701'*</font>'
+,fi,
+'</td>'/
+'</tr>'/
+'</table>'/
+'</td>'/
+'<td>'/
+'<table border="0" width="269" height="135">'/
+'<tr>'/
+'<td>'/
+'<font face="arial,helvetica" size="2" color="#000000">'/
+'<b><center>Termo de Compromisso</center></b></font><br>'/
+'<font face="arial,helvetica" size="-2" color="#000000">Estou ciente dos direitos e deveres para com<br>a ',v600^n,' constantes no Regulamento,<br>e firmo o meu compromisso em respeitá-lo<br>a partir desta data.<br><br>Assinatura:_________________________</font>'/
+'<font face="arial,helvetica" size="-2" color="#808080"><center><i>',v600^a,'<br>Cep: ',v600^c,' - Tel: ',v600^f,'</i></center></font>'/
+'<font face="arial,helvetica" size="2" color="#000000">'/
+'<div align="right"><font size="2" color="#000000">Cart. nº : <b>'v701'&nbsp;&nbsp;&nbsp;</b></font></div>'/
+'<div align="right"><font size="2" color="#000000">',if p(v704) then 'Validade:&nbsp;<b>',v704*6.2,'/',v704*4.2,'/',v704*0.4,fi,'</b>&nbsp;&nbsp;&nbsp;</b></font></div>'/
+'</font></td>'/
+'</tr>'/
+'<tr>'/
+'<td>'/
+'<font face="arial,helvetica" size="-2" color="#808080"><center><i>PHL&copy;Elysio</i></center></font>'/
+'</td>'/
+'</tr>'/
+'</table>'/
+'</td>'/
+'</tr>'/
+'</table>'/
+'</DIV>'/
+'<div align="left">&nbsp;&nbsp;&nbsp;&nbsp;<font face="verdana" size="1"><a href=# onClick="window.print()">Imprimir carteirinha(s)</a></font></div>'/
+'</body>'/
+'</html>'/

@@ -1,0 +1,24 @@
+<!-- Script responsável pela contagem de registros do catálogo 
+     29/03/2007 - Revisado -->
+     
+     <IsisScript name="phlnet_counter.xis">
+
+<!-- Define o tipo de conte\xfado dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variaveis do cliente -->
+     <field action="cgi" tag="7002">cipar</field>
+     <parm name="cipar"><pft>,cat(v7002),</pft></parm>
+
+     <field action=statusdb tag=1091>phl_acv</field>
+     
+     <display><pft>v1091^n</pft></display>
+
+<!-- Finaliza a secao -->
+     </section>
+
+<!-- Finaliza o script -->
+     </IsisScript>

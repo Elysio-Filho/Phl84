@@ -1,0 +1,90 @@
+<!-- Rotina de alteração de senha pelo usuário
+     25/10/2010 18:26:20 -->
+
+     <IsisScript name="048.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="957">mfn</field>
+     <field action="cgi" tag="996">new_pwd</field>
+     <field action="cgi" tag="997">conf_new_pwd</field>
+
+<!--Verifica se usuário está habilitado para efetuar a alteração -->
+     <flow action="jump">
+       <pft>,if v3000^3='usuario' then v950 else 'login_invalido' fi,</pft>
+     </flow>
+     <flow action="exit">1</flow>
+
+     <label>login_invalido</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']55,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!--Abre formulário de alteração de senha -->
+     <label>form_new_pwd</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']24,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>verifica_senha</label>
+     <flow action="jump">
+     <pft>,if p(v996) and v996=v997 then 'SENHA_OK' else '327' fi,</pft></flow>
+
+     <label>327</label>
+     <field action="add" tag="250">327</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!--Atualiza senha no registro do usuário -->
+    <label>SENHA_OK</label>
+      
+      <file action="close" type="database">phl_usr</file>
+
+      <do task="update">
+      <parm name="db">phl_usr</parm>
+      <parm name="mfn"><pft>,v957,</pft></parm>
+      <parm name="uctab"><pft>cat('uctab')</pft></parm>
+      <parm name="actab"><pft>cat('actab')</pft></parm>
+      <parm name="fst"><pft>,cat('phl_usr.fst'),</pft></parm>
+      <parm name="expire">60</parm>
+      <parm name="lockid"><pft>,v3000^2,</pft></parm>
+      <field action="define" tag="1105">Isis_Lock</field>
+      <field action="define" tag="1003">Isis_Status</field>
+
+      <update>
+        <field action="import" tag="list">7003</field>
+        <field action="export" tag="list">701</field>
+        <field action="delete" tag="list">702</field>
+        <field action="cgi" tag="702">new_pwd</field>
+        <field action="replace" tag="999"><pft>,v999[1],</pft></field>
+        <field action="add" tag="999"><pft>'^d'v7003.8,'^h'v7003*9.4,'^b'v701,</pft></field>
+        <field action="delete" tag="list">7003</field>
+        <write>Unlock</write>
+          <field action="import" tag="list">701,3000,7003</field>
+          <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zMOD|048.xis'/,</pft></field>
+          <call name="log">now</call>
+          <proc><pft>,if val(v1003)=0 then 'a250~326~' fi,</pft></proc>
+          <display>
+           <htmlpft>
+             <pft>,if val(v1003)=0 then ref(['tab_fmx']10,v4) else ref(['tab_fmx']133,v4) fi</pft>
+           </htmlpft>
+          </display>
+      </update>
+      </do>
+   <file action="close" type="database">phl_usr</file>
+   <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

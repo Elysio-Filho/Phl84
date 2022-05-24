@@ -1,0 +1,600 @@
+!ID 000001
+!v301!Administração
+!v998!1
+!v999!^d20080718^bElysio
+!ID 000002
+!v301!Administração Hoteleira
+!v998!2
+!v999!^d20080718^bElysio
+!ID 000003
+!v301!Agronomia
+!v998!3
+!v999!^d20080718^bElysio
+!ID 000004
+!v301!Análise de Sistemas
+!v998!4
+!v999!^d20080718^bElysio
+!ID 000005
+!v301!Antropologia
+!v998!5
+!v999!^d20080718^bElysio
+!ID 000006
+!v301!Arqueologia
+!v998!6
+!v999!^d20080718^bElysio
+!ID 000007
+!v301!Arquitetura
+!v998!7
+!v999!^d20080718^bElysio
+!ID 000008
+!v301!Arquivologia
+!v998!8
+!v999!^d20080718^bElysio
+!ID 000009
+!v301!Artes
+!v998!9
+!v999!^d20080718^bElysio
+!ID 000010
+!v301!Artes Cênicas
+!v998!10
+!v999!^d20080718^bElysio
+!ID 000011
+!v301!Artes Plásticas
+!v998!11
+!v999!^d20080718^bElysio
+!ID 000012
+!v301!Artes Visuais
+!v998!12
+!v999!^d20080718^bElysio
+!ID 000013
+!v301!Audiovisual
+!v998!13
+!v999!^d20080718^bElysio
+!ID 000014
+!v301!Biblioteconomia
+!v998!14
+!v999!^d20080718^bElysio
+!ID 000015
+!v301!Biologia
+!v998!15
+!v999!^d20080718^bElysio
+!ID 000016
+!v301!Biomedicina
+!v998!16
+!v999!^d20080718^bElysio
+!ID 000017
+!v301!Ciência da Computação
+!v998!17
+!v999!^d20080718^bElysio
+!ID 000018
+!v301!Ciência Política
+!v998!18
+!v999!^d20080718^bElysio
+!ID 000019
+!v301!Ciências Atuariais
+!v998!19
+!v999!^d20080718^bElysio
+!ID 000020
+!v301!Ciências Biológicas
+!v998!20
+!v999!^d20080718^bElysio
+!ID 000021
+!v301!Ciências Contábeis
+!v998!21
+!v999!^d20080718^bElysio
+!ID 000022
+!v301!Ciências da Terra
+!v998!22
+!v999!^d20080718^bElysio
+!ID 000023
+!v301!Ciências Econômicas
+!v998!23
+!v999!^d20080718^bElysio
+!ID 000024
+!v301!Ciências Sociais
+!v998!24
+!v999!^d20080718^bElysio
+!ID 000025
+!v301!Cinema
+!v998!25
+!v999!^d20080718^bElysio
+!ID 000026
+!v301!Computação
+!v998!26
+!v999!^d20080718^bElysio
+!ID 000027
+!v301!Computação Científica
+!v998!27
+!v999!^d20080718^bElysio
+!ID 000028
+!v301!Comunicação
+!v998!28
+!v999!^d20080718^bElysio
+!ID 000029
+!v301!Comunicação Social
+!v998!29
+!v999!^d20080718^bElysio
+!ID 000030
+!v301!Contabilidade
+!v998!30
+!v999!^d20080718^bElysio
+!ID 000031
+!v301!Dança
+!v998!31
+!v999!^d20080718^bElysio
+!ID 000032
+!v301!Design
+!v998!32
+!v999!^d20080718^bElysio
+!ID 000033
+!v301!Diplomacia
+!v998!33
+!v999!^d20080718^bElysio
+!ID 000034
+!v301!Direito
+!v998!34
+!v999!^d20080718^bElysio
+!ID 000035
+!v301!Economia
+!v998!35
+!v999!^d20080718^bElysio
+!ID 000036
+!v301!Editoração
+!v998!36
+!v999!^d20080718^bElysio
+!ID 000037
+!v301!Educação Física
+!v998!37
+!v999!^d20080718^bElysio
+!ID 000038
+!v301!Educação Infantil
+!v998!38
+!v999!^d20080718^bElysio
+!ID 000039
+!v301!Enfermagem
+!v998!39
+!v999!^d20080718^bElysio
+!ID 000040
+!v301!Engenharia
+!v998!40
+!v999!^d20080718^bElysio
+!ID 000041
+!v301!Engenharia Aeroespacial
+!v998!41
+!v999!^d20080718^bElysio
+!ID 000042
+!v301!Engenharia Aeronáutica
+!v998!42
+!v999!^d20080718^bElysio
+!ID 000043
+!v301!Engenharia Agrícola
+!v998!43
+!v999!^d20080718^bElysio
+!ID 000044
+!v301!Engenharia Agronômica
+!v998!44
+!v999!^d20080718^bElysio
+!ID 000045
+!v301!Engenharia Biofísica
+!v998!45
+!v999!^d20080718^bElysio
+!ID 000046
+!v301!Engenharia Biológica
+!v998!46
+!v999!^d20080718^bElysio
+!ID 000047
+!v301!Engenharia Biomédica
+!v998!47
+!v999!^d20080718^bElysio
+!ID 000048
+!v301!Engenharia Cartográfica
+!v998!48
+!v999!^d20080718^bElysio
+!ID 000049
+!v301!Engenharia Civil
+!v998!49
+!v999!^d20080718^bElysio
+!ID 000050
+!v301!Engenharia da Computação
+!v998!50
+!v999!^d20080718^bElysio
+!ID 000051
+!v301!Engenharia da Pesca
+!v998!51
+!v999!^d20080718^bElysio
+!ID 000052
+!v301!Engenharia da Qualidade
+!v998!52
+!v999!^d20080718^bElysio
+!ID 000053
+!v301!Engenharia de Agrimensura
+!v998!53
+!v999!^d20080718^bElysio
+!ID 000054
+!v301!Engenharia de Alimentos
+!v998!54
+!v999!^d20080718^bElysio
+!ID 000055
+!v301!Engenharia de Aqüicultura
+!v998!55
+!v999!^d20080718^bElysio
+!ID 000056
+!v301!Engenharia de Áudio
+!v998!56
+!v999!^d20080718^bElysio
+!ID 000057
+!v301!Engenharia de Controle e Automação
+!v998!57
+!v999!^d20080718^bElysio
+!ID 000058
+!v301!Engenharia de Energia
+!v998!58
+!v999!^d20080718^bElysio
+!ID 000059
+!v301!Engenharia de Gestão Industrial
+!v998!59
+!v999!^d20080718^bElysio
+!ID 000060
+!v301!Engenharia de Instrumentação
+!v998!60
+!v999!^d20080718^bElysio
+!ID 000061
+!v301!Engenharia de Manutenção
+!v998!61
+!v999!^d20080718^bElysio
+!ID 000062
+!v301!Engenharia de Materiais
+!v998!62
+!v999!^d20080718^bElysio
+!ID 000063
+!v301!Engenharia de Minas
+!v998!63
+!v999!^d20080718^bElysio
+!ID 000064
+!v301!Engenharia de Pesca
+!v998!64
+!v999!^d20080718^bElysio
+!ID 000065
+!v301!Engenharia de Produção
+!v998!65
+!v999!^d20080718^bElysio
+!ID 000066
+!v301!Engenharia de Serviços
+!v998!66
+!v999!^d20080718^bElysio
+!ID 000067
+!v301!Engenharia de Sistemas
+!v998!67
+!v999!^d20080718^bElysio
+!ID 000068
+!v301!Engenharia de Tecidos
+!v998!68
+!v999!^d20080718^bElysio
+!ID 000069
+!v301!Engenharia de Telecomunicações
+!v998!69
+!v999!^d20080718^bElysio
+!ID 000070
+!v301!Engenharia de Transportes
+!v998!70
+!v999!^d20080718^bElysio
+!ID 000071
+!v301!Engenharia do Ambiente
+!v998!71
+!v999!^d20080718^bElysio
+!ID 000072
+!v301!Engenharia do Petróleo
+!v998!72
+!v999!^d20080718^bElysio
+!ID 000073
+!v301!Engenharia Econômica
+!v998!73
+!v999!^d20080718^bElysio
+!ID 000074
+!v301!Engenharia Elétrica
+!v998!74
+!v999!^d20080718^bElysio
+!ID 000075
+!v301!Engenharia Eletrônica
+!v998!75
+!v999!^d20080718^bElysio
+!ID 000076
+!v301!Engenharia Estrutural
+!v998!76
+!v999!^d20080718^bElysio
+!ID 000077
+!v301!Engenharia Física
+!v998!77
+!v999!^d20080718^bElysio
+!ID 000078
+!v301!Engenharia Florestal
+!v998!78
+!v999!^d20080718^bElysio
+!ID 000079
+!v301!Engenharia Geofísica
+!v998!79
+!v999!^d20080718^bElysio
+!ID 000080
+!v301!Engenharia Geográfica
+!v998!80
+!v999!^d20080718^bElysio
+!ID 000081
+!v301!Engenharia Geológica
+!v998!81
+!v999!^d20080718^bElysio
+!ID 000082
+!v301!Engenharia Hidráulica
+!v998!82
+!v999!^d20080718^bElysio
+!ID 000083
+!v301!Engenharia Humana
+!v998!83
+!v999!^d20080718^bElysio
+!ID 000084
+!v301!Engenharia Madeireira
+!v998!84
+!v999!^d20080718^bElysio
+!ID 000085
+!v301!Engenharia Mecânica
+!v998!85
+!v999!^d20080718^bElysio
+!ID 000086
+!v301!Engenharia Mecatrônica
+!v998!86
+!v999!^d20080718^bElysio
+!ID 000087
+!v301!Engenharia Metalúrgica
+!v998!87
+!v999!^d20080718^bElysio
+!ID 000088
+!v301!Engenharia Militar
+!v998!88
+!v999!^d20080718^bElysio
+!ID 000089
+!v301!Engenharia Multimídia
+!v998!89
+!v999!^d20080718^bElysio
+!ID 000090
+!v301!Engenharia Naval
+!v998!90
+!v999!^d20080718^bElysio
+!ID 000091
+!v301!Engenharia Nuclear
+!v998!91
+!v999!^d20080718^bElysio
+!ID 000092
+!v301!Engenharia Óptica
+!v998!92
+!v999!^d20080718^bElysio
+!ID 000093
+!v301!Engenharia Química
+!v998!93
+!v999!^d20080718^bElysio
+!ID 000094
+!v301!Engenharia Sanitária
+!v998!94
+!v999!^d20080718^bElysio
+!ID 000095
+!v301!Engenharia Têxtil
+!v998!95
+!v999!^d20080718^bElysio
+!ID 000096
+!v301!Ensino Fundamental
+!v998!96
+!v999!^d20080718^bElysio
+!ID 000097
+!v301!Ensino Médio
+!v998!97
+!v999!^d20080718^bElysio
+!ID 000098
+!v301!Ensino Profissionalizante
+!v998!98
+!v999!^d20080718^bElysio
+!ID 000099
+!v301!Estatística
+!v998!99
+!v999!^d20080718^bElysio
+!ID 000100
+!v301!Farmácia
+!v998!100
+!v999!^d20080718^bElysio
+!ID 000101
+!v301!Filosofia
+!v998!101
+!v999!^d20080718^bElysio
+!ID 000102
+!v301!Física
+!v998!102
+!v999!^d20080718^bElysio
+!ID 000103
+!v301!Fisioterapia
+!v998!103
+!v999!^d20080718^bElysio
+!ID 000104
+!v301!Fonoaudiologia
+!v998!104
+!v999!^d20080718^bElysio
+!ID 000105
+!v301!Geofísica
+!v998!105
+!v999!^d20080718^bElysio
+!ID 000106
+!v301!Geografia
+!v998!106
+!v999!^d20080718^bElysio
+!ID 000107
+!v301!Geologia
+!v998!107
+!v999!^d20080718^bElysio
+!ID 000108
+!v301!Gestão Ambiental
+!v998!108
+!v999!^d20080718^bElysio
+!ID 000109
+!v301!História
+!v998!109
+!v999!^d20080718^bElysio
+!ID 000110
+!v301!Informática
+!v998!110
+!v999!^d20080718^bElysio
+!ID 000111
+!v301!Jornalismo
+!v998!111
+!v999!^d20080718^bElysio
+!ID 000112
+!v301!Letras
+!v998!112
+!v999!^d20080718^bElysio
+!ID 000113
+!v301!Licenciatura em Computação
+!v998!113
+!v999!^d20080718^bElysio
+!ID 000114
+!v301!Linguagem
+!v998!114
+!v999!^d20080718^bElysio
+!ID 000115
+!v301!Lingüística
+!v998!115
+!v999!^d20080718^bElysio
+!ID 000116
+!v301!Marketing
+!v998!116
+!v999!^d20080718^bElysio
+!ID 000117
+!v301!Matemática
+!v998!117
+!v999!^d20080718^bElysio
+!ID 000118
+!v301!Matemática Computacional
+!v998!118
+!v999!^d20080718^bElysio
+!ID 000119
+!v301!Medicina
+!v998!119
+!v999!^d20080718^bElysio
+!ID 000120
+!v301!Medicina Veterinária
+!v998!120
+!v999!^d20080718^bElysio
+!ID 000121
+!v301!Meteorologia
+!v998!121
+!v999!^d20080718^bElysio
+!ID 000122
+!v301!Museologia
+!v998!122
+!v999!^d20080718^bElysio
+!ID 000123
+!v301!Música
+!v998!123
+!v999!^d20080718^bElysio
+!ID 000124
+!v301!Nutrição
+!v998!124
+!v999!^d20080718^bElysio
+!ID 000125
+!v301!Oceanografia
+!v998!125
+!v999!^d20080718^bElysio
+!ID 000126
+!v301!Odontologia
+!v998!126
+!v999!^d20080718^bElysio
+!ID 000127
+!v301!Outros
+!v998!127
+!v999!^d20080718^bElysio
+!ID 000128
+!v301!Pedagogia
+!v998!128
+!v999!^d20080718^bElysio
+!ID 000129
+!v301!Processamento de Dados
+!v998!129
+!v999!^d20080718^bElysio
+!ID 000130
+!v301!Produção Editorial
+!v998!130
+!v999!^d20080718^bElysio
+!ID 000131
+!v301!Psicologia
+!v998!131
+!v999!^d20080718^bElysio
+!ID 000132
+!v301!Psicopedagogia
+!v998!132
+!v999!^d20080718^bElysio
+!ID 000133
+!v301!Publicidade e Propaganda
+!v998!133
+!v999!^d20080718^bElysio
+!ID 000134
+!v301!Química
+!v998!134
+!v999!^d20080718^bElysio
+!ID 000135
+!v301!Rádio e TV
+!v998!135
+!v999!^d20080718^bElysio
+!ID 000136
+!v301!Relações Internacionais
+!v998!136
+!v999!^d20080718^bElysio
+!ID 000137
+!v301!Relações Públicas
+!v998!137
+!v999!^d20080718^bElysio
+!ID 000138
+!v301!Saúde
+!v998!138
+!v999!^d20080718^bElysio
+!ID 000139
+!v301!Secretariado Executivo
+!v998!139
+!v999!^d20080718^bElysio
+!ID 000140
+!v301!Serviço Social
+!v998!140
+!v999!^d20080718^bElysio
+!ID 000141
+!v301!Sistemas de Informação
+!v998!141
+!v999!^d20080718^bElysio
+!ID 000142
+!v301!Sociologia
+!v998!142
+!v999!^d20080718^bElysio
+!ID 000143
+!v301!Teatro
+!v998!143
+!v999!^d20080718^bElysio
+!ID 000144
+!v301!Tecnologia em Telemática
+!v998!144
+!v999!^d20080718^bElysio
+!ID 000145
+!v301!Telecomunicações
+!v998!145
+!v999!^d20080718^bElysio
+!ID 000146
+!v301!Teologia
+!v998!146
+!v999!^d20080718^bElysio
+!ID 000147
+!v301!Terapia Ocupacional
+!v998!147
+!v999!^d20080718^bElysio
+!ID 000148
+!v301!Turismo
+!v998!148
+!v999!^d20080718^bElysio
+!ID 000149
+!v301!Urbanismo
+!v998!149
+!v999!^d20080718^bElysio
+!ID 000150
+!v301!Zootecnia
+!v998!150
+!v999!^d20080718^bElysio

@@ -1,0 +1,113 @@
+<!-- Gera lote de e-mails personalizados para envio
+     * 01/03/2012 09:00:43 Importante: O diretorio onde será criada a base de dados "phl_tmp" tem que ter permissões de gravação
+     * 16/04/2012 17:15:21 Alterado para New o parametro do mfn para o update.
+     -->
+
+     <IsisScript name="075.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="100">cod</field>
+
+     <file action="create" type="database">phl_tmp</file>
+     
+     <do task="update">
+       <parm name="db">phl_tmp</parm>
+       <parm name="mfn">New</parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+       <update>
+         <field action="delete" tag="list">101/103</field>
+         <field action="cgi" tag="101">copia</field>
+         <field action="cgi" tag="102">assunto</field>
+         <field action="cgi" tag="103">texto</field>
+         <field action="replace" tag="103" split="occ"><pft>,(v103/),</pft></field>
+         <write>Unlock</write>
+       </update>
+     </do>
+     <file action="close" type="database">phl_tmp</file>
+
+     <label>gera_lista</label>
+
+       <do task="mfnrange">
+         <parm name="db">phl_set</parm>
+         <parm name="from"><pft>,f(val(v3000^1),0,0),</pft></parm>
+         <parm name="count">1</parm>
+         <parm name="gizmo">tab_ent</parm>
+         <loop>
+           <field action="replace" tag="602"><pft>,v602,</pft></field>
+           <field action="replace" tag="648"><pft>,v648,</pft></field>
+
+           <field action="export" tag="list">602,607,608,645/647,651</field>
+         </loop>
+         <field action="export" tag="list">602,607,608,645/647,651</field>
+       </do>
+
+<!-- Garante fechamento da base de dados de usuarios antes da leitura -->
+     <file action="close" type="database">phl_usr</file>
+
+     <do task="search">
+       <parm name="db">phl_usr</parm>
+       <parm name="expression"><pft>,'USR=ATIVO*COD='v100'*ACV='v3000^1,</pft></parm>
+       <parm name="gizmo">tab_ent</parm>
+
+       <file action="create" type="output"><pft>,'usuario-'s(date).8,'.xml',</pft></file>
+       <display><htmlpft><pft>,ref(['tab_fmx']250,(v4/)),</pft></htmlpft></display>
+
+       <loop>
+       <field action="import" tag="list">602,607,608,3000,4001</field>
+       
+        <do task="mfnrange">
+          <parm name="db">phl_tmp</parm>
+          <parm name="from">1</parm>
+          <parm name="count">1</parm>
+          <parm name="gizmo">tab_ent</parm>
+          <loop>
+           <field action="import" tag="list">602,607,608,705,714,3000,4001</field>
+           <field action="replace" tag="101"><pft>,v101,</pft></field>
+           <field action="replace" tag="102"><pft>,v102,</pft></field>
+           <field action="replace" tag="103" split="occ"><pft>,(v103/),</pft></field>
+
+           <display><htmlpft><pft>,ref(['tab_fmx']255,(v4/)),</pft></htmlpft></display>
+
+         </loop>
+         <field action="export" tag="list">602,607,608,645/647</field>
+       </do>
+
+       </loop>
+
+       <display><pft>,c1,'</lote>'/,</pft></display>
+       <file action="close" type="output"><pft>,'usuario-'s(date).8,'.xml',</pft></file>
+
+     </do>
+
+<!-- Apresenta lista de e-mails que serao enviados -->
+     <display>
+       <pft>
+        '<center>'/
+        '<b><a href="/phl84/php/mail_lote/mail_lote.php?file=usuario-'s(date).8'.xml">Enviar lote</a></b>'/
+        '</center>'
+       </pft>
+     </display>
+     <flow action="exit">1</flow>
+     
+     <label>mails_ja_enviados</label>
+     <field action="add" tag="250">1160</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,(v4/)),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

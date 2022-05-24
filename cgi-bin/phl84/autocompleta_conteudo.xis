@@ -1,0 +1,44 @@
+<!-- Gera caixa de selecao de tipos de conteudo
+     16/04/2013 11:14:32 incluida condição de posting > 0 para apresentação da chave na caixa de seleção -->
+
+     <IsisScript name="autocompleta_conteudo.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+     <section>
+  
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis passadas pelo http  -->
+     <field action="cgi" tag="10">exp</field>
+
+<!-- Percorre indice de chaves de tipos de conteudo da base de dados do catalogo  -->
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,'CNT='v10,</pft></parm>
+       <parm name="to"><pft>,'CNT='v10'Z'</pft></parm>
+       <parm name="count">10</parm>
+       <parm name="posting">1</parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="3">Isis_Posting</field>
+
+       <loop>
+         <display>
+           <pft>,
+                 if val(v2)>0 then
+                    ref(['phl_acv']val(v3^m),v71/),
+                ,fi
+           </pft>
+         </display>
+       </loop>
+     </do>
+     <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

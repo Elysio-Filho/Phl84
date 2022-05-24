@@ -1,0 +1,31 @@
+<!-- Emprestimo multiplo
+     14/04/2007 - Revisado -->
+     
+     <IsisScript name="014.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="951">usr</field>
+     <field action="replace" tag="951"><pft>,mhu,v951,mpl,</pft></field>
+     <field action="cgi" tag="952">tbo</field>
+     <field action="replace" tag="952"><pft>,mhu,v952,mpl,</pft></field>
+     <field action="cgi" tag="759">mfn_log</field>
+     <field action="add" tag="1951"><pft>,ref(['phl_usr']l(['phl_usr'],'USR='v951,),v702,),</pft></field>
+     <file action="close" type="database">phl_usr</file> 
+
+<!-- Abre formulário para registro do novo tombo -->    
+     <display><htmlpft><pft>,ref(['tab_fmx']2,v4),</pft></htmlpft></display>
+
+</section>
+</IsisScript>

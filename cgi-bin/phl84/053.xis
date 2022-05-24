@@ -1,0 +1,585 @@
+<!-- Rotina de devolucao expressa
+     25/11/2010 15:58:50  
+     24/08/2015 09:23:20 corrigido bug no caso de devolucao com multas -->
+
+     <IsisScript name="053.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que serao gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+     
+<!-- Inclue funcao (002) que registra data de validade da reserva -->
+     <include>phl84/002.fnc</include>
+     
+<!-- Inclue funcao (100) que obtem dados do registro de usuário -->
+     <include>phl84/100.fnc</include>
+
+<!-- Inclue funcao (159) que carrega horários da biblioteca -->
+     <include>phl84/159.fnc</include>
+     
+<!-- Inclue funcao (200) que obtém MFN da data de hoje -->
+     <include>phl84/200.fnc</include>
+     
+<!-- Inclue funcao (400) que carrega prazos e quantidades -->
+     <include>phl84/400.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Chama funcao para a carga das variaveis de configuracao -->
+     <call name="001">now</call>
+
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call> 
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="759">mfn_log</field>
+     <field action="cgi" tag="952">tbo</field>
+     <field action="cgi" tag="950">opc</field>
+     <field action="replace" tag="952"><pft>,mhu,v952,mhl,</pft></field>
+
+     <flow action="jump"><pft>,v950,</pft></flow>
+     
+     <label>form</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']216,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+     <label>chk_tbo</label>
+
+
+<!-- Armazena em v2211 dados sobre permissoes do usuario -->
+     <field action="add" tag="2211"><pft>,ref(['phl_pwd']val(v3000^4),v656,),</pft></field>
+
+<!-- Verifica se usuário tem permissões para esta rotina -->
+     <flow action="jump"><pft>,if ref(['phl_pwd']val(v3000^4),v657^k)<>'1' then '271' fi,</pft></flow>
+
+<!-- (1) Verifica se login tem permissão para a devolução -->
+     <flow action="jump"><pft>,if s(v3000^3)<>'funcionario' then '55' fi,</pft></flow>
+        
+<!-- (3) Verifica se tombo foi fornecido -->
+     <flow action="jump"><pft>,if a(v952) then '242' fi,</pft></flow>
+             
+<!-- (4) Verifica se documento está realmente emprestado -->
+     <flow action="jump"><pft>,if npost([v3000^1'_emp'],'TBO='v952)=0 then '138' fi,</pft>
+     <file action="close" type="database"><pft>,v3000^1'_emp',</pft></file>
+     </flow>
+     
+     <flow action="jump">carrega_outras_variaveis</flow>
+
+     <label>52</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']216,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']52,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>55</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']216,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']55,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+             
+     <label>138</label>
+     <field action="replace" tag="250">138</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']216,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+             
+     <label>242</label>
+     <field action="replace" tag="250">242</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']216,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+             
+     <label>271</label>
+     <field action="add" tag="250">271</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']216,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+
+<!-- Carrega variáveis das bases de dados -->    
+     <label>carrega_outras_variaveis</label>
+
+<!-- Emprestimo 
+     900^a - Número de identificação
+     900^t - Tombo emprestado
+     900^u - Usuário
+     900^n - mfn da data de devolução
+     900^c - tipo de usuário
+     900^e - tipo de objeto
+     900^y - Overnight
+     900^z - mfn -->
+
+     <field action="add" tag="900">
+       <pft>,ref([v3000^1'_emp']l([v3000^1'_emp'],'TBO='v952),v900,'^z'mfn(1)),</pft>
+     </field>
+
+     <file action="close" type="database"><pft>,v3000^1'_emp',</pft></file>
+
+<!-- Carrega na variavel 9000 a quantidade de exemplares emprestados -->
+
+     <field action="add" tag="9000">
+       <pft>,f(npost([v3000^1'_emp'],'TIT='v900^a),0,0)</pft>
+     </field>
+
+     <file action="close" type="database"><pft>,v3000^1'_emp',</pft></file>
+
+<!-- Carrega dados de configuração da biblioteca
+     159^a horário de abertura do dia
+     159^b horário de encerramento do dia -->
+     
+     <call name="159">now</call>
+     
+<!-- Obtém dados do registro do usuário -->
+     <field action="replace" tag="951"><pft>,v900^u,</pft></field>
+     <call name="100">now</call>
+
+<!--tombo -->
+    <field action="add" tag="101">
+      <pft>
+        ref([v3000^1'_tbo']l([v3000^1'_tbo'],'TBO='v952,),'^a'v807,'^b'v837),
+      </pft>
+    </field>
+    <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+        
+<!-- Obtem código da biblioteca e tipo de documento -->
+
+     <field action="add" tag="500">
+     <pft>
+       ,if ref(['phl_cnf']1,v221)='1' then
+         ,ref(['phl_acv']l(['phl_acv'],'TIT='v900^a),'^a'v1,'^b'v26,),
+       ,else
+         ,ref(['phl_acv']l(['phl_acv'],'TIT='v900^a),'^a'v1,'^b'v5,),
+       ,fi
+     </pft>
+     </field>
+     <file action="close" type="database">phl_acv</file>
+         
+<!-- Obtém dados sobre prazos e quantidades -->
+     <call name="400">now</call>
+
+<!-- Biblioteca
+     150^a Nome da Biblioteca
+     150^b Nome do responsável
+     150^c E-mail da biblioteca
+     150^d Telefone
+     150^e Texto da mensagem de reserva
+     150^g Registro -->
+
+     <field action="add" tag="150">
+      <pft>,ref(['phl_set']l(['phl_set'],'ACV='v3000^1),'^a'v602,'^b'v609,'^c'v608[1],'^d'v607[1],'^e'v650,'^g'v638),</pft>
+     </field>
+     <file action="close" type="database">phl_set</file>
+        
+<!-- Obtém MFN da data de hoje -->
+     <field action="replace" tag="953"><pft>,v3000^1,</pft></field>
+     <call name="200">now</call>
+     
+<!-- Lista de espera -->
+     <field action="add" tag="930">
+       <pft>,ref(['phl_res']l(['phl_res'],'TIT='v900^a),v930),</pft>
+     </field>
+     <file action="close" type="database">phl_res</file>
+
+<!-- Carrega na variavel 9300 a quantidade de reservas para o titulo -->
+
+     <field action="add" tag="9300">
+       <pft>,f(npost(['phl_res'],'TIT='v900^a),0,0)</pft>
+     </field>
+
+     <file action="close" type="database">phl_res</file>
+
+<!-- Verifica no regulamento se será aplicado pena para atrazo na devolucão -->
+     <flow action="jump"><pft>,if v400^d='0' then 'ver_espera' fi,</pft></flow>
+               
+<!-- Verifica se é devolução overnight -->
+     <flow action="jump"><pft>,if v900^y<>'' then 'overnight' fi,</pft></flow>
+
+     <!-- Carrega a variável #4 com os dias corridos do atraso -->
+
+          <field action="add" tag="4">
+            <pft>,f(val(v1022)-val(v900^n),0,0),</pft>
+          </field>
+
+     <!-- Abre calendário a partir da data de devolucao e carrega status da data
+          324 = 1 (dia útil)
+          324 = 0 (feriado) -->
+     
+          <do task="mfnrange">
+            <parm name="db"><pft>,v3000^1'_cal'</pft></parm>
+            <parm name="from"><pft>,v900^n,</pft></parm>
+            <parm name="to"><pft>,if val(v1022)>val(v900^n) then f(val(v1022),0,0) else v900^n fi,</pft></parm>
+            <loop>
+              <list action="load" type="freq"><pft>,v324,</pft></list>
+            </loop>
+          </do>
+          <file action="close" type="database"><pft>,v3000^1'_cal',</pft></file>
+
+     <!-- Carrega na variável #3 a quantidade de dias úteis entre vencimento e devolucao -->
+          <do task="list">
+            <field action="define" tag="1">Isis_Item</field>
+            <field action="define" tag="2">Isis_Value</field>
+            <loop>
+              <field action="add" tag="3"><pft>,if val(v1)=1 then v2 fi,</pft></field>
+              <field action="export" tag="3">3</field>
+            </loop>
+          </do>
+          <file action="close" type="database"><pft>,v3000^1'_cal',</pft></file>
+          
+     <!-- Carrega variavel #303 com quantidade de dias de atraso
+          Onde:
+          v1002  = MFN da data de hoje
+          v3     = quantidade de dias uteis entre a data de vencimento e a data da
+                   devolucao expressa
+          v900^n = data do vencimento
+          -->
+          
+          <field action="add" tag="303">
+            <pft>,f((val(v1022)+val(v3))-(val(v900^n)+(val(v1022)-val(v900^n)))-2,0,0),</pft>
+          </field>
+
+  <!-- Verifica se há atraso na devolução -->
+
+     <flow action="jump">
+       <pft>,if val(v303)=0 then 'ver_espera' else 'calcula_atraso' fi,</pft>
+     </flow>
+     <flow action="exit">1</flow>
+     
+     <label>calcula_atraso</label>
+     <flow action="jump"><pft>,if val(v303)>0 then 'ver_regime' else 'ver_espera' fi,</pft></flow>
+    
+<!-- Verifica regime de penalidade -->
+     
+     <label>ver_regime</label>
+     <flow action="jump"><pft>,if v400^d='1' then 'multa' else 'suspensao' fi,</pft></flow>
+        
+     <label>overnight</label>
+        
+<!-- Verifica atraso no dia devolução -->
+     <flow action="jump">
+       <pft>,if val(v1022)>val(v900^n)+1 then 'pena_grave' fi,</pft>
+     </flow>
+        
+<!-- Converte horário de abertura da biblioteca em minutos -->
+     <field action="add" tag="151"><pft>,f((val(v159^a.2)*60)+val(v159^a*3.2),0,0)</pft></field>
+            
+<!-- Converte horário de devolução em minutos -->
+     <field action="add" tag="152"><pft>,f((val(v7003*9.2)*60)+val(v7003*11.2),0,0)</pft></field>
+        
+<!-- Verifica atraso no horário de devolução -->
+     <flow action="jump"><pft>,if val(v152)>val(v151)+60 and val(v1022)=val(v900^n)+1 then 'pena_leve' else 'ver_espera' fi,</pft></flow>
+            
+     <label>pena_leve</label>
+     
+     <field action="add" tag="6"><pft>,f(((val(v152)-(val(v151)+60))/60)*val(v400^c),0,2),</pft></field>
+     <flow action="jump">registra_multa</flow>
+
+     <label>pena_grave</label>
+     <field action="add" tag="6"><pft>,f((val(v1022)-val(v900^n))*(12*val(v400^c)),0,2),</pft></field>
+     <flow action="jump">registra_multa</flow>
+
+<!-- Multa -->
+   
+     <label>multa</label>
+    
+<!-- Calcula a multa devida -->
+
+     <field action="add" tag="6">
+       <pft>,
+            select s(v400^f)
+             case 'U' : f(val(v303)*val(v400^c),0,2),
+             case 'C' : f(val(v4)*val(v400^c),0,2),
+             elsecase f(val(v4)*val(v400^c),0,2),
+            endsel,
+       </pft>
+     </field>
+     
+<!-- Registra multa devida -->
+    
+     <label>registra_multa</label>
+
+     <!-- 29/05/2008 10:49:12 --><file action="close" type="database">phl_pen</file>
+
+     <do task="update">
+       <parm name="db">phl_pen</parm>
+       <parm name="mfn">New</parm>
+       <parm name="fst"><pft>,cat('phl_pen.fst'),</pft></parm>
+       <parm name="uctab"><pft>,cat('uctab'),</pft></parm>
+       <parm name="actab"><pft>,cat('actab'),</pft></parm>
+       <field action="define" tag="1003">Isis_Status</field>
+
+       <update>
+         <field action="import" tag="list">6,900,952,3000,7003</field>
+         <field action="add" tag="940">
+         <pft>,
+          '^a'v3000^1,
+          '^d',v7003.8,
+          '^omul',
+          '^u'v900^u,
+          '^t'v952,
+          '^m',f((val(v6)),0,2),
+         </pft>
+         </field>
+         <field action="delete" tag="list">6,900,952,3000,7003</field>
+         <field action="export" tag="list">940</field>
+         <write>Unlock</write>
+        <field action="import" tag="list">3000</field>
+        <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zMUL|USR#'v940^u,'|TBO#'v940^t'|'v940^m,'|053.xis'/,</pft></field>
+        <call name="log">now</call>
+       </update>
+     </do>
+     <file action="close" type="database">phl_pen</file>
+
+     <flow action="jump">ver_espera</flow>
+    
+<!-- Grava suspensao -->
+
+     <label>suspensao</label>
+       
+<!-- Abre base de dados de penalidades -->
+     <do task="search">
+       <parm name="db">phl_pen</parm>
+       <parm name="expression"><pft>,'USR='v900^u,</pft></parm>
+
+       <loop>
+        <field action="import" tag="list">110,111</field>
+        <field action="replace" tag="110"><pft>,f(val(v940^m)+val(v110),0,2),</pft></field>
+        <field action="replace" tag="111"><pft>,if val(v940^p)>val(v111) then v940^p else v111 fi,</pft></field>
+        <field action="export" tag="list">110,111</field>
+       </loop>
+       <field action="export" tag="list">110,111</field>
+    </do>
+    <file action="close" type="database">phl_pen</file>
+    
+    <!-- Elimina dias nao uteis e feridados do calculo da suspensao -->
+                    
+    <field action="add" tag="4"><pft>,f( val(v6)*val(v400^c),0,0 ),</pft></field>
+                    
+    <do task="keyrange">
+     <parm name="db"><pft>,v3000^1'_cal'</pft></parm>
+     <parm name="from">
+     <pft>
+     ,if val(v111)>val(v1022) then
+     ref([v3000^1'_cal']val(v111),'UTL=',v323,v322,v320)
+     else
+     'UTL='s(date).8
+     ,fi,
+     </pft>
+     </parm>
+     <parm name="posting">All</parm>
+     <field action="define" tag="1001">Isis_Current</field>
+     <field action="define" tag="1">Isis_Key</field>
+     <field action="define" tag="21">Isis_Posting</field>
+     <parm name="count"><pft>,v4,</pft></parm>
+     <loop>
+     <field action="import" tag="list">4</field>
+     <display>
+     <pft>
+     ,if val(v1001)=val(v4) then
+     ,putenv('u_dev='v1*4),
+     ,putenv('u_mfn='v21^m)
+     ,fi,
+     </pft>
+     </display>
+     </loop>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_cal'</pft></file>
+
+     <label>grava_suspensao</label>
+     
+     <!-- 29/05/2008 10:49:12 --><file action="close" type="database">phl_pen</file>
+
+     <do task="update">
+      <parm name="db">phl_pen</parm>
+      <parm name="mfn">New</parm>
+      <parm name="fst"><pft>,cat('phl_pen.fst'),</pft></parm>
+      <parm name="uctab"><pft>,cat('uctab'),</pft></parm>
+      <parm name="actab"><pft>,cat('actab'),</pft></parm>
+      <field action="define" tag="1003">Isis_Status</field>
+      <update>
+        <field action="import" tag="list">900,3000,7003</field>
+        <field action="add" tag="940">
+          <pft>
+           ,'^a'v3000^1,
+            '^d',v7003*0.8,
+            '^osus',
+            '^u'v900^u,
+            '^t'v900^t,
+            '^p'getenv('u_mfn')
+          </pft>
+        </field>
+        <field action="delete" tag="list">900,3000,7003</field>
+        <field action="export" tag="list">940</field>
+        <write>Unlock</write>
+        <field action="import" tag="list">3000</field>
+        <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zSUS|USR#'v940^u,'|TBO#'v940^t'|'v940^m,'|053.xis'/,</pft></field>
+        <call name="log">now</call>
+       </update>
+     </do>
+     <file action="close" type="database">phl_pen</file>
+     <flow action="jump">ver_espera</flow>
+
+<!-- Atualiza lista de reserva para objeto da devolução se não for de consulta local -->
+     <label>ver_espera</label>
+
+     <flow action="jump">
+       <pft>,if v101^a='2' then 'devolve' else 'upd_espera' fi,</pft>
+     </flow>
+     <flow action="exit">0</flow>
+
+     <label>upd_espera</label>
+     <call name="002">now</call>
+
+     <label>devolve</label>
+
+     <!-- Elimina registro da base de dados de empréstimos -->
+     
+       <file action="close" type="database"><pft>,v3000^1'_emp'</pft></file>
+
+       <do task="update">
+       <parm name="db"><pft>,v3000^1'_emp',</pft></parm>
+       <parm name="mfn"><pft>,v900^z,</pft></parm>
+       <parm name="fst"><pft>,cat(v3000^1'_emp.fst'),</pft></parm>
+       <parm name="uctab"><pft>,cat('uctab'),</pft></parm>
+       <parm name="actab"><pft>,cat('actab'),</pft></parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+
+         <update>
+           <field action="export" tag="list">900</field>
+           <field action="delete" tag="list">ALL</field>
+           <write>Delete</write>
+        <field action="import" tag="list">3000</field>
+        <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zDEV|USR#'v900^u,'|TBO#'v900^t'|053.xis'/,</pft></field>
+        <call name="log">now</call>
+         </update>
+       </do>
+       <file action="close" type="database"><pft>,v3000^1'_emp'</pft></file>
+
+<!-- Verifica se é devolução múltipla e obtem mfn do registro do historico -->
+     <flow action="jump">
+       <pft>,if p(v759) then 'log_dev_upd' else 'log_dev_new' fi,</pft>
+     </flow>
+
+     <label>log_dev_upd</label>
+     
+     <!-- 29/05/2008 10:49:12 --><file action="close" type="database"><pft>,v3000^1'_log'</pft></file>
+
+     <do task="update">
+       <parm name="db"><pft>,v3000^1'_log',</pft></parm>
+       <parm name="mfn"><pft>,v759,</pft></parm>
+       <parm name="fst"><pft>,cat(v3000^1'_log.fst'),</pft></parm>
+       <parm name="uctab"><pft>,cat('uctab'),</pft></parm>
+       <parm name="actab"><pft>,cat('actab'),</pft></parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+
+       <update>
+         <field action="import" tag="list">6,400,718,900,3000,7003</field>
+         <field action="add" tag="910"><pft>,
+         '^d',v7003*0.8,
+         '^h',v7003*9.4,
+         '^n',v900^n,
+         '^odev'
+         '^u',v900^u,
+         '^k',v900^k,
+         '^t',v900^t,
+         '^a',v900^a,
+         '^f',v900^f,
+         '^c',v900^c,
+         '^e',v900^e,
+         '^b',v3000^2,
+         ,if val(v400^d)=1 and val(v6)>0 then '^m',f((val(v6)*val(v400^c)),0,2) fi,
+         ,if val(v400^d)=2 and val(getenv('u_mfn'))>0 then '^p',getenv('u_mfn') fi,
+         </pft></field>
+         <field action="delete" tag="list">6,400,900,3000,7003</field>
+         <write>Unlock</write>
+         <field action="export" tag="list">910</field>
+      </update>
+
+    </do>
+    <file action="close" type="database"><pft>,v3000^1'_log'</pft></file>
+   
+    <flow action="jump">imprime_comprovante</flow>
+
+     <label>log_dev_new</label>
+     
+     <!-- 29/05/2008 10:49:12 --><file action="close" type="database"><pft>,v3000^1'_log'</pft></file>
+
+     <do task="update">
+       <parm name="db"><pft>,v3000^1'_log',</pft></parm>
+       <parm name="mfn">New</parm>
+       <parm name="fst"><pft>,cat(v3000^1'_log.fst'),</pft></parm>
+       <parm name="uctab"><pft>,cat('uctab'),</pft></parm>
+       <parm name="actab"><pft>,cat('actab'),</pft></parm>
+       <field action="define" tag="1003">Isis_Status</field>
+
+       <update>
+
+         <field action="import" tag="list">6,400,718,900,3000,7003</field>
+         <field action="add" tag="910"><pft>,
+         '^d',v7003*0.8,
+         '^h',v7003*9.4,
+         '^n',v900^n,
+         '^odev'
+         '^u',v900^u,
+         '^k',v900^k,
+         '^t',v900^t,
+         '^a',v900^a,
+         '^f',v900^f,
+         '^c',v900^c,
+         '^e',v900^e,
+         '^b',v3000^2,
+         ,if val(v400^d)=1 and val(v6)>0 then '^m',f((val(v6)*val(v400^c)),0,2) fi,
+         ,if val(v400^d)=2 and val(getenv('u_mfn'))>0 then '^p',getenv('u_mfn') fi,
+         </pft></field>
+         <field action="delete" tag="list">6,400,900,3000,7003</field>
+         <write>Unlock</write>
+         <field action="replace" tag="759"><pft>,mfn(1),</pft></field>
+         
+      <field action="export" tag="list">910,759</field>
+      </update>
+
+    </do>
+    <file action="close" type="database"><pft>,v3000^1'_log'</pft></file>
+    
+    <label>imprime_comprovante</label>
+    
+    <display><htmlpft><pft>,ref(['tab_fmx']216,v4),</pft></htmlpft></display>
+    
+    <display>
+      <pft>
+       '<h1>Devolução Expressa - Lote: 'v759,' - Objetos Devolvidos</h1>'
+       '<table>'
+       '<th>Data</th>'
+       '<th>Hora</th>'
+       '<th>Tombo</th>'
+       '<th>Usuário</th>'
+       '<th>Responsável</th>'
+       '<th>Status</th>'
+       ,ref([v3000^1'_log']val(v759),
+         ('<tr>
+            <td align="center">'v910^d*6.2,'/',v910^d*4.2,'/',v910^d.4,'</td>
+            <td align="center">'v910^h.2,':',v910^h*2.2,'</td>
+            <td align="center">'v910^t'</td>
+            <td align="center">'v910^u'</td>
+            <td align="center">'v910^b'</td>
+            <td align="center">',if v910^m<>'' or v910^p<>'' then 'Com atraso' else 'No prazo' fi,'</td>
+           </tr>')
+        ),
+        '</table>',
+      </pft>
+    </display>
+    
+    <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

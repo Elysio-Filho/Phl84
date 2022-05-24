@@ -1,0 +1,3 @@
+,if ref(['phl_cnf']1,v224)='1' then '<img src='ref(['phl_spt']val(v22),v370,)' border=0>&nbsp;' fi,
+,if ref(['phl_cnf']1,v224)='2' then '<img src='ref(['phl_col']val(v26),v370,)' border=0>&nbsp;' fi,
+,if ref(['phl_cnf']1,v224)='4' then '<img src='ref(['phl_tdo']val(v5),v370,)' border=0>&nbsp;' fi,

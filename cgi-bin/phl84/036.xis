@@ -1,0 +1,348 @@
+<!-- Relatorios personalizados -->
+
+     <IsisScript name="036.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inicia secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="957">mfn</field>
+     <field action="cgi" tag="958">exp</field>
+     <field action="cgi" tag="951">db</field>
+
+<!-- Verifica validade do login -->
+     <flow action="jump"><pft>,if v3000^1='' then '271' fi,</pft></flow>
+         
+<!-- Desvia fluxo do processamento -->
+     <flow action="jump"><pft>,v950,</pft></flow>
+     <flow action="exit">1</flow>
+     
+     <label>busca</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']258,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- Exporta variáveis do registro do relatório  -->
+     
+     <label>relatorio</label>
+
+     <do task="mfnrange">
+       <parm name="db">phl_rel</parm>
+       <parm name="from"><pft>,v957,</pft></parm>
+       <parm name="count">1</parm>
+       <loop>
+         <field action="export" tag="list">501/518</field>
+       </loop>
+       <field action="export" tag="list">501/518</field>
+     </do>
+     <file action="close" type="database"><pft>,v951,</pft></file>
+     <field action="replace" tag="504">
+       <pft>,
+         select v504^a
+          case 'acv':'phl_acv'
+          case 'aut':'phl_aut'
+          case 'cal':v3000^1'_cal'
+          case 'cdu':v3000^1'_cdu'
+          case 'cpa':'phl_cpa'
+          case 'cxa':v3000^1'_cxa'
+          case 'emp':v3000^1'_emp'
+          case 'for':'phl_for'
+          case 'idx':'phl_idx'
+          case 'log':v3000^1'_log'
+          case 'pen':'phl_pen'
+          case 'pqt':'phl_pqt'
+          case 'res':'phl_res'
+          case 'rgl':'phl_rgl'
+          case 'ser':v3000^1'_ser'
+          case 'tbo':v3000^1'_tbo'          
+          case 'usc':v3000^1'_usc'
+          case 'usr':'phl_usr'
+          case 'voc':'phl_voc'
+          case 'cur':'phl_cur'
+          elsecase 'phl_acv'
+          endsel,       
+       </pft>
+     </field>
+     <flow action="jump"><pft>,v508,</pft></flow>
+     <flow action="exit">1</flow>
+
+     <label>servidor</label>
+     <cgitable><htmlpft><pft>,ref(['tab_fdt']27,'[pft]',v4,'[/pft]',),</pft></htmlpft></cgitable>
+     <flow action="jump"><pft>,v508,</pft></flow>
+     <flow action="exit">1</flow>
+
+<!-- Relatório Indice -->
+
+     <label>Index</label>
+     <do task="keyrange">
+     <parm name="db"><pft>,v504,</pft></parm>
+     <parm name="from"><pft>,if p(v958) then v958^a else v505^a fi,</pft></parm>
+     <parm name="to"><pft>,if p(v958) then v958^b else v505^b fi,</pft></parm>
+     <field action="define" tag="1">Isis_Key</field>
+     <field action="define" tag="2">Isis_Postings</field>
+     <field action="define" tag="1001">Isis_Current</field>
+     
+     <display><htmlpft><pft>,ref(['tab_fmx']231,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,'[pft]',v510,'[/pft]',</pft></htmlpft></display>
+
+     <loop>
+     <field action="import" tag="list">5,100,501/512,3000,4000,4001,5000,7003</field>
+        <field action="replace" tag="5"><pft>,f(val(v5)+1,0,0)</pft></field>
+        <field action="replace" tag="100"><pft>,f(val(v100)+val(v2),0,2),</pft></field>
+        <display><htmlpft><pft>,'[pft]',v511,'[/pft]',</pft></htmlpft></display>
+
+        <!-- Armazena em v4000 as primeiras 31 chaves para a geracao dos graficos de torta e de linha. Quantidade maiores de chaves tornam os gráficos ilegíveis -->
+        <field action="add" tag="4000">
+         <pft>
+         ,if val(v5)>1 and val(v5)<32 then '~',fi,
+         ,if val(v5)<32 then v1 fi,
+         </pft>
+        </field>
+
+        <!-- Armazena em v5000 as frequencias das primeiras 31 chaves para a geracao dos graficos de torta e de linha. -->
+        <field action="add" tag="5000">
+        <pft>
+         ,if val(v5)>1 and val(v5)<32 then '~',fi,
+         ,if val(v5)<32 then v2 fi,
+        </pft>
+        </field>
+        <field action="export" tag="list">5,100,4000,5000</field>
+     </loop>
+     
+     <display><htmlpft><pft>,'[pft]',v512,'[/pft]',</pft></htmlpft></display>
+     <field action="add" tag="6100"><pft>s(v4000)</pft></field>
+     <field action="add" tag="7100"><pft>s(v5000)</pft></field>
+    </do>
+    <flow action="exit">1</flow>
+
+<!-- Relatório Simples -->
+
+     <label>Simples</label>
+     <do task="search">
+       <parm name="db"><pft>,v504,</pft></parm>
+       <parm name="expression"><pft>,if p(v958) then v958 else v505 fi,</pft></parm>
+       <parm name="buffersize">90000</parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+
+       <!-- carrega folha de estilo quando 503=S -->
+       <display><htmlpft><pft>,ref(['tab_fmx']231,v4),</pft></htmlpft></display>
+       <display><htmlpft><pft>,'[pft]',v510,'[/pft]',</pft></htmlpft></display>
+
+       <loop>
+        <field action="import" tag="list">501/518,957,3000,4001,7003</field>
+        <display><htmlpft><pft>,'[pft]',v511,'[/pft]',</pft></htmlpft></display>
+       </loop>
+
+       <display><htmlpft><pft>,'[pft]',v512,'[/pft]',</pft></htmlpft></display>
+       <field action="export" tag="list">1002</field>
+     </do>
+     <file action="close" type="database"><pft>,v504,</pft></file>
+     
+    <!-- Verifica se o resultado da busca e positivo -->
+         <flow action="jump">
+           <pft>
+             ,if val(v1002)=0 then 'conjunto.vazio' fi,
+           </pft>
+         </flow>
+
+     <flow action="exit">0</flow>
+    
+<!-- Relatório Ordenado -->
+
+     <label>Ordenado</label>
+     <do task="search">
+       <parm name="db"><pft>,v504,</pft></parm>
+       <parm name="expression"><pft>,if p(v958) then v958 else v505,fi,</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <parm name="buffersize">90000</parm>
+       <field action="define" tag="1002">Isis_Total</field>
+       <loop>
+         <field action="import" tag="list">501/518,957,3000,4001</field>
+         <list action="load" type="sort"><htmlpft><pft>,'[pft]',v513,'[/pft]',</pft></htmlpft></list>
+       </loop>
+       <field action="export" tag="list">1002</field>
+     </do>
+     <file action="close" type="database"><pft>,v504,</pft></file>
+     
+    <!-- Verifica se o resultado da busca e positivo -->
+         <flow action="jump">
+           <pft>
+             ,if val(v1002)>0 then 'lista.ordenado' else 'conjunto.vazio' fi,
+           </pft>
+         </flow>
+         <flow action="exit">1</flow>
+
+     <label>lista.ordenado</label>
+     <do task="list">
+       <field action="define" tag="1">Isis_Item</field>
+       <field action="define" tag="2">Isis_Value</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="import" tag="3">1002</field>
+
+       <!-- carrega folha de estilo quando 503=S -->
+       <display><htmlpft><pft>,ref(['tab_fmx']231,v4),</pft></htmlpft></display>
+         <display><htmlpft><pft>,'[pft]',v510,'[/pft]',</pft></htmlpft></display>
+       <loop>
+         <field action="import" tag="list">501/518,957,3000,4001,7003</field>
+         <display><htmlpft><pft>,'[pft]',v511,'[/pft]',</pft></htmlpft></display>
+       </loop>
+       <display><htmlpft><pft>,'[pft]',v512,'[/pft]',</pft></htmlpft></display>
+     </do>
+     <list action="delete">now</list>
+     <flow action="exit">1</flow>
+    
+<!-- Relatório de Frequência  -->
+
+     <label>Frequencia</label>
+
+     <do task="search">
+      <parm name="db"><pft>,v504,</pft></parm>
+      <parm name="expression"><pft>,if p(v958) then v958 else v505 fi,</pft></parm>
+      <parm name="buffersize">90000</parm>
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Total</field>
+      <loop>
+        <field action="import" tag="list">513,957,3000,4001</field>
+        <list action="load" type="freq">
+          <htmlpft><pft>,'[pft]',v513,'[/pft]',</pft></htmlpft>
+        </list>
+      </loop>
+      <field action="export" tag="list">1002</field>
+     </do>
+    <file action="close" type="database"><pft>,v504,</pft></file>
+    
+    <!-- Verifica se o resultado da busca e positivo -->
+         <flow action="jump">
+           <pft>
+             ,if val(v1002)>0 then 'lista.frequencia' else 'conjunto.vazio' fi,
+           </pft>
+         </flow>
+         <flow action="exit">1</flow>
+         
+    <label>lista.frequencia</label>
+
+    <do task="list">
+     <field action="define" tag="1">Isis_Item</field>
+     <field action="define" tag="2">Isis_Value</field>
+     <field action="define" tag="4">Isis_Items</field>
+     <field action="define" tag="1001">Isis_Current</field>
+     <field action="import" tag="3">1002</field>
+
+     <!-- carrega folha de estilo quando 503=S -->
+     <display><htmlpft><pft>,ref(['tab_fmx']231,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,'[pft]',v510,'[/pft]',</pft></htmlpft></display>
+
+     <loop>
+     <field action="import" tag="list">5,100,501/518,951,3000,4000,4001,5000,7003</field>
+     <field action="replace" tag="5"><pft>,f(val(v5)+1,0,0)</pft></field>
+     <field action="replace" tag="100"><pft>,f(val(v100)+val(v2),0,2),</pft></field>
+     <field action="export" tag="100">100</field>
+     <display><htmlpft><pft>,'[pft]',v511,'[/pft]',</pft></htmlpft></display>
+     </loop>  
+     <display><htmlpft><pft>,'[pft]',v512,'[/pft]',</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']201,v4),</pft></htmlpft></display>
+    </do>
+    <list action="delete">now</list>
+    <flow action="exit">1</flow>
+
+<!-- Grafico da frequencia -->
+     
+     <label>grafico</label>
+     <do task="mfnrange">
+       <parm name="db">phl_rel</parm>
+       <parm name="from"><pft>,v957,</pft></parm>
+       <parm name="count">1</parm>
+       <loop>
+         <field action="export" tag="list">501/518</field>
+       </loop>
+       <field action="export" tag="list">501/518</field>
+     </do>
+     <file action="close" type="database"><pft>,v951,</pft></file>
+
+     <field action="replace" tag="504">
+       <pft>,
+         select v504^a
+          case 'acv':'phl_acv'
+          case 'usr':'phl_usr'
+          case 'cpa':'phl_cpa'
+          case 'idx':'phl_idx'
+          case 'for':'phl_for'
+          case 'voc':'phl_voc'
+          case 'aut':'phl_aut'
+          case 'res':'phl_res'
+          case 'pqt':'phl_pqt'
+          case 'pen':'phl_pen'
+          case 'tbo':v3000^1'_tbo'          
+          case 'log':v3000^1'_log'
+          case 'emp':v3000^1'_emp'
+          case 'cxa':v3000^1'_cxa'
+          case 'cdu':v3000^1'_cdu'
+          case 'cal':v3000^1'_cal'
+          case 'ser':v3000^1'_ser'
+          case 'usc':v3000^1'_usc'
+          case 'cur':'phl_cur'
+          elsecase 'phl_acv'
+          endsel,       
+       </pft>
+     </field>
+
+     <do task="search">
+       <parm name="db"><pft>,v504,</pft></parm>
+       <parm name="expression"><pft>,if p(v958) then v958 else v505 fi,</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <loop>
+         <field action="import" tag="list">513,957,3000,4001</field>
+         <list action="load" type="freq">
+          <htmlpft><pft>,'[pft]',v513,'[/pft]',</pft></htmlpft>
+         </list>
+       </loop>
+     </do>
+     <file action="close" type="database"><pft>,v504,</pft></file>
+
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="200">Isis_Item</field>
+       <field action="define" tag="210">Isis_Value</field>
+       <loop> 
+         <field action="import" tag="list">502,508,953,4001,7003</field>
+         <field action="add" tag="100"><pft>,v502,</pft></field>
+         <field action="replace" tag="200"><pft>'^a'f(val(v1001)-1,0,0),'^b'v210,'^c'v200, </pft></field>
+         <display><htmlpft><pft>,ref(['tab_fmx']144,v4),</pft></htmlpft></display>
+       </loop>
+     </do>
+     <list action="delete">now</list>
+     <flow action="exit">1</flow>
+     
+<!-- Mensagens de erro -->     
+
+     <label>271</label>
+     <field action="add" tag="250">271</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+     <label>conjunto.vazio</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']258,v4),</pft></htmlpft></display>
+     <field action="add" tag="250">913</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

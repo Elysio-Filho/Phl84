@@ -1,0 +1,65 @@
+<!-- 23/04/2013 08:54:52  - Elysio -->
+<IsisScript>
+
+<display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+     <section>
+
+     <field action="cgi" tag="958">parentId</field>
+     <field action="replace" tag="958" split="occ"><pft>(v958/)</pft></field>
+
+<!-- Chama funcao que carrega outras variaveis -->
+     <call name="001">now</call>
+     
+     <parm name="cipar"><pft>,cat('phl84.cip'),</pft></parm>
+
+<do task="search">
+  <parm name="db"><pft>,'001_cdu',</pft></parm>
+  <parm name="expression"><pft>,v958,</pft></parm>
+  <field action="define" tag="1001">Isis_Current</field>
+  <field action="define" tag="1002">Isis_Total</field>
+      <loop>
+        <list action="load" type="sort">
+          <pft>
+             '^a'v310,
+            ,'^m'mfn(1)/,
+          </pft>
+        </list>
+      </loop>
+  </do>
+
+<do task="list">
+<field action="define" tag="1">Isis_Item</field>
+  <loop>
+    <field action="import" tag="list">4001</field>
+    <display>
+      <pft>
+      ,ref(['001_cdu']val(v1^m),
+      
+       ,if size(v310)>=2 then
+      
+        '<li>
+           <a href="#">',v310,' - 'v311+|; |,'</a>
+
+          <ul>'
+	    '<li parentId="FILHO='v310'"><a href="#">Aguarde...</a></li>'
+          '</ul>
+         </li>'
+         
+         ,fi
+         /*
+         if size(v310)>=3 then
+         '<li class="dhtmlgoodies_sheet.gif"><a href="JavaScript:tab_mfn('mfn(1)');"><i>',v310,' - 'v311+|; |,'</i></a></li>'
+        ,fi
+        */
+        )
+      </pft>
+    </display>
+  </loop>
+</do>
+
+ </section>
+</IsisScript>

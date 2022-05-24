@@ -1,0 +1,100 @@
+<!-- Script que compoe o menu da area restrita
+     14/04/2007 - Revisado 
+     26/09/2011 07:54:19 Revisado 
+     08/01/2012 12:22:17 Revisado 
+     19/01/2012 09:00:18 Revisado -->
+     
+     <IsisScript name="040.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inclue funcao de registro de cookie -->
+     <include>phl84/010.fnc</include>
+
+<!-- Inclue funcao (res) que atualiza lista de reservas e gera avisos -->
+     <include>phl84/930.fnc</include>
+
+<!-- Inclue funcao (log) que atualiza o arquivo de LOG -->
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="953">acv</field>
+
+<!-- Chama funcao que carrega outras variaveis -->
+     <call name="001">now</call>
+     
+<!-- Verifica se unidade foi fornecida -->
+     <flow action="jump"><pft>,if v953='' then '983' fi,</pft></flow>
+
+<!-- Autentica login do usuario -->
+
+    <!-- Armazena em v3003 os dados do usuario -->
+    
+          <label>carrega_3003</label>
+          
+          <field action="add" tag="3003">
+              <pft>,'^1'v953,
+                 ,ref(['phl_pwd']val(v3000^4),'^2'v651,'^3funcionario^4'mfn(1)),
+              </pft>
+            </field>
+            
+           <flow action="jump"><pft>,if v3003^2='' then '327' fi,</pft></flow>
+
+       <!--Verifica se serviços externos estão temporariamente suspensos -->
+           <flow action="jump">
+             <pft>,if ref(['phl_cnf']1,v201)='S' and v3003^1='' then '46' else fi,</pft>
+           </flow>
+
+           <flow action="jump">upd_log</flow>
+
+        <label>46</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']46,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>327</label>
+        <field action="add" tag="250">327</field>
+        <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>983</label>
+        <field action="add" tag="250">983</field>
+        <display><br><br></display>
+        <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+        <display>
+          <pft>,'<center><a href="javascript:history.back();">',ref(['tab_txt']392,@tab_txt.pft,),'</a></center>',</pft>
+        </display>
+        <flow action="exit">1</flow>
+        
+<!-- Cria registro de login -->
+
+     <label>upd_log</label>
+     <call name="010">now</call>
+     
+<!--Carrega permissões rotinas permitidas -->
+    <field action="add" tag="656"><pft>,ref(['phl_pwd']val(v3000^4),v656),</pft></field>
+    
+<!-- Armazena em v657 as permissoes do usuario -->
+     <field action="add" tag="657"><pft>,ref(['phl_pwd']val(v3000^4),v657),</pft></field>
+     <field action="add" tag="660"><pft>,ref(['phl_pwd']val(v3000^4),v660),</pft></field>
+     <field action="add" tag="661"><pft>,ref(['phl_pwd']val(v3000^4),v661),</pft></field>
+     <field action="add" tag="662"><pft>,ref(['phl_pwd']val(v3000^4),v662),</pft></field>
+     <field action="add" tag="663"><pft>,ref(['phl_pwd']val(v3000^4),v663),</pft></field>
+     <field action="add" tag="664"><pft>,ref(['phl_pwd']val(v3000^4),v664),</pft></field>
+     <field action="add" tag="2001"><pft>,ref(['phl_pwd']val(v3000^4),v658),</pft></field>        
+     <field action="add" tag="2000"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>
+     
+     <call name="930">now</call>
+
+     <display><htmlpft><pft>,ref(['tab_fmx']68,v4),</pft></htmlpft></display>
+     <file action="close" type="database">phl_set</file>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

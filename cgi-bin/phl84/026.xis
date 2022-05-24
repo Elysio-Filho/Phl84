@@ -1,0 +1,311 @@
+<!-- Script que compoe o menu da area restrita
+     19/06/2011 08:04:11 Incluido prefixo PWD na comparacao da senha para evitar hackers 
+     22/09/2011 11:36:54 Eliminada a opção de cookie da funcao 010.fnc 
+     09/01/2017 10:03:35 Eliminada função que verifica validade da matrícula -->
+
+     <IsisScript name="026.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao que gera arquivo temporario -->
+     <include>phl84/010.fnc</include>
+
+<!-- Inclue funcao (res) que atualiza lista de reservas e gera avisos -->
+     <include>phl84/930.fnc</include>
+     
+<!-- Inclue funcao que gera lista de bibliotecas da rede -->
+     <include>phl84/rede.bibliotecas.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="1">login</field>
+     <field action="cgi" tag="2">pwd</field>
+     <field action="cgi" tag="957">mfn</field>
+    
+<!-- Chama funcao que carrega outras variaveis -->
+     <call name="001">now</call>
+
+<!-- Chame funcao que carrega rede de bibliotecas -->
+     <call name="rede.bibliotecas">now</call>
+
+<!-- Autentica login do usuario -->
+
+     <!-- Verifica se login e senha foram fornecidos -->
+
+          <flow action="jump">
+             <pft>,if p(v1) and p(v2) then 'variaveis' else '327' fi,</pft>
+          </flow>
+          <flow action="exit">0</flow>
+          
+          <label>variaveis</label>
+          
+     <!-- Obtem dados de permissão do usuário -->
+          <field action="add" tag="3">
+            <pft>
+              ,ref(['phl_pwd']l(['phl_pwd'],'PWD='v1,v2),'^a'f(nocc(v654),0,0),'^b'mfn(1),),
+            </pft>
+          </field>
+          <file action="close" type="database">phl_pwd</file>
+          
+
+     <!-- Verifica se ha restricoes sobre faixa de IP -->
+
+          <flow action="jump">
+            <pft>
+              ,if s(v3000^e):s(ref(['phl_pwd']val(v3^b),v659)) then else '271' fi,
+            </pft>
+          </flow>
+
+     <!-- Verifica se é funcionário ou usuário externo -->
+          <flow action="jump">
+            <pft>
+              ,if val(v3^a)>=1 then 'interno' else 'carrega_3003' fi,
+            </pft>
+          </flow>
+          <flow action="exit">1</flow>
+          
+          <label>interno</label>         
+
+          <!-- Verifica se funcionário tem permissão para mais que uma unidade -->
+               <flow action="jump">
+                 <pft>,
+                   ,if val(v3^a)>1 then 'form_selec_unidade' else 'carrega_3003' fi,
+                 </pft>
+               </flow>
+               <flow action="exit">1</flow>
+               
+               <label>form_selec_unidade</label>
+
+               <field action="replace" tag="3000">
+               <pft>,
+                 '^a',v3000^a,
+                 '^b',v3000^b,
+                 '^c',v3000^c,
+                 '^d',v3000^d,
+                 '^e',v3000^e,
+                 '^4',v3^b,
+               </pft>
+               </field>
+         
+               <!-- Obtem lista de bibliotecas permitidas para o usuario -->
+         
+                    <do task="mfnrange">
+                      <parm name="db">phl_pwd</parm>
+                      <parm name="from"><pft>,v3^b,</pft></parm>
+                      <parm name="count">1</parm>
+                      <loop>
+                      <list action="load" type="sort">
+                      <pft>,(,ref(['phl_set']l(['phl_set'],'ACV='v654,),'^b'v602.30,'^a'v601,)/),</pft>
+                      </list>
+                      </loop>
+                      <file action="close" type="database">phl_set</file>
+                    </do>
+         
+                    <do task="list">
+                      <field action="define" tag="3600">Isis_Item</field>
+                      <loop>
+	              <field action="import" tag="list">654</field>
+	              <field action="replace" tag="654" split="occ"><pft>,(v654/),v3600/,</pft></field>
+	              <field action="export" tag="654">654</field>
+                      </loop>
+                    </do>
+
+                    <list action="delete">now</list>
+                    <field action="delete" tag="3600">ALL</field>
+        
+                    <field action="add" tag="3003">
+                      <pft>,ref(['phl_pwd']val(v3^b),'^1'v654[1],'^2'v651,'^3funcionario^4'mfn(1)),</pft>
+                    </field>
+                    <file action="close" type="database">phl_pwd</file>
+                    <file action="close" type="database">phl_usr</file>
+        
+                    <call name="010">now</call>
+
+                    <display><htmlpft><pft>,ref(['tab_fmx']169,v4),</pft></htmlpft></display>
+                    <flow action="exit">1</flow>
+
+     <label>carrega_3003</label>
+     <!-- Armazena em v3003 os dados do usuario 
+          3003^1 = código da unidade que matriculou o usuario 
+          3003^2 = numero de matricula do usuário
+          3003^3 = indica se é usuário ou funcionário
+          3003^4 = mfn do registro de permissão 
+          3003^5 = código de tipo de usuário -->
+
+          <field action="add" tag="3003">
+              <pft>,
+               /*Verifica se é funcionário*/,
+                ,if val(v3^a)=0 then
+                 ,ref(['phl_usr']l(['phl_usr'],'PWD='v1,v2),'^1'v730,'^2'v701,'^3usuario^4'mfn(1)'^5'v723,),
+                  else
+                 ,ref(['phl_pwd']val(v3^b),'^1'v654,'^2'v651,'^3funcionario^4'mfn(1)),
+               ,fi
+              </pft>
+            </field>
+            <file action="close" type="database">phl_pwd</file>
+            <file action="close" type="database">phl_usr</file>
+    
+       <!--Verifica se usuario foi identificado pela senha fornecida -->
+           <flow action="jump"><pft>,if v3003^2='' then '327' fi,</pft></flow>
+           
+       <!--Controle de vencimento da matricula -->
+           <flow action="jump">
+             <pft>
+               ,if v3003^3='usuario' then
+                 ,if ref(['phl_usr_fmt']val(v3003^5),v6704)='1' then 'verifica_vencimento' else 'verifica_servicos' fi,
+               ,else
+                 'verifica_servicos'
+               ,fi
+             </pft>
+           </flow>
+           <flow action="exit">1</flow>
+
+           <label>verifica_vencimento</label>
+           
+           <!--Obtem validade da matricula do usuário -->
+               <field action="add" tag="704">
+                 <pft>,
+                     ,ref(['phl_usr']val(v3003^4),v704)
+                </pft>
+           </field>
+           
+           <!--Obtem do calendario o mfn da data de vencimento da matricula -->
+               <field action="add" tag="199">
+                 <pft>
+                   ,ref([v3003^1'_cal']l([v3003^1'_cal'],v704),mfn(1)),
+                 </pft>
+               </field>
+               <file action="close" type="database"><pft>,v3003^1'_cal'</pft></file>
+               
+           <!--Obtem do calendario o mfn da data de hoje -->
+               <field action="add" tag="200">
+                 <pft>,
+                     ,ref([v3003^1'_cal']l([v3003^1'_cal'],v7003.8,),mfn(1)),
+                </pft>
+               </field>
+               <file action="close" type="database"><pft>,v3003^1'_cal'</pft></file>
+
+           <!--Verifica se validade da matricula -->
+
+               <flow action="jump">verifica_servicos</flow>
+
+                 <!--  09/01/2017 10:03:21
+                 <pft>
+                   ,if val(v200)>val(v199) then '244' else 'verifica_servicos' fi
+                </pft>
+                -->
+
+             <flow action="exit">1</flow>
+
+       <!--Verifica se serviços externos estão temporariamente suspensos -->
+       
+           <label>verifica_servicos</label>
+           <flow action="jump">
+             <pft>,if ref(['phl_cnf']1,v201)='S' and v3003^1='' then '46' else fi,</pft>
+           </flow>
+
+           <flow action="jump">upd_log</flow>
+
+        <label>46</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']46,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>244</label>
+        <field action="replace" tag="250">244</field>
+        <display><htmlpft><pft>,ref(['tab_fmx']64,v4),</pft></htmlpft></display>
+        <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>327</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']64,v4),</pft></htmlpft></display>
+        <field action="add" tag="250">327</field>
+        <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>271</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']64,v4),</pft></htmlpft></display>
+        <field action="add" tag="250">271</field>
+        <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+        <display>
+          <pft>
+            '<h1>Permitido o acesso somente quando estiver conectado a partir do IP: 'ref(['phl_pwd']val(v3^b),v659)'<br>IP atual: ',v3000^e,'</h1>'
+          </pft>
+        </display>
+        <flow action="exit">1</flow>
+
+<!-- Cria registro de login -->
+
+     <label>upd_log</label>
+     <call name="010">now</call>
+
+<!--Carrega permissões rotinas permitidas -->
+    <field action="add" tag="656"><pft>,ref(['phl_pwd']val(v3000^4),v656),</pft></field>
+    
+<!-- Armazena em v657 as permissoes do usuario -->
+     <field action="add" tag="657"><pft>,ref(['phl_pwd']val(v3000^4),v657),</pft></field>
+     <field action="add" tag="660"><pft>,ref(['phl_pwd']val(v3000^4),v660),</pft></field>
+     <field action="add" tag="661"><pft>,ref(['phl_pwd']val(v3000^4),v661),</pft></field>
+     <field action="add" tag="662"><pft>,ref(['phl_pwd']val(v3000^4),v662),</pft></field>
+     <field action="add" tag="663"><pft>,ref(['phl_pwd']val(v3000^4),v663),</pft></field>
+     <field action="add" tag="664"><pft>,ref(['phl_pwd']val(v3000^4),v664),</pft></field>
+
+     <field action="replace" tag="7003">
+       <pft>,
+        select ref(['phl_set']val(v3000^1),v644)
+         case '-9':,datex(seconds(date)-(9*3600)),
+         case '-8':,datex(seconds(date)-(8*3600)),
+         case '-7':,datex(seconds(date)-(7*3600)),
+         case '-6':,datex(seconds(date)-(6*3600)),
+         case '-5':,datex(seconds(date)-(5*3600)),
+         case '-4':,datex(seconds(date)-(4*3600)),
+         case '-3':,datex(seconds(date)-(3*3600)),
+         case '-2':,datex(seconds(date)-(2*3600)),
+         case '-1':,datex(seconds(date)-3600),
+         case '+0':,s(date),
+         case '+1':,datex(seconds(date)+3600),
+         case '+2':,datex(seconds(date)+(2*3600)),
+         case '+3':,datex(seconds(date)+(3*3600)),
+         case '+4':,datex(seconds(date)+(4*3600)),
+         case '+5':,datex(seconds(date)+(5*3600)),
+         case '+6':,datex(seconds(date)+(6*3600)),
+         case '+7':,datex(seconds(date)+(7*3600)),
+         case '+8':,datex(seconds(date)+(8*3600)),
+         case '+9':,datex(seconds(date)+(9*3600)),
+         case '+10':,datex(seconds(date)+(10*3600)),
+         case '+11':,datex(seconds(date)+(11*3600)),
+         case '+12':,datex(seconds(date)+(12*3600)),
+         case '+13':,datex(seconds(date)+(13*3600)),
+         case '+14':,datex(seconds(date)+(14*3600)),
+         case '+15':,datex(seconds(date)+(15*3600)),
+         elsecase s(date),
+        endsel,
+       </pft>
+     </field>
+     
+<!-- Seleciona menu segundo o tipo de usuario -->
+     <flow action="jump">
+       <pft>,v3000^3,</pft>
+     </flow>
+     <flow action="exit">1</flow>
+
+<!-- Apresenta menu de opcoes da area de acesso restrito do funcionario -->
+     <label>funcionario</label>
+     <call name="930">now</call>
+     <display><htmlpft><pft>,ref(['tab_fmx']68,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Apresenta menu de opcoes da area de acesso restrito de outros usuarios -->
+     <label>usuario</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']122,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

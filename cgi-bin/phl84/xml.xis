@@ -1,0 +1,30 @@
+<IsisScript>
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/xml; charset=iso-8859-1'/#</pft></display>
+     
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+	<do task="mfnrange">
+		<parm name="db">phl_set</parm>
+		<parm name="from">1</parm>
+		<parm name="to">2</parm>
+		<parm name="count">1</parm>
+
+		<parm name="isisxml style">1</parm>
+
+		<loop>
+			<display>
+				<isisxml>*</isisxml>
+			</display>
+		</loop>
+	</do>
+</section>
+
+</IsisScript>

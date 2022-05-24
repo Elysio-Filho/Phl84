@@ -1,0 +1,106 @@
+'<html>
+ <head>
+  <style>
+    <!--
+     table { font-size: 12px; }
+     .copy  { font-size: 10px; }
+     .C39 {color: #000000; font-family: Code 3of9; font-size: 'ref(['phl_cnf']1,v209)';}
+     .F39 {color: #000000; font-family: Free 3 of 9; font-size: 'ref(['phl_cnf']1,v209)';}
+     .F39X {color: #000000; font-family: Free 3 of 9 Extended; font-size: 'ref(['phl_cnf']1,v209)';}
+     .IDC39 {color: #000000; font-family: IDAutomation.com Code39; font-size: 'ref(['phl_cnf']1,v209)';}
+    -->
+  </style>
+ </head>
+ <body>
+ <br>
+ <table border="1" width="640" align="center" cellspacing="0" cellpadding="0">
+   <tr>
+     <td width="320" height="220">
+       <table width="320" border="0">
+         <tr>
+           <td width="100" height="220">
+            
+            <table width="100" border="0">
+              <tr>
+                <td width="100" align="center" height="60">
+                <img border="0" src="',ref(['phl_set']l(['phl_set'],'ACV='v3000^1),v618),'" width="90" height="60">
+                </td>
+              </tr>
+              <tr>
+                <td width="100" align="center" height="120">'
+                ,if p(v719) then,
+                  '<img border="0" src="'v719'" width="70" height="90">',
+                ,fi,
+                '</td>
+              </tr>
+              <tr>
+                <td class="copy" width="100" align="center" height="10">
+                  <i>PHL&copy;Elysio</i>
+                </td>
+              </tr>
+            </table>
+           
+           </td>
+
+           <td width="220" height="220">
+            <table width="220" border="0">
+              <tr>
+               <td align="center" height="40">
+                 <b>',ref(['phl_set']l(['phl_set'],'ACV='v3000^1),v602),'</b>
+               </td>
+              </tr>
+              <tr>
+                <td align="center" height="10">'
+                 ,ref(['tab_txt']37,@tab_txt.pft,),':&nbsp;<b>'v701'</b>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" height="70">',v705,'<br>'
+                 ,ref(['tab_txt']270,@tab_txt.pft,)': ',
+                 ,v711,'<br>'
+                 ,ref(['tab_txt']68,@tab_txt.pft,),': ',v713,
+               '</td>
+              </tr>
+              <tr>
+                <td align="center" height="70">'
+                ,if ref(['phl_cnf']1,v211.3)='PHP' then
+                 '<img src="http://www.elysio.com.br/grafico/image.php?code='v701'&style=196&type='ref(['phl_cnf']1,v211*4)'&width=120&height=60&xres=1&font=2">'
+                else
+                '<font class="'ref(['phl_cnf']1,v211*4)'">*'v701'*</font>'
+               ,fi
+                '</td>
+              </tr>
+            </table>
+           </td>
+         </tr>
+       </table>
+     </td>
+     <td width="320" height="220">
+       <table width="320" border="0">
+         <tr>
+           <td width="320">
+           <table border="1" cellpadding="0" bordercolor="#0000000" height="220">
+            <tr>
+             <td width="100" align="center">Válido até:<br><br>___/___/___</td>
+             <td width="100" align="center">Válido até:<br><br>___/___/___</td>
+             <td width="100" align="center">Válido até:<br><br>___/___/___</td>
+            </tr>
+            <tr>
+             <td width="100" align="center">Válido até:<br><br>___/___/___</td>
+             <td width="100" align="center">Válido até:<br><br>___/___/___</td>
+             <td width="100" align="center">Válido até:<br><br>___/___/___</td>
+            </tr>
+            <tr>
+             <td width="100" align="center">Válido até:<br><br>___/___/___</td>
+             <td width="100" align="center">Válido até:<br><br>___/___/___</td>
+             <td width="100" align="center">Válido até:<br><br>___/___/___</td>
+           </tr>
+           </table>
+           </td>
+         </tr>
+       </table>
+     </td>
+   </tr>
+ </table>
+ </body>
+ </html>'

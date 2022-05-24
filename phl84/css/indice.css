@@ -1,0 +1,37 @@
+#livesearch
+  { 
+  margin:20px;
+  margin-left:10px;
+  width:580px;
+  padding:10px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  border:0px;
+  }
+#txt1
+  {
+  margin:0px;
+  }
+a {
+ color:#0000CD;
+ text-decoration:none;
+ }
+fieldset  { 
+  margin:0px;
+  margin-left:10px;
+  width:560px;
+  padding:0px;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#A5ACB2;
+  font-size: 11px;
+  border:0px;
+  }
+legend {
+ color:#A5ACB2;
+ text-decoration:none;
+ }
+a:hover {
+ color:#FFD700;
+ background-color:#6487DC;
+ text-decoration:none;
+ }

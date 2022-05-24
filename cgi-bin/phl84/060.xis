@@ -1,0 +1,73 @@
+<!-- Busca fasciculos -->
+
+     <IsisScript name="060.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+     <field action="cgi" tag="958">exp</field>
+
+     <do task="search">
+       <parm name="db">phl_acv</parm>
+       <parm name="expression"><pft>,'SER='v958,'*NIV=S',</pft></parm>
+       <field action="define" tag="1001">Isis_Status</field>
+       <loop>
+         <list action="load" type="sort">
+           <pft>
+             '^a'v65,'^b'mfn,/
+           </pft>
+         </list>
+       </loop>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+     <do task="list">
+       <field action="define" tag="1">Isis_Item</field>
+       <display>
+       <pft>
+         '<html>'
+         '<head>'
+         '<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+         '<script language="JavaScript" src="/phl84/js/url.js"></script>'/
+         '</head>'
+         '<h1>'ref(['tab_txt']740,@tab_txt.pft,)'</h1>'
+         '<blockquote>'
+       </pft>
+       </display>
+       <loop>
+       <field action="import" tag="list">4001</field>
+
+         <display>
+           <pft>
+           ,putenv('tmp='v4001),
+           ,ref(['phl_acv']val(v1^b),
+           ,if npost(['phl_acv']'PAI='v2)>0 then
+          ,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/059.xis&exp='v2'&tmp='getenv('tmp')'" target="result">',@tab_icone.pft,'</a>',
+           ,else
+           ,@tab_icone.pft,
+           ,fi,
+             ,@phl_acv_geral.pft,
+             '</li><hr>'
+           ,),
+           </pft>
+         </display>
+       </loop>
+       <display>
+         <pft>
+         '</blockquote><hr><center><a href="javascript:history.back();">'ref(['tab_txt']392,@tab_txt.pft,)'</a></center>
+         </html>'
+         </pft>
+       </display>
+     </do>
+     
+</section>
+</IsisScript>

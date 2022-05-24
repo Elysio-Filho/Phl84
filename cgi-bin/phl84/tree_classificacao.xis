@@ -1,0 +1,77 @@
+<!-- Apresenta a tabela de classificacao em formato de arvore -->
+
+<IsisScript>
+  <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+     <section>
+
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+
+      <do task="search">
+      <parm name="db"><pft>,v3000^1'_cdu',</pft></parm>
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Total</field>
+      <parm name="expression">CLA=$</parm>
+
+      <display>
+      <pft>
+      '<html>'/
+      '<head>'/
+	'<link rel="stylesheet" href="/phl84/css/folder-tree-static.css" type="text/css">'/
+	'<link rel="stylesheet" href="/phl84/css/context-menu.css" type="text/css">'/
+	'<script type="text/javascript" src="/phl84/js/ajax.js"></script>'/
+	'<script type="text/javascript" src="/phl84/js/folder-tree-cdu.js"></script> '/
+	'<script type="text/javascript" src="/phl84/js/context-menu.js"></script>'/
+	'<script language="JavaScript" src="/phl84/js/tab_mfn.js"></script> '/
+     '</head>'/
+     '<body>'/
+     '<h1>Tabela de Classificação</h1>'/
+     '<blockquote>'/
+     '<ul id="dhtmlgoodies_tree" class="dhtmlgoodies_tree">'/
+     </pft>
+     </display>
+
+      <loop>
+
+        <field action="import" tag="list">3000,4001</field>
+        <display>
+        <pft>
+        
+         ,if size(v310)=1 then
+
+	   '<li>'/
+             '<a href="#" id="node_1">'v310' - 'v311+|; |,'</a>'/
+
+	        '<ul>'/
+	          '<li parentId="FILHO='v310'"><a href="#" id="node_2">Aguarde...</a></li>'/
+	       '</ul>'/
+
+           '</li>'/
+        
+        ,fi
+
+	</pft>
+        </display>
+
+      </loop>
+
+      <display>
+      </ul>
+      </blockquote>
+      <hr>
+      <center>
+        <a href="#" onclick="collapseAll('dhtmlgoodies_tree');return false">Contrair hierarquia</a>
+      </center>
+      </body>
+      </html>
+      </display>
+    </do>
+      
+  <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

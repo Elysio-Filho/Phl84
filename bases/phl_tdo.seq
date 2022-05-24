@@ -1,0 +1,208 @@
+!ID 000001
+!v301!Áudio
+!v302!Áudio
+!v303!Audio
+!v304!Áudio
+!v305!Áudio
+!v350!1
+!v370!/phl84/img/046.gif
+!ID 000002
+!v301!Catálogo
+!v302!Catálogo
+!v303!Catalogue
+!v304!Catálogo
+!v305!Catálogo
+!v350!6
+!v370!/phl84/img/027.gif
+!ID 000003
+!v301!Arquivo
+!v302!Archivo
+!v303!File
+!v304!Arquivo
+!v305!Arquivo
+!v350!2
+!v370!/phl84/img/047.gif
+!v999!^d20080814^h1000^bsuper
+!ID 000004
+!v301!Evento
+!v302!Evento
+!v303!Meeting
+!v304!Evento
+!v305!Evento
+!v350!3
+!v370!/phl84/img/059.gif
+!ID 000005
+!v301!Imagem
+!v302!Imagen
+!v303!Image
+!v304!Imagem
+!v305!Imagem
+!v350!4
+!v370!/phl84/img/060.gif
+!ID 000006
+!v301!Jogo, Kit
+!v302!Juego, Kit
+!v303!Play, Kit
+!v304!Jogo, Kit
+!v305!Jogo, Kit
+!v350!5
+!v370!/phl84/img/061.gif
+!v999!^d20080814^h1000^bsuper
+!ID 000007
+!v301!Livro
+!v302!Libro
+!v303!Book
+!v304!Livro
+!v305!Livro
+!v350!6
+!v370!/phl84/img/027.gif
+!ID 000008
+!v301!Manuscrito
+!v302!Manuscrito
+!v303!Manuscrito
+!v304!Manuscrito
+!v305!Manuscrito
+!v350!7
+!v370!/phl84/img/062.gif
+!v999!^d20080814^h1001^bsuper
+!ID 000009
+!v301!Mapa
+!v302!Mapa
+!v303!Map
+!v304!Mapa
+!v305!Mapa
+!v350!8
+!v370!/phl84/img/025.gif
+!v999!^d20080814^h1001^bsuper
+!ID 000010
+!v301!Norma Técnica
+!v302!Estandar
+!v303!Technical Standard
+!v304!Norma Técnica
+!v305!Norma Técnica
+!v350!6
+!v370!/phl84/img/065.gif
+!v999!^d20080814^h1002^bsuper
+!ID 000011
+!v301!Obra Rara
+!v302!Obra Rara
+!v303!Rare Book
+!v304!Obra Rara
+!v305!Obra Rara
+!v350!6
+!v370!/phl84/img/062.gif
+!v999!^d20080814^h1002^bsuper
+!ID 000012
+!v301!Outro
+!v302!Otro
+!v303!Another
+!v304!Outro
+!v305!Outro
+!v350!9
+!v370!/phl84/img/023.gif
+!v999!^d20080814^h1002^bsuper
+!ID 000013
+!v301!Partitura
+!v302!Partitura
+!v303!Partitura
+!v304!Partitura
+!v305!Partitura
+!v350!6
+!v370!/phl84/img/051.gif
+!v999!^d20080814^h1003^bsuper
+!ID 000014
+!v301!Patente
+!v302!Patente
+!v303!Patente
+!v304!Patente
+!v305!Patente
+!v350!6
+!v370!/phl84/img/064.gif
+!v999!^d20080814^h1003^bsuper
+!ID 000015
+!v301!Peça de Museu
+!v302!Peça de Museu
+!v303!Museum Part
+!v304!Peça de Museu
+!v305!Peça de Museu
+!v350!10
+!v370!/phl84/img/057.gif
+!v999!^d20080814^h1003^bsuper
+!ID 000016
+!v301!Periódico
+!v302!Revista
+!v303!Serial
+!v304!Periódico
+!v305!Periódico
+!v350!11
+!v370!/phl84/img/028.gif
+!ID 000017
+!v301!Planta e Projeto
+!v302!Planta y Proyecto
+!v303!Plant and Project
+!v304!Planta e Projeto
+!v305!Planta e Projeto
+!v350!8
+!v370!/phl84/img/065.gif
+!v999!^d20080814^h1004^bsuper
+!ID 000018
+!v301!Projetos de pesquisa
+!v302!Proyectos de investigación
+!v303!Research Project
+!v304!Projetos de pesquisa
+!v305!Projetos de pesquisa
+!v350!6
+!v370!/phl84/img/062.gif
+!v999!^d20080814^h1004^bsuper
+!ID 000019
+!v301!Relatório
+!v302!Informe
+!v303!Report
+!v304!Relatório
+!v305!Relatório
+!v350!6
+!v370!/phl84/img/066.gif
+!v999!^d20080814^h1005^bsuper
+!ID 000020
+!v301!Digital
+!v302!Digital
+!v303!Digital
+!v304!Digital
+!v305!Digital
+!v350!1
+!v370!/phl84/img/029.gif
+!v999!^d20080814^h1005^bsuper
+!ID 000021
+!v301!Tese
+!v302!Tesis
+!v303!Tesis
+!v304!Tese
+!v305!Tese
+!v350!12
+!v370!/phl84/img/064.gif
+!ID 000022
+!v301!Video
+!v302!Video
+!v303!Video
+!v304!Video
+!v305!Video
+!v350!1
+!v370!/phl84/img/068.gif
+!ID 000023
+!v301!Braille
+!v302!Braille
+!v303!Braille
+!v304!Braille
+!v305!Braille
+!v350!6
+!v370!/phl84/img/055.gif
+!v999!^d20080814^h1005^bsuper
+!ID 000024
+!v301!Sítio Web
+!v302!Sitio Web
+!v303!Homepage
+!v304!Homepage
+!v305!Homepage
+!v350!13
+!v370!/phl84/img/036.gif
+!v999!^d20080814^h1006^bsuper

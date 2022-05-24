@@ -1,0 +1,54 @@
+<!-- 28/12/2011 10:39:17  Incluida funcao de cookie para permitir execucao do formato FRBR -->
+
+<IsisScript name="mfn.xis">
+
+<display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<section>
+
+     <field action="cgi" tag="957">mfn</field>
+      <!--
+     <field action="add" tag="3009"><pft>,getenv('HTTP_COOKIE'),</pft></field>
+     <field action="replace" tag="3009" split="occ"><pft>,replace(v3009,'; ',s('',#)),</pft></field>
+     <field action="replace" tag="3009" split="occ"><pft>,(if v3009.4='phl=' then v3009*4 fi,),</pft></field>
+     -->
+     
+     <parm name="cipar"><pft>,cat('phl84.cip'),</pft></parm>
+
+<do task="mfnrange">
+  <parm name="db">phl_acv</parm>
+  <parm name="from"><pft>,v957,</pft></parm>
+  <parm name="count">1</parm>
+  <display>
+    <pft>
+     '<html>'/
+     '<head>'/
+     '<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+     '</head>'/
+     '<body>'/
+    </pft>
+  </display>
+  <loop>
+    <display>
+      <pft>
+        ,if p(v3) then '<fieldset><legend>Localização</legend><b>',v3," / "v103,'</b></fieldset>' fi,
+        '<br>'/
+        '<fieldset><legend>Referência</legend>',@phl_acv.pft,'</fieldset>'
+        '<br>'
+        ,if p(v84) then '<fieldset><legend>Ligação externa</legend>',(v84+|<br>|),'</fieldset>' fi,
+        '<br>'
+        ,if p(v86) then '<fieldset><legend>Conteúdo</legend>'(v86^*+|<br>|)'</fieldset>' fi,
+        '<br>'
+        ,if p(v83) then '<fieldset><legend>Resumo</legend>'(v83+|<br>|)'</fieldset>' fi,
+
+      </pft>
+    </display>
+  </loop>
+  <display>
+   </body>
+   </html>
+  </display>
+</do>
+
+</section>
+</IsisScript>

@@ -1,0 +1,161 @@
+<!-- Historicos
+     14/04/2007 - Revisado -->
+     
+     <IsisScript name="019.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+<!-- Armazena em v2211 dados sobre permissoes do usuario -->
+     <field action="add" tag="2211"><pft>,ref(['phl_pwd']val(v3000^4),v656,),</pft></field>
+
+     <flow action="jump">
+       <pft>,if s(v3000^3)='funcionario' then 'login_valido' else 'login_invalido' fi,</pft></flow>
+     <flow action="exit">1</flow>
+
+     <label>login_invalido</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']55,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>login_valido</label>
+    
+<!-- Verifica se usuário tem permissões para esta rotina -->
+     <flow action="jump">
+      <pft>,if ref(['phl_pwd']val(v3000^4),v656^d)<>'1' then '271' fi,</pft>
+     </flow>
+
+     <field action="cgi" tag="951">usr</field>
+     <field action="replace" tag="951"><pft>,replace(v951,' ',''),</pft></field>
+     <field action="replace" tag="951"><pft>,mhu,v951,mpl,</pft></field>
+     <field action="cgi" tag="952">tbo</field>
+     <field action="replace" tag="952"><pft>,replace(v952,' ',''),</pft></field>
+     <field action="replace" tag="952"><pft>,mhu,v952,mpl,</pft></field>
+
+<!-- Verifica se tombo ou usuário foram fornecidos corretamente -->
+     <flow action="jump">
+      <pft>,
+        if a(v951) and p(v952) then 'tombo' else
+         if p(v951) and a(v952) then 'usuario' else '184' fi
+        fi
+      </pft>
+     </flow>
+     <flow action="exit">0</flow>
+
+     <label>271</label>
+     <field action="add" tag="250">271</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+
+     <label>184</label>
+     <field action="replace" tag="250">184</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Verifica se usuario é valido -->
+     <label>usuario</label>
+     <flow action="jump">
+      <pft>,if npost(['phl_usr'],'USR='v951)<>0 then 'HISTUSR' else '380' fi,</pft>
+     <file action="close" type="database">phl_usr</file>
+     </flow>
+     <flow action="exit">1</flow>
+    
+     <label>380</label>
+     <field action="replace" tag="250">380</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Verifica se tombo é valido -->   
+	 <label>tombo</label>
+     <flow action="jump">
+       <pft>,if npost([v3000^1'_tbo'],'TBO='v952)<>0 then 'HISTBO' else '368' fi,</pft>
+     <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+     </flow>
+     <flow action="exit">1</flow>
+
+     <label>368</label>
+     <field action="replace" tag="250">368</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Historico do tombo -->
+     <label>HISTBO</label>
+
+     <field action="replace" tag="2"><pft>,ref([v3000^1'_tbo']l([v3000^1'_tbo'],'TBO='v952),v800),</pft></field>
+     <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+     
+     <do task="search">
+       <parm name="db"><pft>,v3000^1'_log',</pft></parm>
+       <parm name="expression"><pft>,mhu,'TBO='v952,</pft></parm>
+       <field action="define" tag="1002">Isis_Total</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']130,v4),</pft></htmlpft></display>
+	   <file action="close" type="database">phl_set</file>
+	   <file action="close" type="database">phl_acv</file>
+       <loop>
+         <field action="import" tag="list">952,3000,4001</field>
+         <display>
+           <htmlpft><pft>,ref(['tab_fmx']135,v4),</pft></htmlpft>
+		   <file action="close" type="database">phl_usr</file>
+         </display>
+       </loop>
+      <display><htmlpft><pft>,if val(v1002)=0 then ref(['tab_fmx']108,v4) fi,</pft></htmlpft></display>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_log',</pft></file>
+     <flow action="exit">1</flow>
+
+<!-- Historico do usuario -->
+     <label>HISTUSR</label>
+
+     <do task="mfnrange">
+       <parm name="db">phl_set</parm>
+       <loop>
+         <field action="import" tag="list">951,3000,4001,1001</field>
+    
+         <do task="search">
+         <parm name="db"><pft>,v601'_log',</pft></parm>
+         <parm name="expression"><pft>,'USR='v951,</pft></parm>
+         <field action="define" tag="1012">Isis_Total</field>
+         <field action="define" tag="1013">Isis_Current</field>
+
+         <loop>
+           <field action="import" tag="list">601,602,951,3000,4001,7003</field>
+           <display><htmlpft><pft>,if val(v1012)<>0 then ref(['tab_fmx']131,v4) fi,</pft></htmlpft></display>
+           <file action="close" type="database"><pft>,v601'_log',</pft></file>
+           <file action="close" type="database">phl_usr</file>
+           <file action="close" type="database">phl_acv</file>
+         </loop>
+
+         <display><pft>,if val(v1012)>0 then putenv('hits=1') fi,</pft></display>
+
+       </do>
+       <file action="close" type="database"><pft>,v601'_log',</pft></file>
+
+       </loop>
+       <display><htmlpft><pft>,if val(getenv('hits'))<1 then ref(['tab_fmx']108,v4) fi,</pft></htmlpft></display>
+     </do>
+     <file action="close" type="database">phl_set</file>
+
+<flow action="exit">1</flow>
+
+</section>
+</IsisScript>

@@ -1,0 +1,139 @@
+<!-- Gera e-mails de alerta de vencimento
+     06/02/2015 16:51:54 
+     26/03/2015 11:20:44 
+     21/09/2015 16:51:56
+     -->
+
+     <IsisScript name="068.xis">
+     
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+     <!-- Verifica se e-mails foram enviados no dia de hoje -->
+          <field action="statusfile" tag="1091"><pft>,'alerta-'s(date).8,v3000^1'.xml',</pft></field>
+          
+     <flow action="jump">
+       <pft>
+         ,if v1091^s:'e' then 'mails_ja_enviados' else 'gera_lista' fi,
+       </pft>
+     </flow>
+     <flow action="exit">1</flow>
+
+     <label>gera_lista</label>
+     
+       <do task="mfnrange">
+         <parm name="db">phl_set</parm>
+         <parm name="from"><pft>,f(val(v3000^1),0,0),</pft></parm>
+         <parm name="count">1</parm>
+         <loop>
+           <field action="replace" tag="602"><pft>,v602,</pft></field>
+           <field action="replace" tag="649"><pft>,v649,</pft></field>
+
+           <field action="export" tag="list">602,607,608,645/647,649,651</field>
+         </loop>
+         <field action="export" tag="list">602,607,608,645/647,649,651</field>
+       </do>
+       
+<!-- Garante fechamento da base de dados de emprestimos antes da leitura -->
+     <file action="close" type="database"><pft>,v3000^1'_emp'</pft></file>
+
+<!-- Inicia processo de busca de emprestimos a vencer -->
+
+       <!-- Carrega na variavel #888 o MFN da data de hoje -->
+            <field action="add" tag="888">
+              <pft>,ref([v3000^1'_cal']l([v3000^1'_cal'],s(date).8),mfn(1)),</pft>
+            </field>
+            <file action="close" type="database"><pft>,v3000^1'_cal'</pft></file>
+            
+     <!-- *************************************************************************
+          Identifica o próximo dia útil no calendário
+          ********************************************************************** -->
+     
+          <do task="mfnrange">
+            <parm name="db"><pft>,v3000^1'_cal'</pft></parm>
+            <parm name="from"><pft>,f(val(v888)+1,0,0),</pft></parm>
+            <loop>
+              <flow action="skip">
+                <pft>,
+                   ,if v324='1' then
+
+                    putenv('c_mfn='mfn(1)) 'Quit'
+                    
+                   ,fi,
+                </pft>
+              </flow>
+            </loop>
+            <field action="add" tag="889"><pft>,getenv('c_mfn'),</pft></field>
+          </do>
+          <file action="close" type="database"><pft>,v3000^1'_cal'</pft></file>
+
+     <do task="mfnrange">
+       <parm name="db"><pft>,v3000^1'_emp'</pft></parm>
+
+       <file action="create" type="output"><pft>,'alerta-'s(date).8,v3000^1'.xml',</pft></file>
+       <display><htmlpft><pft>,ref(['tab_fmx']250,(v4/)),</pft></htmlpft></display>
+
+       <loop>
+       <field action="import" tag="list">602,607,608,649,889,3000,4001</field>
+
+       <!-- Obtem dados do usuario -->
+
+            <field action="add" tag="890">
+              <pft>,ref(['phl_usr']val(v900^k),'^a'v705,'^b'v714[1]),</pft>
+            </field>
+            
+       <!-- Obtem dados do titulo -->
+
+            <field action="add" tag="18"><pft>,ref(['phl_acv']val(v900^f),v18),</pft></field>
+            <field action="add" tag="30"><pft>,ref(['phl_acv']val(v900^f),v30),</pft></field>
+            <field action="add" tag="31"><pft>,ref(['phl_acv']val(v900^f),v31),</pft></field>
+            <field action="add" tag="32"><pft>,ref(['phl_acv']val(v900^f),v32),</pft></field>
+            <field action="add" tag="181"><pft>,ref(['phl_acv']val(v900^f),v181),</pft></field>
+
+            <display><htmlpft><pft>,ref(['tab_fmx']247,(v4/)),</pft></htmlpft></display>
+            
+            <list action="load" type="list">
+              <pft>
+               ,if v890^b<>'' then e0:=1,
+                  ,if val(v900^n)=val(v889) then
+                    ,v890,'^t'v900^t,'^v'v900^v,'^c'if p(v18) then v18 else v30, ", v."v31,", n."v32 fi,/,
+                  ,fi
+                ,fi
+             </pft>
+           </list>
+
+       </loop>
+       <display><pft>,c2,'</lote>'/,</pft></display>
+       <file action="close" type="output"><pft>,'alerta-'s(date).8,v3000^1'.xml',</pft></file>
+     </do>
+     
+<!-- Apresenta lista de e-mails que serao enviados -->
+
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="1">Isis_Item</field>
+       <display><pft>,if e0<>1 then '<hr><center>*** Nenhum objeto com vencimento no próximo dia útil ***</center><hr>' fi,</pft></display>
+         <loop>
+           <field action="import" tag="list">3000</field>
+           <display><htmlpft><pft>,ref(['tab_fmx']252,(v4/)),</pft></htmlpft></display>
+         </loop>
+       </do>
+     <flow action="exit">0</flow>
+     
+     <label>mails_ja_enviados</label>
+     <field action="add" tag="250">1160</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,(v4/)),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+</section>
+</IsisScript>

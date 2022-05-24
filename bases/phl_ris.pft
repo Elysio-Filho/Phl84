@@ -1,0 +1,31 @@
+select s(v5,v6)
+ case '7m'  : '<br>TY  - BOOK'/
+ case '7am'  : '<br>TY  - CHAP'/
+ case '16as' : '<br>TY  - JOUR'/
+ case '16s' : '<br>TY  - JFULL'/
+ case '16c' : '<br>TY  - JFULL'/
+ case '21m' : '<br>TY  - THES'/
+ case '22m' : '<br>TY  - VIDEO'/
+ case '4m'  : '<br>TY  - CONF'/
+endsel,
+'<br>ID  - 'v2/,
+"<br>T1  - "v12/
+"<br>TI  - "v18/,
+(|<br>A1  - |v10/),
+(|<br>AU  - |v16/),
+"<br>PY  - "v64/
+"<br>N1  - "v61+|. |/
+(|<br>KW  - |v87/),
+"<br>SP  - "v14/
+"<br>EP  - "v14/
+"<br>JF  - "v30/
+if v6='as' then "<br>JA  - "v30/ fi,
+"<br>VL  - "v31/
+"<br>IS  - "v32/
+"<br>CY  - "v66/
+"<br>PB  - "v62/
+if v5<>'16' then "<br>T3  - "v30/ fi,
+"<br>N2  - "v83+|. |/
+"<br>SN  - ISSN "v35/
+"<br>SN  - ISBN "v69/
+'<br>ER  -'/#

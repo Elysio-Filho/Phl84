@@ -1,0 +1,37 @@
+<IsisScript>
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     <!--
+     http://127.0.0.1:8080/cgi-bin/mx.exe/cgi=mx?cipar=phl84.cip&db=phl_acv&create=c:\lixo\phl_acv&-all&now
+     <a href="/cgi-bin/mx.exe/cgi=mx?cipar=phl84.cip&db=phl_acv&create=c:\lixo\novo_lixo&-all&now">novo lixo</a>
+     -->
+<section>
+   <display>
+     <pft>
+	'<html>
+	 <head>
+	 <link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">
+	 </head>
+  	 <body>
+  	 <form action="/cgi-bin/mx.exe/cgi=mx" method="post">
+  	 <input type="hidden" name="cipar" value="phl84.cip">
+  	 <input type="hidden" name="now">
+   	 <input type="hidden" name="-all">
+   	 <table>
+  	 <tr><td>DB: </td><td><input type="text" name="db" value=""></td></tr>
+  	 <!--
+  	 <tr><td>STRING: </td><td><input type="text" name="text" value=""></td></tr>
+  	 -->
+         <tr><td>BOOL: </td><td><input type="text" name="bool" value=""></td></tr>
+         <tr><td>PFT: </td><td><input type="text" name="pft" value=""></td></tr>
+  	 <tr><td></td><td><input class="botao" type="submit" value="Buscar"></td></tr>
+  	 </table>
+  	</form>
+  	</body>
+  	</html>'
+     </pft>
+  </display>
+
+</section>
+</IsisScript>

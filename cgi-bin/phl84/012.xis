@@ -1,0 +1,264 @@
+<!-- Caixa de seleção de bases de dados para edição
+     24/01/2008 - Comentei a edição da base de dados do catálogo durante a mostra de registros 
+     08/02/2011 10:06:14 
+     21/03/2017 09:16:36 Tratamento da variável 958 
+     09/08/2017 15:12:11 Tratamento da variável 958 -->
+     
+     <IsisScript name="012.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+           
+<!-- Inclue funcao que atualiza tombos no catálogo -->
+     <include>phl84/008.fnc</include>
+
+<!-- Inclue funcao que obtem informacoes sobre o tombo -->
+     <include>phl84/801.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="802">tip</field>
+     <field action="cgi" tag="200">pag</field>
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="951">opc.x</field>
+     <field action="cgi" tag="952">from</field>
+     <field action="cgi" tag="958">exp</field>
+     <!-- 21/03/2017 09:17:37  --> <field action="replace" tag="958"><pft>,replace(v958,'"',''),</pft></field>
+     <!-- 09/08/2017 15:12:11  --> <field action="replace" tag="958"><pft>,replace(v958,'+',' or '),</pft></field>
+     <field action="cgi" tag="959">mfn</field>
+     <field action="cgi" tag="3004">dbvar</field>
+     <field action="replace" tag="959"><pft>if val(v959)>0 then f((val(v959)),6,0),fi,</pft></field>
+     <field action="replace" tag="959"><pft>,if val(v959)>0 then replace(v959,' ','0'),fi,</pft></field>
+
+<!-- Verifica se código existe e é válido-->
+     <flow action="jump"><pft>,if p(v3002) and a(v3000) then '47' fi,</pft></flow>
+
+<!-- Carrega permissões de entrada e edição do usuário -->
+     <field action="add" tag="660"><pft>,ref(['phl_pwd']val(v3000^4),v660),</pft></field>
+     <field action="add" tag="661"><pft>,ref(['phl_pwd']val(v3000^4),v661),</pft></field>
+     <field action="add" tag="662"><pft>,ref(['phl_pwd']val(v3000^4),v662),</pft></field>
+     <field action="add" tag="663"><pft>,ref(['phl_pwd']val(v3000^4),v663),</pft></field>
+     <field action="add" tag="2001"><pft>,ref(['phl_pwd']val(v3000^4),v658),</pft></field>        
+     <field action="add" tag="2000"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>
+     
+<!-- Interpreta barra de navegação -->
+     <label>login_valido</label>
+     <flow action="jump"><pft>,if val(v951)>0 and val(v951)<77 then 'primeira' fi,</pft></flow>
+     <flow action="jump"><pft>,if val(v951)>77 and val(v951)<=154 then 'anterior' fi,</pft></flow>
+     <flow action="jump"><pft>,if val(v951)>154 and val(v951)<=233 then 'proxima' fi,</pft></flow>
+     <flow action="jump"><pft>,if val(v951)>233 and val(v951)<=300 then 'ultima' fi,</pft></flow>
+
+<!--Direciona o fluxo de processamento -->
+    <flow action="jump"><pft>,if p(v950) then v950 fi,</pft></flow>
+
+        <label>primeira</label>
+        <field action="add" tag="2011">1</field>
+        <flow action="jump">busca_recs</flow>
+        
+        <label>proxima</label>
+        <field action="cgi" tag="2011">prox</field>
+        <flow action="jump">busca_recs</flow>
+        
+        <label>anterior</label>
+        <field action="cgi" tag="2011">ante</field>
+        <flow action="jump">busca_recs</flow>
+        
+        <label>ultima</label>
+        <field action="cgi" tag="2011">ulti</field>
+        <flow action="jump">busca_recs</flow>
+      
+        <label>47</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']47,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>251</label>
+        <field action="add" tag="250">251</field>
+        <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>chk</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']77,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>autoridades</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']228,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>cutter</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']256,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>indice_autores</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']232,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>indice_fornecedores</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']251,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>indice_assuntos</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']233,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>chk_setup</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']222,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+
+        <label>chk_control</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']223,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+
+        <label>cdu</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']4,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>tdo</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']39,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>voc</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']5,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>vocabulario</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']229,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>aut</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']7,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+             
+        <label>cur</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']41,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+                       
+        <label>usr</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']53,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+        
+        <label>for</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']59,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+
+     <label>271</label>
+     <field action="add" tag="250">271</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow> 
+
+<!-- Busca registro para edicao -->
+     <label>busca_recs</label>
+
+     <!-- Obtém quantidade de registros por página -->
+          <field action="add" tag="1099"><pft>,ref(['phl_cnf']1,v206),</pft></field>
+
+          <field action="cgi" tag="1010">rec</field>
+          <field action="replace" tag="1010"><pft>,v1010,"1"n1010</pft></field>
+    
+          <do task="search">
+            <parm name="db"><pft>,v3004^a,</pft></parm>
+            <field action="define" tag="1001">Isis_Current</field>
+            <field action="define" tag="1002">Isis_Total</field>
+            <parm name="from"><pft>,v1010,</pft></parm>
+            <parm name="count"><pft>,v1099,"10"n1099,</pft></parm>
+            <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+            <!-- 11/10/2006 05:15:46 --> <parm name="buffersize">90000</parm>
+            <loop>
+              <field action="import" tag="list">661,663,802,957,958,1091,2000,3004,4001,8000/8004,1010</field>
+              <display>
+                <htmlpft>
+                  <pft>
+                    ,if val(v1001)=1 then 
+                        ref(['tab_fmx']35,v4)
+                    ,fi,
+                  </pft>
+                </htmlpft>
+              </display>
+              <field action="add" tag="200"><pft>v3000</pft></field>
+              <field action="import" tag="list">3000</field>
+              <field action="replace" tag="1010"><pft>,v1001,</pft></field>
+
+              <flow action="jump">
+                <pft>,
+                  if v3004^a = 'phl_acv' then 'tbofnc' fi,
+                </pft>
+             </flow>
+             <flow action="jump">browserec</flow>
+
+             <label>tbofnc</label>
+             <call name="801">now</call>
+             <field action="add" tag="5000"><pft>,ref(['phl_tdo']val(v5),v350),</pft></field>
+
+       <label>browserec</label>
+       
+       <field action="add" tag="960">002</field>
+       <field action="add" tag="957"><pft>,mfn,</pft></field>
+       
+       <display>
+         <htmlpft>
+           <pft>
+             ,ref(['tab_pft']val(v3004^b),'[pft]',v4,'[/pft]',),
+           </pft>
+         </htmlpft>
+       </display>
+
+            <file action="close" type="database"><pft>,v1'_tbo',</pft></file>
+            <file action="close" type="database"><pft>,v1'_emp',</pft></file>
+            <file action="close" type="database"><pft>,v1'_ser',</pft></file>
+            <file action="close" type="database"><pft>,v1'_ser_fmt',</pft></file>
+            <file action="close" type="database">phl_acv</file>
+            <file action="close" type="database">phl_aut</file>
+            <file action="close" type="database">phl_cnf</file>
+            <file action="close" type="database">phl_cur</file>
+            <file action="close" type="database">phl_idm</file>
+            <file action="close" type="database">phl_res</file>
+            <file action="close" type="database">phl_set</file>
+            <file action="close" type="database">phl_acv_fmt</file>
+            <file action="close" type="database">phl_usr</file>
+            <file action="close" type="database">phl_tdo</file>
+         <display><htmlpft><pft>,ref(['tab_fmx']199,v4),</pft></htmlpft></display>
+
+         <display><htmlpft><pft>,@tab_dag.pft,</pft></htmlpft></display>
+
+        <display>
+          </table>
+          </body>
+          </html>
+        </display>
+            <file action="close" type="database"><pft>,v1'_tbo',</pft></file>
+            <file action="close" type="database"><pft>,v1'_emp',</pft></file>
+            <file action="close" type="database"><pft>,v1'_ser',</pft></file>
+            <file action="close" type="database"><pft>,v1'_ser_fmt',</pft></file>
+            <file action="close" type="database">phl_acv</file>
+            <file action="close" type="database">phl_aut</file>
+            <file action="close" type="database">phl_cnf</file>
+            <file action="close" type="database">phl_cur</file>
+            <file action="close" type="database">phl_idm</file>
+            <file action="close" type="database">phl_res</file>
+            <file action="close" type="database">phl_set</file>
+            <file action="close" type="database">phl_acv_fmt</file>
+            <file action="close" type="database">phl_usr</file>
+            <file action="close" type="database">phl_tdo</file>
+       </loop>
+
+       <display><htmlpft><pft>,if val(v1002)=0 then ref(['tab_fmx']108,v4) fi,</pft></htmlpft></display>
+       <display><htmlpft><pft>,ref(['tab_fmx']200,v4),</pft></htmlpft></display>
+       
+     </do>
+     <file action="close" type="database"><pft>,v3004^a,</pft></file>
+     <flow action="exit">1</flow>
+     
+     <label>765</label>
+     <field action="add" tag="250">765</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+</section>
+</IsisScript>

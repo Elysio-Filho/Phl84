@@ -1,0 +1,320 @@
+'<html>'/
+'<head>'/
+'<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+'<script>
+function tab_man(x)
+ {
+  window.open("/cgi-bin/wxis.exe?IsisScript=phl84/049.xis&tmp='v4001'&mfn="+x,"janela","height=400,width=600,menubar=no,resizable=yes,scrollbars=yes,status=no")
+ }
+</script>'/
+'<script language="JavaScript" src="/phl84/js/submit.js"></script>'/
+'<script language="JavaScript" src="/phl84/js/isis_limite.js"></script>'/
+'<script language=javascript>function proibido_voltar(){history.go(1) == false;}</script>'/
+'</head>'/
+'<body>'/
+'<script language=javascript>proibido_voltar()</script>'/
+'<form name="formulario" onSubmit="return count(30000)" action="/cgi-bin/wxis.exe" method="post">'
+'<input type="hidden" name="IsisScript" value="phl84/002.xis">'
+'<input type="hidden" name="tmp" value="'v4001'">'
+'<input type="hidden" name="opc" value="grava">'
+'<input type="hidden" name="dbvar" value="^aphl_cnf^b5^ccnf">'
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'
+'<input type="hidden" name="999" value="'v999[1]'">'
+'<input type="hidden" name="mfn" value="'v957'">'
+'<table>'
+'<tr>
+  <td class="td1o"></td>
+  <td class="topico">',ref(['tab_txt']60,@tab_txt.pft,),'</td>
+</tr>'
+'<tr>
+  <td class="td1o">',ref(['tab_txt']205,@tab_txt.pft,),' <a href=JavaScript:tab_man(201);>[201]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v201='S' then 'checked' fi,' name="201">',ref(['tab_txt']331,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v201='N' then 'checked' fi,' name="201">',ref(['tab_txt']223,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1o">',ref(['tab_txt']284,@tab_txt.pft,),' <a href=JavaScript:tab_man(202);>[202]</a></td>
+  <td class="td2">
+    <input type="text" class="textbox" name="202" value="',v202,'">
+  </td>
+</tr>'
+'<tr>
+  <td class="td1o"></td><td class="topico">',ref(['tab_txt']785,@tab_txt.pft,),'</td>
+</tr>'
+'<tr>
+  <td class="td1o">',ref(['tab_txt']785,@tab_txt.pft,)' <a href=JavaScript:tab_man(200);>[200]</a>
+  </td><td class="td2"><input type="text" class="textbox" name="200" value="',v200,'"></td>
+</tr>'
+'<tr>
+  <td class="td1o">URL do sistema <a href=JavaScript:tab_man(204);>[204]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="204" value="',v204,'"></td>
+</tr>'
+'<tr>
+  <td class="td1o">Sessão expira em: <a href=JavaScript:tab_man(219);>[219]</a></td>
+  <td class="td2"><input type="text" name="219" value="',v219,'" size="12"> minutos</td>
+</tr>'
+
+'<tr>
+  <td class="td1o">Cor principal&nbsp;<a href=JavaScript:tab_man(232);>[232]</a></td>
+  <td class="td2"><input style="background-color: 'v232'" type="text" name="232" value="',v232,'"></td>
+</tr>'
+
+'<tr>
+  <td class="td1o">Cor secundária <a href=JavaScript:tab_man(236);>[236]</a></td>
+  <td class="td2"><input style="background-color: 'v236'" type="text" name="236" value="',v236,'"></td>
+</tr>'
+
+'<tr>
+  <td class="td1o">Cor dos textos <a href=JavaScript:tab_man(233);>[233]</a></td>
+  <td class="td2"><input style="background-color: 'v233'" type="text" name="233" value="',v233,'"></td>
+</tr>'
+
+'<tr>
+  <td class="td1o">Cor dos fundos <a href=JavaScript:tab_man(234);>[234]</a></td>
+  <td class="td2"><input style="background-color: 'v234'" type="text" name="234" value="',v234,'"></td>
+</tr>'
+'<tr>
+  <td class="td1o">Padrão de fonte <a href=JavaScript:tab_man(235);>[235]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="235" value="',v235,'"></td>
+</tr>'
+'<tr>
+  <td class="td1o">Cor do link <a href=JavaScript:tab_man(240);>[240]</a></td>
+  <td class="td2"><input style="background-color: 'v240'" type="text" name="240" value="',v240,'"></td>
+</tr>'
+'<tr>
+  <td class="td1o">Cor do link selecionado <a href=JavaScript:tab_man(241);>[241]</a></td>
+  <td class="td2"><input style="background-color: 'v241'" type="text" name="241" value="',v241,'"></td>
+</tr>'
+'<tr>
+  <td class="td1e">Barra de idiomas <a href=JavaScript:tab_man(237);>[237]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v237='S' then 'checked' fi,' name="237">',ref(['tab_txt']331,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v237='N' then 'checked' fi,' name="237">',ref(['tab_txt']223,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1o">Campos para filtro <a href=JavaScript:tab_man(205);>[205]</a></td>
+  <td class="td2"><textarea rows="5" name="205" cols="50">'(v205/)'</textarea></td>
+</tr>'
+'<tr>
+  <td class="td1o">',ref(['tab_txt']739,@tab_txt.pft,),' <a href=JavaScript:tab_man(211);>[211]</a></td>
+  <td class="td2">
+    <select name="211">
+      <option selected value="',v211,'">'v211'</option>',
+      if v211<>'PHP-I25' then '<option value="PHP-I25">PHP-I25</option>',fi,
+      if v211<>'PHP-C39' then '<option value="PHP-C39">PHP-C39</option>',fi,
+      if v211<>'PHP-C128A' then '<option value="PHP-C128A">PHP-C128A</option>',fi,
+      if v211<>'PHP-C128B' then '<option value="PHP-C128B">PHP-C128B</option>',fi,
+      if v211<>'PHP-C128C' then '<option value="PHP-C128C">PHP-C128C</option>',fi,
+      if v211<>'TTF-C39' then '<option value="TTF-C39">TTF-C39</option>',fi,
+      if v211<>'TTF-F39' then '<option value="TTF-F39">TTF-F39</option>',fi,
+      if v211<>'TTF-F39X' then '<option value="TTF-F39X">TTF-F39X</option>',fi,
+      if v211<>'TTF-IDC39' then '<option value="TTF-IDC39">TTF-IDC39</option>',fi,
+   '</select>
+     Tamanho (TTF):<select size="1" name="209">
+      <option selected value="',v209,'">'v209'</option>
+      <option value="8pt">8</option>
+      <option value="9pt">9</option>
+      <option value="10pt">10</option>
+      <option value="11pt">11</option>
+      <option value="12pt">12</option>
+      <option value="14pt">14</option>
+      <option value="16pt">16</option>
+      <option value="18pt">18</option>
+      <option value="20pt">20</option>
+      <option value="24pt">24</option>
+      <option value="28pt">28</option>
+      <option value="32pt">32</option>
+      <option value="36pt">36</option>
+      <option value="40pt">40</option>
+    </select>
+    Largura: <input type="text" name="228" value=',v228,"120"n228,'>
+    Altura: <input type="text" name="229" value=',v229,"60"n229,'>
+  </td>
+</tr>'
+'<tr>
+  <td class="td1o"></td><td class="topico">Empréstimo</td>
+</tr>'
+
+'<tr>
+  <td class="td1e">Empréstimo <a href=JavaScript:tab_man(222);>[222]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v222='S' then 'checked' fi,' name="222">Solicita senha
+    <input type="radio" value="N"',if v222='N' then 'checked' fi,' name="222">Não solicita
+  </td>
+</tr>'
+
+'<tr>
+  <td class="td1e">Senha do usuário externo <a href=JavaScript:tab_man(227);>[227]</a></td>
+  <td class="td2">
+    <input type="radio" value="A"',if v227='A' or v227='' then 'checked' fi,' name="227">Alfanumérica
+    <input type="radio" value="N"',if v227='N' then 'checked' fi,' name="227">Numérica
+  </td>
+</tr>'
+
+'<tr>
+  <td class="td1o">Regulamento <a href=JavaScript:tab_man(221);>[221]</a></td>
+  <td class="td2">
+    <input type="radio" value="1"',if v221='1' then 'checked' fi,' name="221">Tipo de coleção
+    <input type="radio" value="2"',if v221='2' then 'checked' fi,' name="221">Tipo de documento
+  </td>
+</tr>'
+'<tr>
+  <td class="td1o"></td><td class="topico">Buscas</td>
+</tr>'
+'<tr>
+  <td class="td1e">Amostra <a href=JavaScript:tab_man(207);>[207]</a></td>
+  <td class="td2"><input type="text" name="207" value="',v207,'" size="6"> Registros por página</td>
+</tr>'
+'<tr>
+  <td class="td1e">Solicitar senha <a href=JavaScript:tab_man(210);>[210]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v210='S' then 'checked' fi,' name="210">',ref(['tab_txt']331,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v210='N' then 'checked' fi,' name="210">',ref(['tab_txt']223,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1e">Mostrar índice de chaves <a href=JavaScript:tab_man(220);>[220]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v220='S' then 'checked' fi,' name="220">',ref(['tab_txt']331,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v220='N' then 'checked' fi,' name="220">',ref(['tab_txt']223,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1e">Habilitar filtro <a href=JavaScript:tab_man(243);>[243]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v243='S' then 'checked' fi,' name="243">',ref(['tab_txt']331,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v243='N' then 'checked' fi,' name="243">',ref(['tab_txt']223,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1o"></td><td class="topico">Preferências</td>
+</tr>'
+'<tr>
+  <td class="td1e">Tipo de Coleção <a href=JavaScript:tab_man(208);>[208]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v208='S' then 'checked' fi,' name="208">',ref(['tab_txt']331,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v208='N' then 'checked' fi,' name="208">',ref(['tab_txt']223,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1e">Tipo de idioma <a href=JavaScript:tab_man(212);>[212]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v212='S' then 'checked' fi,' name="212">',ref(['tab_txt']331,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v212='N' then 'checked' fi,' name="212">',ref(['tab_txt']223,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1e">',ref(['tab_txt']410,@tab_txt.pft,),' <a href=JavaScript:tab_man(213);>[213]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v213='S' then 'checked' fi,' name="213">',ref(['tab_txt']331,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v213='N' then 'checked' fi,' name="213">',ref(['tab_txt']223,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1e">',ref(['tab_txt']156,@tab_txt.pft,),' <a href=JavaScript:tab_man(215);>[215]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v215='S' then 'checked' fi,' name="215">',ref(['tab_txt']331,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v215='N' then 'checked' fi,' name="215">',ref(['tab_txt']223,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1e">Tipo de suporte <a href=JavaScript:tab_man(218);>[218]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v218='S' then 'checked' fi,' name="218">',ref(['tab_txt']331,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v218='N' then 'checked' fi,' name="218">',ref(['tab_txt']223,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1e">',ref(['tab_txt']91,@tab_txt.pft,),' <a href=JavaScript:tab_man(214);>[214]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v214='S' then 'checked' fi,' name="214">',ref(['tab_txt']217,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v214='N' then 'checked' fi,' name="214">',ref(['tab_txt']226,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1e">',ref(['tab_txt']533,@tab_txt.pft,),' <a href=JavaScript:tab_man(223);>[223]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v223='S' then 'checked' fi,' name="223">',ref(['tab_txt']217,@tab_txt.pft,),
+   '<input type="radio" value="N"',if v223='N' then 'checked' fi,' name="223">',ref(['tab_txt']226,@tab_txt.pft,),
+ '</td>
+</tr>'
+'<tr>
+  <td class="td1e">Informação adicional <a href=JavaScript:tab_man(224);>[224]</a></td>
+  <td class="td2">
+    <select size="-1" name="224">
+      <option ',if v224='' then 'selected' fi,' value="">Nenhuma</option>
+      <option ',if v224='1' then 'selected' fi,' value="1">Tipo de suporte</option>
+      <option ',if v224='2' then 'selected' fi,' value="2">Tipo de coleção</option>
+      <option ',if v224='3' then 'selected' fi,' value="3">Tipo de conteúdo</option>
+      <option ',if v224='4' then 'selected' fi,' value="4">Tipo de documento</option>
+      <option ',if v224='5' then 'selected' fi,' value="5">Tipo de gênero</option>
+    </select>
+  </td>
+</tr>'/,
+'<tr>
+  <td class="td1e">Formato padrão <a href=JavaScript:tab_man(230);>[230]</a></td>
+  <td class="td2">
+    <select size="-1" name="230">
+      <option ',if v230='decorado' then 'selected' fi,' value="decorado">',ref(['tab_txt']86,@tab_txt.pft,),' (ordem de entrada)</option>
+      <option ',if v230='decoradox' then 'selected' fi,' value="decoradox">',ref(['tab_txt']86,@tab_txt.pft,),' (ordem inversa)</option>
+      <option ',if v230='curto' then 'selected' fi, ' value="curto">Curto</option>
+      <option ',if v230='referencia' then 'selected' fi,' value="referencia">',ref(['tab_txt']613,@tab_txt.pft,),'</option>
+      <option ',if v230='tabela' then 'selected' fi,' value="tabela">Tabela</option>
+      <option ',if v230='phl' then 'selected' fi,' value="phl">Exportação</option>
+      <option ',if v230='vancouver' then 'selected' fi,' value="vancouver">Vancouver</option>
+    </select>
+  </td>
+</tr>'/,
+
+'<tr>
+  <td class="td1o"></td><td class="topico">Edição</td>
+</tr>'
+
+'<tr>
+  <td class="td1e">Amostra <a href=JavaScript:tab_man(206);>[206]</a></td>
+  <td class="td2"><input type="text" name="206" value="',v206,'" size="6"> Registros por página</td>
+</tr>'
+'<tr>
+  <td class="td1e">Diagnóstico <a href=JavaScript:tab_man(242);>[242]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v242='S' then 'checked' fi,' name="242">Completo
+    <input type="radio" value="N"',if v242='N' then 'checked' fi,' name="242">Parcial
+  </td>
+</tr>'
+
+'<tr>
+  <td class="td1o"></td><td class="topico">Entrada de Dados</td>
+</tr>'
+
+'<tr>
+  <td class="td1e">Padronização de descritores: <a href=JavaScript:tab_man(225);>[225]</a></td>
+  <td class="td2">
+    <input type="radio" value="C"',if v225='C' then 'checked' fi,' name="225">Termos usados no catálogo
+    <input type="radio" value="V"',if v225='V' then 'checked' fi,' name="225">Termos do vocabulário controlado
+  </td>
+</tr>'
+
+'<tr>
+  <td class="td1e">Padronização de autores: <a href=JavaScript:tab_man(226);>[226]</a></td>
+  <td class="td2">
+    <input type="radio" value="C"',if v226='C' then 'checked' fi,' name="226">Nomes usados no catálogo
+    <input type="radio" value="A"',if v226='A' then 'checked' fi,' name="226">Nomes do controle de autoridades
+  </td>
+</tr>'
+
+'<tr>
+  <td class="td1o"></td><td class="topico">Página principal</td>
+</tr>'
+'<tr>
+  <td class="td1e">Altura do cabeçalho: <a href=JavaScript:tab_man(217);>[217]</a></td>
+  <td class="td2"><input type="text" name="217" value="'v217'" size="2"> pixels</td>
+</tr>'
+'<tr>
+  <td class="td1e">Altura do Logotipo: <a href=JavaScript:tab_man(239);>[239]</a></td>
+  <td class="td2"><input type="text" name="239" value="'v239'" size="2"> pixels</td>
+</tr>'
+'</table>'
+'<table>'

@@ -1,0 +1,130 @@
+<!-- Sugestao de compra e pedido de empréstimo entre bibliotecas
+     14/04/2007 12:30:21 Revisado 
+     15/06/2012 09:49:26 Revisado -->
+     
+     <IsisScript name="042.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inclue funcao (100) que obtem dados do usuario -->
+     <include>phl84/100.fnc</include>
+     <include>phl84/rede.bibliotecas.fnc</include>
+     <include>phl84/tipo.curso.fnc</include>
+     <include>phl84/tipo.documento.fnc</include>
+
+<!-- Inicia secao do script -->
+     <section>
+     <!-- <trace>BR</trace> -->
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="950">opc</field>
+
+<!-- Verifica a validade do login e direciona o fluxo do script  -->
+     <flow action="jump">
+       <pft>,if v3000^2='' then 'login_invalido' else v950 fi,</pft>
+     </flow>
+     <flow action="exit">1</flow>
+
+     <label>login_invalido</label>
+       <display><htmlpft><pft>,ref(['tab_fmx']55,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Abre formulário de opções para sugestão ou acompanhamento de sugestões -->
+     
+     <label>usr_form</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']25,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- Abre formulário de opções para solicitar ou acompanhar empréstimo entre bibliotecas -->
+     
+     <label>usr_form_eeb</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']259,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Abre formulário para usuário efetuar uma nova sugestão de compra -->
+     
+     <label>usr_nova</label>
+     <field action="add" tag="951"><pft>,v3000^2,</pft></field>
+     <field action="add" tag="960">027</field>
+     <!-- 28/01/2014 15:35:44 --><field action="add" tag="891">sc</field>
+     <call name="rede.bibliotecas">now</call>
+     <call name="tipo.curso">now</call>
+     <call name="tipo.documento">now</call>
+     
+<!-- Obtém dados do registro do usuário -->     
+     <call name="100">now</call>
+         
+     <display><htmlpft><pft>,ref(['tab_fmt']6,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- Abre formulário com links para bibliotecas conveniadas -->
+     <label>usr_bib_eeb</label>
+     <field action="add" tag="123"><pft>,cat('phl_bib_eeb.txt'),</pft></field>
+     <field action="replace" tag="123" split="occ"><pft>,(v123/),</pft></field>
+     <display>
+       <pft>
+         (,f(iocc,3,0),') - <a href="'v123^b'" target="result">'v123^a'</a><br>'/)
+       </pft>
+     </display>
+     <flow action="exit">0</flow>
+     
+<!-- Abre formulário para usuário efetuar uma solicitação de empréstimo -->
+     
+     <label>usr_eeb</label>
+
+     <field action="add" tag="951"><pft>,v3000^2,</pft></field>
+     <field action="add" tag="960">027</field>
+     <field action="add" tag="891">eeb</field>
+     <field action="add" tag="883"><pft>,v3000^1,</pft></field>
+     <call name="rede.bibliotecas">now</call>
+
+<!-- Obtém dados do registro do usuário -->     
+     <call name="100">now</call>
+     
+     <field action="add" tag="123"><pft>,cat('tab_bibliotecas_eeb.txt'),</pft></field>
+     <field action="replace" tag="123" split="occ"><pft>,(v123/),</pft></field>
+         
+     <display><htmlpft><pft>,ref(['tab_fmt']6,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Executa busca na base de sugestões de compra e apresenta as sugestões
+     do usuário -->
+     
+     <label>usr_consulta</label>
+     <do task="search">
+       <parm name="db">phl_cpa</parm>
+       <parm name="expression"><pft>,'USR='v3000^2'*TOP=SC',</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <loop>
+         <field action="import" tag="list">3000,4001</field>
+         <display><htmlpft><pft>,ref(['tab_fmx']28,v4),</pft></htmlpft></display>
+       </loop>
+       <proc><pft>,if val(v1002)=0 then 'a250~411~' fi,</pft></proc>
+       <display><htmlpft><pft>,if val(v1002)=0 then ref(['tab_fmx']10,v4),fi,</pft></htmlpft></display>
+     </do>
+     <file action="close" type="database">phl_cpa</file>
+     
+     <label>usr_consulta_eeb</label>
+     <do task="search">
+       <parm name="db">phl_cpa</parm>
+       <parm name="expression"><pft>,'USR='v3000^2'*TOP=EEB',</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <loop>
+         <field action="import" tag="list">3000,4001</field>
+         <display><htmlpft><pft>,ref(['tab_fmx']28,v4),</pft></htmlpft></display>
+       </loop>
+       <proc><pft>,if val(v1002)=0 then 'a250~411~' fi,</pft></proc>
+       <display><htmlpft><pft>,if val(v1002)=0 then ref(['tab_fmx']10,v4),fi,</pft></htmlpft></display>
+     </do>
+     <file action="close" type="database">phl_cpa</file>
+
+</section>
+</IsisScript>

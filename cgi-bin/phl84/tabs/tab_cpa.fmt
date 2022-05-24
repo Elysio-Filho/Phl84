@@ -1,0 +1,433 @@
+'<html>'/
+'<head>'/
+'<script language=javascript>function proibido_voltar(){history.go(1) == false;}</script>'/
+'<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+'<script language="JavaScript" src="/phl84/js/val_cpf.js"></script>'/
+'<script language="JavaScript" src="/phl84/js/submit.js"></script>'/
+'<script language="JavaScript" src="/phl84/js/isis_limite.js"></script>'/
+'<script language="JavaScript" type="text/javascript">'/
+'<!--'/
+'function tab_man(x) { '/
+'  window.open("/cgi-bin/wxis.exe?IsisScript=phl84/049.xis&tmp='v4001'&mfn="+x,"janela","height=400,width=600,menubar=no,resizable=yes,scrollbars=yes,status=no")'/
+'} '/
+
+'function getXmlHttpRequestObject() { '/
+'if (window.XMLHttpRequest) { '/
+'return new XMLHttpRequest();'/
+'} else if(window.ActiveXObject) { '/
+'return new ActiveXObject("Microsoft.XMLHTTP");'/
+'} else { '/
+'alert("Seu navegador necessita ser atualizado para uma nova versão.");'/
+'}'/
+'}'/
+'var searchReq = getXmlHttpRequestObject();'/
+
+'function buscaEditora() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("873").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_editoras.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestEditora;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaCidade() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("874").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_cidades.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestCidade;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaFornecedor() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("887").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_fornecedores.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestFornecedor;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaAutores() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("txtAutores").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_autores.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestAutores;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaAutoridades() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("txtAutoridades").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_autoridades.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestAutoridades;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function handleSearchSuggestCidade() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_cidade") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setCidade(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestEditora() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_editora") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setEditora(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestFornecedor() {'/
+' if (searchReq.readyState == 4) { '/
+'  var ss = document.getElementById("busca_fornecedor") '/
+'  ss.innerHTML = ""; '/
+'  var str = searchReq.responseText.split("\n"); '/
+'  for(i=0; i < str.length - 1; i++) { '/
+'   var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'   suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'   suggest += "onclick=javascript:setFornecedor(this.innerHTML); ";'/
+'   suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'   ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestAutores() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_autores") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setAutores(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestAutoridades() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_autoridades") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setAutoridades(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'AutoresOldValue = "";'/
+'AutoridadesOldValue = "";'/
+
+'function suggestOver(div_value) { '/
+'div_value.className = "suggest_link_over"; '/
+'} '/
+
+'function suggestOut(div_value) { '/
+'div_value.className = "suggest_link"; '/
+'}'/
+
+'function setEditora(value) { '/
+'  if (value != "") { '/
+'  document.getElementById("busca_editora").innerHTML = ""; '/
+'  document.getElementById("873").value = value; '/
+'} '/
+'} '/
+
+'function setCidade(value) { '/
+'  if (value != "") { '/
+'  document.getElementById("busca_cidade").innerHTML = ""; '/
+'  document.getElementById("874").value = value; '/
+'} '/
+'} '/
+
+'function setFornecedor(value) { '/
+'  var mySplitResult = value.split("=");'
+'  if (value != "") { '/
+'  document.getElementById("busca_fornecedor").innerHTML = ""; '/
+'  document.getElementById("887").value = mySplitResult[1]; '/
+'} '/
+'} '/
+
+'function setAutores(value) { '/
+'  if (value != "") { '/
+'  AutoresOldValue = document.getElementById("871").value; '/
+'  var totalvalue = AutoresOldValue+value+"\n";'/
+'  document.getElementById("871").value = totalvalue; '/
+'  document.getElementById("busca_autores").innerHTML = ""; '/
+'  AutoresOldValue = document.getElementById("871").value; '/
+'} '/
+'} '/
+
+'function setAutoridades(value) { '/
+'  if (value != "") { '/
+'  AutoridadesOldValue = document.getElementById("871").value; '/
+'  var totalvalue = AutoridadesOldValue+value+"\n";'/
+'  document.getElementById("871").value = totalvalue; '/
+'  document.getElementById("busca_autoridades").innerHTML = ""; '/
+'  AutoridadesOldValue = document.getElementById("871").value; '/
+'} '/
+'} '/
+
+'-->'
+'</script> '/
+
+'</head>'/
+'<body>'/
+'<script language=javascript>proibido_voltar()</script>'/
+'<table width="100%">'/
+'<form name="formulario" onSubmit="return count(30000)" action="/cgi-bin/wxis.exe" method="post">'/
+'<input type="hidden" name="tmp" value="'v4001'">'
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'/
+'<input type="hidden" name="999" value="'v999[1]'">'/
+'<input type="hidden" name="mfn" value="'v957'">'/
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'/
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="opc" value="grava">'/
+'<input type="hidden" name="dbvar" value="^aphl_cpa^b6^ccpa">'/
+'<input type="hidden" name="877" value="'v100^f'">'/
+'<input type="hidden" name="878" value="'v100^m'">'/
+'<input type="hidden" name="879" value="'v100^g'">'/
+'<input type="hidden" name="880" value="'v100^h'">'/
+'<input type="hidden" name="889" value="'if a(v889) then v951 fi'">'/
+'<input type="hidden" name="891" value="'v891'">'/
+'<input type="hidden" name="893" value="'(v886/)'">'/
+
+'<tr>
+  <td class="td1o"></td><td class="topico">'if v891='eeb' then 'Empréstimo entre Bibliotecas' else ref(['tab_txt']336,@tab_txt.pft,) fi,'</td>
+</tr>'
+
+,if v891='eeb' then
+'<tr>
+  <td class="td1o">Biblioteca&nbsp;<a href=JavaScript:tab_man(892);>[892]</a></td>
+  <td class="td2">
+    <select size="1" name="892">
+      <option'," selected "d892,'value="',v892,'">',v892,'</option>',
+    ('<option value="'v123^a,'">'v123^a'</option>'/),
+   '</select>
+  </td>
+</tr>'
+
+'<input type="hidden" name="883" value="'v883'">'/
+
+else
+
+'<tr>
+  <td class="td1o">Biblioteca&nbsp;<a href=JavaScript:tab_man(883);>[883]</a></td>
+  <td class="td2">
+    <select size="1" name="883">
+      <option'," selected "d883,'value="',v883,'">',v883,'</option>',
+    ('<option value="'v3601^a,'">'v3601^b'</option>'/),
+   '</select>
+  </td>
+</tr>'
+fi,
+
+,if a(v951) then,
+'<tr>
+  <td class="td1o">',ref(['tab_txt']333,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(877);>[877]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="877" value="',v877,'" size="60"></td>
+</tr>'/
+
+'<tr>
+  <td class="td1o">Matrícula&nbsp;<a href=JavaScript:tab_man(889);>[889]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="889" value="',v889,'" size="60"></td>
+</tr>'/
+,fi,
+
+        ,if ref(['phl_cnf']1,v226)='A' then
+
+          '<tr>
+             <td class="td1e">'ref(['tab_txt']1062,@tab_txt.pft,)':&nbsp;<a href=JavaScript:tab_man(1005);>[?]</a></td>
+             <td class="td3">
+             <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="txtAutoridades" name="txtAutoridades" onkeyup="buscaAutoridades();" autocomplete="off" />
+             <div id="busca_autoridades"></div>
+            </td>
+          </tr>'
+          
+          else,
+
+          '<tr>
+            <td class="td1e">'ref(['tab_txt']1062,@tab_txt.pft,)':&nbsp;<a href=JavaScript:tab_man(1006);>[?]</a></td>
+              <td class="td3">
+              <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="txtAutores" name="txtAutores" onkeyup="buscaAutores();" autocomplete="off" />
+              <div id="busca_autores"></div>
+              </td>
+           </tr>'
+
+      ,fi,
+
+      '<tr>
+         <td valign="top" class="td1e">&nbsp;',ref(['tab_txt']23,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(871);>[871]</a>
+         </td>
+         <td class="td2">
+         <textarea rows="3" id="871" name="871">',(v871/),'</textarea></td>
+      </tr>'/
+
+'<tr>
+  <td class="td1o">',ref(['tab_txt']360,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(872);>[872]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="872" value="',v872,'" size="60"></td>
+</tr>'/
+
+    '<tr>
+      <td class="td1e">',ref(['tab_txt']113,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(873);>[873]</a></td>
+      <td class="td3">
+      <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="873" value="'v873'" name="873" onkeyup="buscaEditora();" autocomplete="off" />
+      <div id="busca_editora"></div>
+      </td>
+    </tr>'
+
+    '<tr>
+      <td class="td1e">',ref(['tab_txt']201,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(874);>[874]</a></td>
+      <td class="td3">
+      <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="874" value="'v874'" name="874" onkeyup="buscaCidade();" autocomplete="off" />
+      <div id="busca_cidade"></div>
+      </td>
+    </tr>'
+,if v891<>'eeb' then
+'<tr>
+  <td class="td1o">Tipo de documento&nbsp;<a href=JavaScript:tab_man(890);>[890]</a></td>
+  <td class="td2">
+  <select width="300" name="890">
+  <option selected value="'v890'">'ref(['phl_tdo']val(v890),@tab_txt.pft,)'</option>',
+  (,if val(v890[1])<>val(v3077^b) then '<option value="'v3077^b'">',v3077^a,'</option>' fi,),
+  '</select>
+  </td>
+</tr>'/
+,fi
+
+'<tr>
+  <td class="td1e">',ref(['tab_txt']9,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(875);>[875]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="875" value="',v875,'" size="60"></td>
+</tr>'/
+
+'<tr>
+  <td class="td1e">ISBN&nbsp;[870]</td>
+  <td class="td2"><input type="text" class="textbox" name="870" value="',v870,'" size="60"></td>
+</tr>'/
+
+'<tr>
+  <td class="td1e">',ref(['tab_txt']260,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(876);>[876]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="876" value="',v876,'" size="60"></td>
+</tr>'/
+
+/*
+'<tr>
+  <td class="td1e">E-mail&nbsp;<a href=JavaScript:tab_man(878);>[878]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="878" value="',v878,'" size="60"></td>
+</tr>'/
+*/
+
+if v891<>'eeb' then
+
+'<tr>
+  <td class="td1e">',ref(['tab_txt']68,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(879);>[879]</a></td>
+  <td class="td2">
+    <select name="879">
+      <option selected value="'v879'"></option>
+      <option selected value="'v879'">',v879,'</option>',
+      (,if v879[1]<>v3092 then '<option value="'v3092'">',v3092,'</option>' fi,),
+    '</select>
+    </td>
+</tr>'/
+
+'<tr>
+  <td class="td1e">',ref(['tab_txt']88,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(880);>[880]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="880" value="',v880,'" size="60"></td>
+</tr>'/
+'<tr>
+  <td class="td1e">',ref(['tab_txt']292,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(881);>[881]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="881" value="',v881,'" size="60"></td>
+</tr>'/
+'<tr>
+  <td class="td1e">',ref(['tab_txt']417,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(882);>[882]</a></td>
+  <td class="td2"><textarea rows="3" name="882" cols="49">',mpl,(v882/),'</textarea></td>
+</tr>'/
+,fi
+
+,if v891='eeb' and a(v951) then,
+'<tr>
+  <td class="td1e">',ref(['tab_txt']291,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(886);>[886]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="893" value="" size="60"></td>
+</tr>'/
+fi,
+
+if v891<>'eeb' then
+,if a(v951) then,
+
+'<tr>
+  <td class="td1e">',ref(['tab_txt']291,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(886);>[886]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="893" value="" size="60"></td>
+</tr>'/
+
+'<tr>
+  <td class="td1e">Compra&nbsp;<a href=JavaScript:tab_man(884);>[884]</a></td>
+  <td class="td2">
+    <input type="radio" value="S"',if v884='S' then 'checked' fi,' name="884">Aprovada
+    <input type="radio" value="N"',if v884='N' then 'checked' fi,' name="884">Não aprovada
+    <input type="radio" value=""',if v884='' then 'checked' fi,' name="884">Pendente
+  </td>
+</tr>'/
+
+    '<tr>
+      <td class="td1e">'ref(['tab_txt']162,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(887);>[887]</a></td>
+      <td class="td3">
+      <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="887" value="'v887'" name="887" onkeyup="buscaFornecedor();" autocomplete="off" />
+      <div id="busca_fornecedor"></div>
+      </td>
+    </tr>'
+
+'<tr>
+  <td class="td1e">',ref(['tab_txt']78,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(888);>[888]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="888" value="',v888,'" size="60"></td>
+</tr>'/
+
+'<tr>
+  <td class="td1e">Observações/internas&nbsp;<a href=JavaScript:tab_man(885);>[885]</a></td>
+  <td class="td2"><textarea rows="3" name="885" cols="49">',mpl,(v885/),'</textarea></td>
+</tr>'/
+,fi,fi,
+
+if v891='eeb' then
+,if a(v951) then,
+
+'<tr>
+  <td class="td1e">Empréstimo&nbsp;<a href=JavaScript:tab_man(884);>[884]</a></td>
+  <td class="td2">
+    <input type="radio" value="C"',if v884='C' then 'checked' fi,' name="884">Concluído
+    <input type="radio" value="A"',if v884='A' then 'checked' fi,' name="884">Em andamento
+    <input type="radio" value=""',if v884='' then 'checked' fi,' name="884">Pendente
+  </td>
+</tr>'/
+
+'<tr>
+  <td class="td1e">Observações/internas&nbsp;<a href=JavaScript:tab_man(885);>[885]</a></td>
+  <td class="td2"><textarea rows="3" name="885" cols="49">',mpl,(v885/),'</textarea></td>
+</tr>'/
+,fi,fi,

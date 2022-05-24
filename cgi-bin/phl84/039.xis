@@ -1,0 +1,65 @@
+<!-- Rotina de atualização do cadastro pelo usuário -->
+
+     <IsisScript name="039.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>  
+     <include>phl84/tipo.curso.fnc</include>
+
+<!-- Inicia secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="add" tag="960">002</field>
+
+<!--Verifica se usuário está habilitado para efetuar a alteração -->
+     <flow action="jump">
+       <pft>,if v3000^3='usuario' then v950 else 'login_invalido' fi,</pft>
+     </flow>
+     <flow action="exit">1</flow>
+
+     <label>login_invalido</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']55,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!--Abre formulário com dados cadastrais -->
+     <label>form_update</label>
+     
+     <call name="tipo.curso">now</call>
+
+     <do task="search">
+       <parm name="db">phl_usr</parm>
+       <parm name="expression"><pft>,'MFN='v3000^4,</pft></parm>
+       <field action="define" tag="1003">Isis_Status</field>
+       
+       <loop>
+
+       <field action="import" tag="list">802,957,958,960,2000,3000/3110,3500/3510,4001,1010</field>
+
+         <display>
+           <htmlpft>
+             <pft>
+               ,if val(v1003)=0 then
+                  ,ref(['tab_fmt']126,'[pft]',v4,'[/pft]',)
+                  ,else ref(['tab_fmx']133,v4)
+               ,fi,
+             </pft>
+           </htmlpft>
+         </display>
+         
+       </loop>
+
+     </do>
+     <file action="close" type="database"><pft>,v3004^a,</pft></file>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

@@ -1,0 +1,75 @@
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'/
+'<input type="hidden" name="999" value="'v999[1]'">'/
+'<input type="hidden" name="mfn" value="'v957'">'/
+'<input type="hidden" name="opc" value="grava">'/
+'<input type="hidden" name="dbvar" value="^aphl_rgl^b19^crgl">'/
+'<input type="hidden" name="rec" value="'v1010'">'/
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'/
+'<tr><td class="td1o"></td><td class="topico">',@tab_txt.pft,'</td></tr>'/
+,if v3000^a='por' then
+  '<tr><td class="td1o">Tipo de usuário&nbsp;<a href=JavaScript:tab_man(301);>[301]</a></td><td class="td2"><input type="text" class="textbox" name="301" value="'v301'"></td></tr>'/
+  '<input type="hidden" name="302" value="'v302'">'/
+  '<input type="hidden" name="303" value="'v303'">'/
+  '<input type="hidden" name="304" value="'v304'">'/
+  '<input type="hidden" name="305" value="'v305'">'/
+,fi
+,if v3000^a='spa' then
+  '<tr><td class="td1o">Tipo del usuário&nbsp;<a href=JavaScript:tab_man(302);>[302]</a></td><td class="td2"><input type="text" class="textbox" name="302" value="'v302'"></td></tr>'/
+  '<input type="hidden" name="301" value="'v301'">'/
+  '<input type="hidden" name="303" value="'v303'">'/
+  '<input type="hidden" name="304" value="'v304'">'/
+  '<input type="hidden" name="305" value="'v305'">'/
+,fi
+,if v3000^a='eng' then
+  '<tr><td class="td1o">Type of user&nbsp;<a href=JavaScript:tab_man(303);>[303]</a></td><td class="td2"><input type="text" class="textbox" name="303" value="'v303'"></td></tr>'/
+  '<input type="hidden" name="301" value="'v301'">'/
+  '<input type="hidden" name="302" value="'v302'">'/
+  '<input type="hidden" name="304" value="'v304'">'/
+  '<input type="hidden" name="305" value="'v305'">'/
+,fi
+,if v3000^a='ita' then
+ '<tr><td class="td1o">Type of user&nbsp;<a href=JavaScript:tab_man(304);>[304]</a></td><td class="td2"><input type="text" class="textbox" name="304" value="'v304'"></td></tr>'/
+  '<input type="hidden" name="301" value="'v301'">'/
+  '<input type="hidden" name="302" value="'v302'">'/
+  '<input type="hidden" name="303" value="'v303'">'/
+  '<input type="hidden" name="305" value="'v305'">'/
+,fi
+,if v3000^a='fra' then
+ '<tr><td class="td1o">Type of user&nbsp;<a href=JavaScript:tab_man(305);>[305]</a></td><td class="td2"><input type="text" class="textbox" name="305" value="'v305'"></td></tr>'/
+  '<input type="hidden" name="301" value="'v301'">'/
+  '<input type="hidden" name="302" value="'v302'">'/
+  '<input type="hidden" name="303" value="'v303'">'/
+  '<input type="hidden" name="304" value="'v304'">'/
+,fi
+'<tr><td class="td1o">',ref(['tab_txt']534,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(527);>[527]</a></td><td class="td2"><input type="text" class="textbox" name="527" value="',v527,'"></td></tr>'/
+'<tr><td class="td1o">Limite de renovações&nbsp;<a href=JavaScript:tab_man(528);>[528]</a></td><td class="td2"><input type="text" class="textbox" name="528" value="',v528,'"></td></tr>'/
+'<tr><td class="td1o">Limite de reservas&nbsp;<a href=JavaScript:tab_man(538);>[538]</a></td><td class="td2"><input type="text" class="textbox" name="538" value="',v538,'"></td></tr>'/
+'<tr><td class="td1o">Limite do débito para emprétimo&nbsp;<a href=JavaScript:tab_man(557);>[557]</a></td><td class="td2"><input type="text" class="textbox" name="557" value="',v557,'"></td></tr>'/
+
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="520" value="1"',"checked"d520,'>',ref(['tab_txt']484,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="521" value="1"',"checked"d521,'>',ref(['tab_txt']485,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="522" value="1"',"checked"d522,'>',ref(['tab_txt']486,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="523" value="1"',"checked"d523,'>',ref(['tab_txt']487,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="524" value="1"',"checked"d524,'>',ref(['tab_txt']488,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="525" value="1"',"checked"d525,'>',ref(['tab_txt']489,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="526" value="1"',"checked"d526,'>',ref(['tab_txt']518,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="542" value="1"',"checked"d542,'>Não permitir auto-empréstimo</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="550" value="1"',"checked"d550,'>',ref(['tab_txt']493,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="551" value="1"',"checked"d551,'>',ref(['tab_txt']494,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="552" value="1"',"checked"d552,'>',ref(['tab_txt']495,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="553" value="1"',"checked"d553,'>',ref(['tab_txt']496,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="554" value="1"',"checked"d554,'>',ref(['tab_txt']497,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="555" value="1"',"checked"d555,'>',ref(['tab_txt']786,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="530" value="1"',"checked"d530,'>',ref(['tab_txt']498,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="531" value="1"',"checked"d531,'>',ref(['tab_txt']499,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="532" value="1"',"checked"d532,'>',ref(['tab_txt']500,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="533" value="1"',"checked"d533,'>',ref(['tab_txt']501,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="534" value="1"',"checked"d534,'>',ref(['tab_txt']502,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="535" value="1"',"checked"d535,'>',ref(['tab_txt']503,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="536" value="1"',"checked"d536,'>',ref(['tab_txt']504,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="537" value="1"',"checked"d537,'>',ref(['tab_txt']505,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="529" value="1"',"checked"d529,'>',ref(['tab_txt']800,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="539" value="1"',"checked"d539,'>Não Permitir que usuário altere seu cadastro</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="540" value="1"',"checked"d540,'>Não Permitir que usuário faça comentários (wiki)</td></tr>'/
+'<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="541" value="1"',"checked"d541,'>Não Permitir que usuário faça sugestões de compra</td></tr>'/
+/* '<tr><td class="td1e"></td><td class="td2"><input type="checkbox" name="556" value="1"',"checked"d556,'>Não Permitir que usuário faça solicitação de empréstimo em outra biblioteca</td></tr>'*/

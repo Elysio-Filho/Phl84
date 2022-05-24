@@ -1,0 +1,171 @@
+<!--
+body{
+	background-color:white;
+	margin:0px;
+	padding:10px;
+	width:100%;
+}
+
+table {
+	width:100%;
+	text-align:left;
+	padding:10px;
+	margin:10px auto 10px auto;
+    COLOR: #006699;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 12px;
+}
+
+th {
+ color:#006699;
+ background-color:#CEDFEF;
+ text-align:center;
+ }
+ 
+.sintaxe {font-family: courier; font-size: 12px;}
+
+#navega {
+text-align:left;
+padding:10px;
+position:absolute;
+top:0px;
+left:75%;
+}
+
+#TitNiv1{
+	width:100%;
+	text-align:left;
+	padding:20px;
+	margin:20px auto 20px auto;
+	background-color:#ffc;
+    COLOR: #800000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 16px;
+    FONT-WEIGHT: bold;
+}
+
+#alerta{
+	width:100%;
+	text-align:left;
+	padding:10px;
+	margin:10px auto 10px auto;
+	background-color:#FFFF00;
+    COLOR: #FF0000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 12px;
+}
+
+#tabela{
+	width:100%;
+	text-align:left;
+	padding:10px;
+	margin:10px auto 10px auto;
+    COLOR: #006699;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 12px;
+}
+
+#TxtNiv1{
+	width:100%;
+	text-align:justify;
+	margin:10px auto 10px auto;
+    COLOR: #006699;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    text-align: Justify;
+    FONT-SIZE: 12px;
+}
+
+#menu {
+	width:100%;
+	margin:10px auto 10px auto;
+	text-align:left;
+	padding:10px;
+	background-color:white;
+    border:0;
+}
+
+#ref {
+	width:100%;
+	margin:10px auto 10px auto;
+	text-align:left;
+	padding:10px;
+	background-color:#ffc;
+    border:0;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 11px;
+}
+
+#mfn {
+	width:100%;
+	margin:10px auto 10px auto;
+	text-align:left;
+	padding:10px;
+	background-color:beige;
+    FONT-FAMILY: Courier;
+	FONT-SIZE: 10px;
+    border:0;
+}
+
+#TitNiv2{
+	width:100%;
+	text-align:justify;
+	margin:10px auto 10px auto;
+	COLOR: #006699;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 12px; FONT-WEIGHT: bold;
+}
+
+#TxtNiv2{
+	width:100%;
+	text-align:justify;
+	margin:10px auto 10px auto;
+    COLOR: #006699;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 12px;
+}
+
+#TitNiv3{
+	width:100%;
+	text-align:justify;
+	margin:10px auto 10px auto;
+	margin-left: 30px;
+	COLOR: #006699;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 12px; FONT-WEIGHT: bold;
+}
+
+#TxtNiv3{
+	width:100%;
+	text-align:justify;
+	margin:10px auto 10px auto;
+	margin-left: 30px;
+    COLOR: #006699;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 12px;
+}
+
+.ft10
+  {COLOR: #808080;
+   FONT-FAMILY: Arial, Helvetica, sans-serif;
+   FONT-SIZE: 10px}
+
+.tit_menu    {COLOR: #006699; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 14px; FONT-WEIGHT: bold;}
+
+.link         {COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; LINE-HEIGHT: 12pt; TEXT-DECORATION: none;}
+.link:hover   {COLOR: #800000; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; LINE-HEIGHT: 12pt; TEXT-DECORATION: none;}
+
+.link_menu {COLOR: #006699; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; LINE-HEIGHT: 12pt; TEXT-DECORATION: none; FONT-WEIGHT: bold;}
+.link_menu:hover {COLOR: #800000; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; LINE-HEIGHT: 12pt; TEXT-DECORATION: none;}
+
+.acv
+  {background-color: #FFFFCC;
+   COLOR: #000000;
+   FONT-FAMILY: Arial, Helvetica, sans-serif;
+   FONT-SIZE: 12px; text-align: Left;}
+
+.label        {background-color: #FFFFCC; COLOR: #4200C6; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; text-align: Center}
+.td1e {font-weight: bold;}
+.td1o {color: red; font-weight: bold;}
+.erro {color: #FFFFFF; background-color: red;}
+.alerta {background-color:#FFFF00;}
+-->

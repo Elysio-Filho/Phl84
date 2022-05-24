@@ -1,0 +1,1508 @@
+!ID 000001
+!v001!acv
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">MFN: 'mfn(1),' - ',ref(['tab_txt']40,@tab_txt.pft,),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="20%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v1=v3000^1 and v2000^a='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&mfn='mfn(1)'&dbvar=^aphl_acv^b1^cacv&opc=abre&exp='mhu,v958,mpl,"$"n958,'&rec='v1010'&005='v5'&006='v6'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,),'</a><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&top=edicao&mfn='mfn(1)'&db=phl_acv&opc=acv&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&tmp='v4001'">',ref(['tab_txt']87,@tab_txt.pft,),'</a><br>',
+!v004!,fi
+!v004!,if v2000^a='1' then '<a href="/cgi-bin/wxis.exe?IsisScript=phl84/006.xis&opc=acv&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']65,@tab_txt.pft,)'</a><br>',fi
+!v004!,if v6.1<>'a' and v1=v3000^1 and v2000^a='1' and v6<>'c' then,
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&exp=',mhu,v958,mpl,'&rec='v1010'&opc=acv_analitica&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']8,@tab_txt.pft,)'</a><br>'
+!v004!,fi,
+!v004!,if v1=v3000^1 and v2000^a='1' then,
+!v004!,if v90<>'t' and v6<>'c' and (v6.1<>'a' or v9='S') then '<a href="/cgi-bin/wxis.exe?IsisScript=phl84/006.xis&tit='v2'&rec='v1010'&opc=acv2tbo&mfn='mfn(1)'&acv='v1'&tmp='v4001'">Tombar</a><br>' fi,
+!v004!,if v6='c' then '<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=acvfac&mfn='mfn(1)'&tmp='v4001'">Catalogar Fascículo</a></b>' fi,/
+!v004!,fi,
+!v004!,if p(v70) then '<br><img src="'v70'" border="0" width="80">',fi,
+!v004!'</td><td width="80%"><table>'
+!v004!,'<td width="80%">'@phl_acv.pft," "v61+|; |".",mpl,'</td></tr>',
+!v004!,'</table><hr>',
+!v004!,if val(v8001)> 0 then
+!v004!'<table width="100%">'
+!v004!'<th>Tombo</th>'
+!v004!'<th>Circulação</th>'
+!v004!'<th>Status</th>'
+!v004!'<th>Exemplar</th>'
+!v004!'<th>Prazo específico</th>'
+!v004!('<tr><td align="center">'
+!v004!,if v1[1]=v3000[1]^1 and v2000[1]^b='1' then
+!v004!,,'<a href=/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&mfn='v7^m'&dbvar=^a'v1[1]'_tbo^b23^ctbo&opc=abre&form=062&tmp='v4001[1]'>'v8000^a'</a>'
+!v004!,,,else v8000^a
+!v004!,fi,
+!v004!'</td>'
+!v004!'<td align="center">'select v8000^e case '2':'Consulta local' case '1':'Circulante' case '0':'Indisponível' endsel,'</td>'
+!v004!'<td align="center">'
+!v004!,if npost([v1[1]'_emp'],'TBO='v8000^a)>0 then
+!v004!,,,'<img src="/phl84/img/003.gif" border="0">'
+!v004!,,,,,else 
+!v004!,,,,,if v8000^e='2' then '<img src="/phl84/img/004.gif" border="0">' fi,
+!v004!,,,,,if v8000^e='0' then '<img src="/phl84/img/005.gif" border="0">' fi,
+!v004!,,,,,if v8000^e='1' then '<img src="/phl84/img/002.gif" border="0">' fi,
+!v004!,fi,'</td>'
+!v004!'<td align="center">'v8000^b'</td><td align="center">'if v8000^f='N' then 'Não circula' else v8000^f fi,'</td></tr>')
+!v004!'</table><hr>'
+!v004!'<table width="100%">'
+!v004!'<th>Total de exemplares</th>'
+!v004!'<th>Circulantes</th>'
+!v004!'<th>Consulta local</th>'
+!v004!'<th>Cancelados</th>'
+!v004!'<tr><td align="center">'v8001'</td><td align="center">'v8002'</td><td align="center">'v8003'</td><td align="center">'v8004'</td></tr>'
+!v004!'</table><hr>'
+!v004!,fi
+!v004!,if v90<>'t' then
+!v004!'<table width="100%">',
+!v004!,if p(v1) then '<tr><td class=legenda valign=top width="10%">001:</td><td width="90%">'(v1+|<br>|)'</td></tr>' fi
+!v004!,if p(v2) then '<tr><td class=legenda valign=top width="10%">002:</td><td width="90%">'v2'</td></tr>' fi
+!v004!,if p(v3) then '<tr><td class=legenda valign=top width="10%">003:</td><td width="90%">'v3'</td></tr>' fi,
+!v004!,if p(v103) then '<tr><td class=legenda valign=top width="10%">103:</td><td width="90%">'v103'</td></tr>' fi,
+!v004!(,if p(v4) then '<tr><td class=legenda valign=top width="10%">004:</td><td width="90%">'v4'</td></tr>' fi,)
+!v004!,if p(v5) then '<tr><td class=legenda valign=top width="10%">005:</td><td width="90%">',ref(['phl_tdo']val(v5),@tab_txt.pft,),'</td></tr>' fi
+!v004!,if p(v6) then '<tr><td class=legenda valign=top width="10%">006:</td><td width="90%">'(v6+|<br>|)'</td></tr>' fi
+!v004!,if p(v8) then '<tr><td class=legenda valign=top width="10%">008:</td><td width="90%">'(v8+|<br>|)'</td></tr>' fi
+!v004!,if p(v9) then '<tr><td class=legenda valign=top width="10%">009:</td><td width="90%">'(v9+|<br>|)'</td></tr>' fi
+!v004!(,if p(v10) then '<tr><td class=legenda valign=top width="10%">010:</td><td width="90%">'v10'</td></tr>' fi,)
+!v004!(,if p(v11) then '<tr><td class=legenda valign=top width="10%">011:</td><td width="90%">'v11'</td></tr>' fi,)
+!v004!,if p(v12) then '<tr><td class=legenda valign=top width="10%">012:</td><td width="90%">'(v12+|<br>|)'</td></tr>' fi
+!v004!,if p(v13) then '<tr><td class=legenda valign=top width="10%">013:</td><td width="90%">'(v13+|<br>|)'</td></tr>' fi
+!v004!,if p(v14) then '<tr><td class=legenda valign=top width="10%">014:</td><td width="90%">'(v14+|<br>|)'</td></tr>' fi
+!v004!(,if p(v15) then '<tr><td class=legenda valign=top width="10%">015:</td><td width="90%">'v15'</td></tr>' fi,)
+!v004!(,if p(v16) then '<tr><td class=legenda valign=top width="10%">016:</td><td width="90%">'v16'</td></tr>' fi,)
+!v004!(,if p(v17) then '<tr><td class=legenda valign=top width="10%">017:</td><td width="90%">'v17'</td></tr>' fi,)
+!v004!,if p(v18) then '<tr><td class=legenda valign=top width="10%">018:</td><td width="90%">'(v18+|<br>|)'</td></tr>' fi
+!v004!,if p(v19) then '<tr><td class=legenda valign=top width="10%">019:</td><td width="90%">'(v19+|<br>|)'</td></tr>' fi
+!v004!,if p(v20) then '<tr><td class=legenda valign=top width="10%">020:</td><td width="90%">'(v20+|<br>|)'</td></tr>' fi
+!v004!,if p(v21) then '<tr><td class=legenda valign=top width="10%">021:</td><td width="90%">'(v21+|<br>|)'</td></tr>' fi
+!v004!,if p(v22) then '<tr><td class=legenda valign=top width="10%">022:</td><td width="90%">',v22,'</td></tr>' fi
+!v004!,if p(v23) then '<tr><td class=legenda valign=top width="10%">023:</td><td width="90%">'(v23+|<br>|)'</td></tr>' fi
+!v004!,if p(v24) then '<tr><td class=legenda valign=top width="10%">024:</td><td width="90%">'(v24+|<br>|)'</td></tr>' fi
+!v004!,if p(v25) then '<tr><td class=legenda valign=top width="10%">025:</td><td width="90%">'(v25+|<br>|)'</td></tr>' fi
+!v004!,if p(v26) then '<tr><td class=legenda valign=top width="10%">026:</td><td width="90%">',ref(['phl_col']val(v26),@tab_txt.pft,),'</td></tr>' fi,
+!v004!,if p(v27) then '<tr><td class=legenda valign=top width="10%">027:</td><td width="90%">'(v27+|<br>|)'</td></tr>' fi
+!v004!,if p(v28) then '<tr><td class=legenda valign=top width="10%">028:</td><td width="90%">',v28'</td></tr>' fi
+!v004!,if p(v29) then '<tr><td class=legenda valign=top width="10%">029:</td><td width="90%">'(v29+|<br>|)'</td></tr>' fi
+!v004!,if p(v30) then '<tr><td class=legenda valign=top width="10%">030:</td><td width="90%">'(v30+|<br>|)'</td></tr>' fi
+!v004!,if p(v31) then '<tr><td class=legenda valign=top width="10%">031:</td><td width="90%">'(v31+|<br>|)'</td></tr>' fi
+!v004!,if p(v32) then '<tr><td class=legenda valign=top width="10%">032:</td><td width="90%">'(v32+|<br>|)'</td></tr>' fi
+!v004!,if p(v33) then '<tr><td class=legenda valign=top width="10%">033:</td><td width="90%">'(v33+|<br>|)'</td></tr>' fi
+!v004!,if p(v34) then '<tr><td class=legenda valign=top width="10%">034:</td><td width="90%">'(v34+|<br>|)'</td></tr>' fi
+!v004!,if p(v35) then '<tr><td class=legenda valign=top width="10%">035:</td><td width="90%">'(v35+|<br>|)'</td></tr>' fi
+!v004!,if p(v36) then '<tr><td class=legenda valign=top width="10%">036:</td><td width="90%">'(v36+|<br>|)'</td></tr>' fi
+!v004!,if p(v37) then '<tr><td class=legenda valign=top width="10%">037:</td><td width="90%">'(v37+|<br>|)'</td></tr>' fi
+!v004!,if p(v38) then '<tr><td class=legenda valign=top width="10%">038:</td><td width="90%">'(v38+|<br>|)'</td></tr>' fi
+!v004!,if p(v39) then '<tr><td class=legenda valign=top width="10%">039:</td><td width="90%">'(v39+|<br>|)'</td></tr>' fi
+!v004!(,if p(v40) then '<tr><td class=legenda valign=top width="10%">040:</td><td width="90%">'v40'</td></tr>' fi),
+!v004!(,if p(v41) then '<tr><td class=legenda valign=top width="10%">041:</td><td width="90%">'v41'</td></tr>' fi,)
+!v004!,if p(v42) then '<tr><td class=legenda valign=top width="10%">042:</td><td width="90%">'(v42+|<br>|)'</td></tr>' fi
+!v004!,if p(v43) then '<tr><td class=legenda valign=top width="10%">043:</td><td width="90%">'(v43+|<br>|)'</td></tr>' fi
+!v004!,if p(v44) then '<tr><td class=legenda valign=top width="10%">044:</td><td width="90%">'(v44+|<br>|)'</td></tr>' fi
+!v004!,if p(v45) then '<tr><td class=legenda valign=top width="10%">045:</td><td width="90%">'(v45+|<br>|)'</td></tr>' fi
+!v004!,if p(v46) then '<tr><td class=legenda valign=top width="10%">046:</td><td width="90%">'(v46+|<br>|)'</td></tr>' fi
+!v004!,if p(v47) then '<tr><td class=legenda valign=top width="10%">047:</td><td width="90%">'(v47+|<br>|)'</td></tr>' fi
+!v004!,if p(v48) then '<tr><td class=legenda valign=top width="10%">048:</td><td width="90%">'(v48+|<br>|)'</td></tr>' fi
+!v004!,if p(v49) then '<tr><td class=legenda valign=top width="10%">049:</td><td width="90%">'(v49+|<br>|)'</td></tr>' fi
+!v004!,if p(v50) then '<tr><td class=legenda valign=top width="10%">050:</td><td width="90%">'(v50+|<br>|)'</td></tr>' fi
+!v004!,if p(v51) then '<tr><td class=legenda valign=top width="10%">051:</td><td width="90%">'(v51+|<br>|)'</td></tr>' fi
+!v004!,if p(v52) then '<tr><td class=legenda valign=top width="10%">052:</td><td width="90%">'(v52+|<br>|)'</td></tr>' fi
+!v004!,if p(v53) then '<tr><td class=legenda valign=top width="10%">053:</td><td width="90%">'(v53+|<br>|)'</td></tr>' fi
+!v004!,if p(v54) then '<tr><td class=legenda valign=top width="10%">054:</td><td width="90%">'(v54+|<br>|)'</td></tr>' fi
+!v004!,if p(v55) then '<tr><td class=legenda valign=top width="10%">055:</td><td width="90%">'(v55+|<br>|)'</td></tr>' fi
+!v004!,if p(v56) then '<tr><td class=legenda valign=top width="10%">056:</td><td width="90%">'(v56+|<br>|)'</td></tr>' fi
+!v004!,if p(v57) then '<tr><td class=legenda valign=top width="10%">057:</td><td width="90%">'(v57+|<br>|)'</td></tr>' fi
+!v004!,if p(v58) then '<tr><td class=legenda valign=top width="10%">058:</td><td width="90%">'(v58+|<br>|)'</td></tr>' fi
+!v004!,if p(v59) then '<tr><td class=legenda valign=top width="10%">059:</td><td width="90%">'(v59+|<br>|)'</td></tr>' fi
+!v004!,if p(v60) then '<tr><td class=legenda valign=top width="10%">060:</td><td width="90%">'(v60+|<br>|)'</td></tr>' fi
+!v004!(,if p(v61) then '<tr><td class=legenda valign=top width="10%">061:</td><td width="90%">'v61'</td></tr>' fi,)
+!v004!(,if p(v62) then '<tr><td class=legenda valign=top width="10%">062:</td><td width="90%">'v62'</td></tr>' fi,)
+!v004!,if p(v63) then '<tr><td class=legenda valign=top width="10%">063:</td><td width="90%">'(v63+|<br>|)'</td></tr>' fi
+!v004!,if p(v64) then '<tr><td class=legenda valign=top width="10%">064:</td><td width="90%">'(v64+|<br>|)'</td></tr>' fi
+!v004!,if p(v65) then '<tr><td class=legenda valign=top width="10%">065:</td><td width="90%">'(v65+|<br>|)'</td></tr>' fi
+!v004!,if p(v66) then '<tr><td class=legenda valign=top width="10%">066:</td><td width="90%">'(v66+|<br>|)'</td></tr>' fi
+!v004!,if p(v67) then '<tr><td class=legenda valign=top width="10%">067:</td><td width="90%">'(v67+|<br>|)'</td></tr>' fi
+!v004!,if p(v68) then '<tr><td class=legenda valign=top width="10%">068:</td><td width="90%">'(v68+|<br>|)'</td></tr>' fi
+!v004!,if p(v69) then '<tr><td class=legenda valign=top width="10%">069:</td><td width="90%">'(v69+|<br>|)'</td></tr>' fi
+!v004!,if p(v70) then '<tr><td class=legenda valign=top width="10%">070:</td><td width="90%">'(v70+|<br>|)'</td></tr>' fi
+!v004!,if p(v71) then '<tr><td class=legenda valign=top width="10%">071:</td><td width="90%">'v71'</td></tr>' fi,
+!v004!,if p(v72) then '<tr><td class=legenda valign=top width="10%">072:</td><td width="90%">'(v72+|<br>|)'</td></tr>' fi
+!v004!,if p(v73) then '<tr><td class=legenda valign=top width="10%">073:</td><td width="90%">'(v73+|<br>|)'</td></tr>' fi
+!v004!,if p(v74) then '<tr><td class=legenda valign=top width="10%">074:</td><td width="90%">'(v74+|<br>|)'</td></tr>' fi
+!v004!,if p(v75) then '<tr><td class=legenda valign=top width="10%">075:</td><td width="90%">'(v75+|<br>|)'</td></tr>' fi
+!v004!,if p(v76) then '<tr><td class=legenda valign=top width="10%">076:</td><td width="90%">'(v76+|<br>|)'</td></tr>' fi
+!v004!,if p(v77) then '<tr><td class=legenda valign=top width="10%">077:</td><td width="90%">'(v77+|<br>|)'</td></tr>' fi
+!v004!,if p(v78) then '<tr><td class=legenda valign=top width="10%">078:</td><td width="90%">'(v78+|<br>|)'</td></tr>' fi
+!v004!(if p(v79) then '<tr><td class=legenda valign=top width="10%">079:</td><td width="90%">',v79,'</td></tr>' fi,)
+!v004!,if p(v80) then '<tr><td class=legenda valign=top width="10%">080:</td><td width="90%">'(v80+|<br>|)'</td></tr>' fi
+!v004!,if p(v81) then '<tr><td class=legenda valign=top width="10%">081:</td><td width="90%">'(v81+|<br>|)'</td></tr>' fi
+!v004!,if p(v82) then '<tr><td class=legenda valign=top width="10%">082:</td><td width="90%">'(v82+|<br>|)'</td></tr>' fi
+!v004!(,if p(v83) then '<tr><td class=legenda valign=top width="10%">083:</td><td width="90%">'v83'</td></tr>' fi,)
+!v004!(,if p(v84) then '<tr><td class=legenda valign=top width="10%">084:</td><td width="90%">'v84'</td></tr>' fi,)
+!v004!,if p(v85) then '<tr><td class=legenda valign=top width="10%">085:</td><td width="90%">',ref(['phl_mec']val(v85),@tab_txt.pft,),'</td></tr>' fi
+!v004!,if p(v86) then '<tr><td class=legenda valign=top width="10%">086:</td><td width="90%">'(v86^*,| - Validade: |v86^v*6.2,|/|v86^v*4.2,|/|v86^v.4,'<br>')'</td></tr>' fi
+!v004!(,if p(v87) then '<tr><td class=legenda valign=top width="10%">087:</td><td width="90%">'v87'</td></tr>' fi,)
+!v004!(,if p(v88) then '<tr><td class=legenda valign=top width="10%">088:</td><td width="90%">'v88'</td></tr>' fi,)
+!v004!,if p(v89) then '<tr><td class=legenda valign=top width="10%">089:</td><td width="90%">'(v89+|<br>|)'</td></tr>' fi
+!v004!,if p(v90) then '<tr><td class=legenda valign=top width="10%">090:</td><td width="90%">'(v90+|<br>|)'</td></tr>' fi
+!v004!,if p(v91) then '<tr><td class=legenda valign=top width="10%">091:</td><td width="90%">'(v91+|<br>|)'</td></tr>' fi
+!v004!,if p(v92) then '<tr><td class=legenda valign=top width="10%">092:</td><td width="90%">'(v92+|<br>|)'</td></tr>' fi
+!v004!,if p(v93) then '<tr><td class=legenda valign=top width="10%">093:</td><td width="90%">'(v93+|<br>|)'</td></tr>' fi
+!v004!(,if p(v96) then '<tr><td class=legenda valign=top width="10%">096:</td><td width="90%">'v96'</td></tr>' fi,)
+!v004!,if p(v95) then '<tr><td class=legenda valign=top width="10%">095:</td><td width="90%">'(v95+|<br>|)'</td></tr>' fi
+!v004!,if p(v94) then '<tr><td class=legenda valign=top width="10%">094:</td><td width="90%">'(v94+|<br>|)'</td></tr>' fi
+!v004!,if p(v97) then '<tr><td class=legenda valign=top width="10%">097:</td><td width="90%">'(v97+|<br>|)'</td></tr>' fi
+!v004!,if p(v98) then '<tr><td class=legenda valign=top width="10%">098:</td><td width="90%">'(v98+|<br>|)'</td></tr>' fi
+!v004!,if p(v99) then '<tr><td class=legenda valign=top width="10%">099:</td><td width="90%">'(v99+|<br>|)'</td></tr>' fi
+!v004!,if p(v105) then '<tr><td class=legenda valign=top width="10%">105:</td><td width="90%">',ref(['phl_gen']val(v105),@tab_txt.pft,),'</td></tr>' fi
+!v004!,if p(v121) then '<tr><td class=legenda valign=top width="10%">121:</td><td width="90%">'(v121+|<br>|)'</td></tr>' fi
+!v004!,if p(v141) then '<tr><td class=legenda valign=top width="10%">141:</td><td width="90%">'(v141+|<br>|)'</td></tr>' fi
+!v004!,if p(v181) then '<tr><td class=legenda valign=top width="10%">181:</td><td width="90%">'(v181+|<br>|)'</td></tr>' fi
+!v004!,if p(v182) then '<tr><td class=legenda valign=top width="10%">182:</td><td width="90%">'(v182+|<br>|)'</td></tr>' fi
+!v004!,if p(v996) then '<tr><td class=legenda valign=top width="10%">996:</td><td width="90%">'v996'</td></tr>' fi,
+!v004!,if p(v998) then '<tr><td class=legenda valign=top width="10%">998:</td><td width="90%">'v998'</td></tr>' fi,
+!v004!(,if p(v999) then '<tr><td class=legenda valign=top width="10%">999:</td><td width="90%">'v999'</td></tr>' fi,)
+!v004!,'</table>'
+!v004!,fi,
+!v004!,'</td></tr></table></body></html>'
+
+!ID 000002
+!v001!cal
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">MFN=',mfn(1),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v2000^f='1' then '<br><br><a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^a'v3000^1'_cal^b2^ccal&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><br>',fi
+!v004!'</td><td width="100%"><table>'
+!v004!'<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']77,@tab_txt.pft,)':</td><td width="240">'v323,v322,v320 select s(v321) case '0' : ' ('ref(['tab_txt']108,@tab_txt.pft,)')' case '1' : ' ('ref(['tab_txt']319,@tab_txt.pft,)')' case '2' : ' ('ref(['tab_txt']344,@tab_txt.pft,)')' case '3' : ' ('ref(['tab_txt']293,@tab_txt.pft,)')' case '4' : ' ('ref(['tab_txt']395,@tab_txt.pft,)')' case '5' : ' ('ref(['tab_txt']330,@tab_txt.pft,)')' case '6' : ' ('ref(['tab_txt']315,@tab_txt.pft,)')' endsel,'</td></tr>',
+!v004!'<tr><td class="legenda" valign="top" width="25%">Status:</td><td width="240">'select v324 case '1' : ref(['tab_txt']1,@tab_txt.pft,) case '0' : ,ref(['tab_txt']152,@tab_txt.pft,) endsel,'</td></tr>',
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000003
+!v001!cdu
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'ref(['tab_txt']422,@tab_txt.pft,)'&nbsp;',mfn(1),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v2000^n='1' then 
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^a'v3000^1'_cdu^b3^ccdu&opc=abre&mfn='mfn(1)'&exp=',mhu,v958,mpl,'&rec='v1010'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=cdu&tmp='v4001'">'ref(['tab_txt']186,@tab_txt.pft,)'</a><br>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&opc=cdu&tmp='v4001'">'ref(['tab_txt']794,@tab_txt.pft,)'</a><br>'
+!v004!,fi
+!v004!'</td><td width="100%"><table>'
+!v004!,if size(v310)>1 then '<tr><td class="legenda" valign="top" width="25%"></td><td width="240">'ref([v3000^1'_cdu']l([v3000^1'_cdu'],"CLA="v310.1),v310," - "v311[1]"<br>",),'</td></tr>',fi,
+!v004!,if size(v310)>2 then
+!v004!,,,,if npost([v3000^1'_cdu'],"CLA="v310.2)<>0 then '<tr><td class="legenda" valign="top" width="25%"></td><td width="240">'ref([v3000^1'_cdu']l([v3000^1'_cdu'],"CLA="v310.2),v310," - "v311[1]"<br>",),'</td></tr>',fi
+!v004!,fi,
+!v004!,if size(v310)>3 then
+!v004!,,,,if npost([v3000^1'_cdu'],"CLA="v310.3)<>0 then '<tr><td class="legenda" valign="top" width="25%"></td><td width="240">'ref([v3000^1'_cdu']l([v3000^1'_cdu'],"CLA="v310.3),v310," - "v311[1]"</br>"),'</td></tr>',fi
+!v004!,fi,
+!v004!,'<tr><td class="legenda" valign="top" width="25%"></td><td width="240">'v310,(' - ',v311,'<br>'),'</td></tr>'
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000005
+!v001!cnf
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">Configuração do Sistema</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" valign="top" width="25%">'
+!v004!,if v661^v='1' then '<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_cnf^b5^ccnf&opc=abre&mfn=1&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>',fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,if p(v201) then '<tr><td class="legenda" valign="top" width="25%">Está em manutenção?:</td><td width="240">'select v201 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',fi,
+!v004!,if v201='S' then '<tr><td class="legenda" valign="top" width="25%">Previsão do término:</td><td width="240">'v202'</td></tr>',fi,
+!v004!,if p(v200) then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']785,@tab_txt.pft,)':</td><td width="240">'(v200|<br>|)'</td></tr>',fi,
+!v004!,if p(v204) then '<tr><td class="legenda" valign="top" width="25%">URL do sistema:</td><td width="240">'v204'</td></tr>',fi,
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Sessão expira em:</td><td width="240">'v219' minutos</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Cor principal:</td><td width="240">'v232'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Cor secundária:</td><td width="240">'v236'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Cor dos textos:</td><td width="240">'v233'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Cor do fundo:</td><td width="240">'v234'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Padrão de fonte:</td><td width="240">'v235'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Cor do link:</td><td width="240">'v240'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Cor do link selecionado:</td><td width="240">'v241'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Barra de idioma?:</td><td width="240">'select v237 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Filtros:</td><td width="240">'(v205^b,' - :',v205^*,'<br>')'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Solicita senha para empréstimo?:</td><td width="240">'select v222 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Tipo de senha:</td><td width="240">'select v227 case 'A':'Alfanumérica' elsecase 'Numérica' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Regulamento do empréstimo:</td><td width="240">'select v221 case '1':'Por tipo de coleção' case '2':'Por tipo de documento' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Buscas - qtde. registros por página:</td><td width="240">'v207'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Buscas - solicita senha?:</td><td width="240">'select v210 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Buscas - índice de chaves?:</td><td width="240">'select v220 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Filtro - tipo de coleção?:</td><td width="240">'select v208 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Filtro - tipo de idioma?:</td><td width="240">'select v212 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Filtro - tipo de conteúdo?:</td><td width="240">'select v213 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Filtro - tipo de documento?:</td><td width="240">'select v215 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Filtro - tipo de suporte?:</td><td width="240">'select v218 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Mostra palavras-chave?:</td><td width="240">'select v214 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Mostra notas de conteúdo?:</td><td width="240">'select v223 case 'N':'Não' elsecase 'Sim' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Informação adicional:</td><td width="240">'select v224 case '1':'Tipo de suporte' case '2':'Tipo de coleção' case '3':'Tipo de conteúdo' case '4':'Tipo de documento' case '5':'Tipo de gênero' elsecase 'Nenhum' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Formato padrão:</td><td width="240">'select v230 case 'decorado':'Completo (ordem de entrada)' case 'decoradox':'Completo (ordem inversa)' case 'curto':'Curto' case 'referencia':'Referência' case 'tabela':'Tabela' case 'phl':'Exportação' elsecase 'Vancouver' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Edição - qtde. registros por página:</td><td width="240">'v206'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Diagnóstico:</td><td width="240">'select v242 case 'N':'Parcial' elsecase 'Completo' endsel'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Padronização dos descritores:</td><td width="240">'select v225 case 'C':'Termos usados no catálogo' elsecase 'Termos do vocabulário controlado' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Padronização dos autores:</td><td width="240">'select v225 case 'C':'Nomes usados no catálogo' elsecase 'Nomes do controle de autoridades' endsel,'</td></tr>',
+!v004!,if p(v211) then '<tr><td class="legenda" valign="top" width="25%">Código de barra:</td><td width="240">'v211'</td></tr>',fi
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Altura do cabeçalho:</td><td width="240">'v217'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Altura do logotipo:</td><td width="240">'v239'</td></tr>',
+!v005!,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/040.xis&opc=opcoes&tmp='v4001'" target="result"><img src="/phl84/img/edit.gif" border="0"></a><br>',
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000006
+!v001!cpa
+!v004!,@tab_pft.cab,
+!v004!,if v891<>'eeb' then
+!v004!'<div class="inv12c">MFN='mfn(1),' - ',ref(['tab_txt']336,@tab_txt.pft,),'</div>'
+!v004!,else
+!v004!'<div class="inv12c">MFN='mfn(1),' - Empréstimo entre Bibliotecas</div>'
+!v004!,fi
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v2000^o='1' and v883=v3000^1 or v891='eeb' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_cpa^b6^ccpa&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&db=phl_cpa&opc=cpa&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,fi,
+!v004!'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/006.xis&opc=cpa&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']65,@tab_txt.pft,)'</a><br>',
+!v004!'</td><td width="100%"><table>'
+!v004!'<td width="100%">',v871,". "v872,". "v874,": "v873,", "v875,". "v876" p.",'</td></tr>',
+!v004!'</table><hr>',
+!v004!,if v891<>'eeb' then
+!v004!'<table width="100%" border="0">'/
+!v004!select v884
+!v004!case 'N': '<th class="inv12red">',ref(['tab_txt']1181,@tab_txt.pft,),'</th>'
+!v004!case 'S': '<th class="inv12green">',ref(['tab_txt']1179,@tab_txt.pft,),'</th>'
+!v004!elsecase '<th class="inv12c">',ref(['tab_txt']1180,@tab_txt.pft,),'</th>'
+!v004!endsel,
+!v004!'</table>',
+!v004!,fi,
+!v004!'<table width="100%" align="left">',
+!v004!,if p(v890) then '<tr><td class=legenda valign=top width="10%">890:</td><td width="90%">',ref(['phl_tdo']val(v890),@tab_txt.pft,),'</td></tr>' fi
+!v004!,if p(v892) then '<tr><td class=legenda valign=top width="10%">892:</td><td width="90%">',v892,'</td></tr>' fi
+!v004!,if p(v870) then '<tr><td class=legenda valign=top width="10%">870:</td><td width="90%">'(v870+|<br>|)'</td></tr>' fi
+!v004!,if p(v871) then '<tr><td class=legenda valign=top width="10%">871:</td><td width="90%">'(v871+|<br>|)'</td></tr>' fi
+!v004!,if p(v872) then '<tr><td class=legenda valign=top width="10%">872:</td><td width="90%">'(v872+|<br>|)'</td></tr>' fi
+!v004!,if p(v873) then '<tr><td class=legenda valign=top width="10%">873:</td><td width="90%">'(v873+|<br>|)'</td></tr>' fi
+!v004!,if p(v874) then '<tr><td class=legenda valign=top width="10%">874:</td><td width="90%">'(v874+|<br>|)'</td></tr>' fi
+!v004!,if p(v875) then '<tr><td class=legenda valign=top width="10%">875:</td><td width="90%">'(v875+|<br>|)'</td></tr>' fi
+!v004!,if p(v876) then '<tr><td class=legenda valign=top width="10%">876:</td><td width="90%">'(v876+|<br>|)'</td></tr>' fi
+!v004!,if p(v877) then '<tr><td class=legenda valign=top width="10%">877:</td><td width="90%">'(v877+|<br>|)'</td></tr>' fi
+!v004!,if p(v878) then '<tr><td class=legenda valign=top width="10%">878:</td><td width="90%">'('<a href=mailto:'v878'>'v878'</a><br>')'</td></tr>' fi
+!v004!,if p(v879) then '<tr><td class=legenda valign=top width="10%">879:</td><td width="90%">'(v879+|<br>|)'</td></tr>' fi
+!v004!,if p(v880) then '<tr><td class=legenda valign=top width="10%">880:</td><td width="90%">'(v880+|<br>|)'</td></tr>' fi
+!v004!,if p(v881) then '<tr><td class=legenda valign=top width="10%">881:</td><td width="90%">'(v881+|<br>|)'</td></tr>' fi
+!v004!,if p(v882) then '<tr><td class=legenda valign=top width="10%">882:</td><td width="90%">'(v882+|<br>|)'</td></tr>' fi
+!v004!,if p(v883) then '<tr><td class=legenda valign=top width="10%">883:</td><td width="90%">'(v883+|<br>|)'</td></tr>' fi
+!v004!,if p(v885) then '<tr><td class=legenda valign=top width="10%">885:</td><td width="90%">'(v885+|<br>|)'</td></tr>' fi
+!v004!,if p(v886) then '<tr><td class=legenda valign=top width="10%">886:</td><td width="90%">'('<b>'v886^d*6.2,'/'v886^d*4.2,'/'v886^d.4,' às ',v886^d*9.2':'v886^d*11.2'</b> - 'v886^r' - 'v886^*'<br>')'</td></tr>' fi
+!v004!,if p(v887) then '<tr><td class=legenda valign=top width="10%">887:</td><td width="90%">'(v887+|<br>|)'</td></tr>' fi
+!v004!,if p(v888) then '<tr><td class=legenda valign=top width="10%">888:</td><td width="90%">'(v888+|<br>|)'</td></tr>' fi
+!v004!,if p(v889) then '<tr><td class=legenda valign=top width="10%">889:</td><td width="90%">'(v889+|<br>|)'</td></tr>' fi
+!v004!,if p(v999) then '<tr><td class=legenda valign=top width="10%">999:</td><td width="90%">'(v999+|<br>|)'</td></tr>' fi
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000007
+!v001!cxa
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'ref(['tab_txt']422,@tab_txt.pft,)'&nbsp;',mfn(1),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v663^a='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^a'v3000^1'_cxa^b7^ccxa&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&opc=cxa&db='v3000^1'_cxa&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!('<tr><td width=10% class=legenda valign=top>850:</td><td width=90% valign=top>'v850'</td></tr>'),
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000008
+!v001!emp
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'ref(['tab_txt']118,@tab_txt.pft,)'&nbsp;',mfn(1),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v663^d='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^a'v3000^1'_emp^b8^cemp&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&db='v3000^1'_emp&mfn='mfn(1)'&opc=emp&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,'<tr><td width=10% class=legenda valign=top>900:</td><td width=90% valign=top>'v900'</td></tr>'
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000009
+!v001!cur
+!v004!,@tab_pft.cab,
+!v004!'<div class="inv12c">',if v960<>'027' then
+!v004!,mfn(1),' = ',@tab_txt.pft,fi,
+!v004!'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v661^e='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_cur^b9^ccur&exp=',mhu,v958,mpl,'&rec='v1010'&opc=abre&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&opc=cur&db=phl_cur&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=cur&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,)'</a></b><br>',
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!'<tr><td width=10% class=legenda valign=top>PT:</td><td width=90% valign=top>',v301,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>ES:</td><td width=90% valign=top>',v302,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>EN:</td><td width=90% valign=top>',v303,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>IT:</td><td width=90% valign=top>',v304,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>FR:</td><td width=90% valign=top>',v305,'</td></tr>',
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000010
+!v001!for
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">MFN='mfn(1),' - ',ref(['tab_txt']826,@tab_txt.pft,),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v750=v3000^1 and v2000^e='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_for^b10^cfor&opc=abre&mfn='mfn(1)'&exp=',mhu,v958,mpl,'&rec='v1010'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&mfn='mfn(1)'&db=phl_for&opc=for&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=for&tmp='v4001'">'ref(['tab_txt']186,@tab_txt.pft,)'</a><br><br>'/
+!v004!,,,,,if p(v759) then
+!v004!,,,,,,,if v3000^6:'.phlnet.com.br' then
+!v004!,,,,,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/066.xis&opc=cotacao&for='v751'&tmp='v4001'">Cotação</a><br>'/
+!v004!,,,,,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/066.xis&opc=pedido&for='v751'&tmp='v4001'">Compra</a><br>'/
+!v004!,,,,,,,else
+!v004!,,,,,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/005.xis&opc=cotacao&for='v751'&tmp='v4001'">Cotação</a><br>'/
+!v004!,,,,,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/005.xis&opc=pedido&for='v751'&tmp='v4001'">Compra</a><br>'/
+!v004!,,,,,,,fi,
+!v004!,,,,,fi,
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,if p(v750) then '<tr><td class="legenda" width="5%" valign=top align=right>750:</td><td width="95%">'(v750+|<br>|)'</td></tr>' fi
+!v004!,if p(v751) then '<tr><td class="legenda" width="5%" valign=top align=right>751:</td><td width="95%">'(v751+|<br>|)'</td></tr>' fi
+!v004!,if p(v752) then '<tr><td class="legenda" width="5%" valign=top align=right>752:</td><td width="95%">'(v752+|<br>|)'</td></tr>' fi
+!v004!,if p(v753) then '<tr><td class="legenda" width="5%" valign=top align=right>753:</td><td width="95%">'(v753+|<br>|)'</td></tr>' fi
+!v004!,if p(v754) then '<tr><td class="legenda" width="5%" valign=top align=right>754:</td><td width="95%">'(v754+|<br>|)'</td></tr>' fi
+!v004!,if p(v755) then '<tr><td class="legenda" width="5%" valign=top align=right>755:</td><td width="95%">'(v755+|<br>|)'</td></tr>' fi
+!v004!,if p(v756) then '<tr><td class="legenda" width="5%" valign=top align=right>756:</td><td width="95%">'(v756+|<br>|)'</td></tr>' fi
+!v004!,if p(v757) then '<tr><td class="legenda" width="5%" valign=top align=right>757:</td><td width="95%">'(v757+|<br>|)'</td></tr>' fi
+!v004!,if p(v758) then '<tr><td class="legenda" width="5%" valign=top align=right>758:</td><td width="95%">'(v758+|<br>|)'</td></tr>' fi
+!v004!,if p(v759) then '<tr><td class="legenda" width="5%" valign=top align=right>759:</td><td width="95%">'('<a href=mailto:'v759'>'v759'</a><br>')'</td></tr>' fi
+!v004!,if p(v760) then '<tr><td class="legenda" width="5%" valign=top align=right>760:</td><td width="95%">'(v760+|<br>|)'</td></tr>' fi
+!v004!,if p(v761) then '<tr><td class="legenda" width="5%" valign=top align=right>761:</td><td width="95%">'(v761+|<br>|)'</td></tr>' fi
+!v004!,if p(v762) then '<tr><td class="legenda" width="5%" valign=top align=right>762:</td><td width="95%">'(v762+|<br>|)'</td></tr>' fi
+!v004!,if p(v763) then '<tr><td class="legenda" width="5%" valign=top align=right>763:</td><td width="95%">'('<a href='v763' target=_new>'v763'</a><br>')'</td></tr>' fi
+!v004!,if p(v764) then '<tr><td class="legenda" width="5%" valign=top align=right>764:</td><td width="95%">'(v764+|<br>|)'</td></tr>' fi
+!v004!,if p(v999) then '<tr><td class="legenda" width="5%" valign=top align=right>999:</td><td width="95%">'(v999+|<br>|)'</td></tr>' fi
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000011
+!v001!tdo
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'mfn(1)' = ',@tab_txt.pft,'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v661^i='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_tdo^b11^ctdo&opc=abre&mfn='mfn(1)'&exp=',mhu,v958,mpl,'&rec='v1010'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&opc=tdo&db=phl_tdo&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&opc=tdo&tmp='v4001'">'ref(['tab_txt']794,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=tdo&tmp='v4001'">'ref(['tab_txt']186,@tab_txt.pft,)'</a><br><br>'/
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,'<tr><td class="legenda" valign="top" width="25%"></td><td width="240"><img src="',v370,'" border="0">&nbsp;',ref(['phl_tdo']val(mfn),@tab_txt.pft,),'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>PT:</td><td width=90% valign=top>',v301,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>ES:</td><td width=90% valign=top>',v302,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>EN:</td><td width=90% valign=top>',v303,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>IT:</td><td width=90% valign=top>',v304,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>FR:</td><td width=90% valign=top>',v305,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Formulário:</td><td width="240">',ref(['phl_acv_fmt']val(v350),@tab_txt.pft,),'</td></tr>',
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000013
+!v001!log
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'ref(['tab_txt']171,@tab_txt.pft,)'&nbsp;',mfn(1),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v663^b='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^a'v3000^1'_log^b13^clog&opc=abre&mfn='mfn(1)'&exp=',mhu,v958,mpl,'&rec='v1010'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&mfn='mfn(1)'&db='v3000^1'_log&opc=log&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'
+!v004!,fi,
+!v004!'</td><td width="100%">'
+!v004!,if p(v910) then
+!v004!'<table width="100%">'
+!v004!'<th>Data</th>'
+!v004!'<th>Hora</th>'
+!v004!'<th>Operação</th>'
+!v004!'<th>Usuário</th>'
+!v004!'<th>Tombo</th>'
+!v004!'<th>Responsável</th>'
+!v004!,('<tr><td align="center">'v910^d'</td><td align="center">'v910^h'</td><td align="center">'v910^o'</td><td align="center">'v910^u'</td><td align="center">'v910^t'</td><td align="center">'v910^b'</td></tr>'),
+!v004!'</table><hr>'
+!v004!,fi,
+!v004!,if p(v911) then
+!v004!'<table width="100%">'
+!v004!'<th>Data</th>'
+!v004!'<th>Hora</th>'
+!v004!'<th>Usuário</th>'
+!v004!'<th>IP</th>'
+!v004!'<tr><td align="center">'v911^i.8'</td><td align="center">'v911^h.4'</td><td align="center">'v911^2'</td><td align="center">'v911^g'</td></tr>'
+!v004!'</table><hr>'
+!v004!,fi,
+!v004!'<table>'
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table>'/
+!v004!'</td></tr></table></body></html>'
+
+!ID 000014
+!v001!pen
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'ref(['tab_txt']422,@tab_txt.pft,)'&nbsp;',mfn(1),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v663^c='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_pen^b14^cpen&opc=abre&mfn='mfn(1)'&exp=',mhu,v958,mpl,'&rec='v1010'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&mfn='mfn(1)'&db=phl_pen&opc=pen&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,('<tr><td width=10% class=legenda valign=top>940:</td><td width=90% valign=top>'v940'</td></tr>'),
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000015
+!v001!col
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'mfn(1)':&nbsp;',@tab_txt.pft,'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v661^d='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_col^b15^ccol&exp=',mhu,v958,mpl,'&rec='v1010'&opc=abre&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&opc=col&db=phl_col&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=col&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,)'</a></b><br>',
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!'<tr><td width=10% class=legenda valign=top>Ícone:</td><td width=90% valign=top><img src="',v370,'" border="0"></td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>PT:</td><td width=90% valign=top>',v301,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>ES:</td><td width=90% valign=top>',v302,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>EN:</td><td width=90% valign=top>',v303,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>IT:</td><td width=90% valign=top>',v304,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>FR:</td><td width=90% valign=top>',v305,'</td></tr>',
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000016
+!v001!pqt
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">',ref(['phl_rgl']val(v671),@tab_txt.pft,),' / ',
+!v004!,if ref(['phl_cnf']1,v221)='1' then
+!v004!,ref(['phl_col']val(v672),@tab_txt.pft,),
+!v004!,else
+!v004!,ref(['phl_tdo']val(v672),@tab_txt.pft,),
+!v004!,fi'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v661^s='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_pqt^b16^cpqt&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'
+!v004!,if val(mfn)>1 then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&db=phl_pqt&mfn='mfn(1)'&opc=pqt&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'
+!v004!,fi,
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=pqt&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,)'</a></b><br>',
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!'<tr><td width="10%" class="legenda" valign="top">Prazo:</td><td width="90%" valign="top">'v673,if v678='C' then ' dias corridos' fi,if v678='U' then ' dias úteis' fi,'</td></tr>',
+!v004!'<tr><td width="10%" class="legenda" valign="top">Qtde. permitida:</td><td width="90%" valign="top">'v674'</td></tr>',
+!v004!'<tr><td width="10%" class="legenda" valign="top">Penalidade:</td><td width="90%" valign="top">'v676,if v677='1' then ' (multa)' fi,if v677='2' then ' (suspensão)' fi,if v677='0' then ' (nenhuma)' fi,'</td></tr>',
+!v004!'<tr><td width="10%" class="legenda" valign="top">Forma de cálculo:</td><td width="90%" valign="top">'select v679 case 'C':'Dias corridos' elsecase 'Dias úteis' endsel,'</td></tr>',
+!v004!'<tr><td width="10%" class="legenda" valign="top">Permite renovar?:</td><td width="90%" valign="top">'select v680 case 'S':'Sim' elsecase 'Não' endsel,'</td></tr>',
+!v004!'<tr><td width="10%" class="legenda" valign="top">Permite reservar?:</td><td width="90%" valign="top">'select v681 case 'S':'Sim' elsecase 'Não' endsel,'</td></tr>',
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000017
+!v001!pwd
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'ref(['tab_txt']422,@tab_txt.pft,)'&nbsp;',mfn(1),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v2000^k='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_pwd^b17^cpwd&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=pwd&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,)'</a><br>'/
+!v004!,,if val(mfn)>1 then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&db=phl_pwd&mfn='mfn(1)'&opc=pwd&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,,fi,
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'/
+!v004!/*login*/,                  '<tr><td width=10% class=legenda valign=top><b>Login:</b></td><td width=90% valign=top>'v651'</td></tr>'
+!v004!/*unidades*/,               '<tr><td width=10% class=legenda valign=top><b>'ref(['tab_txt']378,@tab_txt.pft,)'(s):</b></td><td width=90% valign=top>',v654+|;|,'</td></tr>'/,
+!v004!/*faixa de IP*/,if p(v659) then '<tr><td width=10% class=legenda valign=top><b>Faixa de IP:</b></td><td width=90% valign=top>'v659'</td></tr>' fi,/
+!v004!'<tr><td width=10% class=legenda valign=top>',if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!'<tr><td width=10% class=legenda valign=top>',if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000019
+!v001!rgl
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'mfn(1)': ',@tab_txt.pft,'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v661^l='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_rgl^b19^crgl&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&005='v5'&006='v6'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&db=phl_rgl&mfn='mfn(1)'&opc=rgl&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=rgl&tmp='v4001'" target="result">',ref(['tab_txt']186,@tab_txt.pft,),'</a><br>'/,
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,if v3000^a='por' then
+!v004!'<tr><td width=10% class=legenda valign=top>Tipo de usuário:</td><td width=90% valign=top>',v301,'</td></tr>',
+!v004!,fi
+!v004!,if v3000^a='spa' then
+!v004!'<tr><td width=10% class=legenda valign=top>Tipo del usuário:</td><td width=90% valign=top>',v302,'</td></tr>',
+!v004!,fi
+!v004!,if v3000^a='eng' then
+!v004!'<tr><td width=10% class=legenda valign=top>User type:</td><td width=90% valign=top>',v303,'</td></tr>',
+!v004!,fi
+!v004!,if v3000^a='ita' then
+!v004!'<tr><td width=10% class=legenda valign=top>User type:</td><td width=90% valign=top>',v304,'</td></tr>',
+!v004!,fi
+!v004!,if v3000^a='fra' then
+!v004!'<tr><td width=10% class=legenda valign=top>User type:</td><td width=90% valign=top>',v305,'</td></tr>',
+!v004!,fi
+!v004!,if p(v527) then '<tr><td class="legenda" width="5%" valign=top align=right>Limite de objetos</td><td width="95%">'v527'</td></tr>' fi
+!v004!,if p(v528) then '<tr><td class="legenda" width="5%" valign=top align=right>Limite de renovações</td><td width="95%">'v528'</td></tr>' fi
+!v004!,if p(v538) then '<tr><td class="legenda" width="5%" valign=top align=right>Limite de reservas</td><td width="95%">'v538'</td></tr>' fi
+!v004!,if p(v520) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não emprestar se usuário estiver com cadastro vencido</td></tr>' fi
+!v004!,if p(v521) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não emprestar se usuário tiver objetos atrasados</td></tr>' fi
+!v004!,if p(v522) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não emprestar se usuário estiver suspenso</td></tr>' fi
+!v004!,if p(v523) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não emprestar se usuário tiver débitos pendentes</td></tr>' fi
+!v004!,if p(v524) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não emprestar se houver reserva para outro usuário</td></tr>' fi
+!v004!,if p(v525) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não emprestar se limite foi ultrapassado</td></tr>' fi
+!v004!,if p(v526) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não emprestar mais que um exemplar para um mesmo usuário</td></tr>' fi
+!v004!,if p(v542) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não permitir auto-empréstimo</td></tr>' fi
+!v004!,if p(v550) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não renovar se usuário estiver com cadastro vencido</td></tr>' fi
+!v004!,if p(v551) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não renovar se usuário estiver suspenso</td></tr>' fi
+!v004!,if p(v552) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não renovar se existir reserva para outro usuário</td></tr>' fi
+!v004!,if p(v553) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não renovar se prazo estiver expirado</td></tr>' fi
+!v004!,if p(v554) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não renovar se usuário estiver com penalidade</td></tr>' fi
+!v004!,if p(v555) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não renovar se usuário tiver objetos atrasados</td></tr>' fi
+!v004!,if p(v530) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não permitir que usuário suspenso efetue reservas</td></tr>' fi
+!v004!,if p(v531) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não permitir que usuário com débitos efetue reservas</td></tr>' fi
+!v004!,if p(v532) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não permitir que usuário com cadastro vencido efetue reservas</td></tr>' fi
+!v004!,if p(v533) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não permitir que usuário com atrasos efetue reservas</td></tr>' fi
+!v004!,if p(v534) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não permitir que usuário reserve um título que está em seu poder</td></tr>' fi
+!v004!,if p(v535) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não permitir que usuário efetue várias reservas do mesmo título</td></tr>' fi
+!v004!,if p(v536) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não permitir reservas para títulos disponíveis</td></tr>' fi
+!v004!,if p(v537) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Cancelar reserva a partir do prazo de validade</td></tr>' fi
+!v004!,if p(v529) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não solicitar senha durante operação de empréstimo.</td></tr>' fi
+!v004!,if p(v539) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não Permitir que usuário altere seu cadastro</td></tr>' fi
+!v004!,if p(v540) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não Permitir que usuário faça comentários (wiki)</td></tr>' fi
+!v004!,if p(v541) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não Permitir que usuário faça sugestões de compra</td></tr>' fi
+!v004!,if p(v556) then '<tr><td class="legenda" width="5%" valign=top align=right></td><td width="95%">Não Permitir que usuário faça solicitação de empréstimo em outra biblioteca</td></tr>' fi
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000021
+!v001!ser
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">MFN='mfn(1),' - ',ref(['tab_txt']425,@tab_txt.pft,),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" valign="top" width="25%">'
+!v004!,@tab_pft.nav,
+!v004!,if v2000^d='1' then
+!v004!,,,,'<hr><a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^a'v3000^1'_ser^b21^cser&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><hr>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&db='v3000^1'_ser&mfn='mfn(1)'&opc=ser&tmp='v4001'">',ref(['tab_txt']87,@tab_txt.pft,)'</a><hr>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=ser&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,)'</a></b><hr>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=serc&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']65,@tab_txt.pft,)'</a></b><hr>'
+!v005!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=tbox&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']611,@tab_txt.pft,)'</b></a><hr>'/
+!v004!,if npost(['phl_acv']'SEN='v771'#C')=0 then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=sertit&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']1133,@tab_txt.pft,)'</b></a><hr>'/
+!v004!,fi
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=serfac&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']1132,@tab_txt.pft,)'</a><hr></b>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/034.xis&exp='v771'&tmp='v4001'">',ref(['tab_txt']998,@tab_txt.pft,)'</a><hr></b>'/
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,'<td width="100%">',if p(v781) then '<a class="link" href="'v781'">'MPU,v773,'</a>' else mpu,v773 fi,". "n785,": "d785,mpl,v785". "," "v779"."," "v777,", "n778,": "d778,v778+|; |", ",v796"-",v797,'.',"ISSN "v772".",'</td></tr>',
+!v004!'</table><hr>',
+!v004!'<table>',
+!v004!,if p(v769) then '<tr><td class="legenda" width="5%" valign=top align=right>769:</td><td width="95%">'(v769+|<br>|)'</td></tr>' fi
+!v004!,if p(v770) then '<tr><td class="legenda" width="5%" valign=top align=right>770:</td><td width="95%">'(v770+|<br>|)'</td></tr>' fi
+!v004!,if p(v771) then '<tr><td class="legenda" width="5%" valign=top align=right>771:</td><td width="95%">'(v771+|<br>|)'</td></tr>' fi
+!v004!,if p(v772) then '<tr><td class="legenda" width="5%" valign=top align=right>772:</td><td width="95%">'(v772+|<br>|)'</td></tr>' fi
+!v004!,if p(v773) then '<tr><td class="legenda" width="5%" valign=top align=right>773:</td><td width="95%">'(v773+|<br>|)'</td></tr>' fi
+!v004!,if p(v774) then '<tr><td class="legenda" width="5%" valign=top align=right>774:</td><td width="95%">'(v774+|<br>|)'</td></tr>' fi
+!v004!,if p(v775) then '<tr><td class="legenda" width="5%" valign=top align=right>775:</td><td width="95%">'(v775+|<br>|)'</td></tr>' fi
+!v004!,if p(v776) then '<tr><td class="legenda" width="5%" valign=top align=right>776:</td><td width="95%">'v776'</td></tr>' fi
+!v004!,if p(v777) then '<tr><td class="legenda" width="5%" valign=top align=right>777:</td><td width="95%">'(v777+|<br>|)'</td></tr>' fi
+!v004!,if p(v778) then '<tr><td class="legenda" width="5%" valign=top align=right>778:</td><td width="95%">'(v778+|<br>|)'</td></tr>' fi
+!v004!,if p(v779) then '<tr><td class="legenda" width="5%" valign=top align=right>779:</td><td width="95%">'(v779+|<br>|)'</td></tr>' fi
+!v004!,if p(v780) then ('<tr><td class="legenda" width="5%" valign=top align=right>780:</td><td width="95%">',v780,'</td></tr>') fi
+!v004!,if p(v782) then '<tr><td class="legenda" width="5%" valign=top align=right>782:</td><td width="95%">',v782,'</td></tr>' fi
+!v004!,if p(v783) then '<tr><td class="legenda" width="5%" valign=top align=right>783:</td><td width="95%">'v783'</td></tr>' fi
+!v004!,if p(v784) then '<tr><td class="legenda" width="5%" valign=top align=right>784:</td><td width="95%">'v784'</td></tr>' fi
+!v004!,if p(v785) then '<tr><td class="legenda" width="5%" valign=top align=right>785:</td><td width="95%">'(v785+|<br>|)'</td></tr>' fi
+!v004!,if p(v786) then '<tr><td class="legenda" width="5%" valign=top align=right>786:</td><td width="95%">'(v786+|<br>|)'</td></tr>' fi
+!v004!,if p(v787) then '<tr><td class="legenda" width="5%" valign=top align=right>787:</td><td width="95%">'(v787+|<br>|)'</td></tr>' fi
+!v004!,if p(v788) then '<tr><td class="legenda" width="5%" valign=top align=right>788:</td><td width="95%">'(v788+|<br>|)'</td></tr>' fi
+!v004!,if p(v789) then ('<tr><td class="legenda" width="5%" valign=top align=right>789:</td><td width="95%">',v789,'</td></tr>') fi
+!v004!,if p(v790) then '<tr><td class="legenda" width="5%" valign=top align=right>790:</td><td width="95%">'(v790+|<br>|)'</td></tr>' fi
+!v004!,if p(v768) then '<tr><td class="legenda" width="5%" valign=top align=right>768:</td><td width="95%">'(v768+|<br>|)'</td></tr>' fi
+!v004!,if p(v791) then '<tr><td class="legenda" width="5%" valign=top align=right>791:</td><td width="95%">'(v791+|<br>|)'</td></tr>' fi
+!v004!,if p(v792) then '<tr><td class="legenda" width="5%" valign=top align=right>792:</td><td width="95%">'(v792+|<br>|)'</td></tr>' fi
+!v004!,if p(v781) then '<tr><td class="legenda" width="5%" valign=top align=right>781:</td><td width="95%">'(v781+|<br>|)'</td></tr>' fi
+!v004!,if p(v793) then '<tr><td class="legenda" width="5%" valign=top align=right>793:</td><td width="95%">',v793,'</td></tr>' fi
+!v004!,if p(v794) then '<tr><td class="legenda" width="5%" valign=top align=right>794:</td><td width="95%">'(v794+|<br>|)'</td></tr>' fi
+!v004!,if p(v795) then '<tr><td class="legenda" width="5%" valign=top align=right>795:</td><td width="95%">'(v795+|<br>|)'</td></tr>' fi
+!v004!,if p(v796) then '<tr><td class="legenda" width="5%" valign=top align=right>796:</td><td width="95%">'(v796+|<br>|)'</td></tr>' fi
+!v004!,if p(v797) then '<tr><td class="legenda" width="5%" valign=top align=right>797:</td><td width="95%">'(v797+|<br>|)'</td></tr>' fi
+!v004!,if p(v798) then '<tr><td class="legenda" width="5%" valign=top align=right>798:</td><td width="95%">'(v798+|<br>|)'</td></tr>' fi
+!v004!,if p(v799) then '<tr><td class="legenda" width="5%" valign=top align=right>799:</td><td width="95%">'(v799+|<br>|)'</td></tr>' fi
+!v004!,if p(v999) then '<tr><td class="legenda" width="5%" valign=top align=right>999:</td><td width="95%">'(v999+|<br>|)'</td></tr>' fi
+!v004!,if v786[LAST]^a<>'' then
+!v004!'Agente: <a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&dbvar=^aphl_for^b10^cfor&opc=busca_recs&exp='v786[LAST]^a'*ACV='v3000^1'&tmp='v4001'">'v786[LAST]^a'</a>'/
+!v004!,fi
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000022
+!v001!set
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">Configuração da Biblioteca</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" valign="top" width="15%">'
+!v004!,@tab_pft.nav,
+!v004!,if v661^w='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_set^b22^cset&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,),'</a><br>'/
+!v004!,fi,
+!v004!'</td><td width="85%"><table>'
+!v004!,if p(v602) then '<tr><td class="legenda" valign="top"  width="25%">',ref(['tab_txt']228,@tab_txt.pft,),':</td><td width="240">'(v602|<br>|)'</td></tr>',fi,
+!v004!,if p(v601) then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']47,@tab_txt.pft,)':</td><td width="240">'(v601|<br>|)'</td></tr>',fi,
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Logotipo:</td><td width="240">'v618'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Endereço:</td><td width="240">'v603'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Cidade:</td><td width="240">'v604'</td></tr>',,
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Estado:</td><td width="240">'v605'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">CEP:</td><td width="240">'v606'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Fones:</td><td width="240">'v607+|; |'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">E-mail:</td><td width="240">'v608'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Bibliotecário responsável:</td><td width="240">'v609'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">CNPJ:</td><td width="240">'v610'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">CCN:</td><td width="240">'v642'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">BIREME:</td><td width="240">'v643'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Texto da mensagem:</td><td width="240">'v637'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Sugerir número de tombo?:</td><td width="240">'select v612 case 'S':'Sim' elsecase 'Não' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Qtde. de dígitos do tombo:</td><td width="240">'v611^a' dígitos</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Qtde. de dígitos da matrícula do usuário:</td><td width="240">'v611^b' dígitos</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Prazo para o empréstimo:</td><td width="240">'v613' dias</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Qtde. de objetos permitidos para o empréstimo:</td><td width="240">'v614' objetos</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Registro:</td><td width="240">'v638'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Horário de funcionamento (seg/sex):</td><td width="240">Abre às: 'v640^a' - Fecha às: 'v640^b'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Horário de funcionamento (sábado):</td><td width="240">Abre às: 'v641^a' - Fecha às: 'v641^b'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Tipo de penalidade:</td><td width="240">'select v622 case '1':'Multa' case '2':'Suspensão' elsecase 'Nenhuma' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Penalidade:</td><td width="240">'if v622='1' then 'R$ 'v623 else v623' dia(s)' fi,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Fuso horário:</td><td width="240">'select v644 case '-9':'UTC -12:00' case '-8':'UTC -11:00' case '-7':'UTC -10:00' case '-6':'UTC -09:00' case '-5':'UTC -08:00' case '-4':'UTC -07:00' case '-3':'UTC -06:00' case '-2':'UTC -05:00' case '-1':'UTC -04:00' case '+0':'UTC -03:00' case '+1':'UTC -02:00' case '+2':'UTC -01:00' case '+3':'UTC 00:00' case '+4':'UTC +01:00' case '+5':'UTC +02:00' case '+6':'UTC +03:00' case '+7':'UTC +04:00' case '+8':'UTC +05:00' case '+9':'UTC +06:00' case '+10':'UTC +07:00' case '+11':'UTC +08:00' case '+12':'UTC +09:00' case '+13':'UTC +10:00' case '+14':'UTC +11:00' case '+15':'UTC +12:00' endsel,'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Auto-empréstimo:</td><td width="240">'v615'</td></tr>',
+!v004!,'<tr><td class="legenda" valign="top" width="25%">Número de chamada:</td><td width="240">
+'select v616[1]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+case '15':'Curso'
+endsel,
+'<br>'
+select v616[2]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+case '15':'Curso'
+endsel,
+'<br>'
+select v616[3]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+case '15':'Curso'
+endsel,
+'<br>'
+select v616[4]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+case '15':'Curso'
+endsel,
+'<br>'
+select v616[5]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+case '15':'Curso'
+endsel,
+'<br>'
+select v616[6]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+case '15':'Curso'
+endsel,
+'<br>'
+select v616[7]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+case '15':'Curso'
+endsel,
+'<br>'
+select v616[8]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+case '15':'Curso'
+endsel,
+'<br>'
+select v616[9]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+case '15':'Curso'
+endsel,
+'</td></tr>',
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000023
+!v001!tbo
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">',ref(['tab_txt']367,@tab_txt.pft,),':&nbsp;' v801'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" valign="top" width="140">'/
+!v004!,@tab_pft.nav,
+!v004!'<br>'/
+!v004!,if v2000^b='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&rec='v1010'&exp=',mhu,v958,mpl,'&dbvar=^a'v3000^1'_tbo^b23^ctbo&opc=abre&mfn='mfn(1)'&form=061&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'/
+!v005!/* 01/02/2008 10:51:17 desabilitada esta opção porque não atualiza o catalogo /*,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/006.xis&opc=tbo&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']65,@tab_txt.pft,)'</a><br>'/,
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&db='v3000^1'_tbo&mfn='mfn(1)'&opc=tbo&tmp='v4001'">',ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,,if npost([v3000^1'_log'],'TBO='v801)>0 then '<a href="/cgi-bin/wxis.exe?IsisScript=phl84/019.xis&rec='v1010'&exp=',mhu,v958,mpl,'&tbo='v801'&tmp='v4001'">'ref(['tab_txt']171,@tab_txt.pft,)'</a>',fi/
+!v004!,fi,/
+!v004!'</td><td width="440"><table>'/
+!v004!,if p(v800) then '<tr><td class="legenda" width="5%" valign=top align=right>800:</td><td width="95%">'(v800+|<br>|)'</td></tr>' fi
+!v004!,if p(v801) then '<tr><td class="legenda" width="5%" valign=top align=right>801:</td><td width="95%">'(v801+|<br>|)'</td></tr>' fi
+!v004!,if p(v802) then '<tr><td class="legenda" width="5%" valign=top align=right>802:</td><td width="95%">'(v802+|<br>|)'</td></tr>' fi
+!v004!,if p(v803) then '<tr><td class="legenda" width="5%" valign=top align=right>803:</td><td width="95%">'(v803+|<br>|)'</td></tr>' fi
+!v004!,if p(v804) then '<tr><td class="legenda" width="5%" valign=top align=right>804:</td><td width="95%">'(v804+|<br>|)'</td></tr>' fi
+!v004!,if p(v805) then '<tr><td class="legenda" width="5%" valign=top align=right>805:</td><td width="95%">'(v805+|<br>|)'</td></tr>' fi
+!v004!,if p(v806) then '<tr><td class="legenda" width="5%" valign=top align=right>806:</td><td width="95%">',v806,'</td></tr>' fi
+!v004!,if p(v807) then '<tr><td class="legenda" width="5%" valign=top align=right>807:</td><td width="95%">'(v807+|<br>|)'</td></tr>' fi
+!v004!,if p(v808) then '<tr><td class="legenda" width="5%" valign=top align=right>808:</td><td width="95%">'(v808+|<br>|)'</td></tr>' fi
+!v004!,if p(v809) then '<tr><td class="legenda" width="5%" valign=top align=right>809:</td><td width="95%">'(v809+|<br>|)'</td></tr>' fi
+!v004!,if p(v810) then '<tr><td class="legenda" width="5%" valign=top align=right>810:</td><td width="95%">'v810'<br></td></tr>' fi
+!v004!,if p(v811) then '<tr><td class="legenda" width="5%" valign=top align=right>811:</td><td width="95%">'v811'<br></td></tr>' fi
+!v004!,if p(v812) then '<tr><td class="legenda" width="5%" valign=top align=right>812:</td><td width="95%">'(v812+|<br>|)'</td></tr>' fi
+!v004!,if p(v813) then '<tr><td class="legenda" width="5%" valign=top align=right>813:</td><td width="95%">'(v813+|<br>|)'</td></tr>' fi
+!v004!,if p(v814) then '<tr><td class="legenda" width="5%" valign=top align=right>814:</td><td width="95%">'(v814+|<br>|)'</td></tr>' fi
+!v004!,if p(v815) then '<tr><td class="legenda" width="5%" valign=top align=right>815:</td><td width="95%">'(v815+|<br>|)'</td></tr>' fi
+!v004!,if p(v816) then '<tr><td class="legenda" width="5%" valign=top align=right>816:</td><td width="95%">'v816'<br></td></tr>' fi
+!v004!,if p(v817) then '<tr><td class="legenda" width="5%" valign=top align=right>817:</td><td width="95%">'(v817+|<br>|)'</td></tr>' fi
+!v004!,if p(v818) then '<tr><td class="legenda" width="5%" valign=top align=right>818:</td><td width="95%">'(v818+|<br>|)'</td></tr>' fi
+!v004!,if p(v819) then '<tr><td class="legenda" width="5%" valign=top align=right>819:</td><td width="95%">'v819'</td></tr>' fi
+!v004!,if p(v820) then '<tr><td class="legenda" width="5%" valign=top align=right>820:</td><td width="95%">'(v820+|<br>|)'</td></tr>' fi
+!v004!,if p(v821) then '<tr><td class="legenda" width="5%" valign=top align=right>821:</td><td width="95%">'(v821+|<br>|)'</td></tr>' fi
+!v004!,if p(v822) then '<tr><td class="legenda" width="5%" valign=top align=right>822:</td><td width="95%">'(v822+|<br>|)'</td></tr>' fi
+!v004!,if p(v823) then '<tr><td class="legenda" width="5%" valign=top align=right>823:</td><td width="95%">'(v823+|<br>|)'</td></tr>' fi
+!v004!,if p(v824) then '<tr><td class="legenda" width="5%" valign=top align=right>824:</td><td width="95%">'(v824+|<br>|)'</td></tr>' fi
+!v004!,if p(v825) then '<tr><td class="legenda" width="5%" valign=top align=right>825:</td><td width="95%">'(v825+|<br>|)'</td></tr>' fi
+!v004!,if p(v826) then '<tr><td class="legenda" width="5%" valign=top align=right>826:</td><td width="95%">'(v826+|<br>|)'</td></tr>' fi
+!v004!,if p(v827) then '<tr><td class="legenda" width="5%" valign=top align=right>827:</td><td width="95%">'(v827+|<br>|)'</td></tr>' fi
+!v004!,if p(v828) then '<tr><td class="legenda" width="5%" valign=top align=right>828:</td><td width="95%">'(v828+|<br>|)'</td></tr>' fi
+!v004!,if p(v829) then '<tr><td class="legenda" width="5%" valign=top align=right>829:</td><td width="95%">'(v829+|<br>|)'</td></tr>' fi
+!v004!,if p(v830) then '<tr><td class="legenda" width="5%" valign=top align=right>830:</td><td width="95%">'(v830+|<br>|)'</td></tr>' fi
+!v004!,if p(v831) then '<tr><td class="legenda" width="5%" valign=top align=right>831:</td><td width="95%">'(v831+|<br>|)'</td></tr>' fi
+!v004!,if p(v832) then '<tr><td class="legenda" width="5%" valign=top align=right>832:</td><td width="95%">'(v832+|<br>|)'</td></tr>' fi
+!v004!,if p(v833) then '<tr><td class="legenda" width="5%" valign=top align=right>833:</td><td width="95%">'(v833+|<br>|)'</td></tr>' fi
+!v004!,if p(v834) then '<tr><td class="legenda" width="5%" valign=top align=right>834:</td><td width="95%">'(v834+|<br>|)'</td></tr>' fi
+!v004!,if p(v835) then '<tr><td class="legenda" width="5%" valign=top align=right>835:</td><td width="95%">'(v835+|<br>|)'</td></tr>' fi
+!v004!,if p(v836) then '<tr><td class="legenda" width="5%" valign=top align=right>836:</td><td width="95%">'(v836+|<br>|)'</td></tr>' fi
+!v004!,if p(v837) then '<tr><td class="legenda" width="5%" valign=top align=right>837:</td><td width="95%">'(v837+|<br>|)'</td></tr>' fi
+!v004!,if p(v997) then '<tr><td class="legenda" width="5%" valign=top align=right>997:</td><td width="95%">'(v997+|<br>|)'</td></tr>' fi
+!v004!,if p(v998) then '<tr><td class="legenda" width="5%" valign=top align=right>998:</td><td width="95%">'(v998+|<br>|)'</td></tr>' fi
+!v004!,if p(v999) then '<tr><td class="legenda" width="5%" valign=top align=right>999:</td><td width="95%">'(v999+|<br>|)'</td></tr>' fi
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000025
+!v001!usr
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">MFN='mfn(1),' - ',ref(['tab_txt']379,@tab_txt.pft,),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" valign="top" width="25%">'
+!v004!,@tab_pft.nav,
+!v004!,if p(v719) then '<img border="0" src="'v719'" width="90" height="120"><br>',fi,
+!v004!,if v3000^3='funcionario' then
+!v004!,if v2000^c='1' then
+!v004!,,,if v3000^1=v730 then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_usr^b25^cusr&opc=usr&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&opc=usr&db=phl_usr&mfn='mfn(1)'&usr='v701'&tmp='v4001'">',ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,,,fi,
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/017.xis&usr='v701'&tmp='v4001'">',ref(['tab_txt']147,@tab_txt.pft,),'</a><br>',/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&rec='v1010'&exp=',mhu,v958,mpl,'&opc=usrc&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']65,@tab_txt.pft,)'</a><br>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/019.xis&usr='v701'&tmp='v4001'">',ref(['tab_txt']171,@tab_txt.pft,),'</a><br>',/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/033.xis&opc=carteira_opcoes&exp=USR='v701'&tmp='v4001'">Gera carteirinha</a><br>',/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=usr&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,),'</a><br>'/,
+!v004!,fi,
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,if p(v700) then '<tr><td class="legenda" width="5%" valign=top align=right>700:</td><td width="95%">'(v700+|<br>|)'</td></tr>' fi
+!v004!,if p(v701) then '<tr><td class="legenda" width="5%" valign=top align=right>701:</td><td width="95%">'(v701+|<br>|)'</td></tr>' fi
+!v004!,if p(v703) then '<tr><td class="legenda" width="5%" valign=top align=right>703:</td>',
+!v004!  ,if val(v703)=1 then
+!v004!  '<td class="inv12red">SUSPENSO'
+!v004!  ,else
+!v004!  '<td class="inv12green">ATIVO'
+!v004!  ,fi,
+!v004!'</td></tr>' fi
+!v004!,if p(v704) then '<tr><td class="legenda" width="5%" valign=top align=right>704:</td><td width="95%">'(v704+|<br>|)'</td></tr>' fi
+!v004!,if p(v705) then '<tr><td class="legenda" width="5%" valign=top align=right>705:</td><td width="95%">'(v705+|<br>|)'</td></tr>' fi
+!v004!,if p(v706) then '<tr><td class="legenda" width="5%" valign=top align=right>706:</td><td width="95%">'(v706+|<br>|)'</td></tr>' fi
+!v004!,if p(v707) then '<tr><td class="legenda" width="5%" valign=top align=right>707:</td><td width="95%">'(v707+|<br>|)'</td></tr>' fi
+!v004!,if p(v708) then '<tr><td class="legenda" width="5%" valign=top align=right>708:</td><td width="95%">'(v708+|<br>|)'</td></tr>' fi
+!v004!,if p(v709) then '<tr><td class="legenda" width="5%" valign=top align=right>709:</td><td width="95%">'(v709+|<br>|)'</td></tr>' fi
+!v004!,if p(v710) then '<tr><td class="legenda" width="5%" valign=top align=right>710:</td><td width="95%">'(v710+|<br>|)'</td></tr>' fi
+!v004!,if p(v711) then '<tr><td class="legenda" width="5%" valign=top align=right>711:</td><td width="95%">'v711'</td></tr>' fi
+!v004!,if p(v712) then '<tr><td class="legenda" width="5%" valign=top align=right>712:</td><td width="95%">'(v712+|<br>|)'</td></tr>' fi
+!v004!,if p(v713) then '<tr><td class="legenda" width="5%" valign=top align=right>713:</td><td width="95%">',v713,'</td></tr>' fi
+!v004!,if p(v714) then '<tr><td class="legenda" width="5%" valign=top align=right>714:</td><td width="95%">'('<a href=mailto:'v714'>'v714'</a><br>')'</td></tr>' fi
+!v004!,if p(v715) then '<tr><td class="legenda" width="5%" valign=top align=right>715:</td><td width="95%">'(v715+|<br>|)'</td></tr>' fi
+!v004!,if p(v716) then '<tr><td class="legenda" width="5%" valign=top align=right>716:</td><td width="95%">'(v716+|<br>|)'</td></tr>' fi
+!v004!,if p(v717) then '<tr><td class="legenda" width="5%" valign=top align=right>717:</td><td width="95%">'('<a href='v717^b' target=_new>'v717^a'</a><br>')'</td></tr>' fi
+!v004!,if p(v718) then '<tr><td class="legenda" width="5%" valign=top align=right>718:</td><td width="95%">'(v718+|<br>|)'</td></tr>' fi
+!v004!,if p(v719) then '<tr><td class="legenda" width="5%" valign=top align=right>719:</td><td width="95%">'(v719+|<br>|)'</td></tr>' fi
+!v004!,if p(v720) then '<tr><td class="legenda" width="5%" valign=top align=right>720:</td><td width="95%">'(v720+|<br>|)'</td></tr>' fi
+!v004!,if p(v721) then '<tr><td class="legenda" width="5%" valign=top align=right>721:</td><td width="95%">'(v721+|<br>|)'</td></tr>' fi
+!v004!,if p(v722) then '<tr><td class="legenda" width="5%" valign=top align=right>722:</td><td width="95%">'(v722+|<br>|)'</td></tr>' fi
+!v004!,if p(v723) then '<tr><td class="legenda" width="5%" valign=top align=right>723:</td><td width="95%">',ref(['phl_rgl']val(v723),@tab_txt.pft,),'</td></tr>' fi
+!v004!,if p(v724) then '<tr><td class="legenda" width="5%" valign=top align=right>724:</td><td class="alerta" width="95%">'(v724+|<br>|)'</td></tr>' fi
+!v004!,if p(v725) then '<tr><td class="legenda" width="5%" valign=top align=right>725:</td><td width="95%">'(v725+|<br>|)'</td></tr>' fi
+!v004!,if p(v726) then '<tr><td class="legenda" width="5%" valign=top align=right>726:</td><td width="95%">'(v726+|<br>|)'</td></tr>' fi
+!v004!,if p(v727) then '<tr><td class="legenda" width="5%" valign=top align=right>727:</td><td width="95%">'(v727+|<br>|)'</td></tr>' fi
+!v004!,if p(v728) then '<tr><td class="legenda" width="5%" valign=top align=right>728:</td><td width="95%">'(v728+|<br>|)'</td></tr>' fi
+!v004!,if p(v730) then '<tr><td class="legenda" width="5%" valign=top align=right>730:</td><td width="95%">'(v730+|<br>|)'</td></tr>' fi
+!v004!,if p(v999) then '<tr><td class="legenda" width="5%" valign=top align=right>999:</td><td width="95%">'(v999+|<br>|)'</td></tr>' fi
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000027
+!v001!rel
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'v502'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v661^u='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_rel^b27^crel&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&db=phl_rel&mfn='mfn(1)'&opc=rel&tmp='v4001'">',ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=rel&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,)'</a></b><br>'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/006.xis&opc=rel&mfn=',mfn(1),'&tmp='v4001'">',ref(['tab_txt']65,@tab_txt.pft,)'</a><br>'
+!v004!,fi,
+!v004!,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/036.xis&opc=busca&mfn='mfn(1)'&db=phl_rel&tmp='v4001'">Executar</a></b><br>'
+!v004!'</td><td width="100%"><table>'
+!v004!,if p(v504) then '<tr><td width=10% class=legenda valign=top>',ref(['tab_txt']29,@tab_txt.pft,)':</td><td width=90% valign=top>'ref(['tab_txt']val(v504^b),@tab_txt.pft,)'</td></tr>',fi
+!v004!,if p(v514) then '<tr><td width=10% class=legenda valign=top>Observações:</td><td width=90% valign=top>',(v514'<br>'),'</td></tr>',fi/,
+!v004!"<tr><td width=10% class=legenda valign=top>Expressão de Busca:</td><td width=90% valign=top>"v505"</td></tr>",
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000028
+!v001!voc
+!v004!'<html>'/
+!v004!'<head>'/
+!v004!'<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+!v004!'<script>'
+!v004!'function vocabulario(){ '
+!v004!'ajuda = window.open("/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&opc=voc&tmp='v4001'","janela","menubar=yes,resizable=yes,scrollbars=yes,status=yes") '
+!v004!'} '
+!v004!'</script>'
+!v004!'</head>'/
+!v004!'<body>'/
+!v004!,if v1001='1' then '<h1>Base de dados Vocabulário</h1>'/,fi,
+!v004!'<div class="inv12c">'ref(['tab_txt']422,@tab_txt.pft,)'&nbsp;',mfn(1),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v2000^m='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_voc^b28^cvoc&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&db=phl_voc&mfn='mfn(1)'&opc=voc&tmp='v4001'">',ref(['tab_txt']87,@tab_txt.pft,)'</a><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=voc&tmp='v4001'">Inserir</a></b><br>',
+!v004!,,,,'<a href="JavaScript:vocabulario();">Nova busca</a></b><br>',
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,if v3000^a='por' then '<tr><td class="legenda" valign="top" width="25%">UT:</td><td width="240">'(v401+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='spa' then '<tr><td class="legenda" valign="top" width="25%">UT:</td><td width="240">'(v402+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='eng' then '<tr><td class="legenda" valign="top" width="25%">UT:</td><td width="240">'(v403+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='ita' then '<tr><td class="legenda" valign="top" width="25%">UT:</td><td width="240">'(v404+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='fra' then '<tr><td class="legenda" valign="top" width="25%">UT:</td><td width="240">'(v405+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='por' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']782,@tab_txt.pft,)':</td><td width="240">'(v411+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='spa' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']782,@tab_txt.pft,)':</td><td width="240">'(v412+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='eng' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']782,@tab_txt.pft,)':</td><td width="240">'(v413+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='ita' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']782,@tab_txt.pft,)':</td><td width="240">'(v414+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='fra' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']782,@tab_txt.pft,)':</td><td width="240">'(v415+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='por' and p(v421) then '<tr><td class="legenda" valign="top" width="25%">UF:</td><td width="240">'(v421+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='spa' and p(v422) then '<tr><td class="legenda" valign="top" width="25%">UF:</td><td width="240">'(v422+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='eng' and p(v423) then '<tr><td class="legenda" valign="top" width="25%">UF:</td><td width="240">'(v423+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='ita' and p(v424) then '<tr><td class="legenda" valign="top" width="25%">UF:</td><td width="240">'(v424+|<br>|)'</td></tr>',fi,
+!v004!,if v3000^a='fra' and p(v425) then '<tr><td class="legenda" valign="top" width="25%">UF:</td><td width="240">'(v425+|<br>|)'</td></tr>',fi,
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000029
+!v001!aut
+!v004!'<html>'/
+!v004!'<head>'/
+!v004!'<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+!v004!'<script>'/
+!v004!'function autor(){'
+!v004!'ajuda = window.open("/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&opc=aut&tmp='v4001'","janela","menubar=yes,resizable=yes,scrollbars=yes,status=yes")'
+!v004!'}'
+!v004!'</script>'/
+!v004!'</head>'/
+!v004!'<body>'/
+!v004!'<div class="inv12c">'ref(['tab_txt']422,@tab_txt.pft,)'&nbsp;',mfn(1),'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v2000^p='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_aut^b29^caut&exp=',mhu,v958,mpl,'&rec='v1010'&opc=abre&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&db=phl_aut&mfn='mfn(1)'&opc=aut&tmp='v4001'">',ref(['tab_txt']87,@tab_txt.pft,)'</a><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=aut&tmp='v4001'">Inserir</a></b><br>',
+!v004!,,,,'<a href="JavaScript:autor();">Nova busca</a></b><br>',
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,if p(v450) then '<tr><td class="legenda" valign="top" width="25%">AU:</td><td width="240">'v450'</td></tr>',fi,
+!v004!,if p(v451) then '<tr><td class="legenda" valign="top" width="25%">Notas Gerais:</td><td width="240">'v451'</td></tr>',fi,
+!v004!,if p(v452) then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']783,@tab_txt.pft,)':</td><td width="240">'(v452|<br>|)'</td></tr>',fi,
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000037
+!v001!cnt
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'mfn(1)':&nbsp;',@tab_txt.pft,'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v661^c='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_cnt^b37^ccnt&exp=',mhu,v958,mpl,'&rec='v1010'&opc=abre&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&opc=cnt&db=phl_cnt&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=cnt&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,)'</a></b><br>',
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!'<tr><td width=10% class=legenda valign=top>PT:</td><td width=90% valign=top>',v301,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>ES:</td><td width=90% valign=top>',v302,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>EN:</td><td width=90% valign=top>',v303,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>IT:</td><td width=90% valign=top>',v304,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>FR:</td><td width=90% valign=top>',v305,'</td></tr>',
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000038
+!v001!idm
+!v004!,@tab_pft.cab,
+!v004!'<div class="inv12c">'mfn(1)' = ',@tab_txt.pft,'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v661^g='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_idm^b38^cidm&exp=',mhu,v958,mpl,'&rec='v1010'&opc=abre&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&opc=idm&db=phl_idm&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=idm&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,)'</a></b><br>',
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!'<tr><td width=10% class=legenda valign=top>PT:</td><td width=90% valign=top>',v301,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>ES:</td><td width=90% valign=top>',v302,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>EN:</td><td width=90% valign=top>',v303,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>IT:</td><td width=90% valign=top>',v304,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>FR:</td><td width=90% valign=top>',v305,'</td></tr>',
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000041
+!v001!spt
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'mfn(1)':&nbsp;',@tab_txt.pft,'</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v661^h='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_spt^b41^cspt&exp=',mhu,v958,mpl,'&rec='v1010'&opc=abre&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&opc=spt&db=phl_spt&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=spt&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,)'</a></b><br>',
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!'<tr><td width=10% class=legenda valign=top>PT:</td><td width=90% valign=top>',v301,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>ES:</td><td width=90% valign=top>',v302,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>EN:</td><td width=90% valign=top>',v303,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>IT:</td><td width=90% valign=top>',v304,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>FR:</td><td width=90% valign=top>',v305,'</td></tr>',
+!v004!'<tr><td width=10% class=legenda valign=top>Ícone:</td><td width=90% valign=top><img src="',v370,'" border="0"></td></tr>',
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000046
+!v001!etp
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'mfn(1)':&nbsp;Etiqueta PDF</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,if val(v1002)>0 then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&dbvar='v3004'&opc=busca_recs&exp=',mhu,v958,mpl,'&rec=1&tmp='v4001'"><img src="/phl84/img/022.gif" border="0"></a>&nbsp;'
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&dbvar='v3004'&opc=busca_recs&exp=',mhu,v958,mpl,'&rec='if val(v1010)>1 then f(val(v1010)-1,0,0) else f(val(v1010),0,0) fi,'&tmp='v4001'"><img src="/phl84/img/019.gif" border="0"></a>&nbsp;'
+!v004!,,,,v1001," / "v1002,
+!v004!,,,,'&nbsp;<a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&dbvar='v3004'&opc=busca_recs&exp=',mhu,v958,mpl,'&rec=',if val(v1010)<val(v1002) then f(val(v1010)+1,0,0) else f(val(v1010),0,0) fi,'&tmp='v4001'"><img src="/phl84/img/020.gif" border="0"></a>'
+!v004!,,,,'&nbsp;<a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&dbvar='v3004'&opc=busca_recs&exp=',mhu,v958,mpl,'&rec='f(val(v1002),0,0)'&tmp='v4001'"><img src="/phl84/img/021.gif" border="0"></a><br><br>'
+!v004!,fi,
+!v004!,if v661^t='1' then
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_etp^b46^cetp&exp=',mhu,v958,mpl,'&rec='v1010'&opc=abre&mfn='mfn(1)'&tmp='v4001'">',ref(['tab_txt']111,@tab_txt.pft,)'</a><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&opc=etp&db=phl_etp&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=etp&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,)'</a></b><br>',
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!'<tr><td width="40%" class=legenda valign=top>229:</td><td width="60%" valign=top>',v229,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Largura da página:</td><td width="60%" valign=top>',v201,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Altura da página:</td><td width="60%" valign=top>',v202,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Escala:</td><td width="60%" valign=top>',v203,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Orientação:</td><td width="60%" valign=top>',v204,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Tipo da fonte:</td><td width="60%" valign=top>',v205,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Tamanho da fonte:</td><td width="60%" valign=top>',v206,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Estilo da fonte:</td><td width="60%" valign=top>',v207,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Margem superior:</td><td width="60%" valign=top>',v208,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Margem esquerda:</td><td width="60%" valign=top>',v209,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Densidade vertical:</td><td width="60%" valign=top>',v210,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Densidade horizontal:</td><td width="60%" valign=top>',v211,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Altura da etiqueta:</td><td width="60%" valign=top>',v212,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Largura da etiqueta:</td><td width="60%" valign=top>',v213,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Etiquetas por linha:</td><td width="60%" valign=top>',v214,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Linhas por página:</td><td width="60%" valign=top>',v215,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Código de barras:</td><td width="60%" valign=top>',v216,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Estilo de código de barras:</td><td width="60%" valign=top>',v217,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Tipo do código de barras:</td><td width="60%" valign=top>',v218,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Tamanho da fonte do código de barras:</td><td width="60%" valign=top>',v219,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>????:</td><td width="60%" valign=top>',v220,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Alinhamento da coluna da etiqueta:</td><td width="60%" valign=top>',v221,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Largura entre etiquetas:</td><td width="60%" valign=top>',v222,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Altura da coluna:</td><td width="60%" valign=top>',v223,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Número de linhas por coluna:</td><td width="60%" valign=top>',v224,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Coluna / etiquetas:</td><td width="60%" valign=top>',v225,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Largura / etiquetas:</td><td width="60%" valign=top>',v226,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Altura da coluna:</td><td width="60%" valign=top>',v227,'</td></tr>',
+!v004!'<tr><td width="40%" class=legenda valign=top>Número de linhas por coluna:</td><td width="60%" valign=top>',v228,'</td></tr>',
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000100
+!v001!acv_fmt
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">Formulário: ('mfn(1)') - ',@tab_txt.pft,' - Campos habilitados</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,@tab_pft.nav,
+!v004!,if v661^n='1' then
+!v004!,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_acv_fmt^b100^cacv_fmt&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'
+!v004!,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=acv_fmt&tmp='v4001'">',ref(['tab_txt']186,@tab_txt.pft,)'</a></b><br>',
+!v004!,,,,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/007.xis&exp=',mhu,v958,mpl,'&rec='v1010'&dbvar='v3004'&top=edicao&opc=acv_fmt&db=phl_acv_fmt&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']87,@tab_txt.pft,)'</a><br>'/
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!'<tr><td class="legenda" width="25%" valign="top">'
+!v004!,if p(v6001) then '<tr><td class="legenda" width="25%" valign="top">[001]</td><td width="240">'v001'</td></tr>',fi,
+!v004!,if p(v6002) then '<tr><td class="legenda" width="25%" valign="top">[002]</td><td width="240">'v002'</td></tr>',fi,
+!v004!,if p(v6003) then '<tr><td class="legenda" width="25%" valign="top">[003]</td><td width="240">'v003'</td></tr>',fi,
+!v004!,if p(v6004) then '<tr><td class="legenda" width="25%" valign="top">[004]</td><td width="240">'v004'</td></tr>',fi,
+!v004!,if p(v6005) then '<tr><td class="legenda" width="25%" valign="top">[005]</td><td width="240">'v005'</td></tr>',fi,
+!v004!,if p(v6006) then '<tr><td class="legenda" width="25%" valign="top">[006]</td><td width="240">'v006'</td></tr>',fi,
+!v004!,if p(v6007) then '<tr><td class="legenda" width="25%" valign="top">[007]</td><td width="240">'v007'</td></tr>',fi,
+!v004!,if p(v6008) then '<tr><td class="legenda" width="25%" valign="top">[008]</td><td width="240">'v008'</td></tr>',fi,
+!v004!,if p(v6009) then '<tr><td class="legenda" width="25%" valign="top">[009]</td><td width="240">'v009'</td></tr>',fi,
+!v004!,if p(v6010) then '<tr><td class="legenda" width="25%" valign="top">[010]</td><td width="240">'v010'</td></tr>',fi,
+!v004!,if p(v6011) then '<tr><td class="legenda" width="25%" valign="top">[011]</td><td width="240">'v011'</td></tr>',fi,
+!v004!,if p(v6012) then '<tr><td class="legenda" width="25%" valign="top">[012]</td><td width="240">'v012'</td></tr>',fi,
+!v004!,if p(v6013) then '<tr><td class="legenda" width="25%" valign="top">[013]</td><td width="240">'v013'</td></tr>',fi,
+!v004!,if p(v6014) then '<tr><td class="legenda" width="25%" valign="top">[014]</td><td width="240">'v014'</td></tr>',fi,
+!v004!,if p(v6015) then '<tr><td class="legenda" width="25%" valign="top">[015]</td><td width="240">'v015'</td></tr>',fi,
+!v004!,if p(v6016) then '<tr><td class="legenda" width="25%" valign="top">[016]</td><td width="240">'v016'</td></tr>',fi,
+!v004!,if p(v6017) then '<tr><td class="legenda" width="25%" valign="top">[017]</td><td width="240">'v017'</td></tr>',fi,
+!v004!,if p(v6018) then '<tr><td class="legenda" width="25%" valign="top">[018]</td><td width="240">'v018'</td></tr>',fi,
+!v004!,if p(v6019) then '<tr><td class="legenda" width="25%" valign="top">[019]</td><td width="240">'v019'</td></tr>',fi,
+!v004!,if p(v6020) then '<tr><td class="legenda" width="25%" valign="top">[020]</td><td width="240">'v020'</td></tr>',fi,
+!v004!,if p(v6021) then '<tr><td class="legenda" width="25%" valign="top">[021]</td><td width="240">'v021'</td></tr>',fi,
+!v004!,if p(v6022) then '<tr><td class="legenda" width="25%" valign="top">[022]</td><td width="240">'v022'</td></tr>',fi,
+!v004!,if p(v6023) then '<tr><td class="legenda" width="25%" valign="top">[023]</td><td width="240">'v023'</td></tr>',fi,
+!v004!,if p(v6024) then '<tr><td class="legenda" width="25%" valign="top">[024]</td><td width="240">'v024'</td></tr>',fi,
+!v004!,if p(v6025) then '<tr><td class="legenda" width="25%" valign="top">[025]</td><td width="240">'v025'</td></tr>',fi,
+!v004!,if p(v6026) then '<tr><td class="legenda" width="25%" valign="top">[026]</td><td width="240">'v026'</td></tr>',fi,
+!v004!,if p(v6027) then '<tr><td class="legenda" width="25%" valign="top">[027]</td><td width="240">'v027'</td></tr>',fi,
+!v004!,if p(v6028) then '<tr><td class="legenda" width="25%" valign="top">[028]</td><td width="240">'v028'</td></tr>',fi,
+!v004!,if p(v6029) then '<tr><td class="legenda" width="25%" valign="top">[029]</td><td width="240">'v029'</td></tr>',fi,
+!v004!,if p(v6030) then '<tr><td class="legenda" width="25%" valign="top">[030]</td><td width="240">'v030'</td></tr>',fi,
+!v004!,if p(v6031) then '<tr><td class="legenda" width="25%" valign="top">[031]</td><td width="240">'v031'</td></tr>',fi,
+!v004!,if p(v6032) then '<tr><td class="legenda" width="25%" valign="top">[032]</td><td width="240">'v032'</td></tr>',fi,
+!v004!,if p(v6033) then '<tr><td class="legenda" width="25%" valign="top">[033]</td><td width="240">'v033'</td></tr>',fi,
+!v004!,if p(v6034) then '<tr><td class="legenda" width="25%" valign="top">[034]</td><td width="240">'v034'</td></tr>',fi,
+!v004!,if p(v6035) then '<tr><td class="legenda" width="25%" valign="top">[035]</td><td width="240">'v035'</td></tr>',fi,
+!v004!,if p(v6036) then '<tr><td class="legenda" width="25%" valign="top">[036]</td><td width="240">'v036'</td></tr>',fi,
+!v004!,if p(v6037) then '<tr><td class="legenda" width="25%" valign="top">[037]</td><td width="240">'v037'</td></tr>',fi,
+!v004!,if p(v6038) then '<tr><td class="legenda" width="25%" valign="top">[038]</td><td width="240">'v038'</td></tr>',fi,
+!v004!,if p(v6039) then '<tr><td class="legenda" width="25%" valign="top">[039]</td><td width="240">'v039'</td></tr>',fi,
+!v004!,if p(v6040) then '<tr><td class="legenda" width="25%" valign="top">[040]</td><td width="240">'v040'</td></tr>',fi,
+!v004!,if p(v6041) then '<tr><td class="legenda" width="25%" valign="top">[041]</td><td width="240">'v041'</td></tr>',fi,
+!v004!,if p(v6042) then '<tr><td class="legenda" width="25%" valign="top">[042]</td><td width="240">'v042'</td></tr>',fi,
+!v004!,if p(v6043) then '<tr><td class="legenda" width="25%" valign="top">[043]</td><td width="240">'v043'</td></tr>',fi,
+!v004!,if p(v6044) then '<tr><td class="legenda" width="25%" valign="top">[044]</td><td width="240">'v044'</td></tr>',fi,
+!v004!,if p(v6045) then '<tr><td class="legenda" width="25%" valign="top">[045]</td><td width="240">'v045'</td></tr>',fi,
+!v004!,if p(v6046) then '<tr><td class="legenda" width="25%" valign="top">[046]</td><td width="240">'v046'</td></tr>',fi,
+!v004!,if p(v6047) then '<tr><td class="legenda" width="25%" valign="top">[047]</td><td width="240">'v047'</td></tr>',fi,
+!v004!,if p(v6048) then '<tr><td class="legenda" width="25%" valign="top">[048]</td><td width="240">'v048'</td></tr>',fi,
+!v004!,if p(v6049) then '<tr><td class="legenda" width="25%" valign="top">[049]</td><td width="240">'v049'</td></tr>',fi,
+!v004!,if p(v6050) then '<tr><td class="legenda" width="25%" valign="top">[050]</td><td width="240">'v050'</td></tr>',fi,
+!v004!,if p(v6051) then '<tr><td class="legenda" width="25%" valign="top">[051]</td><td width="240">'v051'</td></tr>',fi,
+!v004!,if p(v6052) then '<tr><td class="legenda" width="25%" valign="top">[052]</td><td width="240">'v052'</td></tr>',fi,
+!v004!,if p(v6053) then '<tr><td class="legenda" width="25%" valign="top">[053]</td><td width="240">'v053'</td></tr>',fi,
+!v004!,if p(v6054) then '<tr><td class="legenda" width="25%" valign="top">[054]</td><td width="240">'v054'</td></tr>',fi,
+!v004!,if p(v6055) then '<tr><td class="legenda" width="25%" valign="top">[055]</td><td width="240">'v055'</td></tr>',fi,
+!v004!,if p(v6056) then '<tr><td class="legenda" width="25%" valign="top">[056]</td><td width="240">'v056'</td></tr>',fi,
+!v004!,if p(v6057) then '<tr><td class="legenda" width="25%" valign="top">[057]</td><td width="240">'v057'</td></tr>',fi,
+!v004!,if p(v6058) then '<tr><td class="legenda" width="25%" valign="top">[058]</td><td width="240">'v058'</td></tr>',fi,
+!v004!,if p(v6059) then '<tr><td class="legenda" width="25%" valign="top">[059]</td><td width="240">'v059'</td></tr>',fi,
+!v004!,if p(v6060) then '<tr><td class="legenda" width="25%" valign="top">[060]</td><td width="240">'v060'</td></tr>',fi,
+!v004!,if p(v6061) then '<tr><td class="legenda" width="25%" valign="top">[061]</td><td width="240">'v061'</td></tr>',fi,
+!v004!,if p(v6062) then '<tr><td class="legenda" width="25%" valign="top">[062]</td><td width="240">'v062'</td></tr>',fi,
+!v004!,if p(v6063) then '<tr><td class="legenda" width="25%" valign="top">[063]</td><td width="240">'v063'</td></tr>',fi,
+!v004!,if p(v6064) then '<tr><td class="legenda" width="25%" valign="top">[064]</td><td width="240">'v064'</td></tr>',fi,
+!v004!,if p(v6065) then '<tr><td class="legenda" width="25%" valign="top">[065]</td><td width="240">'v065'</td></tr>',fi,
+!v004!,if p(v6066) then '<tr><td class="legenda" width="25%" valign="top">[066]</td><td width="240">'v066'</td></tr>',fi,
+!v004!,if p(v6067) then '<tr><td class="legenda" width="25%" valign="top">[067]</td><td width="240">'v067'</td></tr>',fi,
+!v004!,if p(v6068) then '<tr><td class="legenda" width="25%" valign="top">[068]</td><td width="240">'v068'</td></tr>',fi,
+!v004!,if p(v6069) then '<tr><td class="legenda" width="25%" valign="top">[069]</td><td width="240">'v069'</td></tr>',fi,
+!v004!,if p(v6070) then '<tr><td class="legenda" width="25%" valign="top">[070]</td><td width="240">'v070'</td></tr>',fi,
+!v004!,if p(v6071) then '<tr><td class="legenda" width="25%" valign="top">[071]</td><td width="240">'v071'</td></tr>',fi,
+!v004!,if p(v6072) then '<tr><td class="legenda" width="25%" valign="top">[072]</td><td width="240">'v072'</td></tr>',fi,
+!v004!,if p(v6073) then '<tr><td class="legenda" width="25%" valign="top">[073]</td><td width="240">'v073'</td></tr>',fi,
+!v004!,if p(v6074) then '<tr><td class="legenda" width="25%" valign="top">[074]</td><td width="240">'v074'</td></tr>',fi,
+!v004!,if p(v6075) then '<tr><td class="legenda" width="25%" valign="top">[075]</td><td width="240">'v075'</td></tr>',fi,
+!v004!,if p(v6076) then '<tr><td class="legenda" width="25%" valign="top">[076]</td><td width="240">'v076'</td></tr>',fi,
+!v004!,if p(v6077) then '<tr><td class="legenda" width="25%" valign="top">[077]</td><td width="240">'v077'</td></tr>',fi,
+!v004!,if p(v6078) then '<tr><td class="legenda" width="25%" valign="top">[078]</td><td width="240">'v078'</td></tr>',fi,
+!v004!,if p(v6079) then '<tr><td class="legenda" width="25%" valign="top">[079]</td><td width="240">'v079'</td></tr>',fi,
+!v004!,if p(v6080) then '<tr><td class="legenda" width="25%" valign="top">[080]</td><td width="240">'v080'</td></tr>',fi,
+!v004!,if p(v6081) then '<tr><td class="legenda" width="25%" valign="top">[081]</td><td width="240">'v081'</td></tr>',fi,
+!v004!,if p(v6082) then '<tr><td class="legenda" width="25%" valign="top">[082]</td><td width="240">'v082'</td></tr>',fi,
+!v004!,if p(v6083) then '<tr><td class="legenda" width="25%" valign="top">[083]</td><td width="240">'v083'</td></tr>',fi,
+!v004!,if p(v6084) then '<tr><td class="legenda" width="25%" valign="top">[084]</td><td width="240">'v084'</td></tr>',fi,
+!v004!,if p(v6085) then '<tr><td class="legenda" width="25%" valign="top">[085]</td><td width="240">'v085'</td></tr>',fi,
+!v004!,if p(v6086) then '<tr><td class="legenda" width="25%" valign="top">[086]</td><td width="240">'v086'</td></tr>',fi,
+!v004!,if p(v6087) then '<tr><td class="legenda" width="25%" valign="top">[087]</td><td width="240">'v087'</td></tr>',fi,
+!v004!,if p(v6088) then '<tr><td class="legenda" width="25%" valign="top">[088]</td><td width="240">'v088'</td></tr>',fi,
+!v004!,if p(v6089) then '<tr><td class="legenda" width="25%" valign="top">[089]</td><td width="240">'v089'</td></tr>',fi,
+!v004!,if p(v6090) then '<tr><td class="legenda" width="25%" valign="top">[090]</td><td width="240">'v090'</td></tr>',fi,
+!v004!,if p(v6105) then '<tr><td class="legenda" width="25%" valign="top">[105]</td><td width="240">'v105'</td></tr>',fi,
+!v004!,if p(v6121) then '<tr><td class="legenda" width="25%" valign="top">[121]</td><td width="240">'v121'</td></tr>',fi,
+!v004!,if p(v6141) then '<tr><td class="legenda" width="25%" valign="top">[141]</td><td width="240">'v141'</td></tr>',fi,
+!v004!,if p(v6181) then '<tr><td class="legenda" width="25%" valign="top">[181]</td><td width="240">'v181'</td></tr>',fi,
+!v004!,if p(v6182) then '<tr><td class="legenda" width="25%" valign="top">[182]</td><td width="240">'v182'</td></tr>',fi,
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000110
+!v001!for_fmt
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'ref(['tab_txt']860,@tab_txt.pft,),' - Campos habilitados</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,if v661^p='1' then
+!v004!,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_for_fmt^b110^cfor_fmt&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,if p(v6750) then '<tr><td class="legenda" valign="top" width="25%">750</td><td width="240">'v750'</td></tr>',fi,
+!v004!,if p(v6751) then '<tr><td class="legenda" valign="top" width="25%">751</td><td width="240">'v751'</td></tr>',fi,
+!v004!,if p(v6752) then '<tr><td class="legenda" valign="top" width="25%">752</td><td width="240">'v752'</td></tr>',fi,
+!v004!,if p(v6753) then '<tr><td class="legenda" valign="top" width="25%">753</td><td width="240">'v753'</td></tr>',fi,
+!v004!,if p(v6754) then '<tr><td class="legenda" valign="top" width="25%">754</td><td width="240">'v754'</td></tr>',fi,
+!v004!,if p(v6755) then '<tr><td class="legenda" valign="top" width="25%">755</td><td width="240">'v755'</td></tr>',fi,
+!v004!,if p(v6756) then '<tr><td class="legenda" valign="top" width="25%">756</td><td width="240">'v756'</td></tr>',fi,
+!v004!,if p(v6757) then '<tr><td class="legenda" valign="top" width="25%">757</td><td width="240">'v757'</td></tr>',fi,
+!v004!,if p(v6758) then '<tr><td class="legenda" valign="top" width="25%">758</td><td width="240">'v758'</td></tr>',fi,
+!v004!,if p(v6759) then '<tr><td class="legenda" valign="top" width="25%">759</td><td width="240">'v759'</td></tr>',fi,
+!v004!,if p(v6760) then '<tr><td class="legenda" valign="top" width="25%">760</td><td width="240">'v760'</td></tr>',fi,
+!v004!,if p(v6761) then '<tr><td class="legenda" valign="top" width="25%">761</td><td width="240">'v761'</td></tr>',fi,
+!v004!,if p(v6762) then '<tr><td class="legenda" valign="top" width="25%">762</td><td width="240">'v762'</td></tr>',fi,
+!v004!,if p(v6763) then '<tr><td class="legenda" valign="top" width="25%">763</td><td width="240">'v763'</td></tr>',fi,
+!v004!,if p(v6764) then '<tr><td class="legenda" valign="top" width="25%">764</td><td width="240">'v764'</td></tr>',fi,
+!v004!,if p(v6765) then '<tr><td class="legenda" valign="top" width="25%">765</td><td width="240">'v765'</td></tr>',fi,
+!v004!,if p(v6766) then '<tr><td class="legenda" valign="top" width="25%">766</td><td width="240">'v766'</td></tr>',fi,
+!v004!,if p(v6767) then '<tr><td class="legenda" valign="top" width="25%">767</td><td width="240">'v767'</td></tr>',fi,
+!v004!,if p(v6768) then '<tr><td class="legenda" valign="top" width="25%">768</td><td width="240">'v768'</td></tr>',fi,
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000121
+!v001!ser_fmt
+!v004!,@tab_pft.cab,
+!v004!'<div class="inv12c">'ref(['tab_txt']859,@tab_txt.pft,),' - Campos habilitados</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,if v661^m='1' then
+!v004!,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^a'v3000^1'_ser_fmt^b121^cser_fmt&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,if p(v6768) then '<tr><td class="legenda" valign="top" width="25%">768</td><td width="240">'v768'</td></tr>',fi,
+!v004!,if p(v6769) then '<tr><td class="legenda" valign="top" width="25%">769</td><td width="240">'v769'</td></tr>',fi,
+!v004!,if p(v6770) then '<tr><td class="legenda" valign="top" width="25%">770</td><td width="240">'v770'</td></tr>',fi,
+!v004!,if p(v6771) then '<tr><td class="legenda" valign="top" width="25%">771</td><td width="240">'v771'</td></tr>',fi,
+!v004!,if p(v6772) then '<tr><td class="legenda" valign="top" width="25%">772</td><td width="240">'v772'</td></tr>',fi,
+!v004!,if p(v6773) then '<tr><td class="legenda" valign="top" width="25%">773</td><td width="240">'v773'</td></tr>',fi,
+!v004!,if p(v6774) then '<tr><td class="legenda" valign="top" width="25%">774</td><td width="240">'v774'</td></tr>',fi,
+!v004!,if p(v6775) then '<tr><td class="legenda" valign="top" width="25%">775</td><td width="240">'v775'</td></tr>',fi,
+!v004!,if p(v6776) then '<tr><td class="legenda" valign="top" width="25%">776</td><td width="240">'v776'</td></tr>',fi,
+!v004!,if p(v6777) then '<tr><td class="legenda" valign="top" width="25%">777</td><td width="240">'v777'</td></tr>',fi,
+!v004!,if p(v6778) then '<tr><td class="legenda" valign="top" width="25%">778</td><td width="240">'v778'</td></tr>',fi,
+!v004!,if p(v6779) then '<tr><td class="legenda" valign="top" width="25%">779</td><td width="240">'v779'</td></tr>',fi,
+!v004!,if p(v6780) then '<tr><td class="legenda" valign="top" width="25%">780</td><td width="240">'v780'</td></tr>',fi,
+!v004!,if p(v6781) then '<tr><td class="legenda" valign="top" width="25%">781</td><td width="240">'v781'</td></tr>',fi,
+!v004!,if p(v6782) then '<tr><td class="legenda" valign="top" width="25%">782</td><td width="240">'v782'</td></tr>',fi,
+!v004!,if p(v6783) then '<tr><td class="legenda" valign="top" width="25%">783</td><td width="240">'v783'</td></tr>',fi,
+!v004!,if p(v6784) then '<tr><td class="legenda" valign="top" width="25%">784</td><td width="240">'v784'</td></tr>',fi,
+!v004!,if p(v6785) then '<tr><td class="legenda" valign="top" width="25%">785</td><td width="240">'v785'</td></tr>',fi,
+!v004!,if p(v6786) then '<tr><td class="legenda" valign="top" width="25%">786</td><td width="240">'v786'</td></tr>',fi,
+!v004!,if p(v6787) then '<tr><td class="legenda" valign="top" width="25%">787</td><td width="240">'v787'</td></tr>',fi,
+!v004!,if p(v6788) then '<tr><td class="legenda" valign="top" width="25%">788</td><td width="240">'v788'</td></tr>',fi,
+!v004!,if p(v6789) then '<tr><td class="legenda" valign="top" width="25%">789</td><td width="240">'v789'</td></tr>',fi,
+!v004!,if p(v6790) then '<tr><td class="legenda" valign="top" width="25%">790</td><td width="240">'v790'</td></tr>',fi,
+!v004!,if p(v6791) then '<tr><td class="legenda" valign="top" width="25%">791</td><td width="240">'v791'</td></tr>',fi,
+!v004!,if p(v6792) then '<tr><td class="legenda" valign="top" width="25%">792</td><td width="240">'v792'</td></tr>',fi,
+!v004!,if p(v6793) then '<tr><td class="legenda" valign="top" width="25%">793</td><td width="240">'v793'</td></tr>',fi,
+!v004!,if p(v6794) then '<tr><td class="legenda" valign="top" width="25%">794</td><td width="240">'v794'</td></tr>',fi,
+!v004!,if p(v6795) then '<tr><td class="legenda" valign="top" width="25%">795</td><td width="240">'v795'</td></tr>',fi,
+!v004!,if p(v6796) then '<tr><td class="legenda" valign="top" width="25%">796</td><td width="240">'v796'</td></tr>',fi,
+!v004!,if p(v6797) then '<tr><td class="legenda" valign="top" width="25%">797</td><td width="240">'v797'</td></tr>',fi,
+!v004!,if p(v6798) then '<tr><td class="legenda" valign="top" width="25%">798</td><td width="240">'v798'</td></tr>',fi,
+!v004!,if p(v6799) then '<tr><td class="legenda" valign="top" width="25%">799</td><td width="240">'v799'</td></tr>',fi,
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000123
+!v001!tbo_fmt
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'ref(['tab_txt']857,@tab_txt.pft,),' -  campos habilitados</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,if v661^o='1' then
+!v004!,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^a'v3000^1'_tbo_fmt^b123^ctbo_fmt&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,if p(v6800) then '<tr><td class="legenda" valign="top" width="25%">800</td><td width="240">'v800'</td></tr>',fi,
+!v004!,if p(v6801) then '<tr><td class="legenda" valign="top" width="25%">801</td><td width="240">'v801'</td></tr>',fi,
+!v004!,if p(v6802) then '<tr><td class="legenda" valign="top" width="25%">802</td><td width="240">'v802'</td></tr>',fi,
+!v004!,if p(v6803) then '<tr><td class="legenda" valign="top" width="25%">803</td><td width="240">'v803'</td></tr>',fi,
+!v004!,if p(v6804) then '<tr><td class="legenda" valign="top" width="25%">804</td><td width="240">'v804'</td></tr>',fi,
+!v004!,if p(v6805) then '<tr><td class="legenda" valign="top" width="25%">805</td><td width="240">'v805'</td></tr>',fi,
+!v004!,if p(v6806) then '<tr><td class="legenda" valign="top" width="25%">806</td><td width="240">'v806'</td></tr>',fi,
+!v004!,if p(v6807) then '<tr><td class="legenda" valign="top" width="25%">807</td><td width="240">'v807'</td></tr>',fi,
+!v004!,if p(v6808) then '<tr><td class="legenda" valign="top" width="25%">808</td><td width="240">'v808'</td></tr>',fi,
+!v004!,if p(v6809) then '<tr><td class="legenda" valign="top" width="25%">809</td><td width="240">'v809'</td></tr>',fi,
+!v004!,if p(v6810) then '<tr><td class="legenda" valign="top" width="25%">810</td><td width="240">'v810'</td></tr>',fi,
+!v004!,if p(v6811) then '<tr><td class="legenda" valign="top" width="25%">811</td><td width="240">'v811'</td></tr>',fi,
+!v004!,if p(v6812) then '<tr><td class="legenda" valign="top" width="25%">812</td><td width="240">'v812'</td></tr>',fi,
+!v004!,if p(v6813) then '<tr><td class="legenda" valign="top" width="25%">813</td><td width="240">'v813'</td></tr>',fi,
+!v004!,if p(v6814) then '<tr><td class="legenda" valign="top" width="25%">814</td><td width="240">'v814'</td></tr>',fi,
+!v004!,if p(v6815) then '<tr><td class="legenda" valign="top" width="25%">815</td><td width="240">'v815'</td></tr>',fi,
+!v004!,if p(v6816) then '<tr><td class="legenda" valign="top" width="25%">816</td><td width="240">'v816'</td></tr>',fi,
+!v004!,if p(v6817) then '<tr><td class="legenda" valign="top" width="25%">817</td><td width="240">'v817'</td></tr>',fi,
+!v004!,if p(v6818) then '<tr><td class="legenda" valign="top" width="25%">818</td><td width="240">'v818'</td></tr>',fi,
+!v004!,if p(v6819) then '<tr><td class="legenda" valign="top" width="25%">819</td><td width="240">'v819'</td></tr>',fi,
+!v004!,if p(v6820) then '<tr><td class="legenda" valign="top" width="25%">820</td><td width="240">'v820'</td></tr>',fi,
+!v004!,if p(v6821) then '<tr><td class="legenda" valign="top" width="25%">821</td><td width="240">'v821'</td></tr>',fi,
+!v004!,if p(v6822) then '<tr><td class="legenda" valign="top" width="25%">822</td><td width="240">'v822'</td></tr>',fi,
+!v004!,if p(v6823) then '<tr><td class="legenda" valign="top" width="25%">823</td><td width="240">'v823'</td></tr>',fi,
+!v004!,if p(v6824) then '<tr><td class="legenda" valign="top" width="25%">824</td><td width="240">'v824'</td></tr>',fi,
+!v004!,if p(v6825) then '<tr><td class="legenda" valign="top" width="25%">825</td><td width="240">'v825'</td></tr>',fi,
+!v004!,if p(v6826) then '<tr><td class="legenda" valign="top" width="25%">826</td><td width="240">'v826'</td></tr>',fi,
+!v004!,if p(v6827) then '<tr><td class="legenda" valign="top" width="25%">827</td><td width="240">'v827'</td></tr>',fi,
+!v004!,if p(v6828) then '<tr><td class="legenda" valign="top" width="25%">828</td><td width="240">'v828'</td></tr>',fi,
+!v004!,if p(v6829) then '<tr><td class="legenda" valign="top" width="25%">829</td><td width="240">'v829'</td></tr>',fi,
+!v004!,if p(v6830) then '<tr><td class="legenda" valign="top" width="25%">830</td><td width="240">'v830'</td></tr>',fi,
+!v004!,if p(v6831) then '<tr><td class="legenda" valign="top" width="25%">831</td><td width="240">'v831'</td></tr>',fi,
+!v004!,if p(v6832) then '<tr><td class="legenda" valign="top" width="25%">832</td><td width="240">'v832'</td></tr>',fi,
+!v004!,if p(v6833) then '<tr><td class="legenda" valign="top" width="25%">833</td><td width="240">'v833'</td></tr>',fi,
+!v004!,if p(v6834) then '<tr><td class="legenda" valign="top" width="25%">834</td><td width="240">'v834'</td></tr>',fi,
+!v004!,if p(v6835) then '<tr><td class="legenda" valign="top" width="25%">835</td><td width="240">'v835'</td></tr>',fi,
+!v004!,if p(v6836) then '<tr><td class="legenda" valign="top" width="25%">836</td><td width="240">'v836'</td></tr>',fi,
+!v004!,if p(v6837) then '<tr><td class="legenda" valign="top" width="25%">837</td><td width="240">'v837'</td></tr>',fi,
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'
+
+!ID 000125
+!v001!usr_fmt
+!v004!,@tab_pft.cab,,
+!v004!'<div class="inv12c">'ref(['tab_txt']858,@tab_txt.pft,),' - Campos habilitados</div>'
+!v004!'<table width="100%" border="0">'/
+!v004!'<tr><td class="menu" width="25%" valign="top">'
+!v004!,if v661^q='1' then
+!v004!,'<a href="/cgi-bin/wxis.exe?IsisScript=phl84/001.xis&dbvar=^aphl_usr_fmt^b125^cusr_fmt&opc=abre&exp=',mhu,v958,mpl,'&rec='v1010'&mfn='mfn(1)'&tmp='v4001'">'ref(['tab_txt']111,@tab_txt.pft,)'</a><br>'
+!v004!,fi,
+!v004!'</td><td width="100%"><table>'
+!v004!,if p(v6700) then '<tr><td class="legenda" valign="top" width="25%">700</td><td width="240">'v700'</td></tr>',fi,
+!v004!,if p(v6701) then '<tr><td class="legenda" valign="top" width="25%">701</td><td width="240">'v701'</td></tr>',fi,
+!v004!,if p(v6702) then '<tr><td class="legenda" valign="top" width="25%">702</td><td width="240">'v702'</td></tr>',fi,
+!v004!,if p(v6703) then '<tr><td class="legenda" valign="top" width="25%">703</td><td width="240">'v703'</td></tr>',fi,
+!v004!,if p(v6704) then '<tr><td class="legenda" valign="top" width="25%">704</td><td width="240">'v704'</td></tr>',fi,
+!v004!,if p(v6705) then '<tr><td class="legenda" valign="top" width="25%">705</td><td width="240">'v705'</td></tr>',fi,
+!v004!,if p(v6706) then '<tr><td class="legenda" valign="top" width="25%">706</td><td width="240">'v706'</td></tr>',fi,
+!v004!,if p(v6707) then '<tr><td class="legenda" valign="top" width="25%">706</td><td width="240">'v707'</td></tr>',fi,
+!v004!,if p(v6708) then '<tr><td class="legenda" valign="top" width="25%">708</td><td width="240">'v708'</td></tr>',fi,
+!v004!,if p(v6709) then '<tr><td class="legenda" valign="top" width="25%">709</td><td width="240">'v709'</td></tr>',fi,
+!v004!,if p(v6710) then '<tr><td class="legenda" valign="top" width="25%">710</td><td width="240">'v710'</td></tr>',fi,
+!v004!,if p(v6711) then '<tr><td class="legenda" valign="top" width="25%">711</td><td width="240">'v711'</td></tr>',fi,
+!v004!,if p(v6712) then '<tr><td class="legenda" valign="top" width="25%">712</td><td width="240">'v712'</td></tr>',fi,
+!v004!,if p(v6713) then '<tr><td class="legenda" valign="top" width="25%">713</td><td width="240">'v713'</td></tr>',fi,
+!v004!,if p(v6714) then '<tr><td class="legenda" valign="top" width="25%">714</td><td width="240">'v714'</td></tr>',fi,
+!v004!,if p(v6715) then '<tr><td class="legenda" valign="top" width="25%">715</td><td width="240">'v715'</td></tr>',fi,
+!v004!,if p(v6716) then '<tr><td class="legenda" valign="top" width="25%">716</td><td width="240">'v716'</td></tr>',fi,
+!v004!,if p(v6717) then '<tr><td class="legenda" valign="top" width="25%">717</td><td width="240">'v717'</td></tr>',fi,
+!v004!,if p(v6718) then '<tr><td class="legenda" valign="top" width="25%">718</td><td width="240">'v718'</td></tr>',fi,
+!v004!,if p(v6719) then '<tr><td class="legenda" valign="top" width="25%">719</td><td width="240">'v719'</td></tr>',fi,
+!v004!,if p(v6720) then '<tr><td class="legenda" valign="top" width="25%">720</td><td width="240">'v720'</td></tr>',fi,
+!v004!,if p(v6721) then '<tr><td class="legenda" valign="top" width="25%">721</td><td width="240">'v721'</td></tr>',fi,
+!v004!,if p(v6722) then '<tr><td class="legenda" valign="top" width="25%">722</td><td width="240">'v722'</td></tr>',fi,
+!v004!,if p(v6723) then '<tr><td class="legenda" valign="top" width="25%">723</td><td width="240">'v723'</td></tr>',fi,
+!v004!,if p(v6724) then '<tr><td class="legenda" valign="top" width="25%">724</td><td width="240">'v724'</td></tr>',fi,
+!v004!,if p(v6725) then '<tr><td class="legenda" valign="top" width="25%">725</td><td width="240">'v725'</td></tr>',fi,
+!v004!,if p(v6726) then '<tr><td class="legenda" valign="top" width="25%">726</td><td width="240">'v726'</td></tr>',fi,
+!v004!,if p(v6727) then '<tr><td class="legenda" valign="top" width="25%">727</td><td width="240">'v727'</td></tr>',fi,
+!v004!,if p(v6728) then '<tr><td class="legenda" valign="top" width="25%">728</td><td width="240">'v728'</td></tr>',fi,
+!v004!,if v999[1]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']931,@tab_txt.pft,)':</td><td width="240">'v999[1]^d,'-'v999[1]^b,'</td></tr>',fi,
+!v004!,if v999[LAST]<>'' then '<tr><td class="legenda" valign="top" width="25%">'ref(['tab_txt']932,@tab_txt.pft,)':</td><td width="240">'v999[LAST]^d,'-',v999[LAST]^b,'</td></tr>',fi,
+!v004!,'</table></td></tr></table></body></html>'

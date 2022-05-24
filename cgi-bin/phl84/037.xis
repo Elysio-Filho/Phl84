@@ -1,0 +1,342 @@
+<!-- Renovacao
+     03/03/2008 07:40:55 Corrigida condição v8000^a='1' para v8000^a='2'
+     28/03/2008 22:07:46 Incluida condicao que impede que seja feita mais que uma renovacao no mesmo dia 
+     07/01/2009 08:41:28 Excluido duplicidade de gravacao do 900^f 
+     25/10/2010 16:11:13 Incluida rotina de log 
+     10/10/2016 16:37:23 Alterado parâmetro de verificação de renovação de reservas -->
+
+     <IsisScript name="037.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (012) que obtem penalidades do usuário -->
+     <include>phl84/012.fnc</include>
+
+<!-- Inclue funcao (013) que obtem dados sobre o tombo a ser renovado -->
+     <include>phl84/013.fnc</include>
+     
+<!-- Inclue funcao (100) que obtem dados sobre usuário -->
+     <include>phl84/100.fnc</include>
+
+<!-- Inclue funcao (101) que obtem atrasos do usuário -->
+     <include>phl84/101.fnc</include>
+
+<!-- Inclue funcao (200) que obtem o MFN da data de hoje -->
+     <include>phl84/200.fnc</include>
+     
+<!-- Inclue funcao (300) que obtem regulamento -->
+     <include>phl84/300.fnc</include>
+     
+<!-- Inclue funcao (400) que regras de emprestimo -->
+     <include>phl84/400.fnc</include>
+     
+<!-- Inclue funcao (900) que obtem dados do registro de emprestimo -->
+     <include>phl84/900.fnc</include>
+     
+<!-- Inclue funcao (901) que define data de devolução -->
+     <include>phl84/901.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="953">acv</field>
+     <field action="cgi" tag="957">mfn</field>
+
+<!-- Carrega no campo 900 do registro CGI, informacoes do registro de emprestimo -->
+     <call name="900">now</call>
+     
+     <!-- Verifica se já houve renovacao deste objeto no dia de hoje -->
+          <flow action="jump"><pft>,if v7003.8=s(v900^d) then '982' fi,</pft></flow>
+
+<!-- Carrega na variavel 951 o numero de matricula do usuario que sera utilizado
+     nas proximas funcoes -->
+     <field action="add" tag="951"><pft>,v900^u,</pft></field>
+
+<!-- Carrega no campo 1022 do registro CGI o número do MFN da base de dados
+     do calendário que corresponde à data de hoje -->
+     <call name="200">now</call>
+     
+<!-- Obtem dados do usuário -->
+
+     <call name="100">now</call>
+
+<!-- Obtem o MFN da data de validade da matrícula do usuário -->
+
+     <field action="add" tag="326">
+       <pft>
+          ,ref([v953'_cal']l([v953'_cal'],v100^b,),mfn(1),),
+       </pft>
+     </field>
+     <file action="close" type="database"><pft>,v953'_cal',</pft></file>
+
+<!-- Obtém dados do titulo a ser renovado
+     a - codigo da unidade 
+     b - tipo de documento -->
+     <field action="add" tag="500">
+       <pft>
+         ,if ref(['phl_cnf']1,v221)='1' then
+           ,ref(['phl_acv']l(['phl_acv'],'TIT='v900^a,),'^a'v1,'^b'v26,'^c'mfn(1),),
+         ,else
+           ,ref(['phl_acv']l(['phl_acv'],'TIT='v900^a,),'^a'v1,'^b'v5,'^c'mfn(1),),
+         ,fi,
+       </pft>
+     </field>
+     <file action="close" type="database">phl_acv</file>
+     
+<!-- Obtém informações do tombo a ser renovado -->
+     <field action="replace" tag="1"><pft>,v500^a,</pft></field>
+     <field action="replace" tag="2"><pft>,v900^a,</pft></field>
+     <field action="replace" tag="952"><pft>,v900^t,</pft></field>
+
+     <call name="013">now</call>
+
+<!-- Obtem dados do regulamento -->
+     <call name="300">now</call>
+
+<!-- Obtem regras para o empréstimo -->
+     <call name="400">now</call>
+     
+<!-- Verifica se tipo de objeto e usuario permite renovacao -->
+     <flow action="jump">
+       <pft>
+        if v400^g='N' then '1138' fi,
+       </pft>
+     </flow>
+
+<!-- Obtem a quantidade de exemplares do título que estão na lista de reservas -->
+
+     <field action="add" tag="11">
+       <pft>,f( npost(['phl_res'],'TIT='v900^a,),0,0),</pft>
+     </field>
+     <file action="close" type="database">phl_res</file>
+     
+<!-- Obtém quantidade de exemplares emprestados exceto os TOP=LOC (empréstimos de consulta local) -->
+     
+     <do task="search">
+       <parm name="db"><pft>,v953'_emp'</pft></parm>
+       <parm name="expression"><pft>,'TIT='v900^a'*(TOP=EMP+TOP=REN)',</pft></parm>
+       <field action="define" tag="20">Isis_Total</field>
+       <loop></loop>
+       <field action="export" tag="20">20</field>
+     </do>
+     <file action="close" type="database"><pft>,v953'_emp'</pft></file>
+
+<!-- Obtem dados sobre penalidades em todas as bibliotecas -->
+     <call name="012">now</call>
+
+<!-- Obtém informações sobre objetos em atraso em poder do usuário -->
+     <call name="101">now</call>
+     
+<!-- (1) Verifica se documento está realmente emprestado -->
+     <flow action="jump"><pft>,if a(v900) then '138' fi,</pft></flow>
+          
+<!-- (2) Verifica se foi empréstimo overnight -->
+     <flow action="jump"><pft>,if v900^y<>'' then '661' fi,</pft></flow>
+          
+<!-- (3) Não renovar se usuário estiver com cadastro vencido -->
+     <flow action="jump"><pft>,if v300^a='1' and val(v1022)>val(v326) then '481' fi,</pft></flow>
+     
+<!-- (4) Não renovar se usuário estiver suspenso -->
+     <flow action="jump"><pft>,if v300^b='1' and v100^a='1' then '382' fi,</pft></flow>
+     
+<!-- (4.1) Não renovar se limite está esgotado -->
+     <flow action="jump"><pft>,if val(v900^r)=val(v300^g) then '799' fi,</pft></flow>
+     
+<!-- (5) Não renovar se existir reserva para outro usuário -->
+     <flow action="jump"><pft>,if v300^c='1' and (val(v11)+val(v20))>val(v8002) then '650' fi,</pft></flow>
+
+<!-- (6) Não renovar se prazo estiver expirado -->
+     <flow action="jump"><pft>,if v300^d='1' and val(v900^n)<val(v1022) then '244' fi,</pft></flow>
+    
+<!-- (7) Não renovar se usuário tiver multa pendente -->
+     <flow action="jump"><pft>,if v300^e='1' and val(v110)>0 then 'debito' fi,</pft></flow>
+          
+<!-- (8) Não renovar se usuário tiver suspenso -->
+     <flow action="jump"><pft>,if v300^e='1' and p(v111) and val(v111)>=val(v1022) then 'suspenso' fi,</pft></flow>
+
+<!-- (9) Não renovar se usuário tiver outros objetos atrasados -->
+     <flow action="jump"><pft>,if v300^f='1' and getenv('atraso')='sim' then '245' fi,</pft></flow>
+
+<!-- (11) Não renovar se objeto for de consulta local -->
+     <flow action="jump"><pft>,if v8000^a='2' then '650' fi,</pft></flow>
+
+<!-- Define o prazo de empréstimo -->
+
+     <field action="add" tag="1026">
+       <pft>,if v8000^e='' then v400^a else
+                if v8000^e='Overnight' then '1' else v8000^e fi,
+            ,fi
+       </pft>
+     </field>     
+     <field action="replace" tag="1026"><pft>,f((val(v1026)+1),0,0),</pft></field>
+
+<!-- Define data de devolução -->
+     <call name="901">now</call>
+     
+<!-- Grava renovacao -->
+
+     <file action="close" type="database"><pft>,v953'_emp'</pft></file>
+
+     <do task="update">
+      <parm name="db"><pft>,v953'_emp'</pft></parm>
+      <parm name="mfn"><pft>,v957,</pft></parm>
+      <parm name="fst"><pft>,cat(v953'_emp.fst'),</pft></parm>
+      <parm name="uctab"><pft>,cat('uctab'),</pft></parm>
+      <parm name="actab"><pft>,cat('actab'),</pft></parm>
+      <parm name="expire">60</parm>
+      <parm name="lockid"><pft>,v3000^2,</pft></parm>
+      <field action="define" tag="1105">Isis_Lock</field>
+      <field action="define" tag="1003">Isis_Status</field>
+
+      <update>
+        <field action="import" tag="list">400,3000,7003</field>
+        
+        <field action="replace" tag="900">
+        <pft>,
+        '^d',v7003*0.8,
+        '^h',v7003*9.4,
+        '^oren',
+        '^u',v900^u,
+        '^k',v900^k,
+
+            ,if v400^e='U' then
+                '^v',getenv('u_dev'),
+                '^n',getenv('u_mfn'),
+                 else
+                '^v',getenv('c_dev'),
+                '^n',getenv('c_mfn'),
+            ,fi,
+
+        '^t',v900^t,
+        '^a',v900^a,
+        '^c',v900^c,
+        '^e',v900^e,
+        '^f',v900^f,
+        '^b',v3000^2,
+        '^r',f(val(v900^r)+1,0,0),
+        ,</pft>
+        </field>
+
+        <field action="export" tag="900">900</field>
+        <field action="delete" tag="list">400,3000,7003</field>
+        <write>Unlock</write>
+        <field action="import" tag="list">3000,7003</field>
+        <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zREN|037.xis'/,</pft></field>
+        <call name="log">now</call>
+      </update>
+      <field action="export" tag="900">900</field>
+    </do>
+    <file action="close" type="database"><pft>,v953'_emp'</pft></file>
+
+<!-- Grava log -->
+
+     <file action="close" type="database"><pft>,v953'_log'</pft></file>
+
+     <do task="update">
+      <parm name="db"><pft>,v953'_log',</pft></parm>
+      <parm name="mfn">New</parm>
+      <parm name="fst"><pft>,cat(v953'_log.fst'),</pft></parm>
+      <parm name="uctab"><pft>,cat('uctab'),</pft></parm>
+      <parm name="actab"><pft>,cat('actab'),</pft></parm>
+      <field action="define" tag="1003">Isis_Status</field>
+
+      <update>
+
+        <field action="import" tag="910">900</field>
+        <field action="replace" tag="910" split="occ"><pft>(v910/)</pft></field>
+        <write>Unlock</write>
+        <field action="export" tag="910">910</field>
+      </update>
+      <display><htmlpft><pft>,ref(['tab_fmx']132,v4),</pft></htmlpft></display>
+    </do>
+    <file action="close" type="database"><pft>,v953'_log'</pft></file>
+
+    <flow action="exit">1</flow>
+
+<!-- Mensagens de erro -->
+
+     <label>52</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']52,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>138</label>
+     <field action="replace" tag="250">138</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+  
+     <label>244</label>
+     <field action="replace" tag="250">244</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>481</label>
+     <field action="replace" tag="250">481</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+  
+     <label>382</label>
+     <field action="replace" tag="250">382</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>debito</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']26,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>suspenso</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']9,v4),</pft></htmlpft></display>
+     <file action="close" type="database"><pft>,v953'_cal',</pft></file>
+     <flow action="exit">1</flow>
+
+     <label>245</label>
+     <field action="replace" tag="250">245</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+  
+     <label>650</label>
+     <field action="replace" tag="250">650</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+           
+     <label>661</label>
+     <field action="replace" tag="250">661</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+          
+     <label>799</label>
+     <field action="replace" tag="250">799</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+     <label>982</label>
+     <field action="replace" tag="250">982</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+        <label>1138</label>
+        <display>
+          <pft>
+           '<html>'/
+           '<head>'/
+           '<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+           '</head>'/
+           '<body>'
+           '<h2>',ref(['tab_txt']1138,@tab_txt.pft,)'&nbsp;',ref(['phl_rgl']val(v100^e),@tab_txt.pft,),'<br>Este objeto deverá ser devolvido dentro do prazo estabelecido, caso contrário estará sujeito às penalidades previstas.</h2>'
+           '</body>'
+           '</html>'
+          </pft>
+        </display>
+        <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

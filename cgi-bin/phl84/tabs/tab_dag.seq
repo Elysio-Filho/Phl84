@@ -1,0 +1,2277 @@
+!ID 000001
+!v004!/* verifica ausência no campo #001 */
+!v004!  ,if a(v1) then putenv('Erro=1'),
+!v004!   ,'<tr class=erro>
+!v004!       <td width=5% align=center>NULL</td>
+!v004!       <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!       <td width=30%><b>001: 'ref(['phl_acv_fmt']val(v5000),v1)'</b></td>
+!v004!       <td width=45% align=center>AUSENTE!</td>
+!v004!       <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>'
+!v004!  ,fi,
+!v004!/* verifica se código registrado no campo #001 é válido */
+!v004! ,if p(v1) then
+!v004!   ,if npost(['phl_set']'ACV='v1)=0 then putenv('Erro=1'),
+!v004!     '<tr class=erro>
+!v004!        <td width=5% align=center>ACV='v1'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>001: 'ref(['phl_acv_fmt']val(v5000),v1)'</b></td>
+!v004!        <td width=45% align=center>INVÁLIDO!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>',
+!v004!   ,fi,
+!v004! ,fi,
+
+!ID 000002
+!v004!/* verifica ausência no campo #002 */
+!v004! ,if a(v2) then putenv('Erro=1'),
+!v004!   '<tr class=erro>
+!v004!     <td width=5% align=center>ACV='v1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>002: 'ref(['phl_acv_fmt']val(v5000),v2)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>',
+!v004! ,fi,
+!v004!/* verifica se identificação registrada no campo #002 não está duplicada */
+!v004! ,if p(v2) then
+!v004!   ,if npost('TIT='v2)>1 then putenv('Erro=1'),
+!v004!     '<tr class=erro>
+!v004!       <td width=5% align=center>ACV='v1'</td>
+!v004!       <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!       <td width=30%><b>002: 'ref(['phl_acv_fmt']val(v5000),v2)'</b></td>
+!v004!       <td width=45% align=center>DUPLICADO!</td>
+!v004!       <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>',
+!v004!   ,fi,
+!v004! ,fi,
+
+!ID 000003
+!v004!/* verifica ausência do número de chamada */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004! ,if v6.1='m' or v6.1='s' then
+!v004!  ,if a(v3) then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>003: 'ref(['phl_acv_fmt']val(v5000),v3)'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>',
+!v004!  ,fi,
+!v004! ,fi
+!v004!,fi,
+
+!ID 000005
+!v004!/* verifica ausência no campo #005 */
+!v004! ,if a(v5) then putenv('Erro=1'),
+!v004!   '<tr class=erro>
+!v004!     <td width=5% align=center>ACV='v1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>005</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>',
+!v004! ,fi,
+!v004!/* verifica se tipo de documento é válido */
+!v004! ,if p(v5) then
+!v004!     ,if ref(['phl_tdo']val(v5),v301)='' then putenv('Erro=1'),
+!v004!      '<tr class=erro>
+!v004!        <td width=5% align=center>ACV='v1'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>005: 'v5'</b></td>
+!v004!        <td width=45% align=center>INVÁLIDO!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!    ,fi,
+!v004!,fi
+
+!ID 000006
+!v004!/* verifica ausência no campo #006 */
+!v004! ,if a(v6) then putenv('Erro=1'),
+!v004!   '<tr class=erro>
+!v004!     <td width=5% align=center>ACV='v1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>006: 'ref(['phl_acv_fmt']val(v5000),v6)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004! ,fi,
+!v004! /* verifica se nível bibliográfico é permitido */
+!v004! ,if v6<>'m' and v6<>'am' and v6<>'c' and v6<>'s' and v6<>'as' then putenv('Erro=1'),
+!v004!   '<tr class=erro>
+!v004!     <td width=5% align=center>ACV='v1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>006: 'ref(['phl_acv_fmt']val(v5000),v6)'</b></td>
+!v004!     <td width=45% align=center>NIVEL INVÁLIDO!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004! ,fi,
+
+!ID 000007
+!v004!/* verifica duplicidade de tombo */
+!v004! ,if p(v7) then
+!v004!  ,(
+!v004!    ,if p(v7) and npost(v1[1]'#TBO#'v7^a)>1 then putenv('Erro=1'),
+!v004!      '<tr class=erro>
+!v004!        <td width=5% align=center>'v1[1]'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>007: 'v7^a'</b></td>
+!v004!        <td width=45% align=center>DUPLICADO!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!    ,fi,
+!v004!   )
+!v004!  ,(
+!v004!    ,if p(v7) and npost([v1[1]'_tbo']'TBO='v7^a)=0 then putenv('Erro=1'),
+!v004!      '<tr class=erro>
+!v004!        <td width=5% align=center>'v1[1]'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>007: 'v7^a'</b></td>
+!v004!        <td width=45% align=center>INEXISTENTE!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!    ,fi,
+!v004!   )
+!v004! ,fi
+
+!ID 000010
+!v004!/* verifica se autor da parte é conhecido */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004! ,if p(v10) then
+!v004!  ,(
+!v004!    ,if p(v10) and npost(['phl_aut']'AUT='v10^*)=0 then putenv('Erro=1'),
+!v004!      '<tr class=alerta>
+!v004!        <td width=5% align=center>'v1[1]'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>010: 'v10^*'</b></td>
+!v004!        <td width=45% align=center>DESCONHECIDO!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!    ,fi,
+!v004!   )
+!v004! ,fi,
+!v004!,fi
+
+!ID 000011
+!v004!/* verifica se autor coletivo da parte é conhecido */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004! ,if p(v11) then
+!v004!  ,(
+!v004!    ,if p(v11) and npost(['phl_aut']'AUT='v11^*)=0 then putenv('Erro=1'),
+!v004!      '<tr class=alerta>
+!v004!        <td width=5% align=center>'v1[1]'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>011: 'v11^*'</b></td>
+!v004!        <td width=45% align=center>DESCONHECIDO!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!    ,fi,
+!v004!   )
+!v004! ,fi,
+!v004!,fi
+
+!ID 000012
+!v004!/* verifica ausência de título da parte */
+!v004! ,if v6.1='a' then
+!v004!  ,if a(v12) then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>012: 'ref(['phl_acv_fmt']val(v5000),v12)'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>',
+!v004!  ,fi,
+!v004! ,fi,
+
+!ID 000014
+!v004!/* verifica ausência de paginação analítica */
+!v004! ,if v6.1='a' then
+!v004!  ,if a(v8) then
+!v004!   ,if ref(['phl_acv_fmt']val(v5000),v6014)='1' then
+!v004!      ,if a(v141) and a(v14) then putenv('Erro=1'),
+!v004!        '<tr class=erro>',
+!v004!          '<td width=5% align=center>ACV='v1'</td>
+!v004!           <td width=10% align=center>MFN='mfn(1)'</td>'/
+!v004!         '<td width=30%><b>014: 'ref(['phl_acv_fmt']val(v5000),v14)'</b></td>
+!v004!          <td width=45% align=center>AUSENTE!</td>
+!v004!          <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!         </tr>',
+!v004!     ,fi,
+!v004!   ,fi,
+!v004!   ,fi,
+!v004! ,fi
+
+!ID 000016
+!v004!/* verifica se autor do todo é conhecido */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004! ,if p(v16) then
+!v004!  ,(
+!v004!    ,if p(v16) and npost(['phl_aut']'AUT='v16^*)=0 then putenv('Erro=1'),
+!v004!      '<tr class=alerta>
+!v004!        <td width=5% align=center>'v1[1]'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>016: 'v16^*'</b></td>
+!v004!        <td width=45% align=center>DESCONHECIDO!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>',
+!v004!    ,fi,
+!v004!   )
+!v004! ,fi,
+!v004!,fi,
+
+!ID 000017
+!v004!/* verifica se autor coletivo do todo é conhecido */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004! ,if p(v17) then
+!v004!  ,(
+!v004!    ,if p(v17) and npost(['phl_aut']'AUT='v17^*)=0 then putenv('Erro=1'),
+!v004!      '<tr class=alerta>
+!v004!        <td width=5% align=center>'v1[1]'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>017: 'v17^*'</b></td>
+!v004!        <td width=45% align=center>DESCONHECIDO!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>',
+!v004!    ,fi,
+!v004!   )
+!v004! ,fi
+!v004!,fi
+
+!ID 000018
+!v004!/* verifica ausência do título */
+!v004!,if v6='m' or v6='am' then
+!v004!  ,if ref(['phl_acv_fmt']val(v5000),v6018)='1' then
+!v004!   ,if a(v18) then putenv('Erro=1'),
+!v004!      '<tr class=erro>
+!v004!        <td width=5% align=center>ACV='v1'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>018: 'ref(['phl_acv_fmt']val(v5000),v18)'</b></td>
+!v004!        <td width=45% align=center>AUSENTE!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!   ,fi,
+!v004!  ,fi,
+!v004!,fi
+
+!ID 000020
+!v004!/* verifica ausência de total de páginas */
+!v004!,if ref(['phl_acv_fmt']val(v5000),v6020)='1' then
+!v004! ,if v6='m' or v6='s' then
+!v004!   ,if a(v20) and a(v8) then
+!v004!    ,if a(v38) then putenv('Erro=1'),
+!v004!      '<tr class=erro>
+!v004!        <td width=5% align=center>ACV='v1'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>020: 'ref(['phl_acv_fmt']val(v5000),v20)'</b></td>
+!v004!        <td width=45% align=center>AUSENTE!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!       </tr>',
+!v004!    ,fi,
+!v004!   ,fi,
+!v004! ,fi,
+!v004!,fi
+
+!ID 000022
+!v004!/* verifica ausência de tipo de suporte */
+!v004! ,,if ref(['phl_cnf']1,v218)='S' then
+!v004!   ,if a(v22) then putenv('Erro=1'),
+!v004!      '<tr class=erro>
+!v004!        <td width=5% align=center>ACV='v1'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>022: 'ref(['phl_acv_fmt']val(v5000),v22)'</b></td>
+!v004!        <td width=45% align=center>AUSENTE!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!       </tr>',
+!v004!   ,fi,
+!v004! ,fi,
+
+!ID 000026
+!v004!/* verifica ausência de tipo de colecao */
+!v004! ,,if ref(['phl_cnf']1,v221)='1' then
+!v004!   ,if a(v26) then putenv('Erro=1'),
+!v004!      '<tr class=erro>
+!v004!        <td width=5% align=center>ACV='v1'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>026: 'ref(['phl_acv_fmt']val(v5000),v26)'</b></td>
+!v004!        <td width=45% align=center>AUSENTE!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!       </tr>',
+!v004!   ,fi,
+!v004! ,fi,
+
+!ID 000030
+!v004!,if v6:'s' then
+!v004!  /* verifica ausência do título do periódico */
+!v004!  ,if a(v30) then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>030: 'ref(['phl_acv_fmt']val(v5000),v30)'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!  ,fi,
+!v004!,fi
+
+!ID 000033
+!v004!/* verifica ausência de identificação do título no kardex */
+!v004!,if v6:'s' then
+!v004! ,if a(v8) and v6<>'as' then
+!v004!  ,if a(v33) then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>033: 'ref(['phl_acv_fmt']val(v5000),v33)'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!  ,fi,
+!v004! ,fi,
+!v004! /* verifica se título está descrito no kardex */
+!v004! ,if ref(['phl_cnf']1,v242)='S' then
+!v004!  ,if p(v33) then
+!v004!    ,if npost([v3000^1'_ser']'SER='v33)=0 then putenv('Erro=1'),
+!v004!      '<tr class=alerta>
+!v004!        <td width=5% align=center>ACV='v1'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>030: 'v30'</b></td>
+!v004!        <td width=45% align=center>Este periódico não foi registrado no Kardex!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!    ,fi,
+!v004!    ,if npost('SEN='v33'#C')=0 then putenv('Erro=1'),
+!v004!      '<tr class=alerta>
+!v004!        <td width=5% align=center>ACV='v1'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>030: 'v30'</b></td>
+!v004!        <td width=45% align=center>Este periódico não foi catalogado no nível de coleção!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!    ,fi,
+!v004!   ,fi
+!v004! ,fi
+!v004!,fi
+
+!ID 000035
+!v004!,if v6:'s' then
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!  ,if ref(['phl_acv_fmt']val(v5000),v6035)='1' then
+!v004!   ,if a(v35) then putenv('Erro=1'),
+!v004!    '<tr class=alerta>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>035: 'ref(['phl_acv_fmt']val(v5000),v35)'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>'
+!v004!   ,fi,
+!v004!  ,fi,
+!v004!,fi,
+!v004!,fi
+
+!ID 000038
+!v004!/* verifica ausência de informação descritiva */
+!v004!,if a(v20) and a(v38) then
+!v004! ,if v6='m' then
+!v004!    ,if a(v38) then putenv('Erro=1'),
+!v004!      '<tr class=erro>
+!v004!        <td width=5% align=center>ACV='v1'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>038: 'ref(['phl_acv_fmt']val(v5000),v38)'</b></td>
+!v004!        <td width=45% align=center>AUSENTE!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!       </tr>',
+!v004!    ,fi,
+!v004! ,fi,
+!v004!,fi
+
+!ID 000040
+!v004!/* verifica ausência de idioma */
+!v004!,if ref(['phl_acv_fmt']val(v5000),v6040)='1' then
+!v004! ,if a(v40) then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>040: 'ref(['phl_acv_fmt']val(v5000),v40)'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>'
+!v004! ,fi,
+!v004!,fi
+
+!ID 000051
+!v004!  /* verifica sintaxe das notas da tese */
+!v004! ,if p(v51) then
+!v004!   ,if v51.2<>'^a' then putenv('Erro=1'),
+!v004!     '<tr class=erro>
+!v004!        <td width=5% align=center>ACV='v1'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>051: 'ref(['phl_acv_fmt']val(v5000),v51)'</b></td>
+!v004!        <td width=45% align=center>ERRO DE SINTAXE!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!   ,fi,
+!v004! ,fi,
+
+!ID 000062
+!v004!/* verifica ausência de editora */
+!v004!,if v6='m' or v6='am' then
+!v004! ,if a(v8) then
+!v004! ,if ref(['phl_acv_fmt']val(v5000),v6062)='1' then
+!v004!  ,if a(v62) then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>062: 'ref(['phl_acv_fmt']val(v5000),v62)'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>'
+!v004!  ,fi,
+!v004! ,fi,
+!v004! ,fi,
+!v004!,fi,
+
+!ID 000064
+!v004!/* verifica ausência da data de publicação */
+!v004! ,if ref(['phl_acv_fmt']val(v5000),v6064)='1' then
+!v004! ,if a(v64) and v6<>'c' then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>064: 'ref(['phl_acv_fmt']val(v5000),v64)'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004! ,fi,
+!v004! ,fi,
+
+!ID 000065
+!v004!/* verifica ausência da data padronizada */
+!v004! ,if ref(['phl_acv_fmt']val(v5000),v6065)='1' then
+!v004! ,if a(v65) and v6<>'c' then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>065: 'ref(['phl_acv_fmt']val(v5000),v65)'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>'
+!v004! ,fi,
+!v004! ,fi,
+!v004!/* verifica sintaxe da data padronizada */
+!v004! ,if p(v65) then
+!v004!  ,if size(v65)<>8 then putenv('Erro=1'),
+!v004!     '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>065: 'v65'</b></td>
+!v004!      <td width=45% align=center>FORA DO PADRÃO!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>'
+!v004!  ,fi,
+!v004! ,fi
+
+!ID 000066
+!v004!/* verifica ausência do local de publicação */
+!v004! ,if ref(['phl_acv_fmt']val(v5000),v6066)='1' then
+!v004! ,if a(v66) then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>066: 'ref(['phl_acv_fmt']val(v5000),v66)'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>'
+!v004! ,fi,
+!v004! ,fi,
+
+!ID 000071
+!v004!/* verifica ausência no campo #071 */
+!v004! ,if ref(['phl_acv_fmt']val(v5000),v6071)='1' and ref(['phl_cnf']1,v231)='S' then
+!v004! ,if a(v71) then putenv('Erro=1'),
+!v004!   '<tr class=erro>
+!v004!     <td width=5% align=center>ACV='v1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>071: 'ref(['phl_acv_fmt']val(v5000),v71)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>',
+!v004! ,fi,
+!v004!,fi
+
+!ID 000085
+!v004!/* verifica ausência da categoria MEC */
+!v004! ,if ref(['phl_acv_fmt']val(v5000),v6085)='1' then
+!v004!  ,if v6.1<>'a' and a(v85) then  putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>085: 'ref(['phl_acv_fmt']val(v5000),v85)'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!  ,fi,
+!v004!  ,if p(v85) and val(v85)=0 then  putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>ACV='v1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>085: 'ref(['phl_acv_fmt']val(v5000),v85)'</b></td>
+!v004!      <td width=45% align=center>INVÁLIDO!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!  ,fi,
+!v004! ,fi,
+
+!ID 000087
+!v004!/* verifica ausência de descritores */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004! ,if a(v87) then putenv('Erro=1'),
+!v004!   '<tr class=alerta>
+!v004!     <td width=5% align=center>ACV='v1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>087: 'ref(['phl_acv_fmt']val(v5000),v87)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004! ,fi,
+!v004!,fi
+!v004!/* verifica se descritor é conhecido */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004! ,if p(v87) then
+!v004!  ,(
+!v004!    ,if p(v87) and npost(['phl_voc']'DES='v87^*)=0 then putenv('Erro=1'),
+!v004!      '<tr class=alerta>
+!v004!        <td width=5% align=center>'v1[1]'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>087: 'v87^*'</b></td>
+!v004!        <td width=45% align=center>INVÁLIDO!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!    ,fi,
+!v004!  ,)
+!v004! ,fi,
+!v004!,fi
+
+!ID 000090
+!v004!/* verifica codigo de apresentacao */
+!v004!,if a(v90) then
+!v004!      '<tr class=erro>
+!v004!        <td width=5% align=center>'v1[1]'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>090: Disponibilidade</b></td>
+!v004!        <td width=45% align=center>AUSENTE!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!else
+!v004!,if v90<>'b' then
+!v004!      '<tr class=alerta>
+!v004!        <td width=5% align=center>'v1[1]'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>090: Disponibilidade</b></td>
+!v004!        <td width=45% align=center>Este registro possui restrições de acesso!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!,fi,fi,
+
+!ID 000141
+!v004! /* verifica ausência de informação descritiva analítica */
+!v004! ,if v6.1='a' then
+!v004!  ,if a(v8) then
+!v004!   ,if ref(['phl_acv_fmt']val(v5000),v6141)='1' then
+!v004!      ,if a(v141) and a(v14) then putenv('Erro=1'),
+!v004!        '<tr class=erro>
+!v004!          <td width=5% align=center>ACV='v1'</td>
+!v004!          <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!          <td width=30%><b>141: 'ref(['phl_acv_fmt']val(v5000),v141)'</b></td>
+!v004!          <td width=45% align=center>AUSENTE!</td>
+!v004!          <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!         </tr>',
+!v004!      ,fi,
+!v004!     ,fi,
+!v004!     ,fi,
+!v004!  ,fi,
+
+!ID 000200
+!v004!/* verifica ausencia do nome do sistema de bibliotecas */
+!v004!,if a(v200) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>200: Nome do sistema de bibliotecas</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000205
+!v004!/* verifica ausência no campo de filtros */
+!v004!,if a(v205) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>205: Campos para filtros</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000207
+!v004!/* verifica ausência no campo de amostra na busca */
+!v004!,if a(v207) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>207: Qtde. de registros por página</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000208
+!v004!/* verifica consistencia de tipo de colecao */
+!v004!,if v221='1' and v208='N' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>208: Tipo de coleção</b></td>
+!v004!   <td width=45% align=center>Obrigatório quando regulamento do empréstimo for por tipo de coleção!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000232
+!v004!/* verifica erro de sintaxe no código hexa da cor principal */
+!v004!,if v232.1<>'#' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>232: Cor principal</b></td>
+!v004!   <td width=45% align=center>ERRO DE SINTAXE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000233
+!v004!/* verifica erro de sintaxe no código hexa da cor dos textos */
+!v004!,if v233.1<>'#' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>233: Cor dos textos</b></td>
+!v004!   <td width=45% align=center>ERRO DE SINTAXE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>',
+!v004!,fi,
+
+!ID 000234
+!v004!/* verifica erro de sintaxe no código hexa da cor invertida */
+!v004!,if v234.1<>'#' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>234: Cor invertida</b></td>
+!v004!   <td width=45% align=center>ERRO DE SINTAXE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000235
+!v004!/* verifica ausência de definição de fonte para os textos */
+!v004!,if a(v235) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>235: Fonte do texto</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+
+!ID 000236
+!v004!/* verifica erro de sintaxe no código hexa da cor secundária */
+!v004!,if v236.1<>'#' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>236: Cor secundária</b></td>
+!v004!   <td width=45% align=center>ERRO DE SINTAXE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000240
+!v004!/* verifica erro de sintaxe no código hexa da cor dos links */
+!v004!,if v240.1<>'#' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>240: Cor dos links</b></td>
+!v004!   <td width=45% align=center>ERRO DE SINTAXE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+
+!ID 000241
+!v004!/* verifica erro de sintaxe no código hexa da cor dos links selecionados*/
+!v004!,if v241.1<>'#' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>241: Cor do link selecionado</b></td>
+!v004!   <td width=45% align=center>ERRO DE SINTAXE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000301
+!v004!/* verifica ausência da opção */
+!v004!,if a(v301) and v3000^a='por' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>301: Opção</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!/* verifica duplicidade da opção */
+!v004!,if p(v301) then
+!v004!,,if npost([v3004^a],'PT='v301,)>1 then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>'v301'</b></td>
+!v004!   <td width=45% align=center>Existem duas entradas nesta base de dados para esta mesma opção!<br>Identifique a outra entrada e elimine o registro.<br>O sistema não permite opções duplicadas!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!,fi,
+
+!ID 000302
+!v004!/* verifica ausência da opção */
+!v004!,if a(v302) and v3000^a='spa' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>302: Opção</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!/* verifica duplicidade da opção */
+!v004!,if p(v302) then
+!v004!,,if npost([v3004^a],'ES='v302,)>1 then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>'v302'</b></td>
+!v004!   <td width=45% align=center>Existem duas entradas nesta base de dados para esta mesma opção!<br>Identifique a outra entrada e elimine o registro.<br>O sistema não permite opções duplicadas!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!,fi,
+
+!ID 000303
+!v004!/* verifica ausência da opção */
+!v004!,if a(v303) and v3000^a='eng' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>303: Opção</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!/* verifica duplicidade da opção */
+!v004!,if p(v303) then
+!v004!,,if npost([v3004^a],'EN='v303,)>1 then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>'v303'</b></td>
+!v004!   <td width=45% align=center>Existem duas entradas nesta base de dados para esta mesma opção!<br>Identifique a outra entrada e elimine o registro.<br>O sistema não permite opções duplicadas!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!,fi,
+
+!ID 000310
+!v004!/* verifica ausência no numero da classe */
+!v004!,if a(v310) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>310</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000311
+!v004!/* verifica ausência do nome da classe */
+!v004!,if a(v311) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>311</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>',fi,
+
+!ID 000320
+!v004!/* verifica ausência do dia do mês */
+!v004!,if a(v320) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>320: Dia do mês</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000321
+!v004!/* verifica ausência do dia da semana */
+!v004!,if a(v321) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>321: Dia da semana</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000322
+!v004!/* verifica ausência do mês */
+!v004!,if a(v322) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>322: Mês</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000323
+!v004!,if p(v323) and p(v322) and p(v320) then
+!v004!/* verifica se data está duplicada */
+!v004!  ,if npost(v323,v322,v320)>1 then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>'v3000^1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>Registro</b></td>
+!v004!      <td width=45% align=center>DUPLICADO!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!   ,fi,
+!v004!/* verifica se data está indexada */
+!v004!,if npost(v323,v322,v320)=0 then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>'v3000^1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>Registro</b></td>
+!v004!      <td width=45% align=center>Data não está no índice!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!   ,fi,
+!v004!,fi
+
+!ID 000324
+!v004!/* verifica ausência do status do dia */
+!v004!,if a(v324) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>324: Status do dia</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000401
+!v004!/* verifica ausência do termo do vocabulario */
+!v004!,if a(v401) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>401: Termo ausente</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000450
+!v004!/* verifica ausência do termo autoridade */
+!v004!,if a(v450) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>450: Termo ausente</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000502
+!v004!/* verifica ausência do título do relatório */
+!v004!,if a(v502) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>502: Título do relatório</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000505
+!v004!/* verifica ausência da expressão de busca */
+!v004!,if a(v505) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>505: Expressão de busca</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000601
+!v004!,if a(v601) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>ALL</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>601: Código da biblioteca</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+!v004!,if p(v601) then
+!v004! ,if npost('ACV='v601)>1 then putenv('Erro=1'),
+!v004!  '<tr class=erro>
+!v004!    <td width=5% align=center>'v601'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>601: Código da biblioteca</b></td>
+!v004!    <td width=45% align=center>DUPLICADO!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004! ,if val(v601)<>val(mfn) then putenv('Erro=1'),
+!v004!  '<tr class=erro>
+!v004!    <td width=5% align=center>'v601'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>601: Código da biblioteca</b></td>
+!v004!    <td width=45% align=center>Não coincide com o MFN!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004! ,if size(v601)<>3 then putenv('Erro=1'),
+!v004!  '<tr class=erro>
+!v004!    <td width=5% align=center>'v601'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>601: Código da biblioteca</b></td>
+!v004!    <td width=45% align=center>Tamanho do código deve ser de 3 caracteres!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,fi,
+
+!ID 000602
+!v004!,if a(v602) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!    <td width=5% align=center>'v601'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>602: Nome da biblioteca</b></td>
+!v004!    <td width=45% align=center>AUSENTE!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000603
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v603) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!   <td width=5% align=center>'v601'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>603: Endereço</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,fi,
+
+!ID 000604
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v604) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!   <td width=5% align=center>'v601'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>604: Cidade</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,fi,
+
+!ID 000605
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v605) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!    <td width=5% align=center>'v601'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>605: Estado</b></td>
+!v004!    <td width=45% align=center>AUSENTE!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,fi,
+
+!ID 000606
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v606) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!   <td width=5% align=center>'v601'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>606: CEP</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,fi
+
+!ID 000607
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v607) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!   <td width=5% align=center>'v601'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>607: Fones</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,fi,
+
+!ID 000608
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v608) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!   <td width=5% align=center>'v601'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>608: E-mail</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004! ,fi,fi,
+
+!ID 000609
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v609) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!   <td width=5% align=center>'v601'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>609: Responsável</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,fi,
+
+!ID 000613
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v613) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!   <td width=5% align=center>'v601'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>613: Prazo de empréstimo</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,fi,
+
+!ID 000614
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v614) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!   <td width=5% align=center>'v601'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>614: Quantidade permitida</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,fi,
+
+!ID 000616
+!v004!/* verifica ausência do numero de chamada */
+!v004!,if a(v616) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!    <td width=5% align=center>'v3000[1]^1'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>616: Formato do numero de chamada</b></td>
+!v004!    <td width=45% align=center>AUSENTE!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000623
+!v004!/* verifica ausência do valor da penalidade */
+!v004!,if v622<>'0' and a(v623) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!    <td width=5% align=center>'v3000[1]^1'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>623: Penalidade</b></td>
+!v004!    <td width=45% align=center>AUSENTE!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000640
+!v004!,if a(v640) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v601'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>640: Horário de abertura</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000641
+!v004!,if a(v641) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v601'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>641: Horário de encerramento</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000651
+!v004!/* verifica ausência de login */
+!v004!,if a(v651) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>651: Login</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,if p(v651) then
+!v004!/* verifica duplicidade de login */
+!v004!  ,if npost(v651)>1 then putenv('Erro=1'),
+!v004!   '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>651: Login - 'v651'</b></td>
+!v004!     <td width=45% align=center>DUPLICADO!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!  ,fi,
+!v004!/* verifica espaços no login */
+!v004!  ,if v651:' ' then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>'v3000[1]^1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>651: Login</b></td>
+!v004!      <td width=45% align=center>INVÁLIDO!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!  ,fi,
+!v004!/* verifica quantidade de caracteres */
+!v004!  ,if size(v651)>12 then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>'v3000[1]^1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>651: Login</b></td>
+!v004!      <td width=45% align=center>MÁXIMO 12 CARACTERES!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!  ,fi,
+!v004!,fi,
+
+!ID 000652
+!v004!/* verifica ausência de senha nos novos registros de permissoes */
+!v004!,if v960='027' then
+!v004!,if a(v652) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>652: Senha</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!/* verifica quantidade de caracteres */
+!v004!,if p(v652) then
+!v004!  ,if size(v652)>12 then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>'v3000[1]^1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>652: Senha</b></td>
+!v004!      <td width=45% align=center>MÁXIMO 12 CARACTERES!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!  ,fi,
+!v004!,fi,
+!v004!,fi,
+
+!ID 000654
+!v004!/* verifica ausência do código da biblioteca */
+!v004!,if a(v654) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>654: Código da biblioteca</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000671
+!v004!/* verifica ausência do código do usuario */
+!v004!,if a(v671) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>671: Código do usuário</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!,if p(v671) and p(v672) then
+!v004!  ,if npost(['phl_pqt'],v671'#'v672)>1 then putenv('Erro=1'),
+!v004!   '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>',ref(['phl_rgl']val(v671),@tab_txt.pft,)' / ',ref(['phl_acv_fmt']val(v672),@tab_txt.pft,),'</b></td>
+!v004!     <td width=45% align=center>Esta regra está duplicada e deverá ser eliminada!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004! ,fi,
+!v004!,fi,
+
+!ID 000672
+!v004!/* verifica ausência do código do objeto */
+!v004!,if a(v672) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>672: Código do objeto</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000673
+!v004!/* verifica ausência do prazo */
+!v004!,if a(v673) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>673: Prazo</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000676
+!v004!,if v676:',' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>676: Penalidade</b></td>
+!v004!   <td width=45% align=center>INVÁLIDO!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000677
+!v004!,if v677<>'0' and val(v676)=0 then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!    <td width=5% align=center>'v3000[1]^1'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>677: Tipo de pena</b></td>
+!v004!    <td width=45% align=center>INVÁLIDO!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000700
+!v004!/* verifica ausência do login do usuário */
+!v004!,if a(v700) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>700: Login</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+
+!ID 000701
+!v004!/* verifica ausência do número do usuário */
+!v004!,if a(v701) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>701: Número de matrícula</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+!v004!/* verifica duplicidade do número do usuário */
+!v004!,if p(v701) then
+!v004! ,if npost('USR='v701)>1 then putenv('Erro=1'),
+!v004!   '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>701: Matrícula: 'v701'</b></td>
+!v004!     <td width=45% align=center>DUPLICADO!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004! ,fi,
+!v004!,fi,
+
+!ID 000702
+!v004!/* verifica ausência da senha */
+!v004!,if a(v702) then
+!v004!  ,if val(v703)=0 then putenv('Erro=1'),
+!v004!   '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>702: Senha</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!   ,fi,
+!v004!,fi
+
+!ID 000703
+!v004!/* verifica ausência de status */
+!v004!,if a(v703) then
+!v004!  ,if val(v703)=0 then putenv('Erro=1'),
+!v004!   '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>703: Status</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!   ,fi,
+!v004!,fi
+
+!ID 000704
+!v004!if ref(['phl_usr_fmt']1,v6704)<>'' then
+!v004! /* verifica ausencia da data de validade da matrícula */
+!v004! ,if a(v704) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>704: Validade da matrícula</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004! ,fi,
+!v004! /* verifica validade da data */
+!v004! ,if p(v704) then
+!v004!  ,if p(v730) and val(v704.4)>=2002 then
+!v004!   ,if npost([v730'_cal'],v704)=0 then  putenv('Erro=1')
+!v004!    '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>704: Validade da matrícula</b></td>
+!v004!     <td width=45% align=center>INVÁLIDA!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>'
+!v004!   ,fi,
+!v004!  ,fi
+!v004! ,fi
+!v004!,fi
+
+!ID 000705
+!v004!/* verifica ausência do nome do usuário */
+!v004!,if a(v705) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>705: Nome do usuário</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000706
+!v004!/* verifica ausência do endereço do usuário */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v706) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>706: Endereço</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,fi,
+
+!ID 000711
+!v004!/* verifica ausência do periodo de frequencia */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if ref(['phl_usr_fmt']1,v6711)='1' then
+!v004!,if a(v711) then putenv('Erro=1'),
+!v004!  '<tr class=alerta>'
+!v004!    '<td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>711: 'ref(['phl_usr_fmt']1,v711)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,fi,fi,
+
+!ID 000713
+!v004!/* verifica ausência do curso */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v713) then putenv('Erro=1'),
+!v004!  '<tr class=alerta>'
+!v004!    '<td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>713: 'ref(['phl_usr_fmt']1,v713)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,fi,
+
+!ID 000714
+!v004!/* verifica ausência do e-mail usuário */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v714) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>714: E-mail</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,fi,
+!v004!,if p(v714) then
+!v004!,if v714:'@' then else putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>714: E-mail</b></td>
+!v004!   <td width=45% align=center>INVÁLIDO!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,if v714:' ' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>714: E-mail</b></td>
+!v004!   <td width=45% align=center>INVÁLIDO!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,if v714:'ç' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>714: E-mail</b></td>
+!v004!   <td width=45% align=center>INVÁLIDO!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,if v714:'ã' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>714: E-mail</b></td>
+!v004!   <td width=45% align=center>INVÁLIDO!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,if v714:'õ' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>714: E-mail</b></td>
+!v004!   <td width=45% align=center>INVÁLIDO!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,fi,
+
+!ID 000723
+!v004!/* verifica ausência do tipo de usuário */
+!v004!,if a(v723) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>723: Tipo do usuário</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!/* verifica código do tipo de usuário */
+!v004!,if p(v723) then
+!v004!,if ref(['phl_rgl']val(v723),@tab_txt.pft,)='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>723: 'v723'</b></td>
+!v004!   <td width=45% align=center>CÓDIGO DESCONHECIDO!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!,fi,
+!v004!/* verifica ausência de regulamento do tipo de usuário */
+!v004!,if p(v723)then
+!v004! ,if ref(['phl_rgl']val(v723),mfn)='' then putenv('Erro=1'),
+!v004!  '<tr class=erro>
+!v004!    <td width=5% align=center>'v3000[1]^1'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>723: Tipo do usuário</b></td>
+!v004!    <td width=45% align=center>SEM REGULAMENTO!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!  ,fi,
+!v004!,fi,
+
+!ID 000730
+!v004!/* verifica ausencia biblioteca de matrícula */
+!v004!,if a(v730) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>730: Código da unidade</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000750
+!v004!/* verifica ausência do código da biblioteca */
+!v004!,if a(v750) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>750: Código da biblioteca</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000751
+!v004!/* verifica ausência do número do fornecedor */
+!v004!,if a(v751) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>751: Número do fornecedor</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+!v004!/* verifica duplicidade no número do fornecedor */
+!v004!,if p(v751) then
+!v004!  ,if npost('FOR='v751)>1 then putenv('Erro=1'),
+!v004!   '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>751: Número do fornecedor - 'v751'</b></td>
+!v004!     <td width=45% align=center>DUPLICADO!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+!v004!,fi
+
+!ID 000752
+!v004!/* verifica ausência do nome do fornecedor */
+!v004!,if a(v752) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>752: Nome do fornecedor</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004! ,fi,
+
+!ID 000754
+!v004!/* verifica ausência do endereço do fornecedor */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v754) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!    <td width=5% align=center>'v3000[1]^1'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>754: Endereço do fornecedor</b></td>
+!v004!    <td width=45% align=center>AUSENTE!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,fi,
+
+!ID 000730
+!v004!/* verifica ausencia biblioteca de matrícula */
+!v004!,if a(v730) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>730: Código da unidade</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000771
+!v004!/* verifica ausência de número de identificação */
+!v004!,if a(v771) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>771: 'ref([v3000[1]^1'_ser_fmt']1,v771),'</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!/* verifica duplicidade de número de identificação */
+!v004!,if p(v771) then
+!v004! ,if npost('NUM='v771)>1 then putenv('Erro=1'),
+!v004!  '<tr class=erro>
+!v004!    <td width=5% align=center>'v3000[1]^1'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>771: 'ref([v3000[1]^1'_ser_fmt']1,v771),' - 'v771'</b></td>
+!v004!    <td width=45% align=center>DUPLICADO!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004! ,fi,
+!v005! ,if npost(['phl_acv']'SEN='v771'#C')=0 then putenv('Erro=1'),
+!v005!  '<tr class=erro>
+!v005!    <td width=5% align=center>'v3000[1]^1'</td>
+!v005!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v005!    <td width=30%><b>771: 'v771'</b></td>
+!v005!    <td width=45% align=center>TÍTULO NÃO CATALOGADO!</td>
+!v005!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v005!  </tr>'
+!v005! ,fi,
+!v004!,fi,
+
+!ID 000772
+!v004!/* verifica ausência de ISSN */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v772) then putenv('Erro=1'),
+!v004! '<tr class=alerta>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>772: 'ref([v3000[1]^1'_ser_fmt']1,v772),'</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,fi,
+!v004!/* verifica duplicidade de registro do titulo */
+!v004!,if p(v772) then
+!v004! ,if npost(v772)>1 then putenv('Erro=1'),
+!v004!  '<tr class=erro>
+!v004!    <td width=5% align=center>'v3000[1]^1'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>772: 'ref([v3000[1]^1'_ser_fmt']1,v772),' - 'v772'</b></td>
+!v004!    <td width=45% align=center>DUPLICADO!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004! ,fi,
+!v004!,fi,
+
+!ID 000773
+!v004!/* verifica ausência do título */
+!v004!,if a(v773) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!    <td width=5% align=center>'v3000[1]^1'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>773: 'ref([v3000[1]^1'_ser_fmt']1,v773),'</b></td>
+!v004!    <td width=45% align=center>AUSENTE!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000776
+!v004!/* verifica ausência de periodicidade */
+!v004!,if a(v776) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>776: 'ref([v3000[1]^1'_ser_fmt']1,v776),'</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000777
+!v004!/* verifica ausência da cidade de publicação */
+!v004!,if a(v777) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>777: 'ref([v3000[1]^1'_ser_fmt']1,v777),'</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000778
+!v004!/* verifica ausência de editora */
+!v004!,if a(v778) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>778: 'ref([v3000[1]^1'_ser_fmt']1,v778),'</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000782
+!v004!/* verifica ausência da procedência */
+!v004!,if a(v782) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>782: 'ref([v3000[1]^1'_ser_fmt']1,v782),'</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000783
+!v004!/* verifica ausência de status da coleção */
+!v004!,if a(v783) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>783: 'ref([v3000[1]^1'_ser_fmt']1,v783),'</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000784
+!v004!/* verifica ausência de forma de aquisição */
+!v004!,if a(v784) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>784: 'ref([v3000[1]^1'_ser_fmt']1,v784),'</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000789
+!v004!/* verifica ausência de idioma */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if ref([v3000^1'_ser_fmt']1,v6789)='1' then
+!v004!  ,if a(v789) then putenv('Erro=1'),
+!v004!   '<tr class=alerta>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>789: 'ref([v3000[1]^1'_ser_fmt']1,v789),'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!  ,fi
+!v004!,fi,fi,
+
+!ID 000790
+!v004!/* verifica ausência da coleção */
+!v004!  ,if a(v790) then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!       <td width=5% align=center>'v3000[1]^1'</td>
+!v004!       <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!       <td width=30%><b>790: 'ref([v3000[1]^1'_ser_fmt']1,v790),'</b></td>
+!v004!       <td width=45% align=center>AUSENTE!</td>
+!v004!       <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>'
+!v004!   ,fi,
+
+!ID 000792
+!v004!/* verifica se descritor se encontra no vocabulário */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if p(v792) then
+!v004! ,(
+!v004!   ,if p(v792) and npost(['phl_voc']'DES='v792^*)=0 then putenv('Erro=1'),
+!v004!     '<tr class=alerta>
+!v004!        <td width=5% align=center>'v3000[1]^1'</td>
+!v004!        <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!        <td width=30%><b>792: 'v792^*'</b></td>
+!v004!        <td width=45% align=center>DESCONHECIDO!</td>
+!v004!        <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!      </tr>'
+!v004!   ,fi,)
+!v004!,fi,fi,
+
+!ID 000793
+!v004!/* verifica ausência de área temática */
+!v004!,if ref([v3000^1'_ser_fmt']1,v6793)='1' then
+!v004!  ,if a(v793) then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!      <td width=5% align=center>'v3000[1]^1'</td>
+!v004!      <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!      <td width=30%><b>793: 'ref([v3000[1]^1'_ser_fmt']1,v793),'</b></td>
+!v004!      <td width=45% align=center>AUSENTE!</td>
+!v004!      <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>'
+!v004!  ,fi,
+!v004!,fi,
+
+!ID 000800
+!v004!/* verifica ausência da identificação do título */
+!v004!,if a(v800) then putenv('Erro=1'),
+!v004!  '<tr class=erro>'
+!v004!    '<td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>800: 'ref([v3000^1'_tbo_fmt']1,v800)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+!v004!/* verifica se o título está catalogado */
+!v004!,if p(v800) then
+!v004!  ,if npost(['phl_acv']'TIT='v800)=0 then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!       <td width=5% align=center>'v3000[1]^1'</td>
+!v004!       <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!       <td width=30%><b>800: 'ref([v3000^1'_tbo_fmt']1,v800)'</b></td>
+!v004!       <td width=45% align=center>NÃO CATALOGADO!</td>
+!v004!       <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>',
+!v004!   ,fi,
+!v004!,fi,
+
+!ID 000801
+!v004!/* verifica ausência do número de tombo */
+!v004!,if a(v801) then putenv('Erro=1'),
+!v004!  '<tr class=erro>'
+!v004!    '<td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>801: 'ref([v3000^1'_tbo_fmt']1,v801)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+!v004!/* verifica se tombo está duplicado */
+!v004!,if p(v801) then
+!v004!  ,if npost('TBO='v801)>1 then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!       <td width=5% align=center>'v3000[1]^1'</td>
+!v004!       <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!       <td width=30%><b>801: 'ref([v3000^1'_tbo_fmt']1,v801)' - 'v801'</b></td>
+!v004!       <td width=45% align=center>DUPLICADO!</td>
+!v004!       <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!     </tr>'
+!v004!  ,fi,
+!v004!,fi,
+
+!ID 000806
+!v004!/* verifica ausência do curso */
+!v004!,if ref([v3000^1'_tbo_fmt']1,v6806)='1' then
+!v004!,if a(v806) then putenv('Erro=1'),
+!v004!  '<tr class=alerta>'
+!v004!    '<td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>806: 'ref([v3000^1'_tbo_fmt']1,v806)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,fi,
+
+!ID 000807
+!v004!/* verifica ausência do status do tombo */
+!v004!,if ref(['phl_cnf']1,v242)='S' then
+!v004!,if a(v807) then putenv('Erro=1'),
+!v004!  '<tr class=alerta>'
+!v004!    '<td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>807: 'ref([v3000^1'_tbo_fmt']1,v807)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,fi,
+!v004!/* verifica código de status do tombo */
+!v004!,if p(v807) then
+!v004!,if val(v807)>2 then putenv('Erro=1'),
+!v004!  '<tr class=erro>'
+!v004!    '<td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>807: 'v807'</b></td>
+!v004!     <td width=45% align=center>INVÁLIDO!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,fi,
+
+!ID 000819
+!v004!/* verifica ausência da forma de aquisição */
+!v004!,if a(v819) then putenv('Erro=1'),
+!v004!  '<tr class=erro>'
+!v004!    '<td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>819: 'ref([v3000^1'_tbo_fmt']1,v819)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+
+!ID 000820
+!v004!/* verifica ausência da data de aquisição */
+!v004!,if a(v820) then putenv('Erro=1'),
+!v004!  '<tr class=erro>'
+!v004!    '<td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>820: 'ref([v3000^1'_tbo_fmt']1,v820)'</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+!v004!/* verifica sintaxe da data de aquisição */
+!v004!,if p(v820) then
+!v004! ,if size(v820)<>8 then putenv('Erro=1'),
+!v004!  '<tr class=erro>'
+!v004!    '<td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>820: 'ref([v3000^1'_tbo_fmt']1,v820)'</b></td>
+!v004!     <td width=45% align=center>ERRO DE SINTAXE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004! ,fi,
+!v004!,fi,
+
+!ID 000850
+!v004!,if a(v850) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>850</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,if v850^m='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>850M</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!,if v850^g='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!    <td width=5% align=center>'v3000[1]^1'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>850G</b></td>
+!v004!    <td width=45% align=center>AUSENTE!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,if v850^u='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>850U</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000871
+!v004!,if a(v871) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>871: Autor</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000872
+!v004!,if a(v872) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>872: Título</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000877
+!v004!,if a(v877) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>877: Nome do solicitante</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000883
+!v004!,if a(v883) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>883: Código da biblioteca</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000900
+!v004!/* verifica ausência matrícula do usuário */
+!v004!,if v900^u='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>900: Matrícula do usuário</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>',
+!v004!,fi,
+!v004!/* verifica ausência do número de tombo */
+!v004!,if v900^t='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>900: Número de tombo</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!/* verifica empréstimo duplicado */
+!v004!,if v900^t<>'' then
+!v004!  ,if npost([v3000^1'_emp'],'TBO='v900^t)>1 then putenv('Erro=1'),
+!v004!    '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>900: 'v900^t'</b></td>
+!v004!     <td width=45% align=center>EMPRÉSTIMO DUPLICADO!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!    </tr>'
+!v004!  ,fi,
+!v004!,fi,
+!v004!/* verifica ausência do MFN da data de devolução */
+!v004!,if v900^n='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!    <td width=5% align=center>'v3000[1]^1'</td>
+!v004!    <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!    <td width=30%><b>900: MFN da data de devolução</b></td>
+!v004!    <td width=45% align=center>AUSENTE!</td>
+!v004!    <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!/* verifica ausência do tipo de objeto */
+!v004!,if v900^e='' then putenv('Erro=1'),
+!v004!  '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>900: tipo de objeto</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+!v004!/* verifica validade do tipo de objeto */
+!v004!,if v900^e<>'' then
+!v004!, if ref(['phl_tdo']val(v900^e),v301)='' then putenv('Erro=1'),
+!v004!  '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>900: 'v900^e'</b></td>
+!v004!     <td width=45% align=center>CÓDIGO DESCONHECIDO!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+!v004!,fi,
+!v004!/* verifica ausência do tipo de usuário */
+!v004!,if v900^c='' then putenv('Erro=1'),
+!v004!  '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>900: tipo de usuário</b></td>
+!v004!     <td width=45% align=center>AUSENTE!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+!v004!/* verifica validade do tipo de usuario */
+!v004!,if v900^c<>'' then
+!v004!, if ref(['phl_rgl']val(v900^c),@tab_txt.pft,)='' then putenv('Erro=1'),
+!v004!  '<tr class=erro>
+!v004!     <td width=5% align=center>'v3000[1]^1'</td>
+!v004!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!     <td width=30%><b>900: ^c'v900^c'</b></td>
+!v004!     <td width=45% align=center>CÓDIGO DESCONHECIDO!</td>
+!v004!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!   </tr>'
+!v004!,fi,
+!v004!,fi,
+!v004!/* verifica ausência da identificação do título */
+!v004!,if v900^a='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>900: Identificação do título</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!/* verifica se título é conhecido */
+!v004!,if v900^a<>'' then
+!v004!,if ref(['phl_acv']l(['phl_acv']'TIT='v900^a),v1)='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>900: TIT='v900^a'</b></td>
+!v004!   <td width=45% align=center>TITULO NÃO IDENTIFICADO!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,fi,
+!v004!/* verifica ausência da data de devolução */
+!v004!,if v900^v='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>900: Data de devolução</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!/* verifica ausência do mfn do usuário */
+!v004!,if v900^k='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>900: MFN do usuário</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!/* verifica ausência do mfn do título */
+!v004!,if v900^f='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>900: MFN do título</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+
+!ID 000910
+!v004!/* verifica ausência do mfn do usuario */
+!v004!(,if v910^k='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>910: MFN do registro do usuário</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,)
+!v004!/* verifica ausência do mfn do titulo */
+!v004!(,if v910^f='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>910: MFN do registro do título</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,)
+
+!ID 000930
+!v005!/* verifica data de validade da reserva */
+!v005!,if p(v930) then
+!v005! ,if val(v930^n)<val( ref([v3000^1'_cal']l([v3000^1'_cal'],v7003.8),mfn) ) then putenv('Erro=1'),
+!v005!   '<tr class=erro>
+!v005!     <td width=5% align=center>'v3000[1]^1'</td>
+!v005!     <td width=10% align=center>MFN='mfn(1)'</td>
+!v005!     <td width=30%><b>930: Reserva</b></td>
+!v005!     <td width=45% align=center>EXPIRADA!</td>
+!v005!     <td width=10% align=center>',v999[LAST]^b'</td>
+!v005!   </tr>'
+!v005! ,fi
+!v005!,fi
+!v004!/* verifica ausência da identificação do título */
+!v004!,if v930^a='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>930: Identificação do título</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004! </tr>'
+!v004!,fi,
+!v004!/* verifica ausência do número do usuário */
+!v004!,if v930^u='' then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>930: Matrícula do usuário</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000996
+!v004!,if v6.1='a' then
+!v004!,if a(v996) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>996: ID</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,fi,
+
+!ID 000997
+!v004!,if a(v997) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>997: MFN do título</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+
+!ID 000998
+!v004!,if a(v998) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>998: MFN do registro</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,if p(v998) then
+!v004!,,if val(v998)<>val(mfn) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>998: Número do MFN</b></td>
+!v004!   <td width=45% align=center>Conteúdo não corresponde ao MFN!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,
+!v004!,fi,
+
+!ID 000999
+!v004!,if a(v999) then putenv('Erro=1'),
+!v004! '<tr class=erro>
+!v004!   <td width=5% align=center>'v3000[1]^1'</td>
+!v004!   <td width=10% align=center>MFN='mfn(1)'</td>
+!v004!   <td width=30%><b>999: Data de Controle</b></td>
+!v004!   <td width=45% align=center>AUSENTE!</td>
+!v004!   <td width=10% align=center>',v999[LAST]^b'</td>
+!v004!  </tr>'
+!v004!,fi,

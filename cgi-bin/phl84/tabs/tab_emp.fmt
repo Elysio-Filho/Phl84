@@ -1,0 +1,14 @@
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'
+'<input type="hidden" name="999" value="'v999[1]'">'
+'<input type="hidden" name="mfn" value="'v957'">'
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'
+'<input type="hidden" name="opc" value="grava">'
+'<input type="hidden" name="dbvar" value="^a'v3000^1'_emp^b8^cemp">'
+'<tr>
+  <td class="td1o"></td><td class="topico">'ref(['tab_txt']118,@tab_txt.pft,)'</td>
+</tr>'
+'<tr>
+  <td class="td1o">',ref(['tab_txt']740,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(900);>[900]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="900" value="',v900,'" size="60"></td>
+</tr>'

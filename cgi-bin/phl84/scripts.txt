@@ -1,0 +1,94 @@
+**********************************************************************
+Funções (.fnc)
+**********************************************************************
+001 : Armazena variaveis do cliente
+003 : Status do titulo
+005 : Grava log
+007 : Extrato do usuario
+009 : Divide ocorrencias de campos repetitivos
+010 : Valida novo registro
+011 : Formulario de filtro de datas para relatorios
+012 : Debitos do usuario
+013 : Dados do tombo para empréstimo
+014 : Desbloqueio de base de dados
+015 : Numeracao de tombo
+016 : Caixas de selecao
+100 : Dados do registro do usuário
+101 : Atrasos do usuário
+102 : Penalidades do usuário
+103 : Total de multa do usuário
+159 : Horários da biblioteca
+200 : MFN da data de hoje
+300 : Dados do regulamento
+400 : Dados de prazos e quantidades
+700 : Quantidade de objetos com o usuário
+701 : Quantidade de objetos do mesmo tipo com o usuário
+800 : Disponibilidade para empréstimo
+801 : Dados do registro de tombo
+900 : Dados do registro de empréstimo
+902 : Filtros para relatório de empréstimo
+930 : Atualiza lista de reservas
+
+*********************************************************************
+Scripts (.xis)
+*********************************************************************
+phl : Abertura do PHL
+001 : Formulario de edicao
+002 : Grava registro editado
+003 : Buscas no catalogo
+004 : Menu horizontal da pagina principal
+005 : Aquisicao de sugestoes de compra
+006 : Copia registros
+007 : Elimina registros
+008 : Confirma eliminacao
+009 : Devolucao
+010 : Devolucao multipla
+011 : Diagnostico
+012 : Busca registro para edicao
+013 : Emprestimo
+014 : Emprestimo multiplo
+015 : Formulario de entrada de dados
+016 : Exportacao
+017 : Extrato
+018 : Dump para revisão
+019 : Historico
+020 : Emprestimo local
+021 : Login
+022 : Menu de Circulacao
+023 : Menu área restrita
+024 : Tomba novo exemplar
+025 : Menu vertical da pagina principal
+026 : Menu área restrita
+027 : Grava novo registro
+028 : Pagamento de multa
+028A: Cancelamento de multa
+029 : Altera senha de funcionario
+030 : Portaria
+031 : Relatorios
+032 : Elimina reserva (externo)
+033 : relatorios operacionais
+034 : Fascículos catalogados
+035 : Relatorios personalizados
+036 : relatorios personalizados
+037 : Renovacao
+038 : Reserva
+039 : Altera senha do usuario
+041 : Pre-catalogacao e tombamento
+042 : Sugestao de compra
+043 : Importacao
+044 : Relatorios operacionais
+045 : Graficos estatisticos
+048 : Relatorio MEC/SESU
+050 : Importacao
+
+*********************************************************************
+Tabelas (tab_*.seq)
+*********************************************************************
+fmt : Formulários de entrada e ediçao
+fmx : Menus e formulários do PHL
+pft : Formatos de apresentação de registros para edicao
+fdt : Tabelas de definicao de campos
+dag : Regras para validacao da edicao
+val : Regras para validacao de novos registros
+xml : Identidades XML
+txt : Mensagens do sistema

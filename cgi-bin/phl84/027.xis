@@ -1,0 +1,268 @@
+<!-- Rotina de Gravação de novos registros (New)
+     05/04/2013 15:53:45 Incluida função de criptografia da senha para a base de dados de permissões -->
+     
+     <IsisScript name="027.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (009) que divide campos repetitivos -->
+     <include>phl84/009.fnc</include>
+
+<!-- Inclue funcao (015) que controla numeracao do tombo -->
+     <include>phl84/015.fnc</include>
+     
+<!-- Inclue funcao (401) que atuaiza vocabulario -->
+     <include>phl84/401.fnc</include>
+     
+<!-- Inclue funcao (450) que atuaiza autoridades -->
+     <include>phl84/450.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+     
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="958">exp</field>
+     <field action="cgi" tag="1010">rec</field>
+     <field action="cgi" tag="3004">dbvar</field>
+
+<!-- Carrega permissões de entrada e edição do usuário -->
+     <field action="add" tag="2000"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>
+     
+<!-- Direciona fluxo do script -->
+
+     <flow action="jump"><pft>,v950,</pft></flow>
+
+<!-- Inicia processo de gravacao do novo registro -->
+
+     <label>grava</label>
+     
+     <file action="close" type="database"><pft>,v3004^a,</pft></file>
+
+     <do task="update">
+       <parm name="db"><pft>,v3004^a,</pft></parm>
+       <parm name="mfn">New</parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1003">Isis_Status</field>
+       <field action="define" tag="1105">Isis_Lock</field>
+
+       <update>
+       <write>Lock</write>
+       <field action="add" tag="998"><pft>,mfn(1),</pft></field>
+       <field action="export" tag="998">998</field>
+       </update>
+
+     </do>
+     
+     <file action="close" type="database"><pft>,v3004^a,</pft></file>
+     
+     <do task="update">
+       <parm name="db"><pft>,v3004^a,</pft></parm>
+       <parm name="mfn"><pft>,v998,</pft></parm>
+       <parm name="uctab"><pft>cat('uctab')</pft></parm>
+       <parm name="actab"><pft>cat('actab')</pft></parm>
+       <parm name="fst"><pft>,cat(v3004^a'.fst'),</pft></parm>
+       <parm name="buffersize">90000</parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+
+       <update>
+         <field action="import" tag="list">958,998,3000/3004,4001,7003</field>
+
+         <flow action="jump">
+           <pft>,select v3004^c
+                 case 'acv' : 'H'
+                 case 'for' : 'L'
+                 elsecase 'P'
+                 endsel,
+           </pft>
+         </flow>
+         
+         <label>H</label>
+
+         <field action="replace" tag="2"><pft>,if a(v2) then ,s(date)*3.12,v3000^4, else v2 fi,</pft></field>
+         <field action="replace" tag="2"><pft>,replace(v2,' ',''),</pft></field>
+
+         <flow action="jump">P</flow>
+
+         <label>L</label>
+         <field action="replace" tag="751"><pft>,if a(v751) then ,s(date)*3.12,v3000^4, else v751 fi,</pft></field>
+         <field action="replace" tag="751">
+           <pft>,replace(v751,' ',''),</pft>
+         </field>
+         <flow action="jump">P</flow>
+
+         <label>P</label>
+         <cgitable><htmlpft><pft>,ref(['tab_fdt']val(v3004^b),'[pft]',v4,'[/pft]',),</pft></htmlpft></cgitable>
+         <field action="add" tag="5000"><pft>,ref(['phl_tdo']val(v5),v350),</pft></field>
+         
+         <proc><pft>,if v90='b' then 'd91',fi,</pft></proc>
+
+         <flow action="jump">
+           <pft>,select v3004^b
+                 case '1' : 'E'
+                 case '17' : 'l'
+                 elsecase 'y'
+                 endsel,
+           </pft>
+         </flow>
+
+         <label>E</label>
+         <field action="replace" tag="16"><pft>,if v161='1' then v162 else v16 fi,</pft></field>
+         <field action="replace" tag="17"><pft>,if v161='2' then v162 else v17 fi,</pft></field>
+         <field action="replace" tag="33"><pft>,if v30^b<>'' then v30^b else v33 fi,</pft></field>
+         <field action="replace" tag="30"><pft>,if v30^a<>'' then v30^a else v30 fi,</pft></field>
+         <field action="replace" tag="33"><pft>,if v30^b<>'' then v30^b else v33 fi,</pft></field>
+         <field action="delete" tag="list">161/162</field>
+         
+         <call name="401">now</call>
+         <call name="450">now</call>
+
+         <flow action="jump">y</flow>
+
+         <label>l</label>
+         <field action="replace" tag="655"><pft>,v655,</pft></field>
+         <field action="replace" tag="656"><pft>,v656,</pft></field>
+         <field action="replace" tag="657"><pft>,v657,</pft></field>
+         <field action="replace" tag="658"><pft>,v658,</pft></field>
+         <field action="replace" tag="660"><pft>,v660,</pft></field>
+         <field action="replace" tag="661"><pft>,v661,</pft></field>
+         <field action="replace" tag="662"><pft>,v662,</pft></field>
+         <field action="replace" tag="663"><pft>,v663,</pft></field>
+         <field action="replace" tag="664"><pft>,v664,</pft></field>
+
+         <flow action="jump">y</flow>
+
+         <label>y</label>
+
+         <field action="add" tag="999"><pft>'^d'v7003.8,'^h'v7003*9.6,'^b'v3000^2,</pft></field>
+         <call name="009">now</call>
+
+         <field action="export" tag="list">1/999,3000/3004,4001,5000</field>
+         <field action="delete" tag="list">893,958,3000/3004,4001,5000,7003,7004</field>
+
+         <write>Unlock</write>
+         <field action="import" tag="list">958,1090,2000,3000/3004,4001,5000,7003,1010,</field>
+         <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zNEW|027.xis',</pft></field>
+         <call name="log">now</call>
+
+       <display><pft>,select v1003
+        case '0':'<p align="right"><font color="green"><b>Registro gravado!</b></font>'
+        case '1':'<p align="right"><font color="red"><b>1 - Data Entry Lock denied</b></font>'
+        case '2':'<p align="right"><font color="red"><b>2 - Record Lock denied</b></font>'
+        case '3':'<p align="right"><font color="red"><b>3 - Record Update denied</b></font>'
+        case '4':'<p align="right"><font color="red"><b>4 - Record not locked</b></font>'
+        case '5':'<p align="right"><font color="red"><b>5 - Lock id does not match</b></font>'
+        case '6':'<p align="right"><font color="red"><b>6 - O índice não foi atualizado!</b></font>'
+        case '7':'<p align="right"><font color="red"><b>7 - Lock expire time not reached</b></font>'
+        endsel,
+       </pft></display>
+         
+         <flow action="jump">
+           <pft>
+             if v90='t' then 'tombar' else 'mostra' fi,
+           </pft>
+         </flow>
+         
+         <label>tombar</label>
+
+         <!-- Armazena em 8001 total de exemplares -->
+              <field action="add" tag="8001"><pft>,f(npost([v1'_tbo'],'X'v2),0,0),</pft></field>
+              <file action="close" type="database"><pft>,v1'_tbo',</pft></file>
+
+         <!-- Função responsável pelo controle automático da numeração -->
+              <call name="015">now</call>
+
+         <field action="add" tag="997"><pft>,mfn(1),</pft></field>
+         <display><htmlpft><pft>,ref(['tab_fmt']1123,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+         <flow action="jump">update</flow>
+
+         <label>mostra</label>
+
+         <display>
+           <htmlpft>
+             <pft>
+                ,if v3000^3='usuario' and v3004^c='cpa' then
+                  '<h1>',ref(['tab_txt']1054,@tab_txt.pft,),'</h1>'
+                ,else
+                 ,ref(['tab_pft']val(v3004^b),'[pft]',v4,'[/pft]',)
+                 ,if p(v1010) then ref(['tab_fmx']15,v4),fi,
+                ,fi
+             </pft>
+           </htmlpft>
+         </display>
+         
+            <file action="close" type="database">phl_acv</file>
+            <file action="close" type="database">phl_aut</file>
+            <file action="close" type="database">phl_acv_fmt</file>
+            <file action="close" type="database">phl_idm</file>
+            <file action="close" type="database">phl_cur</file>
+            <file action="close" type="database">phl_set</file>
+            <file action="close" type="database">phl_cnf</file>
+            <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+            <file action="close" type="database"><pft>,v3000^1'_ser',</pft></file>
+
+         <display><htmlpft><pft>,ref(['tab_fmx']198,v4),</pft></htmlpft></display>
+         <display><htmlpft><pft>,@tab_dag.pft,</pft></htmlpft></display>
+
+        <display>
+          </table>
+          </body>
+          </html>
+        </display>
+            <file action="close" type="database">phl_acv</file>
+            <file action="close" type="database">phl_acv_fmt</file>
+            <file action="close" type="database">phl_aut</file>
+            <file action="close" type="database">phl_idm</file>
+            <file action="close" type="database">phl_cur</file>
+            <file action="close" type="database">phl_set</file>
+            <file action="close" type="database">phl_cnf</file>
+            <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+            <file action="close" type="database"><pft>,v3000^1'_ser',</pft></file>
+        
+        <label>update</label>
+        </update>
+     </do>
+     <file action="close" type="database"><pft>,v3004^a,</pft></file>
+
+<!-- 05/04/2013 15:52:45 -->
+     <flow action="jump">
+       <pft>
+         ,if v3004^c='pwd' then 'cripto' else 'fim' fi,
+       </pft>
+     </flow>
+
+     <label>cripto</label>
+     <do task="update">
+       <parm name="db">phl_pwd</parm>
+       <parm name="mfn"><pft>,v998,</pft></parm>
+       <parm name="buffersize">90000</parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+       <update>
+        <proc><pft>,'d652',</pft></proc>
+        <write>Unlock</write>
+       </update>
+     </do>
+
+     <label>fim</label>
+<!-- 05/04/2013 15:52:45 -->
+
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

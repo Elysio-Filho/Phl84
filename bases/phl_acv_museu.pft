@@ -1,0 +1,19 @@
+
+ MPL,
+
+   '<b>',/* Peça      */,v18,". "n181,": "d181,'</b>',
+         /* Subtitulo */,v181". ",
+         /* Povo      */,v43". ",
+         /* Local     */," "v66". ",
+         /* Data      */,v64". ",
+         /* Ilustr.   */,v38+|, |". ",
+         /* Nota col  */"("v25")",
+         '<br><br>'
+         '<table>'
+         "<tr><td width=25% valign=top><b>Função:</b>                    </td><td width=75%>"v86+|<br>|,'</td></tr>',
+         "<tr><td width=25% valign=top><b>Técnica de confecção:</b>      </td><td width=75%>"v93,'</td></tr>'
+         "<tr><td width=25% valign=top><b>Quantidade de peças:</b>       </td><td width=75%>"v27,'</td></tr>'
+         "<tr><td width=25% valign=top><b>Materiais utilizados:</b>      </td><td width=75%>"v95,'</td></tr>'
+         "<tr><td width=25% valign=top><b>Referências bibliográficas:</b></td><td width=75%>"v61+|.|,'</td></tr>',
+         "<tr><td width=25% valign=top><b>Estado de conservação:</b>     </td><td width=75%>"v94,'</td></tr>',
+         '</table>'

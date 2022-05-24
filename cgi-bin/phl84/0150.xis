@@ -1,0 +1,86 @@
+<!-- Cria registro do catalogo -->
+     
+     <IsisScript name="0150.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao que obtem opcoes das caixas de seleção -->
+     <include>phl84/tipo.colecao.fnc</include>
+     <include>phl84/tipo.conteudo.fnc</include>
+     <include>phl84/tipo.curso.fnc</include>
+     <include>phl84/tipo.documento.fnc</include>
+     <include>phl84/tipo.idioma.fnc</include>
+     <include>phl84/tipo.suporte.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Grava registro -->
+     <field action="add" tag="1"><pft>,v3000^1,</pft></field>
+     
+     <file action="close" type="database">phl_acv</file>
+     
+     <do task="update">
+       <parm name="db">phl_acv</parm>
+       <parm name="mfn">New</parm>
+       <field action="define" tag="1003">Isis_Status</field>
+       <update>
+         <field action="import" tag="list">1</field>
+         <field action="cgi" tag="5">005</field>
+         <field action="cgi" tag="6">006</field>
+         <field action="cgi" tag="22">022</field>
+         <field action="cgi" tag="26">026</field>
+         <field action="cgi" tag="71">071</field>
+         <write>Lock</write>
+         <field action="add" tag="957"><pft>,mfn(1),</pft></field>
+         <field action="export" tag="957">957</field>
+       </update>
+     </do>
+     
+     <field action="replace" tag="960">002</field>
+     
+          <call name="tipo.documento">now</call>
+          <call name="tipo.suporte">now</call>
+          <call name="tipo.idioma">now</call>
+          <call name="tipo.conteudo">now</call>
+          <call name="tipo.colecao">now</call>
+          <call name="tipo.curso">now</call>
+
+     <do task="mfnrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,v957,</pft></parm>
+       <parm name="count">1</parm>
+       <parm name="buffersize">90000</parm>
+
+       <loop>
+
+       <field action="import" tag="list">957,958,960,2000,3000/3110,3500/3510,3601,4001,1010</field>
+       <field action="replace" tag="2"><pft>,v957,</pft></field>
+       <field action="cgi" tag="952">tbo</field>
+       <field action="replace" tag="952"><pft>,mhu,v952,mpl,</pft></field>
+       
+         <display>
+           <htmlpft>
+             <pft>
+                  ,ref(['tab_fmt']1,'[pft]',v4,'[/pft]',)
+             </pft>
+           </htmlpft>
+         </display>
+         
+       </loop>
+
+     </do>
+     <file action="close" type="database">phl_acv</file>
+     <flow action="exit">1</flow>
+     
+
+
+</section>
+</IsisScript>

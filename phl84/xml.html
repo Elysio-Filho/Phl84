@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function displayResult()
+{
+  xml = loadXMLDoc("dados.xml");
+  xsl = loadXMLDoc("xsl/curto.xsl");
+  xsltProcessor = new XSLTProcessor();
+  xsltProcessor.importStylesheet(xsl);
+  resultDocument = xsltProcessor.transformToFragment(xml, document);
+  document.getElementById("example").appendChild(resultDocument);
+}
+
+
+function loadXMLDoc(filename)
+{
+  xhttp = new XMLHttpRequest();
+  xhttp.open("GET", filename, false);
+  xhttp.send("");
+  return xhttp.responseXML;
+}
+
+</script>
+</head>
+<body onload="displayResult()">
+<div id="example" />
+</body>
+</html>

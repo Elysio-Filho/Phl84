@@ -1,0 +1,35 @@
+001   - Código da Unidade
+002   - Id. do objeto
+003   - Numero do objeto
+005   - Tipo de objeto
+006   - Nível bibliográfico
+007   - Numero do objeto
+008   - URL
+016   - Autor da peça
+017   - Responsável pela guarda da peça
+018   - Peça
+025   - Nome da coleção
+026   - Coleção
+027   - Qtde. de peças
+038   - Informações descritivas
+040   - Família linguistica
+043   - Povo
+061   - Notas gerais
+064   - Data da confecção
+066   - Local de confecção
+066   - Localização
+067   - País
+070   - Imagem do objeto
+078   - Indivíduo como tema
+082   - Localidades
+083   - Resumo
+084   - Código HTML
+086   - Função
+087   - Descritores
+089   - Observações
+091   - Terminologia étnica
+092   - Categoria da peça
+093   - Técnica de confecção
+094   - Estado de conservação
+095   - Materiais utilizados
+181   - Descrição do objeto

@@ -1,0 +1,29 @@
+<!-- Devolução multipla
+     14/03/2007 - Revisado -->
+     
+     <IsisScript name="010.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="951">usr</field>
+     <field action="cgi" tag="952">tbo</field>
+     <field action="cgi" tag="759">mfn_log</field>
+     <field action="replace" tag="951"><pft>,mhu,v951,mpl,</pft></field>
+     <field action="replace" tag="952"><pft>,mhu,v952,mpl,</pft></field>
+
+     <display><htmlpft><pft>,ref(['tab_fmx']17,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+</section>
+</IsisScript>

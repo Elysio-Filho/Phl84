@@ -1,0 +1,7 @@
+,if val(v1002)>0 then
+  '<a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&dbvar='v3004'&opc=busca_recs&exp=',mhu,v958,mpl,'&rec=1&tmp='v4001'"><img src="/phl84/img/022.gif" border="0"></a>&nbsp;'
+  '<a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&dbvar='v3004'&opc=busca_recs&exp=',mhu,v958,mpl,'&rec='if val(v1010)>1 then f(val(v1010)-1,0,0) else f(val(v1010),0,0) fi,'&tmp='v4001'"><img src="/phl84/img/019.gif" border="0"></a>&nbsp;'
+  ,v1001," / "v1002,/
+  '&nbsp;<a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&dbvar='v3004'&opc=busca_recs&exp=',mhu,v958,mpl,'&rec=',if val(v1010)<val(v1002) then f(val(v1010)+1,0,0) else f(val(v1010),0,0) fi,'&tmp='v4001'"><img src="/phl84/img/020.gif" border="0"></a>'
+  '&nbsp;<a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&dbvar='v3004'&opc=busca_recs&exp=',mhu,v958,mpl,'&rec='f(val(v1002),0,0)'&tmp='v4001'"><img src="/phl84/img/021.gif" border="0"></a><br>'
+,fi,

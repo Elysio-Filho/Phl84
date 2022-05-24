@@ -1,0 +1,35 @@
+<!-- Menu horizontal da pagina principal
+     14/04/2007 - Revisado -->
+     
+     <IsisScript name="004.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <field action="cgi" tag="4001">tmp</field>
+
+     <call name="001">now</call>
+     
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="6789">counter</field>
+     
+     <flow action="jump"><pft>,v950,</pft></flow
+
+<!-- Compõe menu horizontal -->
+     <label>logo_cabe</label>
+     <display><htmlpft><pft>,'[pft]',cat('cabecalho.html'),'[/pft]',</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>cabecalho</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']63,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

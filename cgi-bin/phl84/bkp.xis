@@ -1,0 +1,106 @@
+<!-- Gera ISOs de todas as bases de dados -->
+
+     <IsisScript name="bkp.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+     <display>
+      <center>
+      <html>
+      <head>
+      <link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">
+      </head>
+      <body>
+      Gerando arquivos ISOs<br>
+      Aguarde até o aviso de conclusão do backup!<br>
+      <hr>
+      <b>IMPORTANTE:</b><br>
+      <i>Os arquivos de backups serão gravados no computador que hospeda suas bases de dados. Caso suas bases de dados estejam hospedadas em um servidor WWW, você deve clicar em cada um dos links abaixo para efetuar o "download" (cópia do arquivo) para o seu computador pessoal ou utilizar sua conta de FTP para efetuar a cópia.</i>
+      <hr>
+      </center>
+     </display>
+
+     <list action="load" type="list">
+     <pft>
+v3000^1'_cal'/
+v3000^1'_cdu'/
+v3000^1'_cxa'/
+v3000^1'_emp'/
+v3000^1'_log'/
+v3000^1'_ser'/
+v3000^1'_ser_fmt'/
+v3000^1'_tbo'/
+v3000^1'_tbo_fmt'/
+v3000^1'_usc'/
+'phl_acv'/
+'phl_acv_fmt'/
+'phl_aut'/
+'phl_cnf'/
+'phl_col'/
+'phl_cpa'/
+'phl_cut'/
+'phl_etp'/
+'phl_for'/
+'phl_for_fmt'/
+'phl_gen'/
+'phl_giz'/
+'phl_idx'/
+'phl_mec'/
+'phl_pen'/
+'phl_pqt'/
+'phl_pwd'/
+'phl_rel'/
+'phl_res'/
+'phl_rgl'/
+'phl_set'/
+'phl_tdo'/
+'phl_usr'/
+'phl_usr_fmt'/
+'phl_voc'/
+	
+     </pft>
+     </list>
+     
+     <do task="list">
+     <field action="define" tag="1">Isis_Item</field>
+     
+     <loop>
+     <do task="mfnrange">
+       <parm name="db"><pft>,v1,</pft></parm>
+	<field action=define tag=9002>Isis_Total</field>
+        <parm name="file"><pft>'iso_'s(date).8'_'v1'.iso',</pft></parm>
+       <loop>
+         <export>this</export>
+       </loop>
+       <display><pft>
+	if val(v9002)<>0 then,
+        '<a href="/phl84/bkp/iso_'s(date).8'_'v1'.iso">iso_'s(date).8'_'v1'.iso</a><br>',fi,</pft></display>
+
+      <file action="close" type="database"><pft>,v1,</pft></file>
+     </do>
+     
+     </loop>
+     </do>
+     
+     <display>
+      <center>
+      <hr>
+      Backup concluído!
+      <hr>
+      </body>
+      </html>
+      </center>
+     </display>
+
+</section>
+</IsisScript>

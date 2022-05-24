@@ -1,0 +1,55 @@
+#fornecedor
+  { 
+  margin:20px;
+  margin-left:10px;
+  width:580px;
+  padding:10px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  border:0px;
+  }
+    #title {
+      width: 100%;
+      margin:0px;
+      text-align:left;
+      max-width: 400px;
+      color:red;
+      padding:0px;
+      font-weight:bold;
+      }
+   #content {
+      width: 100%;
+      margin:0px;
+      text-align:left;
+      max-width: 400px;
+      }
+   #sidebar {
+      float: left;
+      width: 100px;
+      margin:0; 
+      padding:0;
+      }
+      
+   #sidebar-content {
+      margin:0; 
+      padding: 0px;
+      font-size: 12px;
+      }
+   #main {
+      margin:0px;
+      padding:0;
+      }
+   #main-content {
+      margin:0; 
+      padding: 0px;
+      font-size: 12px;
+      }
+      
+    //hr.cleaner {
+      clear:both;
+      height:1px;
+      margin: -1px 0 0 0;
+      padding:0;
+      border:none;
+      visibility: hidden;
+      }

@@ -1,0 +1,4559 @@
+!ID 000001
+!v301!Afar
+!v302!Afar
+!v303!Afar
+!v304!Afar
+!v305!afar
+!v312!aar
+!v313!aa
+!v390!0
+!v998!1
+!ID 000002
+!v301!Abkhazian
+!v302!Abkhazian
+!v303!Abkhazian
+!v304!Abkhazian
+!v305!abkhaze
+!v312!abk
+!v313!ab
+!v390!0
+!v998!2
+!ID 000003
+!v301!Achinese
+!v302!Achinese
+!v303!Achinese
+!v304!Achinese
+!v305!aceh
+!v312!ace
+!v390!0
+!v998!3
+!ID 000004
+!v301!Acoli
+!v302!Acoli
+!v303!Acoli
+!v304!Acoli
+!v305!acoli
+!v312!ach
+!v390!0
+!v998!4
+!ID 000005
+!v301!Adangme
+!v302!Adangme
+!v303!Adangme
+!v304!Adangme
+!v305!adangme
+!v312!ada
+!v390!0
+!v998!5
+!ID 000006
+!v301!Adyghe; Adygei
+!v302!Adyghe; Adygei
+!v303!Adyghe; Adygei
+!v304!Adyghe; Adygei
+!v305!adyghé
+!v312!ady
+!v390!0
+!v998!6
+!ID 000007
+!v301!Afro-Asiático
+!v302!Afro-Asiatic (Other)
+!v303!Afro-Asiatic (Other)
+!v304!Afro-Asiatic (Other)
+!v305!afro-asiatiques, autres langues
+!v312!afa
+!v390!0
+!v998!7
+!ID 000008
+!v301!Afrihili
+!v302!Afrihili
+!v303!Afrihili
+!v304!Afrihili
+!v305!afrihili
+!v312!afh
+!v390!0
+!v998!8
+!ID 000009
+!v301!Africano
+!v302!Afrikaans
+!v303!Afrikaans
+!v304!Afrikaans
+!v305!afrikaans
+!v312!afr
+!v313!af
+!v390!0
+!v998!9
+!ID 000010
+!v301!Ainu
+!v302!Ainu
+!v303!Ainu
+!v304!Ainu
+!v305!aïnou
+!v312!ain
+!v390!0
+!v998!10
+!ID 000011
+!v301!Akan
+!v302!Akan
+!v303!Akan
+!v304!Akan
+!v305!akan
+!v312!aka
+!v313!ak
+!v390!0
+!v998!11
+!ID 000012
+!v301!Akkadian
+!v302!Akkadian
+!v303!Akkadian
+!v304!Akkadian
+!v305!akkadien
+!v312!akk
+!v390!0
+!v998!12
+!ID 000013
+!v301!Albanês
+!v302!Albanian
+!v303!Albanian
+!v304!Albanian
+!v305!albanais
+!v312!alb
+!v313!sq
+!v390!0
+!v998!13
+!ID 000014
+!v301!Aleut
+!v302!Aleut
+!v303!Aleut
+!v304!Aleut
+!v305!aléoute
+!v312!ale
+!v390!0
+!v998!14
+!ID 000015
+!v301!Algonquian languages
+!v302!Algonquian languages
+!v303!Algonquian languages
+!v304!Algonquian languages
+!v305!algonquines, langues
+!v312!alg
+!v390!0
+!v998!15
+!ID 000016
+!v301!Southern Altai
+!v302!Southern Altai
+!v303!Southern Altai
+!v304!Southern Altai
+!v305!altai du Sud
+!v312!alt
+!v390!0
+!v998!16
+!ID 000017
+!v301!Amharic
+!v302!Amharic
+!v303!Amharic
+!v304!Amharic
+!v305!amharique
+!v312!amh
+!v313!am
+!v390!0
+!v998!17
+!ID 000018
+!v301!Anglo-Saxão
+!v302!English, Old (ca.450-1100)
+!v303!English, Old (ca.450-1100)
+!v304!English, Old (ca.450-1100)
+!v305!anglo-saxon (ca.450-1100)
+!v312!ang
+!v390!0
+!v998!18
+!ID 000019
+!v301!Angika
+!v302!Angika
+!v303!Angika
+!v304!Angika
+!v305!angika
+!v312!anp
+!v390!0
+!v998!19
+!ID 000020
+!v301!Apache
+!v302!Apache languages
+!v303!Apache languages
+!v304!Apache languages
+!v305!apache
+!v312!apa
+!v390!0
+!v998!20
+!ID 000021
+!v301!Árabe
+!v302!Arabic
+!v303!Arabic
+!v304!Arabic
+!v305!arabe
+!v312!ara
+!v313!ar
+!v390!0
+!v998!21
+!ID 000022
+!v301!Aramaico
+!v302!Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)
+!v303!Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)
+!v304!Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)
+!v305!araméen d'empire (700-300 BCE)
+!v312!arc
+!v390!0
+!v998!22
+!ID 000023
+!v301!Aragonese
+!v302!Aragonese
+!v303!Aragonese
+!v304!Aragonese
+!v305!aragonais
+!v312!arg
+!v313!an
+!v390!0
+!v998!23
+!ID 000024
+!v301!Armenio
+!v302!Armenian
+!v303!Armenian
+!v304!Armenian
+!v305!arménien
+!v312!arm
+!v313!hy
+!v390!0
+!v998!24
+!ID 000025
+!v301!Mapudungun; Mapuche
+!v302!Mapudungun; Mapuche
+!v303!Mapudungun; Mapuche
+!v304!Mapudungun; Mapuche
+!v305!mapudungun; mapuche; mapuce
+!v312!arn
+!v390!0
+!v998!25
+!ID 000026
+!v301!Arapaho
+!v302!Arapaho
+!v303!Arapaho
+!v304!Arapaho
+!v305!arapaho
+!v312!arp
+!v390!0
+!v998!26
+!ID 000027
+!v301!Artificial (Other)
+!v302!Artificial (Other)
+!v303!Artificial (Other)
+!v304!Artificial (Other)
+!v305!artificielles, autres langues
+!v312!art
+!v390!0
+!v998!27
+!ID 000028
+!v301!Arawak
+!v302!Arawak
+!v303!Arawak
+!v304!Arawak
+!v305!arawak
+!v312!arw
+!v390!0
+!v998!28
+!ID 000029
+!v301!Assamese
+!v302!Assamese
+!v303!Assamese
+!v304!Assamese
+!v305!assamais
+!v312!asm
+!v313!as
+!v390!0
+!v998!29
+!ID 000030
+!v301!Asturian; Bable; Leonese; Asturleonese
+!v302!Asturian; Bable; Leonese; Asturleonese
+!v303!Asturian; Bable; Leonese; Asturleonese
+!v304!Asturian; Bable; Leonese; Asturleonese
+!v305!asturien; bable; léonais; asturoléonais
+!v312!ast
+!v390!0
+!v998!30
+!ID 000031
+!v301!Athapascan languages
+!v302!Athapascan languages
+!v303!Athapascan languages
+!v304!Athapascan languages
+!v305!athapascanes, langues
+!v312!ath
+!v390!0
+!v998!31
+!ID 000032
+!v301!Australian languages
+!v302!Australian languages
+!v303!Australian languages
+!v304!Australian languages
+!v305!australiennes, langues
+!v312!aus
+!v390!0
+!v998!32
+!ID 000033
+!v301!Avaric
+!v302!Avaric
+!v303!Avaric
+!v304!Avaric
+!v305!avar
+!v312!ava
+!v313!av
+!v390!0
+!v998!33
+!ID 000034
+!v301!Avestan
+!v302!Avestan
+!v303!Avestan
+!v304!Avestan
+!v305!avestique
+!v312!ave
+!v313!ae
+!v390!0
+!v998!34
+!ID 000035
+!v301!Awadhi
+!v302!Awadhi
+!v303!Awadhi
+!v304!Awadhi
+!v305!awadhi
+!v312!awa
+!v390!0
+!v998!35
+!ID 000036
+!v301!Aymara
+!v302!Aymara
+!v303!Aymara
+!v304!Aymara
+!v305!aymara
+!v312!aym
+!v313!ay
+!v390!0
+!v998!36
+!ID 000037
+!v301!Azerbaijani
+!v302!Azerbaijani
+!v303!Azerbaijani
+!v304!Azerbaijani
+!v305!azéri
+!v312!aze
+!v313!az
+!v390!0
+!v998!37
+!ID 000038
+!v301!Banda languages
+!v302!Banda languages
+!v303!Banda languages
+!v304!Banda languages
+!v305!banda, langues
+!v312!bad
+!v390!0
+!v998!38
+!ID 000039
+!v301!Bamileke languages
+!v302!Bamileke languages
+!v303!Bamileke languages
+!v304!Bamileke languages
+!v305!bamilékés, langues
+!v312!bai
+!v390!0
+!v998!39
+!ID 000040
+!v301!Bashkir
+!v302!Bashkir
+!v303!Bashkir
+!v304!Bashkir
+!v305!bachkir
+!v312!bak
+!v313!ba
+!v390!0
+!v998!40
+!ID 000041
+!v301!Baluchi
+!v302!Baluchi
+!v303!Baluchi
+!v304!Baluchi
+!v305!baloutchi
+!v312!bal
+!v390!0
+!v998!41
+!ID 000042
+!v301!Bambara
+!v302!Bambara
+!v303!Bambara
+!v304!Bambara
+!v305!bambara
+!v312!bam
+!v313!bm
+!v390!0
+!v998!42
+!ID 000043
+!v301!Balinese
+!v302!Balinese
+!v303!Balinese
+!v304!Balinese
+!v305!balinais
+!v312!ban
+!v390!0
+!v998!43
+!ID 000044
+!v301!Basque
+!v302!Basque
+!v303!Basque
+!v304!Basque
+!v305!basque
+!v312!baq
+!v313!eu
+!v390!0
+!v998!44
+!ID 000045
+!v301!Basa
+!v302!Basa
+!v303!Basa
+!v304!Basa
+!v305!basa
+!v312!bas
+!v390!0
+!v998!45
+!ID 000046
+!v301!Baltic (Other)
+!v302!Baltic (Other)
+!v303!Baltic (Other)
+!v304!Baltic (Other)
+!v305!baltiques, autres langues
+!v312!bat
+!v390!0
+!v998!46
+!ID 000047
+!v301!Beja; Bedawiyet
+!v302!Beja; Bedawiyet
+!v303!Beja; Bedawiyet
+!v304!Beja; Bedawiyet
+!v305!bedja
+!v312!bej
+!v390!0
+!v998!47
+!ID 000048
+!v301!Belarusian
+!v302!Belarusian
+!v303!Belarusian
+!v304!Belarusian
+!v305!biélorusse
+!v312!bel
+!v313!be
+!v390!0
+!v998!48
+!ID 000049
+!v301!Bemba
+!v302!Bemba
+!v303!Bemba
+!v304!Bemba
+!v305!bemba
+!v312!bem
+!v390!0
+!v998!49
+!ID 000050
+!v301!Bengali
+!v302!Bengali
+!v303!Bengali
+!v304!Bengali
+!v305!bengali
+!v312!ben
+!v313!bn
+!v390!0
+!v998!50
+!ID 000051
+!v301!Berber (Other)
+!v302!Berber (Other)
+!v303!Berber (Other)
+!v304!Berber (Other)
+!v305!berbères, autres langues
+!v312!ber
+!v390!0
+!v998!51
+!ID 000052
+!v301!Bhojpuri
+!v302!Bhojpuri
+!v303!Bhojpuri
+!v304!Bhojpuri
+!v305!bhojpuri
+!v312!bho
+!v390!0
+!v998!52
+!ID 000053
+!v301!Bihari
+!v302!Bihari
+!v303!Bihari
+!v304!Bihari
+!v305!bihari
+!v312!bih
+!v313!bh
+!v390!0
+!v998!53
+!ID 000054
+!v301!Bikol
+!v302!Bikol
+!v303!Bikol
+!v304!Bikol
+!v305!bikol
+!v312!bik
+!v390!0
+!v998!54
+!ID 000055
+!v301!Bini; Edo
+!v302!Bini; Edo
+!v303!Bini; Edo
+!v304!Bini; Edo
+!v305!bini; edo
+!v312!bin
+!v390!0
+!v998!55
+!ID 000056
+!v301!Bislama
+!v302!Bislama
+!v303!Bislama
+!v304!Bislama
+!v305!bichlamar
+!v312!bis
+!v313!bi
+!v390!0
+!v998!56
+!ID 000057
+!v301!Siksika
+!v302!Siksika
+!v303!Siksika
+!v304!Siksika
+!v305!blackfoot
+!v312!bla
+!v390!0
+!v998!57
+!ID 000058
+!v301!Bantu (Other)
+!v302!Bantu (Other)
+!v303!Bantu (Other)
+!v304!Bantu (Other)
+!v305!bantoues, autres langues
+!v312!bnt
+!v390!0
+!v998!58
+!ID 000059
+!v301!Bosnian
+!v302!Bosnian
+!v303!Bosnian
+!v304!Bosnian
+!v305!bosniaque
+!v312!bos
+!v313!bs
+!v390!0
+!v998!59
+!ID 000060
+!v301!Braj
+!v302!Braj
+!v303!Braj
+!v304!Braj
+!v305!braj
+!v312!bra
+!v390!0
+!v998!60
+!ID 000061
+!v301!Breton
+!v302!Breton
+!v303!Breton
+!v304!Breton
+!v305!breton
+!v312!bre
+!v313!br
+!v390!0
+!v998!61
+!ID 000062
+!v301!Batak languages
+!v302!Batak languages
+!v303!Batak languages
+!v304!Batak languages
+!v305!batak, langues
+!v312!btk
+!v390!0
+!v998!62
+!ID 000063
+!v301!Buriat
+!v302!Buriat
+!v303!Buriat
+!v304!Buriat
+!v305!bouriate
+!v312!bua
+!v390!0
+!v998!63
+!ID 000064
+!v301!Buginese
+!v302!Buginese
+!v303!Buginese
+!v304!Buginese
+!v305!bugi
+!v312!bug
+!v390!0
+!v998!64
+!ID 000065
+!v301!Búlgaro
+!v302!Bulgarian
+!v303!Bulgarian
+!v304!Bulgarian
+!v305!bulgare
+!v312!bul
+!v313!bg
+!v390!0
+!v998!65
+!ID 000066
+!v301!Burmese
+!v302!Burmese
+!v303!Burmese
+!v304!Burmese
+!v305!birman
+!v312!bur
+!v313!my
+!v390!0
+!v998!66
+!ID 000067
+!v301!Blin; Bilin
+!v302!Blin; Bilin
+!v303!Blin; Bilin
+!v304!Blin; Bilin
+!v305!blin; bilen
+!v312!byn
+!v390!0
+!v998!67
+!ID 000068
+!v301!Caddo
+!v302!Caddo
+!v303!Caddo
+!v304!Caddo
+!v305!caddo
+!v312!cad
+!v390!0
+!v998!68
+!ID 000069
+!v301!Central American Indian (Other)
+!v302!Central American Indian (Other)
+!v303!Central American Indian (Other)
+!v304!Central American Indian (Other)
+!v305!indiennes d'Amérique centrale, autres langues
+!v312!cai
+!v390!0
+!v998!69
+!ID 000070
+!v301!Galibi Carib
+!v302!Galibi Carib
+!v303!Galibi Carib
+!v304!Galibi Carib
+!v305!karib; galibi; carib
+!v312!car
+!v390!0
+!v998!70
+!ID 000071
+!v301!Catalan; Valencian
+!v302!Catalan; Valencian
+!v303!Catalan; Valencian
+!v304!Catalan; Valencian
+!v305!catalan; valencien
+!v312!cat
+!v313!ca
+!v390!0
+!v998!71
+!ID 000072
+!v301!Caucasian (Other)
+!v302!Caucasian (Other)
+!v303!Caucasian (Other)
+!v304!Caucasian (Other)
+!v305!caucasiennes, autres langues
+!v312!cau
+!v390!0
+!v998!72
+!ID 000073
+!v301!Cebuano
+!v302!Cebuano
+!v303!Cebuano
+!v304!Cebuano
+!v305!cebuano
+!v312!ceb
+!v390!0
+!v998!73
+!ID 000074
+!v301!Celtic (Other)
+!v302!Celtic (Other)
+!v303!Celtic (Other)
+!v304!Celtic (Other)
+!v305!celtiques, autres langues
+!v312!cel
+!v390!0
+!v998!74
+!ID 000075
+!v301!Chamorro
+!v302!Chamorro
+!v303!Chamorro
+!v304!Chamorro
+!v305!chamorro
+!v312!cha
+!v313!ch
+!v390!0
+!v998!75
+!ID 000076
+!v301!Chibcha
+!v302!Chibcha
+!v303!Chibcha
+!v304!Chibcha
+!v305!chibcha
+!v312!chb
+!v390!0
+!v998!76
+!ID 000077
+!v301!Chechen
+!v302!Chechen
+!v303!Chechen
+!v304!Chechen
+!v305!tchétchène
+!v312!che
+!v313!ce
+!v390!0
+!v998!77
+!ID 000078
+!v301!Chagatai
+!v302!Chagatai
+!v303!Chagatai
+!v304!Chagatai
+!v305!djaghataï
+!v312!chg
+!v390!0
+!v998!78
+!ID 000079
+!v301!Chinês
+!v302!Chinese
+!v303!Chinese
+!v304!Chinese
+!v305!chinois
+!v312!chi
+!v313!zh
+!v390!1
+!v998!79
+!ID 000080
+!v301!Chuukese
+!v302!Chuukese
+!v303!Chuukese
+!v304!Chuukese
+!v305!chuuk
+!v312!chk
+!v390!0
+!v998!80
+!ID 000081
+!v301!Mari
+!v302!Mari
+!v303!Mari
+!v304!Mari
+!v305!mari
+!v312!chm
+!v390!0
+!v998!81
+!ID 000082
+!v301!Chinook jargon
+!v302!Chinook jargon
+!v303!Chinook jargon
+!v304!Chinook jargon
+!v305!chinook, jargon
+!v312!chn
+!v390!0
+!v998!82
+!ID 000083
+!v301!Choctaw
+!v302!Choctaw
+!v303!Choctaw
+!v304!Choctaw
+!v305!choctaw
+!v312!cho
+!v390!0
+!v998!83
+!ID 000084
+!v301!Chipewyan; Dene Suline
+!v302!Chipewyan; Dene Suline
+!v303!Chipewyan; Dene Suline
+!v304!Chipewyan; Dene Suline
+!v305!chipewyan
+!v312!chp
+!v390!0
+!v998!84
+!ID 000085
+!v301!Cherokee
+!v302!Cherokee
+!v303!Cherokee
+!v304!Cherokee
+!v305!cherokee
+!v312!chr
+!v390!0
+!v998!85
+!ID 000086
+!v301!Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic
+!v302!Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic
+!v303!Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic
+!v304!Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic
+!v305!slavon d'église; vieux slave; slavon liturgique; vieux bulgare
+!v312!chu
+!v313!cu
+!v390!0
+!v998!86
+!ID 000087
+!v301!Chuvash
+!v302!Chuvash
+!v303!Chuvash
+!v304!Chuvash
+!v305!tchouvache
+!v312!chv
+!v313!cv
+!v390!0
+!v998!87
+!ID 000088
+!v301!Cheyenne
+!v302!Cheyenne
+!v303!Cheyenne
+!v304!Cheyenne
+!v305!cheyenne
+!v312!chy
+!v390!0
+!v998!88
+!ID 000089
+!v301!Chamic languages
+!v302!Chamic languages
+!v303!Chamic languages
+!v304!Chamic languages
+!v305!chames, langues
+!v312!cmc
+!v390!0
+!v998!89
+!ID 000090
+!v301!Coptic
+!v302!Coptic
+!v303!Coptic
+!v304!Coptic
+!v305!copte
+!v312!cop
+!v390!0
+!v998!90
+!ID 000091
+!v301!Cornish
+!v302!Cornish
+!v303!Cornish
+!v304!Cornish
+!v305!cornique
+!v312!cor
+!v313!kw
+!v390!0
+!v998!91
+!ID 000092
+!v301!Corsican
+!v302!Corsican
+!v303!Corsican
+!v304!Corsican
+!v305!corse
+!v312!cos
+!v313!co
+!v390!0
+!v998!92
+!ID 000093
+!v301!Creoles and pidgins, English based (Other)
+!v302!Creoles and pidgins, English based (Other)
+!v303!Creoles and pidgins, English based (Other)
+!v304!Creoles and pidgins, English based (Other)
+!v305!créoles et pidgins anglais, autres
+!v312!cpe
+!v390!0
+!v998!93
+!ID 000094
+!v301!Creoles and pidgins, French-based (Other)
+!v302!Creoles and pidgins, French-based (Other)
+!v303!Creoles and pidgins, French-based (Other)
+!v304!Creoles and pidgins, French-based (Other)
+!v305!créoles et pidgins français, autres
+!v312!cpf
+!v390!0
+!v998!94
+!ID 000095
+!v301!Creoles and pidgins, Portuguese-based (Other)
+!v302!Creoles and pidgins, Portuguese-based (Other)
+!v303!Creoles and pidgins, Portuguese-based (Other)
+!v304!Creoles and pidgins, Portuguese-based (Other)
+!v305!créoles et pidgins portugais, autres
+!v312!cpp
+!v390!0
+!v998!95
+!ID 000096
+!v301!Cree
+!v302!Cree
+!v303!Cree
+!v304!Cree
+!v305!cree
+!v312!cre
+!v313!cr
+!v390!0
+!v998!96
+!ID 000097
+!v301!Crimean Tatar; Crimean Turkish
+!v302!Crimean Tatar; Crimean Turkish
+!v303!Crimean Tatar; Crimean Turkish
+!v304!Crimean Tatar; Crimean Turkish
+!v305!tatar de Crimé
+!v312!crh
+!v390!0
+!v998!97
+!ID 000098
+!v301!Creoles and pidgins (Other)
+!v302!Creoles and pidgins (Other)
+!v303!Creoles and pidgins (Other)
+!v304!Creoles and pidgins (Other)
+!v305!créoles et pidgins divers
+!v312!crp
+!v390!0
+!v998!98
+!ID 000099
+!v301!Kashubian
+!v302!Kashubian
+!v303!Kashubian
+!v304!Kashubian
+!v305!kachoube
+!v312!csb
+!v390!0
+!v998!99
+!ID 000100
+!v301!Cushitic (Other)
+!v302!Cushitic (Other)
+!v303!Cushitic (Other)
+!v304!Cushitic (Other)
+!v305!couchitiques, autres langues
+!v312!cus
+!v390!0
+!v998!100
+!ID 000101
+!v301!Tcheco
+!v302!Czech
+!v303!Czech
+!v304!Czech
+!v305!tchèque
+!v312!cze
+!v313!cs
+!v390!0
+!v998!101
+!ID 000102
+!v301!Dakota
+!v302!Dakota
+!v303!Dakota
+!v304!Dakota
+!v305!dakota
+!v312!dak
+!v390!0
+!v998!102
+!ID 000103
+!v301!Dinamarquês
+!v302!Danés
+!v303!Danish
+!v304!Danese
+!v305!Danois
+!v312!dan
+!v313!da
+!v390!0
+!v998!103
+!ID 000104
+!v301!Dargwa
+!v302!Dargwa
+!v303!Dargwa
+!v304!Dargwa
+!v305!dargwa
+!v312!dar
+!v390!0
+!v998!104
+!ID 000105
+!v301!Land Dayak languages
+!v302!Land Dayak languages
+!v303!Land Dayak languages
+!v304!Land Dayak languages
+!v305!dayak, langues
+!v312!day
+!v390!0
+!v998!105
+!ID 000106
+!v301!Delaware
+!v302!Delaware
+!v303!Delaware
+!v304!Delaware
+!v305!delaware
+!v312!del
+!v390!0
+!v998!106
+!ID 000107
+!v301!Slave (Athapascan)
+!v302!Slave (Athapascan)
+!v303!Slave (Athapascan)
+!v304!Slave (Athapascan)
+!v305!esclave (athapascan)
+!v312!den
+!v390!0
+!v998!107
+!ID 000108
+!v301!Dogrib
+!v302!Dogrib
+!v303!Dogrib
+!v304!Dogrib
+!v305!dogrib
+!v312!dgr
+!v390!0
+!v998!108
+!ID 000109
+!v301!Dinka
+!v302!Dinka
+!v303!Dinka
+!v304!Dinka
+!v305!dinka
+!v312!din
+!v390!0
+!v998!109
+!ID 000110
+!v301!Divehi; Dhivehi; Maldivian
+!v302!Divehi; Dhivehi; Maldivian
+!v303!Divehi; Dhivehi; Maldivian
+!v304!Divehi; Dhivehi; Maldivian
+!v305!maldivien
+!v312!div
+!v313!dv
+!v390!0
+!v998!110
+!ID 000111
+!v301!Dogri
+!v302!Dogri
+!v303!Dogri
+!v304!Dogri
+!v305!dogri
+!v312!doi
+!v390!0
+!v998!111
+!ID 000112
+!v301!Dravidian (Other)
+!v302!Dravidian (Other)
+!v303!Dravidian (Other)
+!v304!Dravidian (Other)
+!v305!dravidiennes, autres langues
+!v312!dra
+!v390!0
+!v998!112
+!ID 000113
+!v301!Lower Sorbian
+!v302!Lower Sorbian
+!v303!Lower Sorbian
+!v304!Lower Sorbian
+!v305!bas-sorabe
+!v312!dsb
+!v390!0
+!v998!113
+!ID 000114
+!v301!Duala
+!v302!Duala
+!v303!Duala
+!v304!Duala
+!v305!douala
+!v312!dua
+!v390!0
+!v998!114
+!ID 000115
+!v301!Dutch, Middle (ca.1050-1350)
+!v302!Dutch, Middle (ca.1050-1350)
+!v303!Dutch, Middle (ca.1050-1350)
+!v304!Dutch, Middle (ca.1050-1350)
+!v305!néerlandais moyen (ca. 1050-1350)
+!v312!dum
+!v390!0
+!v998!115
+!ID 000116
+!v301!Holandês
+!v302!Holandés
+!v303!Dutch; Flemish
+!v304!Dutch; Flemish
+!v305!néerlandais; flamand
+!v312!dut
+!v313!nl
+!v390!0
+!v998!116
+!ID 000117
+!v301!Dyula
+!v302!Dyula
+!v303!Dyula
+!v304!Dyula
+!v305!dioula
+!v312!dyu
+!v390!0
+!v998!117
+!ID 000118
+!v301!Dzongkha
+!v302!Dzongkha
+!v303!Dzongkha
+!v304!Dzongkha
+!v305!dzongkha
+!v312!dzo
+!v313!dz
+!v390!0
+!v998!118
+!ID 000119
+!v301!Efik
+!v302!Efik
+!v303!Efik
+!v304!Efik
+!v305!efik
+!v312!efi
+!v390!0
+!v998!119
+!ID 000120
+!v301!Egyptian (Ancient)
+!v302!Egyptian (Ancient)
+!v303!Egyptian (Ancient)
+!v304!Egyptian (Ancient)
+!v305!égyptien
+!v312!egy
+!v390!0
+!v998!120
+!ID 000121
+!v301!Ekajuk
+!v302!Ekajuk
+!v303!Ekajuk
+!v304!Ekajuk
+!v305!ekajuk
+!v312!eka
+!v390!0
+!v998!121
+!ID 000122
+!v301!Elamite
+!v302!Elamite
+!v303!Elamite
+!v304!Elamite
+!v305!élamite
+!v312!elx
+!v390!0
+!v998!122
+!ID 000123
+!v301!Inglês
+!v302!Inglés
+!v303!English
+!v304!English
+!v305!anglais
+!v312!eng
+!v313!en
+!v390!1
+!v998!123
+!ID 000124
+!v301!English, Middle (1100-1500)
+!v302!English, Middle (1100-1500)
+!v303!English, Middle (1100-1500)
+!v304!English, Middle (1100-1500)
+!v305!anglais moyen (1100-1500)
+!v312!enm
+!v390!0
+!v998!124
+!ID 000125
+!v301!Esperanto
+!v302!Esperanto
+!v303!Esperanto
+!v304!Esperanto
+!v305!espéranto
+!v312!epo
+!v313!eo
+!v390!0
+!v998!125
+!ID 000126
+!v301!Estonian
+!v302!Estonian
+!v303!Estonian
+!v304!Estonian
+!v305!estonien
+!v312!est
+!v313!et
+!v390!0
+!v998!126
+!ID 000127
+!v301!Ewe
+!v302!Ewe
+!v303!Ewe
+!v304!Ewe
+!v305!éwé
+!v312!ewe
+!v313!ee
+!v390!0
+!v998!127
+!ID 000128
+!v301!Ewondo
+!v302!Ewondo
+!v303!Ewondo
+!v304!Ewondo
+!v305!éwondo
+!v312!ewo
+!v390!0
+!v998!128
+!ID 000129
+!v301!Fang
+!v302!Fang
+!v303!Fang
+!v304!Fang
+!v305!fang
+!v312!fan
+!v390!0
+!v998!129
+!ID 000130
+!v301!Faroese
+!v302!Faroese
+!v303!Faroese
+!v304!Faroese
+!v305!féroïen
+!v312!fao
+!v313!fo
+!v390!0
+!v998!130
+!ID 000131
+!v301!Fanti
+!v302!Fanti
+!v303!Fanti
+!v304!Fanti
+!v305!fanti
+!v312!fat
+!v390!0
+!v998!131
+!ID 000132
+!v301!Fijian
+!v302!Fijian
+!v303!Fijian
+!v304!Fijian
+!v305!fidjien
+!v312!fij
+!v313!fj
+!v390!0
+!v998!132
+!ID 000133
+!v301!Filipino; Pilipino
+!v302!Filipino; Pilipino
+!v303!Filipino; Pilipino
+!v304!Filipino; Pilipino
+!v305!filipino; pilipino
+!v312!fil
+!v390!0
+!v998!133
+!ID 000134
+!v301!Finnish
+!v302!Finnish
+!v303!Finnish
+!v304!Finnish
+!v305!finnois
+!v312!fin
+!v313!fi
+!v390!0
+!v998!134
+!ID 000135
+!v301!Finno-Ugrian (Other)
+!v302!Finno-Ugrian (Other)
+!v303!Finno-Ugrian (Other)
+!v304!Finno-Ugrian (Other)
+!v305!finno-ougriennes, autres langues
+!v312!fiu
+!v390!0
+!v998!135
+!ID 000136
+!v301!Fon
+!v302!Fon
+!v303!Fon
+!v304!Fon
+!v305!fon
+!v312!fon
+!v390!0
+!v998!136
+!ID 000137
+!v301!Francês
+!v302!Francés
+!v303!French
+!v304!French
+!v305!français
+!v312!fre
+!v313!fr
+!v390!1
+!v998!137
+!ID 000138
+!v301!French, Middle (ca.1400-1600)
+!v302!French, Middle (ca.1400-1600)
+!v303!French, Middle (ca.1400-1600)
+!v304!French, Middle (ca.1400-1600)
+!v305!français moyen (1400-1600)
+!v312!frm
+!v390!0
+!v998!138
+!ID 000139
+!v301!French, Old (842-ca.1400)
+!v302!French, Old (842-ca.1400)
+!v303!French, Old (842-ca.1400)
+!v304!French, Old (842-ca.1400)
+!v305!français ancien (842-ca.1400)
+!v312!fro
+!v390!0
+!v998!139
+!ID 000140
+!v301!Northern Frisian
+!v302!Northern Frisian
+!v303!Northern Frisian
+!v304!Northern Frisian
+!v305!frison septentrional
+!v312!frr
+!v390!0
+!v998!140
+!ID 000141
+!v301!Eastern Frisian
+!v302!Eastern Frisian
+!v303!Eastern Frisian
+!v304!Eastern Frisian
+!v305!frison oriental
+!v312!frs
+!v390!0
+!v998!141
+!ID 000142
+!v301!Western Frisian
+!v302!Western Frisian
+!v303!Western Frisian
+!v304!Western Frisian
+!v305!frison occidental
+!v312!fry
+!v313!fy
+!v390!0
+!v998!142
+!ID 000143
+!v301!Fulah
+!v302!Fulah
+!v303!Fulah
+!v304!Fulah
+!v305!peul
+!v312!ful
+!v313!ff
+!v390!0
+!v998!143
+!ID 000144
+!v301!Friulian
+!v302!Friulian
+!v303!Friulian
+!v304!Friulian
+!v305!frioulan
+!v312!fur
+!v390!0
+!v998!144
+!ID 000145
+!v301!Ga
+!v302!Ga
+!v303!Ga
+!v304!Ga
+!v305!ga
+!v312!gaa
+!v390!0
+!v998!145
+!ID 000146
+!v301!Gayo
+!v302!Gayo
+!v303!Gayo
+!v304!Gayo
+!v305!gayo
+!v312!gay
+!v390!0
+!v998!146
+!ID 000147
+!v301!Gbaya
+!v302!Gbaya
+!v303!Gbaya
+!v304!Gbaya
+!v305!gbaya
+!v312!gba
+!v390!0
+!v998!147
+!ID 000148
+!v301!Germanic (Other)
+!v302!Germanic (Other)
+!v303!Germanic (Other)
+!v304!Germanic (Other)
+!v305!germaniques, autres langues
+!v312!gem
+!v390!0
+!v998!148
+!ID 000149
+!v301!Georgian
+!v302!Georgian
+!v303!Georgian
+!v304!Georgian
+!v305!géorgien
+!v312!geo
+!v313!ka
+!v390!0
+!v998!149
+!ID 000150
+!v301!Alemão
+!v302!Alemán
+!v303!German
+!v304!German
+!v305!allemand
+!v312!ger
+!v313!de
+!v390!1
+!v998!150
+!ID 000151
+!v301!Geez
+!v302!Geez
+!v303!Geez
+!v304!Geez
+!v305!guèze
+!v312!gez
+!v390!0
+!v998!151
+!ID 000152
+!v301!Gilbertese
+!v302!Gilbertese
+!v303!Gilbertese
+!v304!Gilbertese
+!v305!kiribati
+!v312!gil
+!v390!0
+!v998!152
+!ID 000153
+!v301!Gaelic; Scottish Gaelic
+!v302!Gaelic; Scottish Gaelic
+!v303!Gaelic; Scottish Gaelic
+!v304!Gaelic; Scottish Gaelic
+!v305!gaélique; gaélique écossais
+!v312!gla
+!v313!gd
+!v390!0
+!v998!153
+!ID 000154
+!v301!Irlandês
+!v302!Irlandés
+!v303!Irish
+!v304!Irish
+!v305!irlandais
+!v312!gle
+!v313!ga
+!v390!0
+!v998!154
+!ID 000155
+!v301!Galician
+!v302!Galician
+!v303!Galician
+!v304!Galician
+!v305!galicien
+!v312!glg
+!v313!gl
+!v390!0
+!v998!155
+!ID 000156
+!v301!Manx
+!v302!Manx
+!v303!Manx
+!v304!Manx
+!v305!manx; mannois
+!v312!glv
+!v313!gv
+!v390!0
+!v998!156
+!ID 000157
+!v301!German, Middle High (ca.1050-1500)
+!v302!German, Middle High (ca.1050-1500)
+!v303!German, Middle High (ca.1050-1500)
+!v304!German, Middle High (ca.1050-1500)
+!v305!allemand, moyen haut (ca. 1050-1500)
+!v312!gmh
+!v390!0
+!v998!157
+!ID 000158
+!v301!German, Old High (ca.750-1050)
+!v302!German, Old High (ca.750-1050)
+!v303!German, Old High (ca.750-1050)
+!v304!German, Old High (ca.750-1050)
+!v305!allemand, vieux haut (ca. 750-1050)
+!v312!goh
+!v390!0
+!v998!158
+!ID 000159
+!v301!Gondi
+!v302!Gondi
+!v303!Gondi
+!v304!Gondi
+!v305!gond
+!v312!gon
+!v390!0
+!v998!159
+!ID 000160
+!v301!Gorontalo
+!v302!Gorontalo
+!v303!Gorontalo
+!v304!Gorontalo
+!v305!gorontalo
+!v312!gor
+!v390!0
+!v998!160
+!ID 000161
+!v301!Gothic
+!v302!Gothic
+!v303!Gothic
+!v304!Gothic
+!v305!gothique
+!v312!got
+!v390!0
+!v998!161
+!ID 000162
+!v301!Grebo
+!v302!Grebo
+!v303!Grebo
+!v304!Grebo
+!v305!grebo
+!v312!grb
+!v390!0
+!v998!162
+!ID 000163
+!v301!Greek, Ancient (to 1453)
+!v302!Greek, Ancient (to 1453)
+!v303!Greek, Ancient (to 1453)
+!v304!Greek, Ancient (to 1453)
+!v305!grec ancien (jusqu'à 1453)
+!v312!grc
+!v390!0
+!v998!163
+!ID 000164
+!v301!Grego
+!v302!Greek, Modern (1453-)
+!v303!Greek, Modern (1453-)
+!v304!Greek, Modern (1453-)
+!v305!grec moderne (après 1453)
+!v312!gre
+!v313!el
+!v390!0
+!v998!164
+!ID 000165
+!v301!Guarani
+!v302!Guarany
+!v303!Guarani
+!v304!Guarani
+!v305!guarani
+!v312!grn
+!v313!gn
+!v390!0
+!v998!165
+!ID 000166
+!v301!Swiss German; Alemannic; Alsatian
+!v302!Swiss German; Alemannic; Alsatian
+!v303!Swiss German; Alemannic; Alsatian
+!v304!Swiss German; Alemannic; Alsatian
+!v305!suisse alémanique; alémanique; alsacien
+!v312!gsw
+!v390!0
+!v998!166
+!ID 000167
+!v301!Gujarati
+!v302!Gujarati
+!v303!Gujarati
+!v304!Gujarati
+!v305!goudjrati
+!v312!guj
+!v313!gu
+!v390!0
+!v998!167
+!ID 000168
+!v301!Gwich'in
+!v302!Gwich'in
+!v303!Gwich'in
+!v304!Gwich'in
+!v305!gwich'in
+!v312!gwi
+!v390!0
+!v998!168
+!ID 000169
+!v301!Haida
+!v302!Haida
+!v303!Haida
+!v304!Haida
+!v305!haida
+!v312!hai
+!v390!0
+!v998!169
+!ID 000170
+!v301!Haitian; Haitian Creole
+!v302!Haitian; Haitian Creole
+!v303!Haitian; Haitian Creole
+!v304!Haitian; Haitian Creole
+!v305!haïtien; créole haïtien
+!v312!hat
+!v313!ht
+!v390!0
+!v998!170
+!ID 000171
+!v301!Hausa
+!v302!Hausa
+!v303!Hausa
+!v304!Hausa
+!v305!haoussa
+!v312!hau
+!v313!ha
+!v390!0
+!v998!171
+!ID 000172
+!v301!Hawaiian
+!v302!Hawaiian
+!v303!Hawaiian
+!v304!Hawaiian
+!v305!hawaïen
+!v312!haw
+!v390!0
+!v998!172
+!ID 000173
+!v301!Hebreu
+!v302!Hebrew
+!v303!Hebrew
+!v304!Hebrew
+!v305!hébreu
+!v312!heb
+!v313!he
+!v390!0
+!v998!173
+!ID 000174
+!v301!Herero
+!v302!Herero
+!v303!Herero
+!v304!Herero
+!v305!herero
+!v312!her
+!v313!hz
+!v390!0
+!v998!174
+!ID 000175
+!v301!Hiligaynon
+!v302!Hiligaynon
+!v303!Hiligaynon
+!v304!Hiligaynon
+!v305!hiligaynon
+!v312!hil
+!v390!0
+!v998!175
+!ID 000176
+!v301!Himachali
+!v302!Himachali
+!v303!Himachali
+!v304!Himachali
+!v305!himachali
+!v312!him
+!v390!0
+!v998!176
+!ID 000177
+!v301!Hindi
+!v302!Hindi
+!v303!Hindi
+!v304!Hindi
+!v305!hindi
+!v312!hin
+!v313!hi
+!v390!0
+!v998!177
+!ID 000178
+!v301!Hittite
+!v302!Hittite
+!v303!Hittite
+!v304!Hittite
+!v305!hittite
+!v312!hit
+!v390!0
+!v998!178
+!ID 000179
+!v301!Hmong
+!v302!Hmong
+!v303!Hmong
+!v304!Hmong
+!v305!hmong
+!v312!hmn
+!v390!0
+!v998!179
+!ID 000180
+!v301!Hiri Motu
+!v302!Hiri Motu
+!v303!Hiri Motu
+!v304!Hiri Motu
+!v305!hiri motu
+!v312!hmo
+!v313!ho
+!v390!0
+!v998!180
+!ID 000181
+!v301!Croata
+!v302!Croatian
+!v303!Croatian
+!v304!Croatian
+!v305!croate
+!v312!hrv
+!v313!hr
+!v390!0
+!v998!181
+!ID 000182
+!v301!Upper Sorbian
+!v302!Upper Sorbian
+!v303!Upper Sorbian
+!v304!Upper Sorbian
+!v305!haut-sorabe
+!v312!hsb
+!v390!0
+!v998!182
+!ID 000183
+!v301!Húngaro
+!v302!Hungarian
+!v303!Hungarian
+!v304!Hungarian
+!v305!hongrois
+!v312!hun
+!v313!hu
+!v390!0
+!v998!183
+!ID 000184
+!v301!Hupa
+!v302!Hupa
+!v303!Hupa
+!v304!Hupa
+!v305!hupa
+!v312!hup
+!v390!0
+!v998!184
+!ID 000185
+!v301!Iban
+!v302!Iban
+!v303!Iban
+!v304!Iban
+!v305!iban
+!v312!iba
+!v390!0
+!v998!185
+!ID 000186
+!v301!Igbo
+!v302!Igbo
+!v303!Igbo
+!v304!Igbo
+!v305!igbo
+!v312!ibo
+!v313!ig
+!v390!0
+!v998!186
+!ID 000187
+!v301!Icelandic
+!v302!Icelandic
+!v303!Icelandic
+!v304!Icelandic
+!v305!islandais
+!v312!ice
+!v313!is
+!v390!0
+!v998!187
+!ID 000188
+!v301!Ido
+!v302!Ido
+!v303!Ido
+!v304!Ido
+!v305!ido
+!v312!ido
+!v313!io
+!v390!0
+!v998!188
+!ID 000189
+!v301!Sichuan Yi; Nuosu
+!v302!Sichuan Yi; Nuosu
+!v303!Sichuan Yi; Nuosu
+!v304!Sichuan Yi; Nuosu
+!v305!yi de Sichuan
+!v312!iii
+!v313!ii
+!v390!0
+!v998!189
+!ID 000190
+!v301!Ijo languages
+!v302!Ijo languages
+!v303!Ijo languages
+!v304!Ijo languages
+!v305!ijo, langues
+!v312!ijo
+!v390!0
+!v998!190
+!ID 000191
+!v301!Inuktitut
+!v302!Inuktitut
+!v303!Inuktitut
+!v304!Inuktitut
+!v305!inuktitut
+!v312!iku
+!v313!iu
+!v390!0
+!v998!191
+!ID 000192
+!v301!Interlingue; Occidental
+!v302!Interlingue; Occidental
+!v303!Interlingue; Occidental
+!v304!Interlingue; Occidental
+!v305!interlingue
+!v312!ile
+!v313!ie
+!v390!0
+!v998!192
+!ID 000193
+!v301!Iloko
+!v302!Iloko
+!v303!Iloko
+!v304!Iloko
+!v305!ilocano
+!v312!ilo
+!v390!0
+!v998!193
+!ID 000194
+!v301!Interlingua (International Auxiliary Language Association)
+!v302!Interlingua (International Auxiliary Language Association)
+!v303!Interlingua (International Auxiliary Language Association)
+!v304!Interlingua (International Auxiliary Language Association)
+!v305!interlingua (langue auxiliaire internationale)
+!v312!ina
+!v313!ia
+!v390!0
+!v998!194
+!ID 000195
+!v301!Indic (Other)
+!v302!Indic (Other)
+!v303!Indic (Other)
+!v304!Indic (Other)
+!v305!indo-aryennes, autres langues
+!v312!inc
+!v390!0
+!v998!195
+!ID 000196
+!v301!Indonesian
+!v302!Indonesian
+!v303!Indonesian
+!v304!Indonesian
+!v305!indonésien
+!v312!ind
+!v313!id
+!v390!0
+!v998!196
+!ID 000197
+!v301!Indo-European (Other)
+!v302!Indo-European (Other)
+!v303!Indo-European (Other)
+!v304!Indo-European (Other)
+!v305!indo-européennes, autres langues
+!v312!ine
+!v390!0
+!v998!197
+!ID 000198
+!v301!Ingush
+!v302!Ingush
+!v303!Ingush
+!v304!Ingush
+!v305!ingouche
+!v312!inh
+!v390!0
+!v998!198
+!ID 000199
+!v301!Inupiaq
+!v302!Inupiaq
+!v303!Inupiaq
+!v304!Inupiaq
+!v305!inupiaq
+!v312!ipk
+!v313!ik
+!v390!0
+!v998!199
+!ID 000200
+!v301!Iranian (Other)
+!v302!Iranian (Other)
+!v303!Iranian (Other)
+!v304!Iranian (Other)
+!v305!iraniennes, autres langues
+!v312!ira
+!v390!0
+!v998!200
+!ID 000201
+!v301!Iroquoian languages
+!v302!Iroquoian languages
+!v303!Iroquoian languages
+!v304!Iroquoian languages
+!v305!iroquoises, langues (famille)
+!v312!iro
+!v390!0
+!v998!201
+!ID 000202
+!v301!Italiano
+!v302!Italiano
+!v303!Italian
+!v304!Italian
+!v305!italien
+!v312!ita
+!v313!it
+!v390!1
+!v998!202
+!ID 000203
+!v301!Javanese
+!v302!Javanese
+!v303!Javanese
+!v304!Javanese
+!v305!javanais
+!v312!jav
+!v313!jv
+!v390!0
+!v998!203
+!ID 000204
+!v301!Lojban
+!v302!Lojban
+!v303!Lojban
+!v304!Lojban
+!v305!lojban
+!v312!jbo
+!v390!0
+!v998!204
+!ID 000205
+!v301!Japonês
+!v302!Japonés
+!v303!Japanese
+!v304!Japanese
+!v305!japonais
+!v312!jpn
+!v313!ja
+!v390!1
+!v998!205
+!ID 000206
+!v301!Judeo-Persian
+!v302!Judeo-Persian
+!v303!Judeo-Persian
+!v304!Judeo-Persian
+!v305!judéo-persan
+!v312!jpr
+!v390!0
+!v998!206
+!ID 000207
+!v301!Judeo-Arabic
+!v302!Judeo-Arabic
+!v303!Judeo-Arabic
+!v304!Judeo-Arabic
+!v305!judéo-arabe
+!v312!jrb
+!v390!0
+!v998!207
+!ID 000208
+!v301!Kara-Kalpak
+!v302!Kara-Kalpak
+!v303!Kara-Kalpak
+!v304!Kara-Kalpak
+!v305!karakalpak
+!v312!kaa
+!v390!0
+!v998!208
+!ID 000209
+!v301!Kabyle
+!v302!Kabyle
+!v303!Kabyle
+!v304!Kabyle
+!v305!kabyle
+!v312!kab
+!v390!0
+!v998!209
+!ID 000210
+!v301!Kachin; Jingpho
+!v302!Kachin; Jingpho
+!v303!Kachin; Jingpho
+!v304!Kachin; Jingpho
+!v305!kachin; jingpho
+!v312!kac
+!v390!0
+!v998!210
+!ID 000211
+!v301!Kalaallisut; Greenlandic
+!v302!Kalaallisut; Greenlandic
+!v303!Kalaallisut; Greenlandic
+!v304!Kalaallisut; Greenlandic
+!v305!groenlandais
+!v312!kal
+!v313!kl
+!v390!0
+!v998!211
+!ID 000212
+!v301!Kamba
+!v302!Kamba
+!v303!Kamba
+!v304!Kamba
+!v305!kamba
+!v312!kam
+!v390!0
+!v998!212
+!ID 000213
+!v301!Kannada
+!v302!Kannada
+!v303!Kannada
+!v304!Kannada
+!v305!kannada
+!v312!kan
+!v313!kn
+!v390!0
+!v998!213
+!ID 000214
+!v301!Karen languages
+!v302!Karen languages
+!v303!Karen languages
+!v304!Karen languages
+!v305!karen, langues
+!v312!kar
+!v390!0
+!v998!214
+!ID 000215
+!v301!Kashmiri
+!v302!Kashmiri
+!v303!Kashmiri
+!v304!Kashmiri
+!v305!kashmiri
+!v312!kas
+!v313!ks
+!v390!0
+!v998!215
+!ID 000216
+!v301!Kanuri
+!v302!Kanuri
+!v303!Kanuri
+!v304!Kanuri
+!v305!kanouri
+!v312!kau
+!v313!kr
+!v390!0
+!v998!216
+!ID 000217
+!v301!Kawi
+!v302!Kawi
+!v303!Kawi
+!v304!Kawi
+!v305!kawi
+!v312!kaw
+!v390!0
+!v998!217
+!ID 000218
+!v301!Kazakh
+!v302!Kazakh
+!v303!Kazakh
+!v304!Kazakh
+!v305!kazakh
+!v312!kaz
+!v313!kk
+!v390!0
+!v998!218
+!ID 000219
+!v301!Kabardian
+!v302!Kabardian
+!v303!Kabardian
+!v304!Kabardian
+!v305!kabardien
+!v312!kbd
+!v390!0
+!v998!219
+!ID 000220
+!v301!Khasi
+!v302!Khasi
+!v303!Khasi
+!v304!Khasi
+!v305!khasi
+!v312!kha
+!v390!0
+!v998!220
+!ID 000221
+!v301!Khoisan (Other)
+!v302!Khoisan (Other)
+!v303!Khoisan (Other)
+!v304!Khoisan (Other)
+!v305!khoisan, autres langues
+!v312!khi
+!v390!0
+!v998!221
+!ID 000222
+!v301!Central Khmer
+!v302!Central Khmer
+!v303!Central Khmer
+!v304!Central Khmer
+!v305!khmer central
+!v312!khm
+!v313!km
+!v390!0
+!v998!222
+!ID 000223
+!v301!Khotanese
+!v302!Khotanese
+!v303!Khotanese
+!v304!Khotanese
+!v305!khotanais
+!v312!kho
+!v390!0
+!v998!223
+!ID 000224
+!v301!Kikuyu; Gikuyu
+!v302!Kikuyu; Gikuyu
+!v303!Kikuyu; Gikuyu
+!v304!Kikuyu; Gikuyu
+!v305!kikuyu
+!v312!kik
+!v313!ki
+!v390!0
+!v998!224
+!ID 000225
+!v301!Kinyarwanda
+!v302!Kinyarwanda
+!v303!Kinyarwanda
+!v304!Kinyarwanda
+!v305!rwanda
+!v312!kin
+!v313!rw
+!v390!0
+!v998!225
+!ID 000226
+!v301!Kirghiz; Kyrgyz
+!v302!Kirghiz; Kyrgyz
+!v303!Kirghiz; Kyrgyz
+!v304!Kirghiz; Kyrgyz
+!v305!kirghiz
+!v312!kir
+!v313!ky
+!v390!0
+!v998!226
+!ID 000227
+!v301!Kimbundu
+!v302!Kimbundu
+!v303!Kimbundu
+!v304!Kimbundu
+!v305!kimbundu
+!v312!kmb
+!v390!0
+!v998!227
+!ID 000228
+!v301!Konkani
+!v302!Konkani
+!v303!Konkani
+!v304!Konkani
+!v305!konkani
+!v312!kok
+!v390!0
+!v998!228
+!ID 000229
+!v301!Komi
+!v302!Komi
+!v303!Komi
+!v304!Komi
+!v305!kom
+!v312!kom
+!v313!kv
+!v390!0
+!v998!229
+!ID 000230
+!v301!Kongo
+!v302!Kongo
+!v303!Kongo
+!v304!Kongo
+!v305!kongo
+!v312!kon
+!v313!kg
+!v390!0
+!v998!230
+!ID 000231
+!v301!Coreano
+!v302!Korean
+!v303!Korean
+!v304!Korean
+!v305!coréen
+!v312!kor
+!v313!ko
+!v390!0
+!v998!231
+!ID 000232
+!v301!Kosraean
+!v302!Kosraean
+!v303!Kosraean
+!v304!Kosraean
+!v305!kosrae
+!v312!kos
+!v390!0
+!v998!232
+!ID 000233
+!v301!Kpelle
+!v302!Kpelle
+!v303!Kpelle
+!v304!Kpelle
+!v305!kpellé
+!v312!kpe
+!v390!0
+!v998!233
+!ID 000234
+!v301!Karachay-Balkar
+!v302!Karachay-Balkar
+!v303!Karachay-Balkar
+!v304!Karachay-Balkar
+!v305!karatchai balkar
+!v312!krc
+!v390!0
+!v998!234
+!ID 000235
+!v301!Karelian
+!v302!Karelian
+!v303!Karelian
+!v304!Karelian
+!v305!carélien
+!v312!krl
+!v390!0
+!v998!235
+!ID 000236
+!v301!Kru languages
+!v302!Kru languages
+!v303!Kru languages
+!v304!Kru languages
+!v305!krou, langues
+!v312!kro
+!v390!0
+!v998!236
+!ID 000237
+!v301!Kurukh
+!v302!Kurukh
+!v303!Kurukh
+!v304!Kurukh
+!v305!kurukh
+!v312!kru
+!v390!0
+!v998!237
+!ID 000238
+!v301!Kuanyama; Kwanyama
+!v302!Kuanyama; Kwanyama
+!v303!Kuanyama; Kwanyama
+!v304!Kuanyama; Kwanyama
+!v305!kuanyama; kwanyama
+!v312!kua
+!v313!kj
+!v390!0
+!v998!238
+!ID 000239
+!v301!Kumyk
+!v302!Kumyk
+!v303!Kumyk
+!v304!Kumyk
+!v305!koumyk
+!v312!kum
+!v390!0
+!v998!239
+!ID 000240
+!v301!Kurdish
+!v302!Kurdish
+!v303!Kurdish
+!v304!Kurdish
+!v305!kurde
+!v312!kur
+!v313!ku
+!v390!0
+!v998!240
+!ID 000241
+!v301!Kutenai
+!v302!Kutenai
+!v303!Kutenai
+!v304!Kutenai
+!v305!kutenai
+!v312!kut
+!v390!0
+!v998!241
+!ID 000242
+!v301!Ladino
+!v302!Ladino
+!v303!Ladino
+!v304!Ladino
+!v305!judéo-espagnol
+!v312!lad
+!v390!0
+!v998!242
+!ID 000243
+!v301!Lahnda
+!v302!Lahnda
+!v303!Lahnda
+!v304!Lahnda
+!v305!lahnda
+!v312!lah
+!v390!0
+!v998!243
+!ID 000244
+!v301!Lamba
+!v302!Lamba
+!v303!Lamba
+!v304!Lamba
+!v305!lamba
+!v312!lam
+!v390!0
+!v998!244
+!ID 000245
+!v301!Lao
+!v302!Lao
+!v303!Lao
+!v304!Lao
+!v305!lao
+!v312!lao
+!v313!lo
+!v390!0
+!v998!245
+!ID 000246
+!v301!Latim
+!v302!Latin
+!v303!Latin
+!v304!Latin
+!v305!latin
+!v312!lat
+!v313!la
+!v390!1
+!v998!246
+!ID 000247
+!v301!Latvian
+!v302!Latvian
+!v303!Latvian
+!v304!Latvian
+!v305!letton
+!v312!lav
+!v313!lv
+!v390!0
+!v998!247
+!ID 000248
+!v301!Lezghian
+!v302!Lezghian
+!v303!Lezghian
+!v304!Lezghian
+!v305!lezghien
+!v312!lez
+!v390!0
+!v998!248
+!ID 000249
+!v301!Limburgan; Limburger; Limburgish
+!v302!Limburgan; Limburger; Limburgish
+!v303!Limburgan; Limburger; Limburgish
+!v304!Limburgan; Limburger; Limburgish
+!v305!limbourgeois
+!v312!lim
+!v313!li
+!v390!0
+!v998!249
+!ID 000250
+!v301!Lingala
+!v302!Lingala
+!v303!Lingala
+!v304!Lingala
+!v305!lingala
+!v312!lin
+!v313!ln
+!v390!0
+!v998!250
+!ID 000251
+!v301!Lithuanian
+!v302!Lithuanian
+!v303!Lithuanian
+!v304!Lithuanian
+!v305!lituanien
+!v312!lit
+!v313!lt
+!v390!0
+!v998!251
+!ID 000252
+!v301!Mongo
+!v302!Mongo
+!v303!Mongo
+!v304!Mongo
+!v305!mongo
+!v312!lol
+!v390!0
+!v998!252
+!ID 000253
+!v301!Lozi
+!v302!Lozi
+!v303!Lozi
+!v304!Lozi
+!v305!lozi
+!v312!loz
+!v390!0
+!v998!253
+!ID 000254
+!v301!Luxembourgish; Letzeburgesch
+!v302!Luxembourgish; Letzeburgesch
+!v303!Luxembourgish; Letzeburgesch
+!v304!Luxembourgish; Letzeburgesch
+!v305!luxembourgeois
+!v312!ltz
+!v313!lb
+!v390!0
+!v998!254
+!ID 000255
+!v301!Luba-Lulua
+!v302!Luba-Lulua
+!v303!Luba-Lulua
+!v304!Luba-Lulua
+!v305!luba-lulua
+!v312!lua
+!v390!0
+!v998!255
+!ID 000256
+!v301!Luba-Katanga
+!v302!Luba-Katanga
+!v303!Luba-Katanga
+!v304!Luba-Katanga
+!v305!luba-katanga
+!v312!lub
+!v313!lu
+!v390!0
+!v998!256
+!ID 000257
+!v301!Ganda
+!v302!Ganda
+!v303!Ganda
+!v304!Ganda
+!v305!ganda
+!v312!lug
+!v313!lg
+!v390!0
+!v998!257
+!ID 000258
+!v301!Luiseno
+!v302!Luiseno
+!v303!Luiseno
+!v304!Luiseno
+!v305!luiseno
+!v312!lui
+!v390!0
+!v998!258
+!ID 000259
+!v301!Lunda
+!v302!Lunda
+!v303!Lunda
+!v304!Lunda
+!v305!lunda
+!v312!lun
+!v390!0
+!v998!259
+!ID 000260
+!v301!Luo (Kenya and Tanzania)
+!v302!Luo (Kenya and Tanzania)
+!v303!Luo (Kenya and Tanzania)
+!v304!Luo (Kenya and Tanzania)
+!v305!luo (Kenya et Tanzanie)
+!v312!luo
+!v390!0
+!v998!260
+!ID 000261
+!v301!Lushai
+!v302!Lushai
+!v303!Lushai
+!v304!Lushai
+!v305!lushai
+!v312!lus
+!v390!0
+!v998!261
+!ID 000262
+!v301!Macedonian
+!v302!Macedonian
+!v303!Macedonian
+!v304!Macedonian
+!v305!macédonien
+!v312!mac
+!v313!mk
+!v390!0
+!v998!262
+!ID 000263
+!v301!Madurese
+!v302!Madurese
+!v303!Madurese
+!v304!Madurese
+!v305!madourais
+!v312!mad
+!v390!0
+!v998!263
+!ID 000264
+!v301!Magahi
+!v302!Magahi
+!v303!Magahi
+!v304!Magahi
+!v305!magahi
+!v312!mag
+!v390!0
+!v998!264
+!ID 000265
+!v301!Marshallese
+!v302!Marshallese
+!v303!Marshallese
+!v304!Marshallese
+!v305!marshall
+!v312!mah
+!v313!mh
+!v390!0
+!v998!265
+!ID 000266
+!v301!Maithili
+!v302!Maithili
+!v303!Maithili
+!v304!Maithili
+!v305!maithili
+!v312!mai
+!v390!0
+!v998!266
+!ID 000267
+!v301!Makasar
+!v302!Makasar
+!v303!Makasar
+!v304!Makasar
+!v305!makassar
+!v312!mak
+!v390!0
+!v998!267
+!ID 000268
+!v301!Malayalam
+!v302!Malayalam
+!v303!Malayalam
+!v304!Malayalam
+!v305!malayalam
+!v312!mal
+!v313!ml
+!v390!0
+!v998!268
+!ID 000269
+!v301!Mandingo
+!v302!Mandingo
+!v303!Mandingo
+!v304!Mandingo
+!v305!mandingue
+!v312!man
+!v390!0
+!v998!269
+!ID 000270
+!v301!Maori
+!v302!Maori
+!v303!Maori
+!v304!Maori
+!v305!maori
+!v312!mao
+!v313!mi
+!v390!0
+!v998!270
+!ID 000271
+!v301!Austronesian (Other)
+!v302!Austronesian (Other)
+!v303!Austronesian (Other)
+!v304!Austronesian (Other)
+!v305!malayo-polynésiennes, autres langues
+!v312!map
+!v390!0
+!v998!271
+!ID 000272
+!v301!Marathi
+!v302!Marathi
+!v303!Marathi
+!v304!Marathi
+!v305!marathe
+!v312!mar
+!v313!mr
+!v390!0
+!v998!272
+!ID 000273
+!v301!Masai
+!v302!Masai
+!v303!Masai
+!v304!Masai
+!v305!massaï
+!v312!mas
+!v390!0
+!v998!273
+!ID 000274
+!v301!Malay
+!v302!Malay
+!v303!Malay
+!v304!Malay
+!v305!malais
+!v312!may
+!v313!ms
+!v390!0
+!v998!274
+!ID 000275
+!v301!Moksha
+!v302!Moksha
+!v303!Moksha
+!v304!Moksha
+!v305!moksa
+!v312!mdf
+!v390!0
+!v998!275
+!ID 000276
+!v301!Mandar
+!v302!Mandar
+!v303!Mandar
+!v304!Mandar
+!v305!mandar
+!v312!mdr
+!v390!0
+!v998!276
+!ID 000277
+!v301!Mende
+!v302!Mende
+!v303!Mende
+!v304!Mende
+!v305!mendé
+!v312!men
+!v390!0
+!v998!277
+!ID 000278
+!v301!Irish, Middle (900-1200)
+!v302!Irish, Middle (900-1200)
+!v303!Irish, Middle (900-1200)
+!v304!Irish, Middle (900-1200)
+!v305!irlandais moyen (900-1200)
+!v312!mga
+!v390!0
+!v998!278
+!ID 000279
+!v301!Mi'kmaq; Micmac
+!v302!Mi'kmaq; Micmac
+!v303!Mi'kmaq; Micmac
+!v304!Mi'kmaq; Micmac
+!v305!mi'kmaq; micmac
+!v312!mic
+!v390!0
+!v998!279
+!ID 000280
+!v301!Minangkabau
+!v302!Minangkabau
+!v303!Minangkabau
+!v304!Minangkabau
+!v305!minangkabau
+!v312!min
+!v390!0
+!v998!280
+!ID 000281
+!v301!Uncoded languages
+!v302!Uncoded languages
+!v303!Uncoded languages
+!v304!Uncoded languages
+!v305!langues non codées
+!v312!mis
+!v390!0
+!v998!281
+!ID 000282
+!v301!Mon-Khmer (Other)
+!v302!Mon-Khmer (Other)
+!v303!Mon-Khmer (Other)
+!v304!Mon-Khmer (Other)
+!v305!môn-khmer, autres langues
+!v312!mkh
+!v390!0
+!v998!282
+!ID 000283
+!v301!Malagasy
+!v302!Malagasy
+!v303!Malagasy
+!v304!Malagasy
+!v305!malgache
+!v312!mlg
+!v313!mg
+!v390!0
+!v998!283
+!ID 000284
+!v301!Maltese
+!v302!Maltese
+!v303!Maltese
+!v304!Maltese
+!v305!maltais
+!v312!mlt
+!v313!mt
+!v390!0
+!v998!284
+!ID 000285
+!v301!Manchu
+!v302!Manchu
+!v303!Manchu
+!v304!Manchu
+!v305!mandchou
+!v312!mnc
+!v390!0
+!v998!285
+!ID 000286
+!v301!Manipuri
+!v302!Manipuri
+!v303!Manipuri
+!v304!Manipuri
+!v305!manipuri
+!v312!mni
+!v390!0
+!v998!286
+!ID 000287
+!v301!Manobo languages
+!v302!Manobo languages
+!v303!Manobo languages
+!v304!Manobo languages
+!v305!manobo, langues
+!v312!mno
+!v390!0
+!v998!287
+!ID 000288
+!v301!Mohawk
+!v302!Mohawk
+!v303!Mohawk
+!v304!Mohawk
+!v305!mohawk
+!v312!moh
+!v390!0
+!v998!288
+!ID 000289
+!v301!Moldavian; Moldovan
+!v302!Moldavian; Moldovan
+!v303!Moldavian; Moldovan
+!v304!Moldavian; Moldovan
+!v305!moldave
+!v312!mol
+!v313!mo
+!v390!0
+!v998!289
+!ID 000290
+!v301!Mongolian
+!v302!Mongolian
+!v303!Mongolian
+!v304!Mongolian
+!v305!mongol
+!v312!mon
+!v313!mn
+!v390!0
+!v998!290
+!ID 000291
+!v301!Mossi
+!v302!Mossi
+!v303!Mossi
+!v304!Mossi
+!v305!moré
+!v312!mos
+!v390!0
+!v998!291
+!ID 000292
+!v301!Multiple languages
+!v302!Multiple languages
+!v303!Multiple languages
+!v304!Multiple languages
+!v305!multilingue
+!v312!mul
+!v390!0
+!v998!292
+!ID 000293
+!v301!Munda languages
+!v302!Munda languages
+!v303!Munda languages
+!v304!Munda languages
+!v305!mounda, langues
+!v312!mun
+!v390!0
+!v998!293
+!ID 000294
+!v301!Creek
+!v302!Creek
+!v303!Creek
+!v304!Creek
+!v305!muskogee
+!v312!mus
+!v390!0
+!v998!294
+!ID 000295
+!v301!Mirandese
+!v302!Mirandese
+!v303!Mirandese
+!v304!Mirandese
+!v305!mirandais
+!v312!mwl
+!v390!0
+!v998!295
+!ID 000296
+!v301!Marwari
+!v302!Marwari
+!v303!Marwari
+!v304!Marwari
+!v305!marvari
+!v312!mwr
+!v390!0
+!v998!296
+!ID 000297
+!v301!Mayan languages
+!v302!Mayan languages
+!v303!Mayan languages
+!v304!Mayan languages
+!v305!maya, langues
+!v312!myn
+!v390!0
+!v998!297
+!ID 000298
+!v301!Erzya
+!v302!Erzya
+!v303!Erzya
+!v304!Erzya
+!v305!erza
+!v312!myv
+!v390!0
+!v998!298
+!ID 000299
+!v301!Nahuatl languages
+!v302!Nahuatl languages
+!v303!Nahuatl languages
+!v304!Nahuatl languages
+!v305!nahuatl, langues
+!v312!nah
+!v390!0
+!v998!299
+!ID 000300
+!v301!North American Indian
+!v302!North American Indian
+!v303!North American Indian
+!v304!North American Indian
+!v305!indiennes d'Amérique du Nord, autres langues
+!v312!nai
+!v390!0
+!v998!300
+!ID 000301
+!v301!Neapolitan
+!v302!Neapolitan
+!v303!Neapolitan
+!v304!Neapolitan
+!v305!napolitain
+!v312!nap
+!v390!0
+!v998!301
+!ID 000302
+!v301!Nauru
+!v302!Nauru
+!v303!Nauru
+!v304!Nauru
+!v305!nauruan
+!v312!nau
+!v313!na
+!v390!0
+!v998!302
+!ID 000303
+!v301!Navajo; Navaho
+!v302!Navajo; Navaho
+!v303!Navajo; Navaho
+!v304!Navajo; Navaho
+!v305!navaho
+!v312!nav
+!v313!nv
+!v390!0
+!v998!303
+!ID 000304
+!v301!Ndebele, South; South Ndebele
+!v302!Ndebele, South; South Ndebele
+!v303!Ndebele, South; South Ndebele
+!v304!Ndebele, South; South Ndebele
+!v305!ndébélé du Sud
+!v312!nbl
+!v313!nr
+!v390!0
+!v998!304
+!ID 000305
+!v301!Ndebele, North; North Ndebele
+!v302!Ndebele, North; North Ndebele
+!v303!Ndebele, North; North Ndebele
+!v304!Ndebele, North; North Ndebele
+!v305!ndébélé du Nord
+!v312!nde
+!v313!nd
+!v390!0
+!v998!305
+!ID 000306
+!v301!Ndonga
+!v302!Ndonga
+!v303!Ndonga
+!v304!Ndonga
+!v305!ndonga
+!v312!ndo
+!v313!ng
+!v390!0
+!v998!306
+!ID 000307
+!v301!Low German; Low Saxon; German, Low; Saxon, Low
+!v302!Low German; Low Saxon; German, Low; Saxon, Low
+!v303!Low German; Low Saxon; German, Low; Saxon, Low
+!v304!Low German; Low Saxon; German, Low; Saxon, Low
+!v305!bas allemand; bas saxon; allemand, bas; saxon, bas
+!v312!nds
+!v390!0
+!v998!307
+!ID 000308
+!v301!Nepali
+!v302!Nepali
+!v303!Nepali
+!v304!Nepali
+!v305!népalais
+!v312!nep
+!v313!ne
+!v390!0
+!v998!308
+!ID 000309
+!v301!Nepal Bhasa; Newari
+!v302!Nepal Bhasa; Newari
+!v303!Nepal Bhasa; Newari
+!v304!Nepal Bhasa; Newari
+!v305!nepal bhasa; newari
+!v312!new
+!v390!0
+!v998!309
+!ID 000310
+!v301!Nias
+!v302!Nias
+!v303!Nias
+!v304!Nias
+!v305!nias
+!v312!nia
+!v390!0
+!v998!310
+!ID 000311
+!v301!Niger-Kordofanian (Other)
+!v302!Niger-Kordofanian (Other)
+!v303!Niger-Kordofanian (Other)
+!v304!Niger-Kordofanian (Other)
+!v305!nigéro-congolaises, autres langues
+!v312!nic
+!v390!0
+!v998!311
+!ID 000312
+!v301!Niuean
+!v302!Niuean
+!v303!Niuean
+!v304!Niuean
+!v305!niué
+!v312!niu
+!v390!0
+!v998!312
+!ID 000313
+!v301!Norwegian Nynorsk; Nynorsk, Norwegian
+!v302!Norwegian Nynorsk; Nynorsk, Norwegian
+!v303!Norwegian Nynorsk; Nynorsk, Norwegian
+!v304!Norwegian Nynorsk; Nynorsk, Norwegian
+!v305!norvégien nynorsk; nynorsk, norvégien
+!v312!nno
+!v313!nn
+!v390!0
+!v998!313
+!ID 000314
+!v301!Bokmål, Norwegian; Norwegian Bokmål
+!v302!Bokmål, Norwegian; Norwegian Bokmål
+!v303!Bokmål, Norwegian; Norwegian Bokmål
+!v304!Bokmål, Norwegian; Norwegian Bokmål
+!v305!norvégien bokmål
+!v312!nob
+!v313!nb
+!v390!0
+!v998!314
+!ID 000315
+!v301!Nogai
+!v302!Nogai
+!v303!Nogai
+!v304!Nogai
+!v305!nogaï; nogay
+!v312!nog
+!v390!0
+!v998!315
+!ID 000316
+!v301!Norse, Old
+!v302!Norse, Old
+!v303!Norse, Old
+!v304!Norse, Old
+!v305!norrois, vieux
+!v312!non
+!v390!0
+!v998!316
+!ID 000317
+!v301!Norueguês
+!v302!Norwegian
+!v303!Norwegian
+!v304!Norwegian
+!v305!norvégien
+!v312!nor
+!v313!no
+!v390!0
+!v998!317
+!ID 000318
+!v301!N'Ko
+!v302!N'Ko
+!v303!N'Ko
+!v304!N'Ko
+!v305!n'ko
+!v312!nqo
+!v390!0
+!v998!318
+!ID 000319
+!v301!Pedi; Sepedi; Northern Sotho
+!v302!Pedi; Sepedi; Northern Sotho
+!v303!Pedi; Sepedi; Northern Sotho
+!v304!Pedi; Sepedi; Northern Sotho
+!v305!pedi; sepedi; sotho du Nord
+!v312!nso
+!v390!0
+!v998!319
+!ID 000320
+!v301!Nubian languages
+!v302!Nubian languages
+!v303!Nubian languages
+!v304!Nubian languages
+!v305!nubiennes, langues
+!v312!nub
+!v390!0
+!v998!320
+!ID 000321
+!v301!Classical Newari; Old Newari; Classical Nepal Bhasa
+!v302!Classical Newari; Old Newari; Classical Nepal Bhasa
+!v303!Classical Newari; Old Newari; Classical Nepal Bhasa
+!v304!Classical Newari; Old Newari; Classical Nepal Bhasa
+!v305!newari classique
+!v312!nwc
+!v390!0
+!v998!321
+!ID 000322
+!v301!Chichewa; Chewa; Nyanja
+!v302!Chichewa; Chewa; Nyanja
+!v303!Chichewa; Chewa; Nyanja
+!v304!Chichewa; Chewa; Nyanja
+!v305!chichewa; chewa; nyanja
+!v312!nya
+!v313!ny
+!v390!0
+!v998!322
+!ID 000323
+!v301!Nyamwezi
+!v302!Nyamwezi
+!v303!Nyamwezi
+!v304!Nyamwezi
+!v305!nyamwezi
+!v312!nym
+!v390!0
+!v998!323
+!ID 000324
+!v301!Nyankole
+!v302!Nyankole
+!v303!Nyankole
+!v304!Nyankole
+!v305!nyankolé
+!v312!nyn
+!v390!0
+!v998!324
+!ID 000325
+!v301!Nyoro
+!v302!Nyoro
+!v303!Nyoro
+!v304!Nyoro
+!v305!nyoro
+!v312!nyo
+!v390!0
+!v998!325
+!ID 000326
+!v301!Nzima
+!v302!Nzima
+!v303!Nzima
+!v304!Nzima
+!v305!nzema
+!v312!nzi
+!v390!0
+!v998!326
+!ID 000327
+!v301!Occitan (post 1500); Provençal
+!v302!Occitan (post 1500); Provençal
+!v303!Occitan (post 1500); Provençal
+!v304!Occitan (post 1500); Provençal
+!v305!occitan (après 1500); provençal
+!v312!oci
+!v313!oc
+!v390!0
+!v998!327
+!ID 000328
+!v301!Ojibwa
+!v302!Ojibwa
+!v303!Ojibwa
+!v304!Ojibwa
+!v305!ojibwa
+!v312!oji
+!v313!oj
+!v390!0
+!v998!328
+!ID 000329
+!v301!Oriya
+!v302!Oriya
+!v303!Oriya
+!v304!Oriya
+!v305!oriya
+!v312!ori
+!v313!or
+!v390!0
+!v998!329
+!ID 000330
+!v301!Oromo
+!v302!Oromo
+!v303!Oromo
+!v304!Oromo
+!v305!galla
+!v312!orm
+!v313!om
+!v390!0
+!v998!330
+!ID 000331
+!v301!Osage
+!v302!Osage
+!v303!Osage
+!v304!Osage
+!v305!osage
+!v312!osa
+!v390!0
+!v998!331
+!ID 000332
+!v301!Ossetian; Ossetic
+!v302!Ossetian; Ossetic
+!v303!Ossetian; Ossetic
+!v304!Ossetian; Ossetic
+!v305!ossète
+!v312!oss
+!v313!os
+!v390!0
+!v998!332
+!ID 000333
+!v301!Turkish, Ottoman (1500-1928)
+!v302!Turkish, Ottoman (1500-1928)
+!v303!Turkish, Ottoman (1500-1928)
+!v304!Turkish, Ottoman (1500-1928)
+!v305!turc ottoman (1500-1928)
+!v312!ota
+!v390!0
+!v998!333
+!ID 000334
+!v301!Otomian languages
+!v302!Otomian languages
+!v303!Otomian languages
+!v304!Otomian languages
+!v305!otomangue, langues
+!v312!oto
+!v390!0
+!v998!334
+!ID 000335
+!v301!Papuan (Other)
+!v302!Papuan (Other)
+!v303!Papuan (Other)
+!v304!Papuan (Other)
+!v305!papoues, autres langues
+!v312!paa
+!v390!0
+!v998!335
+!ID 000336
+!v301!Pangasinan
+!v302!Pangasinan
+!v303!Pangasinan
+!v304!Pangasinan
+!v305!pangasinan
+!v312!pag
+!v390!0
+!v998!336
+!ID 000337
+!v301!Pahlavi
+!v302!Pahlavi
+!v303!Pahlavi
+!v304!Pahlavi
+!v305!pahlavi
+!v312!pal
+!v390!0
+!v998!337
+!ID 000338
+!v301!Pampanga; Kapampangan
+!v302!Pampanga; Kapampangan
+!v303!Pampanga; Kapampangan
+!v304!Pampanga; Kapampangan
+!v305!pampangan
+!v312!pam
+!v390!0
+!v998!338
+!ID 000339
+!v301!Panjabi; Punjabi
+!v302!Panjabi; Punjabi
+!v303!Panjabi; Punjabi
+!v304!Panjabi; Punjabi
+!v305!pendjabi
+!v312!pan
+!v313!pa
+!v390!0
+!v998!339
+!ID 000340
+!v301!Papiamento
+!v302!Papiamento
+!v303!Papiamento
+!v304!Papiamento
+!v305!papiamento
+!v312!pap
+!v390!0
+!v998!340
+!ID 000341
+!v301!Palauan
+!v302!Palauan
+!v303!Palauan
+!v304!Palauan
+!v305!palau
+!v312!pau
+!v390!0
+!v998!341
+!ID 000342
+!v301!Persian, Old (ca.600-400 B.C.)
+!v302!Persian, Old (ca.600-400 B.C.)
+!v303!Persian, Old (ca.600-400 B.C.)
+!v304!Persian, Old (ca.600-400 B.C.)
+!v305!perse, vieux (ca. 600-400 av. J.-C.)
+!v312!peo
+!v390!0
+!v998!342
+!ID 000343
+!v301!Persa
+!v302!Persian
+!v303!Persian
+!v304!Persian
+!v305!persan
+!v312!per
+!v313!fa
+!v390!0
+!v998!343
+!ID 000344
+!v301!Philippine (Other)
+!v302!Philippine (Other)
+!v303!Philippine (Other)
+!v304!Philippine (Other)
+!v305!philippines, autres langues
+!v312!phi
+!v390!0
+!v998!344
+!ID 000345
+!v301!Phoenician
+!v302!Phoenician
+!v303!Phoenician
+!v304!Phoenician
+!v305!phénicien
+!v312!phn
+!v390!0
+!v998!345
+!ID 000346
+!v301!Pali
+!v302!Pali
+!v303!Pali
+!v304!Pali
+!v305!pali
+!v312!pli
+!v313!pi
+!v390!0
+!v998!346
+!ID 000347
+!v301!Polonês
+!v302!Polonés
+!v303!Polish
+!v304!Polish
+!v305!polonais
+!v312!pol
+!v313!pl
+!v390!0
+!v998!347
+!ID 000348
+!v301!Pohnpeian
+!v302!Pohnpeian
+!v303!Pohnpeian
+!v304!Pohnpeian
+!v305!pohnpei
+!v312!pon
+!v390!0
+!v998!348
+!ID 000349
+!v301!Português
+!v302!Poortugués
+!v303!Portuguese
+!v304!Portuguese
+!v305!portugais
+!v312!por
+!v313!pt
+!v390!1
+!v998!349
+!ID 000350
+!v301!Prakrit languages
+!v302!Prakrit languages
+!v303!Prakrit languages
+!v304!Prakrit languages
+!v305!prâkrit
+!v312!pra
+!v390!0
+!v998!350
+!ID 000351
+!v301!Provençal, Old (to 1500)
+!v302!Provençal, Old (to 1500)
+!v303!Provençal, Old (to 1500)
+!v304!Provençal, Old (to 1500)
+!v305!provençal ancien (jusqu'à 1500)
+!v312!pro
+!v390!0
+!v998!351
+!ID 000352
+!v301!Pushto; Pashto
+!v302!Pushto; Pashto
+!v303!Pushto; Pashto
+!v304!Pushto; Pashto
+!v305!pachto
+!v312!pus
+!v313!ps
+!v390!0
+!v998!352
+!ID 000353
+!v301!Reserved for local use
+!v302!Reserved for local use
+!v303!Reserved for local use
+!v304!Reserved for local use
+!v305!réservée à l'usage local
+!v312!qaa-qtz
+!v390!0
+!v998!353
+!ID 000354
+!v301!Quechua
+!v302!Quechua
+!v303!Quechua
+!v304!Quechua
+!v305!quechua
+!v312!que
+!v313!qu
+!v390!0
+!v998!354
+!ID 000355
+!v301!Rajasthani
+!v302!Rajasthani
+!v303!Rajasthani
+!v304!Rajasthani
+!v305!rajasthani
+!v312!raj
+!v390!0
+!v998!355
+!ID 000356
+!v301!Rapanui
+!v302!Rapanui
+!v303!Rapanui
+!v304!Rapanui
+!v305!rapanui
+!v312!rap
+!v390!0
+!v998!356
+!ID 000357
+!v301!Rarotongan; Cook Islands Maori
+!v302!Rarotongan; Cook Islands Maori
+!v303!Rarotongan; Cook Islands Maori
+!v304!Rarotongan; Cook Islands Maori
+!v305!rarotonga; maori des îles Cook
+!v312!rar
+!v390!0
+!v998!357
+!ID 000358
+!v301!Romance (Other)
+!v302!Romance (Other)
+!v303!Romance (Other)
+!v304!Romance (Other)
+!v305!romanes, autres langues
+!v312!roa
+!v390!0
+!v998!358
+!ID 000359
+!v301!Romansh
+!v302!Romansh
+!v303!Romansh
+!v304!Romansh
+!v305!romanche
+!v312!roh
+!v313!rm
+!v390!0
+!v998!359
+!ID 000360
+!v301!Romany
+!v302!Romany
+!v303!Romany
+!v304!Romany
+!v305!tsigane
+!v312!rom
+!v390!0
+!v998!360
+!ID 000361
+!v301!Romeno
+!v302!Romeno
+!v303!Romanian
+!v304!Romanian
+!v305!roumain
+!v312!rum
+!v313!ro
+!v390!0
+!v998!361
+!ID 000362
+!v301!Rundi
+!v302!Rundi
+!v303!Rundi
+!v304!Rundi
+!v305!rundi
+!v312!run
+!v313!rn
+!v390!0
+!v998!362
+!ID 000363
+!v301!Aromanian; Arumanian; Macedo-Romanian
+!v302!Aromanian; Arumanian; Macedo-Romanian
+!v303!Aromanian; Arumanian; Macedo-Romanian
+!v304!Aromanian; Arumanian; Macedo-Romanian
+!v305!aroumain; macédo-roumain
+!v312!rup
+!v390!0
+!v998!363
+!ID 000364
+!v301!Russo
+!v302!Russo
+!v303!Russian
+!v304!Russian
+!v305!russe
+!v312!rus
+!v313!ru
+!v390!1
+!v998!364
+!ID 000365
+!v301!Sandawe
+!v302!Sandawe
+!v303!Sandawe
+!v304!Sandawe
+!v305!sandawe
+!v312!sad
+!v390!0
+!v998!365
+!ID 000366
+!v301!Sango
+!v302!Sango
+!v303!Sango
+!v304!Sango
+!v305!sango
+!v312!sag
+!v313!sg
+!v390!0
+!v998!366
+!ID 000367
+!v301!Yakut
+!v302!Yakut
+!v303!Yakut
+!v304!Yakut
+!v305!iakoute
+!v312!sah
+!v390!0
+!v998!367
+!ID 000368
+!v301!South American Indian (Other)
+!v302!South American Indian (Other)
+!v303!South American Indian (Other)
+!v304!South American Indian (Other)
+!v305!indiennes d'Amérique du Sud, autres langues
+!v312!sai
+!v390!0
+!v998!368
+!ID 000369
+!v301!Salishan languages
+!v302!Salishan languages
+!v303!Salishan languages
+!v304!Salishan languages
+!v305!salish, langues
+!v312!sal
+!v390!0
+!v998!369
+!ID 000370
+!v301!Samaritan Aramaic
+!v302!Samaritan Aramaic
+!v303!Samaritan Aramaic
+!v304!Samaritan Aramaic
+!v305!samaritain
+!v312!sam
+!v390!0
+!v998!370
+!ID 000371
+!v301!Sanskrit
+!v302!Sanskrit
+!v303!Sanskrit
+!v304!Sanskrit
+!v305!sanskrit
+!v312!san
+!v313!sa
+!v390!0
+!v998!371
+!ID 000372
+!v301!Sasak
+!v302!Sasak
+!v303!Sasak
+!v304!Sasak
+!v305!sasak
+!v312!sas
+!v390!0
+!v998!372
+!ID 000373
+!v301!Santali
+!v302!Santali
+!v303!Santali
+!v304!Santali
+!v305!santal
+!v312!sat
+!v390!0
+!v998!373
+!ID 000374
+!v301!Siciliano
+!v302!Siciliano
+!v303!Sicilian
+!v304!Sicilian
+!v305!sicilien
+!v312!scn
+!v390!0
+!v998!374
+!ID 000375
+!v301!Scots
+!v302!Scots
+!v303!Scots
+!v304!Scots
+!v305!écossais
+!v312!sco
+!v390!0
+!v998!375
+!ID 000376
+!v301!Selkup
+!v302!Selkup
+!v303!Selkup
+!v304!Selkup
+!v305!selkoupe
+!v312!sel
+!v390!0
+!v998!376
+!ID 000377
+!v301!Semitic (Other)
+!v302!Semitic (Other)
+!v303!Semitic (Other)
+!v304!Semitic (Other)
+!v305!sémitiques, autres langues
+!v312!sem
+!v390!0
+!v998!377
+!ID 000378
+!v301!Irish, Old (to 900)
+!v302!Irish, Old (to 900)
+!v303!Irish, Old (to 900)
+!v304!Irish, Old (to 900)
+!v305!irlandais ancien (jusqu'à 900)
+!v312!sga
+!v390!0
+!v998!378
+!ID 000379
+!v301!Sign Languages
+!v302!Sign Languages
+!v303!Sign Languages
+!v304!Sign Languages
+!v305!langues des signes
+!v312!sgn
+!v390!0
+!v998!379
+!ID 000380
+!v301!Shan
+!v302!Shan
+!v303!Shan
+!v304!Shan
+!v305!chan
+!v312!shn
+!v390!0
+!v998!380
+!ID 000381
+!v301!Sidamo
+!v302!Sidamo
+!v303!Sidamo
+!v304!Sidamo
+!v305!sidamo
+!v312!sid
+!v390!0
+!v998!381
+!ID 000382
+!v301!Sinhala; Sinhalese
+!v302!Sinhala; Sinhalese
+!v303!Sinhala; Sinhalese
+!v304!Sinhala; Sinhalese
+!v305!singhalais
+!v312!sin
+!v313!si
+!v390!0
+!v998!382
+!ID 000383
+!v301!Siouan languages
+!v302!Siouan languages
+!v303!Siouan languages
+!v304!Siouan languages
+!v305!sioux, langues
+!v312!sio
+!v390!0
+!v998!383
+!ID 000384
+!v301!Sino-Tibetan (Other)
+!v302!Sino-Tibetan (Other)
+!v303!Sino-Tibetan (Other)
+!v304!Sino-Tibetan (Other)
+!v305!sino-tibétaines, autres langues
+!v312!sit
+!v390!0
+!v998!384
+!ID 000385
+!v301!Slavic (Other)
+!v302!Slavic (Other)
+!v303!Slavic (Other)
+!v304!Slavic (Other)
+!v305!slaves, autres langues
+!v312!sla
+!v390!0
+!v998!385
+!ID 000386
+!v301!Slovak
+!v302!Slovak
+!v303!Slovak
+!v304!Slovak
+!v305!slovaque
+!v312!slo
+!v313!sk
+!v390!0
+!v998!386
+!ID 000387
+!v301!Slovenian
+!v302!Slovenian
+!v303!Slovenian
+!v304!Slovenian
+!v305!slovène
+!v312!slv
+!v313!sl
+!v390!0
+!v998!387
+!ID 000388
+!v301!Southern Sami
+!v302!Southern Sami
+!v303!Southern Sami
+!v304!Southern Sami
+!v305!sami du Sud
+!v312!sma
+!v390!0
+!v998!388
+!ID 000389
+!v301!Northern Sami
+!v302!Northern Sami
+!v303!Northern Sami
+!v304!Northern Sami
+!v305!sami du Nord
+!v312!sme
+!v313!se
+!v390!0
+!v998!389
+!ID 000390
+!v301!Sami languages (Other)
+!v302!Sami languages (Other)
+!v303!Sami languages (Other)
+!v304!Sami languages (Other)
+!v305!sami, autres langues
+!v312!smi
+!v390!0
+!v998!390
+!ID 000391
+!v301!Lule Sami
+!v302!Lule Sami
+!v303!Lule Sami
+!v304!Lule Sami
+!v305!sami de Lule
+!v312!smj
+!v390!0
+!v998!391
+!ID 000392
+!v301!Inari Sami
+!v302!Inari Sami
+!v303!Inari Sami
+!v304!Inari Sami
+!v305!sami d'Inari
+!v312!smn
+!v390!0
+!v998!392
+!ID 000393
+!v301!Samoan
+!v302!Samoan
+!v303!Samoan
+!v304!Samoan
+!v305!samoan
+!v312!smo
+!v313!sm
+!v390!0
+!v998!393
+!ID 000394
+!v301!Skolt Sami
+!v302!Skolt Sami
+!v303!Skolt Sami
+!v304!Skolt Sami
+!v305!sami skolt
+!v312!sms
+!v390!0
+!v998!394
+!ID 000395
+!v301!Shona
+!v302!Shona
+!v303!Shona
+!v304!Shona
+!v305!shona
+!v312!sna
+!v313!sn
+!v390!0
+!v998!395
+!ID 000396
+!v301!Sindhi
+!v302!Sindhi
+!v303!Sindhi
+!v304!Sindhi
+!v305!sindhi
+!v312!snd
+!v313!sd
+!v390!0
+!v998!396
+!ID 000397
+!v301!Soninke
+!v302!Soninke
+!v303!Soninke
+!v304!Soninke
+!v305!soninké
+!v312!snk
+!v390!0
+!v998!397
+!ID 000398
+!v301!Sogdian
+!v302!Sogdian
+!v303!Sogdian
+!v304!Sogdian
+!v305!sogdien
+!v312!sog
+!v390!0
+!v998!398
+!ID 000399
+!v301!Somali
+!v302!Somali
+!v303!Somali
+!v304!Somali
+!v305!somali
+!v312!som
+!v313!so
+!v390!0
+!v998!399
+!ID 000400
+!v301!Songhai languages
+!v302!Songhai languages
+!v303!Songhai languages
+!v304!Songhai languages
+!v305!songhai, langues
+!v312!son
+!v390!0
+!v998!400
+!ID 000401
+!v301!Sotho, Southern
+!v302!Sotho, Southern
+!v303!Sotho, Southern
+!v304!Sotho, Southern
+!v305!sotho du Sud
+!v312!sot
+!v313!st
+!v390!0
+!v998!401
+!ID 000402
+!v301!Espanhol
+!v302!Español
+!v303!Spanish; Castilian
+!v304!Spanish; Castilian
+!v305!espagnol; castillan
+!v312!spa
+!v313!es
+!v390!1
+!v998!402
+!ID 000403
+!v301!Sardinian
+!v302!Sardinian
+!v303!Sardinian
+!v304!Sardinian
+!v305!sarde
+!v312!srd
+!v313!sc
+!v390!0
+!v998!403
+!ID 000404
+!v301!Sranan Tongo
+!v302!Sranan Tongo
+!v303!Sranan Tongo
+!v304!Sranan Tongo
+!v305!sranan tongo
+!v312!srn
+!v390!0
+!v998!404
+!ID 000405
+!v301!Servo
+!v302!Serbian
+!v303!Serbian
+!v304!Serbian
+!v305!serbe
+!v312!srp
+!v313!sr
+!v390!0
+!v998!405
+!ID 000406
+!v301!Serer
+!v302!Serer
+!v303!Serer
+!v304!Serer
+!v305!sérère
+!v312!srr
+!v390!0
+!v998!406
+!ID 000407
+!v301!Nilo-Saharan (Other)
+!v302!Nilo-Saharan (Other)
+!v303!Nilo-Saharan (Other)
+!v304!Nilo-Saharan (Other)
+!v305!nilo-sahariennes, autres langues
+!v312!ssa
+!v390!0
+!v998!407
+!ID 000408
+!v301!Swati
+!v302!Swati
+!v303!Swati
+!v304!Swati
+!v305!swati
+!v312!ssw
+!v313!ss
+!v390!0
+!v998!408
+!ID 000409
+!v301!Sukuma
+!v302!Sukuma
+!v303!Sukuma
+!v304!Sukuma
+!v305!sukuma
+!v312!suk
+!v390!0
+!v998!409
+!ID 000410
+!v301!Sundanese
+!v302!Sundanese
+!v303!Sundanese
+!v304!Sundanese
+!v305!soundanais
+!v312!sun
+!v313!su
+!v390!0
+!v998!410
+!ID 000411
+!v301!Susu
+!v302!Susu
+!v303!Susu
+!v304!Susu
+!v305!soussou
+!v312!sus
+!v390!0
+!v998!411
+!ID 000412
+!v301!Sumerian
+!v302!Sumerian
+!v303!Sumerian
+!v304!Sumerian
+!v305!sumérien
+!v312!sux
+!v390!0
+!v998!412
+!ID 000413
+!v301!Swahili
+!v302!Swahili
+!v303!Swahili
+!v304!Swahili
+!v305!swahili
+!v312!swa
+!v313!sw
+!v390!0
+!v998!413
+!ID 000414
+!v301!Swedish
+!v302!Swedish
+!v303!Swedish
+!v304!Swedish
+!v305!suédois
+!v312!swe
+!v313!sv
+!v390!0
+!v998!414
+!ID 000415
+!v301!Classical Syriac
+!v302!Classical Syriac
+!v303!Classical Syriac
+!v304!Classical Syriac
+!v305!syriaque classique
+!v312!syc
+!v390!0
+!v998!415
+!ID 000416
+!v301!Syriac
+!v302!Syriac
+!v303!Syriac
+!v304!Syriac
+!v305!syriaque
+!v312!syr
+!v390!0
+!v998!416
+!ID 000417
+!v301!Tahitian
+!v302!Tahitian
+!v303!Tahitian
+!v304!Tahitian
+!v305!tahitien
+!v312!tah
+!v313!ty
+!v390!0
+!v998!417
+!ID 000418
+!v301!Tai (Other)
+!v302!Tai (Other)
+!v303!Tai (Other)
+!v304!Tai (Other)
+!v305!thaïes, autres langues
+!v312!tai
+!v390!0
+!v998!418
+!ID 000419
+!v301!Tamil
+!v302!Tamil
+!v303!Tamil
+!v304!Tamil
+!v305!tamoul
+!v312!tam
+!v313!ta
+!v390!0
+!v998!419
+!ID 000420
+!v301!Tatar
+!v302!Tatar
+!v303!Tatar
+!v304!Tatar
+!v305!tatar
+!v312!tat
+!v313!tt
+!v390!0
+!v998!420
+!ID 000421
+!v301!Telugu
+!v302!Telugu
+!v303!Telugu
+!v304!Telugu
+!v305!télougou
+!v312!tel
+!v313!te
+!v390!0
+!v998!421
+!ID 000422
+!v301!Timne
+!v302!Timne
+!v303!Timne
+!v304!Timne
+!v305!temne
+!v312!tem
+!v390!0
+!v998!422
+!ID 000423
+!v301!Tereno
+!v302!Tereno
+!v303!Tereno
+!v304!Tereno
+!v305!tereno
+!v312!ter
+!v390!0
+!v998!423
+!ID 000424
+!v301!Tetum
+!v302!Tetum
+!v303!Tetum
+!v304!Tetum
+!v305!tetum
+!v312!tet
+!v390!0
+!v998!424
+!ID 000425
+!v301!Tajik
+!v302!Tajik
+!v303!Tajik
+!v304!Tajik
+!v305!tadjik
+!v312!tgk
+!v313!tg
+!v390!0
+!v998!425
+!ID 000426
+!v301!Tagalog
+!v302!Tagalog
+!v303!Tagalog
+!v304!Tagalog
+!v305!tagalog
+!v312!tgl
+!v313!tl
+!v390!0
+!v998!426
+!ID 000427
+!v301!Thai
+!v302!Thai
+!v303!Thai
+!v304!Thai
+!v305!thaï
+!v312!tha
+!v313!th
+!v390!0
+!v998!427
+!ID 000428
+!v301!Tibetano
+!v302!Tibetan
+!v303!Tibetan
+!v304!Tibetan
+!v305!tibétain
+!v312!tib
+!v313!bo
+!v390!0
+!v998!428
+!ID 000429
+!v301!Tigre
+!v302!Tigre
+!v303!Tigre
+!v304!Tigre
+!v305!tigré
+!v312!tig
+!v390!0
+!v998!429
+!ID 000430
+!v301!Tigrinya
+!v302!Tigrinya
+!v303!Tigrinya
+!v304!Tigrinya
+!v305!tigrigna
+!v312!tir
+!v313!ti
+!v390!0
+!v998!430
+!ID 000431
+!v301!Tiv
+!v302!Tiv
+!v303!Tiv
+!v304!Tiv
+!v305!tiv
+!v312!tiv
+!v390!0
+!v998!431
+!ID 000432
+!v301!Tokelau
+!v302!Tokelau
+!v303!Tokelau
+!v304!Tokelau
+!v305!tokelau
+!v312!tkl
+!v390!0
+!v998!432
+!ID 000433
+!v301!Klingon; tlhIngan-Hol
+!v302!Klingon; tlhIngan-Hol
+!v303!Klingon; tlhIngan-Hol
+!v304!Klingon; tlhIngan-Hol
+!v305!klingon
+!v312!tlh
+!v390!0
+!v998!433
+!ID 000434
+!v301!Tlingit
+!v302!Tlingit
+!v303!Tlingit
+!v304!Tlingit
+!v305!tlingit
+!v312!tli
+!v390!0
+!v998!434
+!ID 000435
+!v301!Tamashek
+!v302!Tamashek
+!v303!Tamashek
+!v304!Tamashek
+!v305!tamacheq
+!v312!tmh
+!v390!0
+!v998!435
+!ID 000436
+!v301!Tonga (Nyasa)
+!v302!Tonga (Nyasa)
+!v303!Tonga (Nyasa)
+!v304!Tonga (Nyasa)
+!v305!tonga (Nyasa)
+!v312!tog
+!v390!0
+!v998!436
+!ID 000437
+!v301!Tonga (Tonga Islands)
+!v302!Tonga (Tonga Islands)
+!v303!Tonga (Tonga Islands)
+!v304!Tonga (Tonga Islands)
+!v305!tongan (Îles Tonga)
+!v312!ton
+!v313!to
+!v390!0
+!v998!437
+!ID 000438
+!v301!Tok Pisin
+!v302!Tok Pisin
+!v303!Tok Pisin
+!v304!Tok Pisin
+!v305!tok pisin
+!v312!tpi
+!v390!0
+!v998!438
+!ID 000439
+!v301!Tsimshian
+!v302!Tsimshian
+!v303!Tsimshian
+!v304!Tsimshian
+!v305!tsimshian
+!v312!tsi
+!v390!0
+!v998!439
+!ID 000440
+!v301!Tswana
+!v302!Tswana
+!v303!Tswana
+!v304!Tswana
+!v305!tswana
+!v312!tsn
+!v313!tn
+!v390!0
+!v998!440
+!ID 000441
+!v301!Tsonga
+!v302!Tsonga
+!v303!Tsonga
+!v304!Tsonga
+!v305!tsonga
+!v312!tso
+!v313!ts
+!v390!0
+!v998!441
+!ID 000442
+!v301!Turkmen
+!v302!Turkmen
+!v303!Turkmen
+!v304!Turkmen
+!v305!turkmène
+!v312!tuk
+!v313!tk
+!v390!0
+!v998!442
+!ID 000443
+!v301!Tumbuka
+!v302!Tumbuka
+!v303!Tumbuka
+!v304!Tumbuka
+!v305!tumbuka
+!v312!tum
+!v390!0
+!v998!443
+!ID 000444
+!v301!Tupi
+!v302!Tupi
+!v303!Tupi languages
+!v304!Tupi languages
+!v305!tupi, langues
+!v312!tup
+!v390!0
+!v998!444
+!ID 000445
+!v301!Turco
+!v302!Turkish
+!v303!Turkish
+!v304!Turkish
+!v305!turc
+!v312!tur
+!v313!tr
+!v390!0
+!v998!445
+!ID 000446
+!v301!Altaic (Other)
+!v302!Altaic (Other)
+!v303!Altaic (Other)
+!v304!Altaic (Other)
+!v305!altaïques, autres langues
+!v312!tut
+!v390!0
+!v998!446
+!ID 000447
+!v301!Tuvalu
+!v302!Tuvalu
+!v303!Tuvalu
+!v304!Tuvalu
+!v305!tuvalu
+!v312!tvl
+!v390!0
+!v998!447
+!ID 000448
+!v301!Twi
+!v302!Twi
+!v303!Twi
+!v304!Twi
+!v305!twi
+!v312!twi
+!v313!tw
+!v390!0
+!v998!448
+!ID 000449
+!v301!Tuvinian
+!v302!Tuvinian
+!v303!Tuvinian
+!v304!Tuvinian
+!v305!touva
+!v312!tyv
+!v390!0
+!v998!449
+!ID 000450
+!v301!Udmurt
+!v302!Udmurt
+!v303!Udmurt
+!v304!Udmurt
+!v305!oudmourte
+!v312!udm
+!v390!0
+!v998!450
+!ID 000451
+!v301!Ugaritic
+!v302!Ugaritic
+!v303!Ugaritic
+!v304!Ugaritic
+!v305!ougaritique
+!v312!uga
+!v390!0
+!v998!451
+!ID 000452
+!v301!Uighur; Uyghur
+!v302!Uighur; Uyghur
+!v303!Uighur; Uyghur
+!v304!Uighur; Uyghur
+!v305!ouïgour
+!v312!uig
+!v313!ug
+!v390!0
+!v998!452
+!ID 000453
+!v301!Ukrainian
+!v302!Ukrainian
+!v303!Ukrainian
+!v304!Ukrainian
+!v305!ukrainien
+!v312!ukr
+!v313!uk
+!v390!0
+!v998!453
+!ID 000454
+!v301!Umbundu
+!v302!Umbundu
+!v303!Umbundu
+!v304!Umbundu
+!v305!umbundu
+!v312!umb
+!v390!0
+!v998!454
+!ID 000455
+!v301!Undetermined
+!v302!Undetermined
+!v303!Undetermined
+!v304!Undetermined
+!v305!indéterminée
+!v312!und
+!v390!0
+!v998!455
+!ID 000456
+!v301!Urdu
+!v302!Urdu
+!v303!Urdu
+!v304!Urdu
+!v305!ourdou
+!v312!urd
+!v313!ur
+!v390!0
+!v998!456
+!ID 000457
+!v301!Uzbek
+!v302!Uzbek
+!v303!Uzbek
+!v304!Uzbek
+!v305!ouszbek
+!v312!uzb
+!v313!uz
+!v390!0
+!v998!457
+!ID 000458
+!v301!Vai
+!v302!Vai
+!v303!Vai
+!v304!Vai
+!v305!vaï
+!v312!vai
+!v390!0
+!v998!458
+!ID 000459
+!v301!Venda
+!v302!Venda
+!v303!Venda
+!v304!Venda
+!v305!venda
+!v312!ven
+!v313!ve
+!v390!0
+!v998!459
+!ID 000460
+!v301!Vietnamita
+!v302!Vietnamese
+!v303!Vietnamese
+!v304!Vietnamese
+!v305!vietnamien
+!v312!vie
+!v313!vi
+!v390!0
+!v998!460
+!ID 000461
+!v301!Volapük
+!v302!Volapük
+!v303!Volapük
+!v304!Volapük
+!v305!volapük
+!v312!vol
+!v313!vo
+!v390!0
+!v998!461
+!ID 000462
+!v301!Votic
+!v302!Votic
+!v303!Votic
+!v304!Votic
+!v305!vote
+!v312!vot
+!v390!0
+!v998!462
+!ID 000463
+!v301!Wakashan languages
+!v302!Wakashan languages
+!v303!Wakashan languages
+!v304!Wakashan languages
+!v305!wakashennes, langues
+!v312!wak
+!v390!0
+!v998!463
+!ID 000464
+!v301!Walamo
+!v302!Walamo
+!v303!Walamo
+!v304!Walamo
+!v305!walamo
+!v312!wal
+!v390!0
+!v998!464
+!ID 000465
+!v301!Waray
+!v302!Waray
+!v303!Waray
+!v304!Waray
+!v305!waray
+!v312!war
+!v390!0
+!v998!465
+!ID 000466
+!v301!Washo
+!v302!Washo
+!v303!Washo
+!v304!Washo
+!v305!washo
+!v312!was
+!v390!0
+!v998!466
+!ID 000467
+!v301!Welsh
+!v302!Welsh
+!v303!Welsh
+!v304!Welsh
+!v305!gallois
+!v312!wel
+!v313!cy
+!v390!0
+!v998!467
+!ID 000468
+!v301!Sorbian languages
+!v302!Sorbian languages
+!v303!Sorbian languages
+!v304!Sorbian languages
+!v305!sorabes, langues
+!v312!wen
+!v390!0
+!v998!468
+!ID 000469
+!v301!Walloon
+!v302!Walloon
+!v303!Walloon
+!v304!Walloon
+!v305!wallon
+!v312!wln
+!v313!wa
+!v390!0
+!v998!469
+!ID 000470
+!v301!Wolof
+!v302!Wolof
+!v303!Wolof
+!v304!Wolof
+!v305!wolof
+!v312!wol
+!v313!wo
+!v390!0
+!v998!470
+!ID 000471
+!v301!Kalmyk; Oirat
+!v302!Kalmyk; Oirat
+!v303!Kalmyk; Oirat
+!v304!Kalmyk; Oirat
+!v305!kalmouk; oïrat
+!v312!xal
+!v390!0
+!v998!471
+!ID 000472
+!v301!Xhosa
+!v302!Xhosa
+!v303!Xhosa
+!v304!Xhosa
+!v305!xhosa
+!v312!xho
+!v313!xh
+!v390!0
+!v998!472
+!ID 000473
+!v301!Yao
+!v302!Yao
+!v303!Yao
+!v304!Yao
+!v305!yao
+!v312!yao
+!v390!0
+!v998!473
+!ID 000474
+!v301!Yapese
+!v302!Yapese
+!v303!Yapese
+!v304!Yapese
+!v305!yapois
+!v312!yap
+!v390!0
+!v998!474
+!ID 000475
+!v301!Yiddish
+!v302!Yiddish
+!v303!Yiddish
+!v304!Yiddish
+!v305!yiddish
+!v312!yid
+!v313!yi
+!v390!0
+!v998!475
+!ID 000476
+!v301!Yoruba
+!v302!Yoruba
+!v303!Yoruba
+!v304!Yoruba
+!v305!yoruba
+!v312!yor
+!v313!yo
+!v390!0
+!v998!476
+!ID 000477
+!v301!Yupik languages
+!v302!Yupik languages
+!v303!Yupik languages
+!v304!Yupik languages
+!v305!yupik, langues
+!v312!ypk
+!v390!0
+!v998!477
+!ID 000478
+!v301!Zapotec
+!v302!Zapotec
+!v303!Zapotec
+!v304!Zapotec
+!v305!zapotèque
+!v312!zap
+!v390!0
+!v998!478
+!ID 000479
+!v301!Blissymbols; Blissymbolics; Bliss
+!v302!Blissymbols; Blissymbolics; Bliss
+!v303!Blissymbols; Blissymbolics; Bliss
+!v304!Blissymbols; Blissymbolics; Bliss
+!v305!symboles Bliss; Bliss
+!v312!zbl
+!v390!0
+!v998!479
+!ID 000480
+!v301!Zenaga
+!v302!Zenaga
+!v303!Zenaga
+!v304!Zenaga
+!v305!zenaga
+!v312!zen
+!v390!0
+!v998!480
+!ID 000481
+!v301!Zhuang; Chuang
+!v302!Zhuang; Chuang
+!v303!Zhuang; Chuang
+!v304!Zhuang; Chuang
+!v305!zhuang; chuang
+!v312!zha
+!v313!za
+!v390!0
+!v998!481
+!ID 000482
+!v301!Zande languages
+!v302!Zande languages
+!v303!Zande languages
+!v304!Zande languages
+!v305!zandé, langues
+!v312!znd
+!v390!0
+!v998!482
+!ID 000483
+!v301!Zulu
+!v302!Zulu
+!v303!Zulu
+!v304!Zulu
+!v305!zoulou
+!v312!zul
+!v313!zu
+!v390!0
+!v998!483
+!ID 000484
+!v301!Zuni
+!v302!Zuni
+!v303!Zuni
+!v304!Zuni
+!v305!zuni
+!v312!zun
+!v390!0
+!v998!484
+!ID 000485
+!v301!No linguistic content; Not applicable
+!v302!No linguistic content; Not applicable
+!v303!No linguistic content; Not applicable
+!v304!No linguistic content; Not applicable
+!v305!pas de contenu linguistique; non applicable
+!v312!zxx
+!v390!0
+!v998!485
+!ID 000486
+!v301!Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki
+!v302!Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki
+!v303!Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki
+!v304!Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki
+!v305!zaza; dimili; dimli; kirdki; kirmanjki; zazaki
+!v312!zza
+!v390!0
+!v998!486

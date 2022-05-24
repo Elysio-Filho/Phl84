@@ -1,0 +1,1964 @@
+!ID 000001
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6010!1
+!v6012!1
+!v6015!1
+!v6016!1
+!v6018!1
+!v6022!1
+!v6026!1
+!v6038!1
+!v6040!1
+!v6062!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6071!1
+!v6086!1
+!v6087!1
+!v6090!1
+!v6103!1
+!v6121!1
+!v6141!1
+!v6181!1
+!v6182!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Suporte eletrônico
+!v009!Separata
+!v010!Autor
+!v011!Autor coletivo
+!v012!Título
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor
+!v017!Autor coletivo
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Título
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Título da série
+!v031!Volume
+!v032!Fascículo
+!v033!ID Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Nível arquivístico
+!v040!Idioma
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição
+!v051!Notas de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Gravadora
+!v063!Edição
+!v064!Data de gravação
+!v065!Data padronizada
+!v066!Cidade de gravação
+!v067!País de publicação
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Biografado
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Descritores geográficos
+!v083!Resumo
+!v084!Código HTML
+!v085!Áreas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundários
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de áudio, vídeos (dvd, cds, vhs, fitas, etc.)
+!v302!Áudio
+!v303!Audio
+!v304!Áudio
+!v305!Áudio
+!v999!^d20010501^belysio
+!v999!^d20080809^h0459^bsuper
+!ID 000002
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6010!1
+!v6012!1
+!v6014!1
+!v6015!1
+!v6016!1
+!v6018!1
+!v6022!1
+!v6026!1
+!v6029!1
+!v6038!1
+!v6039!1
+!v6062!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6071!1
+!v6083!1
+!v6086!1
+!v6087!1
+!v6090!1
+!v6103!1
+!v6105!1
+!v6121!1
+!v6141!1
+!v6181!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Suporte eletronico
+!v009!Separata
+!v010!Autor
+!v011!Autor coletivo
+!v012!Título
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor
+!v017!Autor coletivo
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Título
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Título da série
+!v031!Volume
+!v032!Fascículo
+!v033!ID Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Nível arquivístico
+!v040!Idioma
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição
+!v051!Notas de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Editora
+!v063!Edição
+!v064!Data do documento
+!v065!Data padronizada
+!v066!Cidade
+!v067!País de publicação
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Biografado
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Descritores geograficos
+!v083!História Arquivística
+!v084!Código HTML
+!v085!Areas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundarios
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de documento de arquivos
+!v302!Archivo
+!v303!File
+!v304!Arquivo
+!v305!Arquivo
+!v999!^d20010501^belysio
+!v999!^d20080809^h0447^bsuper
+!ID 000003
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6010!1
+!v6012!1
+!v6014!1
+!v6017!1
+!v6018!1
+!v6020!1
+!v6021!1
+!v6022!1
+!v6026!1
+!v6040!1
+!v6054!1
+!v6055!1
+!v6056!1
+!v6062!1
+!v6063!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6071!1
+!v6087!1
+!v6090!1
+!v6103!1
+!v6121!1
+!v6141!1
+!v6181!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Suporte eletronico
+!v009!Separata
+!v010!Autor
+!v011!Autor coletivo
+!v012!Título
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor
+!v017!Autor
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Título
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Título da série
+!v031!Volume
+!v032!Fascículo
+!v033!ID Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Nível arquivístico
+!v040!Idioma do texto
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição
+!v051!Notas de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada do evento
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Editora
+!v063!Edição
+!v064!Data de publicação
+!v065!Data padronizada
+!v066!Cidade de publicação
+!v067!País de publicação
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Biografado
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Descritores geograficos
+!v083!Resumo
+!v084!Código HTML
+!v085!Areas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundarios
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de anais, proceedings, meeting e papers
+!v302!Evento
+!v303!Meeting
+!v304!Evento
+!v305!Evento
+!v999!^d20010501^belysio
+!v999!^d20080809^h0448^bsuper
+!ID 000004
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6008!1
+!v6010!1
+!v6012!1
+!v6014!1
+!v6015!1
+!v6016!1
+!v6018!1
+!v6022!1
+!v6026!1
+!v6030!1
+!v6038!1
+!v6040!1
+!v6062!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6070!1
+!v6071!1
+!v6086!1
+!v6087!1
+!v6090!1
+!v6103!1
+!v6121!1
+!v6141!1
+!v6181!1
+!v6182!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Meio eletrônico
+!v009!Separata
+!v010!Autor
+!v011!Autor coletivo
+!v012!Título
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor
+!v017!Autor coletivo
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Título
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Nota de série
+!v031!Volume
+!v032!Fascículo
+!v033!ID Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Nível arquivístico
+!v040!Idioma do texto
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição
+!v051!Notas de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Produtora
+!v063!Edição
+!v064!Data de produção
+!v065!Data padronizada
+!v066!Cidade de produção
+!v067!País de publicação
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Biografado
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Descritores geograficos
+!v083!Resumo
+!v084!Código HTML
+!v085!Areas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundarios
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de fotos e imagens em geral
+!v302!Imagen
+!v303!Image
+!v304!Imagem
+!v305!Imagem
+!v999!^d20010501^belysio
+!v999!^d20080809^h0448^bsuper
+!ID 000005
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6010!1
+!v6012!1
+!v6015!1
+!v6016!1
+!v6018!1
+!v6022!1
+!v6026!1
+!v6030!1
+!v6038!1
+!v6062!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6071!1
+!v6086!1
+!v6087!1
+!v6090!1
+!v6103!1
+!v6121!1
+!v6141!1
+!v6181!1
+!v6182!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Suporte eletronico
+!v009!Separata
+!v010!Autor
+!v011!Autor coletivo
+!v012!Título
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor
+!v017!Autor coletivo
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Título
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Nota de série
+!v031!Volume
+!v032!Fascículo
+!v033!ID Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Nível arquivístico
+!v040!Idioma
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição
+!v051!Notas de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Fabricante
+!v063!Edição
+!v064!Data de fabricação
+!v065!Data padronizada
+!v066!Cidade de fabricação
+!v067!País de publicação
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Biografado
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Descritores geograficos
+!v083!Resumo
+!v084!Código HTML
+!v085!Areas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundarios
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de jogos infantis, jogos de computador ou kit de jogos
+!v302!Juego, Kit
+!v303!Play, Kit
+!v304!Jogo, Kit
+!v305!Jogo, Kit
+!v999!^d20010501^belysio
+!v999!^d20080809^h0449^bsuper
+!ID 000006
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6010!1
+!v6012!1
+!v6014!1
+!v6016!1
+!v6018!1
+!v6020!1
+!v6022!1
+!v6026!1
+!v6030!1
+!v6040!1
+!v6062!1
+!v6063!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6071!1
+!v6087!1
+!v6090!1
+!v6103!1
+!v6121!1
+!v6141!1
+!v6181!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombos
+!v008!Suporte eletronico
+!v009!Separata
+!v010!Autor(es)
+!v011!Autor coletivo
+!v012!Título
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor(es)
+!v017!Autor coletivo
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Título
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Nota de série
+!v031!Volume
+!v032!Fascículo
+!v033!ID Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Nível arquivístico
+!v040!Idioma do texto
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição
+!v051!Notas de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Editora
+!v063!Edição
+!v064!Data de publicação
+!v065!Data padronizada
+!v066!Cidade de publicação
+!v067!País de publicação
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Biografado
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Descritores geograficos
+!v083!Resumo
+!v084!Código HTML
+!v085!Areas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundarios
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de livros em geral
+!v302!Libro
+!v303!Book
+!v304!Livro
+!v305!Livro
+!v999!^d20010501^belysio
+!v999!^d20080809^h0451^bsuper
+!ID 000007
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6008!1
+!v6010!1
+!v6012!1
+!v6014!1
+!v6015!1
+!v6016!1
+!v6018!1
+!v6020!1
+!v6022!1
+!v6026!1
+!v6038!1
+!v6040!1
+!v6062!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6071!1
+!v6086!1
+!v6087!1
+!v6089!1
+!v6090!1
+!v6103!1
+!v6121!1
+!v6141!1
+!v6181!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Suporte eletrônico
+!v009!Separata
+!v010!Autor
+!v011!Autor coletivo
+!v012!Título
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor
+!v017!Autor coletivo
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Título
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Título da série
+!v031!Volume
+!v032!Fascículo
+!v033!ID Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Nível arquivístico
+!v040!Idioma do texto
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição
+!v051!Notas de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Escritor
+!v063!Edição
+!v064!Data que escreveu
+!v065!Data padronizada
+!v066!Cidade que escreveu
+!v067!País de publicação
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Biografado
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Descritores geograficos
+!v083!Resumo
+!v084!Código HTML
+!v085!Areas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundarios
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de manuscritos em geral
+!v302!Manuscrito
+!v303!Manuscrito
+!v304!Manuscrito
+!v305!Manuscrito
+!v999!^d20010501^belysio
+!v999!^d20080809^h0451^bsuper
+!ID 000008
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6008!1
+!v6010!1
+!v6012!1
+!v6015!1
+!v6016!1
+!v6018!1
+!v6021!1
+!v6022!1
+!v6025!1
+!v6030!1
+!v6038!1
+!v6040!1
+!v6062!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6070!1
+!v6071!1
+!v6086!1
+!v6087!1
+!v6089!1
+!v6090!1
+!v6103!1
+!v6121!1
+!v6141!1
+!v6181!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Suporte eletrônico
+!v009!Separata
+!v010!Autor
+!v011!Autor coletivo
+!v012!Título
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor
+!v017!Autor coletivo
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Tipo de coleção
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Nota de série
+!v031!Volume
+!v032!Fascículo
+!v033!ID Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Nível arquivístico
+!v040!Idioma
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição
+!v051!Notas de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Editora
+!v063!Edição
+!v064!Data de publicação
+!v065!Data padronizada
+!v066!Cidade de publicação
+!v067!País de publicação
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Biografado
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Descritores geograficos
+!v083!Resumo
+!v084!Código HTML
+!v085!Areas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundarios
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de mapas, cartas de navegação e documentos cartográficos em geral 
+!v302!Mapa
+!v303!Map
+!v304!Mapa
+!v305!Mapa
+!v999!^d20010501^belysio
+!v999!^d20080809^h0452^bsuper
+!ID 000009
+!v6001!1
+!v6002!1
+!v6003!1
+!v6004!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6008!1
+!v6009!1
+!v6010!1
+!v6011!1
+!v6012!1
+!v6013!1
+!v6014!1
+!v6015!1
+!v6016!1
+!v6017!1
+!v6018!1
+!v6019!1
+!v6020!1
+!v6021!1
+!v6022!1
+!v6023!1
+!v6024!1
+!v6025!1
+!v6026!1
+!v6027!1
+!v6028!1
+!v6029!1
+!v6030!1
+!v6031!1
+!v6032!1
+!v6033!1
+!v6034!1
+!v6035!1
+!v6036!1
+!v6037!1
+!v6038!1
+!v6039!1
+!v6040!1
+!v6041!1
+!v6042!1
+!v6043!1
+!v6044!1
+!v6045!1
+!v6046!1
+!v6047!1
+!v6048!1
+!v6049!1
+!v6050!1
+!v6051!1
+!v6052!1
+!v6053!1
+!v6054!1
+!v6055!1
+!v6056!1
+!v6057!1
+!v6058!1
+!v6059!1
+!v6060!1
+!v6061!1
+!v6062!1
+!v6063!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6067!1
+!v6068!1
+!v6069!1
+!v6070!1
+!v6071!1
+!v6072!1
+!v6073!1
+!v6074!1
+!v6075!1
+!v6076!1
+!v6077!1
+!v6078!1
+!v6079!1
+!v6080!1
+!v6081!1
+!v6082!1
+!v6083!1
+!v6084!1
+!v6085!1
+!v6086!1
+!v6087!1
+!v6088!1
+!v6089!1
+!v6090!1
+!v6103!1
+!v6091!1
+!v6092!1
+!v6093!1
+!v6094!1
+!v6095!1
+!v6096!1
+!v6097!1
+!v6098!1
+!v6099!1
+!v6105!1
+!v6121!1
+!v6141!1
+!v6181!1
+!v6182!1
+!v6186!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Bases de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Suporte eletrônico
+!v009!Separata
+!v010!Autor 
+!v011!Autor coletivo
+!v012!Título
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor
+!v017!Autor coletivo
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Título
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Procedência
+!v029!Divulgar
+!v030!Nota de série
+!v031!Volume (periódico)
+!v032!Fascículo (periódico)
+!v033!No. do periódico no kardex
+!v034!Suplemento (periódico)
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Livre
+!v040!Idioma do texto
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Livre
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Tese: instituição
+!v051!Tese: notas
+!v052!Evento: patrocinadores
+!v053!Evento: nome
+!v054!Evento: data
+!v055!Evento: data padronizada
+!v056!Evento: local
+!v057!Evento: país
+!v058!Projeto: patrocinadores
+!v059!Projeto: nome
+!v060!Projeto: número
+!v061!Notas gerais
+!v062!Editora / Produtora / Gravadora
+!v063!Edição
+!v064!Data de produção / gravação / publicação
+!v065!Data padronizada
+!v066!Cidade de produção / gravação / publicação
+!v067!País de produção / gravação / publicação
+!v068!Símbolo ou código de publicações internacionais
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Alcance temporal: desde
+!v075!Alcance temporal: até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Indivíduo como tema
+!v079!Bibliografia para os cursos
+!v080!Livre
+!v081!Livre
+!v082!Descritores geográficos
+!v083!Resumo
+!v084!Código HTML
+!v085!Áreas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundários
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML (restrito)
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental (NOBRADE)
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário completo
+!v302!Otro
+!v303!Another
+!v304!Outro
+!v305!Outro
+!v999!^d20010501^belysio
+!v999!^d20080809^h0454^bsuper
+!ID 000010
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6016!1
+!v6017!1
+!v6018!1
+!v6022!1
+!v6025!1
+!v6026!1
+!v6027!1
+!v6038!1
+!v6040!1
+!v6043!1
+!v6061!1
+!v6062!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6067!1
+!v6070!1
+!v6071!1
+!v6078!1
+!v6082!1
+!v6083!1
+!v6086!1
+!v6087!1
+!v6089!1
+!v6090!1
+!v6091!1
+!v6092!1
+!v6093!1
+!v6094!1
+!v6095!1
+!v6181!1
+!v001!Código da biblioteca
+!v002!Identificação do objeto
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de objeto
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Suporte eletronico
+!v009!Separata
+!v010!Autor
+!v011!Autor coletivo
+!v012!Título
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor da peça
+!v017!Responsável pela guarda
+!v018!Peça
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Nome da coleção
+!v026!Tipo de coleção
+!v027!Quantidade de peças
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Título da série
+!v031!Volume
+!v032!Fascículo
+!v033!ID Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Dimensões da peça
+!v039!Nível arquivístico
+!v040!Família linguística
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição
+!v051!Notas de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Criador / Fabricante
+!v063!Edição
+!v064!Data de confeção ou coleta
+!v065!Data padronizada
+!v066!Local de confecção
+!v067!País
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Assunto (pessoa)
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Assunto (geográfico)
+!v083!Resumo
+!v084!Código HTML
+!v085!Areas do conhecimento
+!v086!Função
+!v087!Palavras-chave
+!v088!Descritores secundarios
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Categoria do objeto
+!v093!Técnica de confecção
+!v094!Estado de conservação
+!v095!Materiais utilizados
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Descrição do objeto
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de peças de museu, obras de arte, etc.
+!v302!Peça de Museu
+!v303!Museum Part
+!v304!Peça de Museu
+!v305!Peça de Museu
+!v999!^d20010501^belysio
+!v999!^d20080809^h0456^bsuper
+!ID 000011
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6008!1
+!v6009!1
+!v6010!1
+!v6012!1
+!v6014!1
+!v6020!1
+!v6022!1
+!v6026!1
+!v6030!1
+!v6031!1
+!v6032!1
+!v6033!1
+!v6034!1
+!v6035!1
+!v6038!1
+!v6040!1
+!v6062!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6071!1
+!v6086!1
+!v6087!1
+!v6089!1
+!v6090!1
+!v6103!1
+!v6121!1
+!v6141!1
+!v6182!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Suporte eletrônico
+!v009!Separata
+!v010!Autor do artigo
+!v011!Autor coletivo
+!v012!Título do artigo
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor
+!v017!Autor coletivo
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Título
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Título do periódico
+!v031!Volume
+!v032!Fascículo
+!v033!Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Nível arquivístico
+!v040!Idioma do texto
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição
+!v051!Notas de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Editora
+!v063!Edição
+!v064!Data de publicação
+!v065!Data padronizada
+!v066!Cidade publicação
+!v067!País de publicação
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Biografado
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Descritores geograficos
+!v083!Resumo
+!v084!Código HTML
+!v085!Areas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundarios
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de documentos seriados em geral (jornais, revistas, periódicos, etc.)
+!v302!Revista
+!v303!Serial
+!v304!Periódico
+!v305!Periódico
+!v999!^d20010501^belysio
+!v999!^d20080809^h0457^bsuper
+!ID 000012
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6008!1
+!v6012!1
+!v6014!1
+!v6015!1
+!v6016!1
+!v6018!1
+!v6020!1
+!v6021!1
+!v6022!1
+!v6026!1
+!v6040!1
+!v6050!1
+!v6051!1
+!v6062!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6071!1
+!v6087!1
+!v6090!1
+!v6103!1
+!v6121!1
+!v6141!1
+!v6181!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Suporte eletrônico
+!v009!Separata
+!v010!Autor
+!v011!Autor coletivo
+!v012!Título do capítulo
+!v013!Título traduzido
+!v014!Paginação
+!v015!Orientador
+!v016!Autor
+!v017!Autor coletivo
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Título
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Título da série
+!v031!Volume
+!v032!Fascículo
+!v033!ID Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Nível arquivístico
+!v040!Idioma do texto
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição de apresentação
+!v051!Nota de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Editora
+!v063!Edição
+!v064!Data de publicação
+!v065!Data padronizada
+!v066!Cidade publicação
+!v067!País de publicação
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Biografado
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Descritores geograficos
+!v083!Resumo
+!v084!Código HTML
+!v085!Areas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundarios
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de teses, trabalho de conclusão de curso, monografia, etc.
+!v302!Tesis
+!v303!Tesis
+!v304!Tese
+!v305!Tese
+!v999!^d20010501^belysio
+!v999!^d20080809^h0500^bsuper
+!ID 000013
+!v6001!1
+!v6002!1
+!v6003!1
+!v6005!1
+!v6006!1
+!v6007!1
+!v6010!1
+!v6012!1
+!v6014!1
+!v6015!1
+!v6016!1
+!v6018!1
+!v6020!1
+!v6021!1
+!v6022!1
+!v6026!1
+!v6030!1
+!v6038!1
+!v6040!1
+!v6062!1
+!v6063!1
+!v6064!1
+!v6065!1
+!v6066!1
+!v6069!1
+!v6071!1
+!v6086!1
+!v6087!1
+!v6089!1
+!v6090!1
+!v6121!1
+!v6141!1
+!v6181!1
+!v001!Código da biblioteca
+!v002!Identificação do título
+!v003!Classificação
+!v004!Base de dados
+!v005!Tipo de documento
+!v006!Nível bibliográfico
+!v007!Tombo
+!v008!Suporte eletronico
+!v009!Separata
+!v010!Autor do capítulo
+!v011!Autor coletivo
+!v012!Título do capítulo
+!v013!Título traduzido
+!v014!Paginação
+!v015!Créditos
+!v016!Autor
+!v017!Autor coletivo
+!v018!Título
+!v019!Título traduzido
+!v020!Total de páginas
+!v021!Volume
+!v022!Tipo de suporte
+!v023!Autor
+!v024!Autor coletivo
+!v025!Título
+!v026!Tipo de coleção
+!v027!Total de volumes
+!v028!Nacionalidade
+!v029!Divulgar
+!v030!Nota de série
+!v031!Volume
+!v032!Fascículo
+!v033!ID Kardex
+!v034!Suplemento
+!v035!ISSN
+!v036!Livre
+!v037!Livre
+!v038!Informação descritiva
+!v039!Nível arquivístico
+!v040!Idioma do texto
+!v041!Idioma do resumo
+!v042!Livre
+!v043!Povo
+!v044!Livre
+!v045!Livre
+!v046!Livre
+!v047!Livre
+!v048!Livre
+!v049!Livre
+!v050!Instituição
+!v051!Notas de tese
+!v052!Pratrocinadores do evento
+!v053!Nome do evento
+!v054!Data do evento
+!v055!Data padronizada
+!v056!Local do evento
+!v057!País do evento
+!v058!Patrocinadores do projeto
+!v059!Nome do projeto
+!v060!Número do projeto
+!v061!Notas gerais
+!v062!Editora
+!v063!Edição
+!v064!Data de publicação
+!v065!Data padronizada
+!v066!Cidade de publicação
+!v067!País de publicação
+!v068!Número da publicação
+!v069!ISBN
+!v070!Imagem do objeto
+!v071!Tipo de conteúdo
+!v072!Total de referências
+!v073!Livre
+!v074!Desde
+!v075!Até
+!v076!Descritor pré-codificado
+!v077!Livre
+!v078!Biografado
+!v079!Bibliografia
+!v080!Livre
+!v081!Livre
+!v082!Descritores geograficos
+!v083!Resumo
+!v084!Código HTML
+!v085!Areas do conhecimento
+!v086!Notas de conteúdo
+!v087!Palavras-chave
+!v088!Descritores secundarios
+!v089!Observações
+!v090!Restrições
+!v091!Nível da restrição
+!v092!Livre
+!v093!Livre
+!v094!Livre
+!v095!Livre
+!v096!Código HTML
+!v097!Livre
+!v098!Livre
+!v099!Livre
+!v103!Cutter/PHA
+!v105!Gênero documental
+!v121!Créditos
+!v141!Informações descritivas
+!v181!Subtítulo
+!v182!Subtítulo
+!v186!Comentários
+!v301!Formulário para descrição de sitios www (web sites)
+!v302!Sitio Web
+!v303!Homepage
+!v304!Homepage
+!v305!Homepage
+!v999!^d20010501^belysio
+!v999!^d20080809^h0502^bsuper

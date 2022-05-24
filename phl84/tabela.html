@@ -1,0 +1,65 @@
+ <html>
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+function addRow(id){
+	var tbody = document.getElementById
+	(id).getElementsByTagName("TBODY")[0];
+	var row = document.createElement("TR")
+	
+
+	//cria o primeiro td
+	var td1 = document.createElement("TD")
+
+	var currentElement = document.createElement("input");
+	currentElement.setAttribute("type", "text");
+	currentElement.setAttribute("name", "nome");
+
+	td1.appendChild(currentElement);
+	
+	
+	//cria o segundo td
+	var td2 = document.createElement("TD")
+
+	var currentElement = document.createElement("input");
+	currentElement.setAttribute("type", "text");
+	currentElement.setAttribute("name", "parentesco");
+
+	td2.appendChild(currentElement);
+	
+	//cria o terceiro td
+	var td3 = document.createElement("TD")
+
+	var currentElement = document.createElement("input");
+	currentElement.setAttribute("type", "text");
+	currentElement.setAttribute("name", "idade");
+
+	td3.appendChild(currentElement);
+
+
+	row.appendChild(td1);
+	row.appendChild(td2);
+        row.appendChild(td3);
+	tbody.appendChild(row);
+}
+
+</script>
+
+</HEAD>
+
+
+<BODY>
+
+<form action="/cgi-bin/wxis.exe" method="post">
+<input type="hidden" name="IsisScript" value="tabela.xis">
+
+	<table id="Tabela" cellspacing="0" border="1">
+		<tbody>
+			<tr>
+		          <td>Nome</td><td>Parentesco</td><td>Idade</td><td><a href="javascript:addRow('Tabela')">Inserir linha</a></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<input type="submit" value="OK">
+</bodY>

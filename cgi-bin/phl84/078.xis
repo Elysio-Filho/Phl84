@@ -1,0 +1,164 @@
+<!-- Mostra tabela auxiliar de autores da base de dados do catalogo (phl_acv)
+     09/11/2008 06:11:13 -->
+
+     <IsisScript name="078.xis">
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+     <section>
+
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+  
+<!-- Carrega variáveis do javascript (tab_fmx/mfn=232) -->
+     <field action="cgi" tag="10">q</field>
+
+<!-- Percorre indice de chaves da base de dados do catalogo (phl_acv) -->
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,'AUT='v10,</pft></parm>
+       <parm name="to"><pft>,'AUT=ZZ'</pft></parm>
+       <parm name="count">10</pft></parm>
+       <parm name="posting">1</parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="3">Isis_Posting</field>
+       
+       <display>
+         <pft>
+           '<div id="title">
+              <div id="sidebar">
+                <div id="sidebar-content">Nome do autor</div>
+              </div>
+              <div id="main">
+                <div id="main-content">Frequência</div>
+              </div>
+              <hr class="cleaner" />
+            </div>'
+         </pft>
+       </display>
+    
+       <loop>
+       
+
+         <display>
+           <pft>
+           
+            s0:=(v1),
+            s2:=(v1*4),
+            e1:=val(v2),
+
+           ,ref(
+                ['phl_acv']val(v3^m),
+                 (,
+
+                   ,if
+                     s(mhu,v10^*.26,mpl):s2 then
+
+            '<div id="content">
+             <div id="sidebar">
+               <div id="sidebar-content">'v10^*'</div>
+             </div>
+             <div id="main">
+               <div id="main-content">'f((e1),0,0)'</div>
+             </div>
+             <hr class="cleaner" />
+           </div>'
+           
+                   ,fi,
+                   
+                   ,if
+                     s(mhu,v11^*.26,mpl):s2 then
+
+            '<div id="content">
+             <div id="sidebar">
+               <div id="sidebar-content">'v11^*'</div>
+             </div>
+             <div id="main">
+               <div id="main-content">'f((e1),0,0)'</div>
+             </div>
+             <hr class="cleaner" />
+           </div>'
+           
+                   ,fi,
+
+                   ,if 
+                     s(mhu,v16^*.26,mpl):s2 then
+
+            '<div id="content">
+             <div id="sidebar">
+               <div id="sidebar-content">'v16^*'</div>
+             </div>
+             <div id="main">
+               <div id="main-content">'f((e1),0,0)'</div>
+             </div>
+             <hr class="cleaner" />
+           </div>'
+           
+                   ,fi,
+                   
+                   ,if
+                     s(mhu,v17^*.26,mpl):s2 then
+
+            '<div id="content">
+             <div id="sidebar">
+               <div id="sidebar-content">'v17^*'</div>
+             </div>
+             <div id="main">
+               <div id="main-content">'f((e1),0,0)'</div>
+             </div>
+             <hr class="cleaner" />
+           </div>'
+           
+                   ,fi,
+                  )
+               ,),
+
+           </pft>
+         </display>
+
+       
+       <!--
+       <display>
+         <pft>
+         
+            e2:=val(v2),
+            s2:=(v1*4),
+            
+
+           ,ref(
+                ['phl_acv']val(v3^m),
+                 (,
+                 ,if
+                     s(mhu,v16^*.26,mpl):s2 then
+                     
+                        '<div id="content">
+                           
+                           <div id="sidebar">
+                             <div id="sidebar-content">',v16^*.80,if size(v16^*)>80 then '...'fi,'</div>
+                           </div>
+
+                           <div id="main">
+                             <div id="main-content">'f((e2),0,0)'</div>
+                           </div>
+   
+                           <hr class="cleaner" />
+   
+                         </div>'
+
+                  ,fi,
+                  )
+               ,),
+         
+         </pft>
+      </display>
+      -->
+    </loop>
+
+  </do>
+  <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

@@ -1,0 +1,24 @@
+<!-- Formulário para edição de dados
+     14/11/2008 11:47:52 - Revisado -->
+     
+     <IsisScript name="001.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao que carrega as variaveis de configuracao
+     <include>phl84/001.fnc</include>
+     -->
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração
+     <call name="001">now</call>
+     -->
+
+     <display><pft>,system('dir'),</pft></display>
+
+
+</section>
+</IsisScript>

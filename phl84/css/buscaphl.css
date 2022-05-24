@@ -1,0 +1,47 @@
+#buscaphl
+  { 
+  margin:0px;
+  margin-left:20px;
+  width:520px;
+  padding:5px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  border:0px;
+  }
+#title {
+   width: 100%;
+   margin:0px;
+   text-align:left;
+   max-width: 520px;
+   color:red;
+   padding:0px;
+   font-weight:bold;
+
+   }
+#content {
+   width: 100%;
+   margin:0px;
+   text-align:left;
+   max-width: 520px;
+   }
+#sidebar {
+   float: left;
+   width: 420px;
+   margin:0;
+   padding:0;
+   }
+   
+#sidebar-content {
+   margin:0; 
+   padding: 0px;
+   font-size: 12px;
+   }
+#main {
+   margin:0px;
+   padding:0;
+   }
+#main-content {
+   margin:0; 
+   padding: 0px;
+   font-size: 12px;
+   }

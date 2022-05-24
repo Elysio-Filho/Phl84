@@ -1,0 +1,30 @@
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'
+'<input type="hidden" name="999" value="'v999[1]'">'
+'<input type="hidden" name="mfn" value="'v957'">'
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'
+'<input type="hidden" name="opc" value="grava">'
+'<input type="hidden" name="dbvar" value="^aphl_pqt^b16^cpqt">'
+'<tr><td class="td1o"></td><td class="topico">',ref(['phl_rgl']val(v671),@tab_txt.pft,),' / ',
+,if ref(['phl_cnf']1,v221)='1' then
+,ref(['phl_col']val(v672),@tab_txt.pft,),
+,else
+,ref(['phl_tdo']val(v672),@tab_txt.pft,),
+,fi,
+'</td></tr>'
+'<tr><td class="td1o">',ref(['tab_txt']379,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(671);>[671]</a></td><td class="td2"><select name="671"><option selected value="'v671'">',ref(['phl_rgl']val(v671),@tab_txt.pft,),'</option>',('<option value="'v3076^b'">',v3076^a,'</option>'/),'</select></td></tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']246,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(672);>[672]</a></td><td class="td2"><select name="672">'/
+,if ref(['phl_cnf']1,v221)='1' then
+,'<option selected value="'v672'">',ref(['phl_col']val(v672),@tab_txt.pft,),'</option>',
+,('<option value="'v3091^b'">',v3091^a,'</option>'/),
+,else
+,'<option selected value="'v672'">',ref(['phl_tdo']val(v672),@tab_txt.pft,),'</option>',
+,('<option value="'v3077^b'">',v3077^a,'</option>'/),
+,fi
+'</select></td></tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']279,@tab_txt.pft,),'/',ref(['tab_txt']99,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(673);>[673]</a></td><td class="td2"><input type="text" name="673" value="',v673,'" size="5"><input type="radio" value="C"',if v678='C' then 'checked' fi,' name="678">Dias corridos <input type="radio" value="U"',if v678='U' then 'checked' fi,' name="678">Dias úteis</td></tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']292,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(674);>[674]</a></td><td class="td2"><input type="text" class="textbox" name="674" value="',v674,'"></td></tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']265,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(676);>[676]</a></td><td class="td2"><input type="text" name="676" value="',v676,'" size="5"><input type="radio" value="1"',if v677='1' then 'checked' fi,' name="677">',ref(['tab_txt']218,@tab_txt.pft,),'<input type="radio" value="2"',if v677='2' then 'checked' fi,' name="677">'ref(['tab_txt']490,@tab_txt.pft,),'<input type="radio" value="0"',if v677='0' then 'checked' fi,' name="677">'ref(['tab_txt']491,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']742,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(679);>[679]</a></td><td class="td2"><input type="radio" value="C"',if v679='C' then 'checked' fi,' name="679">Dias corridos <input type="radio" value="U"',if v679='U' then 'checked' fi,' name="679">Dias úteis </td></tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']1135,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(680);>[680]</a></td><td class="td2"><input type="radio" value="S"',if v680='S' or v680='' then 'checked' fi,' name="680">',ref(['tab_txt']331,@tab_txt.pft,),' <input type="radio" value="N"',if v680='N' then 'checked' fi,' name="680">',ref(['tab_txt']223,@tab_txt.pft,),' </td></tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']1136,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(681);>[681]</a></td><td class="td2"><input type="radio" value="S"',if v681='S' or v681='' then 'checked' fi,' name="681">',ref(['tab_txt']331,@tab_txt.pft,),' <input type="radio" value="N"',if v681='N' then 'checked' fi,' name="681">',ref(['tab_txt']223,@tab_txt.pft,),' </td></tr>'/

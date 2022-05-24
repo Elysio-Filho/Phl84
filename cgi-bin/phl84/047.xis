@@ -1,0 +1,79 @@
+<!-- Relatorios estatisticos para o MEC
+     29/10/2007 - Revisado -->
+     
+     <IsisScript name="047.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+     
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from">DTP=</parm>
+       <parm name="to">DTP=9</parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <loop>
+         <field action="import" tag="1500">1500</field>
+         <field action="add" tag="1500"><pft>,v1*4,</pft></field>
+         <field action="export" tag="1500">1500</field>
+       </loop>
+       <field action="replace" tag="1500" split="occ"><pft>,(v1500/),</pft></field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+     
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from">TIP=</parm>
+       <parm name="to">TIP=X</parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <loop>
+         <field action="import" tag="1501">1501</field>
+         <field action="add" tag="1501"><pft>,v1*4,</pft></field>
+         <field action="export" tag="1501">1501</field>
+       </loop>
+       <field action="replace" tag="1501" split="occ"><pft>,(v1501/),</pft></field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,v3000^1'ATE=',</pft></parm>
+       <parm name="to"><pft>,v3000^1'ATE=X',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <loop>
+         <field action="import" tag="1502">1502</field>
+         <field action="add" tag="1502"><pft>,v1*7,</pft></field>
+         <field action="export" tag="1502">1502</field>
+       </loop>
+       <field action="replace" tag="1502" split="occ"><pft>,(v1502/),</pft></field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+     
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,v3000^1'PRC=',</pft></parm>
+       <parm name="to"><pft>,v3000^1'PRC=X',</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <loop>
+         <field action="import" tag="1503">1503</field>
+         <field action="add" tag="1503"><pft>,v1*7,</pft></field>
+         <field action="export" tag="1503">1503</field>
+       </loop>
+       <field action="replace" tag="1503" split="occ"><pft>,(v1503/),</pft></field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+     <display><htmlpft><pft>,ref(['tab_fmx']203,v4),</pft></htmlpft></display>
+     <file action="close" type="database">phl_set</file>
+     <flow action="exit">0</flow>
+
+</section>
+</IsisScript>

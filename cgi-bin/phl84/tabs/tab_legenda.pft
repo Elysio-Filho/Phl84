@@ -1,0 +1,5 @@
+,if ref(['phl_cnf']1,v224)='1' then v22 fi,
+,if ref(['phl_cnf']1,v224)='2' then ref(['phl_col']val(v26),@tab_txt.pft,) fi,
+,if ref(['phl_cnf']1,v224)='3' then v71 fi,
+,if ref(['phl_cnf']1,v224)='4' then ref(['phl_tdo']val(v5),@tab_txt.pft,) fi,
+,if ref(['phl_cnf']1,v224)='5' then ref(['phl_gen']val(v105),@tab_txt.pft,) fi,

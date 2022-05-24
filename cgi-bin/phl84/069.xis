@@ -1,0 +1,114 @@
+<!-- Gera e-mails de aviso de disponibilidade de objetos reservados
+     21/11/2012 11:30:48 069.xis (aviso de disponibilidade) - Corrigido bug na obtencao dos dados do usuario [Elysio]
+     12/03/2013 09:39:24 069.xis (aviso de disponibilidade) - Corrigido bug na obtencao dos dados do titulo [Elysio] 
+     13/01/2015 09:50:10 incluido codigo da biblioteca no nome do arquivo XML -->
+
+     <IsisScript name="069.xis">
+     
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+     <!-- Verifica se e-mails foram enviados no dia de hoje -->
+          <field action="statusfile" tag="1091"><pft>,'disponibilidade-'s(date).8,v3000^1'.xml',</pft></field>
+          
+     <flow action="jump">
+       <pft>
+         ,if v1091^s:'e' then 'mails_ja_enviados' else 'gera_lista' fi,
+       </pft>
+     </flow>
+     <flow action="exit">1</flow>
+
+     <label>gera_lista</label>
+     
+       <do task="mfnrange">
+         <parm name="db">phl_set</parm>
+         <parm name="from"><pft>,f(val(v3000^1),0,0),</pft></parm>
+         <parm name="count">1</parm>
+         <parm name="gizmo">tab_ent</parm>
+         <loop>
+           <field action="replace" tag="602"><pft>,v602,</pft></field>
+           <field action="replace" tag="650"><pft>,v650,</pft></field>
+
+           <field action="export" tag="list">602,607,608,645/647,650,651</field>
+         </loop>
+         <field action="export" tag="list">602,607,608,645/647,650,651</field>
+       </do>
+
+<!-- Garante fechamento da base de dados de reservas antes da leitura -->
+     <file action="close" type="database">phl_res</file>
+
+<!-- Inicia processo de busca de objetos disponíveis -->
+     <do task="search">
+      <parm name="db">phl_res</parm>
+      <parm name="expression"><pft>,'ACV='v3000^1,</pft></parm>
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Total</field>
+
+      <file action="create" type="output"><pft>,'disponibilidade-'s(date).8,v3000^1'.xml',</pft></file>
+      <display><htmlpft><pft>,ref(['tab_fmx']250,(v4/)),</pft></htmlpft></display>
+
+       <loop>
+       <field action="import" tag="list">602,607,608,645/647,650,3000,4001</field>
+       
+       <!-- Obtem dados do usuario -->
+
+            <field action="add" tag="890">
+              <pft>,ref(['phl_usr']val(v930^k),'^a'v705,'^b'v714[1]),</pft>
+            </field>
+
+       <!-- Obtem dados do titulo e converte entidades com tabela gizmo -->
+
+            <field action="add" tag="3"><pft>,ref(['phl_acv']val(v930^i),v3),</pft></field>
+            <field action="add" tag="18"><pft>,ref(['phl_acv']val(v930^i),v18),</pft></field>
+            <field action="add" tag="30"><pft>,ref(['phl_acv']val(v930^i),v30),</pft></field>
+            <field action="add" tag="31"><pft>,ref(['phl_acv']val(v930^i),v31),</pft></field>
+            <field action="add" tag="32"><pft>,ref(['phl_acv']val(v930^i),v32),</pft></field>
+            <field action="add" tag="181"><pft>,ref(['phl_acv']val(v930^i),v181),</pft></field>
+            <field action="add" tag="103"><pft>,ref(['phl_acv']val(v930^i),v103),</pft></field>
+
+            <display><htmlpft><pft>,ref(['tab_fmx']245,(v4/)),</pft></htmlpft></display>
+            
+            <list action="load" type="list">
+               <pft>
+                 ,if v930^n<>'' then e0:=1,
+                   ,v890,'^c'if p(v18) then v18 else v30, ", v."v31,", n."v32 fi,/,
+                 ,fi
+             </pft>
+           </list>
+       
+       </loop>
+       <display><pft>,c1,'</lote>'/,</pft></display>
+       <file action="close" type="output"><pft>,'disponibilidade-'s(date).8,v3000^1'.xml',</pft></file>
+
+     </do>
+
+<!-- Apresenta lista de e-mails que serao enviados -->
+
+     <do task="list">
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Itens</field>
+       <field action="define" tag="1">Isis_Item</field>
+       <display><pft>,if e0<>1 then '<hr><center>*** Nenhum objeto disponível para aviso ***</center><hr>' fi,</pft></display>
+         <loop>
+           <field action="import" tag="list">3000</field>
+           <display><htmlpft><pft>,ref(['tab_fmx']253,(v4/)),</pft></htmlpft></display>
+         </loop>
+       </do>
+     <flow action="exit">0</flow>
+     
+     <label>mails_ja_enviados</label>
+     <field action="add" tag="250">1160</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,(v4/)),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+</section>
+</IsisScript>

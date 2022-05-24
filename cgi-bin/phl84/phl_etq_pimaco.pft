@@ -1,0 +1,48 @@
+
+,if v1^k='001' then
+if p(v1^a) then v1^a,';',else ';',fi,
+if p(v1^b) then v1^b,';',else ';',fi,
+if p(v1^c) then v1^c,';',else ';',fi,
+if p(v1^d) then v1^d,';',else ';',fi,
+if p(v1^m) then v1^m,';',else ';',fi,
+if p(v1^i) then v1^i,';',else ';',fi,
+if p(v1^g) then '*'v1^g,'*;',else ';',fi,
+if p(v1^g) then v1^g,else ';',fi,
+'<br>'
+fi,
+
+,if v1^k='002' then
+if p(v1^a) then v1^a,';',else ';',fi,
+if p(v1^b) then v1^b,';',else ';',fi,
+if p(v1^c) then v1^c,';',else ';',fi,
+if p(v1^d) then v1^d,';',else ';',fi,
+if p(v1^m) then v1^m,';',else ';',fi,
+if p(v1^i) then v1^i,';',else ';',fi,
+if p(v1^g) then '*'v1^g,'*;',else ';',fi,
+if p(v1^g) then v1^g,else ';',fi,
+'<br>'
+fi,
+
+,if v1^k='003' then
+if p(v1^a) then v1^a,';',else ';',fi,
+if p(v1^b) then v1^b,';',else ';',fi,
+if p(v1^c) then v1^c,';',else ';',fi,
+if p(v1^d) then v1^d,';',else ';',fi,
+if p(v1^m) then v1^m,';',else ';',fi,
+if p(v1^i) then v1^i,';',else ';',fi,
+if p(v1^g) then '*'v1^g,'*;',else ';',fi,
+if p(v1^g) then v1^g,else ';',fi,
+'<br>'
+fi,
+
+,if v1^k='004' then
+if p(v1^a) then v1^a,';',else ';',fi,
+if p(v1^b) then v1^b,';',else ';',fi,
+if p(v1^c) then v1^c,';',else ';',fi,
+if p(v1^d) then v1^d,';',else ';',fi,
+if p(v1^m) then v1^m,';',else ';',fi,
+if p(v1^i) then v1^i,';',else ';',fi,
+if p(v1^g) then '*'v1^g,'*;',else ';',fi,
+if p(v1^g) then v1^g,else ';',fi,
+'<br>'
+fi,

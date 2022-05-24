@@ -1,0 +1,81 @@
+/* Gera carteira de identificação do usuário 
+   09/04/2015 16:56:11 - Revisado */
+
+'<html>
+ <style>
+   <!--
+   table {font size="12px";}
+   .copy {font size="10px";}
+   .C39 {color: #000000; font-family: Code 3of9; font-size: 'ref(['phl_cnf']1,v209)';}
+   .F39 {color: #000000; font-family: Free 3 of 9; font-size: 'ref(['phl_cnf']1,v209)';}
+   .F39X {color: #000000; font-family: Free 3 of 9 Extended; font-size: 'ref(['phl_cnf']1,v209)';}
+   .IDC39 {color: #000000; font-family: IDAutomation.com Code39; font-size: 'ref(['phl_cnf']1,v209)';}
+   -->
+ </style>
+ <body>
+ <br>
+ <table border="1" width="340" height="200" align="center" cellspacing="0" cellpadding="0">
+  <tr><td>
+  <table border="0" width="340" height="200" align="center" cellspacing="0" cellpadding="0">
+   <tr>
+     <td>
+       <table border="0" width="120" height="200">
+         <tr>
+           <td height="120" align="center">'
+            ,if p(v719) then,
+             '<img border="0" src="'v719'" width="70" height="90">'
+            ,fi,
+          '</td>
+         </tr>
+         <tr>
+           <td height="70" align="center">'
+           ,if ref(['phl_cnf']1,v211.3)='PHP' then
+              '<img src="http://www.elysio.com.br/grafico/image.php?&code='v701'&style=196&type='ref(['phl_cnf']1,v211*4)'&width=120&height=60&xres=1&font=2">'
+            else
+              '<font class="'ref(['phl_cnf']1,v211*4)'">*'v701'*</font>'
+            ,fi
+           '</td>
+         </tr>
+       </table>
+     </td>
+     <td>
+       <table border="0" width="220" height="200">
+         <tr>
+           <td align="center" height="60"><b>'
+            ,ref(['phl_set']l(['phl_set'],'ACV='v730),v602),
+           '</b></td>
+         </tr>
+         <tr>
+           <td align="center" height="10">'
+            ,ref(['tab_txt']37,@tab_txt.pft,),': <b>'v701'</b>
+           </td>
+         </tr>
+         <tr>
+           <td align="left">'
+           v705,
+           "<br>"v706,
+           " - "v707,
+           " - "v708,
+           "<br>"v714[1],
+
+           ,if p(v711) then
+             
+             '<br>',ref(['tab_txt']270,@tab_txt.pft,)': ',v711,
+          
+           fi,
+
+           ,if p(v713) then
+
+           '<br>',ref(['tab_txt']68,@tab_txt.pft,),': ',v713,
+           
+           ,fi
+           '</td>
+         </tr>
+       </table>
+     </td>
+   </tr>
+   </table>
+   </td></tr>
+ </table>
+ </body>
+ </html>'

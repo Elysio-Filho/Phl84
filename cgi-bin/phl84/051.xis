@@ -1,0 +1,100 @@
+<!-- Grava comentários
+     25/10/2010 18:28:41  -->
+
+     <IsisScript name="051.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+         
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="959">mfn</field>
+     <field action="cgi" tag="950">opc</field>
+
+<!-- Verifica se código existe e é válido-->
+     <flow action="jump"><pft>,if v3000^3='' then '47' fi,</pft></flow>
+     
+     <flow action="jump"><pft>,v950,</pft></flow>
+     
+     <label>form</label>
+     <display>
+       <pft>
+        '<html>'/
+        '<head>'/
+        '<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+        '<script language="JavaScript" src="/phl84/js/submit.js"></script>'/
+        '</head>'/
+        '<body>'/
+        '<form name="formulario" action="/cgi-bin/wxis.exe" method="post">'/
+           '<input type="hidden" name="IsisScript" value="phl84/051.xis">
+            <input type="hidden" name="tmp" value="'v4001'">
+           <input type="hidden" name="opc" value="grava">
+           <input type="hidden" name="mfn" value="'v959'">
+           <br><img src="/phl84/img/056.gif" border="0">&nbsp;Faça seu comentário sobre este documento na caixa de texto abaixo:<br><br>
+            <textarea rows="5" name="1860">',(v1860/),'</textarea>
+            <br>
+            <ul><b>Nota:</b>
+            <li>Cada palavra de seu comentário irá gerar uma nova chave de acesso ao documento comentado;</li>
+            <li>Seu comentário será apresentado no final da citação deste documento, identificado com seu nome e com a data em que foi criado;</li>
+            <li>Evite comentários muitos longos. Recomenda-se no máximo 4 linhas de texto;</li>
+            <li>Ao executar uma nova busca, a citação deste documento já irá apresentar o seu comentário.</li>
+            </ul>
+            <input name="submitter" onClick="return DoubleClickTrapperAction();" class="botao" type="submit" value="'ref(['tab_txt']763,@tab_txt.pft,)'">
+         </form>
+
+         </body>
+         </html>'
+       </pft>
+     </display>
+     <flow action="exit">1</flow>
+
+<!-- Grava comentário -->
+     <label>grava</label>
+     
+     <file action="close" type="database">phl_acv</file>
+
+     <do task="update">
+       <parm name="db">phl_acv</parm>
+       <parm name="mfn"><pft>,v959,</pft></parm>
+       <parm name="uctab"><pft>cat('uctab')</pft></parm>
+       <parm name="actab"><pft>cat('actab')</pft></parm>
+       <parm name="fst"><pft>,cat('phl_acv.fst'),</pft></parm>
+       <parm name="expire">60</parm>
+       <parm name="buffersize">90000</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+
+       <update>
+         <field action="import" tag="list">3000,7003</field>
+         <field action="cgi" tag="1860">1860</field>
+         <field action="replace" tag="1860" split="occ"><pft>,(v1860/),</pft></field>
+         <field action="replace" tag="1860"><pft>(v1860,'^c',ref(['phl_usr']val(v3000[1]^4),v705),'^d'v7003.8,/),</pft></field>
+         <field action="add" tag="186" split="occ"><pft>,(v1860/),</pft></field>
+         <field action="delete" tag="list">1860,3000</field>
+         <write>Unlock</write>
+         <field action="import" tag="list">3000</field>
+         <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zMOD|051.xis'/,</pft></field>
+         <call name="log">now</call>
+         <display><pft>,if val(v1003)=0 then '*** comentário gravado com sucesso! Obrigado.' fi,</pft></display>
+       </update>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+     <flow action="exit">1</flow>
+     
+        <label>47</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']47,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+     
+</section>
+</IsisScript>

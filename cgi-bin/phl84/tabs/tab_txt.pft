@@ -1,0 +1,8 @@
+select getenv('cod.idioma')
+  case 'por' : v301
+  case 'spa' : v302
+  case 'eng' : v303
+  case 'ita' : v304
+  case 'fra' : v305
+  elsecase getenv('cod.idioma')
+endsel,

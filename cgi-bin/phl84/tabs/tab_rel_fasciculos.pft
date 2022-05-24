@@ -1,0 +1,100 @@
+'
+<tr>
+<td class="td1o">Variável 01:</td><td class="td2">
+<select size="1" name="var1">
+<option value="09">Ano de aquisição</option>
+<option value="01">Ano de publicação</option>
+<option value="02">Ano do registro</option>
+<option value="03">Área do conhecimento</option>
+<option value="10">Data de aquisição</option>
+<option value="04">Data de publicação</option>
+<option value="05">Data do registro</option>
+<option value="06">Editora</option>
+<option value="07">Forma de aquisição</option>
+<option value="08">Local de publicacao</option>
+<option value="11">Procedência</option>
+<option value="12">Responsável pelo registro</option>
+<option value="14">Verba do curso</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 02:</td><td class="td2">
+<select size="1" name="var2">
+<option value=""></option>
+<option value="09">Ano de aquisição</option>
+<option value="01">Ano de publicação</option>
+<option value="02">Ano do registro</option>
+<option value="03">Área do conhecimento</option>
+<option value="10">Data de aquisição</option>
+<option value="04">Data de publicação</option>
+<option value="05">Data do registro</option>
+<option value="06">Editora</option>
+<option value="07">Forma de aquisição</option>
+<option value="08">Local de publicacao</option>
+<option value="11">Procedência</option>
+<option value="12">Responsável pelo registro</option>
+<option value="14">Verba do curso</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 03:</td><td class="td2">
+<select size="1" name="var3">
+<option value=""></option>
+<option value="09">Ano de aquisição</option>
+<option value="01">Ano de publicação</option>
+<option value="02">Ano do registro</option>
+<option value="03">Área do conhecimento</option>
+<option value="10">Data de aquisição</option>
+<option value="04">Data de publicação</option>
+<option value="05">Data do registro</option>
+<option value="06">Editora</option>
+<option value="07">Forma de aquisição</option>
+<option value="08">Local de publicacao</option>
+<option value="11">Procedência</option>
+<option value="12">Responsável pelo registro</option>
+<option value="14">Verba do curso</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 04:</td><td class="td2">
+<select size="1" name="var4">
+<option value=""></option>
+<option value="09">Ano de aquisição</option>
+<option value="01">Ano de publicação</option>
+<option value="02">Ano do registro</option>
+<option value="03">Área do conhecimento</option>
+<option value="10">Data de aquisição</option>
+<option value="04">Data de publicação</option>
+<option value="05">Data do registro</option>
+<option value="06">Editora</option>
+<option value="07">Forma de aquisição</option>
+<option value="08">Local de publicacao</option>
+<option value="11">Procedência</option>
+<option value="12">Responsável pelo registro</option>
+<option value="14">Verba do curso</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 05:</td><td class="td2">
+<select size="1" name="var5">
+<option value=""></option>
+<option value="09">Ano de aquisição</option>
+<option value="01">Ano de publicação</option>
+<option value="02">Ano do registro</option>
+<option value="03">Área do conhecimento</option>
+<option value="10">Data de aquisição</option>
+<option value="04">Data de publicação</option>
+<option value="05">Data do registro</option>
+<option value="06">Editora</option>
+<option value="07">Forma de aquisição</option>
+<option value="08">Local de publicacao</option>
+<option value="11">Procedência</option>
+<option value="12">Responsável pelo registro</option>
+<option value="14">Verba do curso</option>
+</select>
+</td></tr>
+'

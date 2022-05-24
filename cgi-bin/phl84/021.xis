@@ -1,0 +1,41 @@
+<!-- Compoe formulario para login
+     14/04/2007 - Revisado -->
+     
+     <IsisScript name="021.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Contador de acessos -->
+     <field action="cgi" tag="6789">counter</field>
+
+<!-- Formulario de login -->
+     <display><htmlpft><pft>,ref(['tab_fmx']64,v4),</pft></htmlpft></display>
+
+<!-- Menu configurado pelo usuario -->
+     <display><htmlpft><pft>,'[pft]',cat('menu.html'),'[/pft]',</pft></htmlpft></display>
+
+<!-- Link para o netopac -->
+     <display>
+       <center>
+        <hr>
+        <a href="http://www.elysio.com.br/site/phlnet_index.html" target="_new">
+        <font face="mistral" color="#5F9EA0" size="+1"><b>PHL.net</b></font>
+        <font face="mistral" color="red" size="+1"><b>opac</b></font></a>
+        <hr>
+       </center>
+     </display>
+
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

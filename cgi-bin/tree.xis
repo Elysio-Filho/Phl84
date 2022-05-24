@@ -1,0 +1,80 @@
+<!-- 28/12/2011 10:40:54 Incluida funcao de cookie para carregar o campo #3009 -->
+
+<IsisScript name="tree.xis">
+
+<display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<section>
+
+<field action="cgi" tag="958">parentId</field>
+<field action="replace" tag="958" split="occ"><pft>(v958/)</pft></field>
+
+    <!--
+
+     <field action="add" tag="3009"><pft>,getenv('HTTP_COOKIE'),</pft></field>
+     <field action="replace" tag="3009" split="occ"><pft>,replace(v3009,'; ',s('',#)),</pft></field>
+     <field action="replace" tag="3009" split="occ"><pft>,(if v3009.4='phl=' then v3009*4 fi,),</pft></field>
+     -->
+
+<parm name="cipar"><pft>,cat('phl84.cip'),</pft></parm>
+
+<do task="search">
+  <parm name="db">phl_acv</parm>
+  <parm name="expression"><pft>,v958,</pft></parm>
+  <field action="define" tag="1001">Isis_Current</field>
+  <field action="define" tag="1002">Isis_Total</field>
+      <loop>
+        <list action="load" type="sort">
+          <pft>
+             '^a'v65,
+            ,'^m'mfn(1)/,
+          </pft>
+        </list>
+      </loop>
+  </do>
+
+<do task="list">
+<field action="define" tag="1">Isis_Item</field>
+  <loop>
+    <field action="import" tag="list">4001</field>
+    <display>
+      <pft>
+      ,ref(['phl_acv']val(v1^m),
+       ,if v6='s' then
+
+        '<LI>
+           <A href="#">'
+
+             ,if v6='s' then "v. "v31,", n. "v32, else v18 fi," - "v64,
+
+           '</A>
+          <UL>'
+	    '<LI parentId="pai='v2'"><a href="#">Aguarde...</a></LI>'
+          '</UL>
+         </LI>'
+       ,fi
+       ,if v6='m' then
+
+        '<LI>
+           <A href="#">'
+
+             ,if v6='m' then "v. "v31,", n. "v32, else v18 fi," - "v64,
+
+           '</A>
+          <UL>'
+	    '<LI parentId="pai='v2'"><A href="#">Aguarde...</A></LI>'
+          '</UL>
+         </LI>'
+       ,fi
+
+       ,if v6:'a' then
+         '<LI class="dhtmlgoodies_sheet.gif"><A href="JavaScript:tab_mfn('mfn(1)');"><i>',v12," - p."v14,'</i></A></LI>'
+        ,fi
+        )
+      </pft>
+    </display>
+  </loop>
+</do>
+
+ </section>
+</IsisScript>

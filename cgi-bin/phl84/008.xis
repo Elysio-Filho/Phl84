@@ -1,0 +1,129 @@
+<!-- Confirma eliminacao
+     25/10/2010 14:40:30 -->
+
+     <IsisScript name="008.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+     
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="956">db</field>
+     <field action="cgi" tag="957">mfn</field>
+     <field action="cgi" tag="1010">rec</field>
+     <field action="cgi" tag="958">exp</field>
+     <field action="cgi" tag="3004">dbvar</field>
+
+     <flow action="jump">
+      <pft>,
+       if s(v3000^3)<>'funcionario' then 'externo' else 'deletar' fi,
+      </pft>
+     </flow>
+     <flow action="exit">1</flow>
+
+     <label>externo</label>
+     <flow action="jump">
+      <pft>,
+       if v956='phl_res' then 'deletar' else 'login_invalido' fi,
+      </pft>
+     </flow>
+     <flow action="exit">1</flow>
+
+     <label>login_invalido</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']55,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+   
+     <label>deletar</label>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+
+          <do task="update">
+           <parm name="db"><pft>,v956,</pft></parm>
+           <parm name="mfn"><pft>,v957,</pft></parm>
+           <parm name="uctab"><pft>cat('uctab')</pft></parm>
+           <parm name="actab"><pft>cat('actab')</pft></parm>
+           <parm name="fst"><pft>,cat(v956'.fst'),</pft></parm>
+           <parm name="expire">60</parm>
+           <parm name="lockid"><pft>,v3000^2,</pft></parm>
+
+           <field action="define" tag="1105">Isis_Lock</field>
+           <field action="define" tag="1003">Isis_Status</field>
+
+           <update>
+
+             <field action="export" tag="list">1,2,701,801,900/940,997</field>
+             <field action="delete" tag="list">ALL</field>
+             <write>Delete</write>
+             <field action="import" tag="list">701,801,900/958,3000,3004,1010,4001,7003</field>
+             <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zDEL|008.xis',</pft></field>
+             <call name="log">now</call>
+             <field action="replace" tag="1010"><pft>,f(val(v1010)+1,0,0),</pft></field>
+	     <display><htmlpft><pft>
+              ,if val(v1003)<>0 then ref(['tab_fmx']42,v4) else ref(['tab_fmx']45,v4),fi,
+             </pft></htmlpft></display>
+	   </update>
+          </do>
+          <file action="close" type="database"><pft>,v956,</pft></file>
+
+     <flow action="jump">
+       <pft>
+         ,if v956='phl_acv' then 'elimina_tombos' fi"
+       </pft>
+       </flow>
+       <flow action="exit">1</flow>
+
+       <label>elimina_tombos</label>
+
+       <do task="search">
+        <parm name="db"><pft>,v1'_tbo',</pft></parm>
+        <parm name="expression"><pft>,'TIT='v2,'</pft></parm>
+        <loop>
+        <field action="import" tag="list">1,701,801,900/958,3000,3004,1010,4001,7003</field>
+        <file action="close" type="database"><pft>,v1'_tbo',</pft></file>
+
+          <do task="update">
+           <parm name="db"><pft>,v1'_tbo',</pft></parm>
+           <parm name="mfn"><pft>,mfn,</pft></parm>
+           <parm name="uctab"><pft>cat('uctab')</pft></parm>
+           <parm name="actab"><pft>cat('actab')</pft></parm>
+           <parm name="fst"><pft>,cat(v1'_tbo.fst'),</pft></parm>
+           <parm name="expire">60</parm>
+           <parm name="lockid"><pft>,v3000^2,</pft></parm>
+
+           <field action="define" tag="1105">Isis_Lock</field>
+           <field action="define" tag="1003">Isis_Status</field>
+
+           <update>
+
+             <field action="export" tag="list">1,2,701,801,900/940,997</field>
+             <field action="delete" tag="list">ALL</field>
+             <write>Delete</write>
+             <field action="import" tag="list">701,801,900/958,3000,3004,1010,4001,7003</field>
+             <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zDEL|008.xis',</pft></field>
+             <call name="log">now</call>
+             <field action="replace" tag="1010"><pft>,f(val(v1010)+1,0,0),</pft></field>
+	   </update>
+          </do>
+          <file action="close" type="database"><pft>,v1'_tbo',</pft></file>
+        </loop>
+       </do>
+
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

@@ -1,0 +1,119 @@
+'
+<tr>
+<td class="td1o">Variável 01:</td><td class="td2">
+<select size="1" name="var1">
+<option value="01">Ano</option>
+<option value="02">Área do conhecimento</option>
+<option value="03">Autor</option>
+<option value="04">Curso do usuário</option>
+<option value="05">Data</option>
+<option value="06">Dia</option>
+<option value="07">Funcionário</option>
+<option value="08">Hora</option>
+<option value="09">Mês</option>
+<option value="10">Nome do usuário</option>
+<option value="11">Tipo de coleção</option>
+<option value="12">Tipo de conteudo</option>
+<option value="13">Tipo de documento</option>
+<option value="14">Tipo de suporte</option>
+<option value="15">Tipo de usuário</option>
+<option value="16">Título</option>
+<option value="17">Tombo</option>
+</select>
+</td></tr>
+<tr>
+<td class="td1e">Variável 02:</td><td class="td2">
+<select size="1" name="var2">
+<option value=""></option>
+<option value="01">Ano</option>
+<option value="02">Área do conhecimento</option>
+<option value="03">Autor</option>
+<option value="04">Curso do usuário</option>
+<option value="05">Data</option>
+<option value="06">Dia</option>
+<option value="07">Funcionário</option>
+<option value="08">Hora</option>
+<option value="09">Mês</option>
+<option value="10">Nome do usuário</option>
+<option value="11">Tipo de coleção</option>
+<option value="12">Tipo de conteudo</option>
+<option value="13">Tipo de documento</option>
+<option value="14">Tipo de suporte</option>
+<option value="15">Tipo de usuário</option>
+<option value="16">Título</option>
+<option value="17">Tombo</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 03:</td><td class="td2">
+<select size="1" name="var3">
+<option value=""></option>
+<option value="01">Ano</option>
+<option value="02">Área do conhecimento</option>
+<option value="03">Autor</option>
+<option value="04">Curso do usuário</option>
+<option value="05">Data</option>
+<option value="06">Dia</option>
+<option value="07">Funcionário</option>
+<option value="08">Hora</option>
+<option value="09">Mês</option>
+<option value="10">Nome do usuário</option>
+<option value="11">Tipo de coleção</option>
+<option value="12">Tipo de conteudo</option>
+<option value="13">Tipo de documento</option>
+<option value="14">Tipo de suporte</option>
+<option value="15">Tipo de usuário</option>
+<option value="16">Título</option>
+<option value="17">Tombo</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 04:</td><td class="td2">
+<select size="1" name="var4">
+<option value=""></option>
+<option value="01">Ano</option>
+<option value="02">Área do conhecimento</option>
+<option value="03">Autor</option>
+<option value="04">Curso do usuário</option>
+<option value="05">Data</option>
+<option value="06">Dia</option>
+<option value="07">Funcionário</option>
+<option value="08">Hora</option>
+<option value="09">Mês</option>
+<option value="10">Nome do usuário</option>
+<option value="11">Tipo de coleção</option>
+<option value="12">Tipo de conteudo</option>
+<option value="13">Tipo de documento</option>
+<option value="14">Tipo de suporte</option>
+<option value="15">Tipo de usuário</option>
+<option value="16">Título</option>
+<option value="17">Tombo</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 05:</td><td class="td2">
+<select size="1" name="var5">
+<option value=""></option>
+<option value="01">Ano</option>
+<option value="02">Área do conhecimento</option>
+<option value="03">Autor</option>
+<option value="04">Curso do usuário</option>
+<option value="05">Data</option>
+<option value="06">Dia</option>
+<option value="07">Funcionário</option>
+<option value="08">Hora</option>
+<option value="09">Mês</option>
+<option value="10">Nome do usuário</option>
+<option value="11">Tipo de coleção</option>
+<option value="12">Tipo de conteudo</option>
+<option value="13">Tipo de documento</option>
+<option value="14">Tipo de suporte</option>
+<option value="15">Tipo de usuário</option>
+<option value="16">Título</option>
+<option value="17">Tombo</option>
+</select>
+</td></tr>
+'

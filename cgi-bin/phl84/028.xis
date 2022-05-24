@@ -1,0 +1,108 @@
+<!-- Pagamento de multa
+     25/10/2010 16:02:23 -->
+     
+     <IsisScript name="028.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="951">usr</field>
+     
+<!-- Verifica se funcionario possue permissao para liberacao -->
+     <flow action="jump">
+	   <pft>,if ref(['phl_pwd']val(v3000^4),v656^i)='1' then 'liberar' else '271' fi,</pft>
+	 </flow>
+	 <flow action="exit">1</flow>
+
+     <label>271</label>
+     <field action="replace" tag="250">271</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Libera multa -->
+     <label>liberar</label>
+
+     <do task="search">
+      <parm name="db">phl_pen</parm>
+      <parm name="expression"><pft>,'USR='v951,</pft></parm>
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Total</field>
+      <loop>
+        <field action="import" tag="list">3000,4001,7003</field>
+
+        <list action="load" type="list"><pft>,v940,</pft></list>
+        
+        <file action="close" type="database">phl_pen</file>
+
+        <do task="update">
+          <parm name="db">phl_pen</parm>
+          <parm name="mfn"><pft>,mfn,</pft></parm>
+          <parm name="fst"><pft>,cat('phl_pen.fst'),</pft></parm>
+          <parm name="expire">60</parm>
+          <parm name="lockid"><pft>,v3000^2,</pft></parm>
+          <field action="define" tag="1105">Isis_Lock</field>
+          <field action="define" tag="1003">Isis_Status</field>
+
+          <update>
+          <field action="export" tag="940">940</field>
+          <field action="delete" tag="list">ALL</field>
+          <write>Delete</write>
+          <field action="import" tag="list">940,3000,7003</field>
+          <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zDEL|028.xis'/,</pft></field>
+          <call name="log">now</call>
+          </update>
+        </do>
+        <file action="close" type="database">phl_pen</file>
+
+        <file action="close" type="database"><pft>,v940^a'_cxa',</pft></file>
+
+        <do task="update">
+          <parm name="db"><pft>,v940^a'_cxa',</pft></parm>
+          <parm name="mfn">New</parm>
+          <parm name="fst"><pft>,cat(v940^a'_cxa.fst'),</pft></parm>
+          <parm name="uctab"><pft>cat('uctab')</pft></parm>
+          <parm name="actab"><pft>cat('actab')</pft></parm>
+          <field action="define" tag="1003">Isis_Status</field>
+          <update>
+          <field action="import" tag="list">940,3000,7003</field>
+          <field action="add" tag="850"><pft>,'^d'v7003.8,'^u'v940^u,'^t'v940^t,'^m'v940^m,'^g'v3000^2</pft></field>
+          <field action="delete" tag="list">940,3000</field>
+          <field action="export" tag="list">850</field>
+          <write>Unlock</write>
+          <field action="import" tag="list">850,3000,7003</field>
+          <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zNEW|TBO#'v850^t,'|USR#'v850^u,'|MUL#'v850^m'|028.xis'/,</pft></field>
+          <call name="log">now</call>
+          </update>
+          </do>
+          <file action="close" type="database"><pft>,v940^a'_cxa',</pft></file>
+       </loop>
+     </do>
+     <file action="close" type="database">phl_pen</file>
+
+     <do task="list">
+       <field action="define" tag="1">Isis_Item</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']36,v4),</pft></htmlpft></display>
+       <loop>
+         <field action="import" tag="list">110,3000,4001</field>
+         <field action="replace" tag="110"><pft>,f(val(v110)+val(v1^m),0,2),</pft></field>
+         <display><htmlpft><pft>,ref(['tab_fmx']34,v4),</pft></htmlpft></display>
+         <field action="export" tag="110">110</field>
+      </loop>
+      <display><htmlpft><pft>,ref(['tab_fmx']37,v4),</pft></htmlpft></display>
+     </do>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

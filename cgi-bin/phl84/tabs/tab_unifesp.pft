@@ -1,0 +1,81 @@
+/* Gera carteira de identificação do usuário */
+
+ '<br>
+ <table border="0" width="60%" align="center" cellspacing="0" cellpadding="2">
+ <tr>
+   <td width="100%" bgcolor="#999999">
+     <table border="0" width="100%" bgcolor="#FFFFFF" cellspacing="3" cellpadding="3">
+     <tr>
+       <td width="25%" bgcolor="#FFFFFF" valign="top">
+       <p align="center">'
+
+       /* Verifica se existe foto para ser impressa */
+
+         ,if p(v719) then,
+
+           '<img border="0" src="'v719'" width="70" height="90">'
+        
+         ,fi,
+
+      '<br><br>',
+      
+      /* Gera código de barras */
+
+     '<img src="http://www.elysio.com.br/grafico/image.php?&code='v701'&style=196&type='ref(['phl_cnf']1,v211)'&width=120&height=60&xres=1&font=2">
+
+      <td width="78%">
+       <table border="0" width="100%" cellspacing="0" cellpadding="0">
+         <tr>
+           <td width="2%"></td>
+         </tr>
+       </table>
+
+       <table border="0" width="100%" cellpadding="3">
+         <tr>
+           <td width="100%" valign="top">
+             <p align="center"><font face="arial,helvetica" size="-1">
+             <b>'
+             /* Obtém nome da biblioteca */
+             
+             ,ref(['phl_set']l(['phl_set'],'ACV='v730),v602),
+             
+             '</b>
+             <br>'
+             
+             /* Obtém número de matrícula do usuário */
+             
+             ,ref(['tab_txt']37,@tab_txt.pft,),': <b>'v701
+             
+             '</b></font></p>
+           </td>
+         </tr>
+       </table>
+
+       <table>
+         <tr>
+           <td width="10%"></td>
+           <td width="90%"><font face="arial,helvetica" size="-2">'
+           v705,
+           "<br>"v706,
+           " - "v707,
+           " - "v708,
+           "<br>"v714[1],
+
+           ,if p(v711) then
+             
+             '<br>',ref(['tab_txt']270,@tab_txt.pft,)': ',v711
+          
+           fi,
+
+           ,if p(v713) then
+
+           '<br>',ref(['tab_txt']68,@tab_txt.pft,),': ',v713,
+           
+           ,fi
+
+          '</td>
+         </tr>
+       </table>
+     </table>
+   </table>
+   <br><br>'

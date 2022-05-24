@@ -1,0 +1,5 @@
+^aBCO^bhttp://www.elysio.com.br
+^aBSCA^bhttp://www.elysio.com.br
+^aBSO^bhttp://www.elysio.com.br
+^aUNICAMP^bhttp://www.elysio.com.br
+^aUNESP^bhttp://www.elysio.com.br

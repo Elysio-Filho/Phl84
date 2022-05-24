@@ -1,0 +1,7101 @@
+!ID 000001
+!v301!Aberta
+!v302!Abierta
+!v303!Opened
+!v304!Opened
+!v305!Opened
+!ID 000002
+!v301!Abril
+!v302!Abril
+!v303!April
+!v304!Aprile
+!v305!Avril
+!ID 000003
+!v301!Administrativo
+!v302!Administrativo
+!v303!Administrative
+!v304!Amministrativo
+!v305!Administratif
+!ID 000004
+!v301!Agosto
+!v302!Agosto
+!v303!August
+!v304!Agosto
+!v305!Août
+!ID 000005
+!v301!Ajuda
+!v302!Ayuda
+!v303!Help
+!v304!Aiuto
+!v305!Assistance
+!ID 000006
+!v301!Alteração de Senha de Acesso
+!v302!Alteración de la contraseña del acceso
+!v303!Alteração de Senha de Acesso
+!v304!Alterazione della parola d'accesso di accesso
+!v305!Changement de mot de passe de l'accès
+!ID 000007
+!v301!Alterar Senha
+!v302!Modificar clave de acceso
+!v303!Change Password
+!v304!Cambi la parola d'accesso
+!v305!Changez le mot de passe
+!ID 000008
+!v301!Analítica
+!v302!Analítica
+!v303!Analitic
+!v304!Analitic
+!v305!Analitic
+!ID 000009
+!v301!Ano
+!v302!Año
+!v303!Year
+!v304!Anno
+!v305!Année
+!ID 000010
+!v301!Ano da Aquisição
+!v302!Año de la adquisición
+!v303!Acquisition year
+!v304!Anno di aquisizione
+!v305!Année d'acquisition
+!ID 000011
+!v301!Ano do Registro
+!v302!Año de registro
+!v303!Entry year
+!v304!Anno dell'entrata
+!v305!Année d'entrée
+!ID 000012
+!v301!Aquisição
+!v302!Adquisición
+!v303!Acquisition
+!v304!Aquisizione
+!v305!Acquisition
+!ID 000013
+!v301!Área do Conhecimento
+!v302!Area del Conocimiento
+!v303!Subject Area
+!v304!Settore
+!v305!Domaine
+!ID 000014
+!v301!Armário
+!v302!Estante
+!v303!Shelf
+!v304!Mensola
+!v305!Étagère
+!ID 000015
+!v301!Artigo de periódico
+!v302!Artículo de revista
+!v303!Journal article
+!v304!Articolo pubblicato
+!v305!Article de journal
+!ID 000016
+!v301!Assinatura
+!v302!Subscripción
+!v303!Subscription
+!v304!Abbonamento
+!v305!Abonnement
+!ID 000017
+!v301!Assinatura do funcionário
+!v302!Firma del bibliotecário
+!v303!Employee signature
+!v304!Firma degli impiegati
+!v305!Signature des employés
+!ID 000018
+!v301!Assinatura do usuário
+!v302!Firma del usuário
+!v303!User subscription
+!v304!Abbonamento dell'utente
+!v305!Abonnement d'utilisateur
+!ID 000019
+!v301!ATENÇÃO
+!v302!ATENCIÓN
+!v303!ATTENTION
+!v304!ATTENZIONE
+!v305!ATTENCION
+!ID 000020
+!v301!Ativar
+!v302!Activar
+!v303!To active
+!v304!A attivo
+!v305!À actif
+!ID 000021
+!v301!Ativo
+!v302!Activo
+!v303!Active
+!v304!Attivo
+!v305!Actif
+!ID 000022
+!v301!Áudio
+!v302!Audio
+!v303!Sound recordings
+!v304!Registrazioni del suono
+!v305!Enregistrements sonores
+!ID 000023
+!v301!Autor
+!v302!Autor
+!v303!Author
+!v304!Autore
+!v305!Auteur
+!ID 000024
+!v301!Autor (analítica)
+!v302!Autor (analítica)
+!v303!Author (analitics)
+!v304!Autore (analitics)
+!v305!Auteur (analitics)
+!ID 000025
+!v301!Autor do Artigo
+!v302!Autor del artículo
+!v303!Author of the Article
+!v304!Autore dell'articolo
+!v305!Auteur de l'article
+!ID 000026
+!v301!Autor do Capítulo
+!v302!Autor del capítulo
+!v303!Author of the Chapter
+!v304!Autore del capitolo
+!v305!Auteur du chapitre
+!ID 000027
+!v301!Avisar
+!v302!Avisar
+!v303!Warning
+!v304!Avvertimento
+!v305!Avertissement
+!ID 000028
+!v301!Aquisições do Mês
+!v302!Adquisición del Més
+!v303!News in Library
+!v304!News in Library
+!v305!News in Library
+!ID 000029
+!v301!Base de dados
+!v302!Base de datos
+!v303!Database
+!v304!Basi de Dati
+!v305!Base de Donné
+!ID 000030
+!v301!Biblioteca
+!v302!Biblioteca
+!v303!Library
+!v304!Biblioteca
+!v305!Bibliothèque
+!ID 000031
+!v301!Buscar
+!v302!Buscar
+!v303!Search
+!v304!Ricerca
+!v305!Recherche
+!ID 000032
+!v301!Buscas
+!v302!Busquedas
+!v303!Searchs
+!v304!Ricerca
+!v305!Recherche
+!ID 000033
+!v301!Calendário
+!v302!Calendário
+!v303!Calendar
+!v304!Calendario
+!v305!Calendrier
+!ID 000034
+!v301!Eliminar reserva
+!v302!Eliminar reserva
+!v303!Eliminar reserva
+!v304!Eliminar reserva
+!v305!Eliminar reserva
+!ID 000035
+!v301!Capa
+!v302!Portada
+!v303!Cover
+!v304!Copertura
+!v305!Couverture
+!ID 000036
+!v301!Capítulo
+!v302!Capítulo
+!v303!Chapter
+!v304!Capitolo
+!v305!Chapitre
+!ID 000037
+!v301!Carteira de Identificação
+!v302!Tarjeta de identificación
+!v303!Identification Card
+!v304!Scheda di identificazione
+!v305!Carte d'identification
+!ID 000038
+!v301!Catalogação
+!v302!Catalogación
+!v303!Cataloguing
+!v304!Catalogare
+!v305!Cataloguer
+!ID 000039
+!v301!Catalogar
+!v302!Catalogar
+!v303!To catalog
+!v304!Al catalogo
+!v305!Au catalogue
+!ID 000040
+!v301!Catálogo
+!v302!Catálogo
+!v303!Catalogue
+!v304!Catalogo
+!v305!Catalogue
+!ID 000041
+!v301!Catálogos
+!v302!Catálogos
+!v303!Catalogs
+!v304!Cataloghi
+!v305!Catalogues
+!ID 000042
+!v301!CEP
+!v302!Zip
+!v303!Postal Code
+!v304!Codice Postale
+!v305!Code Postal
+!ID 000043
+!v301!Objeto de museu
+!v302!Objeto de museu
+!v303!Objeto de museu
+!v304!MSG 43
+!v305!MSG 43
+!ID 000044
+!v301!Classe
+!v302!Clase
+!v303!Class
+!v304!Codice categoria
+!v305!Classe
+!ID 000045
+!v301!Classes dos objetos
+!v302!Clases dos objetos
+!v303!Object classes
+!v304!Codici categoria dell'oggetto
+!v305!Classes d'objet
+!ID 000046
+!v301!Classificação
+!v302!Clasificación
+!v303!Classification
+!v304!Classificazione
+!v305!Classification
+!ID 000047
+!v301!Código
+!v302!Código
+!v303!Code
+!v304!Codice
+!v305!Code
+!ID 000048
+!v301!Código do tipo de usuário ou objeto desconhecido
+!v302!Código de tipo de objeto y usuário desconocido
+!v303!Unknown user and object code
+!v304!Codice sconosciuto di oggetto e dell'utente
+!v305!Code inconnu d'utilisateur et d'objet
+!ID 000049
+!v301!Coleção
+!v302!Colección
+!v303!Collection
+!v304!Accumulazione
+!v305!Collection
+!ID 000050
+!v301!Com pendência
+!v302!Con pendéncia
+!v303!With pending
+!v304!Con in corso
+!v305!Avec en suspens
+!ID 000051
+!v301!Com reserva
+!v302!Con reserva
+!v303!With reserve
+!v304!Con la riserva
+!v305!Avec la réservation
+!ID 000052
+!v301!Compositores/Intérpretes
+!v302!Compositores/Intérpretes
+!v303!Composers
+!v304!Compositori
+!v305!Compositeurs
+!ID 000053
+!v301!Compra
+!v302!Compra
+!v303!Purchase
+!v304!Acquisto
+!v305!Achat
+!ID 000054
+!v301!COMPROVANTE DE DEVOLUÇÃO
+!v302!COMPROBANTE DE DEVOLUCIÓN
+!v303!DELIVERY RECEIPT
+!v304!RICEVUTA DI CONSEGNA
+!v305!REÇU DE LA LIVRAISON
+!ID 000055
+!v301!COMPROVANTE DE EMPRÉSTIMO
+!v302!COMPROBANTE DE PRESTAMO
+!v303!LOAN RECEIPT
+!v304!RICEVUTA DI PRESTITO
+!v305!REÇU DE PRÊT
+!ID 000056
+!v301!COMPROVANTE DE RENOVAÇÃO
+!v302!COMPROBANTE DE RENOVACIÓN
+!v303!RENEW RECEIPT
+!v304!RINNOVI LA RICEVUTA
+!v305!REMPLACEZ LE REÇU
+!ID 000057
+!v301!COMPROVANTE DE RESERVA
+!v302!COMPROBANTE DE RESERVA
+!v303!RESERV RECEIPT
+!v304!RICEVUTA DI RESERV
+!v305!REÇU DE RESERV
+!ID 000058
+!v301!Configurações
+!v302!Configuraciones
+!v303!Configurations
+!v304!Configurazioni
+!v305!Configurations
+!ID 000059
+!v301!Configurações da Biblioteca
+!v302!Configuraciones de la biblioteca
+!v303!Library Configurations
+!v304!Configurazioni delle biblioteche
+!v305!Configurations de bibliothèque
+!ID 000060
+!v301!Configurações do Sistema
+!v302!Configuraciones del sistema
+!v303!System Configurations
+!v304!Configurazioni di sistema
+!v305!Configurations de système
+!ID 000061
+!v301!Configurações Gerais
+!v302!Configuraciones generales
+!v303!General configurations
+!v304!Configurazioni generali
+!v305!Configurations générales
+!ID 000062
+!v301!Confirmar
+!v302!Confirmar
+!v303!Submit
+!v304!Presenti
+!v305!Soumettez
+!ID 000063
+!v301!Conjunto
+!v302!Conjunto
+!v303!Set
+!v304!Insieme
+!v305!Ensemble
+!ID 000064
+!v301!Conjunto muito grande para ser ordenado
+!v302!Conjunto demasiado grande para ser ordenado
+!v303!Search result too big to sort
+!v304!Risultato di ricerca troppo grande alla specie
+!v305!Résultat de recherche trop grand à la sorte
+!ID 000065
+!v301!Copiar
+!v302!Copiar
+!v303!Copy
+!v304!Copy
+!v305!Copy
+!ID 000066
+!v301!Corrente
+!v302!Actual
+!v303!Current
+!v304!Corrente
+!v305!Courant
+!ID 000067
+!v301!Créditos
+!v302!Créditos
+!v303!Credits
+!v304!Accreditamenti
+!v305!Crédits
+!ID 000068
+!v301!Curso
+!v302!Curso
+!v303!Course
+!v304!Corso
+!v305!Cours
+!ID 000069
+!v301!Cursos
+!v302!Cursos
+!v303!Courses
+!v304!Corsi
+!v305!Cours
+!ID 000070
+!v301!Curto
+!v302!Corto
+!v303!Short
+!v304!Breve
+!v305!Court
+!ID 000071
+!v301!da base de dados
+!v302!de la base de datos
+!v303!of the database
+!v304!della base di dati
+!v305!de la base de données
+!ID 000072
+!v301!Dados da Fotografia
+!v302!Datos de la foto
+!v303!Photo datas
+!v304!Datas della foto
+!v305!Datas de photo
+!ID 000073
+!v301!Dados da Tese
+!v302!Datos de la Tesis
+!v303!Tesis Data
+!v304!Dati di Tesis
+!v305!Données de Tesis
+!ID 000074
+!v301!Dados do fascículo
+!v302!Datos del fascículo
+!v303!Issue data
+!v304!Dati dell'edizione
+!v305!Données d'issue
+!ID 000075
+!v301!Dados dos Anais
+!v302!Datos de los anales
+!v303!Annals Data
+!v304!Dati di annali
+!v305!Données d'annales
+!ID 000076
+!v301!Dados Gerais
+!v302!Datos generales
+!v303!General Data
+!v304!Dati Generali
+!v305!Données Générales
+!ID 000077
+!v301!Data
+!v302!Fecha
+!v303!Date
+!v304!Data
+!v305!Data
+!ID 000078
+!v301!Data da Compra
+!v302!Fecha de la compra
+!v303!Bye date
+!v304!Bye date
+!v305!Bye date
+!ID 000079
+!v301!Data da Edição
+!v302!Fecha de la edición
+!v303!Date of the Edition
+!v304!Data dell'edizione
+!v305!Date de l'édition
+!ID 000080
+!v301!Quadrimestral
+!v302!Quadrimestral
+!v303!Quadrimestral
+!v304!Quadrimestral
+!v305!Quadrimestral
+!ID 000081
+!v301!Data de Entrada
+!v302!Fecha del ingreso
+!v303!Entry Date
+!v304!Data dell'entrata
+!v305!Date D'Entrée
+!ID 000082
+!v301!Data (evento)
+!v302!Fecha (evento)
+!v303!Date (meeting)
+!v304!Data (riunione)
+!v305!Date (réunion)
+!ID 000083
+!v301!de hoje
+!v302!de hoy
+!v303!today
+!v304!oggi
+!v305!aujourd'hui
+!ID 000084
+!v301!Débito
+!v302!Débito
+!v303!Debit
+!v304!Debito
+!v305!Débit
+!ID 000085
+!v301!Débitos
+!v302!Débitos
+!v303!Debits
+!v304!Debiti
+!v305!Débits
+!ID 000086
+!v301!Completo
+!v302!Por completo
+!v303!Full
+!v304!In pieno
+!v305!Complètement
+!ID 000087
+!v301!Deletar
+!v302!Borrar
+!v303!Delete
+!v304!Cancellazione
+!v305!Effacement
+!ID 000088
+!v301!Departamento
+!v302!Departamento
+!v303!Department
+!v304!Reparto
+!v305!Département
+!ID 000089
+!v301!Desativar
+!v302!Desactivar
+!v303!To disactivate
+!v304!Desativar
+!v305!Desativar
+!ID 000090
+!v301!Descrição
+!v302!Descripción
+!v303!Description
+!v304!Descrizione
+!v305!Description
+!ID 000091
+!v301!Palavras-chave
+!v302!Palavras-chave
+!v303!Word-key
+!v304!Parola-chiave
+!v305!Mot-clef
+!ID 000092
+!v301!Em manutenção
+!v302!Disculpe: El sistema se encuentra en mantenimiento
+!v303!Sorry: the system is under maintenance now
+!v304!Spiacente: il sistema è ora sotto manutenzione
+!v305!Désolé : le système est sous l'entretien maintenant
+!ID 000093
+!v301!Devolução
+!v302!Devolución
+!v303!To return
+!v304!Devoluzione
+!v305!Pour Retourner
+!ID 000094
+!v301!Devolver em
+!v302!Devolver en
+!v303!Return in
+!v304!Rinvii dentro
+!v305!Retournez dedans
+!ID 000095
+!v301!dezembro
+!v302!diciembre
+!v303!December
+!v304!Décembre
+!v305!Dicembre
+!ID 000096
+!v301!Dia
+!v302!Dia
+!v303!Day
+!v304!Giorno
+!v305!Jour
+!ID 000097
+!v301!Dia da Aquisição
+!v302!Dia de la adquisición
+!v303!Acquisition Day
+!v304!Giorno di Aquisizione
+!v305!Jour d'Acquisition
+!ID 000098
+!v301!Dia do Registro
+!v302!Dia del ingreso
+!v303!Entry Day
+!v304!Giorno dell'Entrata
+!v305!Jour d'Entrée
+!ID 000099
+!v301!dia(s)
+!v302!dia(s)
+!v303!day(s)
+!v304!giorni
+!v305!jour(s)
+!ID 000100
+!v301!Dias suspensos
+!v302!Dias de suspensión
+!v303!Suspended days
+!v304!Giorni sospesi
+!v305!Jours suspendus
+!ID 000101
+!v301!Digite uma palavra ou expressão de busca
+!v302!Digite una palavra o una expressión de busqueda
+!v303!Entry a word or a search expression
+!v304!Entrata una parola o un'espressione di ricerca
+!v305!Entrée un mot ou une expression de recherche
+!ID 000102
+!v301!Dimensões
+!v302!Dimensiones
+!v303!Dimensions
+!v304!Dimensioni
+!v305!Dimensions
+!ID 000103
+!v301!Disponível
+!v302!Disponible
+!v303!Available
+!v304!Disponibile
+!v305!Disponible
+!ID 000104
+!v301!Disseminação Seletiva da Informação
+!v302!Disseminación Selectiva de Información
+!v303!Selective Dissemination of Information
+!v304!Diffusione Selettiva delle Informazioni
+!v305!Diffusion Sélective d'Information
+!ID 000105
+!v301!Doação
+!v302!Donación
+!v303!Donation
+!v304!Donazione
+!v305!Donation
+!ID 000106
+!v301!Documento digital
+!v302!Documento digital
+!v303!Digital document
+!v304!Documento di digital
+!v305!Document de digital
+!ID 000107
+!v301!Documento disponível para empréstimo
+!v302!Documento disponible para préstamo
+!v303!The document is ready to loan
+!v304!Il documento è aspetta per prestare
+!v305!Le document est prêt à prêter
+!ID 000108
+!v301!Domingo
+!v302!Domingo
+!v303!Sunday
+!v304!Domenica
+!v305!Dimanche
+!ID 000109
+!v301!Duração
+!v302!Duración
+!v303!Duration
+!v304!Durata
+!v305!Durée
+!ID 000110
+!v301!Edição
+!v302!Edición
+!v303!Edition
+!v304!Pubblichi
+!v305!Éditez
+!ID 000111
+!v301!Editar
+!v302!Editar
+!v303!Edit
+!v304!Pubblichi
+!v305!Éditez
+!ID 000112
+!v301!Editar/Copiar
+!v302!Editar/Copiar
+!v303!Edit-Copy
+!v304!Pubblic-Copy
+!v305!Éditer-Copy
+!ID 000113
+!v301!Editora
+!v302!Editora
+!v303!Publisher
+!v304!Editore
+!v305!Éditeur
+!ID 000114
+!v301!Este objeto não é de consulta local. Utilize outra modalidade de empréstimo!
+!v302!Este objeto no es de uso local. Utilize otra modalidad de prestamo!
+!v303!Not local use. Operation denied!
+!v304!Not local use. Operation denied!
+!v305!Not local use. Operation denied!
+!ID 000115
+!v301!Em lista de espera
+!v302!En lista de espera
+!v303!In wait list
+!v304!Nella lista di attesa
+!v305!Dans la liste d'attente
+!ID 000116
+!v301!Emitido em
+!v302!Emitido el
+!v303!Printing at
+!v304!Stampando a
+!v305!Impression à
+!ID 000117
+!v301!Emprestado
+!v302!Prestado
+!v303!Loaned
+!v304!Prestato
+!v305!Prêté
+!ID 000118
+!v301!Empréstimo
+!v302!Préstamo
+!v303!Loan
+!v304!Prestito
+!v305!Prêt
+!ID 000119
+!v301!Empréstimos
+!v302!Préstamos
+!v303!Loans
+!v304!Prestiti
+!v305!Prêts
+!ID 000120
+!v301!Empréstimos vencidos
+!v302!Préstamos vencidos
+!v303!Loans out of date
+!v304!Presta antiquato
+!v305!Prête démodé
+!ID 000121
+!v301!Endereço
+!v302!Dirección
+!v303!Address
+!v304!Indirizzo
+!v305!Adresse
+!ID 000122
+!v301!Entrada
+!v302!Ingreso
+!v303!Data entry
+!v304!Entrata di dati
+!v305!Saisie de données
+!ID 000123
+!v301!Envelope
+!v302!Sobre
+!v303!Envelope
+!v304!Busta
+!v305!Enveloppe
+!ID 000124
+!v301!Épocas
+!v302!Épocas
+!v303!Ages
+!v304!Età
+!v305!Âges
+!ID 000125
+!v301!Erro
+!v302!Error
+!v303!Error
+!v304!Errore
+!v305!Erreur
+!ID 000126
+!v301!Erro: índice não atualizado
+!v302!Error: indice no actualizado
+!v303!Error: inverted file not updated
+!v304!Errore: schedario inverso non aggiornato
+!v305!Erreur : fichier inversé non mis à jour
+!ID 000127
+!v301!Erro: operação não concluída
+!v302!Error:  operación no concluída
+!v303!Operation failure
+!v304!Guasto di funzionamento
+!v305!Échec d'opération
+!ID 000128
+!v301!Escala
+!v302!Escala
+!v303!Scale
+!v304!Scala
+!v305!Balance
+!ID 000129
+!v301!Espanhol
+!v302!Español
+!v303!Spanish
+!v304!Spagnolo
+!v305!Espagnol
+!ID 000130
+!v301!Especial
+!v302!Especial
+!v303!Special
+!v304!Speciale
+!v305!Spécial
+!ID 000131
+!v301!Esta reserva já foi efetuada
+!v302!Esta reserva ya fue realizada
+!v303!Already reserved
+!v304!Già riservato
+!v305!Déjà réservé
+!ID 000132
+!v301!Estado
+!v302!Província
+!v303!State
+!v304!Dichiari
+!v305!État
+!ID 000133
+!v301!Este usuário não pode ser eliminado porque efetuou empréstimos que estão registrados na base de dados de históricos.<br>Se for eliminado acarretará problemas de inconsistências na geração de relatórios de histórico de tombos.
+!v302!Este usuario no puede ser eliminado porque a hecho operación de prestamo gravada en la base de datos de históricos.
+!v303!MSG 133
+!v304!MSG 133
+!v305!MSG 133
+!ID 000134
+!v301!Este documento está reservado
+!v302!Este documento es reservado
+!v303!This document is reserved
+!v304!Questo documento è riservato
+!v305!Ce document est réservé
+!ID 000135
+!v301!Este objeto estava extraviado. Há que habilitá-lo novamente
+!v302!Este objecto estaba extraviado
+!v303!Missing object. You must update de record status
+!v304!Oggetto mancante. Dovete aggiornare la condizione record del de
+!v305!Objet absent. Vous devez mettre à jour le statut record de De
+!ID 000136
+!v301!Este objeto já se encontra emprestado
+!v302!Este objecto se encuentra prestado
+!v303!Already loaned
+!v304!Già prestato
+!v305!Déjà prêté
+!ID 000137
+!v301!Este objeto não circula
+!v302!Este objecto no circula
+!v303!Not permited loan to this object
+!v304!Non permited il prestito a questo oggetto
+!v305!Pas permited le prêt à cet objet
+!ID 000138
+!v301!Este objeto não se encontra emprestado ou pertence a outra biblioteca do sistema
+!v302!Este objecto no se encuentra prestado
+!v303!Unloaned object
+!v304!Oggetto di unloaned
+!v305!Objet d'unloaned
+!ID 000139
+!v301!Este registro não pode ser deletado
+!v302!Este registro no puede ser borrado
+!v303!This record cannot be deleted
+!v304!Questa annotazione non può essere cancellata
+!v305!Ce disque ne peut pas être supprimé
+!ID 000140
+!v301!Estrangeiro
+!v302!Estrangero
+!v303!Foreign
+!v304!Straniero
+!v305!Étranger
+!ID 000141
+!v301!Etiquetas
+!v302!Etiquetas
+!v303!Labels
+!v304!Etichette
+!v305!Étiquettes
+!ID 000142
+!v301!Etiquetas com código de barras
+!v302!Etiquetas con código de barras
+!v303!Bar Code Labels
+!v304!Etichette di Codice di Barra
+!v305!Étiquettes De Code à barres
+!ID 000143
+!v301!Evento
+!v302!Evento
+!v303!Meeting
+!v304!Riunione
+!v305!Réunion
+!ID 000144
+!v301!Eventos
+!v302!Eventos
+!v303!Meetings
+!v304!Riunioni
+!v305!Réunions
+!ID 000145
+!v301!Exportação
+!v302!Exportación
+!v303!Export
+!v304!Esportazione
+!v305!Exportation
+!ID 000146
+!v301!Expressão
+!v302!Expressión
+!v303!Expression
+!v304!Espressione
+!v305!Expression
+!ID 000147
+!v301!Extrato
+!v302!Extrato
+!v303!Extract
+!v304!Estratto
+!v305!Extrait
+!ID 000148
+!v301!Extrato do Usuário
+!v302!Extrato del usuário
+!v303!User Extract
+!v304!Estratto Dell'Utente
+!v305!Extrait D'Utilisateur
+!ID 000149
+!v301!Extratos
+!v302!Extratos
+!v303!Extracts
+!v304!Estratti
+!v305!Extraits
+!ID 000150
+!v301!Faixas
+!v302!Faixas
+!v303!Tracks
+!v304!Piste
+!v305!Voies
+!ID 000151
+!v301!Fascículo
+!v302!Fascículo
+!v303!Issue
+!v304!Edizione
+!v305!Issue
+!ID 000152
+!v301!Fechada
+!v302!Cerrada
+!v303!Closed
+!v304!Chiuso
+!v305!Fermé
+!ID 000153
+!v301!Fechar
+!v302!Cerrar
+!v303!Close
+!v304!Fine
+!v305!Fin
+!ID 000154
+!v301!Fevereiro
+!v302!Febrero
+!v303!February
+!v304!Febbraio
+!v305!Février
+!ID 000155
+!v301!Filtro de idioma
+!v302!Filtro de idioma
+!v303!Language filter
+!v304!Filtro di lingua
+!v305!Filtre de langue
+!ID 000156
+!v301!Tipo de documento
+!v302!Tipo del documento
+!v303!Document type
+!v304!Tipo del documento
+!v305!Type de document
+!ID 000157
+!v301!Folhas
+!v302!Hojas
+!v303!Leaves
+!v304!Fogli
+!v305!Feuilles
+!ID 000158
+!v301!Reserva Eliminada!
+!v302!Reserva Eliminada!
+!v303!Reserva Eliminada!
+!v304!Reserva Eliminada!
+!v305!Reserva Eliminada!
+!ID 000159
+!v301!Fones
+!v302!Telefonos
+!v303!Phones
+!v304!Telefoni
+!v305!Téléphones
+!ID 000160
+!v301!Formato de exibição
+!v302!Formato de muestra
+!v303!Display format
+!v304!Formato di affissione
+!v305!Format d'affichage
+!ID 000161
+!v301!Forneça a matrícula do usuário
+!v302!Informe la matricula del usuário
+!v303!Enter the user number
+!v304!Entri nel numero dell'utente
+!v305!Écrivez le nombre d'utilisateur
+!ID 000162
+!v301!Fornecedor
+!v302!Fornecedor
+!v303!Supplier
+!v304!Fornitore
+!v305!Fournisseur
+!ID 000163
+!v301!Foto
+!v302!Foto
+!v303!Photo
+!v304!Foto
+!v305!Photo
+!ID 000164
+!v301!Fotografia Aérea
+!v302!Fotografia Aérea
+!v303!Aerial Photograpy
+!v304!Photograpy Aereo
+!v305!Photograpy Aérien
+!ID 000165
+!v301!Fotos
+!v302!Fotos
+!v303!Photos
+!v304!Foto
+!v305!Photos
+!ID 000166
+!v301!Francês
+!v302!Francés
+!v303!French
+!v304!Francese
+!v305!Français
+!ID 000167
+!v301!Funcionário
+!v302!Funcionário
+!v303!Employee
+!v304!Impiegato
+!v305!Employé
+!ID 000168
+!v301!Gaveta
+!v302!Cajon
+!v303!Drawer
+!v304!Cassetto
+!v305!Tiroir
+!ID 000169
+!v301!Gravadora
+!v302!Gravadora
+!v303!Recorder
+!v304!Registratore
+!v305!Enregistreur
+!ID 000170
+!v301!Guarde o número para acompanhamento do processo
+!v302!Mantenga el numero para el acompañamiento del proceso
+!v303!Keep the number for accompaniment of the process
+!v304!Mantenga il numero per l'accompagnamento del processo
+!v305!Gardez le nombre pour l'accompagnement du processus
+!ID 000171
+!v301!Histórico
+!v302!Histórico
+!v303!History
+!v304!Storia
+!v305!Histoire
+!ID 000172
+!v301!Histórico do tombo
+!v302!Histórico del tombo
+!v303!Inventory number history
+!v304!Storia di numero di inventario
+!v305!Histoire de nombre de inventaire
+!ID 000173
+!v301!Histórico do Usuário
+!v302!Histórico del usuário
+!v303!User History
+!v304!Storia dell'Utente
+!v305!Histoire d'Utilisateur
+!ID 000174
+!v301!Hora
+!v302!Hora
+!v303!Hour
+!v304!Ora
+!v305!Heure
+!ID 000175
+!v301!ID
+!v302!ID. Título
+!v303!ID. Title
+!v304!ID. Titolo
+!v305!ID. Titre
+!ID 000176
+!v301!Identificação do Usuário
+!v302!Identificación del usuário
+!v303!User Identification
+!v304!Identificazione Di Utente
+!v305!Identification D'Utilisateur
+!ID 000177
+!v301!Idioma
+!v302!Idioma
+!v303!Language
+!v304!Lingua
+!v305!Langue
+!ID 000178
+!v301!Imagem
+!v302!Imagen
+!v303!Image
+!v304!Immagine
+!v305!Image
+!ID 000179
+!v301!Imagem de satélite
+!v302!Imagen de satélite
+!v303!Satelite image
+!v304!Immagine di satelite
+!v305!Image de satelite
+!ID 000180
+!v301!Impressão de Carteirinha
+!v302!Impressión de tarjeta
+!v303!Identification Card Printing
+!v304!Stampa della Scheda di Identificazione
+!v305!Impression de Carte d'Identification
+!ID 000181
+!v301!Impressão de Etiquetas
+!v302!Impressión de etiquetas
+!v303!Labels Printing
+!v304!Stampa delle Etichette
+!v305!Impression d'Étiquettes
+!ID 000182
+!v301!Imprimir
+!v302!Imprimir
+!v303!Print
+!v304!Stampa
+!v305!Copie
+!ID 000183
+!v301!Indefinido
+!v302!Indefinido
+!v303!Undefined
+!v304!Non definito
+!v305!Non défini
+!ID 000184
+!v301!Informar o tombo ou usuário. Preencher somente um destes campos
+!v302!Informar el tombo o usuário. Llenar solamente uno de los campos
+!v303!Entry only one field
+!v304!Entrata soltanto un campo
+!v305!Entrée seulement un champ
+!ID 000185
+!v301!Inglês
+!v302!Inglés
+!v303!English
+!v304!English
+!v305!English
+!ID 000186
+!v301!Inserir
+!v302!Ingresar
+!v303!Insert
+!v304!Inserto
+!v305!Insertion
+!ID 000187
+!v301!Integral
+!v302!Integral
+!v303!Integral
+!v304!Integrale
+!v305!Intégral
+!ID 000188
+!v301!Intérprete
+!v302!Intérprete
+!v303!Interpreter
+!v304!Interpretatore
+!v305!Interprète
+!ID 000189
+!v301!Janeiro
+!v302!Enero
+!v303!January
+!v304!Gennaio
+!v305!Janvier
+!ID 000190
+!v301!Julho
+!v302!Julio
+!v303!July
+!v304!Luglio
+!v305!Juillet
+!ID 000191
+!v301!Junho
+!v302!Junio
+!v303!June
+!v304!Giugno
+!v305!Juin
+!ID 000192
+!v301!Legenda
+!v302!Leyenda
+!v303!Legend
+!v304!Leggenda
+!v305!Légende
+!ID 000193
+!v301!Selecione o idioma
+!v302!Seleccione el idioma
+!v303!Select the language
+!v304!Selezioni la lingua
+!v305!Choisissez la langue
+!ID 000194
+!v301!Liberado por
+!v302!Liberado por
+!v303!Allowed by
+!v304!Conceduto vicino
+!v305!Laissé près
+!ID 000195
+!v301!Liberar Multa
+!v302!Liberar multa
+!v303!To release fine
+!v304!Per liberarsi benissimo
+!v305!Pour libérer très bien
+!ID 000196
+!v301!Limite esgotado
+!v302!Limite agotado
+!v303!Limit exhausted
+!v304!Il limite ha esaurito
+!v305!Limite épuisée
+!ID 000197
+!v301!Limite para Ordenação
+!v302!Limite para ordenación
+!v303!Limit for ordinance
+!v304!Limite per l'ordinanza
+!v305!Limite pour l'ordonnance
+!ID 000198
+!v301!Lista de Espera
+!v302!Listado de espera
+!v303!Wait list
+!v304!Lista di attesa
+!v305!Liste d'attente
+!ID 000199
+!v301!Livro
+!v302!Libro
+!v303!Book
+!v304!Libro
+!v305!Livre
+!ID 000200
+!v301!Livros
+!v302!Libros
+!v303!Books
+!v304!Libri
+!v305!Livres
+!ID 000201
+!v301!Local
+!v302!Local
+!v303!Place
+!v304!Posto
+!v305!Endroit
+!ID 000202
+!v301!Cidade
+!v302!Ciudad
+!v303!City
+!v304!Città
+!v305!Ville
+!ID 000203
+!v301!Local (evento)
+!v302!Local (evento)
+!v303!Place (meeting)
+!v304!Posto (evento)
+!v305!Endroit (événement)
+!ID 000204
+!v301!Maio
+!v302!Mayo
+!v303!May
+!v304!Maggio
+!v305!Mai
+!ID 000205
+!v301!Manutenção
+!v302!Mantenimiento
+!v303!Maintenance
+!v304!Manutenzione
+!v305!Entretien
+!ID 000206
+!v301!Março
+!v302!Março
+!v303!March
+!v304!Marzo
+!v305!Mars
+!ID 000207
+!v301!Matrícula
+!v302!Matrícula
+!v303!Registration
+!v304!Registro
+!v305!Enregistrement
+!ID 000208
+!v301!Existe outro usuário com o mesmo número de matrícula.<br> O registro  não foi gravado
+!v302!Atención: matrícula duplicada
+!v303!Duplicated user number
+!v304!Numero duplicato dell'utente
+!v305!Nombre reproduit d'utilisateur
+!ID 000209
+!v301!ISSN
+!v302!ISSN
+!v303!ISSN
+!v304!ISSN
+!v305!ISSN
+!ID 000210
+!v301!Mês
+!v302!Mes
+!v303!Month
+!v304!Mese
+!v305!Mois
+!ID 000211
+!v301!Mês da Aquisição
+!v302!Mes de la adquisición
+!v303!Acquisition Month
+!v304!Mese di Aquisizione
+!v305!Mois d'Acquisition
+!ID 000212
+!v301!Mês do Registro
+!v302!Mes del ingreso
+!v303!Entry Month
+!v304!Mese dell'Entrata
+!v305!Mois d'Entrée
+!ID 000213
+!v301!Minutos
+!v302!Minutos
+!v303!Minutes
+!v304!Resoconto
+!v305!Minutes
+!ID 000214
+!v301!Modo
+!v302!Modo
+!v303!Mode
+!v304!Modo
+!v305!Mode
+!ID 000215
+!v301!Modo da Aquisição
+!v302!Modo de adquisición
+!v303!Acquisition Mode
+!v304!Modo di Aquisizione
+!v305!Mode d'Acquisition
+!ID 000216
+!v301!Moeda
+!v302!Moneda
+!v303!Money
+!v304!Soldi
+!v305!Argent
+!ID 000217
+!v301!Mostra
+!v302!Muestra
+!v303!Show
+!v304!Esposizione
+!v305!Exposition
+!ID 000218
+!v301!Multa
+!v302!Multa
+!v303!Fine
+!v304!Multa
+!v305!Amende
+!ID 000219
+!v301!Multas
+!v302!Multas
+!v303!Penalties
+!v304!Pene
+!v305!Pénalités
+!ID 000220
+!v301!Multas pagas
+!v302!Multas pagadas
+!v303!Pay fines
+!v304!Pene di paga
+!v305!Pene di paga
+!ID 000221
+!v301!Multas pendentes
+!v302!Multas pendientes
+!v303!Pending fines
+!v304!Pending le pene
+!v305!En attendant des pénalités
+!ID 000222
+!v301!Nacional
+!v302!Nacional
+!v303!National
+!v304!Nazionale
+!v305!National
+!ID 000223
+!v301!Não
+!v302!No
+!v303!No
+!v304!No
+!v305!Non
+!ID 000224
+!v301!Não circula
+!v302!No circula
+!v303!No loan
+!v304!Nessun prestito
+!v305!Aucun prêt
+!ID 000225
+!v301!Não Corrente
+!v302!No corriente
+!v303!Not Current
+!v304!Non corrente
+!v305!Non courant
+!ID 000226
+!v301!Não mostra
+!v302!No muestra
+!v303!Dont show
+!v304!Non mostri
+!v305!Non mostri
+!ID 000227
+!v301!No prazo
+!v302!En el prazo
+!v303!In time
+!v304!A tempo
+!v305!À temps
+!ID 000228
+!v301!Nome
+!v302!Nombre
+!v303!Name
+!v304!Nome
+!v305!Nom
+!ID 000229
+!v301!Norma
+!v302!Standard
+!v303!Estándar
+!v304!Norma
+!v305!Norme
+!ID 000230
+!v301!Normas
+!v302!Standards
+!v303!Standards
+!v304!Norme
+!v305!Normes
+!ID 000231
+!v301!Nota
+!v302!Nota
+!v303!Note
+!v304!Nota
+!v305!Note
+!ID 000232
+!v301!Nota Fiscal
+!v302!Boleto fiscal
+!v303!Bill of Sale
+!v304!Fattura della vendita
+!v305!Acte de vente
+!ID 000233
+!v301!Notas (tese)
+!v302!Notas (tesis)
+!v303!Notes (tesis)
+!v304!Notes (tesis)
+!v305!Notes (tesis)
+!ID 000234
+!v301!Notas Gerais
+!v302!Notas generales
+!v303!General Notes
+!v304!Note Generali
+!v305!Notes Générales
+!ID 000235
+!v301!Noturno
+!v302!Noturno
+!v303!Nocturnal
+!v304!Nocturnal
+!v305!Nocturne
+!ID 000236
+!v301!Data de publicação
+!v302!Fecha de la publicación
+!v303!Publication Date
+!v304!Publication Date
+!v305!Publication Date
+!ID 000237
+!v301!Novembro
+!v302!Noviembro
+!v303!November
+!v304!Novembre
+!v305!Novembre
+!ID 000238
+!v301!Novo
+!v302!Nuevo
+!v303!New
+!v304!Nuovo
+!v305!Nouveau
+!ID 000239
+!v301!Número
+!v302!Número
+!v303!Number
+!v304!Numero
+!v305!Nombre
+!ID 000240
+!v301!Número especial
+!v302!Número especial
+!v303!Special Issue
+!v304!Numero speciale
+!v305!Édition spéciale
+!ID 000241
+!v301!O índice não foi atualizado
+!v302!El fichero invertido no fue actualizado
+!v303!Inverted file not updated
+!v304!Schedario inverso non aggiornato
+!v305!Fichier inversé non mis à jour
+!ID 000242
+!v301!O número do tombo não foi informado
+!v302!El tombo no fue informado
+!v303!Unknow inventory number
+!v304!Il numero della caduta non era informed
+!v305!Le nombre de la dégringolade n'était pas au courant
+!ID 000243
+!v301!O número do usuário não foi informado
+!v302!El número del usuário no fue informado
+!v303!Unknow user number
+!v304!Il numero dell'utente non era informed
+!v305!Le nombre de l'utilisateur n'était pas au courant
+!ID 000244
+!v301!Prazo de validade expirado!
+!v302!El prazo para la renovación agotou
+!v303!The time was expired
+!v304!Il tempo si è estinto
+!v305!Le temps a été expiré
+!ID 000245
+!v301!Objeto com prazo vencido em poder do usuário
+!v302!Objecto con prazo agotado con el usuário
+!v303!User with delayed object
+!v304!Utente con oggetto in ritardo
+!v305!Utilisateur avec l'objet retardé
+!ID 000246
+!v301!Objetos
+!v302!Objectos
+!v303!Objects
+!v304!Oggetti
+!v305!Objets
+!ID 000247
+!v301!Observar sempre a data de devolução. Devoluções com atraso estarão sujeitas  à multa ou suspensão
+!v302!Observar siempre la fecha de devolución. Devoluciones con atraso estarán  sujectas a penalidades
+!v303!Pay attention to the date of devolution. Devolutions with delay will have  fines or the user will be suspended
+!v304!Attenzione di paga alla data di devoluzione. Le devoluzioni con fa ritardare avranno indennità o l'utente sarà sospeso
+!v305!Attention de salaire à la date de la décentralisation. Les décentralisations avec retardent auront des fines ou l'utilisateur sera suspendu
+!ID 000248
+!v301!Opções
+!v302!Opciones
+!v303!Options
+!v304!Opzioni
+!v305!Options
+!ID 000249
+!v301!Operação concluída
+!v302!Operación concluída
+!v303!Operation concluded
+!v304!Il funzionamento ha concluso
+!v305!L'opération a conclu
+!ID 000250
+!v301!Operação não concluída
+!v302!Operación no concluída
+!v303!Operation failed
+!v304!Il funzionamento è venuto a mancare
+!v305!L'opération échoue
+!ID 000251
+!v301!Operação negada
+!v302!Operación negada
+!v303!Operation denied
+!v304!Il funzionamento ha negato
+!v305!L'opération a nié
+!ID 000252
+!v301!Operação negada. Débito pendente
+!v302!Operación negada. Débitos pendientes
+!v303!Operation denied. Pending debits
+!v304!Il funzionamento ha negato. Pending i debiti
+!v305!Opération niée. En attendant des débits
+!ID 000253
+!v301!Operacionais
+!v302!Operacionales
+!v303!Operationals
+!v304!Operationals
+!v305!Operationals
+!ID 000254
+!v301!Ordenação
+!v302!Ordenación
+!v303!Sort
+!v304!Ordinance
+!v305!Ordonnance
+!ID 000255
+!v301!Ordenar por
+!v302!Ordenar por
+!v303!Sort by
+!v304!All'ordine per
+!v305!À la commande pour
+!ID 000256
+!v301!Outros
+!v302!Otros
+!v303!Others
+!v304!Altri
+!v305!Altre
+!ID 000257
+!v301!Outros Relatórios
+!v302!Otros informes
+!v303!Others Reports
+!v304!Altri Segnalano
+!v305!D'autres Rapportent
+!ID 000258
+!v301!Outubro
+!v302!Octubre
+!v303!October
+!v304!Ottobre
+!v305!Octobre
+!ID 000259
+!v301!Paginação
+!v302!Paginación
+!v303!Pages
+!v304!Paginazione
+!v305!Pagination
+!ID 000260
+!v301!Páginas
+!v302!Páginas
+!v303!Pages
+!v304!Pagine
+!v305!Pages
+!ID 000261
+!v301!Símbolo
+!v302!Símbolo
+!v303!Sign
+!v304!Sign
+!v305!Sign
+!ID 000262
+!v301!Para RENOVAR clique sobre a esfera correspodente.<br>Objetos com prazo  vencido ou com reservas pendentes não serão renovados
+!v302!Para RENOVAR pressione el mouse sobre la pelota amarilla
+!v303!To RENEW click the mouse on the yellow ball
+!v304!Per RINNOVARE scatto il mouse sulla sfera gialla
+!v305!Pour REMPLACER le clic la souris sur la boule jaune
+!ID 000263
+!v301!Patente
+!v302!Patente
+!v303!Patent
+!v304!Breveto
+!v305!Brevet
+!ID 000264
+!v301!Patentes
+!v302!Patentes
+!v303!Patents
+!v304!Brevetos
+!v305!Brevets
+!ID 000265
+!v301!Penalidade
+!v302!Penalidade
+!v303!Penalty
+!v304!Pena
+!v305!Pénalité
+!ID 000266
+!v301!Perfil
+!v302!Perfil
+!v303!Profile
+!v304!Profilo
+!v305!Profil
+!ID 000267
+!v301!Este serviço permite o acompanhamento periódico das aquisições recentes da biblioteca segundo seu perfil de interesse. Contate o bibliotecário de sua instituição para o cadastramento de seu perfil de interesse
+!v302!Perfil no definido
+!v303!Not defined profile
+!v304!Profilo non definito
+!v305!Profil non défini
+!ID 000268
+!v301!Periódico
+!v302!Revista
+!v303!Serial
+!v304!Periodico
+!v305!Périodique
+!ID 000269
+!v301!Periódicos
+!v302!Revistas
+!v303!Journals
+!v304!Pubblicazioni
+!v305!Journaux
+!ID 000270
+!v301!Período
+!v302!Período
+!v303!Period
+!v304!Période
+!v305!Periodo
+!ID 000271
+!v301!Permissão negada!
+!v302!Permissión negada!
+!v303!Permission denied!
+!v304!Permesso negato!
+!v305!Permission niée !
+!ID 000272
+!v301!Permissões
+!v302!Permissiones
+!v303!Permissions
+!v304!Permessi
+!v305!Permissions
+!ID 000273
+!v301!Permuta
+!v302!Cambio
+!v303!Exchange
+!v304!Scambio
+!v305!Échange
+!ID 000274
+!v301!Personalizado
+!v302!Personalizado
+!v303!Custom
+!v304!Abitudine
+!v305!Coutume
+!ID 000275
+!v301!Personalizados
+!v302!Personalizados
+!v303!Customs
+!v304!Abitudini
+!v305!Coutumes
+!ID 000276
+!v301!Planta
+!v302!Planta
+!v303!Plant
+!v304!Pianta
+!v305!Usine
+!ID 000277
+!v301!Plantas e Projetos
+!v302!Plantas y Proyectos
+!v303!Plants and Projects
+!v304!Piante e progetti
+!v305!Usines et projets
+!ID 000278
+!v301!Português
+!v302!Portugués
+!v303!Portuguese
+!v304!Portoghese
+!v305!Portugais
+!ID 000279
+!v301!Prazo
+!v302!Prazo
+!v303!Period
+!v304!Periodo
+!v305!Période
+!ID 000280
+!v301!Prazo excepcional
+!v302!Período excepcional
+!v303!Prazo excepcional
+!v304!Periodo eccezionale
+!v305!Période exceptionnelle
+!ID 000281
+!v301!Prazos
+!v302!Prazos
+!v303!Periods
+!v304!Periodi
+!v305!Périodes
+!ID 000282
+!v301!Prazos e Quantidades
+!v302!Prazos e Cuantidades
+!v303!Periods and Quantity
+!v304!Periodi e quantità
+!v305!Périodes et quantité
+!ID 000283
+!v301!Prazos específicos
+!v302!Prazos específicos
+!v303!Specific periods
+!v304!Periodi specifici
+!v305!Périodes spécifiques
+!ID 000284
+!v301!Previsão do término
+!v302!Previsión
+!v303!Preview
+!v304!Previsione
+!v305!Previsione
+!ID 000285
+!v301!Sistema
+!v302!Sistema
+!v303!System
+!v304!Sistema
+!v305!Sistema
+!ID 000286
+!v301!Previsões de Devolução
+!v302!Previsiones de devolución
+!v303!Delivery Preview
+!v304!Previsione di Consegna
+!v305!Prévision de la livraison
+!ID 000287
+!v301!Procedência
+!v302!Orígen
+!v303!Origin
+!v304!Origine
+!v305!Origine
+!ID 000288
+!v301!Processos técnicos
+!v302!Procesos técnicos
+!v303!Tecnical process
+!v304!Processo di tecnical
+!v305!Processus de tecnical
+!ID 000289
+!v301!Produtora
+!v302!Produtora
+!v303!Producer
+!v304!Produttore
+!v305!Producteur
+!ID 000290
+!v301!Professor
+!v302!Professor
+!v303!Teacher
+!v304!Insegnante
+!v305!Professeur
+!ID 000291
+!v301!Providências
+!v302!Providéncias
+!v303!Steps
+!v304!Punti
+!v305!Étapes
+!ID 000292
+!v301!Quantidade
+!v302!Cuantidad
+!v303!Quantity
+!v304!Quantità
+!v305!Quantité
+!ID 000293
+!v301!Quarta feira
+!v302!Miércoles
+!v303!Wednesday
+!v304!Mercoledì
+!v305!Mercredi
+!ID 000294
+!v301!Registro bloqueado
+!v302!Registro bloqueado
+!v303!Record is locked
+!v304!Registri è locked
+!v305!Enregistrez est verrouillé
+!ID 000295
+!v301!Registro de Permissões
+!v302!Ingreso de permissiones
+!v303!Permissions entry
+!v304!Entrata di permessi
+!v305!Entrée de permissions
+!ID 000296
+!v301!Registro de Usuário
+!v302!Ingreso de usuários
+!v303!User Entry
+!v304!Entrata di utente
+!v305!Entrée d'Utilisateur
+!ID 000297
+!v301!Registro não atualizado
+!v302!Registro no fue actualizado
+!v303!Record not updated
+!v304!Disque non mis à jour
+!v305!Annotazione non aggiornata
+!ID 000298
+!v301!Relatórios
+!v302!Informes
+!v303!Reports
+!v304!Rapporti
+!v305!Rapports
+!ID 000299
+!v301!Relatórios Operacionais
+!v302!Informes operacionales
+!v303!Operational Reports
+!v304!Rapporti Operativi
+!v305!Rapports Opérationnels
+!ID 000300
+!v301!Relatórios Personalizados
+!v302!Informes personalizados
+!v303!Customs Reports
+!v304!Rapporti di Dogana
+!v305!Rapports de douane
+!ID 000301
+!v301!Extrato & Renovação
+!v302!Renovación
+!v303!Renew
+!v304!Rinnovi
+!v305!Remplacez
+!ID 000302
+!v301!Renovar
+!v302!Renovar
+!v303!Renewal
+!v304!Rinnovamento
+!v305!Renouvellement
+!ID 000303
+!v301!Repita a nova senha
+!v302!Repita la nueva clave
+!v303!Repeat the new password
+!v304!Ripeti la nuova parola d'accesso
+!v305!Répétez le nouveau mot de passe
+!ID 000304
+!v301!Reserva
+!v302!Reserva
+!v303!Reserve
+!v304!Riserva
+!v305!Réservation
+!ID 000305
+!v301!Reserva válida até
+!v302!Reserva válida hasta
+!v303!Valid reserv only at
+!v304!Reserv valido soltanto a
+!v305!Reserv valide seulement à
+!ID 000306
+!v301!Reserva(s)
+!v302!Reserva(s)
+!v303!Reserve(s)
+!v304!Riserve
+!v305!Réservations
+!ID 000307
+!v301!Objeto em lista de espera
+!v302!Objeto en lista de espera
+!v303!Wait list
+!v304!Lista di attesa
+!v305!Liste d'attente
+!ID 000308
+!v301!Reservar
+!v302!Reservar
+!v303!To Reserve
+!v304!Alla riserva
+!v305!À la réservation
+!ID 000309
+!v301!Reservas
+!v302!Reservas
+!v303!Reserves
+!v304!Riserve
+!v305!Réservations
+!ID 000310
+!v301!Reservas pendentes
+!v302!Reservas pendientes
+!v303!Pending reserves
+!v304!Pending le riserve
+!v305!En attendant des réservations
+!ID 000311
+!v301!Resolução
+!v302!Resolución
+!v303!Resolution
+!v304!Risoluzione
+!v305!Résolution
+!ID 000312
+!v301!Responsável
+!v302!Responsable
+!v303!Sponsor
+!v304!Garante
+!v305!Commanditaire
+!ID 000313
+!v301!Resultado
+!v302!Resultado
+!v303!Result
+!v304!Risultato
+!v305!Résultat
+!ID 000314
+!v301!Resumo
+!v302!Resumem
+!v303!Abstract
+!v304!Estratto
+!v305!Abstrait
+!ID 000315
+!v301!Sábado
+!v302!Sábado
+!v303!Saturday
+!v304!Sabato
+!v305!Samedi
+!ID 000316
+!v301!Sair
+!v302!Salir
+!v303!Exit
+!v304!Uscita
+!v305!Sortie
+!ID 000317
+!v301!Salvar
+!v302!Ahorrar
+!v303!Save
+!v304!Risparmiare
+!v305!Économiser
+!ID 000318
+!v301!Secretaria
+!v302!Secretaria
+!v303!Secretary office
+!v304!Ufficio della segretaria
+!v305!Bureau de secrétaire
+!ID 000319
+!v301!Segunda feira
+!v302!Lunes
+!v303!Monday
+!v304!Lunedì
+!v305!Lundi
+!ID 000320
+!v301!Selecione a base de dados
+!v302!Seleccione la base de datos
+!v303!Database Selection
+!v304!Selezione della base di dati
+!v305!Choix de base de donnée
+!ID 000321
+!v301!Selecione o campo de dados
+!v302!Seleccione el campo de datos
+!v303!Select the data field
+!v304!Selezioni il campo d'informazione
+!v305!Choisissez la zone d'information
+!ID 000322
+!v301!Selecione o tipo de documento
+!v302!Seleccione el tipo del documento
+!v303!Select the document type
+!v304!Selezioni il tipo del documento
+!v305!Choisissez le type de document
+!ID 000323
+!v301!Sem pendência
+!v302!No hay pendéncias
+!v303!Without pending
+!v304!Senza in corso
+!v305!Sans en suspens
+!ID 000324
+!v301!Semana
+!v302!Semana
+!v303!Week
+!v304!Settimana
+!v305!Semaine
+!ID 000325
+!v301!Senha
+!v302!Clave
+!v303!Password
+!v304!Parola d'accesso
+!v305!Mot de passe
+!ID 000326
+!v301!Senha alterada!
+!v302!Clave cambiada
+!v303!Password changed
+!v304!Parola d'accesso cambiata
+!v305!Le mot de passe a changé
+!ID 000327
+!v301!Senha Inválida
+!v302!Clave inválida
+!v303!Invalid Password
+!v304!Parola d'accesso Non valida
+!v305!Mot de passe Inadmissible
+!ID 000328
+!v301!Série/Coleção
+!v302!Série/Colección
+!v303!Serial
+!v304!Di serie
+!v305!Périodique
+!ID 000329
+!v301!Setembro
+!v302!Septiembre
+!v303!September
+!v304!Settembre
+!v305!Septembre
+!ID 000330
+!v301!Sexta feira
+!v302!Viernes
+!v303!Friday
+!v304!Venerdì
+!v305!Vendredi
+!ID 000331
+!v301!Sim
+!v302!Si
+!v303!Yes
+!v304!Sì
+!v305!Oui
+!ID 000332
+!v301!Sistema Operacional
+!v302!Sistema operativo
+!v303!Operational System
+!v304!Sistema Operativo
+!v305!Système Opérationnel
+!ID 000333
+!v301!Solicitante
+!v302!Solicitante
+!v303!Requester
+!v304!Richiedente
+!v305!Demandeur
+!ID 000334
+!v301!Subtítulo
+!v302!Subtítulo
+!v303!Subtitle
+!v304!Sottotitolo
+!v305!Sous-titre
+!ID 000335
+!v301!SUGESTÃO N
+!v302!Sugerencia n
+!v303!SUGGESTION N
+!v304!SUGGERIMENTO N
+!v305!SUGGESTION N
+!ID 000336
+!v301!Sugestões de compra
+!v302!Sugerencia de compra
+!v303!Suggestions of purchase
+!v304!Suggerimenti dell'acquisto
+!v305!Suggestions d'achat
+!ID 000337
+!v301!Sugestões pendentes
+!v302!Sugerencias pendientes
+!v303!Pending suggestions
+!v304!Pending i suggerimenti
+!v305!En attendant des suggestions
+!ID 000338
+!v301!Super usuário
+!v302!Super usuário
+!v303!Super user
+!v304!Utente eccellente
+!v305!Utilisateur superbe
+!ID 000339
+!v301!Suporte
+!v302!Soporte
+!v303!Suport
+!v304!Suport
+!v305!Suport
+!ID 000340
+!v301!Suspenso
+!v302!Suspendido
+!v303!Canceled
+!v304!sospeso
+!v305!Suspendu
+!ID 000341
+!v301!Suspenso até
+!v302!Suspendido hasta
+!v303!Suspended until
+!v304!Sospeso fino a
+!v305!Suspendu jusque à
+!ID 000342
+!v301!Tempo estimado
+!v302!Tiempo estimado
+!v303!Estimated time
+!v304!Tempo valutato
+!v305!Temps estimé
+!ID 000343
+!v301!Temporariamente suspenso
+!v302!Temporariamente suspendido
+!v303!Temporarily suspended
+!v304![MSG-343]
+!v305![MSG-343]
+!ID 000344
+!v301!Terça feira
+!v302!Martes
+!v303!Tuesday
+!v304!Martedì
+!v305!Mardi
+!ID 000345
+!v301!Informamos que o objeto descrito abaixo esta com a data de devolucao vencida
+!v302!Informamos que el objecto descripto abajo está con el plazo de devolución vencido
+!v303!msg345
+!v304!msg345
+!v305!msg345
+!ID 000346
+!v301!Texto completo
+!v302!Texto Completo
+!v303!Full Text
+!v304!A testo integrale
+!v305!À texte intégral
+!ID 000347
+!v301!Tipo
+!v302!Tipo
+!v303!Type
+!v304![MSG-347]
+!v305![MSG-347]
+!ID 000348
+!v301!Tipo de assinatura
+!v302!Tipo de subscripción
+!v303!Subscription type
+!v304![MSG-348]
+!v305![MSG-348]
+!ID 000349
+!v301!Todas as rotinas da biblioteca são informatizadas e disponíveis na WEB em tempo real. Utiliza o software PHL
+!v302!msg349
+!v303!msg349
+!v304!msg349
+!v305!msg349
+!ID 000350
+!v301!Tipo de objeto
+!v302!Tipo de objecto
+!v303!Object type
+!v304![MSG-350]
+!v305![MSG-350]
+!ID 000351
+!v301!Tipo de objeto desconhecido
+!v302!Tipo de objecto desconocido
+!v303!Unknow object type
+!v304![MSG-351]
+!v305![MSG-351]
+!ID 000352
+!v301!Tipo de operação
+!v302!Tipo de operación
+!v303!Operation Type
+!v304![MSG-352]
+!v305![MSG-352]
+!ID 000353
+!v301!Tipo de suporte
+!v302!Tipo de soporte
+!v303!Suport Type
+!v304!Suport Type
+!v305!Suport Type
+!ID 000354
+!v301!Tipo de usuário
+!v302!Tipo de usuário
+!v303!User Type
+!v304!User Type
+!v305!User Type
+!ID 000355
+!v301!Este tipo de usuário não foi considerado no regulamento da biblioteca
+!v302!Tipo de usuário desconocido
+!v303!Unknow user type
+!v304![MSG-355]
+!v305![MSG-355]
+!ID 000356
+!v301!Tipo de Documento
+!v302!Tipo de documento
+!v303!Document Type
+!v304![MSG-356]
+!v305![MSG-356]
+!ID 000357
+!v301!Tipos de Objetos
+!v302!Tipos de objectos
+!v303!Objects types
+!v304![MSG-357]
+!v305![MSG-357]
+!ID 000358
+!v301!Tipos de Suporte
+!v302!Tipos de soportes
+!v303!Suport Types
+!v304![MSG-358]
+!v305![MSG-358]
+!ID 000359
+!v301!Tipos de Usuários
+!v302!Tipos de usuários
+!v303!Users Types
+!v304![MSG-359]
+!v305![MSG-359]
+!ID 000360
+!v301!Título
+!v302!Título
+!v303!Title
+!v304!Titolo
+!v305!Titre
+!ID 000361
+!v301!Título (analítica)
+!v302!Título (analítica)
+!v303!Title (analitics)
+!v304!Title (analitics)
+!v305!Title (analitics)
+!ID 000362
+!v301!Título da Série
+!v302!Título de la série
+!v303!Serial title
+!v304![MSG-362]
+!v305![MSG-362]
+!ID 000363
+!v301!Título do Capítulo
+!v302!Título del capítulo
+!v303!Chapter Title
+!v304![MSG-363]
+!v305![MSG-363]
+!ID 000364
+!v301!Título do Periódico
+!v302!Título de la revista
+!v303!Journal Title
+!v304![MSG-364]
+!v305![MSG-364]
+!ID 000365
+!v301!Título reservado
+!v302!Título reservado
+!v303!Reserved title
+!v304![MSG-365]
+!v305![MSG-365]
+!ID 000366
+!v301!Todos
+!v302!Todos
+!v303!All
+!v304!Tutto
+!v305!Tout
+!ID 000367
+!v301!Tombo
+!v302!Tombo
+!v303!Inventory
+!v304!Inventario
+!v305!Inventory
+!ID 000368
+!v301!Tombo desconhecido
+!v302!Tombo desconocido
+!v303!Unknow inventory number
+!v304![MSG-368]
+!v305![MSG-368]
+!ID 000369
+!v301!Existe outro objeto com o mesmo número de tombo.<br> O registro não foi gravado
+!v302!Tombo duplicado
+!v303!Duplicated inventory number
+!v304![MSG-369]
+!v305![MSG-369]
+!ID 000370
+!v301!Total
+!v302!Total
+!v303!Total
+!v304![MSG-370]
+!v305![MSG-370]
+!ID 000371
+!v301!Trabalho apresentado em evento
+!v302!Trabajo presentado en evento
+!v303!Work presented in event
+!v304![MSG-371]
+!v305![MSG-371]
+!ID 000372
+!v301!Transação negada
+!v302!Operación negada
+!v303!Transaction denied
+!v304![MSG-372]
+!v305![MSG-372]
+!ID 000373
+!v301!Transações
+!v302!Transaciones
+!v303!Transactions
+!v304![MSG-373]
+!v305![MSG-373]
+!ID 000374
+!v301!Trilha
+!v302!Trilha
+!v303!Track
+!v304![MSG-374]
+!v305![MSG-374]
+!ID 000375
+!v301!Turma
+!v302!Turma
+!v303!Turma
+!v304![MSG-375]
+!v305![MSG-375]
+!ID 000376
+!v301!ISBN
+!v302!ISBN
+!v303!ISBN
+!v304!ISBN
+!v305!ISBN
+!ID 000377
+!v301!Último Acesso
+!v302!Último acceso
+!v303!Last Access
+!v304![MSG-377]
+!v305![MSG-377]
+!ID 000378
+!v301!Unidade
+!v302!Unidad
+!v303!Unit
+!v304![MSG-378]
+!v305![MSG-378]
+!ID 000379
+!v301!Usuário
+!v302!Usuário
+!v303!User
+!v304!Utente
+!v305!Utilisateur
+!ID 000380
+!v301!Usuário desconhecido
+!v302!Usuário desconocido
+!v303!Unknown user
+!v304![MSG-380]
+!v305![MSG-380]
+!ID 000381
+!v301!Usuário não matriculado nesta biblioteca
+!v302!Usuário no matriculado en la biblioteca
+!v303!User not registered in this library
+!v304![MSG-381]
+!v305![MSG-381]
+!ID 000382
+!v301!Usuário suspenso
+!v302!Usuário suspendido
+!v303!Suspended user
+!v304![MSG-382]
+!v305![MSG-382]
+!ID 000383
+!v301!Usuários
+!v302!Usuários
+!v303!Users
+!v304!Utenti
+!v305!Utilisateurs
+!ID 000384
+!v301!Valor
+!v302!Valor
+!v303!Value
+!v304!Value
+!v305!Value
+!ID 000385
+!v301!Valor da Coleção
+!v302!Valor de la collección
+!v303!Collection Value
+!v304![MSG-385]
+!v305![MSG-385]
+!ID 000386
+!v301!Vencido
+!v302!Vencido
+!v303!Expired
+!v304![MSG-386]
+!v305![MSG-386]
+!ID 000387
+!v301!Vespertino
+!v302!Vespertino
+!v303!Vespertine
+!v304!Vespertine
+!v305!Vespertine
+!ID 000388
+!v301!Vídeo
+!v302!Vídeo
+!v303!Video
+!v304!Video
+!v305!Video
+!ID 000389
+!v301!Vídeos
+!v302!Vídeos
+!v303!Videos
+!v304!Videos
+!v305!Videos
+!ID 000390
+!v301!Usuário já possui um exemplar deste objeto
+!v302!Ud. ya tiene el documento en su poder
+!v303!You already has the document
+!v304![MSG-390]
+!v305![MSG-390]
+!ID 000391
+!v301!Você solicitou a eliminação do registro
+!v302!Ud. solicitou borrar el registro
+!v303!You requested the delection of the record
+!v304![MSG-391]
+!v305![MSG-391]
+!ID 000392
+!v301!Voltar
+!v302!Volver
+!v303!Back
+!v304!Vada indietro
+!v305!Retournez
+!ID 000393
+!v301!Volume
+!v302!Volumen
+!v303!Volume
+!v304![MSG-393]
+!v305![MSG-393]
+!ID 000394
+!v301!Volumes
+!v302!Volumenes
+!v303!Volumes
+!v304![MSG-394]
+!v305![MSG-394]
+!ID 000395
+!v301!Quinta feira
+!v302!Hueves
+!v303!Quinta feira
+!v304![MSG-395]
+!v305![MSG-395]
+!ID 000396
+!v301!Mensagens
+!v302!Mensages
+!v303!Messages
+!v304![MSG-396]
+!v305![MSG-396]
+!ID 000397
+!v301!Texto da Mensagem
+!v302!Texto de la mensage
+!v303!Message Text
+!v304![MSG-397]
+!v305![MSG-397]
+!ID 000398
+!v301!O registro será deletado. Tem certeza
+!v302!El registro será borrado. Seguro?
+!v303!The record will be deleted. Are you sure
+!v304![MSG-398]
+!v305![MSG-398]
+!ID 000399
+!v301!Validade
+!v302!Validade
+!v303!Expired in
+!v304![MSG-399]
+!v305![MSG-399]
+!ID 000400
+!v301!Mensagem (nova)
+!v302!Mensage (nueva)
+!v303!System message (new)
+!v304![MSG-400]
+!v305![MSG-400]
+!ID 000401
+!v301!Mensagem (edita)
+!v302!Mensage (edita)
+!v303!System message (edit)
+!v304![MSG-401]
+!v305![MSG-401]
+!ID 000402
+!v301!Permissões (nova)
+!v302!Permissiones (nueva)
+!v303!Permission (new)
+!v304![MSG-402]
+!v305![MSG-402]
+!ID 000403
+!v301!Permissões (edita)
+!v302!Permissiones (edita)
+!v303!Permission (edit)
+!v304![MSG-403]
+!v305![MSG-403]
+!ID 000404
+!v301!Prazos (novo)
+!v302!Prazos (nuevo)
+!v303!Loan limit days (new)
+!v304![MSG-404]
+!v305![MSG-404]
+!ID 000405
+!v301!Prazos (edita)
+!v302!Prazos (edita)
+!v303!Loan limit days (edit)
+!v304![MSG-405]
+!v305![MSG-405]
+!ID 000406
+!v301!Data do calendário (nova)
+!v302!Fecha del calendário (nueva)
+!v303!Calendar date (new)
+!v304![MSG-406]
+!v305![MSG-406]
+!ID 000407
+!v301!Data do calendário (edita)
+!v302!Fecha del calendário (edita)
+!v303!Calendar date (edit)
+!v304![MSG-407]
+!v305![MSG-407]
+!ID 000408
+!v301!Digite a chave de busca
+!v302!Digite la clave de busqueda
+!v303!Entry the search key
+!v304![MSG-408]
+!v305![MSG-408]
+!ID 000409
+!v301!Clique sobre o link para abrir o formulário de edição
+!v302!Clique sobre o link para abrir el formulario de edición
+!v303!Click on the link to open the edition form
+!v304![MSG-409]
+!v305![MSG-409]
+!ID 000410
+!v301!Tipo de conteúdo
+!v302!Tipo de contenido
+!v303!Content Type
+!v304!Tipo Di Informazioni
+!v305!Type De l'Information
+!ID 000411
+!v301!Registro não encontrado
+!v302!Registro no encontrado
+!v303!Record not found
+!v304!Registri non trovato
+!v305!Enregistrez non trouvé
+!ID 000412
+!v301!Cancela
+!v302!Cancela
+!v303!Cancel
+!v304![MSG-412]
+!v305![MSG-412]
+!ID 000413
+!v301!Há pendências
+!v302!Hay pendéncias
+!v303!It has pendings
+!v304![MSG-413]
+!v305![MSG-413]
+!ID 000414
+!v301!Registro deletado
+!v302!Registro borrado
+!v303!The record was deleted
+!v304![MSG-414]
+!v305![MSG-414]
+!ID 000415
+!v301!Data do pagamento
+!v302!Fecha de la liberación
+!v303!Release date
+!v304![MSG-415]
+!v305![MSG-415]
+!ID 000416
+!v301!Não foram encontrados os dados para a geração do gráfico !
+!v302!Los datos para el grafico no fue encontrado !
+!v303!Data not found !
+!v304!Data not found !
+!v305!Data not found !
+!ID 000417
+!v301!Justificativa
+!v302!Justificativa
+!v303!Justify
+!v304![MSG-417]
+!v305![MSG-417]
+!ID 000418
+!v301!Selecione a opção desejada
+!v302!Seleccione la opción deseada
+!v303!Options to select
+!v304![MSG-418]
+!v305![MSG-418]
+!ID 000419
+!v301!*** Nota de copyright foi violada!
+!v302!*** Nota de copyright foi violada!
+!v303!*** Nota de copyright foi violada!
+!v304!*** Nota de copyright foi violada!
+!v305!*** Nota de copyright foi violada!
+!ID 000420
+!v301!Novo registro
+!v302!Nuevo registro
+!v303!New record
+!v304![MSG-420]
+!v305![MSG-420]
+!ID 000421
+!v301!Editar registro
+!v302!Editar registro
+!v303!Edit record
+!v304![MSG-421]
+!v305![MSG-421]
+!ID 000422
+!v301!Registro
+!v302!Registro
+!v303!Record
+!v304![MSG-422]
+!v305![MSG-422]
+!ID 000423
+!v301!Processo desconhecido
+!v302!Proceso desconocido
+!v303!Unknow process
+!v304![MSG-423]
+!v305![MSG-423]
+!ID 000424
+!v301!Bases de Dados
+!v302!Bases de datos
+!v303!Databases
+!v304![MSG-424]
+!v305![MSG-424]
+!ID 000425
+!v301!Kardex
+!v302!Kardex
+!v303!Kardex
+!v304![MSG-425]
+!v305![MSG-425]
+!ID 000426
+!v301!Continua como
+!v302!Continua como
+!v303!Continua como
+!v304![MSG-426]
+!v305![MSG-426]
+!ID 000427
+!v301!Continuação de
+!v302!Continuación de
+!v303!Continuação de
+!v304![MSG-427]
+!v305![MSG-427]
+!ID 000428
+!v301!Área
+!v302!Área
+!v303!Area
+!v304![MSG-428]
+!v305![MSG-428]
+!ID 000429
+!v301!Vencimento
+!v302!Vencimento
+!v303!Vencimento
+!v304![MSG-429]
+!v305![MSG-429]
+!ID 000430
+!v301!Agente
+!v302!Agente
+!v303!Agente
+!v304![MSG-430]
+!v305![MSG-430]
+!ID 000431
+!v301!Periodicidade
+!v302!Periodicidade
+!v303!Periodicidade
+!v304![MSG-431]
+!v305![MSG-431]
+!ID 000432
+!v301!Orçamento
+!v302!Orçamento
+!v303!Orçamento
+!v304![MSG-432]
+!v305![MSG-432]
+!ID 000433
+!v301!Pedido
+!v302!Pedido
+!v303!Request
+!v304![MSG-433]
+!v305![MSG-433]
+!ID 000434
+!v301!Prezados Senhores
+!v302!Estimados Señores
+!v303!Dear Srs
+!v304![MSG-434]
+!v305![MSG-434]
+!ID 000435
+!v301!Solicitamos o preço de venda da obra abaixo discriminada
+!v302!Solicitamos el precio de venta del documento descripto abajo
+!v303!Solicitamos o preço de venda da obra abaixo discriminada
+!v304![MSG-435]
+!v305![MSG-435]
+!ID 000436
+!v301!Solicitamos o envio da obra discriminada abaixo, referente ao orçamento que nos enviou no valor de
+!v302!Solicitamos el envio del trabajo discriminado hacia abajo, con respecto al presupuesto que nos mandó en el valor de
+!v303!We request the sendning from the work discriminated down, regarding the budget that sent us in the value of
+!v304![MSG-436]
+!v305![MSG-436]
+!ID 000437
+!v301!marcar, copiar e colar no corpo do e-mail
+!v302!marcar, copiar e colar no corpo do e-mail
+!v303!select, copy and paste in e-mail body
+!v303!Ordine di Acquisto
+!v304![MSG-437]
+!v305![MSG-437]
+!ID 000438
+!v301!Ordem de Compra
+!v302!Ordem de Compra
+!v303!Purchase Order
+!v304![MSG-438]
+!v305![MSG-438]
+!ID 000439
+!v301!Atenciosamente
+!v302!Atentamente
+!v303!Regards
+!v304![MSG-439]
+!v305![MSG-439]
+!ID 000440
+!v301!Pedido de Orçamento
+!v302!Pedido de Orçamento
+!v303!Pedido de Orçamento
+!v304![MSG-440]
+!v305![MSG-440]
+!ID 000441
+!v301!Enviar pedido para
+!v302!Enviar pedido para
+!v303!Send request to
+!v304![MSG-441]
+!v305![MSG-441]
+!ID 000442
+!v301!Emitir fatura e encaminhar para
+!v302!Emitir fatura e encaminhar para
+!v303!Print bill and send to
+!v304![MSG-442]
+!v305![MSG-442]
+!ID 000443
+!v301!Departamento de Bibliotecas
+!v302!Departamento de Bibliotecas
+!v303!Library Department
+!v304![MSG-443]
+!v305![MSG-443]
+!ID 000444
+!v301!Este documento não está em lista de espera
+!v302!Este documento no está en lista de espera
+!v303!Este documento não está em lista de espera
+!v304![MSG-444]
+!v305![MSG-444]
+!ID 000445
+!v301!Este objeto nunca foi emprestado
+!v302!Este objeto nunca foi emprestado
+!v303!Este objeto nunca foi emprestado
+!v304![MSG-445]
+!v305![MSG-445]
+!ID 000446
+!v301!Acompanhamento de processos
+!v302!Acompanhamento de processos
+!v303!Acompanhamento de processos
+!v304![MSG-446]
+!v305![MSG-446]
+!ID 000447
+!v301!Sugerir compra
+!v302!Sugerir compra
+!v303!Sugerir compra
+!v304![MSG-447]
+!v305![MSG-447]
+!ID 000448
+!v301!Informe o número do processo
+!v302!Informe o número do processo
+!v303!Entry the process number
+!v304![MSG-448]
+!v305![MSG-448]
+!ID 000449
+!v301!Serviços / Renovações / Reservas
+!v302!Servicios
+!v303!Services / Renewals / Reserves
+!v304!Servizi / Rinnovamenti / Riserve
+!v305!Services / Renouv. / Réserv.
+!ID 000450
+!v301!Área de acesso restrito
+!v302!Área de acceso restringido
+!v303!Restricted area
+!v304![MSG-450]
+!v305![MSG-450]
+!ID 000451
+!v301!Circulação
+!v302!Circulación
+!v303!Circulation
+!v304!Circolazione
+!v305!Circulation
+!ID 000452
+!v301!Cadastro
+!v302!Cadastro
+!v303!User records
+!v304![MSG-452]
+!v305![MSG-452]
+!ID 000453
+!v301!Importação
+!v302!Importación
+!v303!Import
+!v304!Importazione
+!v305!Importation
+!ID 000454
+!v301!Título na etiqueta
+!v302!Título en la etiqueta
+!v303!Label title
+!v304![MSG-454]
+!v305![MSG-454]
+!ID 000455
+!v301!Tipo de material
+!v302!Tipo de material
+!v303!Material type
+!v304![MSG-455]
+!v305![MSG-455]
+!ID 000456
+!v301!Altura
+!v302!Altura
+!v303!Altura
+!v304![MSG-456]
+!v305![MSG-456]
+!ID 000457
+!v301!Largura
+!v302!Largura
+!v303!Width
+!v304![MSG-457]
+!v305![MSG-457]
+!ID 000458
+!v301!Peso
+!v302!Peso
+!v303!Peso
+!v304![MSG-458]
+!v305![MSG-458]
+!ID 000459
+!v301!Profundidade
+!v302!Profundidade
+!v303!Profundidade
+!v304![MSG-459]
+!v305![MSG-459]
+!ID 000460
+!v301!Fabricante
+!v302!Fabricante
+!v303!Fabricante
+!v304![MSG-460]
+!v305![MSG-460]
+!ID 000461
+!v301!Cronologia
+!v302!Cronologia
+!v303!Cronologia
+!v304![MSG-461]
+!v305![MSG-461]
+!ID 000462
+!v301!Natureza
+!v302!Naturaleza
+!v303!Nature
+!v304![MSG-462]
+!v305![MSG-462]
+!ID 000463
+!v301!Espécie
+!v302!Espécie
+!v303!Espécie
+!v304![MSG-463]
+!v305![MSG-463]
+!ID 000464
+!v301!Estado de conservação
+!v302!Estado de conservación
+!v303!Conservation state
+!v304![MSG-464]
+!v305![MSG-464]
+!ID 000465
+!v301!Categoria
+!v302!Categoria
+!v303!Category
+!v304![MSG-465]
+!v305![MSG-465]
+!ID 000466
+!v301!Descrição do objeto
+!v302!Descripción del objeto
+!v303!Object description
+!v304![MSG-466]
+!v305![MSG-466]
+!ID 000467
+!v301!Documentacão
+!v302!Documentacão
+!v303!Documentation
+!v304![MSG-467]
+!v305![MSG-467]
+!ID 000468
+!v301!Exposições
+!v302!Exposições
+!v303!Expositions
+!v304![MSG-468]
+!v305![MSG-468]
+!ID 000469
+!v301!Localização
+!v302!Ubicación
+!v303!Location
+!v304![MSG-469]
+!v305![MSG-469]
+!ID 000470
+!v301!Objetos de museu
+!v302!Objectos de museu
+!v303!Museum object
+!v304![MSG-470]
+!v305![MSG-470]
+!ID 000471
+!v301!Técnica
+!v302!Técnica
+!v303!Technic
+!v304![MSG-471]
+!v305![MSG-471]
+!ID 000472
+!v301!Informamos que prazo para devolucao do objeto
+!v302!Informamos que el plazo para devolucion del objeto
+!v303!Informamos que prazo para devolucao do objeto
+!v304!msg472
+!v305!msg472
+!ID 000473
+!v301!Atenção: número de matrícula ausente
+!v302!Atención: número de matrícula ausente
+!v303!Warning: user number absent
+!v304![MSG-473]
+!v305![MSG-473]
+!ID 000474
+!v301!Atenção: nome do usuário ausente
+!v302!Atención: nombre del usuário ausente
+!v303!Warning: user name absent
+!v304![MSG-474]
+!v305![MSG-474]
+!ID 000475
+!v301!Atenção: tipo de usuário ausente
+!v302!Atención: tipo del usuário ausente
+!v303!Warning: user type absent
+!v304![MSG-475]
+!v305![MSG-475]
+!ID 000476
+!v301!Abrir
+!v302!Abrir
+!v303!Open
+!v304![MSG-476]
+!v305![MSG-476]
+!ID 000477
+!v301!Atenção: tombo ausente
+!v302!Atención: tombo ausente
+!v303!Warning: inventory number is absent
+!v304![MSG-477]
+!v305![MSG-477]
+!ID 000478
+!v301!Atenção: tipo de documento ausente
+!v302!Atención: tipo de documento ausente
+!v303!Warning: document type absent
+!v304![MSG-478]
+!v305![MSG-478]
+!ID 000479
+!v301!Atenção: título do documento ausente
+!v302!Atención: título del documento ausente
+!v303!Warning: document title absent
+!v304![MSG-479]
+!v305![MSG-479]
+!ID 000480
+!v301!Opções de tipo de documento e nível bibliográfico
+!v302!Opciones del tipo de documento y niveles bibliograficos
+!v303!Document type and bibliographic level options
+!v304!Document type and bibliographic level options
+!v305!Document type and bibliographic level options
+!ID 000481
+!v301!Matrícula vencida
+!v302!Matrícula vencida
+!v303!User inscription out of date
+!v304![MSG-481]
+!v305![MSG-481]
+!ID 000482
+!v301!Fatura
+!v302!Fatura
+!v303!Fatura
+!v304![MSG-482]
+!v305![MSG-482]
+!ID 000483
+!v301!Administração
+!v302!Administración
+!v303!Administration
+!v304![MSG-483]
+!v305![MSG-483]
+!ID 000484
+!v301!Não emprestar se usuário estiver com cadastro vencido
+!v302!Não emprestar se usuário estiver com cadastro vencido
+!v303!Don't loan if the user inscription is out of date
+!v304![MSG-484]
+!v305![MSG-484]
+!ID 000485
+!v301!Não emprestar se usuário tiver objetos atrasados
+!v302!Não emprestar se usuário tiver objetos atrasados
+!v303!Don't loan if the user have documents out of date
+!v304![MSG-485]
+!v305![MSG-485]
+!ID 000486
+!v301!Não emprestar se usuário estiver suspenso
+!v302!Não emprestar se usuário estiver suspenso
+!v303!Don't loan if the user is suspended
+!v304![MSG-486]
+!v305![MSG-486]
+!ID 000487
+!v301!Não emprestar se usuário tiver débitos pendentes
+!v302!Não emprestar se usuário tiver débitos pendentes
+!v303!Don't loan if the user have debits
+!v304![MSG-487]
+!v305![MSG-487]
+!ID 000488
+!v301!Não emprestar se houver reserva para outro usuário
+!v302!Não emprestar se houver reserva para outro usuário
+!v303!Don't loan if the document is reserved
+!v304![MSG-488]
+!v305![MSG-488]
+!ID 000489
+!v301!Não emprestar se limite foi ultrapassado
+!v302!Não emprestar se limite foi ultrapassado
+!v303!Don't loan if out of limit
+!v304![MSG-489]
+!v305![MSG-489]
+!ID 000490
+!v301!Suspensão
+!v302!Suspensión
+!v303!Suspending
+!v304![MSG-490]
+!v305![MSG-490]
+!ID 000491
+!v301!Nenhuma
+!v302!Ninguna
+!v303!Nothing
+!v304![MSG-491]
+!v305![MSG-491]
+!ID 000492
+!v301!Data limite
+!v302!Fecha limite
+!v303!Limit date
+!v304![MSG-492]
+!v305![MSG-492]
+!ID 000493
+!v301!Não renovar se usuário estiver com cadastro vencido
+!v302!Não renovar se usuário estiver com cadastro vencido
+!v303!Não renovar se usuário estiver com cadastro vencido
+!v304![MSG-493]
+!v305![MSG-493]
+!ID 000494
+!v301!Não renovar se usuário estiver suspenso
+!v302!Não renovar se usuário estiver suspenso
+!v303!Não renovar se usuário estiver suspenso
+!v304![MSG-494]
+!v305![MSG-494]
+!ID 000495
+!v301!Não renovar se existir reserva para outro usuário
+!v302!Não renovar se existir reserva para outro usuário
+!v303!Não renovar se existir reserva para outro usuário
+!v304![MSG-495]
+!v305![MSG-495]
+!ID 000496
+!v301!Não renovar se prazo estiver expirado
+!v302!Não renovar se prazo estiver expirado
+!v303!Não renovar se prazo estiver expirado
+!v304![MSG-496]
+!v305![MSG-496]
+!ID 000497
+!v301!Não renovar se usuário estiver com penalidade
+!v302!Não renovar se usuário estiver com penalidade
+!v303!Não renovar se usuário estiver com penalidade
+!v304![MSG-497]
+!v305![MSG-497]
+!ID 000498
+!v301!Não permitir que usuário suspenso efetue reservas
+!v302!Não permitir que usuário suspenso efetue reservas
+!v303!Não permitir que usuário suspenso efetue reservas
+!v304![MSG-498]
+!v305![MSG-498]
+!ID 000499
+!v301!Não permitir que usuário com débitos efetue reservas
+!v302!Não permitir que usuário com débitos efetue reservas
+!v303!Não permitir que usuário com débitos efetue reservas
+!v304![MSG-499]
+!v305![MSG-499]
+!ID 000500
+!v301!Não permitir que usuário com cadastro vencido efetue reservas
+!v302!Não permitir que usuário com cadastro vencido efetue reservas
+!v303!Não permitir que usuário com cadastro vencido efetue reservas
+!v304![MSG-500]
+!v305![MSG-500]
+!ID 000501
+!v301!Não permitir que usuário com atrasos efetue reservas
+!v302!Não permitir que usuário com atrasos efetue reservas
+!v303!Não permitir que usuário com atrasos efetue reservas
+!v304![MSG-501]
+!v305![MSG-501]
+!ID 000502
+!v301!Não permitir que usuário reserve um título que está em seu poder
+!v302!Não permitir que usuário reserve um título que está em seu poder
+!v303!Não permitir que usuário reserve um título que está em seu poder
+!v304![MSG-502]
+!v305![MSG-502]
+!ID 000503
+!v301!Não permitir que usuário efetue várias reservas do mesmo título
+!v302!Não permitir que usuário efetue várias reservas do mesmo título
+!v303!Não permitir que usuário efetue várias reservas do mesmo título
+!v304![MSG-503]
+!v305![MSG-503]
+!ID 000504
+!v301!Não permitir reservas para títulos disponíveis
+!v302!Não permitir reservas para títulos disponíveis
+!v303!Don't permit reserve to availables titles
+!v304![MSG-504]
+!v305![MSG-504]
+!ID 000505
+!v301!Cancelar reserva a partir do prazo de validade
+!v302!Cancelar reserva a partir do prazo de validade
+!v303!Cancelar reserva a partir do prazo de validade
+!v304![MSG-505]
+!v305![MSG-505]
+!ID 000506
+!v301!Inscr. Estadual
+!v302!Inscr. Estadual
+!v303!Inscr. Estadual
+!v304![MSG-506]
+!v305![MSG-506]
+!ID 000507
+!v301!à partir das
+!v302!despues de las
+!v303!à partir das
+!v304![MSG-507]
+!v305![MSG-507]
+!ID 000508
+!v301!Relatório
+!v302!Relatório
+!v303!Report
+!v304!Rapporto
+!v305!Rapport
+!ID 000509
+!v301!Data de devolução
+!v302!Fecha de devolución
+!v303!Delivery date
+!v304![MSG-509]
+!v305![MSG-509]
+!ID 000510
+!v301!Data da reserva
+!v302!Fecha de la reserva
+!v303!Reserv date
+!v304![MSG-510]
+!v305![MSG-510]
+!ID 000511
+!v301!Nome do usuário
+!v302!Nombre del usuario
+!v303!User name
+!v304![MSG-511]
+!v305![MSG-511]
+!ID 000512
+!v301!Número da matrícula
+!v302!Número de inscripción
+!v303!User number
+!v304![MSG-512]
+!v305![MSG-512]
+!ID 000513
+!v301!Turno
+!v302!Turno
+!v303!Turno
+!v304![MSG-513]
+!v305![MSG-513]
+!ID 000514
+!v301!Número de tombo
+!v302!Número de inventário
+!v303!Inventory number
+!v304![MSG-514]
+!v305![MSG-514]
+!ID 000515
+!v301!Quantidade por
+!v302!Cuantidad por
+!v303!Quantity by
+!v304![MSG-515]
+!v305![MSG-515]
+!ID 000516
+!v301!Sem título
+!v302!Sin título
+!v303!Widout title
+!v304![MSG-516]
+!v305![MSG-516]
+!ID 000517
+!v301!Sem tombo
+!v302!Sin inventario
+!v303!Widout inventory number
+!v304![MSG-517]
+!v305![MSG-517]
+!ID 000518
+!v301!Não emprestar mais que um exemplar para um mesmo usuário
+!v302!No prestar mas que un ejemplar para el mismo usuario
+!v303!Não emprestar mais que um exemplar para um mesmo usuário
+!v304![MSG-518]
+!v305![MSG-518]
+!ID 000519
+!v301!Ao aceitar este empréstimo estou ciente das sanções que estarei sujeito quando os prazos e termos de devolução não forem cumpridos
+!v302!Al aceptar el prestamo tengo ciencia de las penalidades que estaré sujecto cuando los plazos y terminos de devolución no fueren cumplidos
+!v303!Ao aceitar este empréstimo estou ciente das sansões que estarei sujeito quando os prazos e termos de devolução não forem cumpridos
+!v304![MSG-519]
+!v305![MSG-519]
+!ID 000520
+!v301!Devolver
+!v302!Devolver
+!v303!Delivery
+!v304![MSG-520]
+!v305![MSG-520]
+!ID 000521
+!v301!Extrato do título
+!v302!Extrato del 
+!v303!Title status
+!v304![MSG-521]
+!v305![MSG-521]
+!ID 000522
+!v301!Atenção: Login ausente
+!v302!Atención: login ausente
+!v303!Warning: login absent
+!v304![MSG-522]
+!v305![MSG-522]
+!ID 000523
+!v301!Atenção: Senha ausente
+!v302!Atención: clave ausente
+!v303!Warning: unknow password
+!v304![MSG-523]
+!v305![MSG-523]
+!ID 000524
+!v301!Atenção: Nível de permissão ausente
+!v302!Atención: nivel de permisso ausente
+!v303!Warning: permission level unknow
+!v304![MSG-524]
+!v305![MSG-524]
+!ID 000525
+!v301!Atenção: Unidades autorizadas ausente
+!v302!Atencion: unidades permitidas ausentes
+!v303!Warning: unknow unit
+!v304![MSG-525]
+!v305![MSG-525]
+!ID 000526
+!v301!Atenção: Unidade desconhecida
+!v302!Atención: unidad desconocida
+!v303!Warning: unknow unit
+!v304![MSG-526]
+!v305![MSG-526]
+!ID 000527
+!v301!Atenção: Login duplicado
+!v302!Atención: login duplicado
+!v303!Warning: duplicated login
+!v304![MSG-527]
+!v305![MSG-527]
+!ID 000528
+!v301!Devolvido em
+!v302!Devuelto en
+!v303!Delivered in
+!v304![MSG-528]
+!v305![MSG-528]
+!ID 000529
+!v301!Informamos que o objeto descrito abaixo já se encontra disponível para empréstimo
+!v302!msg529
+!v303!msg529
+!v304!msg529
+!v305!msg529
+!ID 000530
+!v301!Regulamento
+!v302!Regulamento
+!v303!Rules
+!v304![MSG-530]
+!v305![MSG-530]
+!ID 000531
+!v301!Regulamento (novo)
+!v302!Regulamento (nuevo)
+!v303!Rules (new)
+!v304![MSG-531]
+!v305![MSG-531]
+!ID 000532
+!v301!Regulamento (edita)
+!v302!Regulamento (edita)
+!v303!Rules (edit)
+!v304![MSG-532]
+!v305![MSG-532]
+!ID 000533
+!v301!Notas de conteúdo
+!v302!Notas de contenido
+!v303!Content notes
+!v304!Content notes
+!v305!Content notes
+!ID 000534
+!v301!Limite de objetos
+!v302!Limite de objetos
+!v303!Object limit
+!v304![MSG-534]
+!v305![MSG-534]
+!ID 000535
+!v301!Iniciou em
+!v302!Empensó en
+!v303!Started in
+!v304![MSG-535]
+!v305![MSG-535]
+!ID 000536
+!v301!Encerrou em
+!v302!Cerrou en
+!v303!Break in
+!v304![MSG-536]
+!v305![MSG-536]
+!ID 000537
+!v301!Autores
+!v302!Autores
+!v303!Authors
+!v304![MSG-537]
+!v305![MSG-537]
+!ID 000538
+!v301!Thesaurus
+!v302!Thesaurus
+!v303!Thesaurus
+!v304![MSG-538]
+!v305![MSG-538]
+!ID 000539
+!v301!Este usuário está com objeto emprestado
+!v302!Este usuário esta con objetos prestados
+!v303!Este usuário está com objeto emprestado
+!v304![MSG-539]
+!v305![MSG-539]
+!ID 000540
+!v301!Este usuário tem reservas pendentes
+!v302!Este usuário tiene reservas pendientes
+!v303!Este usuário tem reservas pendentes
+!v304![MSG-540]
+!v305![MSG-540]
+!ID 000541
+!v301!Este objeto está emprestado
+!v302!Este objeto esta prestado
+!v303!Este objeto está emprestado
+!v304![MSG-541]
+!v305![MSG-541]
+!ID 000542
+!v301!Este objeto está catalogado
+!v302!Este objeto esta catalogado
+!v303!Already catalogued
+!v304![MSG-542]
+!v305![MSG-542]
+!ID 000543
+!v301!Controle
+!v302!Control
+!v303!Control
+!v304![MSG-543]
+!v305![MSG-543]
+!ID 000544
+!v301!ISO2709
+!v302!ISO2709
+!v303!ISO2709
+!v304![MSG-544]
+!v305![MSG-544]
+!ID 000545
+!v301!Nível monográfico
+!v302!Nivel monografico
+!v303!Monograph level
+!v304![MSG-545]
+!v305![MSG-545]
+!ID 000546
+!v301!Nivel analítico
+!v302!Nivel analítico
+!v303!Analitic level
+!v304!Analitic level
+!v305!Analitic level
+!ID 000547
+!v301!Catálogo
+!v302!Catalogo
+!v303!Catalogue
+!v304!Catalogue
+!v305!Catalogue
+!ID 000548
+!v301!Nível série
+!v302!Nivel série
+!v303!Serial level
+!v304![MSG-548]
+!v305![MSG-548]
+!ID 000549
+!v301!Data ISO
+!v302!Fecha ISO
+!v303!ISO date
+!v304![MSG-549]
+!v305![MSG-549]
+!ID 000550
+!v301!Projetos arquitetônicos
+!v302!Proyectos architetonicos
+!v303!Architetonic projects
+!v304![MSG-550]
+!v305![MSG-550]
+!ID 000551
+!v301!Empresa
+!v302!Empresa
+!v303!Enterprise
+!v304![MSG-551]
+!v305![MSG-551]
+!ID 000552
+!v301!Proprietário
+!v302!Dueño
+!v303!Proprietário
+!v304![MSG-552]
+!v305![MSG-552]
+!ID 000553
+!v301!Tipologia
+!v302!Tipologia
+!v303!Tipology
+!v304![MSG-553]
+!v305![MSG-553]
+!ID 000554
+!v301!Processo
+!v302!Proceso
+!v303!Process
+!v304![MSG-554]
+!v305![MSG-554]
+!ID 000555
+!v301!Assinaturas
+!v302!Subscripciones
+!v303!Subscriptions
+!v304![MSG-555]
+!v305![MSG-555]
+!ID 000556
+!v301!Carimbo
+!v302!Sello
+!v303!Stamp
+!v304![MSG-556]
+!v305![MSG-556]
+!ID 000557
+!v301!Tipo do desenho
+!v302!Tipo del dibujo
+!v303!Design type
+!v304![MSG-557]
+!v305![MSG-557]
+!ID 000558
+!v301!Enviar
+!v302!Enviar
+!v303!Send
+!v304![MSG-558]
+!v305![MSG-558]
+!ID 000559
+!v301!Ano de assinatura
+!v302!Año de la subscripción
+!v303!Subscription year
+!v304![MSG-559]
+!v305![MSG-559]
+!ID 000560
+!v301!Forma de aquisição
+!v302!Forma de adquisición
+!v303!Forma de aquisição
+!v304![MSG-560]
+!v305![MSG-560]
+!ID 000561
+!v301!Estado da coleção
+!v302!Estado de la colección
+!v303!Colection status
+!v304![MSG-561]
+!v305![MSG-561]
+!ID 000562
+!v301!Curso indicado
+!v302!Curso indicado
+!v303!Curso indicado
+!v304![MSG-562]
+!v305![MSG-562]
+!ID 000563
+!v301!Número do título
+!v302!Numero del titulo
+!v303!Title number
+!v304![MSG-563]
+!v305![MSG-563]
+!ID 000564
+!v301!Número do fornecedor
+!v302!Numero de fornecedor
+!v303!Suplyer name
+!v304![MSG-564]
+!v305![MSG-564]
+!ID 000565
+!v301!Nome do fornecedor
+!v302!Nombre del fornecedor
+!v303!Suplier name
+!v304![MSG-565]
+!v305![MSG-565]
+!ID 000566
+!v301!Títulos agenciados
+!v302!Titulos agenciados
+!v303!Títulos agenciados
+!v304![MSG-566]
+!v305![MSG-566]
+!ID 000567
+!v301!Editoras que representa
+!v302!Editoriales que representa
+!v303!Editoras que representa
+!v304![MSG-567]
+!v305![MSG-567]
+!ID 000568
+!v301!Selecione o período
+!v302!Seleccione el periodo
+!v303!Select the period
+!v304![MSG-568]
+!v305![MSG-568]
+!ID 000569
+!v301!Continuar
+!v302!Continuar
+!v303!Continue
+!v304!Continui
+!v305!Continuez
+!ID 000570
+!v301!Finalizar
+!v302!Finalizar
+!v303!Finish
+!v304![MSG-570]
+!v305![MSG-570]
+!ID 000571
+!v301!Côr
+!v302!Color
+!v303!Color
+!v304![MSG-571]
+!v305![MSG-571]
+!ID 000572
+!v301!Tabela de Cursos
+!v302!Tabla de Cursos
+!v303!Courses Table
+!v304![MSG-572]
+!v305![MSG-572]
+!ID 000573
+!v301!Indisponível
+!v302!Indisponible
+!v303!Indisponible
+!v304!Indisponible
+!v305!Indisponible
+!ID 000574
+!v301!Valor da multa
+!v302!Valor de la pena
+!v303!Penalty value
+!v304![MSG-574]
+!v305![MSG-574]
+!ID 000575
+!v301!Ex
+!v302!Ex
+!v303!Ex
+!v304![MSG-575]
+!v305![MSG-575]
+!ID 000576
+!v301!Nota sobre copyright contida no arquivo "index.html" foi violada!
+!v302!Los derechos de copyright del archivo "index.html" fueran violados!
+!v303!Access denied. The copyright note in "index.html" was changed!
+!v304!Access denied. The copyright note in "index.html" was changed!
+!v305!Access denied. The copyright note in "index.html" was changed!
+!ID 000577
+!v301!Observações
+!v302!Observaciones
+!v303!Observations
+!v304!Observations
+!v305!Observations
+!ID 000578
+!v301!Bom dia
+!v302!Buen dia
+!v303!Good morning
+!v304![MSG-578]
+!v305![MSG-578]
+!ID 000579
+!v301!Boa tarde
+!v302!Buena tarde
+!v303!Good evening
+!v304![MSG-579]
+!v305![MSG-579]
+!ID 000580
+!v301!Boa noite
+!v302!Buena noche
+!v303!Good night
+!v304![MSG-580]
+!v305![MSG-580]
+!ID 000581
+!v301!Seu acesso à biblioteca
+!v302!Su accesso a la biblioteca
+!v303!The access to the library
+!v304![MSG-581]
+!v305![MSG-581]
+!ID 000582
+!v301!está autorizado
+!v302!Esta autorizado
+!v303!was authorized
+!v304![MSG-582]
+!v305![MSG-582]
+!ID 000583
+!v301!Calendário
+!v302!Calendario
+!v303!Calendar
+!v304!Calendar
+!v305!Calendar
+!ID 000584
+!v301!Inventário
+!v302!Inventario
+!v303!Logbook
+!v304![MSG-584]
+!v305![MSG-584]
+!ID 000585
+!v301!Sessão encerrada
+!v302!Sección cerrada
+!v303!Logout
+!v304![MSG-585]
+!v305![MSG-585]
+!ID 000586
+!v301!Gráficos
+!v302!Graficos
+!v303!Graphs
+!v304!Grafici
+!v305!Graphiques
+!ID 000587
+!v301!Selecione o conjunto
+!v302!Seleccione el conjunto
+!v303!Set select
+!v304![MSG-587]
+!v305![MSG-587]
+!ID 000588
+!v301!Jornais
+!v302!Revistas
+!v303!Newspapers
+!v304![MSG-588]
+!v305![MSG-588]
+!ID 000589
+!v301!Internet
+!v302!Internet
+!v303!Internet
+!v304!Internet
+!v305!Internet
+!ID 000590
+!v301!Data de validade não faz parte do calendário
+!v302!Fecha de validad desconocida
+!v303!Validation date is out of calendar
+!v304![MSG-590]
+!v305![MSG-590]
+!ID 000591
+!v301!Consulta local
+!v302!Consulta local
+!v303!Local use
+!v304!Uso locale
+!v305!Utilization locale
+!ID 000592
+!v301!Para descrição de fascículos de periódicos ou coleção, utilize a opção apropriada disponível no menu do registro do título no kardex.
+!v302!msg 592
+!v303!msg 592
+!v304![MSG-592]
+!v305![MSG-592]
+!ID 000593
+!v301!Data de validade da matrícula ausente
+!v302!Fecha de valida ausente
+!v303!Validate date absent
+!v304![MSG-593]
+!v305![MSG-593]
+!ID 000594
+!v301!Este objeto não está catalogado
+!v302!Este objeto no esta catalogado
+!v303!This object was not catalogued
+!v304![MSG-594]
+!v305![MSG-594]
+!ID 000595
+!v301!Login inválido
+!v302!Login invalido
+!v303!Login denied
+!v304![MSG-595]
+!v305![MSG-595]
+!ID 000596
+!v301!O registro foi mantido sem alterações
+!v302!El registro fue mantenido sim alteraciones
+!v303!The record was closed without changes
+!v304![MSG-596]
+!v305![MSG-596]
+!ID 000597
+!v301!Erro fatal: código da unidade ausente
+!v302!Codigo de la unidad ausente
+!v303!Unit code absent
+!v304![MSG-597]
+!v305![MSG-597]
+!ID 000598
+!v301!Erro fatal: número de identificação do título ausente
+!v302!Numero del titulo ausente
+!v303!Title number absent
+!v304![MSG-598]
+!v305![MSG-598]
+!ID 000599
+!v301!Erro fatal: código do tipo de objeto ausente
+!v302!Códito del tipo de objeto ausente
+!v303!Object code absent
+!v304![MSG-599]
+!v305![MSG-599]
+!ID 000600
+!v301!Erro fatal: código do nível de tratamento ausente
+!v302!Código del nivel ausente
+!v303!Level code absent
+!v304![MSG-600]
+!v305![MSG-600]
+!ID 000601
+!v301!1 - Data Entry Lock denied
+!v302!1 - Data Entry Lock denied
+!v303!1 - Data Entry Lock denied
+!v304![MSG-601]
+!v305![MSG-601]
+!ID 000602
+!v301!2 - Record Lock denied
+!v302!2 - Record Lock denied
+!v303!2 - Record Lock denied
+!v304![MSG-602]
+!v305![MSG-602]
+!ID 000603
+!v301!3 - Record Update denied
+!v302!3 - Record Update denied
+!v303!3 - Record Update denied
+!v304![MSG-603]
+!v305![MSG-603]
+!ID 000604
+!v301!4 - Record not locked
+!v302!4 - Record not locked
+!v303!4 - Record not locked
+!v304![MSG-604]
+!v305![MSG-604]
+!ID 000605
+!v301!Operação negada. Este registro está aberto por outro usuário
+!v302!5 - Lock id does not match
+!v303!5 - Lock id does not match
+!v304![MSG-605]
+!v305![MSG-605]
+!ID 000606
+!v301!6 - Inverted Updte denied
+!v302!6 - Inverted Updte denied
+!v303!6 - Inverted Updte denied
+!v304![MSG-606]
+!v305![MSG-606]
+!ID 000607
+!v301!7 - Lock expire time not reached
+!v302!7 - Lock expire time not reached
+!v303!7 - Lock expire time not reached
+!v304![MSG-607]
+!v305![MSG-607]
+!ID 000608
+!v301!A base de dados foi desbloqueada
+!v302!La base de datos fue liberada
+!v303!Database unlocked
+!v304![MSG-608]
+!v305![MSG-608]
+!ID 000609
+!v301!Bibliotecas
+!v302!Bibliotecas
+!v303!Libraries
+!v304!Libraries
+!v305!Libraries
+!ID 000610
+!v301!D S I
+!v302!D S I
+!v303!S D I
+!v304!S D I
+!v305!S D I
+!ID 000611
+!v301!Tombar
+!v302!Tombar
+!v303!Logbook
+!v304![MSG-611]
+!v305![MSG-611]
+!ID 000612
+!v301!Selecione a biblioteca
+!v302!Seleccione la biblioteca
+!v303!Select the Library
+!v304![MSG-612]
+!v305![MSG-612]
+!ID 000613
+!v301!Referência
+!v302!Referencia
+!v303!Reference
+!v304!Riferimento
+!v305!Référence
+!ID 000614
+!v301!Tombo duplicado
+!v302!Número de inventario duplicado
+!v303!Duplicated inventory number
+!v304![MSG-614]
+!v305![MSG-614]
+!ID 000615
+!v301!Número de identificação duplicado
+!v302!Número de identificación duplicado
+!v303!Duplicated identification number
+!v304![MSG-615]
+!v305![MSG-615]
+!ID 000616
+!v301!Uso da coleção
+!v302!Uso da coleção
+!v303!Uso da coleção
+!v304!Uso da coleção
+!v305!Uso da coleção
+!ID 000617
+!v301!Diagnóstico
+!v302!Diagnóstico
+!v303!Diagnostics
+!v304!Diagnostico
+!v305!Diagnostic
+!ID 000618
+!v301!Servidor de Gráficos
+!v302!Servidor de Gráficos
+!v303!Graphics Web Server
+!v304![MSG-618]
+!v305![MSG-618]
+!ID 000619
+!v301!Servidor de Intercâmbio
+!v302!Servidor de Intercâmbio
+!v303!Interchange Web Server
+!v304![MSG-619]
+!v305![MSG-619]
+!ID 000620
+!v301!Servidor de Imagens de capas
+!v302!Servidor de Imagenes de portada
+!v303!Images Web Server
+!v304![MSG-620]
+!v305![MSG-620]
+!ID 000621
+!v301!Servidor de Textos completos
+!v302!Servidor de Textos completos
+!v303!Ful text Web Server
+!v304![MSG-621]
+!v305![MSG-621]
+!ID 000622
+!v301!Servidor de Vocabulário
+!v302!Servidor de Thesaurus
+!v303!Thesaurus Web Server
+!v304![MSG-622]
+!v305![MSG-622]
+!ID 000623
+!v301!Servidor de Lista de Autoridades
+!v302!Servidor de Lista de Autoridades
+!v303!Authority List Web Server
+!v304![MSG-623]
+!v305![MSG-623]
+!ID 000624
+!v301!Tabela de Classificação
+!v302!Tabela de Classificación
+!v303!Classification Table
+!v304!Classification Table
+!v305!Classification Table
+!ID 000625
+!v301!Gráfico 1: Tipos de Usuários
+!v302!Gráfico 1: Tipos de Usuários
+!v303!Graph 1: Types of Users
+!v304!Grafico 1: Tipi di utenti
+!v305!Graphique 1 : Types d'utilisateurs
+!ID 000626
+!v301!Gráfico 2: Tipos de documentos
+!v302!Gráfico 2: Tipos de documentos
+!v303!Graph 2: Document type
+!v304!Grafico 2: Tipo del documento
+!v305!Graphique 2 : Type de document
+!ID 000627
+!v301!Gráfico 3.1: Áreas do Conhecimento (Monografias)
+!v302!Gráfico 3.1: Áreas del Conocimiento (Monografias)
+!v303!Graph 3.1: Thematic areas (Monographs)
+!v304!Grafico 3.1: Zone tematiche (monografie)
+!v305!Graphique 3.1 : Secteurs thématiques (monographies)
+!ID 000628
+!v301!Gráfico 3.2: Áreas do Conhecimento (Periódicos)
+!v302!Gráfico 3.2: Áreas del Conocimiento (Revistas)
+!v303!Graph 3.2: Thematic areas (Periodic)
+!v304!Grafico 3.2: Zone tematiche (periodiche)
+!v305!Graphique 3.2 : Secteurs thématiques (périodiques)
+!ID 000629
+!v301!Gráfico 4.1: Cursos (Monografias)
+!v302!Gráfico 4.1: Cursos (Monografias)
+!v303!Graph 4.1: Courses (Monographs)
+!v304!Grafico 4.1: Corsi (Monografie)
+!v305!Graphique 4.1 : Cours (Monographies)
+!ID 000630
+!v301!Gráfico 4.2: Cursos (Periódicos)
+!v302!Gráfico 4.2: Cursos (Revistas)
+!v303!Graph 4.2: Courses (Serials)
+!v304!Grafico 4.1: Corsi (periodiche)
+!v305!Graphique 4.1 : Cours (périodiques)
+!ID 000631
+!v301!Gráfico 5: Ano de Publicação
+!v302!Gráfico 5: Año de Publicación
+!v303!Graph 5: Publication Year
+!v304!Grafico 5: Anno Della Pubblicazione
+!v305!Graphique 5 : Année De Publication
+!ID 000632
+!v301!Gráfico 6: Empréstimos - Movimento mensal (Ano Corrente)
+!v302!Gráfico 6: Prestamos - Movimiento mensual (Año Corriente)
+!v303!Graph 6: Loans - monthly Movement (Current Year)
+!v304!Grafico 6: Prestiti - movimento mensile (anno in corso)
+!v305!Graphique 6 : Prêts - mouvement mensuel (année en cours)
+!ID 000633
+!v301!Gráfico 7: Empréstimos - movimento diário
+!v302!Gráfico 7: Prestamos - movimiento diário
+!v303!Graph 7: Loans - daily movement
+!v304!Grafico 7: Prestiti - movimento quotidiano
+!v305!Graphique 7 : Prêts - mouvement quotidien
+!ID 000634
+!v301!Gráfico 6.1: Empréstimos - Movimento mensal (Ano Anterior)
+!v302!Gráfico 6.1: Prestamos - Movimiento mensual (Año Anterior)
+!v303!Graph 6.1: Loans - Mounths statistic (Last Year)
+!v304![MSG-634]
+!v305![MSG-634]
+!ID 000635
+!v301!Serviços ao Usuário
+!v302!Servicios al Usuario
+!v303!User services
+!v304![MSG-635]
+!v305![MSG-635]
+!ID 000636
+!v301!Indices
+!v302!Indices
+!v303!Index
+!v304!Indices
+!v305!Index
+!ID 000637
+!v301!Tipo de coleção
+!v302!Tipo de la colección
+!v303!Colection type
+!v304!Colection type
+!v305!Colection type
+!ID 000638
+!v301!Página
+!v302!Pàgina
+!v303!Page
+!v304![MSG-638]
+!v305![MSG-638]
+!ID 000639
+!v301!Selecione o termo desejado e clique *Buscar*
+!v302!Seleccione el termino y clique *Buscar*
+!v303!Select a term and click *Search"
+!v304![MSG-639]
+!v305![MSG-639]
+!ID 000640
+!v301!Formulário de fornecedores
+!v302!Formulario de fornecedores
+!v303!Supliers form
+!v304!Supliers form
+!v305!Supliers form
+!ID 000641
+!v301!Servidor
+!v302!Servidor
+!v303!Server
+!v304![MSG-641]
+!v305![MSG-641]
+!ID 000642
+!v301!Identificação do bibliotecário
+!v302!Identificación del bibliotecólogo
+!v303!Librarian identification
+!v304![MSG-642]
+!v305![MSG-642]
+!ID 000643
+!v301!Tombamento (pré catalogação)
+!v302!Tombamento (pré catalogación)
+!v303!Log book (pre cataloguing)
+!v304![MSG-643]
+!v305![MSG-643]
+!ID 000644
+!v301!Catalogação e indexação em todos os níveis (analítico, monográfico e série)
+!v302!Catalogación y indexación en todos los niveles (analítico, monográfico y serie)
+!v303!Cataloguing and indexing in all levels (analitic, monographic and serial)
+!v304![MSG-644]
+!v305![MSG-644]
+!ID 000645
+!v301!Controle de entradas durante o processo de catalogação e indexação
+!v302!Control de terminos y autores durante el proceso de catalogación y indización
+!v303!Entries control during the classification and indexing process
+!v304![MSG-645]
+!v305![MSG-645]
+!ID 000646
+!v301!Catalogação cooperativa (importação de registros de outras bibliotecas)
+!v302!Catalogación cooperativa (importación de registros de otras bibliotecas)
+!v303!Cooperative cataloguing (importing records from another libraries)
+!v304![MSG-646]
+!v305![MSG-646]
+!ID 000647
+!v301!Controle de kardex e aquisição
+!v302!Control del kardex y acquisición
+!v303!Kardex and adquisition control
+!v304![MSG-647]
+!v305![MSG-647]
+!ID 000648
+!v301!Empréstimo, devolução, renovação e reservas
+!v302!Prestamo, devolución, renovación y reservas
+!v303!Loan, delivery, renew and reservs
+!v304![MSG-648]
+!v305![MSG-648]
+!ID 000649
+!v301!Este objeto não pode ser renovado porque foi tombado mas sua catalogaçao ainda está pendente
+!v302!Este objeto no puede ser renovado. Su catalogación aun se encuentra pendente
+!v303!Operation denied. Objet not catalogued
+!v304![MSG-649]
+!v305![MSG-649]
+!ID 000650
+!v301!Operação negada!<BR>Objeto em lista de espera ou de consulta local
+!v302!Operación negada!<br>Objeto en lista de espera o de uso local
+!v303!Operation denied!<br>In wait list or local use
+!v304![MSG-650]
+!v305![MSG-650]
+!ID 000651
+!v301!Operação cancelada
+!v302!Operacion cancelada
+!v303!Operation canceled
+!v304![MSG-651]
+!v305![MSG-651]
+!ID 000652
+!v301!Formulário de tombo
+!v302!Formulario de tombo
+!v303!Logbook form
+!v304!Logbook form
+!v305!Logbook form
+!ID 000653
+!v301!Seu registro de acesso expirou.<br>Clique em "Home" para restabelecer a conexão
+!v302!Su registro de accesso fue cancelado.<br>Seleccione "Home" para nueva conección
+!v303!Conection denied.<br>Press "Home" to return the conection
+!v304![MSG-653]
+!v305![MSG-653]
+!ID 000654
+!v301!CONEXÃO CANCELADA
+!v302!CONECCIÓN CANCELADA
+!v303!CANCELED CONECTION
+!v304![MSG-654]
+!v305![MSG-654]
+!ID 000655
+!v301!Para execução desta rotina o sistema deve ser colocado no modo de "Manutenção"
+!v302!Para la ejecución de esta rutina el sistema debe ser puesto en mantenimiento
+!v303!This routine need the maintenance mode
+!v304![MSG-655]
+!v305![MSG-655]
+!ID 000656
+!v301!Esta rotina deverá ser executada fora do horário de funcionamento da biblioteca. A não observância desta recomendação pode acarretar morosidade nas rotinas de empréstimo, renovação, buscas e reservas
+!v302!Esta rutina devera ser ejecutada fuera del horario de funcionamiento de la biblioteca. La no observancia de esta recomendación puede influir en las rutinas de prestamo, renovación, busquedas y reservas
+!v303!Execute this process when the library is closed
+!v304![MSG-656]
+!v305![MSG-656‘
+!ID 000657
+!v301!Marque o texto abaixo, copie e cole em um arquivo qualquer
+!v302!Seleccione el texto abajo, copie y cole en un archivo cualquier
+!v303!Selec the text below, cut and paste in a local file
+!v304![MSG-657]
+!v305![MSG-657]
+!ID 000658
+!v301!Saída Autorizada
+!v302!Salida Autorizada
+!v303!Autorized exit
+!v304![MSG-658]
+!v305![MSG-658]
+!ID 000659
+!v301!Saída Não Autorizada
+!v302!Salida No Autorizada
+!v303!Unautorized exit
+!v304![MSG-659]
+!v305![MSG-659]
+!ID 000660
+!v301!Disponível somente no final do expediente (Overnight)
+!v302!Disponible solamente a partir del final del expediente (Overnight)
+!v303!Overnight
+!v304![MSG-660]
+!v305![MSG-660]
+!ID 000661
+!v301!Operação Overnight.<br>Renovação negada!
+!v302!Operación Overnight.<br>Renovación negada!
+!v303!Overnight operation.<br>Renovation denied!
+!v304![MSG-661]
+!v305![MSG-661]
+!ID 000662
+!v301!Os dados sobre o usuário não puderam ser lidos.<br>Certifique se seu registro não está aberto por outro funcionário
+!v302!Los datos sobre el usuário no pudieran ser leidos.<br>Certifique si el registro no esta abierto por otra persona
+!v303!User record not found.<br>Unloaded user data
+!v304![MSG-662]
+!v305![MSG-662]
+!ID 000663
+!v301!Quantidade de empréstimos do usuário não pode ser calculada
+!v302!Cuantidad de prestamos del usuario no puede ser calculado
+!v303!Operation denied!
+!v304![MSG-663]
+!v305![MSG-663]
+!ID 000664
+!v301!Informações sobre horário de expediente da biblioteca não foram obtidos
+!v302!Informaciones sobre el horário de trabajo de la biblioteca no fue obtido
+!v303!Operation denied!
+!v304![MSG-664]
+!v305![MSG-664]
+!ID 000665
+!v301!Informações sobre o tombo não puderam ser obtidos
+!v302!Informaciones sobre el tombo no fueron obtidos
+!v303!Operation denied!
+!v304![MSG-665]
+!v305![MSG-665]
+!ID 000666
+!v301!Quantidade de objetos do mesmo tipo não pode ser calculada
+!v302!Cuantidad de objetos del mismo tipo no puede ser calculada
+!v303!Operation denied!
+!v304![MSG-666]
+!v305![MSG-666]
+!ID 000667
+!v301!Dados do regulamento não puderam ser obtidos
+!v302!Datos del regulamento no pudieram ser obtidos
+!v303!Operation denied!
+!v304![MSG-667]
+!v305![MSG-667]
+!ID 000668
+!v301!Dados do calendário não puderam ser obtidos
+!v302!Datos del calendário no pudieram ser obtidos
+!v303!Operation denied!
+!v304![MSG-668]
+!v305![MSG-668]
+!ID 000669
+!v301!Dados sobre prazos e quantidades não puderam ser obtidos
+!v302!Datos sobre prazos y cuantidades no pudieram ser obtidos
+!v303!Operation denied!
+!v304![MSG-669]
+!v305![MSG-669]
+!ID 000670
+!v301!Prazo de empréstimo não pode ser definido
+!v302!El prazo de prestamo no puede ser definido
+!v303!Operation denied!
+!v304![MSG-670]
+!v305![MSG-670]
+!ID 000671
+!v301!Informações sobre o título não puderam ser obtidas
+!v302!Informaciones sobre el titulo no pudieran ser obtidas
+!v303!Operation denied!
+!v304![MSG-671]
+!v305![MSG-671]
+!ID 000672
+!v301!Informações sobre quantidade de exemplares emprestados não puderam ser obtidas
+!v302!Informaciones sobre la cuantidad de ejemplares prestados no pudieran ser obtidas
+!v303!Operation denied!
+!v304![MSG-672]
+!v305![MSG-672]
+!ID 000673
+!v301!Quantidade de exemplares reservados não foi obtida
+!v302!Cuantidad de ejemplares reservados no puede ser obtida
+!v303!Operation denied!
+!v304![MSG-673]
+!v305![MSG-673]
+!ID 000674
+!v301!Quantidade de exemplares disponíveis não foi obtida
+!v302!Cuantidad de ejemplares disponibles no puede ser obtida
+!v303!Operation denied!
+!v304![MSG-674]
+!v305![MSG-674]
+!ID 000675
+!v301!Tabela de Classificação
+!v302!Tabla de Classificación
+!v303!Classification Table
+!v304![MSG-675]
+!v305![MSG-675]
+!ID 000676
+!v301!Do MFN
+!v302!Del MFN
+!v303!From MFN
+!v304![MSG-676]
+!v305![MSG-676]
+!ID 000677
+!v301!Até
+!v302!Hasta
+!v303!To
+!v304![MSG-677]
+!v305![MSG-677]
+!ID 000678
+!v301!Não foi encontrado nenhum erro
+!v302!No fue encontrado nengun error
+!v303!Errors not found
+!v304![MSG-678]
+!v305![MSG-678]
+!ID 000679
+!v301!Todas as mensagens já foram enviadas
+!v302!Todos los mensajes ya fueran enviados
+!v303!Messages not found
+!v304![MSG-679]
+!v305![MSG-679]
+!ID 000680
+!v301!Hora(s)
+!v302!Hora(s)
+!v303!Hour(s)
+!v304![MSG-680]
+!v305![MSG-680]
+!ID 000681
+!v301!Você deve selecionar o tipo e o nivel
+!v302!Hay que seleccionar el tipo y el nivel
+!v303!Type and level are mandatory
+!v304![MSG-681]
+!v305![MSG-681]
+!ID 000682
+!v301!Sobre o PHL
+!v302!Sobre el PHL
+!v303!About PHL
+!v304![MSG-682]
+!v305![MSG-682]
+!ID 000683
+!v301!Selecionar
+!v302!Seleccionar
+!v303!To select
+!v304!Per selezionare
+!v305!Pour choisir
+!ID 000684
+!v301!Servidores
+!v302!Servidores
+!v303!Servers
+!v304![MSG-684]
+!v305![MSG-684]
+!ID 000685
+!v301!Arquivo
+!v302!Archivo
+!v303!File
+!v304!File
+!v305!File
+!ID 000686
+!v301!Geração do Índice
+!v302!Generación de Índice
+!v303!Inverted File Generation
+!v304![MSG-686]
+!v305![MSG-686]
+!ID 000687
+!v301!O registro não foi gravado
+!v302!El registro no fue gravado
+!v303!Record do not save
+!v304![MSG-687]
+!v305![MSG-687]
+!ID 000688
+!v301!Livro caixa
+!v302!Libro caja
+!v303!Cash book
+!v304![MSG-688]
+!v305![MSG-688]
+!ID 000689
+!v301!Padrão
+!v302!Estándar
+!v303!Standard
+!v304![MSG-689]
+!v305![MSG-689]
+!ID 000690
+!v301!Rede de Bibliotecas
+!v302!Red de Bibliotecas
+!v303!Libraries Network
+!v304![MSG-690]
+!v305![MSG-690]
+!ID 000691
+!v301!Nível bibliográfico
+!v302!Nivel bibliográfico
+!v303!Bibliographic level
+!v304!Bibliographic level
+!v305!Bibliographic level
+!ID 000692
+!v301!Todas
+!v302!Todas
+!v303!All
+!v304![MSG-692]
+!v305![MSG-692]
+!ID 000693
+!v301!De
+!v302!De
+!v303!From
+!v304![MSG-693]
+!v305![MSG-693]
+!ID 000694
+!v301!Para
+!v302!Para
+!v303!To
+!v304![MSG-694]
+!v305![MSG-694]
+!ID 000695
+!v301!Assunto
+!v302!Asunto
+!v303!Subject
+!v304!Oggetto
+!v305!Sujet
+!ID 000696
+!v301!Mensagem
+!v302!Mensage
+!v303!Message
+!v304!Messaggio
+!v305!Message
+!ID 000697
+!v301!Buscas & Reservas
+!v302!Busquedas & Reservas
+!v303!Search & Reserves
+!v304![MSG-697]
+!v305![MSG-697]
+!ID 000698
+!v301!Seu nome
+!v302!Su nombre
+!v303!Your name
+!v304!Your name
+!v305!Your name
+!ID 000699
+!v301!Posição
+!v302!Posición
+!v303!Grid
+!v304![MSG-699]
+!v305![MSG-699]
+!ID 000700
+!v301!Tombo suspenso
+!v302!Tombo suspenso
+!v303!Suspended inventory number
+!v304![MSG-700]
+!v305![MSG-700]
+!ID 000701
+!v301!Reservado em
+!v302!Reservado en
+!v303!Reserved at
+!v304![MSG-701]
+!v305![MSG-701]
+!ID 000702
+!v301!Emprestado para
+!v302!Prestado para
+!v303!Loaned by
+!v304![MSG-702]
+!v305![MSG-702]
+!ID 000703
+!v301!Nível
+!v302!Nivel
+!v303!Level
+!v304![MSG-703]
+!v305![MSG-703]
+!ID 000704
+!v301!Idiomas
+!v302!Idiomas
+!v303!Languages
+!v304![MSG-704]
+!v305![MSG-704]
+!ID 000705
+!v301!Localização
+!v302!Número de llamada
+!v303!Call number
+!v304!Call number
+!v305!Call number
+!ID 000706
+!v301!Suporte eletrônico
+!v302!Suporte electronico
+!v303!Electronic suport
+!v304![MSG-706]
+!v305![MSG-706]
+!ID 000707
+!v301!Autores Coletivos
+!v302!Autores Colectivos
+!v303!Corporate Authors
+!v304![MSG-707]
+!v305![MSG-707]
+!ID 000708
+!v301!Título traduzido
+!v302!Titulo traduzido
+!v303!Translated title
+!v304!Translated title
+!v305!Translated title
+!ID 000709
+!v301!Subtítulo (série)
+!v302!Subtítulo (série)
+!v303!Subtitle (serial)
+!v304!Subtitle (serial)
+!v305!Subtitle (serial)
+!ID 000710
+!v301!Suplemento
+!v302!Suplemento
+!v303!Suplemment
+!v304![MSG-710]
+!v305![MSG-710]
+!ID 000711
+!v301!País de publicação
+!v302!País de publicación
+!v303!Publication Country
+!v304!Publication Country
+!v305!Publication Country
+!ID 000712
+!v301!Data padronizada
+!v302!Fecha estandar
+!v303!Standard date
+!v304!Standard date
+!v305!Standard date
+!ID 000713
+!v301!Informação descritiva
+!v302!Información descriptiva
+!v303!Descriptive information
+!v304!Descriptive information
+!v305!Descriptive information
+!ID 000714
+!v301!Idiomas do resumo
+!v302!Idiomas del resumen
+!v303!Abstrac languages
+!v304![MSG-714]
+!v305![MSG-714]
+!ID 000715
+!v301!Instituição, tese
+!v302!Institución, tesis
+!v303!Institution, thesis
+!v304![MSG-715]
+!v305![MSG-715]
+!ID 000716
+!v301!Nota de tese
+!v302!Nota de tese
+!v303!Thesis notes
+!v304![MSG-716]
+!v305![MSG-716]
+!ID 000717
+!v301!Patrocinadores (evento)
+!v302!Patrocinadores (evento)
+!v303!Sponsors (meeting)
+!v304!Sponsors (meeting)
+!v305!Sponsors (meeting)
+!ID 000718
+!v301!Ocultar
+!v302!Ocultar
+!v303!To hidden
+!v304![MSG-718]
+!v305![MSG-718]
+!ID 000719
+!v301!Apresentar
+!v302!Presentar
+!v303!To display
+!v304![MSG-719]
+!v305![MSG-719]
+!ID 000720
+!v301!Não circulantes
+!v302!No circulantes
+!v303!No loan
+!v304![MSG-720]
+!v305![MSG-720]
+!ID 000721
+!v301!Ementa/Créditos
+!v302!Ementa/Créditos
+!v303!Menu/Credit
+!v304!Menu/Credit
+!v305!Menu/Credit
+!ID 000722
+!v301!Código HTML
+!v302!Código HTML
+!v303!HTML code
+!v304!HTML code
+!v305!HTML code
+!ID 000723
+!v301!Palavras-chave secundárias
+!v302!Palavras-clave secundárias
+!v303!Secondary keywords
+!v304!Secondary keywords
+!v305!Secondary keywords
+!ID 000724
+!v301!Características
+!v302!Características
+!v303!Characteristics
+!v304![MSG-724]
+!v305![MSG-724]
+!ID 000725
+!v301!Total de referências
+!v302!Total de referências
+!v303!Total of citations
+!v304!Total of citations
+!v305!Total of citations
+!ID 000726
+!v301!Do ano
+!v302!Del año
+!v303!From the year
+!v304![MSG-726]
+!v305![MSG-726]
+!ID 000727
+!v301!Até o ano
+!v302!Hasta el año
+!v303!To the year
+!v304![MSG-727]
+!v305![MSG-727]
+!ID 000728
+!v301!Outras localidades
+!v302!Otras localidades
+!v303!Another places, geographic
+!v304!Another places, geographic
+!v305!Another places, geographic
+!ID 000729
+!v301!Descritor precodificado
+!v302!Descriptor precodificado
+!v303!Code descriptor
+!v304!Code descriptor
+!v305!Code descriptor
+!ID 000730
+!v301!Indivíduo como tema
+!v302!Persona como tema
+!v303!Person subject
+!v304![MSG-730]
+!v305![MSG-730]
+!ID 000731
+!v301!País (evento)
+!v302!País (evento)
+!v303!Country (meeting)
+!v304!Country (meeting)
+!v305!Country (meeting)
+!ID 000732
+!v301!Instituição da patente
+!v302!Institución de la patent
+!v303!Patent institution
+!v304![MSG-732]
+!v305![MSG-732]
+!ID 000733
+!v301!Número da patente
+!v302!Numero de la patente
+!v303!Patent number
+!v304![MSG-733]
+!v305![MSG-733]
+!ID 000734
+!v301!Data da patente
+!v302!Fecha de la patente
+!v303!Patent date
+!v304![MSG-734]
+!v305![MSG-734]
+!ID 000735
+!v301!Autor da patente
+!v302!Autor de la patente
+!v303!Patent author
+!v304![MSG-735]
+!v305![MSG-735]
+!ID 000736
+!v301!Sistema
+!v302!Sistema
+!v303!System setup
+!v304!System setup
+!v305!System setup
+!ID 000737
+!v301!Nome (projeto)
+!v302!Nombre (proyecto)
+!v303!Name (project)
+!v304!Name (project)
+!v305!Name (project)
+!ID 000738
+!v301!Número (projeto)
+!v302!Número (proyecto)
+!v303!Number (project)
+!v304!Number (project)
+!v305!Number (project)
+!ID 000739
+!v301!Código de barras
+!v302!Código de barras
+!v303!Barcode
+!v304![MSG-739]
+!v305![MSG-739]
+!ID 000740
+!v301!Conteúdo
+!v302!Contenido
+!v303!Content
+!v304![MSG-740]
+!v305![MSG-740]
+!ID 000741
+!v301!País do fornecedor
+!v302!País del fornecedor
+!v303!Suplier country
+!v304![MSG-741]
+!v305![MSG-741]
+!ID 000742
+!v301!Forma de cálculo
+!v302!Forma de calculo
+!v303!Calculate rules
+!v304![MSG-742]
+!v305![MSG-742]
+!ID 000743
+!v301!Título abreviado
+!v302!Título abreviado
+!v303!Short title
+!v304![MSG-743]
+!v305![MSG-743]
+!ID 000744
+!v301!Aviso de atraso
+!v302!Aviso de atraso
+!v303!Acknowledgment of delay
+!v304![MSG-744]
+!v305![MSG-744]
+!ID 000745
+!v301!Acesso autorizado
+!v302!Conección autorizada
+!v303!Authorized conection
+!v304![MSG-745]
+!v305![MSG-745]
+!ID 000746
+!v301!*** Erro fatal: Arquivos de segurança violados ou licença inválida para este ambiente!
+!v302!*** Erro fatal: Archivos de seguridad violados o licencia invalida para el ambiente!
+!v303!*** Fatal error: Secure files violated or invalid licence to this environment!
+!v304!*** Fatal error: Secure files violated or invalid licence to this environment!
+!v305!*** Fatal error: Secure files violated or invalid licence to this environment!
+!ID 000747
+!v301!Outro usuário está conectado com sua senha ou<br>você se esqueceu de sair do sistema após sua última conexão
+!v302!Otro usuário está conectado con su clave o usted se olvido de cerrar el sistema al ultimo accesso!
+!v303!Another user is conected with your login or you belive exit to the program in the last conection!
+!v304![MSG-747]
+!v305![MSG-747]
+!ID 000748
+!v301!ACESSO AUTORIZADO!
+!v302!ACCESSO AUTORIZADO!!
+!v303!AUTORIZED ACCESS!
+!v304!AUTORIZADO
+!v305!AUTORIZADO
+!ID 000749
+!v301!Consulta local
+!v302!Consulta local
+!v303!Local use
+!v304!Local use
+!v305!Local use
+!ID 000750
+!v301!Importar
+!v302!Importar
+!v303!To import
+!v304![MSG-750]
+!v305![MSG-750]
+!ID 000751
+!v301!Exemplos
+!v302!Ejemplos
+!v303!Samples
+!v304![MSG-751]
+!v305![MSG-751]
+!ID 000752
+!v301!Manual
+!v302!Manual
+!v303!Manual
+!v304!Manuale
+!v305!Manuel
+!ID 000753
+!v301!Não foi encontrado nenhum registro entre o intervalo de MFNs fornecidos!
+!v302!No fue encontrado nengun registro entre el rango de MFNs!
+!v303!Records not found in the MFNs records set!
+!v304![MSG-753]
+!v305![MSG-753]
+!ID 000754
+!v301!Assinaturas correntes
+!v302!Subscripciones corrientes
+!v303!Currents Subscriptions
+!v304![MSG-754]
+!v305![MSG-754]
+!ID 000755
+!v301!Registros por página
+!v302!Registros por página
+!v303!Records by page
+!v304!Annotazioni dalla pagina
+!v305!Disques par la page
+!ID 000756
+!v301!Renovação & Reservas
+!v302!Renovación & Reservas
+!v303!Renew & Reserv
+!v304![MSG-756]
+!v305![MSG-756]
+!ID 000757
+!v301!Autoridades
+!v302!Autoridades
+!v303!Authority List
+!v304!Lista normativa
+!v305!Liste de référence
+!ID 000758
+!v301!Controle de Vocabulário
+!v302!Control del Vocabulário
+!v303!Vocabulary Control
+!v304![MSG-758]
+!v305![MSG-758]
+!ID 000759
+!v301!Acessos
+!v302!Accesos
+!v303!Access
+!v304![MSG-759]
+!v305![MSG-759]
+!ID 000760
+!v301!Estatísticos
+!v302!Estadísticos
+!v303!Statistics
+!v304![MSG-760]
+!v305![MSG-760]
+!ID 000761
+!v301!Estatísticos X Período
+!v302!Estadísticos X Período
+!v303!Statistics X Period
+!v304![MSG-761]
+!v305![MSG-761]
+!ID 000762
+!v301!Filtros
+!v302!Filtros
+!v303!Filters
+!v304!Filtri
+!v305!Filtres
+!ID 000763
+!v301!Salvar / Sair
+!v302!Salvar / Salir
+!v303!Save / Exit
+!v304!Risparmi / Uscita
+!v305!Économiser / Sortie
+!ID 000764
+!v301!Versão 7.0 - 6/2/2004 12:06:04
+!v302!Versión 7.0 - 6/2/2004 12:06:04
+!v303!Version 7.0 - 6/2/2004 12:06:04
+!v304![MSG-764]
+!v305![MSG-764]
+!ID 000765
+!v301!O número fornecido é maior que o total de registros da base de dados
+!v302!El número fornecido es mayor que el total de registros da base de datos
+!v303!The number is greather than the database records
+!v304![MSG-765]
+!v305![MSG-765]
+!ID 000766
+!v301!Anterior
+!v302!Anterior
+!v303!Previous
+!v304![MSG-766]
+!v305![MSG-766]
+!ID 000767
+!v301!Próximo
+!v302!Próximo
+!v303!Next
+!v304![MSG-767]
+!v305![MSG-767]
+!ID 000768
+!v301!Disciplina
+!v302!Matéria
+!v303![MSG-768]
+!v304![MSG-768]
+!v305![MSG-768]
+!ID 000769
+!v301!Data de Nasc
+!v302!Fecha de Nasc
+!v303![MSG-769]
+!v304![MSG-769]
+!v305![MSG-769]
+!ID 000770
+!v301!Doc. Ident
+!v302!Tarj. Ident
+!v303!Ident. Card
+!v304![MSG-770]
+!v305![MSG-770]
+!ID 000771
+!v301!Definição do Relatório
+!v302!Definición del Informe
+!v303!Report Definition
+!v304![MSG-771]
+!v305![MSG-771]
+!ID 000772
+!v301!Simples
+!v302!Sencillo
+!v303![MSG-772]
+!v304![MSG-772]
+!v305![MSG-772]
+!ID 000773
+!v301!Ordenado
+!v302!Clasificado
+!v303!Sort
+!v304![MSG-773]
+!v305![MSG-773]
+!ID 000774
+!v301!Freqüência
+!v302!Frecuencia
+!v303!Frequency
+!v304![MSG-774]
+!v305![MSG-774]
+!ID 000775
+!v301!Sugestões
+!v302!Sugestiones
+!v303![MSG-775]
+!v304![MSG-775]
+!v305![MSG-775]
+!ID 000776
+!v301!Formato de ordenação
+!v302!Formato de clasificación
+!v303!Sort format
+!v304![MSG-776]
+!v305![MSG-776]
+!ID 000777
+!v301!Cabeçalho
+!v302!Encabezamiento
+!v303!Header
+!v304![MSG-777]
+!v305![MSG-777]
+!ID 000778
+!v301!Formato do Registro
+!v302!Formato del Registro
+!v303!Record Format
+!v304![MSG-778]
+!v305![MSG-778]
+!ID 000779
+!v301!Rodapé
+!v302!Rodapé
+!v303!Foot
+!v304![MSG-779]
+!v305![MSG-779]
+!ID 000780
+!v301!Vocabulário
+!v302!Vocabulário
+!v303!Vocabulary
+!v304!Vocabolario
+!v305!Vocabulaire
+!ID 000781
+!v301!Termo
+!v302!Termino
+!v303!Term
+!v304![MSG-781]
+!v305![MSG-781]
+!ID 000782
+!v301!Notas
+!v302!Notas
+!v303!Notes
+!v304![MSG-782]
+!v305![MSG-782]
+!ID 000783
+!v301!Sinônimos
+!v302!Sinônimos
+!v303!Sinônimos
+!v304![MSG-783]
+!v305![MSG-783]
+!ID 000784
+!v301!Formas variantes
+!v302!Formas variantes
+!v303!Formas variantes
+!v304![MSG-784]
+!v305![MSG-784]
+!ID 000785
+!v301!Instituição
+!v302!Institución
+!v303!Institution
+!v304![MSG-785]
+!v305![MSG-785]
+!ID 000786
+!v301!Não renovar se usuário tiver objetos atrasados
+!v302!No renovar si el usuario tiene objetos atrazados
+!v303!Não renovar se usuário tiver objetos atrasados
+!v304![MSG-786]
+!v305![MSG-786]
+!ID 000787
+!v301!Seg/Sex
+!v302!Lun/Vie
+!v303!Mon/Fri
+!v304![MSG-787]
+!v305![MSG-787]
+!ID 000788
+!v301!Aviso de vencimento
+!v302!Aviso de vencimento
+!v303!Aviso de vencimento
+!v304![MSG-788]
+!v305![MSG-788]
+!ID 000789
+!v301!Aviso de reserva
+!v302!Aviso de reserva
+!v303!Aviso de reserva
+!v304![MSG-789]
+!v305![MSG-789]
+!ID 000790
+!v301!Técnica de restauração
+!v302!Técnica de restauracion
+!v303!Restore techinic
+!v304!Restore techinic
+!v305!Restore techinic
+!ID 000791
+!v301!Materiais empregados
+!v302!Materiales utilizados
+!v303!Used materials
+!v304![MSG-791]
+!v305![MSG-791]
+!ID 000792
+!v301!Liberar acesso
+!v302!Liberar acesso
+!v303!Liberar acesso
+!v304![MSG-792]
+!v305![MSG-792]
+!ID 000793
+!v301!Nova
+!v302!Nueva
+!v303!New
+!v304![MSG-793]
+!v305![MSG-793]
+!ID 000794
+!v301!Nova busca
+!v302!Nueva busqueda
+!v303!New search
+!v304![MSG-794]
+!v305![MSG-794]
+!ID 000795
+!v301!Total encontrado
+!v302!Total encontrado
+!v303!Total found
+!v304![MSG-795]
+!v305![MSG-795]
+!ID 000796
+!v301!Penalidades
+!v302!Penalidades
+!v303!Penalties
+!v304![MSG-796]
+!v305![MSG-796]
+!ID 000797
+!v301!Operação Negada!<br><br>Uma ou mais bases de dados utilizada nesta operação está bloqueada.<br>Contate o administrador de sua biblioteca!
+!v302!Operação Negada!<br>Uma ou mais bases de dados utilizada nesta operação está bloqueada.<br>Contate o administrador de sua biblioteca!
+!v303!Operação Negada!<br>Uma ou mais bases de dados utilizada nesta operação está bloqueada.<br>Contate o administrador de sua biblioteca!
+!v304![MSG-797]
+!v305![MSG-797]
+!ID 000798
+!v301!BUSCA: digitar palavra(s). Usar OR, AND, NOT entre palavras, e $ para truncar palavra
+!v302!BUSQUEDA: digitar palavra(s). Usar OR, AND, NOT entre las palavras, e $ para truncar la palavra
+!v303!SEARCH: type a word. Use OR, AND, NOT, and $ in root word search
+!v304![MSG-798]
+!v305![MSG-798]
+!ID 000799
+!v301!Operação negada!<br>O limite de renovações para este objeto foi esgotado.<br>Este objeto deve ser devolvido.
+!v302!Operação negada!<br>O limite de renovações para este objeto foi esgotado.<br>Este objeto deve ser devolvido.
+!v303!Operação negada!<br>O limite de renovações para este objeto foi esgotado.<br>Este objeto deve ser devolvido.
+!v304![MSG-799]
+!v305![MSG-799]
+!ID 000800
+!v301!Não solicitar senha durante operação de empréstimo.
+!v302!No solicitar clave durante la operación de prestamo.
+!v303!Do not request password during loan transaction.
+!v304![MSG-800]
+!v305![MSG-800]
+!ID 000801
+!v301!Opção inválida!
+!v302!Opción inválida!
+!v303!Invalid option!
+!v304![MSG-801]
+!v305![MSG-801]
+!ID 000802
+!v301!Todas as palavras
+!v302!Todas las palavras
+!v303!All words
+!v304!Tutte le parole
+!v305!Tous les mots
+!ID 000803
+!v301!Qualquer palavra
+!v302!Cualquier palavra
+!v303!Any word
+!v304!Qualsiasi parola
+!v305!Tout mot
+!ID 000804
+!v301!Tabela
+!v302!Tabla
+!v303!Table
+!v304!Table
+!v305!Il fixe un prix
+!ID 000805
+!v301!Campos de Dados
+!v302!Campos de Datos
+!v303!Data Fields
+!v304!Campi d'informazione
+!v305!Zones d'information
+!ID 000806
+!v301!Gráficos Estatísticos
+!v302!Gráficos Estadísticos
+!v303!Statistical Graphs
+!v304!Grafici Statistici
+!v305!Graphiques Statistiques
+!ID 000807
+!v301!Veja através de gráficos o perfil de sua biblioteca
+!v302!Vea através de gráficos el perfil de su biblioteca
+!v303!It sees through graphs the profile of its library
+!v304!Vede attraverso i grafici il profilo della relativa biblioteca
+!v305!Il voit par des graphiques le profil de sa bibliothèque
+!ID 000808
+!v301!Tombo
+!v302!Tombo
+!v303!Inventory
+!v304!Inventory
+!v305!Inventory
+!ID 000809
+!v301!Parâmetros de Impressão
+!v302!Parâmetros de Impressión
+!v303!Print Setup
+!v304![MSG-809]
+!v305![MSG-809]
+!ID 000810
+!v301!Esquerda
+!v302!Isquierda
+!v303!Left
+!v304![MSG-810]
+!v305![MSG-810]
+!ID 000811
+!v301!Direita
+!v302!Derecha
+!v303!Right
+!v304![MSG-811]
+!v305![MSG-811]
+!ID 000812
+!v301!Os parâmetros de seleção se referem à base de dados TOMBO
+!v302!Los parámetros de selección si refierem a la base de datos TOMBO
+!v303!The selection paterns is related to the Inventory database
+!v304![MSG-812]
+!v305![MSG-812]
+!ID 000813
+!v301!CONFIRMAÇÃO DE PAGAMENTO
+!v302!CONFIRMACIÓN DEL PAGO
+!v303!PAYEMENT CONFIRMATION
+!v304![MSG-813]
+!v305![MSG-813]
+!ID 000814
+!v301!Valor: R$
+!v302!Valor: $
+!v303!Value: $
+!v304!Value: $
+!v305!Value: $
+!ID 000815
+!v301!Confirmado por
+!v302!Confirmado por
+!v303!Confirmed by
+!v304![MSG-815]
+!v305![MSG-815]
+!ID 000816
+!v301!Serão verificados conjuntos de 1000 registros por vêz
+!v302!Seran verificados conjuntos de 1000 registros por vez
+!v303!Verify 1000 records a time
+!v304![MSG-816]
+!v305![MSG-816]
+!ID 000817
+!v301!Verificado de
+!v302!Verificado desde
+!v303!Verified from
+!v304![MSG-817]
+!v305![MSG-817]
+!ID 000818
+!v301!de um total de
+!v302!de un total de
+!v303!(818: not traslated)
+!v304![MSG-818]
+!v305![MSG-818]
+!ID 000819
+!v301!registros
+!v302!registros
+!v303!records
+!v304![MSG-819]
+!v305![MSG-819]
+!ID 000820
+!v301!Bloqueada
+!v302!Bloqueada
+!v303!Locked
+!v304![MSG-820]
+!v305![MSG-820]
+!ID 000821
+!v301!Desbloqueada
+!v302!Desbloqueada
+!v303!Unlocked
+!v304![MSG-821]
+!v305![MSG-821]
+!ID 000822
+!v301!Para o correto funcionamento do sistema, nenhuma das bases de dados listadas abaixo poderão estar bloqueada.<br>Havendo bloqueio, execute os procedimentos de manutenção de bases de dados.
+!v302!Para el correcto funcionamento del sistema, ninguna de las bases de datos listadas abajo poderan estar bloqueada. Habendo bloqueo, ejecute los procedimientos de mantenimiento de bases de datos.
+!v303![MSG-822]
+!v304![MSG-822]
+!v305![MSG-822]
+!ID 000823
+!v301!Arquivo Mestre
+!v302!Archivo Maestro
+!v303!Master File
+!v304![MSG-823]
+!v305![MSG-823]
+!ID 000824
+!v301!Arquivo Invertido
+!v302!Archivo Invertido
+!v303!Inverted File
+!v304![MSG-824]
+!v305![MSG-824]
+!ID 000825
+!v301!Gráfico 8: Catalogação (ano corrente)
+!v302!Gráfico 8: Catalogación (mes corriente)
+!v303!Graph 8: Cataloguing (current year)
+!v304!Grafico 8: Catalogare (anno in corso)
+!v305!Graphique 8 : Cataloguer (année en cours)
+!ID 000826
+!v301!Fornecedores
+!v302!Fornecedores
+!v303!Vendors
+!v304!Fornitori
+!v305!Fournisseurs
+!ID 000827
+!v301!Autoridades
+!v302!Autoridades
+!v303!Authority list
+!v304!Authority list
+!v305!Authority list
+!ID 000828
+!v301!Este débito somente poderá ser liberado pela unidade onde foi gerado
+!v302!Este débito solamente podrá ser bajado por la unidad donde fue generado
+!v303!(828: not traslated)
+!v304![MSG-828]
+!v305![MSG-828]
+!ID 000829
+!v301!Exemplo
+!v302!Ejemplo
+!v303!Example
+!v304![MSG-829]
+!v305![MSG-829]
+!ID 000830
+!v301!Referências padronizadas segundo ABNT 6023:2002
+!v302!Referências en el standard ABNT 6023:2002
+!v303!ABNT 6023:2002 Standardized bibliographic citations
+!v304![MSG-830]
+!v305![MSG-830]
+!ID 000831
+!v301!Renovar em
+!v302!Renovar en
+!v303!Renew in
+!v304![MSG-831]
+!v305![MSG-831]
+!ID 000832
+!v301!Tombos suspensos
+!v302!Tombos suspensos
+!v303!(832: not traslated)
+!v304![MSG-832]
+!v305![MSG-832]
+!ID 000833
+!v301!QUANTIDADE DE EMPRÉSTIMOS POR CATEGORIA DO DOCUMENTO
+!v302!CUANTIDAD DE PRESTAMOS POR CATEGORIA DEL DOCUMENTO
+!v303!(833: not traslated)
+!v304![MSG-833]
+!v305![MSG-833]
+!ID 000834
+!v301!QUANTIDADE DE EMPRÉSTIMOS POR CURSO DO USUÁRIO
+!v302!CUANTIDAD DE PRESTAMOS POR CURSO DEL USUARIO
+!v303!(834: not traslated)
+!v304![MSG-834]
+!v305![MSG-834]
+!ID 000835
+!v301!Horário (horas)
+!v302!Horário (horas)
+!v303!Time (hours)
+!v304![MSG-835]
+!v305![MSG-835]
+!ID 000836
+!v301!Primeira
+!v302!Primera
+!v303!First
+!v304![MSG-836]
+!v305![MSG-836]
+!ID 000837
+!v301!Próxima
+!v302!Seguiente
+!v303!Next
+!v304![MSG-837]
+!v305![MSG-837]
+!ID 000838
+!v301!Última
+!v302!Ultima
+!v303!Last
+!v304![MSG-838]
+!v305![MSG-838]
+!ID 000839
+!v301!Expressão booleana
+!v302!Expresión booleana
+!v303!Boolean expression
+!v304!Espressione booleana
+!v305!Expression booléenne
+!ID 000840
+!v301!Partitura
+!v302!Partitura
+!v303!Musical score
+!v304!Divisorio
+!v305!Cloison
+!ID 000841
+!v301!Jogos, Kits
+!v302!Juguetes
+!v303!Games
+!v304!Games
+!v305!Games
+!ID 000842
+!v301!Iconografia
+!v302!Iconografia
+!v303!Images
+!v304!Images
+!v305!Images
+!ID 000843
+!v301!Mapas
+!v302!Mapas
+!v303!Maps
+!v304!Maps
+!v305!Maps
+!ID 000844
+!v301!Outros tipos
+!v302!Otros tipos
+!v303!Another types
+!v304!Another types
+!v305!Another types
+!ID 000845
+!v301!Vocabulário
+!v302!Vocabulario
+!v303!Vocabulary
+!v304!Vocabulary
+!v305!Vocabulary
+!ID 000846
+!v301!Chave
+!v302!Clave
+!v303!Key
+!v304![MSG-846]
+!v305![MSG-846]
+!ID 000847
+!v301!Tabela de Áreas do Conhecimento
+!v302!Tabla de Areas del Conocimiento
+!v303!Subject Area Table
+!v304![MSG-847]
+!v305![MSG-847]
+!ID 000848
+!v301!Configuração
+!v302!Configuración
+!v303!Setup
+!v304!Messa a punto
+!v305!Installation
+!ID 000849
+!v301!Áreas do Conhecimento
+!v302!Áreas do Conhecimento
+!v303!Subject Areas
+!v304!Settori
+!v305!Domaines
+!ID 000850
+!v301!Disciplinas
+!v302!Matérias
+!v303!Disciplines
+!v304!Discipline
+!v305!Disciplines
+!ID 000851
+!v301!Formulário indicado
+!v302!Formulário indicado
+!v303!Indicated form
+!v304![MSG-851]
+!v305![MSG-851]
+!ID 000852
+!v301!Papel adesivo A4
+!v302!Papel adesivo A4
+!v303!A4 adhesive paper
+!v304![MSG-851]
+!v305![MSG-851]
+!ID 000853
+!v301!Foi enviado?
+!v302!Fue enviado?
+!v303!Sended?
+!v304![MSG-853]
+!v305![MSG-853]
+!ID 000854
+!v301!Aguarde a mensagem de conclusão do envio.
+!v302!Esperar por el mensage de envio
+!v303!Waiting for sending message
+!v304![MSG-854]
+!v305![MSG-854]
+!ID 000855
+!v301!E-mails pendentes
+!v302!E-mails pendentes
+!v303!Pending e-mails
+!v304![MSG-855]
+!v305![MSG-855]
+!ID 000856
+!v301!Formulário do catálogo
+!v302!Formulário del catálogo
+!v303!Catalogue entry form
+!v304!Forma di entrata del catalogo
+!v305!Forme d'entrée catalogue
+!ID 000857
+!v301!Formulário do tombo
+!v302!Formulário del inventario
+!v303!Inventory entry form
+!v304!Forma di entrata di inventario
+!v305!Forme d'entrée de inventaire
+!ID 000858
+!v301!Formulário do usuário
+!v302!Formulário del usuário
+!v303!User entry form
+!v304!Forma di entrata dell'utente
+!v305!Forme d'entrée d'utilisateur
+!ID 000859
+!v301!Formulário do kardex
+!v302!Formulário del kardex
+!v303!Kardex entry form
+!v304!Forma di entrata di Kardex
+!v305!Forme d'entrée de Kardex
+!ID 000860
+!v301!Formulário do fornecedor
+!v302!Formulário del surtidor
+!v303!Supplier entry form
+!v304!Forma di entrata del fornitore
+!v305!Forme d'entrée de fournisseur
+!ID 000861
+!v301!Conexões
+!v302!Registros de conecciones
+!v303!Login records
+!v304!Annotazioni di inizio attività
+!v305!Disques d'ouverture
+!ID 000862
+!v301!Registros de empréstimos
+!v302!Registros de prestamos
+!v303!Loan records
+!v304!Annotazioni di prestito
+!v305!Disques de prêt
+!ID 000863
+!v301!Registros de históricos
+!v302!Registros de históricos
+!v303!History records
+!v304!Annotazioni di storia
+!v305!Enregistrements historiques
+!ID 000864
+!v301!Registros do livro caixa
+!v302!Registros del libro caja
+!v303!Cash book records
+!v304!Annotazioni del libro di contanti
+!v305!Disques de livre de caisse
+!ID 000865
+!v301!Registros de penalidades
+!v302!Registros de penalidades
+!v303!Penalties records
+!v304!Annotazioni di pene
+!v305!Disques de pénalités
+!ID 000866
+!v301!Acervo
+!v302!Acervo
+!v303!Library collection
+!v304![MSG-866]
+!v305![MSG-866]
+!ID 000867
+!v301!Por assinatura
+!v302!Por subscripción
+!v303!By subscription
+!v304![MSG-867]
+!v305![MSG-867]
+!ID 000868
+!v301!Este objeto se encontra emprestado ou reservado e não pode ser eliminado.
+!v302!Este objeto esta emprestado o reservado y no puede ser eliminado.
+!v303!This record have links with the loan or reserve database and it cannot be deleted.
+!v304![MSG-868]
+!v305![MSG-868]
+!ID 000869
+!v301!Documento em geral
+!v302!Documento en general
+!v303!Documents in general
+!v304![MSG-869]
+!v305![MSG-869]
+!ID 000870
+!v301!No todo
+!v302!En el todo
+!v303!In all
+!v304![MSG-870]
+!v305![MSG-870]
+!ID 000871
+!v301!Em parte
+!v302!En parte
+!v303!In part
+!v304![MSG-871]
+!v305![MSG-871]
+!ID 000872
+!v301!Lista inicial
+!v302!Listado inicial
+!v303!Initial list
+!v304![MSG-872]
+!v305![MSG-872]
+!ID 000873
+!v301!Tente novamente após alguns minutos
+!v302!Tente nuevamente despois de algunos minutos
+!v303!Try later
+!v304![MSG-873]
+!v305![MSG-873]
+!ID 000874
+!v301!Última renovação permitida
+!v302!Ultima renovación permitida
+!v303!Last renew permited
+!v304![MSG-874]
+!v305![MSG-874]
+!ID 000875
+!v301!Este usuário possui objetos emprestados
+!v302!Este usuário possue objetos prestados
+!v303!This user have loans
+!v304![MSG-875]
+!v305![MSG-875]
+!ID 000876
+!v301!DEMONSTRATIVO DE DÉBITOS
+!v302!DEMONSTRATIVO DE DEUDAS
+!v303!DEBITS DEMONSTRATIVE
+!v304![MSG-876]
+!v305![MSG-876]
+!ID 000877
+!v301!Selecione o formato de origem dos dados
+!v302!Seleccione el formato de la origen de los datos
+!v303!Select de data format origin
+!v304![MSG-877]
+!v305![MSG-877]
+!ID 000878
+!v301!Formato PHL
+!v302!Formato PHL
+!v303!PHL format
+!v304![MSG-878]
+!v305![MSG-878]
+!ID 000879
+!v301!Formato MARC
+!v302!Formato MARC
+!v303!MARC format
+!v304![MSG-879]
+!v305![MSG-879]
+!ID 000880
+!v301!Formato RIS
+!v302!Formato RIS
+!v303!RIS format
+!v304![MSG-880]
+!v305![MSG-880]
+!ID 000881
+!v301!Este serviço requer conexão com o servidor da InfoArte.
+!v302!Este servicion necesita de una conección con el servidor de la InfoArte.
+!v303!This service need a conection by the InfoArte web server.
+!v304![MSG-881]
+!v305![MSG-881]
+!ID 000882
+!v301!É prestado mediante assinatura anual.
+!v302!Este servicio está disponible por subscripción anual.
+!v303!This service is supplied by annual subscription.
+!v304![MSG-882]
+!v305![MSG-882]
+!ID 000883
+!v301!Obrigatórios
+!v302!Obligatorio
+!v303!Mandatory
+!v304![MSG-883]
+!v305![MSG-883]
+!ID 000884
+!v301!São elementos de preenchimento obrigatório
+!v302!Son datos de llenado oblicatorio
+!v303!Mandatory data elements
+!v304![MSG-884]
+!v305![MSG-884]
+!ID 000885
+!v301!Essenciais
+!v302!Esenciales
+!v303!Essentials
+!v304![MSG-885]
+!v305![MSG-885]
+!ID 000886
+!v301!São elementos essenciais normalmente obtidos a partir do documento
+!v302!Son elementos esenciales normalmente obtidos del documento
+!v303!They are essential elements normally gotten from the document
+!v304![MSG-886]
+!v305![MSG-886]
+!ID 000887
+!v301!Facultativos
+!v302!Facultativos
+!v303!Facultative
+!v304![MSG-887]
+!v305![MSG-887]
+!ID 000888
+!v301!São elementos de preenchimento facultativo
+!v302!Son elementos de llenado optativo
+!v303!They are optative filling elements
+!v304![MSG-888]
+!v305![MSG-888]
+!ID 000889
+!v301!Instruções e exemplos de preenchimento do campo de dado
+!v302!Instrucciones y ejemplos de llenado de los campos de datos
+!v303!Instructions and filling examples of the fields of data
+!v304![MSG-889]
+!v305![MSG-889]
+!ID 000890
+!v301!Elementos de Identificação Geral
+!v302!Elementos de Identificación General
+!v303!Elements of General Identification
+!v304![MSG-890]
+!v305![MSG-890]
+!ID 000891
+!v301!Status do registro
+!v302!Status del registro
+!v303!Record status
+!v304![MSG-891]
+!v305![MSG-891]
+!ID 000892
+!v301!Número de identificação
+!v302!Número de identificación
+!v303!Identification Number
+!v304![MSG-892]
+!v305![MSG-892]
+!ID 000893
+!v301!Tipo específico
+!v302!Tipo específico
+!v303!Specific type
+!v304![MSG-893]
+!v305![MSG-893]
+!ID 000894
+!v301!Alemão
+!v302!Aleman
+!v303!Germany
+!v304!msg894
+!v305!msg894
+!ID 000895
+!v301!Imagem do objeto
+!v302!Imagen del objeto
+!v303!Object image
+!v304!Object image
+!v305!Object image
+!ID 000896
+!v301!Localização e Disponibilidade
+!v302!Ubicación y Disponibilidad
+!v303!Location and Availability
+!v304![MSG-896]
+!v305![MSG-896]
+!ID 000897
+!v301!Objetos circulantes
+!v302!Objetos circulantes
+!v303!Circulating objects
+!v304![MSG-897]
+!v305![MSG-897]
+!ID 000898
+!v301!Objetos não circulantes
+!v302!Objetos no circulantes
+!v303!No circulating objects
+!v304![MSG-898]
+!v305![MSG-898]
+!ID 000899
+!v301!Objetos indisponíveis
+!v302!Objetos inasequibles
+!v303!Unavailable objects
+!v304![MSG-899]
+!v305![MSG-899]
+!ID 000900
+!v301!Identificação da parte (analítica)
+!v302!Identificación de la parte (analítica)
+!v303!Part identification (analitic)
+!v304![MSG-900]
+!v305![MSG-900]
+!ID 000901
+!v301!Identificação do documento
+!v302!Identificación del documento
+!v303!Document identification
+!v304![MSG-901]
+!v305![MSG-901]
+!ID 000902
+!v301!Elementos da série
+!v302!Elementos de la série
+!v303!Serial elements
+!v304![MSG-902]
+!v305![MSG-902]
+!ID 000903
+!v301!Elementos da Imprenta
+!v302!Elementos de la prensa
+!v303!Press elements
+!v304![MSG-903]
+!v305![MSG-903]
+!ID 000904
+!v301!Elementos complementares
+!v302!Elementos complementares
+!v303!Complementary elements
+!v304![MSG-904]
+!v305![MSG-904]
+!ID 000905
+!v301!Suplemento de periódico
+!v302!Suplemento de revista
+!v303!Journal suplemment
+!v304![MSG-905]
+!v305![MSG-905]
+!ID 000906
+!v301!Meio eletrônico
+!v302!Medio electrónico
+!v303!Electronic midia
+!v304!Electronic midia
+!v305!Electronic midia
+!ID 000907
+!v301!Elementos da tese
+!v302!Elementos de la tesis
+!v303!Thesis elements
+!v304![MSG-907]
+!v305![MSG-907]
+!ID 000908
+!v301!Elementos do evento
+!v302!Elementos de la reunión
+!v303!Meeting elements
+!v304![MSG-908]
+!v305![MSG-908]
+!ID 000909
+!v301!Elementos do projeto
+!v302!Elementos del proyecto
+!v303!Project elements
+!v304![MSG-909]
+!v305![MSG-909]
+!ID 000910
+!v301!Descrição do conteúdo
+!v302!Descripción del contenido
+!v303!Content description
+!v304![MSG-910]
+!v305![MSG-910]
+!ID 000911
+!v301!Informações restritas
+!v302!Informaciones restritas
+!v303!Restrict informations
+!v304![MSG-911]
+!v305![MSG-911]
+!ID 000912
+!v301!Este objeto não é de consulta local!
+!v302!Este objeto no és de consulta local!
+!v303!This object is not local consult!
+!v304!This object is not local consult!
+!v305!This object is not local consult!
+!ID 000913
+!v301!Dado não encontrado!
+!v302!Dato no ubicado!
+!v303!Data not found!
+!v304!Data not found!
+!v305!Data not found!
+!ID 000914
+!v301!Projetos de Pesquisa
+!v302!Proyectos de Investigación
+!v303!Research Project
+!v304!Research Project
+!v305!Research Project
+!ID 000915
+!v301!Objeto
+!v302!Objecto
+!v303!Object
+!v304!MSG-915
+!v305!MSG-915
+!ID 000916
+!v301!Italiano
+!v302!Italiano
+!v303!Italian
+!v304!Italian
+!v305!Italian
+!ID 000917
+!v301!Latim
+!v302!Latin
+!v303!Latin
+!v304!Latin
+!v305!Latin
+!ID 000918
+!v301!Software
+!v302!Software
+!v303!Software
+!v304!Software
+!v305!Software
+!ID 000919
+!v301!DSI
+!v302!DSI
+!v303!SDI
+!v304!SDI
+!v305!SDI
+!ID 000920
+!v301!Ausente
+!v302!Ausente
+!v303!Absent
+!v304!Absent
+!v305!Absent
+!ID 000921
+!v301!Duplicado
+!v302!Duplicado
+!v303!Duplicated
+!v304!Duplicated
+!v305!Duplicated
+!ID 000922
+!v301!Exemplar
+!v302!Ejemplar
+!v303!Unit
+!v304!Unit
+!v305!Unit
+!ID 000923
+!v301!Data da aquisição
+!v302!Fecha de la adquisición
+!v303!Acquisition date
+!v304!msg 923
+!v305!msg 923
+!ID 000924
+!v301!Reparação e Prevenção
+!v302!Reparación y Prevención
+!v303!Repairing and Prevention
+!v304!msg 924
+!v305!msg 924
+!ID 000925
+!v301!Data da prevenção
+!v302!Fecha de la prevención
+!v303!Prevention date
+!v304!msg 925
+!v305!msg 925
+!ID 000926
+!v301!Data do tratamento
+!v302!Fecha del tratamiento
+!v303!Restauration date
+!v304!MSG 926
+!v305!MSG 926
+!ID 000927
+!v301!Antigos proprietários
+!v302!Antigos proprietários
+!v303!Previus sponsors
+!v304!Previus sponsors
+!v305!Previus sponsors
+!ID 000928
+!v301!Cedência
+!v302!Cessión
+!v303!Cession
+!v304!msg 928
+!v305!msg 928
+!ID 000929
+!v301!Valor do seguro
+!v302!Valor del seguro
+!v303!Insurance value
+!v304!msg 929
+!v305!msg 929
+!ID 000930
+!v301!Campos facultativos
+!v302!Campos facultativos
+!v303!Fields
+!v304!msg 930
+!v305!msg 930
+!ID 000931
+!v301!Criado em
+!v302!Creado en
+!v303!Created in
+!v304!msg 931
+!v305!msg 931
+!ID 000932
+!v301!Alterado em
+!v302!Canbiado en
+!v303!Changed in
+!v304!msg 932
+!v305!msg 932
+!ID 000933
+!v301!Conexão
+!v302!Conección
+!v303!Login
+!v304!msg 933
+!v305!msg 933
+!ID 000934
+!v301!Artigo
+!v302!Artigo
+!v303!Article
+!v304!Article
+!v305!Article
+!ID 000935
+!v301!Braile
+!v302!Braile
+!v303!Braille
+!v304!Braille
+!v305!Braille
+!ID 000936
+!v301!Cassete
+!v302!Cassete
+!v303!Cassette tape
+!v304!Cassette tape
+!v305!Cassette tape
+!ID 000937
+!v301!CD
+!v302!CD
+!v303!CD
+!v304!CD
+!v305!CD
+!ID 000938
+!v301!CD-ROM
+!v302!CD-ROM
+!v303!CD-ROM
+!v304!CD-ROM
+!v305!CD-ROM
+!ID 000939
+!v301!Disco
+!v302!Disco
+!v303!LPs recordings
+!v304!LPs recordings
+!v305!LPs recordings
+!ID 000940
+!v301!Disquete
+!v302!Disquete
+!v303!Disquette
+!v304!Disquette
+!v305!Disquette
+!ID 000941
+!v301!DVD
+!v302!DVD
+!v303!DVD
+!v304!DVD
+!v305!DVD
+!ID 000942
+!v301!Folheto
+!v302!Folleto
+!v303!Pamphlet
+!v304!Opuscolo
+!v305!Brochure
+!ID 000943
+!v301!Empréstimos
+!v302!Prestamos
+!v303!Loan
+!v304!Loan
+!v305!Loan
+!ID 000944
+!v301!Microficha
+!v302!Microfilm
+!v303!Microform
+!v304!Microform
+!v305!Microform
+!ID 000945
+!v301!Película
+!v302!Película
+!v303!Film
+!v304!Film
+!v305!Film
+!ID 000946
+!v301!Videocassete
+!v302!Videocassete
+!v303!VHS
+!v304!VHS
+!v305!VHS
+!ID 000947
+!v301!Acadêmico
+!v302!Alumno
+!v303!Aluno
+!v304!Aluno
+!v305!Aluno
+!ID 000948
+!v301!Tese
+!v302!Tesis
+!v303!Thesis
+!v304!Thesis
+!v305!Thesis
+!ID 000949
+!v301!Formulário de usuários
+!v302!Formulario de usuarios
+!v303!Users form
+!v304!Users form
+!v305!Users form
+!ID 000950
+!v301!Formulário do kardex
+!v302!Formulario del kardex
+!v303!Kardex form
+!v304!Kardex form
+!v305!Kardex form
+!ID 000951
+!v301!Fornecedores
+!v302!Fornecedores
+!v303!Supliers
+!v304!Supliers
+!v305!Supliers
+!ID 000952
+!v301!Históricos
+!v302!Historicos
+!v303!Circulation history
+!v304!Circulation history
+!v305!Circulation history
+!ID 000953
+!v301!Kardex
+!v302!Kardex
+!v303!Kardex
+!v304!Kardex
+!v305!Kardex
+!ID 000954
+!v301!Livro caixa
+!v302!Libro caja
+!v303!Cash book
+!v304!Cash book
+!v305!Cash book
+!ID 000955
+!v301!Penalidades
+!v302!Penalidades
+!v303!Penalties
+!v304!Penalties
+!v305!Penalties
+!ID 000956
+!v301!Permissões
+!v302!Permissiones
+!v303!Login database
+!v304!Login database
+!v305!Login database
+!ID 000957
+!v301!Prazos e quantidades
+!v302!Prazos y cuantidads
+!v303!Loan setup
+!v304!Loan setup
+!v305!Loan setup
+!ID 000958
+!v301!Regulamento
+!v302!Regulamento
+!v303!Rulles database
+!v304!Rulles database
+!v305!Rulles database
+!ID 000959
+!v301!Relatórios personalizados
+!v302!Informes personalizados
+!v303!Personal reports
+!v304!Personal reports
+!v305!Personal reports
+!ID 000960
+!v301!Reservas
+!v302!Reservas
+!v303!Reserves database
+!v304!Reserves database
+!v305!Reserves database
+!ID 000961
+!v301!Base de dados Segurança
+!v302!Base de datos Seguridad
+!v303!Security database
+!v304!Security database
+!v305!Security database
+!ID 000962
+!v301!Sugestões de compra
+!v302!Sugestiones de compra
+!v303!Purchase sugestions database
+!v304!Purchase sugestions database
+!v305!Purchase sugestions database
+!ID 000963
+!v301!Classificação
+!v302!Classificación
+!v303!Classification
+!v304!Classification
+!v305!Classification
+!ID 000964
+!v301!Tipo de aquisição
+!v302!Tipo de acquisición
+!v303!Acquisition type
+!v304!Acquisition type
+!v305!Acquisition type
+!ID 000965
+!v301!Área do conhecimento
+!v302!Área del conocimiento
+!v303!Knowledge area database
+!v304!Knowledge area database
+!v305!Knowledge area database
+!ID 000966
+!v301!Tipo de assinatura
+!v302!Tipo de subscripción
+!v303!Subscription type
+!v304!Subscription type
+!v305!Subscription type
+!ID 000967
+!v301!Tipo de coleção
+!v302!Tipo de colección
+!v303!Colection type
+!v304!Colection type
+!v305!Colection type
+!ID 000968
+!v301!Tipo de conteúdo
+!v302!Tipo de contenido
+!v303!Content type
+!v304!Content type
+!v305!Content type
+!ID 000969
+!v301!Tipo de curso
+!v302!Tipo del curso
+!v303!Course type
+!v304!Course type
+!v305!Course type
+!ID 000970
+!v301!Tipo de documento
+!v302!Tipo del documento
+!v303!Document type
+!v304!Document type
+!v305!Document type
+!ID 000971
+!v301!Tipo de idioma
+!v302!Tipo del idioma
+!v303!Language type
+!v304!Language type
+!v305!Language type
+!ID 000972
+!v301!Tipo de periodicidade
+!v302!Tipo de periodicidad
+!v303!Periodicity type
+!v304!Periodicity type
+!v305!Periodicity type
+!ID 000973
+!v301!Tipo de período
+!v302!Tipo del periodo
+!v303!Period type
+!v304!Period type
+!v305!Period type
+!ID 000974
+!v301!Tipo de procedência
+!v302!Tipo de procedéncia
+!v303!Origin type
+!v304!Origin type
+!v305!Origin type
+!ID 000975
+!v301!Tipo de suporte
+!v302!Tipo del soporte
+!v303!Media type
+!v304!Media type
+!v305!Media type
+!ID 000976
+!v301!Tipo de usuário
+!v302!Tipo del usuario
+!v303!User type
+!v304!User type
+!v305!User type
+!ID 000977
+!v301!Tombo
+!v302!Tombo
+!v303!Inventory
+!v304!Inventory
+!v305!Inventory
+!ID 000978
+!v301!Usuários
+!v302!Usuários
+!v303!Users
+!v304!Users
+!v305!Users
+!ID 000979
+!v301!Formulário do catálogo
+!v302!Formulário del catalogo
+!v303!Catalogue form
+!v304!Catalogue form
+!v305!Catalogue form
+!ID 000980
+!v301!O tombo desconhecido. Esta informação não foi gravada!
+!v302!El tombo es desconocido. Esta información no fue grabada!
+!v303!Unknow inventory number!
+!v304!Unknow inventory number!
+!v305!Unknow inventory number!
+!ID 000981
+!v301!Preferências
+!v302!Preferéncias
+!v303!Preferences
+!v304!Preferences
+!v305!Preferences
+!ID 000982
+!v301!Empréstimo ou renovação efetuada no dia de hoje! Este livro não pode ser renovado e deve ser devolvido se hoje for a última data de devolução.
+!v302!Empréstimo ou renovação efetuada no dia de hoje! Este livro não pode ser renovado e deve ser devolvido se hoje for a última data de devolução.
+!v303!Empréstimo ou renovação efetuada no dia de hoje! Este livro não pode ser renovado e deve ser devolvido se hoje for a última data de devolução.
+!v304!Empréstimo ou renovação efetuada no dia de hoje! Este livro não pode ser renovado e deve ser devolvido se hoje for a última data de devolução.
+!v305!Empréstimo ou renovação efetuada no dia de hoje! Este livro não pode ser renovado e deve ser devolvido se hoje for a última data de devolução.
+!ID 000983
+!v301!Selecione a unidade de trabalho!
+!v302!Seleccione la unidad de trabajo!
+!v303!Select the work unit!
+!v304!Select the work unit!
+!v305!Select the work unit!
+!ID 000984
+!v301!Prezado(a) usuario(a)
+!v302!Estimado usuario
+!v303!Dear user
+!v304!Dear user
+!v305!Dear user
+!ID 000985
+!v301!Data do vencimento
+!v302!Fecha del vencimento
+!v303!MSG-985
+!v304!MSG-985
+!v305!MSG-985
+!ID 000986
+!v301!Titulo
+!v302!Titulo
+!v303!Title
+!v304!MSG-986
+!v305!MSG-986
+!ID 000987
+!v301!Texto gerado automaticamente sem acentuacao
+!v302!Texto generado automaticamente sin acentuacion
+!v303!MSG-987
+!v304!MSG-987
+!v305!MSG-987
+!ID 000988
+!v301!A partir desta data, sujeito as penalidades previstas no regulamento da biblioteca
+!v302!A partir de esta fecha, sujecto a las penalidades previstas en el reglamento de la biblioteca
+!v303!After this date, penalties according library rules
+!v304!MSG-988
+!v305!MSG-988
+!ID 000989
+!v301!Aviso de disponibilidade
+!v302!Aviso de disponibilidad
+!v303!Disponibility alert
+!v304!MSG-989
+!v305!MSG-989
+!ID 000990
+!v301!Informamos que o objeto de sua reserva se encontra disponivel para emprestimo ate a meia noite do dia
+!v302!Informamos que el objecto de su reserva esta disponible para prestamo hasta la media noche del dia
+!v303!Informamos que o objeto de sua reserva se encontra disponivel para emprestimo ate a meia noite do dia
+!v304!MSG-990
+!v305!MSG-990
+!ID 000991
+!v301!Caso nao seja retirado ate a data indicada, sua reserva sera cancelada e o objeto ficara disponivel para o proximo usuario da lista, se houver
+!v302!Caso no sea retirado hasta la fecha indicada, su reserva sera cancelada y el objeto quedara disponible para el proximo usuario de la lista, si hubiera
+!v303!Caso nao seja retirado ate a data indicada, sua reserva sera cancelada e o objeto ficara disponivel para o proximo usuario da lista, se houver
+!v304!MSG-991
+!v305!MSG-991
+!ID 000992
+!v301!Alerta
+!v302!Aviso
+!v303!Alert
+!v304!Alert
+!v305!Alert
+!ID 000993
+!v301!que se encontra em seu poder, vence no dia
+!v302!que encontrase en su poder, vence en el dia
+!v303!MSG-993
+!v304!MSG-993
+!v305!MSG-993
+!ID 000994
+!v301!Alertamos que data da devolucao do objeto descrito abaixo esta proxima do vencimento
+!v302!Alertamos que data da devolucao do objeto descrito abaixo esta proxima do vencimento
+!v303!MSG-994
+!v304!MSG-994
+!v305!MSG-994
+!ID 000995
+!v301!Objetos com atrasos na devolução
+!v302!Objetos con atrasos en la devolución
+!v303!MSG-995
+!v304!MSG-995
+!v305!MSG-995
+!ID 000996
+!v301!Vence amanhã
+!v302!Vence mañana
+!v303!MSG-996
+!v304!MSG-996
+!v305!MSG-996
+!ID 000997
+!v301!Inventário do acervo
+!v302!Inventario del acervo
+!v303!Collection inventory
+!v304!MSG-997
+!v305!MSG-997
+!ID 000998
+!v301!Fascículos Catalogados
+!v302!Fascículos Catalogados
+!v303!Catalogued Issues
+!v304!Catalogued Issues
+!v305!Catalogued Issues
+!ID 000999
+!v301!IMPORTANTE
+!v302!IMPORTANTE
+!v303!IMPORTANT
+!v304!MSG-999
+!v305!MSG-999
+!ID 001000
+!v301!Objetos em circulação
+!v302!Objetos en circulación
+!v303!Loan objects
+!v304!MSG-1000
+!v305!MSG-1000
+!ID 001001
+!v301!Devolução expressa
+!v302!Devolución expressa
+!v303!Express delivery
+!v304!MSG-1001
+!v305!MSG-1001
+!ID 001002
+!v301!Controle de saída de objetos
+!v302!Control de salida de objetos
+!v303!Object exit control
+!v304!MSG-1002
+!v305!MSG-1002
+!ID 001003
+!v301!Rotina que verifica se o objeto que está saindo da sala da biblioteca passou pela rotina de empréstimo
+!v302!Rotina que verifica se o objeto que está saindo da sala da biblioteca passou pela rotina de empréstimo
+!v303!Rotina que verifica se o objeto que está saindo da sala da biblioteca passou pela rotina de empréstimo
+!v304!MSG-1003
+!v305!MSG-1003
+!ID 001004
+!v301!Se o objeto já passou pela rotina de empréstimo a saida será autorizada, caso contrário, a saída não será autorizada
+!v302!Se o objeto já passou pela rotina de empréstimo a saida será autorizada, caso contrário, a saída não será autorizada
+!v303!Se o objeto já passou pela rotina de empréstimo a saida será autorizada, caso contrário, a saída não será autorizada
+!v304!MSG-1004
+!v305!MSG-1004
+!ID 001005
+!v301!Dicas importantes
+!v302!Notas importantes
+!v303!Important notes
+!v304!MSG-1005
+!v305!MSG-1005
+!ID 001006
+!v301!Utilize papel adesivo tamanho A4 ou Letter. Nunca utilize formulários com etiquetas pré-definidas
+!v302!Utilize papel adesivo A4 o Letter. Nunca utilize formulários con etiquetas predefinidas
+!v303!Use adesive paper A4 or Letter. Do not use labels forms
+!v304!MSG-1006
+!v305!MSG-1006
+!ID 001007
+!v301!Etiqueta PIMACO
+!v302!Etiqueta PIMACO
+!v303!PIMACO label
+!v304!MSG-1007
+!v305!MSG-1007
+!ID 001008
+!v301!Selecione o padrão desejado
+!v302!Seleccione el stander deseado
+!v303!Select the standard
+!v304!MSG-1008
+!v305!MSG-1008
+!ID 001009
+!v301!Modelo
+!v302!Modelo
+!v303!Model
+!v304!MSG-1009
+!v305!MSG-1009
+!ID 001010
+!v301!Possui reserva
+!v302!Pose reserva
+!v303!Had reserv
+!v304!MSG-1010
+!v305!MSG-1010
+!ID 001011
+!v301!Seleção do período
+!v302!Selección del periodo
+!v303!Period selection
+!v304!MSG-1011
+!v305!MSG-1011
+!ID 001012
+!v301!Exemplares
+!v302!Ejemplares
+!v303!Exemplares
+!v304!MSG-1012
+!v305!MSG-1012
+!ID 001013
+!v301!Títulos
+!v302!Titulos
+!v303!Titles
+!v304!MSG-1013
+!v305!MSG-1013
+!ID 001014
+!v301!Relatórios para o MEC
+!v302!Informes para el MEC
+!v303!MEC reports
+!v304!MSG-1014
+!v305!MSG-1014
+!ID 001015
+!v301!Consultas registradas no dia
+!v302!Consultas registradas en el dia
+!v303!Consultas registradas no dia
+!v304!MSG-1015
+!v305!MSG-1015
+!ID 001016
+!v301!Exibir gráfico
+!v302!Visualizar el graphico
+!v303!Display graph
+!v304!MSG-1016
+!v305!MSG-1016
+!ID 001017
+!v301!Registros selecionados
+!v302!Registros seleccionados
+!v303!Selected records
+!v304!MSG-1017
+!v305!MSG-1017
+!ID 001018
+!v301!Este gráfico foi gerado em tempo real, a partir de dados obtidos pelo PHL&copy;Elysio M.S.Oliveira nas bases de dados de controle da Biblioteca. Os dados refletem o conteúdo das bases de dados no momento em que foram emitidos
+!v302!Este grafico fue generado en tiempo real, a partir de datos obtidos por el PHL&copy;Elysio M.S.Oliveira en las bases de datos de control de la Biblioteca. Los datos reflejan el contenido de las bases de datos en le momento en que fueram emitidos
+!v303!This graph was generated in real time from data bases datas. This datas is according data base contents in this geration time
+!v304!MSG-1018
+!v305!MSG-1018
+!ID 001019
+!v301!Na tabulação dos dados, são considerados somente os registros com data de aquisição conhecida entre os meses de janeiro a dezembro. Registros com data de aquisição desconhecida ou fora deste intervalo não são considerados
+!v302!Na tabulação dos dados, são considerados somente os registros com data de aquisição conhecida entre os meses de janeiro a dezembro. Registros com data de aquisição desconhecida ou fora deste intervalo não são considerados
+!v303!Na tabulação dos dados, são considerados somente os registros com data de aquisição conhecida entre os meses de janeiro a dezembro. Registros com data de aquisição desconhecida ou fora deste intervalo não são considerados
+!v304!MSG-1019
+!v305!MSG-1019
+!ID 001020
+!v301!Somente os registros com informação de área temática entre 1 a 9 é que são considerados na tabulação dos dados. Registros com área temática não informada ou desconhecida não são considerados
+!v302!Somente os registros com informação de área temática entre 1 a 9 é que são considerados na tabulação dos dados. Registros com área temática não informada ou desconhecida não são considerados
+!v303!Somente os registros com informação de área temática entre 1 a 9 é que são considerados na tabulação dos dados. Registros com área temática não informada ou desconhecida não são considerados
+!v304!MSG-1020
+!v305!MSG-1020
+!ID 001021
+!v301!Composição do acervo
+!v302!Composición del acervo
+!v303!Colecction scope
+!v304!MSG-1021
+!v305!MSG-1021
+!ID 001022
+!v301!Por tipos de documentos
+!v302!Por tipos de documentos
+!v303!Document types
+!v304!MSG-1022
+!v305!MSG-1022
+!ID 001023
+!v301!Por ano de publicação
+!v302!Por año de publicación
+!v303!Publication year
+!v304!MSG-1023
+!v305!MSG-1023
+!ID 001024
+!v301!Por áreas do conhecimento (monografias)
+!v302!Por areas del conocimiento (monografias)
+!v303!Knowledge areas (monographs)
+!v304!MSG-1024
+!v305!MSG-1024
+!ID 001025
+!v301!Por áreas do conhecimento (periódicos)
+!v302!Por areas del conocimiento (series)
+!v303!Knowledge areas (serials)
+!v304!MSG-1025
+!v305!MSG-1025
+!ID 001026
+!v301!Por idioma do documento
+!v302!Por idioma del documento
+!v303!Document language
+!v304!MSG-1026
+!v305!MSG-1026
+!ID 001027
+!v301!Por tipos de conteúdo
+!v302!Por tipos de contenido
+!v303!Content types
+!v304!MSG-1027
+!v305!MSG-1027
+!ID 001028
+!v301!Por tipos de suporte
+!v302!Por tipos de soportes
+!v303!Media types
+!v304!MSG-1028
+!v305!MSG-1028
+!ID 001029
+!v301!Perfil dos Usuários da Biblioteca
+!v302!Perfil de los Usuarios de la Biblioteca
+!v303!Library users profiles
+!v304!MSG-1029
+!v305!MSG-1029
+!ID 001030
+!v301!Por curso
+!v302!Por curso
+!v303!Curse
+!v304!MSG-1030
+!v305!MSG-1030
+!ID 001031
+!v301!Por tipo
+!v302!Por tipo
+!v303!Type
+!v304!MSG-1031
+!v305!MSG-1031
+!ID 001032
+!v301!Movimento dos Processos Técnicos
+!v302!Movimiento de los Procesos Técnicos
+!v303!Tecnical process statistics
+!v304!MSG-1032
+!v305!MSG-1032
+!ID 001033
+!v301!Movimento da Rotina de Circulação
+!v302!Movimento da Rutina de Circulación
+!v303!Loan process statistics
+!v304!MSG-1033
+!v305!MSG-1033
+!ID 001034
+!v301!Aquisições nos últimos 10 anos
+!v302!Adquisiciones de los ultimos 10 años
+!v303!Last 10 years adquisitions
+!v304!MSG-1034
+!v305!MSG-1034
+!ID 001035
+!v301!Aquisições no ano anterior
+!v302!Adquisiciones en el año anterior
+!v303!Last year adquisitions
+!v304!MSG-1035
+!v305!MSG-1035
+!ID 001036
+!v301!Aquisições no ano corrente
+!v302!Adquisiciones en el corriente año
+!v303!Current year adquisitions
+!v304!MSG-1036
+!v305!MSG-1036
+!ID 001037
+!v301!Títulos catalogados no ano anterior
+!v302!Títulos catalogados en el año anterior
+!v303!Last year catalogued titles
+!v304!MSG-1037
+!v305!MSG-1037
+!ID 001038
+!v301!Títulos catalogados no ano corrente
+!v302!Títulos catalogados en el año corriente
+!v303!Current year catalogued titles
+!v304!MSG-1038
+!v305!MSG-1038
+!ID 001039
+!v301!Empréstimos no ano anterior
+!v302!Prestamos en el año anterior
+!v303!Last year loans
+!v304!MSG-1039
+!v305!MSG-1039
+!ID 001040
+!v301!Empréstimos no ano corrente
+!v302!Prestamos en el año corriente
+!v303!Current year loans
+!v304!MSG-1040
+!v305!MSG-1040
+!ID 001041
+!v301!Empréstimos no mês corrente
+!v302!Prestamos en el mes corriente
+!v303!Current mouth loans
+!v304!MSG-1041
+!v305!MSG-1041
+!ID 001042
+!v301!Reservas do ano anterior
+!v302!Reservas del año anterior
+!v303!Last year reserves
+!v304!MSG-1042
+!v305!MSG-1042
+!ID 001043
+!v301!Reservas no ano corrente
+!v302!Reservas en el año corriente
+!v303!Current year reserves
+!v304!MSG-1043
+!v305!MSG-1043
+!ID 001044
+!v301!Reservas no mês corrente
+!v302!Reservas en el mes corriente
+!v303!Current mouth reserves
+!v304!MSG-1044
+!v305!MSG-1044
+!ID 001045
+!v301!Movimento por hora
+!v302!Movimiento por hora
+!v303!Time movement
+!v304!MSG-1045
+!v305!MSG-1045
+!ID 001046
+!v301!Usuários por curso
+!v302!Usuários por curso
+!v303!Users course
+!v304!MSG-1046
+!v305!MSG-1046
+!ID 001047
+!v301!Aquisições em
+!v302!Adquisiciones en
+!v303!Adquisitions in
+!v304!MSG-1047
+!v305!MSG-1047
+!ID 001048
+!v301!Ano de Publicação (últimos 10 anos)
+!v302!Año de la Publicación (últimos 10 años)
+!v303!Publication year (last 10 years)
+!v304!MSG-1048
+!v305!MSG-1048
+!ID 001049
+!v301!Áreas
+!v302!Areas
+!v303!Areas
+!v304!MSG-1049
+!v305!MSG-1049
+!ID 001050
+!v301!Empréstimos e Renovações
+!v302!Prestamos y renovaciones
+!v303!Loan and renew
+!v304!MSG-1050
+!v305!MSG-1050
+!ID 001051
+!v301!Horários dos Movimentos
+!v302!Horários de los Movimentos
+!v303!Acess time
+!v304!MSG-1051
+!v305!MSG-1051
+!ID 001052
+!v301!Empréstimos e Renovações no mês corrente
+!v302!Prestamos y renovaciones en el corriente mes
+!v303!Loan and renew in current mouth
+!v304!MSG-1052
+!v305!MSG-1052
+!ID 001053
+!v301!Sugestões de compra
+!v302!Sugestiones de compra
+!v303!Purchase sugestions
+!v304!Purchase sugestions
+!v305!Purchase sugestions
+!ID 001054
+!v301!Seu pedido foi gravado com sucesso!
+!v302!Su pedido foe gravado con suceso!
+!v303!Your sugestions was sended!
+!v304!Your sugestions was sended!
+!v305!Your sugestions was sended!
+!ID 001055
+!v301!Seu cadastro foi atualizado com sucesso!
+!v302!Su cadastr fue actualizado con suceso!
+!v303!Profile updated!
+!v304!Profile updated!
+!v305!Profile updated!
+!ID 001056
+!v301!Títulos catalogados
+!v302!Titulos catalogados
+!v303!Catalogued titles
+!v304!Catalogued titles
+!v305!Catalogued titles
+!ID 001057
+!v301!Para alteração da expressão de busca, clique sobre o ícone
+!v302!Para cambiar la expresión de busqueda, click en el icone
+!v303!To change search expression click on the icone
+!v304!To change search expression click on the icone
+!v305!To change search expression click on the icone
+!ID 001058
+!v301!apresentado à esquerda do nome do relatório e altere a expressão de busca do campo 505 do formulário de configuração do relatório. Após esta alteração, grave o registro com a nova configuração clicando sobre o botão [Salvar/Sair] e execute o relatório para que ele seja gerado
+!v302!presentado a la isquierda del nombre del informe y cambie la expressión de busqueda del campo 505 del formulario de configuración del informe. Despues de este cambio, grave el registro com la nueva configuración presionando em boton [Salvar/Salir] y ejecute el informe para que sea generado
+!v303!presented in the left of report name and change the search expression in the form field 505. After this change, save the record by a click on [Save/Exit] boton and execute then
+!v304!presented in the left of report name and change the search expression in the form field 505. After this change, save the record by a click on [Save/Exit] boton and execute then
+!v305!presented in the left of report name and change the search expression in the form field 505. After this change, save the record by a click on [Save/Exit] boton and execute then
+!ID 001059
+!v301!Evite efetuar alterações nos outros campos de configuração do relatório, salvo se tiver total segurança sobre a alteração que está sendo feita. Caso efetue alguma alteração de forma indevida, o relatório poderá ficar mutilado
+!v302!Evite cambiar los otros campos de datos, mientras tuvier total seguridad sobre el cambio
+!v303!Do no change another field if you do not have a total secure about the change
+!v304!Do no change another field if you do not have a total secure about the change
+!v305!Do no change another field if you do not have a total secure about the change
+!ID 001060
+!v301!A fidelidade dos dados apresentados em cada um destes relatórios personalizados, estará diretamente relacionada com o conjunto de registros considerados na composição do relatório. Este conjunto será aquele obtido através da expressão de busca fornecida.
+!v302!La fidelidad de los datos presentados en cada un de los informes personalizados, estara directamente relacionada con el conjunto de los registros considerados en la composición del informe. Este conjunto será aquel obtenido de la expressión de busqueda transcripta en la caja de texto.
+!v303!The fidelity of presented data in the reports is directly related to the recall set of records. This set is obtained from de search expression
+!v304!The fidelity of presented data in the reports is directly related to the recall set of records. This set is obtained from de search expression
+!v305!The fidelity of presented data in the reports is directly related to the recall set of records. This set is obtained from de search expression
+!ID 001061
+!v301!Leia no capítulo [Relatórios Personalizados] do manual do PHL, exemplos de expressões de buscas
+!v302!Lea en el capitulo [Informes Personalizados] del manual del PHL, ejempos de expressiones de busquedas
+!v303!Read samples in the charpter [Standarized Reports] of the PHL manual
+!v304!Read samples in the charpter [Standarized Reports] of the PHL manual
+!v305!Read samples in the charpter [Standarized Reports] of the PHL manual
+!ID 001062
+!v301!Índice de autores
+!v302!Indice de autores
+!v303!Author index
+!v304!Author index
+!v305!Author index
+!ID 001063
+!v301!Índice de periódicos
+!v302!Índice de revistas
+!v303!Serial index
+!v304!Serial index
+!v305!Serial index
+!ID 001064
+!v301!Índice de Assuntos
+!v302!Índice de Assuntos
+!v303!Subject index
+!v304!Subject index
+!v305!Subject index
+!ID 001065
+!v301!Índice de Títulos
+!v302!Índice de Títulos
+!v303!Title index
+!v304!Title index
+!v305!Title index
+!ID 001066
+!v301!Forneça uma palavra ou raiz de uma palavra e clique sobre o termo desejado para submeter a busca
+!v302!Transcriba una palavra o raiz de una palavra y click sobre el termino deseado para submissión de la busqueda
+!v303!Write the term or term root and click on the desidered word to search
+!v304!Write the term or term root and click on the desidered word to search
+!v305!Write the term or term root and click on the desidered word to search
+!ID 001067
+!v301!Selecione o índice que pretende consultar
+!v302!Seleccione el indice para la busqueda
+!v303!Select the search index
+!v304!Select the search index
+!v305!Select the search index
+!ID 001068
+!v301!Assuntos
+!v302!Assuntos
+!v303!Subjects
+!v304!Subjects
+!v305!Subjects
+!ID 001069
+!v301!Código da unidade
+!v302!Código de la unidad
+!v303!Library code
+!v304!Library code
+!v305!Library code
+!ID 001070
+!v301!Identificação do título
+!v302!Identificación del titulo
+!v303!Title identificacion
+!v304!Title identificacion
+!v305!Title identificacion
+!ID 001071
+!v301!Separata
+!v302!Separata
+!v303!Separata
+!v304!Separata
+!v305!Separata
+!ID 001072
+!v301!Autor coletivo (analítica)
+!v302!Autor colectivo (analítica)
+!v303!Autor, colective (analitics)
+!v304!Autor, colective (analitics)
+!v305!Autor, colective (analitics)
+!ID 001073
+!v301!Título traduzido (analítica)
+!v302!Título traduzido (analítica)
+!v303!Title, translated (analitics)
+!v304!Title, translated (analitics)
+!v305!Title, translated (analitics)
+!ID 001074
+!v301!Livre
+!v302!Libre
+!v303!Free
+!v304!Free
+!v305!Free
+!ID 001075
+!v301!Autor coletivo
+!v302!Autor colectivo
+!v303!Autor, collective
+!v304!Autor, collective
+!v305!Autor, collective
+!ID 001076
+!v301!Total de páginas
+!v302!Total de paginas
+!v303!Pages, total
+!v304!Pages, total
+!v305!Pages, total
+!ID 001077
+!v301!Autor (coleção)
+!v302!Autor (colección)
+!v303!Author (collection)
+!v304!Author (collection)
+!v305!Author (collection)
+!ID 001078
+!v301!Autor coletivo (coleção)
+!v302!Autor colectivo (colección)
+!v303!Autor, collective (collection)
+!v304!Autor, collective (collection)
+!v305!Autor, collective (collection)
+!ID 001079
+!v301!Título (coleção)
+!v302!Título (colección)
+!v303!Title (collection)
+!v304!Title (collection)
+!v305!Title (collection)
+!ID 001080
+!v301!Total de volumes
+!v302!Total de volumenes
+!v303!Volumen, total
+!v304!Volumen, total
+!v305!Volumen, total
+!ID 001081
+!v301!Nacionalidade do documento
+!v302!Nacionalidad del documento
+!v303!Nacionalidade do documento
+!v304!Nacionalidade do documento
+!v305!Nacionalidade do documento
+!ID 001082
+!v301!Divulgar
+!v302!Divulgar
+!v303!Divulgar
+!v304!Divulgar
+!v305!Divulgar
+!ID 001083
+!v301!Título (série)
+!v302!Título (série)
+!v303!Title (serial)
+!v304!Title (serial)
+!v305!Title (serial)
+!ID 001084
+!v301!Volume (série)
+!v302!Volumen (série)
+!v303!Volume (serial)
+!v304!Volume (serial)
+!v305!Volume (serial)
+!ID 001085
+!v301!Fascículo (série)
+!v302!Fascículo (série)
+!v303!Issue (serial)
+!v304!Issue (serial)
+!v305!Issue (serial)
+!ID 001086
+!v301!Número do kardex
+!v302!Número del kardex
+!v303!Kardex number
+!v304!Kardex number
+!v305!Kardex number
+!ID 001087
+!v301!Nível arquivístico
+!v302!Nível arquivístico
+!v303!Archive level
+!v304!Archive number
+!v305!Archive number
+!ID 001088
+!v301!Idioma do texto
+!v302!Idioma del texto
+!v303!Text language
+!v304!Text language
+!v305!Text language
+!ID 001089
+!v301!Idioma do resumo
+!v302!Idioma del resumen
+!v303!Abstrac language
+!v304!Abstrac language
+!v305!Abstrac language
+!ID 001090
+!v301!Povo
+!v302!Pueblo
+!v303!People
+!v304!People
+!v305!People
+!ID 001091
+!v301!Instituição (tese)
+!v302!Institución (tesis)
+!v303!Institution (tesis)
+!v304!Institution (tesis)
+!v305!Institution (tesis)
+!ID 001092
+!v301!Nome (evento)
+!v302!Nombre (evento)
+!v303!Name (meeeting)
+!v304!Name (meeeting)
+!v305!Name (meeeting)
+!ID 001093
+!v301!Data padronizada (evento)
+!v302!Fecha estander (evento)
+!v303!Standard date (meeting)
+!v304!Standard date (meeting)
+!v305!Standard date (meeting)
+!ID 001094
+!v301!Patrocinadores (projeto)
+!v302!Patrocinadores (proyecto)
+!v303!Sponsors (project)
+!v304!Sponsors (project)
+!v305!Sponsors (project)
+!ID 001095
+!v301!Número da publicação
+!v302!Número de la publicación
+!v303!Number (publication)
+!v304!Number (publication)
+!v305!Number (publication)
+!ID 001096
+!v301!Alcance temporal (desde)
+!v302!Alcance temporal (desde)
+!v303!Time (from)
+!v304!Time (from)
+!v305!Time (from)
+!ID 001097
+!v301!Alcance temporal (até)
+!v302!Alcance temporal (hasta)
+!v303!Time (to)
+!v304!Time (to)
+!v305!Time (to)
+!ID 001098
+!v301!Biografado
+!v302!Biografado
+!v303!Biograph
+!v304!Biograph
+!v305!Biograph
+!ID 001099
+!v301!Bibliografia (curso)
+!v302!Bibliografia (curso)
+!v303!Bibliography (curse)
+!v304!Bibliography (curse)
+!v305!Bibliography (curse)
+!ID 001100
+!v301!Disponibilidade
+!v302!Disponibilidad
+!v303!Availability
+!v304!Availability
+!v305!Availability
+!ID 001101
+!v301!Código HTML (restrito)
+!v302!Código HTML (restricto)
+!v303!HTML code (restrict)
+!v304!HTML code (restrict)
+!v305!HTML code (restrict)
+!ID 001102
+!v301!Gênero documental (NOBRADE)
+!v302!Gênero documental (NOBRADE)
+!v303!Gênero documental (NOBRADE)
+!v304!Gênero documental (NOBRADE)
+!v305!Gênero documental (NOBRADE)
+!ID 001103
+!v301!Ementa/Créditos (analítico)
+!v302!Ementa/Créditos (analítico)
+!v303!Menu/Credit (analitics)
+!v304!Menu/Credit (analitics)
+!v305!Menu/Credit (analitics)
+!ID 001104
+!v301!Informação descritiva (analítico)
+!v302!Información descriptiva (analítico)
+!v303!Descriptive information (analitics)
+!v304!Descriptive information (analitics)
+!v305!Descriptive information (analitics)
+!ID 001105
+!v301!Comentários (wiki)
+!v302!Comentários (wiki)
+!v303!Comments (wiki)
+!v304!Comments (wiki)
+!v305!Comments (wiki)
+!ID 001106
+!v301!Rede
+!v302!Red
+!v303!Network
+!v304!Network
+!v305!Network
+!ID 001107
+!v301!Restauração e prevenção
+!v302!Restauración y prevención
+!v303!Restore and prevention
+!v304!Restore and prevention
+!v305!Restore and prevention
+!ID 001108
+!v301!Dados do exemplar
+!v302!Datos del ejemplar
+!v303!Inventory datas
+!v304!Inventory datas
+!v305!Inventory datas
+!ID 001109
+!v301!Campos de dados disponíveis
+!v302!Campos de datos disponibles
+!v303!Available data fields
+!v304!Available data fields
+!v305!Available data fields
+!ID 001110
+!v301!Data de nascimento
+!v302!Fecha de natalidad
+!v303!Fecha de natalidad
+!v304!Fecha de natalidad
+!v305!Fecha de natalidad
+!ID 001111
+!v301!Documento de identidade
+!v302!Tarjeta de identificación
+!v303!Identification card
+!v304!Identification card
+!v305!Identification card
+!ID 001112
+!v301!Prevenção
+!v302!Prevención
+!v303!Prevenction
+!v304!Prevenction
+!v305!Prevenction
+!ID 001113
+!v301!Restauração
+!v302!Restauración
+!v303!Restore
+!v304!Restore
+!v305!Restore
+!ID 001114
+!v301!Etiqueta
+!v302!Etiqueta
+!v303!Label
+!v304!Etichette
+!v305!Étiquette
+!ID 001115
+!v301!Este relatório somente pode ser gerado aos domingos ou durante a semana entre os horários das 00:00 às 07:00.
+!v302!Este relatório somente pode ser gerado aos domingos ou durante a semana entre os horários das 00:00 às 07:00.
+!v303!Este relatório somente pode ser gerado aos domingos ou durante a semana entre os horários das 00:00 às 07:00.
+!v304!Este relatório somente pode ser gerado aos domingos ou durante a semana entre os horários das 00:00 às 07:00.
+!v305!Este relatório somente pode ser gerado aos domingos ou durante a semana entre os horários das 00:00 às 07:00.
+!ID 001116
+!v301!Código do idioma
+!v302!Código del idioma
+!v303!Language code
+!v304!Language code
+!v305!Language code
+!ID 001117
+!v301!Texto em português
+!v302!Texto en portugués
+!v303!Text in portuguese
+!v304!Text in portuguese
+!v305!Text in portuguese
+!ID 001118
+!v301!Texto em espanhol
+!v302!Texto en español
+!v303!Text in spanish
+!v304!Text in spanish
+!v305!Text in spanish
+!ID 001119
+!v301!Texto em inglês
+!v302!Texto en inglés
+!v303!Text in english
+!v304!Text in english
+!v305!Text in english
+!ID 001120
+!v301!Texto em italiano
+!v302!Texto en italiano
+!v303!Text in italian
+!v304!Text in italian
+!v305!Text in italian
+!ID 001121
+!v301!Texto em francês
+!v302!Texto en francés
+!v303!Text in french
+!v304!Text in french
+!v305!Text in french
+!ID 001122
+!v301!Bibliotecas
+!v302!Bibliotecas
+!v303!Libraries
+!v304!Libraries
+!v305!Libraries
+!ID 001123
+!v301!Registros de Controle
+!v302!Registros de Control
+!v303!Control Records
+!v304!Control Records
+!v305!Control Records
+!ID 001124
+!v301!Rotinas permitidas
+!v302!Rutinas permitidas
+!v303!Rotinas permitidas
+!v304!Rotinas permitidas
+!v305!Rotinas permitidas
+!ID 001125
+!v301!Recebimento de multas
+!v302!Recebimento de multas
+!v303!Recebimento de multas
+!v304!Recebimento de multas
+!v305!Recebimento de multas
+!ID 001126
+!v301!Menu inicial
+!v302!Menu inicial
+!v303!Start menu
+!v304!Start menu
+!v305!Start menu
+!ID 001127
+!v301!Buscas e reservas
+!v302!Busquedas y reservas
+!v303!Searchs and reserves
+!v304!Searchs and reserves
+!v305!Searchs and reserves
+!ID 001128
+!v301!Portaria
+!v302!Portaria
+!v303!Portaria
+!v304!Portaria
+!v305!Portaria
+!ID 001129
+!v301!Tipo de gênero
+!v302!Tipo de gênero
+!v303!Tipo de gênero
+!v304!Tipo de gênero
+!v305!Tipo de gênero
+!ID 001130
+!v301!Nome da biblioteca
+!v302!Nombre de la biblioteca
+!v303!Library Name
+!v304!Library Name
+!v305!Library Name
+!ID 001131
+!v301!Seu e-mail
+!v302!Su e-mail
+!v303!Your e-mail
+!v304!Your e-mail
+!v305!Your e-mail
+!ID 001132
+!v301!Catalogar fascículo
+!v302!Catalogar fascículo
+!v303!Catalog issue
+!v304!Catalog issue
+!v305!Catalog issue
+!ID 001133
+!v301!Catalogar título
+!v302!Catalogar título
+!v303!Catalog title
+!v304!Catalog title
+!v305!Catalog title
+!ID 001134
+!v301!(Versão sem registro!)
+!v302!(Versión sin registro!)
+!v303!(Unregistred version!)
+!v304!(Unregistred version!)
+!v305!(Unregistred version!)
+!ID 001135
+!v301!Permite renovar?
+!v302!Permite renovar?
+!v303!Permite renovar?
+!v304!Permite renovar?
+!v305!Permite renovar?
+!ID 001136
+!v301!Permite reservar?
+!v302!Permite reservar?
+!v303!Permite reservar?
+!v304!Permite reservar?
+!v305!Permite reservar?
+!ID 001137
+!v301!A reserva deste objeto não é permitida para usuários do tipo
+!v302!A reserva deste objeto não é permitida para usuários do tipo
+!v303!A reserva deste objeto não é permitida para usuários do tipo
+!v304!A reserva deste objeto não é permitida para usuários do tipo
+!v305!A reserva deste objeto não é permitida para usuários do tipo
+!ID 001138
+!v301!A renovação deste objeto não é permitida para usuários do tipo
+!v302!A renovação deste objeto não é permitida para usuários do tipo
+!v303!A renovação deste objeto não é permitida para usuários do tipo
+!v304!A renovação deste objeto não é permitida para usuários do tipo
+!v305!A renovação deste objeto não é permitida para usuários do tipo
+!ID 001139
+!v301!Índice Completo
+!v302!Indice Total
+!v303!Full Index
+!v304!Full Index
+!v305!Full Index
+!ID 001140
+!v301!Frase exata
+!v302!Frase exacta
+!v303!Full text
+!v304!Full text
+!v305!Full text
+!ID 001141
+!v301!Ordem inversa
+!v302!Ordem invertida
+!v303!Reverse
+!v304!Reverse
+!v305!Reverse
+!ID 001142
+!v301!Catalogado em
+!v302!Catalogado en
+!v303!Catalogued at
+!v304!Catalogued at
+!v305!Catalogued at
+!ID 001143
+!v301!Menu Principal
+!v302!Menu Principal
+!v303!Main Menu
+!v304!Main Menu
+!v305!Main Menu
+!ID 001144
+!v301!Monográfico
+!v302!Monográfico
+!v303!Monographic
+!v304!Monographic
+!v305!Monographic
+!ID 001145
+!v301!Analítico Monográfico
+!v302!Analítico Monográfico
+!v303!Analitic (monograph)
+!v304!Analitic (monograph)
+!v305!Analitic (monograph)
+!ID 001146
+!v301!Série
+!v302!Série
+!v303!Serial level
+!v304!Serial level
+!v305!Serial level
+!ID 001147
+!v301!Analítico de série
+!v302!Analítico de série
+!v303!Analitic (serial)
+!v304!Analitic (serial)
+!v305!Analitic (serial)
+!ID 001148
+!v301!A rotina de auto-empréstimo é permitida somente quando você estiver utilizando o PHL a partir de uma máquina com permissão para auto-empréstimo!<br>Contate um funcionário da biblioteca e solicite informações sobre a disponibilidade de máquinas para auto-empréstimo.
+!v302!A rotina de auto-empréstimo é permitida somente quando você estiver utilizando o PHL a partir de uma máquina com permissão para auto-empréstimo!
+!v303!A rotina de auto-empréstimo é permitida somente quando você estiver utilizando o PHL a partir de uma máquina com permissão para auto-empréstimo!
+!v304!A rotina de auto-empréstimo é permitida somente quando você estiver utilizando o PHL a partir de uma máquina com permissão para auto-empréstimo!
+!v305!A rotina de auto-empréstimo é permitida somente quando você estiver utilizando o PHL a partir de uma máquina com permissão para auto-empréstimo!
+!ID 001149
+!v301!Rotina de auto-empréstimo
+!v302!Rotina de auto-empréstimo
+!v303!Rotina de auto-empréstimo
+!v304!Rotina de auto-empréstimo
+!v305!Rotina de auto-empréstimo
+!ID 001150
+!v301!Overnight
+!v302!Overnight
+!v303!Overnight
+!v304!Overnight
+!v305!Overnight
+!ID 001151
+!v301!Forneça na caixa de texto abaixo, as iniciais do termo.<br>Selecione a opção desejada na lista que será composta abaixo.<br>Copie e cole no campo apropriado do formulário de entrada de dados.
+!v302!Forneça as iniciais do termo
+!v303!Forneça as iniciais do termo
+!v304!Forneça as iniciais do termo
+!v305!Forneça as iniciais do termo
+!ID 001152
+!v301!O objetivo desta lista é fornecer ao bibliotecário subsídios para padronização de termos com base nas entradas já efetuadas, evitando assim, entradas distintas para um mesmo termo
+!v302!O objetivo desta lista é fornecer ao bibliotecário subsídios para padronização de termos com base nas entradas já efetuadas, evitando assim, entradas distintas para um mesmo termo
+!v303!O objetivo desta lista é fornecer ao bibliotecário subsídios para padronização de termos com base nas entradas já efetuadas, evitando assim, entradas distintas para um mesmo termo
+!v304!O objetivo desta lista é fornecer ao bibliotecário subsídios para padronização de termos com base nas entradas já efetuadas, evitando assim, entradas distintas para um mesmo termo
+!v305!O objetivo desta lista é fornecer ao bibliotecário subsídios para padronização de termos com base nas entradas já efetuadas, evitando assim, entradas distintas para um mesmo termo
+!ID 001153
+!v301!Os termos são apresentados em caixa alta e sem acentuação
+!v302!Os termos são apresentados em caixa alta e sem acentuação
+!v303!Os termos são apresentados em caixa alta e sem acentuação
+!v304!Os termos são apresentados em caixa alta e sem acentuação
+!v305!Os termos são apresentados em caixa alta e sem acentuação
+!ID 001154
+!v301!Termos que ultrapassarem o tamanho de 26 caracteres, aparecerão truncados nesta lista
+!v302!Termos que ultrapassarem o tamanho de 26 caracteres, aparecerão truncados nesta lista
+!v303!Termos que ultrapassarem o tamanho de 26 caracteres, aparecerão truncados nesta lista
+!v304!Termos que ultrapassarem o tamanho de 26 caracteres, aparecerão truncados nesta lista
+!v305!Termos que ultrapassarem o tamanho de 26 caracteres, aparecerão truncados nesta lista
+!ID 001155
+!v301!O número apresentado entre colchetes, à direita de cada termo, indica a quantidade de vezes que ele foi utilizado
+!v302!O número apresentado entre colchetes, à direita de cada termo, indica a quantidade de vezes que ele foi utilizado
+!v303!O número apresentado entre colchetes, à direita de cada termo, indica a quantidade de vezes que ele foi utilizado
+!v304!O número apresentado entre colchetes, à direita de cada termo, indica a quantidade de vezes que ele foi utilizado
+!v305!O número apresentado entre colchetes, à direita de cada termo, indica a quantidade de vezes que ele foi utilizado
+!ID 001156
+!v301!Forneça na caixa de texto abaixo, as iniciais do sobrenome do autor.<br>Selecione a opção desejada na lista que será composta abaixo.<br>Copie e cole no campo apropriado do formulário de entrada de dados.
+!v302!Forneça as iniciais do sobrenome do autor
+!v303!Forneça as iniciais do sobrenome do autor
+!v304!Forneça as iniciais do sobrenome do autor
+!v305!Forneça as iniciais do sobrenome do autor
+!ID 001157
+!v301!Concluir
+!v302!Concluir
+!v303!Concluir
+!v304!Concluir
+!v305!Concluir
+!ID 001158
+!v301!Etiqueta de lombada
+!v302!Etiqueta de lombada
+!v303!Etiqueta de lombada
+!v304!Etiqueta de lombada
+!v305!Etiqueta de lombada
+!ID 001159
+!v301!Etiqueta de lombada com código de barras
+!v302!Etiqueta de lombada com código de barras
+!v303!Etiqueta de lombada com código de barras
+!v304!Etiqueta de lombada com código de barras
+!v305!Etiqueta de lombada com código de barras
+!ID 001160
+!v301!A rotina de envio de e-mail já foi acionada no dia de hoje!
+!v302!La rutina de envio de e-mailya foe ejecutada hoy dia!
+!v303!The send mail routine was executed today!
+!v304!The send mail routine was executed today!
+!v305!The send mail routine was executed today!
+!ID 001161
+!v301!Data do cancelamento
+!v302!Fecha del cancelamento
+!v303!Cancel date
+!v304!Cancel date
+!v305!Cancel date
+!ID 001162
+!v301!O arquivo
+!v302!El archivo
+!v303!The file
+!v304!The file
+!v305!The file
+!ID 001163
+!v301!foi salvo
+!v302!fue salvo
+!v303!was saved
+!v304!was saved
+!v305!was saved
+!ID 001164
+!v301!O arquivo será sempre salvo no diretório "cgi-bin" ou no diretório indicado no arquivo de parâmetros "/cgi-bin/*.cip"
+!v302!El archivo siempre sera salvo en el directorio "cgi-bin" o en el directorio indicado en el archivo de parámetros "/cgi-bin/*.cip"
+!v303!The file was everything saved in the "cgi-bin" directory or in the directory indicated in the "/cgi-bin/*.cip" parameter file
+!v304!The file was everything saved in the "cgi-bin" directory or in the directory indicated in the "/cgi-bin/*.cip" parameter file
+!v305!The file was everything saved in the "cgi-bin" directory or in the directory indicated in the "/cgi-bin/*.cip" parameter file
+!ID 001165
+!v301!Edição de arquivo
+!v302!Edición de archivo
+!v303!File edit
+!v304!File edit
+!v305!File edit
+!ID 001166
+!v301!A localização dos arquivos seguem os caminhos estabelecidos no arquivo "cipar" localizado no diretório "/cgi-bin" do servidor
+!v302!La ubicación de los archivos siguen los caminos establecidos en el archivo "cipar" ubicado en el directório "/cgi-bin" del servidor
+!v303!The file location is the path indicated in the "cipar" file in the "cgi-bin" directory
+!v304!The file location is the path indicated in the "cipar" file in the "cgi-bin" directory
+!v305!The file location is the path indicated in the "cipar" file in the "cgi-bin" directory
+!ID 001167
+!v301!Arquivos maiores de 30 Kb não serão abertos
+!v302!Archivos mayores de 30 Kb no seran abiertos
+!v303!File with size more then 30 Kb don't was opened
+!v304!File with size more then 30 Kb don't was opened
+!v305!File with size more then 30 Kb don't was opened
+!ID 001168
+!v301!Arquivos sem permissão de leitura e gravação não serão abertos
+!v302!Archivos sim permissión de lectura y grabación no seran abiertos
+!v303!File widhout read and write permission don't was open
+!v304!File widhout read and write permission don't was open
+!v305!File widhout read and write permission don't was open
+!ID 001169
+!v301!A rotina de envio de e-mails em lote somente poderá ser executada quando o PHL estiver hospedado em um servidor WWW<br>configurado para autenticação e envio de e-mails através do protocolo SMTP.
+!v302!A rotina de envio de e-mails em lote somente poderá ser habilitada se o PHL estiver hospedado em um servidor WWW configurado para autenticação e envio de e-mails através do protocolo SMTP.
+!v303!A rotina de envio de e-mails em lote somente poderá ser habilitada se o PHL estiver hospedado em um servidor WWW configurado para autenticação e envio de e-mails através do protocolo SMTP.
+!v304!A rotina de envio de e-mails em lote somente poderá ser habilitada se o PHL estiver hospedado em um servidor WWW configurado para autenticação e envio de e-mails através do protocolo SMTP.
+!v305!A rotina de envio de e-mails em lote somente poderá ser habilitada se o PHL estiver hospedado em um servidor WWW configurado para autenticação e envio de e-mails através do protocolo SMTP.
+!ID 001170
+!v301!Forneça na caixa de texto abaixo, as iniciais do nome do fornecedor.<br>Selecione a opção desejada na lista que será composta abaixo.<br>Copie e cole o número do fornecedor no campo apropriado do formulário de entrada de dados.
+!v302!Forneça na caixa de texto abaixo, as iniciais do nome do fornecedor.<br>Selecione a opção desejada na lista que será composta abaixo.<br>Copie e cole o número do fornecedor no campo apropriado do formulário de entrada de dados.
+!v303!Forneça na caixa de texto abaixo, as iniciais do nome do fornecedor.<br>Selecione a opção desejada na lista que será composta abaixo.<br>Copie e cole o número do fornecedor no campo apropriado do formulário de entrada de dados.
+!v304!Forneça na caixa de texto abaixo, as iniciais do nome do fornecedor.<br>Selecione a opção desejada na lista que será composta abaixo.<br>Copie e cole o número do fornecedor no campo apropriado do formulário de entrada de dados.
+!v305!Forneça na caixa de texto abaixo, as iniciais do nome do fornecedor.<br>Selecione a opção desejada na lista que será composta abaixo.<br>Copie e cole o número do fornecedor no campo apropriado do formulário de entrada de dados.
+!ID 001171
+!v301!Digite na caixa de texto abaixo, as primeiras letras do sobrenome do autor.<br>Selecione a opção desejada na lista que será composta abaixo.<br>Copie e cole o número de Cutter no campo #103 do formulário de entrada de dados.
+!v302!Digite na caixa de texto abaixo, as primeiras letras do sobrenome do autor.<br>Selecione a opção desejada na lista que será composta abaixo.<br>Copie e cole o número de Cutter no campo #103 do formulário de entrada de dados.
+!v303!Type in the textbox the first leters of the author surname.<br>Select the Cutter number in the list,<br>cut and paste in the #103 dataentry form field.
+!v304!Type in the textbox the firsts letters of the author surname.<br>Select the Cutter number in the list,<br>cut and paste in the #103 dataentry form field.
+!v305!Type in the textbox the firsts letters of the author surname.<br>Select the Cutter number in the list,<br>cut and paste in the #103 dataentry form field.
+!ID 001172
+!v301!Número de chamada
+!v302!Número de chamada
+!v303!Call number
+!v304!Call number
+!v305!Call number
+!ID 001173
+!v301!Tabela de Cutter
+!v302!Tabla de Cutter
+!v303!Cutter Table
+!v304!Cutter Table
+!v305!Cutter Table
+!ID 001174
+!v301!Digite na caixa de texto abaixo, as primeiras letras do assunto desejado.<br>Selecione a opção desejada na lista que será composta abaixo.<br>Copie e cole o número da classe no campo #003 do formulário de entrada de dados.
+!v302!Digite na caixa de texto abaixo, as primeiras letras do assunto desejado.<br>Selecione a opção desejada na lista que será composta abaixo.<br>Copie e cole o número da classe no campo #003 do formulário de entrada de dados.
+!v303!Type in the textbox the first leters of the subject.<br>Select the Class number in the list,<br>cut and paste in the #003 dataentry form field.
+!v304!Type in the textbox the firsts letters of the subject.<br>Select the Class number in the list,<br>cut and paste in the #003 dataentry form field.
+!v305!Type in the textbox the firsts letters of the subject.<br>Select the Class number in the list,<br>cut and paste in the #003 dataentry form field.
+!ID 001175
+!v301!A catalogação de um documento que é parte de outro documento,<br>deverá ser feita a partir do link "Analítica" apresentado no<br>menu do registro do documento do qual ele é parte.<br>Se o documento em que esta parte está inserida ainda não foi catalogado,<br>há que catalogar primeiramente o todo para depois catalogar cada uma das partes.
+!v302!La catalogación de un documento que es parte de otro documento,<br>debe ser hecha a partir de la ligación "Analitica" presentada en<br>el menu del registro del documento del qual el es parte.<br>Se el documento en que esta parte esta incluida aun no fue catalogado, catalogue primeramente el todo para despues catalogar cada una de las partes.
+!v303!
+!v304!
+!v305!
+!ID 001176
+!v301!<ul><li>Se o documento que pretende catalogar é um fascículo de periódico,<br>utilize o link "Catalogar fascículo" apresentado no registro do título do periódico</li><hr><li>Se o documento que pretende catalogar for parte de uma série monográfica,<br>utilize o nível monográfico e não o nível série</li></ul>
+!v302!
+!v303!
+!v304!
+!v305!
+!ID 001177
+!v301!Para catalogação de uma coleção de periódicos, registre o título<br>na base de dados Kardex e depois clique no link "Catalogar título"<br>apresentado no menu do registro do kardex.
+!v302!
+!v303!
+!v304!
+!v305!
+!ID 001178
+!v301!Nivel Coleção
+!v302!Nivel Colección
+!v303!Collection Level
+!v304!Collection Level
+!v305!Collection Level
+!ID 001179
+!v301!Aprovado
+!v302!Probado
+!v303!Passed
+!v304!Passed
+!v305!Passed
+!ID 001180
+!v301!Pendente
+!v302!Pendiente
+!v303!Pending
+!v304!Pending
+!v305!Pending
+!ID 001181
+!v301!Não aprovado
+!v302!No probado
+!v303!Rejected
+!v304!Rejected
+!v305!Rejected
+!ID 001182
+!v301!Índice de cursos
+!v302!Indice de cursos
+!v303!Courses index
+!v304!Courses index
+!v305!Courses index
+!ID 001183
+!v301!Não pode haver espaços em branco no número de tombo fornecido!
+!v302!Não pode haver espaços em branco no número de tombo fornecido!
+!v303!Não pode haver espaços em branco no número de tombo fornecido!
+!v304!Não pode haver espaços em branco no número de tombo fornecido!
+!v305!Não pode haver espaços em branco no número de tombo fornecido!
+
+

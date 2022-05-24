@@ -1,0 +1,473 @@
+!ID 000001
+!v310!1
+!v311!Filosofia
+!v311!Psicologia
+!v999!^d20010501^belysio
+
+!ID 000002
+!v310!11
+!v311!Metafísica
+!v999!^d20010501^belysio
+
+!ID 000003
+!v310!133
+!v311!Metafísica da vida espiritual
+!v311!Ocultismo
+!v999!^d20010501^belysio
+
+!ID 000004
+!v310!14
+!v311!Sistemas e pontos de vista filosóficos
+!v999!^d20010501^belysio
+
+!ID 000005
+!v310!159
+!v311!Psicologia
+!v999!^d20010501^belysio
+
+!ID 000006
+!v310!16
+!v311!Lógica
+!v311!Teoria do Conhecimento
+!v311!Metodologia da Lógica
+!v999!^d20010501^belysio
+
+!ID 000007
+!v310!17
+!v311!Filosofia Moral
+!v311!Ética
+!v311!Filosofia Prática
+!v999!^d20010501^belysio
+
+!ID 000008
+!v310!2
+!v311!Religião
+!v311!Teologia
+!v999!^d20010501^belysio
+
+!ID 000009
+!v310!21
+!v311!Teologia Natural
+!v311!Teologia Racional
+!v311!Filosofia Religiosa
+!v999!^d20010501^belysio
+
+!ID 000010
+!v310!22
+!v311!A Bíblia
+!v311!Sagradas Escrituras
+!v999!^d20010501^belysio
+
+!ID 000011
+!v310!23
+!v311!Teologia Dogmática
+!v999!^d20010501^belysio
+
+!ID 000012
+!v310!24
+!v311!Teologia Prática
+!v999!^d20010501^belysio
+
+!ID 000013
+!v310!25
+!v311!Teologia Pastoral
+!v999!^d20010501^belysio
+
+!ID 000014
+!v310!26
+!v311!Igreja Cristã em Geral
+!v999!^d20010501^belysio
+
+!ID 000015
+!v310!27
+!v311!História Geral da Igreja Cristã
+!v999!^d20010501^belysio
+
+!ID 000016
+!v310!28
+!v311!Igrejas Cristãs
+!v311!Seitas
+!v311!Denominações (Confissões)
+!v999!^d20010501^belysio
+
+!ID 000017
+!v310!29
+!v311!Religiões não cristã
+!v999!^d20010501^belysio
+
+!ID 000018
+!v310!3
+!v311!Ciências Sociais
+!v311!Economia
+!v311!Direito
+!v311!Política
+!v311!Assistência Social
+!v311!Educação
+!v999!^d20010501^belysio
+
+!ID 000019
+!v310!31
+!v311!Demografia
+!v311!Sociologia
+!v311!Estatística
+!v999!^d20010501^belysio
+
+!ID 000020
+!v310!32
+!v311!Política
+!v999!^d20010501^belysio
+
+!ID 000021
+!v310!33
+!v311!Economia
+!v311!Ciência Económica
+!v999!^d20010501^belysio
+
+!ID 000022
+!v310!34
+!v311!Direito
+!v311!Jurisprudência
+!v999!^d20010501^belysio
+
+!ID 000023
+!v310!35
+!v311!Administração Pública
+!v311!Governo
+!v311!Assuntos Militares
+!v999!^d20010501^belysio
+
+!ID 000024
+!v310!36
+!v311!Assistência Social
+!v311!Previdência Social
+!v311!Segurança Social
+!v999!^d20010501^belysio
+
+!ID 000025
+!v310!37
+!v311!Educação
+!v999!^d20010501^belysio
+
+!ID 000026
+!v310!38
+!v311!Metrologia
+!v311!Pesos e Medidas
+!v999!^d20010501^belysio
+
+!ID 000027
+!v310!39
+!v311!Etnologia
+!v311!Etnografia
+!v311!Costumes
+!v311!Modas
+!v311!Tradições
+!v311!Folclore
+!v999!^d20010501^belysio
+
+!ID 000028
+!v310!5
+!v311!Matemática e Ciências Naturais
+!v999!^d20010501^belysio
+
+!ID 000029
+!v310!50
+!v311!Generalidades sobre as Ciências Puras
+!v999!^d20010501^belysio
+
+!ID 000030
+!v310!51
+!v311!Matemática
+!v999!^d20010501^belysio
+
+!ID 000031
+!v310!52
+!v311!Astronomia
+!v311!Astrofísica
+!v311!Pesquisa Espacial
+!v311!Geodesia
+!v999!^d20010501^belysio
+
+!ID 000032
+!v310!53
+!v311!Física
+!v999!^d20010501^belysio
+
+!ID 000033
+!v310!54
+!v311!Química
+!v311!Mineralogia
+!v999!^d20010501^belysio
+
+!ID 000034
+!v310!55
+!v311!Ciências da Terra
+!v311!Geologia
+!v311!Meteorologia
+!v999!^d20010501^belysio
+
+!ID 000035
+!v310!56
+!v311!Paleontologia
+!v999!^d20010501^belysio
+
+!ID 000036
+!v310!57
+!v311!Biologia
+!v311!Antropologia
+!v999!^d20010501^belysio
+
+!ID 000037
+!v310!58
+!v311!Botânica
+!v999!^d20010501^belysio
+
+!ID 000038
+!v310!59
+!v311!Zoologia
+!v999!^d20010501^belysio
+
+!ID 000039
+!v310!6
+!v311!Ciências Aplicadas
+!v311!Medicina
+!v311!Tecnologia
+!v999!^d20010501^belysio
+
+!ID 000040
+!v310!61
+!v311!Ciências Médicas
+!v999!^d20010501^belysio
+
+!ID 000041
+!v310!62
+!v311!Engenharia
+!v311!Tecnologia em Geral
+!v999!^d20010501^belysio
+
+!ID 000042
+!v310!63
+!v311!Agricultura
+!v311!Silvicultura
+!v311!Agronomia
+!v311!Zootecnia
+!v999!^d20010501^belysio
+
+!ID 000043
+!v310!64
+!v311!Ciência Doméstica
+!v311!Economia Doméstica
+!v999!^d20010501^belysio
+
+!ID 000044
+!v310!65
+!v311!Organização e Administração da Indústria, do Comércio e dos Transportes
+!v999!^d20010501^belysio
+
+!ID 000045
+!v310!66
+!v311!Indústria Química
+!v311!Tecnologia Química
+!v999!^d20010501^belysio
+
+!ID 000046
+!v310!67
+!v311!Indústrias e Ofícios Diversos
+!v999!^d20010501^belysio
+
+!ID 000047
+!v310!68
+!v311!Indústrias, Artes e Ofícios de Artigos Acabados
+!v999!^d20010501^belysio
+
+!ID 000048
+!v310!69
+!v311!Engenharia Civil e Estruturas em Geral
+!v311!Infra-estruturas
+!v311!Fundações
+!v311!Construção de Túneis e de Pontes
+!v311!Superestruturas
+!v999!^d20010501^belysio
+
+!ID 000049
+!v310!7
+!v311!Arte
+!v311!Belas-artes
+!v311!Recreação
+!v311!Diversões
+!v311!Desportos
+!v999!^d20010501^belysio
+
+!ID 000050
+!v310!70
+!v311!Generalidades
+!v999!^d20010501^belysio
+
+!ID 000051
+!v310!71
+!v311!Planeamento Regional e Urbano
+!v311!Paisagens, Jardins, etc
+!v999!^d20010501^belysio
+
+!ID 000052
+!v310!72
+!v311!Arquitectura
+!v999!^d20010501^belysio
+
+!ID 000053
+!v310!73
+!v311!Artes Plásticas
+!v311!Escultura
+!v311!Numismática
+!v999!^d20010501^belysio
+
+!ID 000054
+!v310!74
+!v311!Desenho
+!v311!Artes Industriais
+!v999!^d20010501^belysio
+
+!ID 000055
+!v310!75
+!v311!Pintura
+!v999!^d20010501^belysio
+
+!ID 000056
+!v310!76
+!v311!Artes Gráficas
+!v999!^d20010501^belysio
+
+!ID 000057
+!v310!77
+!v311!Fotografia e Cinema
+!v999!^d20010501^belysio
+
+!ID 000058
+!v310!78
+!v311!Música
+!v999!^d20010501^belysio
+
+!ID 000059
+!v310!79
+!v311!Entretenimento
+!v311!Lazer
+!v311!Jogos
+!v311!Desportos
+!v999!^d20010501^belysio
+
+!ID 000060
+!v310!8
+!v311!Linguagem
+!v311!Linguística
+!v311!Literatura
+!v999!^d20010501^belysio
+
+!ID 000061
+!v310!80
+!v311!Linguística
+!v311!Filologia
+!v311!Línguas
+!v999!^d20010501^belysio
+
+!ID 000062
+!v310!81
+!v311!vaga
+!v999!^d20010501^belysio
+
+!ID 000063
+!v310!82
+!v311!Literatura em Língua Inglesa
+!v999!^d20010501^belysio
+
+!ID 000064
+!v310!83
+!v311!Literatura Alemã/Escandinava/Holandesa
+!v999!^d20010501^belysio
+
+!ID 000065
+!v310!84
+!v311!Literatura Francesa
+!v999!^d20010501^belysio
+
+!ID 000066
+!v310!85
+!v311!Literatura Italiana
+!v999!^d20010501^belysio
+
+!ID 000067
+!v310!86
+!v311!Literatura Espanhola/Portuguesa
+!v999!^d20010501^belysio
+
+!ID 000068
+!v310!87
+!v311!Literatura Clássica (Latim e Grego)
+!v999!^d20010501^belysio
+
+!ID 000069
+!v310!88
+!v311!Literatura Eslava
+!v999!^d20010501^belysio
+
+!ID 000070
+!v310!89
+!v311!Literatura em outras Línguas
+!v999!^d20010501^belysio
+
+!ID 000071
+!v310!9
+!v311!Geografia
+!v311!Biografia
+!v311!Historia
+!v999!^d20010501^belysio
+
+!ID 000072
+!v310!90
+!v311!Arqueologia
+!v311!Antiguidades
+!v999!^d20010501^belysio
+
+!ID 000073
+!v310!91
+!v311!Geografia, Exploração da Terra e Viagens
+!v999!^d20010501^belysio
+
+!ID 000074
+!v310!929
+!v311!Biografias
+!v999!^d20010501^belysio
+
+!ID 000075
+!v310!93
+!v311!História
+!v999!^d20010501^belysio
+
+!ID 000076
+!v310!94
+!v311!História Medieval e Moderna em Geral
+!v311!História de Europa
+!v999!^d20010501^belysio
+
+!ID 000077
+!v310!95
+!v311!História da Ásia
+!v999!^d20010501^belysio
+
+!ID 000078
+!v310!96
+!v311!História da Africa
+!v999!^d20010501^belysio
+
+!ID 000079
+!v310!97
+!v311!História da América do Norte e Central
+!v999!^d20010501^belysio
+
+!ID 000080
+!v310!98
+!v311!História da América do Sul
+!v999!^d20010501^belysio
+
+!ID 000081
+!v310!99
+!v311!História da Oceânia, dos Territórios Árcticos e da Antárctida
+!v999!^d20010501^belysio

@@ -1,0 +1,57 @@
+<!-- Apresenta descritores do indice do catalogo na rotina de buscas - Ajax
+     10/11/2008 06:29:56 Elysio -->
+     <IsisScript name="085.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+     <section>
+
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis passadas pelo http  -->
+     <field action="cgi" tag="10">exp</field>
+
+<!-- Percorre indice de chaves do catalogo  -->
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,'DES='v10,</pft></parm>
+       <parm name="to"><pft>,'DES=ZZZ'</pft></parm>
+       <parm name="count">10</pft></parm>
+       <parm name="posting">1</parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="3">Isis_Posting</field>
+       <field action="define" tag="4">Isis_Current</field>
+
+       <loop>
+       <field action="import" tag="list">201,953/977,4001</field>
+         <display>
+           <pft>
+        
+            s2:=(v1*4),
+
+           ,ref(
+                ['phl_acv']val(v3^m),
+                 (,
+                   ,if 
+
+                     s(mhu,v87^*,|/|v87^s,mpl):s2 then v87^*,|/|v87^s/
+
+                   ,fi,
+                  )
+               ,),
+
+         </pft>
+      </display>
+    </loop>
+  </do>
+
+  <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

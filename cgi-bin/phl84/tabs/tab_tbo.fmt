@@ -1,0 +1,237 @@
+'<html>'/
+'<head>'/
+'<script language=javascript>function proibido_voltar(){history.go(1) == false;}</script>'/
+'<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+'<script language="JavaScript" src="/phl84/js/val_cpf.js"></script>'/
+'<script language="JavaScript" src="/phl84/js/submit.js"></script>'/
+'<script language="JavaScript" src="/phl84/js/isis_limite.js"></script>'/
+'<script language="JavaScript" type="text/javascript">'/
+'<!--'/
+
+'function proibido_voltar(){history.go(1) == false;}'/
+
+'function tab_man(x) { '/
+' window.open("/cgi-bin/wxis.exe?IsisScript=phl84/049.xis&tmp='v4001'&mfn="+x,"janela","height=400,width=600,menubar=no,resizable=yes,scrollbars=yes,status=no")'/
+'}'/
+
+'function getXmlHttpRequestObject() { '/
+'if (window.XMLHttpRequest) { '/
+'return new XMLHttpRequest();'/
+'} else if(window.ActiveXObject) { '/
+'return new ActiveXObject("Microsoft.XMLHTTP");'/
+'} else { '/
+'alert("Seu navegador necessita ser atualizado para uma versão mais recente!");'/
+'}'/
+'}'/
+'var searchReq = getXmlHttpRequestObject();'/
+
+'function buscaFornecedor() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("821").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_fornecedor.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestFornecedor;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaCurso() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("806").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_curso.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestCurso;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function handleSearchSuggestFornecedor() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_fornecedor") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setFornecedor(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestCurso() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_curso") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setCurso(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function suggestOver(div_value) { '/
+'div_value.className = "suggest_link_over"; '/
+'} '/
+'function suggestOut(div_value) { '/
+'div_value.className = "suggest_link"; '/
+'}'/
+
+'function setFornecedor(value) { '/
+'  if (value != "") { '/
+'  document.getElementById("821").value = value; '/
+'  document.getElementById("busca_fornecedor").innerHTML = ""; '/
+'} '/
+'} '/
+
+'function setCurso(value) { '/
+'  var mySplitResult = value.split("=");'
+'  if (value != "") { '/
+'  document.getElementById("busca_curso").innerHTML = ""; '/
+'  document.getElementById("806").value = mySplitResult[1]; '/
+'} '/
+'} '/
+'-->'/
+'</script> '/
+'</head>'/
+'<body>'/
+'<script language=javascript>proibido_voltar()</script>'/
+'<table width="100%">'/
+'<form name="formulario" onSubmit="return count(30000)" action="/cgi-bin/wxis.exe" method="post">'/
+'<input type="hidden" name="tmp" value="'v4001'">'
+'<input type="hidden" name="IsisScript" value="phl84/'v961'.xis">'/
+'<input type="hidden" name="999" value="'v999[1]'">'/
+'<input type="hidden" name="mfn" value="'v957'">'/
+'<input type="hidden" name="998" value="'v957'">'/
+'<input type="hidden" name="997" value="'v997'">'/
+'<input type="hidden" name="dbvar" value="^a'v3000^1'_tbo^b23^ctbo^m'v957'">'/
+'<tr><td class="td1e"></td><td class="topico">Dados do Exemplar</td></tr>'/
+
+
+     if npost([v3004^a.3'_emp'],'TBO='v801)<1 then
+     
+     ,'<tr><td class="td1o">',ref([v3000^1'_tbo_fmt']1,v807),'&nbsp;<a href=JavaScript:tab_man(807);>[807]</a></td><td class="td2"><input type="radio" value="1"',if v807='1' or v807='' then 'checked' fi,' name="807">Circulante<input type="radio" value="2"',if v807='2' then 'checked' fi,' name="807">Consulta local<input type="radio" value="0"',if v807='0' then 'checked' fi,' name="807">Indisponível</td></tr>'/
+     ,'<tr><td class="td1o">',ref([v3000^1'_tbo_fmt']1,v801),'&nbsp;<a href=JavaScript:tab_man(801);>[801]</a></td><td class="td2"><input type="text" name="801" value="'v801'" size="15"></td></tr>'/
+    
+    else
+     
+     ,'<tr><td class="td1o">',ref([v3000^1'_tbo_fmt']1,v807),'&nbsp;<a href=JavaScript:tab_man(807);>[807]</a></td><td class="td2">'select val(v807) case 1:'Circulante' case 2:'Consulta local' case 0:'Indisponível' endsel'</td></tr>'/
+     ,'<tr><td class="td1o">',ref([v3000^1'_tbo_fmt']1,v801),'&nbsp;<a href=JavaScript:tab_man(801);>[801]</a></td><td class="td2">'v801'</td></tr>'/
+     ,'<input type="hidden" name="801" value="'v801'">'/
+     ,'<input type="hidden" name="807" value="'v807'">'/
+
+     ,fi
+     
+    ,'<tr><td class="td1o">',ref([v3000^1'_tbo_fmt']1,v800),'&nbsp;<a href=JavaScript:tab_man(800);>[800]</a></td><td class="td2">'v800'</td></tr>'/
+    ,'<input type="hidden" name="800" value="'v800'">'/
+
+,if ref([v3000^1'_tbo_fmt']1,v6804)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v804),'&nbsp;<a href=JavaScript:tab_man(804);>[804]</a></td><td class="td2"><textarea rows="5" name="804">'(v804/)'</textarea></td></tr>',fi/
+,if ref([v3000^1'_tbo_fmt']1,v6803)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v803),'&nbsp;<a href=JavaScript:tab_man(803);>[803]&nbsp;</a></td><td class="td2"><input type="text" name="803" value="'v803'" size="10"></td></tr>',fi/
+
+,if v960='002' then
+,,,,'<input type="hidden" name="chk_numb" value="'v801'">'/
+,fi
+,'<tr><td class="td1o">',ref([v3000^1'_tbo_fmt']1,v820),'&nbsp;<a href=JavaScript:tab_man(820);>[820]</a></td>
+      <td class="td2"><input type="text" class="textbox" name="820" value="'v820'"></td></tr>'/
+      
+,'<tr><td class="td1o">Aquisição&nbsp;<a href=JavaScript:tab_man(819);>[819]</a></td>
+      <td class="td2">
+        <select size="1" name="819">
+          <option selected value="'v819'"></option>
+          <option selected value="'v819'">'v819'</option>'
+          (,if v819[1]<>v3090 then '<option value="'v3090'">'v3090'</option>',fi,),
+        '</select></td></tr>'/
+
+,if ref([v3000^1'_tbo_fmt']1,v6809)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v809),'&nbsp;[809]</td><td class="td2"><input type="text" class="textbox" name="809" value="'v809'"></td></tr>',fi/
+
+,if ref([v3000^1'_tbo_fmt']1,v6821)<>'' then
+
+  '<tr>
+    <td class="td1e">',ref([v3000^1'_tbo_fmt']1,v821),'&nbsp;<a href=JavaScript:tab_man(821);>[821]</a></td>
+    <td class="td3">
+    <input type="text" class="textbox" id="821" name="821" value="'v821'" onkeyup="buscaFornecedor();" autocomplete="off" />
+    <div id="busca_fornecedor"></div>
+    </td>
+  </tr>'
+
+,fi,/
+
+,if ref([v3000^1'_tbo_fmt']1,v6822)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v822),'&nbsp;<a href=JavaScript:tab_man(822);>[822]</a></td><td class="td2"><input type="text" class="textbox" name="822" value="'v822'"></td></tr>',fi,/
+,if ref([v3000^1'_tbo_fmt']1,v6823)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v823),'&nbsp;<a href=JavaScript:tab_man(823);>[823]</a></td><td class="td2"><input type="text" class="textbox" name="823" value="'v823'"></td></tr>',fi,/
+,if ref([v3000^1'_tbo_fmt']1,v6824)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v824),'&nbsp;<a href=JavaScript:tab_man(824);>[824]</a></td><td class="td2"><input type="text" class="textbox" name="824" value="'v824'"></td></tr>',fi,/
+
+,if ref([v3000^1'_tbo_fmt']1,v6806)<>'' then
+
+'<tr>
+  <td class="td1o">Curso&nbsp;<a href=JavaScript:tab_man(806);>[806]</a></td>
+  <td class="td2">
+    <select name="806">
+      <option value=""></option>
+      <option selected value="'v806'">',v806,'</option>',
+      (,if v806[1]<>v3092 then '<option value="'v3092'">',v3092'</option>' fi,),
+    '</select>
+  </td>
+</tr>'/
+
+,fi,/
+
+ if npost([v3004^a.3'_emp'],'TBO='v801)<1 then
+
+,if ref([v3000^1'_tbo_fmt']1,v6825)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v825),'&nbsp;<a href=JavaScript:tab_man(825);>[825]</a></td><td class="td2">'
+,'<select size="1" name="825">'
+,,'<option selected value="'v825'">'v825'</option>'
+,,'<option value=""></option>'
+,,'<option value="N">Não circula</option>'
+,,'<option value="Overnight">Overnight</option>'
+,,'<option value="1">1</option>'
+,,'<option value="2">2</option>'
+,,'<option value="3">3</option>'
+,,'<option value="4">4</option>'
+,,'<option value="5">5</option>'
+,,'<option value="7">7</option>'
+,,'<option value="10">10</option>'
+,,'<option value="15">15</option>'
+,,'<option value="30">30</option>'
+,,'<option value="60">60</option>'
+,,'<option value="90">90</option>'
+,,'<option value="180">180</option>'
+,,'<option value="360">360</option>'
+,,'</select>: 'ref(['tab_txt']99,@tab_txt.pft,),'</td></tr>',fi,
+
+else 
+
+,if ref([v3000^1'_tbo_fmt']1,v6825)<>'' then
+    ,'<tr><td class="td1o">',ref([v3000^1'_tbo_fmt']1,v825),'&nbsp;<a href=JavaScript:tab_man(825);>[825]</a></td><td class="td2">'v825'</td></tr>'/
+    '<input type="hidden" name="825" value="'v825'">'/
+,fi,
+
+fi,
+,if ref([v3000^1'_tbo_fmt']1,v6826)<>'' then '<tr><td class="td1e"></td><td class="topico">'ref(['tab_txt']924,@tab_txt.pft,)'</td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6826)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v826),'&nbsp;<a href=JavaScript:tab_man(826);>[826]</a></td><td class="td2"><textarea rows="2" name="826">',(v826/),'</textarea></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6827)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v827),'&nbsp;<a href=JavaScript:tab_man(827);>[827]</a></td><td class="td2"><textarea rows="2" name="827">',(v827/),'</textarea></td></tr>',fi,
+,if ref([v3000^1'_tbo_fmt']1,v6830)<>'' then '<tr><td class="td1f"></td><td class="topico">'ref(['tab_txt']927,@tab_txt.pft,)'</td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6830)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v830),'&nbsp;<a href=JavaScript:tab_man(830);>[830]</a></td><td class="td2"><textarea rows="2" name="830">',(v830/),'</textarea></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6831)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v831),'&nbsp;<a href=JavaScript:tab_man(831);>[831]</a></td><td class="td2"><textarea rows="2" name="831">',(v831/),'</textarea></td></tr>',fi,
+,if ref([v3000^1'_tbo_fmt']1,v6833)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v833),'&nbsp;<a href=JavaScript:tab_man(833);>[833]</a></td><td class="td2"><input type="text" class="textbox" name="833" value="',v833,'"></td></tr>',fi,
+,if ref([v3000^1'_tbo_fmt']1,v6837)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v837),'&nbsp;<a href=JavaScript:tab_man(837);>[837]</a></td><td class="td2"><textarea rows="3" name="837">',(v837/),'</textarea></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6802)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v802),'&nbsp;[802]</td><td class="td2"><input type="text" class="textbox" name="802" value="',v802,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6805)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v805),'&nbsp;[805]</td><td class="td2"><input type="text" class="textbox" name="805" value="',v805,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6808)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v808),'&nbsp;[808]</td><td class="td2"><input type="text" class="textbox" name="808" value="',v808,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6810)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v810),'&nbsp;[810]</td><td class="td2"><input type="text" class="textbox" name="810" value="',v810,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6811)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v811),'&nbsp;[811]</td><td class="td2"><input type="text" class="textbox" name="811" value="',v811,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6812)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v812),'&nbsp;[812]</td><td class="td2"><input type="text" class="textbox" name="812" value="',v812,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6813)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v813),'&nbsp;[813]</td><td class="td2"><input type="text" class="textbox" name="813" value="',v813,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6814)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v814),'&nbsp;[814]</td><td class="td2"><input type="text" class="textbox" name="814" value="',v814,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6815)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v815),'&nbsp;[815]</td><td class="td2"><input type="text" class="textbox" name="815" value="',v815,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6816)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v816),'&nbsp;[816]</td><td class="td2"><input type="text" class="textbox" name="816" value="',v816,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6817)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v817),'&nbsp;[817]</td><td class="td2"><input type="text" class="textbox" name="817" value="',v817,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6818)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v818),'&nbsp;[818]</td><td class="td2"><input type="text" class="textbox" name="818" value="',v818,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6828)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v828),'&nbsp;[828]</td><td class="td2"><input type="text" class="textbox" name="828" value="',v828,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6829)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v829),'&nbsp;[829]</td><td class="td2"><input type="text" class="textbox" name="829" value="',v829,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6832)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v832),'&nbsp;[832]</td><td class="td2"><input type="text" class="textbox" name="832" value="',v832,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6834)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v834),'&nbsp;[834]</td><td class="td2"><input type="text" class="textbox" name="834" value="',v834,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6835)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v835),'&nbsp;[835]</td><td class="td2"><input type="text" class="textbox" name="835" value="',v835,'"></td></tr>',fi
+,if ref([v3000^1'_tbo_fmt']1,v6836)<>'' then '<tr><td class="td1f">',ref([v3000^1'_tbo_fmt']1,v836),'&nbsp;[836]</td><td class="td2"><input type="text" class="textbox" name="836" value="',v836,'"></td></tr>',fi

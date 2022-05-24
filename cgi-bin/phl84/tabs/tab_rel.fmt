@@ -1,0 +1,64 @@
+'<html>'/
+'<head>'/
+'<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+'<script language="JavaScript" src="/phl84/js/val_cpf.js"></script>'/
+'<script language="JavaScript" src="/phl84/js/submit.js"></script>'/
+'<script language="JavaScript" src="/phl84/js/isis_limite.js"></script>'/
+'<script>
+ function tab_man(x)
+  {
+    window.open("/cgi-bin/wxis.exe?IsisScript=phl84/049.xis&tmp='v4001'&mfn="+x,"janela","height=400,width=600,menubar=no,resizable=yes,scrollbars=yes,status=no")
+  }
+</script>'/
+'</head>'/
+'<body>'/
+'<table width="100%">'/
+'<form name="formulario" onSubmit="return count(30000)" action="/cgi-bin/wxis.exe" method="post">'/
+'<input type="hidden" name="tmp" value="'v4001'">'/
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'/
+'<input type="hidden" name="999" value="'v999[1]'">'/
+'<input type="hidden" name="mfn" value="'v957'">'/
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'/
+'<input type="hidden" name="opc" value="grava">'/
+'<input type="hidden" name="dbvar" value="^aphl_rel^b27^crel">'/
+'<tr><td class="tdo"></td><td class="topico">'ref(['tab_txt']771,@tab_txt.pft,)'</td></tr>'/
+,if v960='027' then '<input type="hidden" name="508" value="'v5'">',fi,/
+'<tr><td class="td1o">',ref(['tab_txt']360,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(502);>[502]</a></td><td class="td2"><input type="text" class="textbox" name="502" value="'v502'"></td></tr>'/
+'<tr><td class="td1o" valign="top">',ref(['tab_txt']577,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(514);>[514]</a></td><td class="td2"><textarea rows="10" name="514" cols="70">',(v514/),'</textarea></td></tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']347,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(508);>[508]</a></td><td class="td2"><select size="1" name="508"><option selected value="',v508,'">',v508,'</option><option value="Simples">'ref(['tab_txt']772,@tab_txt.pft,)'</option><option value="Ordenado">'ref(['tab_txt']773,@tab_txt.pft,)'</option><option value="Frequencia">'ref(['tab_txt']774,@tab_txt.pft,)'</option><option value="Index">'ref(['tab_txt']636,@tab_txt.pft,)'</option></select></td></tr>'/
+'<tr>'/
+,,'<td class="td1o">',ref(['tab_txt']29,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(504);>[504]</td>'/
+,,'<td class="td2">'/
+,,,,'<select size="1" name="504">'/
+,,,,'<option selected value="',v504,'">'ref(['tab_txt']val(v504^b),@tab_txt.pft,),'</option>'/
+,/* Areas do conhecimento */,'<option value="^amec^b849">'ref(['tab_txt']849,@tab_txt.pft,)'</option>'/
+,/* Autoridades */,'<option value="^aaut^b757">'ref(['tab_txt']757,@tab_txt.pft,)'</option>'
+,/* Calendario */,'<option value="^acal^b33">'ref(['tab_txt']33,@tab_txt.pft,)'</option>'
+,/* Catalogo */,'<option value="^aacv^b40">'ref(['tab_txt']40,@tab_txt.pft,)'</option>'
+,/* Classificacao */,'<option value="^acdu^b46">'ref(['tab_txt']46,@tab_txt.pft,)'</option>'
+,/* Conexões */,'<option value="^aidx^b861">'ref(['tab_txt']861,@tab_txt.pft,)'</option>'
+,/* Emprestimo */,'<option value="^aemp^b118">'ref(['tab_txt']118,@tab_txt.pft,)'</option>'
+,/* Fornecedor */,'<option value="^afor^b162">'ref(['tab_txt']162,@tab_txt.pft,)'</option>'
+,/* Historico */,'<option value="^alog^b171">'ref(['tab_txt']171,@tab_txt.pft,)'</option>'
+,/* Kardex */,'<option value="^aser^b425">'ref(['tab_txt']425,@tab_txt.pft,)'</option>'
+,/* Livro caixa */,'<option value="^acxa^b688">'ref(['tab_txt']688,@tab_txt.pft,)'</option>'
+,/* Penalidades */,'<option value="^apen^b219">'ref(['tab_txt']219,@tab_txt.pft,)'</option>'
+,/* Prazos e quantidades */,'<option value="^apqt^b282">'ref(['tab_txt']282,@tab_txt.pft,)'</option>'
+,/* Regulamento */,'<option value="^argl^b530">'ref(['tab_txt']530,@tab_txt.pft,)'</option>'
+,/* Reservas */,'<option value="^ares^b304">'ref(['tab_txt']304,@tab_txt.pft,)'</option>'
+,/* Sugestoes de compra */,'<option value="^acpa^b775">'ref(['tab_txt']775,@tab_txt.pft,)'</option>'
+,/* Tombo */,'<option value="^atbo^b367">'ref(['tab_txt']367,@tab_txt.pft,)'</option>'
+,/* Uso da colecao */,'<option value="^ausc^b616">'ref(['tab_txt']616,@tab_txt.pft,)'</option>'
+,/* Usuario */,'<option value="^ausr^b379">'ref(['tab_txt']379,@tab_txt.pft,)'</option>'
+,/* Vocabulario */,'<option value="^avoc^b780">'ref(['tab_txt']780,@tab_txt.pft,)'</option>'
+,/* Cursos*/,'<option value="^acur^b69">'ref(['tab_txt']69,@tab_txt.pft,)'</option>'
+,,,,'</select>'
+,,'</td>'
+'</tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']146,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(505);>[505]</a></td><td class="td2"><input type="text" class="textbox" name="505" value="'v505'"></td></tr>'/
+'<tr><td class="td1f" valign="top">',ref(['tab_txt']776,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(513);>[513]</a></td><td class="td2"><textarea rows="3" name="513" cols="70">',(v513/),'</textarea></td></tr>',
+'<tr><td class="td1f">Folhe de estilo?&nbsp;<a href=JavaScript:tab_man(503);>[503]</a></td><td class="td2"><b>Sim</b>&nbsp;<input type="radio" value="S"',if v503='S'  or v503='' then ' checked' fi,' name="503">&nbsp;|&nbsp;<b>Não</b>&nbsp;<input type="radio" value="N"',if v503='N' then ' checked' fi,' name="503"></td></tr>'
+'<tr><td class="td1f" valign="top">',ref(['tab_txt']777,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(510);>[510]</a></td><td class="td2"><textarea rows="10" name="510" cols="70">',(v510/),'</textarea></td></tr>'/
+'<tr><td class="td1o" valign="top">',ref(['tab_txt']778,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(511);>[511]</a></td><td class="td2"><textarea rows="10" name="511" cols="70">',(v511/),'</textarea></td></tr>'/
+'<tr><td class="td1f" valign="top">',ref(['tab_txt']779,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(512);>[512]</a></td><td class="td2"><textarea rows="3" name="512" cols="70">',(v512/),'</textarea></td></tr>'/

@@ -1,0 +1,85 @@
+<IsisScript>
+  <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+  <section>
+
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+
+  <field action="cgi" tag="10">q</field>
+
+  <do task="keyrange">
+    <parm name="db">phl_for</parm>
+    <parm name="from"><pft>,'NFO='v10,</pft></parm>
+    <parm name="to"><pft>,'NFO=ZZZ'</pft></parm>
+    <parm name="count">10</pft></parm>
+    <parm name="posting">1</parm>
+    <field action="define" tag="1">Isis_Key</field>
+    <field action="define" tag="2">Isis_Postings</field>
+    <field action="define" tag="3">Isis_Posting</field>
+    <display>
+      <pft>
+                        '<div id="title">
+                           <div id="sidebar">
+                             <div id="sidebar-content">Número</div>
+                           </div>
+
+                           <div id="main">
+                             <div id="main-content">Fornecedor</div>
+                           </div>
+   
+                           <hr class="cleaner" />
+   
+                         </div>'
+      </pft>
+    </display>
+    <loop>
+    <field action="import" tag="list">4001</field>
+      <display>
+        <pft>
+
+          /*,v1*4'&nbsp;&nbsp;['v2']<br>' */
+          /*,e1:=val(v2), */
+
+            s2:=(v1*4),
+
+           ,ref(
+                ['phl_for']val(v3^m),
+                 (,
+                   ,if 
+                     s(mhu,v752.26,mpl):s2 then
+                     
+                        '<div id="content">
+                           
+                           <div id="sidebar">
+                             <div id="sidebar-content">'v751'</div>
+                           </div>
+
+                           <div id="main">
+                             <div id="main-content">'v752'</div>
+                           </div>
+   
+                           <hr class="cleaner" />
+   
+                         </div>'
+
+
+
+                     /* '<tt>',v751,'  ',v752, ' ['f((e1),0,0)']',,'</tt><br>',*/
+                   ,fi,
+                  )
+               ,),
+
+        </pft>
+      </display>
+    </loop>
+
+  </do>
+
+  <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

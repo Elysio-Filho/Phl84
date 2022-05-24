@@ -1,0 +1,83 @@
+
+                  select v1^1.4
+                    case 'col=' : ref(['phl_col']val(v1^1*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^1*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^1*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^1*4),@tab_txt.pft,)
+                    case 'cur=' : ref(['phl_cur']val(v1^1*4),@tab_txt.pft,)
+                    elsecase v1^1,
+                  endsel,
+                  ,if v1^1<>'' then '<br>' fi,
+                  
+                  select v1^2.4
+                    case 'col=' : ref(['phl_col']val(v1^2*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^2*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^2*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^2*4),@tab_txt.pft,)
+                    elsecase v1^2,
+                  endsel,
+                  ,if v1^2<>'' then '<br>' fi,
+                  
+                  select v1^3.4
+                    case 'col=' : ref(['phl_col']val(v1^3*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^3*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^3*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^3*4),@tab_txt.pft,,)
+                    elsecase v1^3,
+                  endsel,
+                  ,if v1^3<>'' then '<br>' fi,
+                  
+                  select v1^4.4
+                    case 'col=' : ref(['phl_col']val(v1^4*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^4*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^4*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^4*4),@tab_txt.pft,)
+                    elsecase v1^4,
+                  endsel,
+                  ,if v1^4<>'' then '<br>' fi,
+                  
+                  select v1^5.4
+                    case 'col=' : ref(['phl_col']val(v1^5*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^5*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^5*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^5*4),@tab_txt.pft,)
+                    elsecase v1^5,
+                  endsel,
+                  ,if v1^5<>'' then '<br>' fi,
+                  
+                  select v1^6.4
+                    case 'col=' : ref(['phl_col']val(v1^6*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^6*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^6*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^6*4),@tab_txt.pft,)
+                    elsecase v1^6,
+                  endsel,
+                  ,if v1^6<>'' then '<br>' fi,
+                  
+                  select v1^7.4
+                    case 'col=' : ref(['phl_col']val(v1^7*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^7*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^7*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^7*4),@tab_txt.pft,)
+                    elsecase v1^7,
+                  endsel,
+                  ,if v1^7<>'' then '<br>' fi,
+                  
+                  select v1^8.4
+                    case 'col=' : ref(['phl_col']val(v1^8*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^8*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^8*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^8*4),@tab_txt.pft,)
+                    elsecase v1^8,
+                  endsel,
+                  ,if v1^8<>'' then '<br>' fi,
+                  
+                  select v1^9.4
+                    case 'col=' : ref(['phl_col']val(v1^9*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^9*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^9*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^9*4),@tab_txt.pft,)
+                    elsecase v1^9,
+                  endsel,
+                  ,if v1^7<>'' then '<br>' fi,
+                  '<br>'

@@ -1,0 +1,36 @@
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'
+'<input type="hidden" name="999" value="'v999[1]'">'
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="mfn" value="'v957'">'
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'
+'<input type="hidden" name="dbvar" value="^a'v3000^1'_cal^b2^ccal">'
+'<input type="hidden" name="opc" value="grava">'
+'<input type="hidden" name="320" value="'v320'">'
+'<input type="hidden" name="321" value="'v321'">'
+'<input type="hidden" name="322" value="'v322'">'
+'<input type="hidden" name="323" value="'v323'">'
+'<tr>
+  <td class="td1o"></td>
+  <td class="topico">',v320," - ",v322," - "v323" ",
+    select s(v321) 
+     case '0' : '('ref(['tab_txt']108,@tab_txt.pft,)')' 
+     case '1' : '('ref(['tab_txt']319,@tab_txt.pft,)')' 
+     case '2' : '('ref(['tab_txt']344,@tab_txt.pft,)')' 
+     case '3' : '('ref(['tab_txt']293,@tab_txt.pft,)')' 
+     case '4' : '('ref(['tab_txt']395,@tab_txt.pft,)')' 
+     case '5' : '('ref(['tab_txt']330,@tab_txt.pft,)')' 
+     case '6' : '('ref(['tab_txt']315,@tab_txt.pft,)')' 
+    endsel,
+  '</td>
+</tr>'
+'<tr>
+  <td class="td1o">',ref(['tab_txt']30,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(324);>[324]</a></td>
+  <td class="td2">
+    <input type="radio" name="324"',if v324='1' then 'checked' fi,' value="1">',ref(['tab_txt']1,@tab_txt.pft,),
+   '<input type="radio" name="324"',if v324='0' then 'checked' fi,' value="0">',ref(['tab_txt']152,@tab_txt.pft,),
+'</td>
+</tr>'/
+'<tr>
+  <td class="td1e">',ref(['tab_txt']234,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(325);>[325]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="325" value="',v325,'" size="60"></td>
+</tr>'/

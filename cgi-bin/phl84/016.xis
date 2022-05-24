@@ -1,0 +1,308 @@
+<!-- Exportacao
+     20/07/2015 08:57:43 -->
+
+     <IsisScript name="016.xis">
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="958">exp</field>
+     <field action="cgi" tag="2001">db</field>
+     <field action="cgi" tag="2002">from</field>
+     <field action="cgi" tag="2003">to</field>
+     <field action="cgi" tag="2004">padrao</field>
+
+<!--Verifica se código existe e é válido-->
+    <flow action="jump"><pft>,if p(v3002) and a(v3000) then '47' fi,</pft></flow>
+     
+    <flow action="jump">
+      <pft>,if s(v3000^3)<>'funcionario' then '251' fi,</pft>
+    </flow>
+
+    <flow action="jump"><pft>,v950,</pft></flow>
+    <flow action="exit">1</flow>
+     
+    <label>47</label>
+    <display><htmlpft><pft>,ref(['tab_fmx']47,v4),</pft></htmlpft></display>
+    <flow action="exit">1</flow>
+
+    <label>251</label>
+    <field action="add" tag="250">251</field>
+    <display><htmlpft><pft>,ref(['tab_fmx']10,v4),'</pft></htmlpft></display>
+    <flow action="exit">1</flow>
+    
+    <label>base</label>
+
+<!-- Compõe formulário para seleção da base de dados -->
+     <display><htmlpft><pft>,ref(['tab_fmx']79,v4),'</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+          
+     <label>exportar</label>
+     <flow action="jump"><pft>,v2004,</pft></flow>
+     
+     <label>VLINE</label>
+     <do task="search">
+     <parm name="db"><pft>,v2001,</pft></parm>
+     <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+     <parm name="from"><pft>v2002,"1"n2002</pft></parm>
+     <parm name="to"><pft>,v2003,</pft></parm>
+     <parm name="file">STDOUT</parm>
+     <parm name="type">VLine</parm>
+     <field action="define" tag="1001">Isis_Current</field>
+     <field action="define" tag="1002">Isis_Total</field>
+     <display><pre></display>
+     <loop>
+     <export>this</export>
+     </loop>
+     <display></pre></display>
+     </do>
+     <file action="close" type="database"><pft>,v2001,</pft></file>
+     <flow action="exit">1</flow>
+     
+     <label>HLINE</label>
+     <do task="search">
+     <parm name="db"><pft>,v2001,</pft></parm>
+     <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+     <parm name="from"><pft>v2002,"1"n2002</pft></parm>
+     <parm name="to"><pft>,v2003,</pft></parm>
+     <parm name="file">STDOUT</parm>
+     <parm name="type">HLine</parm>
+     <field action="define" tag="1001">Isis_Current</field>
+     <field action="define" tag="1002">Isis_Total</field>
+     <display><pre></display>
+     <loop>
+     <export>this</export>
+     </loop>
+     <display></pre></display>
+     </do>
+     <file action="close" type="database"><pft>,v2001,</pft></file>
+     <flow action="exit">1</flow>
+     
+     <label>XML</label>
+     <do task="search">
+     <parm name="db"><pft>,v2001,</pft></parm>
+     <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+     <parm name="from"><pft>v2002,"1"n2002</pft></parm>
+     <parm name="to"><pft>,v2003,</pft></parm>
+     <parm name="gizmo">tab_xml</parm>
+     <field action="define" tag="1001">Isis_Current</field>
+     <field action="define" tag="1002">Isis_Total</field>
+     <display><pft>'&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;<br>'/,'&lt;db&gt;<br>'/,</pft></display>
+     <loop>
+     <display><htmlpft><pft>,ref(['tab_fmx']236,(v4)),</pft></htmlpft></display>
+     </loop>
+     <display>&lt;/db&gt;</display>
+     </do>
+     <file action="close" type="database"><pft>,v2001,</pft></file>
+     <flow action="exit">1</flow>
+
+     <label>ISO2709</label>
+     <do task="search">
+     <parm name="db"><pft>,v2001,</pft></parm>
+     <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+     <parm name="file">STDOUT</parm>
+     <parm name="from"><pft>v2002,"1"n2002</pft></parm>
+     <parm name="to"><pft>,v2003,</pft></parm>
+     <parm name="type">ISO2709</parm>
+     <field action="define" tag="1001">Isis_Current</field>
+     <field action="define" tag="1002">Isis_Total</field>
+     <display><pre></display>
+     <loop>
+     <export>this</export>
+     </loop>
+     <display></pre></display>
+     </do>
+     <file action="close" type="database"><pft>,v2001,</pft></file>
+     <flow action="exit">1</flow>
+
+     <label>ibict_tit</label>
+     <do task="search">
+       <parm name="db"><pft>,v3000^1'_ser',</pft></parm>
+       <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+       <parm name="from"><pft>v2002,"1"n2002</pft></parm>
+       <parm name="to"><pft>,v2003,</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <display><pre></display>
+       <loop>
+       <display><pft>
+	    '!REC-ID',c80/
+	    '!S001!',v798,c80/
+		'!S200!',v773,c80/
+		'!S440!',v772,c80/,
+		,#
+       </pft></display>
+       </loop>
+	   <display></pre></display>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_ser',</pft></file>
+     <flow action="exit">1</flow>
+
+	 <label>ibict_col</label>
+	 <do task="search">
+	   <parm name="db"><pft>,v3000^1'_ser',</pft></parm>
+           <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+           <parm name="from"><pft>v2002,"1"n2002</pft></parm>
+           <parm name="to"><pft>,v2003,</pft></parm>
+	   <field action="define" tag="1001">Isis_Current</field>
+           <field action="define" tag="1002">Isis_Total</field>
+	   <display><pre></display>
+             <loop>
+	       <field action="import" tag="list">3000,4001</field>
+                 <display><pft>
+	           '!REC-ID',c80/
+	           '!C010!',ref(['phl_set']l(['phl_set'],'ACV='v3000^1),v642,),c80/
+		   '!C020!',v798,c80/
+		   '!C030!',v790+|; |,c80/,
+		   '!C090!',v768+|; |,c80/,
+		   ,#,
+                 </pft></display>
+               <file action="close" type="database">phl_set</file>
+             </loop>
+	     <display></pre></display>
+	 </do>
+	 <file action="close" type="database"><pft>,v3000^1'_ser',</pft></file>
+	 <flow action="exit">1</flow>
+
+     <label>cisis</label>
+     <do task="search">
+       <parm name="db"><pft>,v2001,</pft></parm>
+       <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+       <parm name="from"><pft>v2002,"1"n2002</pft></parm>
+       <parm name="to"><pft>,v2003,</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <display><pre></display>
+         <loop>
+           <display><htmlpft><pft>,ref(['tab_fmx']237,(v4)),</pft></htmlpft></display>
+         </loop>
+       <display></pre></display>
+     </do>
+     <file action="close" type="database"><pft>,v2001,</pft></file>
+     <flow action="exit">1</flow>
+     
+     <label>csv</label>
+     
+     <flow action="jump">
+       <pft>
+         select s(v2001*4.3)
+           case 'acv':'csv_acv',
+           case 'tbo':'csv_tbo',
+           case 'ser':'csv_ser',
+           case 'log':'csv_log',
+           elsecase 'nenhum',
+         endsel,
+       </pft>
+     </flow>
+     <flow action="exit">1</flow>
+
+     <label>csv_acv</label>
+     <do task="search">
+       <!-- <parm name="db"><pft>,v2001,</pft></parm> -->
+       <parm name="db">phl_acv</parm>
+       <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+       <parm name="from"><pft>v2002,"1"n2002</pft></parm>
+       <parm name="to"><pft>,v2003,</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <file action="create" type="output">catalogo.csv</file>
+       <display><pft>,'"[001]";"[002]";"[003]";"[004]";"[005]";"[006]";"[007]";"[008]";"[009]";"[010]";"[011]";"[012]";"[013]";"[014]";"[015]";"[016]";"[017]";"[018]";"[019]";"[020]";"[021]";"[022]";"[023]";"[024]";"[025]";"[026]";"[027]";"[028]";"[029]";"[030]";"[031]";"[032]";"[033]";"[034]";"[035]";"[036]";"[037]";"[038]";"[039]";"[040]";"[041]";"[042]";"[043]";"[044]";"[045]";"[046]";"[047]";"[048]";"[049]";"[050]";"[051]";"[052]";"[053]";"[054]";"[055]";"[056]";"[057]";"[058]";"[059]";"[060]";"[061]";"[062]";"[063]";"[064]";"[065]";"[066]";"[067]";"[068]";"[069]";"[070]";"[071]";"[072]";"[073]";"[074]";"[075]";"[076]";"[077]";"[078]";"[079]";"[080]";"[081]";"[082]";"[083]";"[085]";"[086]";"[087]";"[088]";"[089]";"[090]";"[091]";"[092]";"[093]";"[094]";"[095]";"[096]";"[097]";"[098]";"[099]";"[103]";"[105]";"[121]";"[141]";"[181]";"[182]";"[186]";"[998]";"[999]"',/,</pft></display>
+         <loop>
+           <field action="import" tag="2001">2001</field>
+           <display><htmlpft><pft>,ref(['tab_fmx']261,(v4)),</pft></htmlpft></display>
+         </loop>
+     </do>
+          <file action="close" type="output">catalogo.csv</file>
+          <file action="close" type="database"><pft>,v2001,</pft></file>
+
+          <display><pft>'<a href="/phl84/csv/catalogo.csv" target="result">catalogo.csv</a>'</pft></display>
+          <flow action="exit">1</flow>
+          
+     <label>csv_tbo</label>
+     <do task="search">
+       <parm name="db"><pft>,v2001,</pft></parm>
+       <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+       <parm name="from"><pft>v2002,"1"n2002</pft></parm>
+       <parm name="to"><pft>,v2003,</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <file action="create" type="output">tombo.csv</file>
+       <display><pft>,'"[800]";"[801]";"[802]";"[803]";"[804]";"[805]";"[806]";"[807]";"[808]";"[809]";"[810]";"[811]";"[812]";"[813]";"[814]";"[815]";"[816]";"[817]";"[818]";"[819]";"[820]";"[821]";"[822]";"[823]";"[824]";"[825]";"[826]";"[827]";"[828]";"[829]";"[830]";"[831]";"[832]";"[833]";"[834]";"[835]";"[836]";"[837]";"[997]";"[998]";"[999]"',/,</pft></display>
+         <loop>
+           <field action="import" tag="2001">2001</field>
+           <display><htmlpft><pft>,ref(['tab_fmx']262,(v4)),</pft></htmlpft></display>
+         </loop>
+     </do>
+          <file action="close" type="output">tombo.csv</file>
+          <file action="close" type="database"><pft>,v2001,</pft></file>
+
+          <display><pft>'<a href="/phl84/csv/tombo.csv" target="result">tombo.csv</a>'</pft></display>
+          <flow action="exit">1</flow>
+          
+     <label>csv_ser</label>
+     <do task="search">
+       <parm name="db"><pft>,v2001,</pft></parm>
+       <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+       <parm name="from"><pft>v2002,"1"n2002</pft></parm>
+       <parm name="to"><pft>,v2003,</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <file action="create" type="output">kardex.csv</file>
+       <display><pft>,'"[768]";"[769]";"[770]";"[771]";"[772]";"[773]";"[774]";"[775]";"[776]";"[777]";"[778]";"[780]";"[781]";"[782]";"[783]";"[784]";"[785]";"[786]";"[787]";"[788]";"[789]";"[790]";"[791]";"[792]";"[793]";"[794]";"[796]";"[797]";"[798]";"[799]";"[998]";"[999]"',/,</pft></display>
+         <loop>
+           <field action="import" tag="2001">2001</field>
+           <display><htmlpft><pft>,ref(['tab_fmx']263,(v4)),</pft></htmlpft></display>
+         </loop>
+     </do>
+          <file action="close" type="output">kardex.csv</file>
+          <file action="close" type="database"><pft>,v2001,</pft></file>
+
+          <display><pft>'<a href="/phl84/csv/kardex.csv" target="result">kardex.csv</a>'</pft></display>
+          <flow action="exit">1</flow>
+          
+     <label>nenhum</label>
+     <display><br><center><hr>Desculpe, não temos a opção de exportação desta base de dados para este formato.<hr></center></display>
+     <flow action="exit">1</flow>
+     
+     <label>csv_log</label>
+     <do task="search">
+       <parm name="db"><pft>,v2001,</pft></parm>
+       <parm name="expression"><pft>,v958,"$"n958,</pft></parm>
+       <parm name="from"><pft>v2002,"1"n2002</pft></parm>
+       <parm name="to"><pft>,v2003,</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <file action="create" type="output">historicos.csv</file>
+       <display><pft>,'"[910A]";"[910B]";"[910C]";"[910D]";"[910E]";"[910F]";"[910H]";"[910K]";"[910N]";"[910O]";"[910P]";"[910T]";"[910U]";"[910V]";"[910Y]"',#,</pft></display>
+         <loop>
+           <field action="import" tag="2001">2001</field>
+           <display><htmlpft><pft>,ref(['tab_fmx']264,(v4)),</pft></htmlpft></display>
+         </loop>
+     </do>
+          <file action="close" type="output">historicos.csv</file>
+          <file action="close" type="database"><pft>,v2001,</pft></file>
+
+          <display><pft>'<a href="/phl84/csv/historicos.csv" target="result">historicos.csv</a>'</pft></display>
+          <flow action="exit">1</flow>
+          
+     <label>nenhum</label>
+     <display><br><center><hr>Desculpe, não temos a opção de exportação desta base de dados para este formato.<hr></center></display>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

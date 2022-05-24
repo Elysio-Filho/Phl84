@@ -1,0 +1,61 @@
+<!-- Gera indice de titulos na rotina de buscas -->
+
+     <IsisScript name="089.xis">
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+     <section>
+  
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+  
+     <field action="cgi" tag="10">exp</field>
+
+  <do task="keyrange">
+    <parm name="db">phl_acv</parm>
+    <parm name="from"><pft>,'ITI='v10,</pft></parm>
+    <parm name="to"><pft>,'ITI='v10,'Z'</pft></parm>
+    <parm name="posting">1</parm>
+    <parm name="count">10</pft></parm>
+    <field action="define" tag="1">Isis_Key</field>
+    <field action="define" tag="2">Isis_Postings</field>
+    <field action="define" tag="3">Isis_Posting</field>
+
+      <loop>
+      <field action="import" tag="list">201,953/977,4001</field>
+      <display>
+        <pft>
+
+          s2:=(v1*4),
+          e1:=val(v2),
+          e5:=val(v3^t),
+          
+          ,if e5=18 then
+            ,if ref(['phl_acv']val(v3^m),s(mhu,v18^*.26,mpl)):s2 then
+
+             ,ref(['phl_acv']val(v3^m),v18^*/)
+
+            ,fi,
+          ,fi
+          
+          ,if e5=12 then
+            ,if ref(['phl_acv']val(v3^m),s(mhu,v12^*.26,mpl)):s2 then
+
+
+             ,ref(['phl_acv']val(v3^m),v12^*/,)
+
+            ,fi,
+          ,fi
+
+         </pft>
+      </display>
+
+    </loop>
+
+  </do>
+  <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

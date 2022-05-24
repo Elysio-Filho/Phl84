@@ -1,0 +1,8 @@
+'<tr>'/
+'<td class="td1e"></td>'/
+'<td><input name="submitter" onClick="return DoubleClickTrapperAction();" class="botao" type="submit" value="'ref(['tab_txt']763,@tab_txt.pft,)'"></td>'/
+'</tr>'/
+'</table>'/
+'</form>'/
+'</body>'/
+'</html>'/

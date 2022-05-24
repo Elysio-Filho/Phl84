@@ -1,0 +1,81 @@
+<!-- Mostra tabela auxiliar do conteudo da base de dados cutter
+     09/11/2008 06:11:13 -->
+
+     <IsisScript name="076.xis">
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+     <section>
+  
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+     
+<!-- Carrega variáveis do javascript (tab_fmx/mfn=256) -->
+     <field action="cgi" tag="10">q</field>
+
+<!-- Percorre indice de chaves da base de dados de cutter (phl_cut) -->
+     <do task="keyrange">
+       <parm name="db">phl_cut</parm>
+       <parm name="from"><pft>,'AUT='v10,</pft></parm>
+       <parm name="to"><pft>,'AUT=ZZZ'</pft></parm>
+       <parm name="count">10</pft></parm>
+       <parm name="posting">1</parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="3">Isis_Posting</field>
+
+       <display>
+         <pft>
+           '<div id="title">
+              <div id="sidebar">
+                <div id="sidebar-content">Cutter</div>
+              </div>
+              <div id="main">
+                <div id="main-content">Iniciais</div>
+              </div>
+              <hr class="cleaner" />
+            </div>'
+         </pft>
+       </display>
+
+       <loop>
+         <display>
+           <pft>
+            s2:=(v1*4),
+
+           ,ref(
+                ['phl_cut']val(v3^m),
+                 (,
+                   ,if 
+                     s(mhu,v450.26,mpl):s2 then
+                     
+                        '<div id="content">
+                           
+                           <div id="sidebar">
+                             <div id="sidebar-content">'v451'</div>
+                           </div>
+
+                           <div id="main">
+                             <div id="main-content">'v450'</div>
+                           </div>
+   
+                           <hr class="cleaner" />
+   
+                         </div>'
+
+                   ,fi,
+                  )
+               ,),
+
+           </pft>
+         </display>
+
+       </loop>
+
+     </do>
+     <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

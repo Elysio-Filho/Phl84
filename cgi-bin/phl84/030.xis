@@ -1,0 +1,66 @@
+<!-- Controle da portaria
+     14/04/2007 - Revisado -->
+     
+     <IsisScript name="030.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="952">tbo</field>
+     
+<!-- Desvia fluxo da rotina -->
+     <flow action="jump"><pft>,v950,</pft></flow>
+     <flow action="exit">1</flow>
+     
+     <label>form</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']215,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Verifica se tombo foi fornecido -->
+     <label>chk_tbo</label>
+     <flow action="jump">
+       <pft>,if a(v952) then '242' else 'verifica' fi,</pft>
+     </flow>
+     <flow action="exit">1</flow>
+    
+     <label>242</label>
+     <field action="add" tag="250">242</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>verifica</label>
+     <field action="add" tag="100">
+       <pft>,f(npost([v3000^1'_emp'],mhu,'TBO='v952,mpl,),0,0)</pft>
+     </field>
+     <file action="close" type="database"><pft>,v3000^1'_emp',</pft></file>
+    
+     <flow action="jump">
+       <pft>
+        ,if val(v100)>0 then 'sim' else 'nao' fi,
+       </pft>
+     </flow>
+     <flow action="exit">0</flow>
+    
+     <label>sim</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']215,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']31,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+    
+     <label>nao</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']215,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']29,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+
+</section>
+</IsisScript>

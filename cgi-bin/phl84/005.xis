@@ -1,0 +1,126 @@
+<!-- Aquisicao
+     14/04/2007 - Revisado -->
+     
+     <IsisScript name="005.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="957">for</field>
+     <field action="cgi" tag="7003">lic</field>   
+
+<!-- Carrega configurações da biblioteca -->
+     <field action="add" tag="1">
+      <pft>,
+        ref(['phl_set']l(['phl_set'],'ACV='v3000^1),
+        '^a'v609,
+        '^b'v602,
+        '^c'v603,
+        '^d'v606,
+        '^e'v604,
+        '^f'v605,
+        '^g'v607,
+        '^h'v610,
+        '^i'v608,
+        '^j'v645,
+        '^k'v646,
+        '^m'v647,),
+      </pft>
+     </field>
+     <file action="close" type="database">phl_set</file>
+
+<!-- Carrega dados do fornecedor -->
+     <field action="add" tag="759">
+       <pft>,ref(['phl_for']l(['phl_for'],'FOR='v957),'^a'v759[1],'^b'v752,),</pft>
+     </field>
+     <file action="close" type="database">phl_for</file>
+
+     <flow action="jump"><pft>,v950,</pft></flow>
+
+<!-- Efetua cotação de sugestões pendentes a determinado fornecedor  -->
+     <label>cotacao</label>
+     
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+
+     <flow action="jump">
+      <pft>,if ref(['phl_pwd']val(v3000^4),v655^o)<>'1' then '271' fi,</pft>
+     </flow>
+     
+     <do task="search">
+       <parm name="db">phl_cpa</parm>
+       <parm name="expression"><pft>,'pendente$*ACV='v3000^1'*COMPRA=S',</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <display><pft>'<b>Solicitar cotação para: </b>'v759'<br></pft></display>
+       <loop>
+       <display><pft>,v1001") - ",v871+|; |". ",v872". ",v874,": "v873", ",v875".",v876"p."," ("v881")",'<br>',</pft></display>
+       </loop>
+       <display><hr></display>
+
+       <display>
+         <pft>
+           '<center><a href="mailto:'v759'?subject=Cotação de publicações&body=Prezados Senhores:%0A%0ASolicitamos a cotação das publicações listadas abaixo:%0A%0A',
+         </pft>
+       </display>
+
+       <loop>
+         <display><pft>,v1001") - ",v871+|; |". ",v872". ",v874,": "v873", ",v875".",v876"p."," ("v881")",'%0A',</pft></display>
+       </loop>
+       <display><pft>'%0AAtenciosamente,%0A',ref(['phl_set']l(['phl_set'],'ACV='v3000^1,),v602),'">Compor e-mail para envio</a></center>'</pft></display>
+     </do>
+     <file action="close" type="database">phl_cpa</file>
+     <file action="close" type="database">phl_set</file>
+     <flow action="exit">1</flow>
+     
+<!-- Gera e-mail de pedido de compra para determinado fornecedor  -->
+     
+     <label>pedido</label>
+     
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+
+     <flow action="jump">
+      <pft>,if ref(['phl_pwd']val(v3000^4),v655^o)<>'1' then '271' fi,</pft>
+     </flow>
+
+     <do task="search">
+       <parm name="db">phl_cpa</parm>
+       <parm name="expression"><pft>,'pendente$*ACV='v3000^1'*FOR='v957'*COMPRA=S',</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <display>
+         <pft>
+           '<center><a href="mailto:'v759'?subject=Pedido de Compra&body=Prezados Senhores:%0A%0ASolicitamos o envio da(s) obra(s) discriminada(s) abaixo, referente ao orçamento que nos enviou:%0A%0A',
+         </pft>
+       </display>
+       <loop>
+         <display><pft>,v1001") - ",v871+|; |". ",v872". ",v874,": "v873", ",v875". ",v876"p. "," ("v881")"," - "v887^v,'%0A',</pft></display>
+       </loop>
+       <display><pft>'%0AAtenciosamente,%0A',ref(['phl_set']l(['phl_set'],'ACV='v3000^1,),v602),'">Compor e-mail para envio</a></center>'</pft></display>
+       <display><pft>,if val(v1002)=0 then 'Não há sugestões aprovadas para serem solicitadas a este fornecedor!',fi,</pft></display>
+     </do>
+     <file action="close" type="database">phl_cpa</file>
+     <file action="close" type="database">phl_set</file>
+     <flow action="exit">1</flow>
+     
+     <label>271</label>
+     <field action="add" tag="250">271</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow> 
+
+</section>
+</IsisScript>
+
+
+
+

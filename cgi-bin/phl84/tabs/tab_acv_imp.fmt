@@ -1,0 +1,530 @@
+'<html>'/
+'<head>'/
+'<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+'<script language="JavaScript" src="/phl84/js/submit.js"></script>'/
+'<script language="JavaScript" src="/phl84/js/isis_limite.js"></script>'/
+'<script language=javascript>function proibido_voltar(){history.go(1) == false;}</script>'/
+'<script language="JavaScript" type="text/javascript">'/
+'<!--'/
+'function comentario(x){ '/
+' ajuda = window.open("/cgi-bin/wxis.exe?IsisScript=phl84/051.xis&&tmp='v4001'opc=form&mfn="+x,"janela","height=400,width=600,menubar=yes,resizable=yes,scrollbars=yes,status=yes")'/
+'} '/
+
+'function tab_man(x) {'/
+' window.open("/cgi-bin/wxis.exe?IsisScript=phl84/049.xis&tmp='v4001'&mfn="+x,"janela","height=400,width=600,menubar=no,resizable=yes,scrollbars=yes,status=no")'/
+'} '/
+
+'function proibido_voltar(){history.go(1) == false;}'/
+
+'function getXmlHttpRequestObject() { '/
+'if (window.XMLHttpRequest) { '/
+'return new XMLHttpRequest();'/
+'} else if(window.ActiveXObject) { '/
+'return new ActiveXObject("Microsoft.XMLHTTP");'/
+'} else { '/
+'alert("Your Browser Sucks!\nIts about time to upgrade dont you think?");'/
+'}'/
+'}'/
+'var searchReq = getXmlHttpRequestObject();'/
+
+'function buscaCutter() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("103").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_cutter.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestCutter;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaClasse() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("003").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_classe.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestClasse;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaEditora() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("062").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_editoras.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestEditora;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaCidade() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("066").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_cidades.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestCidade;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaDescritores() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("txtDescritores").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_descritores.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestDescritores;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaAutores() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("txtAutores").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_autores.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestAutores;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaAutoridades() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("txtAutoridades").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_autoridades.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestAutoridades;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function buscaVocabulario() { '/
+'if (searchReq.readyState == 4 || searchReq.readyState == 0) {'/
+'var str = escape(document.getElementById("txtVocabulario").value); '/
+'searchReq.open("GET", "/cgi-bin/wxis.exe?IsisScript=phl84/autocompleta_vocabulario.xis&tmp='v4001'&exp=" + str, true);'/
+'searchReq.onreadystatechange = handleSearchSuggestVocabulario;'/
+'searchReq.send(null);'/
+'}'/
+'}'/
+
+'function handleSearchSuggestCutter() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_cutter") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setCutter(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestClasse() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_classe") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setClasse(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestCidade() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_cidade") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setCidade(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestEditora() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_editora") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setEditora(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestDescritores() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_descritores") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setDescritores(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestAutores() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_autores") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setAutores(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestAutoridades() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_autoridades") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setAutoridades(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function handleSearchSuggestVocabulario() {'/
+'if (searchReq.readyState == 4) { '/
+'var ss = document.getElementById("busca_vocabulario") '/
+'ss.innerHTML = ""; '/
+'var str = searchReq.responseText.split("\n"); '/
+'for(i=0; i < str.length - 1; i++) { '/
+'var suggest = "<div onmouseover=javascript:suggestOver(this); ";'/
+'suggest += "onmouseout=javascript:suggestOut(this); ";'/
+'suggest += "onclick=javascript:setVocabulario(this.innerHTML); ";'/
+'suggest += "class=suggest_link>" + str[i] + "</div>";'/
+'ss.innerHTML += suggest;'/
+'} '/
+'}'/
+'}'/
+
+'function suggestOver(div_value) { '/
+'div_value.className = "suggest_link_over"; '/
+'} '/
+'function suggestOut(div_value) { '/
+'div_value.className = "suggest_link"; '/
+'}'/
+
+'EditoraOldValue = "";'/
+'CidadeOldValue = "";'/
+'DescritoresOldValue = "";'/
+'AutoresOldValue = "'v16|\n|'";'
+'AutoridadesOldValue = "";'/
+'VocabularioOldValue = "";'/
+
+'function setCutter(value) { '/
+'  var mySplitResult = value.split("=");'
+'  if (value != "") { '/
+'  document.getElementById("busca_cutter").innerHTML = ""; '/
+'  document.getElementById("103").value = mySplitResult[1]; '/
+'} '/
+'} '/
+
+'function setClasse(value) { '/
+'  var mySplitResult = value.split("=");'
+'  if (value != "") { '/
+'  document.getElementById("busca_classe").innerHTML = ""; '/
+'  document.getElementById("003").value = mySplitResult[1]; '/
+'} '/
+'} '/
+
+'function setEditora(value) { '/
+'  if (value != "") { '/
+'  document.getElementById("062").value = value; '/
+'  document.getElementById("busca_editora").innerHTML = ""; '/
+'} '/
+'} '/
+
+'function setCidade(value) { '/
+'  if (value != "") { '/
+'  document.getElementById("066").value = value; '/
+'  document.getElementById("busca_cidade").innerHTML = ""; '/
+'} '/
+'} '/
+
+'function setDescritores(value) { '/
+'  DescritoresOldValue = document.getElementById("087").value; '/
+'  if (value != "") { '/
+'  var totalvalue = DescritoresOldValue+value+"\n";'/
+'  document.getElementById("087").value = totalvalue; '/
+'  document.getElementById("busca_descritores").innerHTML = ""; '/
+'  DescritoresOldValue = document.getElementById("087").value; '/
+'} '/
+'} '/
+
+'function setAutores(value) { '/
+'  if (value != "") { '/
+'  AutoresOldValue = document.getElementById("016").value; '/
+'  var totalvalue = AutoresOldValue+value+"\n";'/
+'  document.getElementById("016").value = totalvalue; '/
+'  document.getElementById("busca_autores").innerHTML = ""; '/
+'  AutoresOldValue = document.getElementById("016").value; '/
+'} '/
+'} '/
+
+'function setAutoridades(value) { '/
+'  if (value != "") { '/
+'  AutoridadesOldValue = document.getElementById("016").value; '/
+'  var totalvalue = AutoridadesOldValue+value+"\n";'/
+'  document.getElementById("016").value = totalvalue; '/
+'  document.getElementById("busca_autoridades").innerHTML = ""; '/
+'  AutoridadesOldValue = document.getElementById("016").value; '/
+'} '/
+'} '/
+
+'function setVocabulario(value) { '/
+'  if (value != "") { '/
+'  VocabularioOldValue = document.getElementById("087").value; '/
+'  var totalvalue = VocabularioOldValue+value+"\n";'/
+'  document.getElementById("087").value = totalvalue; '/
+'  document.getElementById("busca_vocabulario").innerHTML = ""; '/
+'  VocabularioOldValue = document.getElementById("087").value; '/
+'} '/
+'} '/
+'-->'/
+'</script> '/
+
+'</head>'/
+'<body>'/
+'<script language=javascript>proibido_voltar()</script>'/
+'<table>'
+'<form name="formulario" method="POST" onSubmit="return count(30000)" action="/cgi-bin/wxis.exe">'/
+'<input type="hidden" name="IsisScript" value="phl84/027.xis">'/
+'<input type="hidden" name="tmp" value="'v4001'">'/
+'<input type="hidden" name="999" value="'v999[1]'">'/
+'<input type="hidden" name="dbvar" value="^aphl_acv^b1^cacv">'/
+'<input type="hidden" name="opc" value="grava">'/
+'<input type="hidden" name="001" value="'v1'">'/
+'<input type="hidden" name="002" value="'v2'">'/
+'<input type="hidden" name="006" value="m">'/
+'<tr><td class="td1e"></td><td class="topico">',ref(['tab_txt']453,@tab_txt.pft,)'</td></tr>'/
+
+'<tr>
+  <td class="td1o">'ref(['tab_txt']891,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(90);>[090]</a></td>
+  <td class="td2">
+  <input type="radio" value="b"',if v90='b' or v90='' or v90='0' then 'checked' fi,' name="090">'ref(['tab_txt']719,@tab_txt.pft,)'
+  <input type="radio" value="c"',if v90='c' or v90='1' then 'checked' fi,' name="090">'ref(['tab_txt']718,@tab_txt.pft,)'
+  <input type="radio" value="r"',if v90='r' then 'checked' fi,' name="090">Restrito
+  </td>
+</tr>'
+
+'<tr>
+  <td class="td1o">',ref(['tab_txt']156,@tab_txt.pft,)' [005]</td>
+  <td class="td2">
+  <select class="fix" name="005">
+    <option value=""></option>
+    <option selected value="'v5,"7"n5'">'ref(['phl_acv_fmt']val(v5000),v200,)'</option>',
+    ('<option value="'v3077^b'">',v3077^a,'</option>'),
+ '</select>
+  </td>
+</tr>',
+
+,if ref(['phl_cnf']1,v218)='S' then
+
+'<tr>
+  <td class="td1f">',ref(['tab_txt']353,@tab_txt.pft,)' [022]</td>
+  <td class="td2"><select name="022">
+  <option value=""></option>',(,'<option value="',v3074,'">',v3074,'</option>',),'</select>
+  </td>
+</tr>'
+,fi
+
+,if ref(['phl_cnf']1,v208)='S' then
+
+'<tr>
+  <td class="td1f">',ref(['tab_txt']637,@tab_txt.pft,)' [026]</td>
+  <td class="td2"><select name="026"><option value=""></option>',(,'<option value="'v3091^b'">',v3091^a,'</option>',),'</select></td>
+</tr>'
+,fi
+
+,if ref(['phl_acv_fmt']val(v5000),v6085)<>'' or p(v85) then
+'<tr>
+  <td class="td1f">',ref(['tab_txt']13,@tab_txt.pft,)' [085]</td>
+  <td class="td2"><select size="1" name="085">',('<option selected value="',v85,'">',ref(['phl_mec']val(v85),@tab_txt.pft,),'</option>'),(,if val(v85[1])<>val(v3501^b) then '<option value="'v3501^b'">'v3501^a'</option>' fi,),'</select></td>
+</tr>'
+,fi
+
+'<tr>
+  <td class="td1e">',ref(['tab_txt']177,@tab_txt.pft,)' [040]</td>
+  <td class="td2">
+  <select multiple size="4" name="040">
+    <option selected value="'v40'">'v40'</option>',
+    ('<option value="'v3078'">'v3078'</option>'),
+ '</select>
+  </td>
+</tr>'
+
+,if p(v28) then '<tr><td class="td1o">',ref(['tab_txt']287,@tab_txt.pft,)' [028]</td><td class="td2"><select size="1" name="028">',('<option value="'v3088^b'">',v3088^a,'</option>',)'</select></td></tr>' fi,
+,if p(v70) then  '<tr><td class="td1f">',ref(['tab_txt']895,@tab_txt.pft,)' [070]</td><td class="td2"><input type="text" class="textbox" name="070" value="'v70'"></td></tr>',fi,
+
+'<tr>
+  <td class="td1e">',ref(['tab_txt']469,@tab_txt.pft,)':&nbsp;<a href=JavaScript:tab_man(003);>[003]</a></td>
+  <td class="td3">
+  <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="003" name="003" value="'v3'" onkeyup="buscaClasse();" autocomplete="off" />
+  <div id="busca_classe"></div>
+  </td>
+</tr>'
+
+'<tr>
+  <td class="td1e">Cutter/PHA:&nbsp;<a href=JavaScript:tab_man(103);>[103]</a></td>
+  <td class="td3">
+  <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="103" name="103" value="'left(v103,instr(v103,' ')-1)'" onkeyup="buscaCutter();" autocomplete="off" />
+  <div id="busca_cutter"></div>
+  </td>
+</tr>'
+
+,if ref(['phl_cnf']1,v226)='A' then
+
+  '<tr>
+    <td class="td1e">'ref(['tab_txt']1062,@tab_txt.pft,)':&nbsp;<a href=JavaScript:tab_man(1005);>[?]</a></td>
+    <td class="td3">
+    <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="txtAutoridades" name="txtAutoridades" onkeyup="buscaAutoridades();" autocomplete="off" />
+    <div id="busca_autoridades"></div>
+    </td>
+  </tr>'
+          
+  else,
+
+  '<tr>
+    <td class="td1e">'ref(['tab_txt']1062,@tab_txt.pft,)':&nbsp;<a href=JavaScript:tab_man(1006);>[?]</a></td>
+    <td class="td3">
+    <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="txtAutores" name="txtAutores" onkeyup="buscaAutores();" autocomplete="off" />
+    <div id="busca_autores"></div>
+    </td>
+  </tr>'
+
+  ,fi
+
+  '<tr>
+     <td class="td1e">',ref(['tab_txt']23,@tab_txt.pft,)' [016]</td>
+     <td class="td2"><textarea rows="3" name="016">',(v16/),'</textarea></td>
+   </tr>'
+
+,if p(v17) then  '<tr><td class="td1f">',ref(['tab_txt']1075,@tab_txt.pft,)' [017]</td><td class="td2"><textarea rows="3" name="017">',(v17/),'</textarea></td></tr>' fi,
+
+'<tr>
+  <td class="td1o">',ref(['tab_txt']360,@tab_txt.pft,)' [018]</td>
+  <td class="td2"><textarea rows="2" name="018">'(mpl,v18/)'</textarea></td>
+</tr>'
+
+'<tr>
+  <td class="td1f">',ref(['tab_txt']334,@tab_txt.pft,)' [181]</td>
+  <td class="td2"><textarea rows="2" name="181">'(v181/)'</textarea></td>
+</tr>'
+
+'<tr>
+  <td class="td1f">',ref(['tab_txt']67,@tab_txt.pft,)' [015]</td>
+  <td class="td2"><textarea rows="2" name="015">'(v15/)'</textarea></td>
+</tr>'
+
+,if p(v63) then  '<tr><td class="td1e">',ref(['tab_txt']110,@tab_txt.pft,)' [063]</td><td class="td2"><input type="text" class="textbox" name="063" value="'v63'"></td></tr>',fi
+,if p(v30) then  '<tr><td class="td1e">',ref(['tab_txt']328,@tab_txt.pft,)' [030]</td><td class="td2"><input type="text" class="textbox" name="030" value="'v30'"></td></tr>',fi
+,if p(v182) then  '<tr><td class="td1e">',ref(['tab_txt']709,@tab_txt.pft,)' [182]</td><td class="td2"><input type="text" class="textbox" name="182" value="'v182'"></td></tr>',fi
+
+'<tr>
+  <td class="td1o">',ref(['tab_txt']201,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(66);>[066]</a></td>
+  <td class="td3"><input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="066" name="066" value="'v66'" onkeyup="buscaCidade();" autocomplete="off" />
+  <div id="busca_cidade"></div>
+  </td>
+</tr>'
+    
+'<tr>
+  <td class="td1o">',ref(['tab_txt']113,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(62);>[062]</a></td>
+  <td class="td3"><input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="062" name="062" value="'v62'" onkeyup="buscaEditora();" autocomplete="off" />
+  <div id="busca_editora"></div>
+  </td>
+</tr>'
+
+'<tr>
+  <td class="td1o">',ref(['tab_txt']77,@tab_txt.pft,)' [064]</td>
+  <td class="td2"><input type="text" class="textbox" name="064" value="'v64'" size="28"></td>
+</tr>'
+
+'<tr>
+  <td class="td1o">',ref(['tab_txt']712,@tab_txt.pft,)' [065]</td>
+  <td class="td2"><input type="text" class="textbox" name="065" value="'v65'" size="8"></td>
+</tr>',
+
+'<tr>
+  <td class="td1e">',ref(['tab_txt']1076,@tab_txt.pft,)' [020]</td>
+  <td class="td2"><input type="text" class="textbox" name="020" value="'v20'"></td>
+</tr>'
+
+,if p(v21) then  '<tr><td class="td1e">',ref(['tab_txt']393,@tab_txt.pft,)' [021]</td><td class="td2"><input type="text" class="textbox" name="021" value="'v21'"></td></tr>',fi
+,if p(v38) then  '<tr><td class="td1e">',ref(['tab_txt']713,@tab_txt.pft,)' [038]</td><td class="td2"><textarea rows="2" name="038">',(v38/),'</textarea></td></tr>',fi
+,if p(v8)  then  '<tr><td class="td1f">',ref(['tab_txt']906,@tab_txt.pft,)'  [008]</td><td class="td2"><textarea rows="2" name="008">',(mpl,v8/),'</textarea></td></tr>',fi
+,if p(v61) then  '<tr><td class="td1f">',ref(['tab_txt']234,@tab_txt.pft,)' [061]</a></td><td class="td2"><textarea rows="3" name="061">'(v61/)'</textarea></td></tr>',fi
+,if p(v69) then  '<tr><td class="td1f">',ref(['tab_txt']376,@tab_txt.pft,)' [069]</a></td><td class="td2"><input type="text" class="textbox" name="069" value="'v69'"></td></tr>',fi
+,if p(v42) then  '<tr><td class="td1e">[042]</td><td class="td2"><textarea rows="2" name="042">'(mpl,v42/)'</textarea></td></tr>',fi
+,if p(v43) then  '<tr><td class="td1e">[043]</td><td class="td2"><textarea rows="2" name="043">'(mpl,v43/)'</textarea></td></tr>',fi
+,if p(v44) then  '<tr><td class="td1e">[044]</td><td class="td2"><textarea rows="2" name="044">'(mpl,v44/)'</textarea></td></tr>',fi
+,if p(v46) then  '<tr><td class="td1e">[046]</td><td class="td2"><textarea rows="2" name="046">'(mpl,v46/)'</textarea></td></tr>',fi
+,if p(v47) then  '<tr><td class="td1e">[047]</td><td class="td2"><textarea rows="2" name="047">'(mpl,v47/)'</textarea></td></tr>',fi
+,if p(v48) then  '<tr><td class="td1e">[048]</td><td class="td2"><textarea rows="2" name="048">'(mpl,v48/)'</textarea></td></tr>',fi
+,if p(v50) then '<tr><td class="td1e">',ref(['tab_txt']715,@tab_txt.pft,)' [050]</a></td><td class="td2"><input type="text" class="textbox" name="050" value="'v50'"></td></tr>',fi
+,if p(v51) then '<tr><td class="td1f">',ref(['tab_txt']716,@tab_txt.pft,)' [051]</a></td><td class="td2"><input type="text" class="textbox" name="051" value="'v51'"></td></tr>',fi
+,if p(v54) then '<tr><td class="td1f"></td><td class="topico">'ref(['tab_txt']908,@tab_txt.pft,)'</td></tr>',fi
+,if p(v52) then '<tr><td class="td1f">',ref(['phl_acv_fmt']val(v5000),v52^*,),'&nbsp;<a href=JavaScript:tab_man(52);>[052]</a></td><td class="td2"><textarea rows="2" name="052">'(v52/)'</textarea></td></tr>',fi
+,if p(v53) then '<tr><td class="td1f">',ref(['phl_acv_fmt']val(v5000),v53^*,),'&nbsp;<a href=JavaScript:tab_man(53);>[053]</a></td><td class="td2"><input type="text" class="textbox" name="053" value="'v53'"></td></tr>',fi
+,if p(v54) then '<tr><td class="td1f">',ref(['phl_acv_fmt']val(v5000),v54^*,),'&nbsp;<a href=JavaScript:tab_man(54);>[054]</a></td><td class="td2"><input type="text" class="textbox" name="054" value="'v54'"></td></tr>',fi
+,if p(v55) then '<tr><td class="td1f">',ref(['phl_acv_fmt']val(v5000),v55^*,),'&nbsp;<a href=JavaScript:tab_man(55);>[055]</a></td><td class="td2"><input type="text" class="textbox" name="055" value="'v55'"></td></tr>',fi
+,if p(v56) then '<tr><td class="td1f">',ref(['phl_acv_fmt']val(v5000),v56^*,),'&nbsp;<a href=JavaScript:tab_man(56);>[056]</a></td><td class="td2"><input type="text" class="textbox" name="056" value="'v56'"></td></tr>',fi
+,if p(v57) then '<tr><td class="td1f">',ref(['phl_acv_fmt']val(v5000),v57^*,),'&nbsp;<a href=JavaScript:tab_man(57);>[057]</a></td><td class="td2"><input type="text" class="textbox" name="057" value="'v57'"></td></tr>',fi
+,if p(v58) then '<tr><td class="td1f">',ref(['phl_acv_fmt']val(v5000),v58^*,),'&nbsp;<a href=JavaScript:tab_man(58);>[058]</a></td><td class="td2"><textarea rows="2" name="058">'(v58/)'</textarea></td></tr>',fi
+,if p(v59) then '<tr><td class="td1f">',ref(['phl_acv_fmt']val(v5000),v59^*,),'&nbsp;<a href=JavaScript:tab_man(59);>[059]</a></td><td class="td2"><input type="text" class="textbox" name="059" value="'v59'"></td></tr>',fi
+,if p(v60) then '<tr><td class="td1f">',ref(['phl_acv_fmt']val(v5000),v60^*,),'&nbsp;<a href=JavaScript:tab_man(60);>[060]</a></td><td class="td2"><input type="text" class="textbox" name="060" value="'v60'"></td></tr>',fi
+,if p(v71) then '<tr><td class="td1f">',ref(['tab_txt']410,@tab_txt.pft,)' [071]</td><td class="td2"><select size="1" name="071"><option value=""></option>',('<option value="'v3075^b'">',v3075^a,'</option>',)'</select></td></tr>' fi,
+,if p(v86) then '<tr><td class="td1f">',ref(['phl_acv_fmt']val(v5000),v86,),'&nbsp;<a href=JavaScript:tab_man(86);>[086]</a></td><td class="td2"><textarea rows="3" name="086">'(v86/)'</textarea></td></tr>',fi,
+
+,if ref(['phl_cnf']1,v225)='V' then
+
+  '<tr>
+    <td class="td1e">'ref(['tab_txt']1064,@tab_txt.pft,)':&nbsp;<a href=JavaScript:tab_man(1007);>[?]</a></td>
+    <td class="td3">
+    <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="txtVocabulario" name="txtVocabulario" onkeyup="buscaVocabulario();" autocomplete="off" />
+    <div id="busca_vocabulario"></div>
+    </td>
+  </tr>'
+    
+  else,
+
+  '<tr>
+    <td class="td1e">'ref(['tab_txt']1064,@tab_txt.pft,)':&nbsp;<a href=JavaScript:tab_man(1008);>[?]</a></td>
+    <td class="td3">
+    <input type="text" style="width: 300px;  font-family: monospace; font-size: 14px;" id="txtDescritores" name="txtDescritores" onkeyup="buscaDescritores();" autocomplete="off" />
+    <div id="busca_descritores"></div>
+    </td>
+  </tr>'
+    
+,fi
+    
+'<tr>
+  <td class="td1e">',ref(['phl_acv_fmt']val(v5000),v87^*,),'&nbsp;<a href=JavaScript:tab_man(87);>[087]</a></td>
+  <td class="td2"><textarea rows="5" name="087">',(v87/),'</textarea></td>
+</tr>'
+
+,if p(v88) then '<tr><td class="td1e"><a href="JavaScript:vocabulario();"><img src="/phl84/img/023.gif" border="0"></a>&nbsp;',ref(['phl_acv_fmt']val(v5000),v88^*,),'&nbsp;<a href=JavaScript:tab_man(88);>[088]</a></td><td class="td2"><textarea rows="5" name="088">',(v88/),'</textarea></td></tr>',fi
+,'<tr><td class="td1f">Observações [089]</a></td><td class="td2"><textarea rows="5" name="089">'(v89/)'</textarea></td></tr>',
+,if p(v83) then '<tr><td class="td1f">',ref(['tab_txt']314,@tab_txt.pft,)' [083]</a></td><td class="td2"><textarea rows="5" name="083">'(v83/)'</textarea></td></tr>',fi,
+,if p(v84) then '<tr><td class="td1f">',ref(['tab_txt']722,@tab_txt.pft,)' [084]</a></td><td><textarea rows="5" name="htm">'(v84/)'</textarea></td></tr>',fi,

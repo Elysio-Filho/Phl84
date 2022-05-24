@@ -1,0 +1,286 @@
+<!--
+ phl84(c)Elysio Mira Soares de Oliveira
+ Data da criação: 15/09/2010 09:12:54
+ Data da modificação: 15/09/2010 09:13:10
+ 
+ Nota para utilização:
+ Este script fornece uma caixa de busca para a base de dados do catálogo
+ 
+ Sintaxe do link:
+ <a href="http://127.0.0.1:8080/cgi-bin/wxis.exe?IsisScript=searchbox.xis&opc=form">Busca no catálogo da biblioteca</a>
+-->
+
+<IsisScript name="searchbox.xis">
+  <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+  <section>
+
+  <parm name="cipar"><pft>,cat('phl84.cip'),</pft></parm>
+  <field action="cgi" tag="1">exp</field>
+  <field action="cgi" tag="2">opc</field>
+  <field action="cgi" tag="2011">from</field>
+  
+  <flow action="jump"><pft>,v2,</pft></flow>
+  
+  <label>form</label>
+  <display>
+    <pft>
+      '<form action="/cgi-bin/wxis.exe" method="post">
+         <input type="hidden" name="IsisScript" value="searchbox.xis">
+         <input type="hidden" name="opc" value="search">
+         <input type="text" name="exp">
+         <input type="submit" value="Pesquisar" name="submit">
+      </form>'
+    </pft>
+  </display>
+  <flow action="exit">1</flow>
+
+  <label>search</label>
+  <do task="search">
+    <parm name="db">phl_acv</parm>
+    <parm name="expression"><pft>,v1,"$"n1,</pft></parm>
+    <field action="define" tag="1001">Isis_Current</field>
+    <field action="define" tag="1002">Isis_Total</field>
+    <parm name="from"><pft>,v2011,"1"n2011,</pft></parm>
+    <parm name="count">20</parm>
+    <display>
+      <html>
+      <head>
+      <style>
+        <!--
+         body {scrollbar-face-color:#6487DC; scrollbar-highlight-color:#FFFFFF; scrollbar-3dlight-color:#FFFFFF; scrollbar-darkshadow-color:#FFFFFF; scrollbar-shadow-color:#FFFFFF; scrollbar-arrow-color:#FFFFFF; scrollbar-track-color:#FFFFFF; font-family:Arial, Helvetica, sans-serif; color:#006699; background-color:#FFFFFF; font-size: 12px;}
+         table {width:100%; color:#006699; font-size: 12px;}
+         a {color:#0000CD; text-decoration:none;}
+         a:hover {color:#FFD700; background-color:#6487DC; text-decoration:none;}
+         -->
+      </style>
+      </head>
+      <body>
+        <form action="/cgi-bin/wxis.exe" method="post">
+         <input type="hidden" name="IsisScript" value="searchbox.xis">
+         <input type="hidden" name="opc" value="search">
+         <input type="text" name="exp">
+         <input type="submit" value="Pesquisar">
+      </form>
+    </display>
+    <loop>
+     <field action="import" tag="1">1</field>
+    <display>
+     <pft>
+       if val(v1001)=1 then
+       'Expressão de busca: 'v1,'<br>
+        Data: 's(date)*6.2,'/',s(date)*4.2,'/',s(date).4,'<br>
+        Total encontrado: 'v1002'<hr>'
+       fi,
+       '<table width="80%" align="center">'
+       '<tr>',
+       '<td width="10%" valign="top">',v1001,'/',v1002,
+       ,if p(v70) then,
+       '<br><center><img src="'v70'" border="0"></center>'
+       ,fi,
+       '</td>
+        <td width="90%">',v3," / "v103,'<br>',
+
+,select s(v6.1)
+
+/* ********************************************************************** */
+/*                            NIVEL MONOGRAFICO                           */
+/* ********************************************************************** */
+
+case 'm':
+
+ MPL,
+ ,if p(v16) then
+
+  ,if nocc(v16)<=3 then
+    ,v16^*+|; |". ", else
+    ,v16[1]^*" et al. ",
+  ,fi,
+   else
+    ,v17+|; |". ",
+    ,mpu,v53,mpl,", "v54", ",v56". ",
+ ,fi,
+
+ ,if p(v16) or p(v17) or p(v53) or p(v42) then '<b>',v18,". "n181,": "d181,'</b>',
+   else
+   ,if v6:'s' then mpu,v30". ",mpl fi,
+     ,v18,". "n181,": "d181,
+ ,fi,
+
+  ,v181". ","["v19"]. ",v15+|, |". ",v63". ",v43". ",v44". ",
+  
+ ,if p(v62) and v62<>v17 and v62<>v16 then " "v66[1],": "d62,v62+|; |", ",
+    else
+    ," "v66[1]", ",
+ ,fi,
+
+ ,if v6:'s' then
+    /* Volume do periódico */,if val(v31.1)<>0 then "v."v31", " else v31", " fi,
+    /* Fascículo */,"n."v32", ",
+ ,fi
+ 
+
+
+  /* Data */,v64". ",
+  /* Volume */,v21". ",
+  /* Páginas */,if v20:'[' then v20". " else v20" p. " fi,
+  /* Ilustr. */,v38+|, |". ",
+
+ ,if v6:'m' then
+    /* Nota Série*/,"("v30"). "
+ ,fi,
+
+  /* Nota da Tese */,v51^a,"("v51^b")",
+  /* Instituição    */,"-"v50". ",
+  
+ " ISBN "v69"."," ISSN "v35".",
+          
+/* **************************************************************** */
+/*                   LIVROS - NIVEL ANALITICO                       */
+/* **************************************************************** */
+ case 'a':
+
+  MPL,
+  ,if p(v10) then
+    ,if nocc(v10)<=3 then
+      /* Autor Pessoal */,v10^*+|; |". ", else
+      /* Autor Pessoal */,v10[1]^*" et al. ",
+    ,fi,
+    ,else
+      /* Autor coletivo*/,v11+|; |". ",
+  ,fi,
+
+   /* Titulo - analitico */,v12". ",
+   /* Ementas, créditos  */,v121+|; |". ",
+   
+   if v9='S' then
+    
+     "Separata de: "d18
+      else
+     "In: "d18,
+     
+   fi,
+
+  ,if p(v10) and s(v10)=s(v16) then '___.' fi,
+  ,if p(v11) and s(v11)=s(v17) then '___.' fi,
+
+  ,if (p(v10) or p(v12)) and s(v10)<>s(v16) then
+    ,if nocc(v16)<=3 then
+      /* Autor Pessoal */,v16^*+|; |". ", else
+      /* Autor Pessoal */,v16[1]^*" et al. ",
+    ,fi,
+  ,fi
+                        
+  ,if p(v11) and s(v11)<>s(v17) then
+    /* Autor - monografico */,v17+|; |".",
+  ,fi
+                        
+  /* Evento */,mpu,v53", ",mpl,v54", ",v56". ",
+
+  ,if v6:'s' then
+  
+    if v9='S' then 'Separata de: ' fi,
+                    
+    '<b>',
+    /* Título da série    */,v30,", "n182,"-"d182,
+    '</b>',                
+    /* Subtitulo da série  */v182", ",
+    /* Local */," "v66[1],", "n62
+    /* Editora */,": "d62,v62+|; |", ",
+    /* Volume */,if val(v31.1)<>0 then "v."v31", " else v31", " fi,
+    /* Fasciculo */,"n."v32", ",
+  
+    ,if a(v34) then
+      /* Paginas*/,
+      ,if v14:'[' then v14", " else "p. "v14", " fi,,
+      /* Inf. Descritiva    */,v141". ",
+    ,fi,
+    
+    /* Data */,v64". ",
+    /* Suplemento */,v34". ",
+    
+    ,if p(v34) then
+      /* Paginas */,if v14:'[' then v14". " else "p. "v14". " fi,
+      /* Inf. Descritiva */,v141". ",
+    ,fi,
+
+  ,fi,
+
+  '<b> ',
+  /* Titulo - monografico */,
+  ,if p(v181) then v18": " else v18". " fi,
+  '</b>',
+                      
+  ,if v6:'m' then
+    /* Subtitulo */,v181". ",
+    /* Edição */,v63". ",
+    /* Local */," "v66[1],", "n62
+    /* Editora */,": "d62,v62+|; |", ",
+    /* Data */,v64". ",
+    /* Paginação */,if v14:'[' then v14". " else "p. "v14". " fi,
+    /* Inf. Descritiva */,v141". ","("v30")",
+ ,fi,
+ 
+ " ISBN "v69"."," ISSN "v35".",
+
+/* **************************************************************** */
+/*                      SERIE - NIVEL SERIE                         */
+/* **************************************************************** */
+ case 's':
+  /* Titulo - numero especial */,v12". ",
+  /* Titulo da série*/,"<b>"d12,v30,"</b>"d12,". "n182,": "d182,mpl,
+  /* Subtitulo */,v182". ",
+  /* Local */," "v66[1],", "n62,
+  /* Editora */,": "d62,v62+|; |", ",
+  /* Volume */,if val(v31.1)<>0 then "v."v31", " else v31", " fi,
+  /* Numero */,"n."v32", ",
+  /* Data */,v64". ",
+  /* Paginas */,,if v20:'[' then v20". " else v20" p. " fi,
+  /* suplemento */,v34".","ISSN "v35".",
+
+/* **************************************************************** */
+/*                          NIVEL COLECAO                           */
+/* **************************************************************** */
+ case 'c':
+  /* Titulo da série*/,v30,". "n182,": "d182,mpl,
+  /* Subtitulo */,v182". ",
+  /* Local */," "v66[1],", "n62,
+  /* Editora */,": "d62,v62+|; |", ",
+  /* Data */,if v64:'-' then v64". " else v64"-." fi,
+  /* Inf. Descr. */,v38". ","ISSN "v35".",
+
+endsel,
+
+,if p(v8) then '<p>Disponível em: <a href="'v8[1]^i'">'v8[1]^i'</a></p>' fi,
+,if p(v84) then '<p>'(v84/)'</p>',fi,
+,if p(v87) then '<p>'('<a href="/cgi-bin/wxis.exe?IsisScript=searchbox.xis&exp='v87'&opc=search">'mhu,v87+|; |,mpl'</a>'),'</p>',fi,
+
+       '</td></tr>',
+       
+       '</table>'
+       '<hr>'
+     </pft>
+    </display>
+    </loop>
+      <field action="add" tag="8"><pft>f(( val(v1002)/20 ),0,0)</pft></field>
+      <field action="add" tag="9"><pft>f(( val(v1002)/20 ),0,2)</pft></field>
+      <field action="add" tag="10"><pft>if val(v9)>val(v8) then f(val(v8)+1,0,0),fi,if val(v9)<=val(v8) then f(val(v8),0,0),fi,</pft></field>
+      <field action="add" tag="11"><pft>f(( val(v1001)/20 ),0,0),</pft></field>
+      <field action="add" tag="12"><pft>f(( val(v1001)/20 ),0,2),</pft></field>
+      <field action="add" tag="13"><pft>if val(v12)>val(v11) then f(val(v11)+1,0,0),fi,if val(v12)<=val(v11) then f(val(v11),0,0),fi,</pft></field>
+      <display>
+       <pft>
+       if val(v1002)>20 then
+       '<center>'
+       '<a href="/cgi-bin/wxis.exe?IsisScript=searchbox.xis&opc=search&exp='mhu,v1,mhl'&from=1">Primeira</a> |
+        <a href="/cgi-bin/wxis.exe?IsisScript=searchbox.xis&opc=search&exp='mhu,v1,mhl'&from='if ((val(v13)-2)*20) <1 then '1' else f(  ((val(v13)-2)*20)+1,0,0   ) fi'">Anterior</a> |
+        <a href="/cgi-bin/wxis.exe?IsisScript=searchbox.xis&opc=search&exp='mhu,v1,mhl'&from='f(val(v1001)+1,0,0)'">Próxima</a> |
+        <a href="/cgi-bin/wxis.exe?IsisScript=searchbox.xis&opc=search&exp='mhu,v1,mhl'&from='f( (val(v10)*20)-(20-1),0,0)'">Última</a>
+        </center>'
+        ,fi
+       </pft>
+      </display>
+  </do>
+  </section>
+
+</IsisScript>

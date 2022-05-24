@@ -1,0 +1,58 @@
+<!-- Fasciculos catalogados
+     18/09/2015 10:33:49 - Revisado -->
+     
+     <IsisScript name="034.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="958">exp</field>
+
+<!-- Procura fasciculos catalogados -->
+
+     <do task="search">
+       <parm name="db">phl_acv</parm>
+       <parm name="expression"><pft>,'SER='v958'*NIV=S*ACV='v3000^1,</pft></parm>
+       <field action="define" tag="1001">Isis_Total</field>
+       <loop>
+       <list action="load" type="sort">
+        <pft>
+          "^a"v65,
+          '^b',if val(v31)=0 then v31 else f(val(v31),6,0),fi
+          '^c',if val(v32)=0 then v32 else f(val(v32),6,0),fi
+          "^d"v64,
+          "^e"v30
+          "^f",mfn(1)
+          "^g"v31,
+          "^h"v32,/
+        </pft>
+       </list>
+      </loop>
+    </do>
+    <file action="close" type="database">phl_acv</file>
+
+    <do task="list">
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Itens</field>
+      <field action="define" tag="1">Isis_Item</field>
+      <display><htmlpft><pft>,ref(['tab_fmx']163,v4),</pft></htmlpft></display>
+      <loop>
+      <field action="import" tag="list">3000,4001</field>
+      <display><htmlpft><pft>,ref(['tab_fmx']164,v4),</pft></htmlpft></display>
+      </loop>  
+     </do>
+     <display><htmlpft><pft>,'<hr>',ref(['tab_fmx']51,v4),</pft></htmlpft></display>
+     <list action="delete">now</list>
+
+</section>
+</IsisScript>

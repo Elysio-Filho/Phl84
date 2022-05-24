@@ -1,0 +1,15 @@
+20200312 154541|super|127.0.0.1|phl_idx|MFN#000002|ERR#0|NEW|010.fnc
+20200312 154756|super|127.0.0.1|phl_idx|MFN#000004|ERR#0|NEW|010.fnc
+20200312 154841|super|127.0.0.1|phl_aqu.opc|MFN#|ERR#|072.xis
+20200312 154849|super|127.0.0.1|001_tbo.ctl|MFN#|ERR#|072.xis
+20200312 154858|super|127.0.0.1|phl_aqu.opc|MFN#|ERR#|072.xis
+20200312 155312|super|127.0.0.1|phl_cur.opc|MFN#|ERR#|072.xis
+20200312 155320|super|127.0.0.1|phl_idm.opc|MFN#|ERR#|072.xis
+20200312 155331|super|127.0.0.1|phl_spt.opc|MFN#|ERR#|072.xis
+20200312 155339|super|127.0.0.1|phl_cnt.opc|MFN#|ERR#|072.xis
+20200312 155500|super|127.0.0.1|phl_cnt.opc|MFN#|ERR#|072.xis
+20200312 155639|super|127.0.0.1|phl_cnt.opc|MFN#|ERR#|072.xis
+20200312 155650|super|127.0.0.1|phl_cur.opc|MFN#|ERR#|072.xis
+20200312 163814|super|127.0.0.1|phl_cnf|MFN#000001|ERR#0|MOD|002.xis
+20200312 163907|super|127.0.0.1|phl_set|MFN#000001|ERR#0|MOD|002.xis
+20200312 163911|super|127.0.0.1|phl_idx|MFN#000004|ERR#0|DEL|sair.xis

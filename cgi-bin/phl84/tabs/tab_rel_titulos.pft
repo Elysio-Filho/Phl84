@@ -1,0 +1,120 @@
+'
+<tr>
+<td class="td1o">Variável 01:</td><td class="td2">
+<select size="1" name="var1">
+<option value="01">Ano de publicação</option>
+<option value="02">Ano do registro</option>
+<option value="03">Area do conhecimento</option>
+<option value="04">Classificacao</option>
+<option value="05">Data de publicação</option>
+<option value="06">Data do registro</option>
+<option value="07">Disponibilidade</option>
+<option value="08">Editora</option>
+<option value="09">Local de publicacão</option>
+<option value="10">Nacionalidade</option>
+<option value="18">Nível bibliográfico</option>
+<option value="12">Responsável pela criação</option>
+<option value="13">Responsável pela modificação</option>
+<option value="14">Tipo de coleção</option>
+<option value="15">Tipo de conteúdo</option>
+<option value="16">Tipo de documento</option>
+<option value="17">Tipo de suporte</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 02:</td><td class="td2">
+<select size="1" name="var2">
+<option value=""></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Ano do registro</option>
+<option value="03">Area do conhecimento</option>
+<option value="04">Classificacao</option>
+<option value="05">Data de publicação</option>
+<option value="06">Data do registro</option>
+<option value="07">Disponibilidade</option>
+<option value="08">Editora</option>
+<option value="09">Local de publicacão</option>
+<option value="10">Nacionalidade</option>
+<option value="18">Nível bibliográfico</option>
+<option value="12">Responsável pela criação</option>
+<option value="13">Responsável pela modificação</option>
+<option value="14">Tipo de coleção</option>
+<option value="15">Tipo de conteúdo</option>
+<option value="16">Tipo de documento</option>
+<option value="17">Tipo de suporte</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 03:</td><td class="td2">
+<select size="1" name="var3">
+<option value=""></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Ano do registro</option>
+<option value="03">Area do conhecimento</option>
+<option value="04">Classificacao</option>
+<option value="05">Data de publicação</option>
+<option value="06">Data do registro</option>
+<option value="07">Disponibilidade</option>
+<option value="08">Editora</option>
+<option value="09">Local de publicacão</option>
+<option value="10">Nacionalidade</option>
+<option value="18">Nível bibliográfico</option>
+<option value="12">Responsável pela criação</option>
+<option value="13">Responsável pela modificação</option>
+<option value="14">Tipo de coleção</option>
+<option value="15">Tipo de conteúdo</option>
+<option value="16">Tipo de documento</option>
+<option value="17">Tipo de suporte</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 04:</td><td class="td2">
+<select size="1" name="var4">
+<option value=""></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Ano do registro</option>
+<option value="03">Area do conhecimento</option>
+<option value="04">Classificacao</option>
+<option value="05">Data de publicação</option>
+<option value="06">Data do registro</option>
+<option value="07">Disponibilidade</option>
+<option value="08">Editora</option>
+<option value="09">Local de publicacão</option>
+<option value="10">Nacionalidade</option>
+<option value="18">Nível bibliográfico</option>
+<option value="12">Responsável pela criação</option>
+<option value="13">Responsável pela modificação</option>
+<option value="14">Tipo de coleção</option>
+<option value="15">Tipo de conteúdo</option>
+<option value="16">Tipo de documento</option>
+<option value="17">Tipo de suporte</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 05:</td><td class="td2">
+<select size="1" name="var5">
+<option value=""></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Ano do registro</option>
+<option value="03">Area do conhecimento</option>
+<option value="04">Classificacao</option>
+<option value="05">Data de publicação</option>
+<option value="06">Data do registro</option>
+<option value="07">Disponibilidade</option>
+<option value="08">Editora</option>
+<option value="09">Local de publicacão</option>
+<option value="10">Nacionalidade</option>
+<option value="18">Nível bibliográfico</option>
+<option value="12">Responsável pela criação</option>
+<option value="13">Responsável pela modificação</option>
+<option value="14">Tipo de coleção</option>
+<option value="15">Tipo de conteúdo</option>
+<option value="16">Tipo de documento</option>
+<option value="17">Tipo de suporte</option>
+</select>
+</td></tr>
+'

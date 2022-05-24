@@ -1,0 +1,219 @@
+select s(v6.1)
+
+/* ********************************************************************** */
+/*                            NIVEL MONOGRAFICO                           */
+/* ********************************************************************** */
+
+ case 'm':
+
+   if v5^*='21' then
+
+     mpl,v16^*+|; |". ",mpl,'<b><i>',v18". ",'</i></b>',v64". ",v61" - ",v50", ",v66[1]". ",if v20='no pag.' or v20='sep.pag.' then v20" " else v20" p. " fi,v15^*+|, |". ",
+
+   else         
+
+      MPL,
+      if p(v16) then
+         
+           /* Autor Pessoal */,mpl,v16+|; |". ",mpl
+           
+         
+         else
+           /* Autor Institucional */,v17+|; |". ",
+           /* Evento ,mpu,v53", ",mpl,", "v54", ",v56". ", */
+           /* Patente */,v45". ",
+      fi,
+
+
+ if p(v16) or p(v17) or p(v53) or p(v42) then
+
+  '<b>',/* Titulo */,v18,". "n181,": "d181,'</b>',
+
+  else
+
+
+       ,if v6:'s' then
+           /* Titulo do Periodico */,mpu,v30". ",mpl fi,
+           /* Titulo do fasciculo */,v18,". "n181,": "d181,
+
+
+ fi,
+
+
+           /* Subtitulo */,v181". ",
+           /* Titulo Traduzido */,"["v19"]. "
+           /* Ementa */,v15+|, |". ",
+           /* Edição */,v63". ",
+          
+
+           if p(v62) and v62<>v17 then
+
+             /* Local */," "v66[1],
+             /* Editora */,": "d62,v62+|; |", ",
+
+             else
+
+             /* Local */," "v66[1]", ",
+
+           fi,
+
+           if v6:'s' then
+
+             /* Volume do periódico */,v31", ",
+             /* Fascículo */,v32", ",
+
+           ,fi
+		      
+           /* Data */,v64". ",
+           /* Volume */,v21". ",
+           /* Páginas */,if v20:'[' then v20". " else if v20='no pag.' or v20='sep.pag.' then v20" " else v20" p. " fi,fi,
+           /* Ilustr. */,v38+|, |". ",
+
+           ,if v6:'m' then
+
+             /* Nota Série*/,"("v30"). "
+
+           ,fi,
+
+                     /* Instituição    */,"-"v50". ",
+           
+   fi,  
+
+         /* ****************************************************************
+             Livros - nível analítico
+         ***************************************************************** */
+ case 'a':
+
+   if v71^*='40' or v71^*='39' then 
+            mpl,v10^*+|; |" ",mpl,v18". ","In: "d18,mpl,v53", ",mpl,v54", ",v64", "v56".  ",'<b><i>'v46"... "'</i></b>',v62". ","p. "v14,
+
+   else
+
+          
+                        MPL,
+                         ,if p(v10) then
+                          
+                            /* Autor Pessoal */,mpl,v10^*+|; |". ",mpl
+                            
+                        
+                         ,else
+                             /* Autor coletivo*/,v11+|; |". ",
+                         ,fi,
+
+                         /* Titulo - analitico */,v12". ",
+		         /* Ementas, créditos  */,v121+|; |". ","In: "d18,
+
+                        ,if p(v10) and s(v10)=s(v16) then '___.' fi,
+                        ,if p(v11) and s(v11)=s(v17) then '___.' fi,
+
+
+                        ,if p(v10) and s(v10)<>s(v16) then
+                         
+                            /* Autor Pessoal */,mpl,v16^*+|; |". ",mpl
+                            
+                        ,fi
+                        
+                        ,if p(v11) and s(v11)<>s(v17) then
+                          /* Autor - monografico */,v17+|; |".",
+                        ,fi
+                        
+                        /* Evento ,mpu,v53", ",mpl,v54", ",v56". ", */
+
+
+                     ,if v6:'s' then
+                      
+                     '<b>',
+                         /* Título da série    */,v30,", "n182,"-"d182,
+                     '</b>',
+                     
+
+                     /* Subtitulo da série  */v182", ",
+                        /* Local              */," "v66[1],", "n62
+                         /* Editora            */,": "d62,v62+|; |", ",
+                         /* Volume             */,v31", ",
+                         /* Fasciculo          */,v32", ",
+                         if a(v34) then
+                         /* Paginas            */,if v14:'[' then v14", " else "p. "v14", " fi,,
+                         /* Inf. Descritiva    */,v141". ",
+                         fi,
+                         /* Data               */,v64". ",
+                         /* Suplemento         */,v34". ",
+                         if p(v34) then
+                         /* Paginas            */,if v14:'[' then v14". " else "p. "v14". " fi,
+                         /* Inf. Descritiva    */,v141". ",
+                         fi,
+                         
+                         
+
+                     fi,
+
+
+                      '<b> ',
+                         /* Titulo - monografico */,
+                         if p(v181) then v18": " else
+                          v18". " fi,
+                      '</b>',
+                      
+                      if v6:'m' then
+		     
+                         /* Subtitulo            */,v181". ",
+                         /* Edição               */,v63". ",
+                         /* Local                */," "v66[1],", "n62
+                         /* Editora              */,": "d62,v62+|; |", ",
+                         /* Data                 */,v64". ",
+                         /* Paginação            */,if v14:'[' then v14". " else "p. "v14". " fi,
+                         /* Inf. Descritiva      */,v141". ",
+		       
+                         
+
+                       fi,
+   fi,
+
+
+         /* ****************************************************************
+             Série - nível série
+         ***************************************************************** */
+	  case 's':
+                        MPU,
+                        /* Titulo da série*/,v30,". "n182,": "d182,mpl,
+                        /* Subtitulo      */,v182". ",
+                        /* Local          */," "v66[1],", "n62,
+                        /* Editora        */,": "d62,v62+|; |", ",
+                        /* Volume         */,v31", ",
+                        /* Numero         */,v32", ",
+                        /* Data           */,v64". ",
+                        /* Páginas */,if v20:'[' then v20". " else if v20='no pag.' or v20='sep.pag.' then v20" " else v20" p. " fi,fi,
+                        /* suplemento     */,v34".",
+                     
+
+         /* ****************************************************************
+             Nível coleção
+         ***************************************************************** */
+	  case 'c':
+                        MPU,
+                        /* Titulo da série*/,v30,". "n182,": "d182,mpl,
+                        /* Subtitulo      */,v182". ",
+                        /* Local          */," "v66[1],", "n62,
+                        /* Editora        */,": "d62,v62+|; |", ",
+                        /* Data           */,v64"-. ",
+                        /* Inf. Descr.    */,v38". ",
+                       
+			 
+                       
+                      
+                       /*ISSN*/,ref([v1'_ser']l([v1'_ser'],'SER='v33,),if p(v772) then '<br><b>ISSN:</b> ',(v772+|; |) fi),
+
+                       /*CCN*/,ref([v1'_ser']l([v1'_ser'],'SER='v33,),if p(v798) then '<br><b>CCN:</b> ',(v798+|; |) fi),
+
+
+                       /*Continua como*/,ref([v1'_ser']l([v1'_ser'],'SER='v33,),if p(v774) then '<br><b>Continua como:</b> ',(v774+|; |) fi),
+                       /*Continuação de*/,ref([v1'_ser']l([v1'_ser'],'SER='v33,),if p(v775) then '<br><b>Continuação de:</b> ',(v775+|; |) fi),
+                                   
+                       /*Titulo abreviado*/,ref([v1'_ser']l([v1'_ser'],'SER='v33,),if p(v799) then '<br><b>Título abreviado:</b> ',(v799+|; |) fi),
+
+                       /*Colecao*/,ref([v1'_ser']l([v1'_ser'],'SER='v33,),if p(v790) then '<br><b>Coleção:</b> ',(v790,'<br><br>') fi),
+                       
+
+
+                                                
+endsel,

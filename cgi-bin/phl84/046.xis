@@ -1,0 +1,105 @@
+<!-- Rotina de Gravação de registros de uso da coleção
+     25/10/2010 15:06:50 
+     06/09/2017 09:10:01 -->
+     
+     <IsisScript name="046.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="3004">dbvar</field>
+
+<!-- Carrega permissões de entrada e edição do usuário -->
+     <field action="add" tag="2000"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>
+     
+<!-- Inicia processo de gravacao do novo registro -->
+
+     <label>grava</label>
+     
+     <field action="cgi" tag="920">920</field>
+     <flow action="jump">
+       <pft>
+         if npost([v3000^1'_tbo'],'TBO='v920)<1 then 'erro' else 'grava_tbo' fi,
+       </pft>
+     </flow>
+     <flow action="exit">1</flow>
+     
+     <label>erro</label>
+     <display><htmlpft><pft>,ref(['tab_fmt']30,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <field action="add" tag="250">980</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>grava_tbo</label>
+
+       <file action="close" type="database"><pft>,v3000^1'_usc',</pft></file>
+
+       <do task="update">
+       <parm name="db"><pft>,v3000^1'_usc',</pft></parm>
+       <parm name="mfn">New</parm>
+       <parm name="uctab"><pft>cat('uctab')</pft></parm>
+       <parm name="actab"><pft>cat('actab')</pft></parm>
+       <parm name="fst"><pft>,cat(v3000^1'_usc.fst'),</pft></parm>
+       <field action="define" tag="1003">Isis_Status</field>
+
+       <update>
+         <field action="import" tag="list">958,3000/3004,7003</field>
+         
+         <cgitable><htmlpft><pft>,ref(['tab_fdt']30,'[pft]',v4,'[/pft]',),</pft></htmlpft></cgitable>
+         
+
+         <field action="add" tag="999"><pft>'^d'v7003.8,'^h'v7003*9.4,'^b'v3000^2,</pft></field>
+
+         <field action="export" tag="list">1/999,3000/3004</field>
+         <field action="delete" tag="list">958,3000/3004,7003,7004</field>
+         
+         <write>Unlock</write>
+         <field action="import" tag="list">958,1090,2000,3000/3004,7003,1010,</field>
+         <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zNEW|046.xis'/,</pft></field>
+         <call name="log">now</call>
+         <display>
+          </table>
+          </body>
+          </html>
+        </display>
+
+        </update>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_usc',</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmt']30,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+
+     <do task="search">
+       <parm name="db"><pft>,v3000^1'_usc',</pft></parm>
+       <parm name="expression"><pft>'DTR='v7003.8,</pft></parm>
+       <field action="define" tag="1001">Isis_Status</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']202,v4),</pft></htmlpft></display>
+
+       <loop>
+           <display><pft>,v920,' - ',ref(['phl_acv']l(['phl_acv'],'TBO='v920),if p(v18) then v18 else v30 fi,)'<br>',</pft></display>
+       </loop>
+     </do>
+     
+     <display>
+       <pft>
+         '</blockquote>
+          </html>'
+       </pft>
+       </display>
+     
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

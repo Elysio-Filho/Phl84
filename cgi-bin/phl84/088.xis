@@ -1,0 +1,46 @@
+<!-- Fornece lista de titulos de periodicos para AJAX -->
+
+     <IsisScript name="088.xis">
+
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+    <section>
+  
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+  
+     <field action="cgi" tag="10">exp</field>
+
+  <do task="keyrange">
+    <parm name="db">phl_acv</parm>
+    <parm name="from"><pft>,'TPR='v10,</pft></parm>
+    <parm name="to"><pft>,'TPR=ZZZ'</pft></parm>
+    <parm name="count">5</pft></parm>
+    <parm name="posting">1</parm>
+    <field action="define" tag="1">Isis_Key</field>
+    <field action="define" tag="2">Isis_Postings</field>
+    <field action="define" tag="3">Isis_Posting</field>
+
+    <loop>
+    <field action="import" tag="list">977,4001</field>
+      <display>
+        <pft>
+          e1:=val(v2),
+          s2:=(v1*4),
+          
+           ,if ref(['phl_acv']val(v3^m),s(mhu,v30.26,mpl)):s2 then
+
+             ,ref(['phl_acv']val(v3^m),v30/)
+
+           ,fi
+        </pft>
+      </display>
+    </loop>
+  </do>
+  <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

@@ -1,0 +1,2693 @@
+!ID 000001
+!v004!<b>001 - Código da Unidade</b> (obrigatório)</a>
+!v004!Código que identifica a biblioteca, centro ou unidade de informação em um sistema de bibliotecas administrado pelo PHL. O conteúdo deste campo é incorporado automaticamente ao registro durante o processo de entrada de dados.
+
+!ID 000002
+!v004!<b>002 - Identificação do Título</b> (obrigatório)</a>
+!v004!Código que identifica eternamente o documento catalogado. Este código vai acompanhar o registro durante toda a sua existência mesmo quando exportado para o catálogo de outra biblioteca.
+!v004!Este código é gerado automaticamente pelo PHL através da data, hora, minuto e segundo da criação do registro e pelo código da chave de login do bibliotecário responsável pela criação do registro.
+!v004!Este código, uma vez criado, não deve ser modificado pois é um elemento utilizado como elo com outros registros (analíticas) da base de dados do catálogo e com os registros da base de dados de tombo (exemplares).
+
+!ID 000003
+!v004!<b>003 - Classificação</b> (essencial)</a>
+!v004!Número de classificação obtido através da tabela de classificação de assuntos adotada pela biblioteca (Ex: CDU, CDD, LC, etc.)
+!v004!O ícone <img src="/phl84/img/023.gif" border="0"> apresentado junto ao nome do campo abre um formulário que permite buscas na base de dados da tabela de classificação de assuntos. Para a seleção precisa do código a ser adotado, forneça um termo ou expressão que represente o assunto de interesse para visualizar as classes sugeridas. O PHL traz a base de dados da tabela de classificação com registros das áreas primárias da CDU. Havendo necessidade, esta tabela poderá ser incrementada com as áreas de níveis mais específicos. Caso a biblioteca opte por outro sistema de classificação, os registros correspondentes às classes da CDU podem ser eliminados ou substituidos por registro da classe a ser adotada.
+!v004!Identificando o código da classe de interesse, basta utilizar o recurso de selecionar, copiar e colar no campo de localização do formulário.
+!v004!<li><b><u>Para documentos de arquivo - Código de referência</b></u>
+!v004!Registre, obrigatoriamente, o código do país (BR), o código da entidade custodiadora e o código específico da unidade de descrição.
+!v004!<li><b><u>Para Objetos Museológicos - número do objeto</b></u>
+!v004!Forma tripartida; ano de entrada, número da coleção e número da peça.
+!v005!<li><b>Exemplo de classificação</b>
+!v005!   614.32
+!v005!<br>
+!v005!<li><b>Exemplo para doucmentos de arquivo</b>
+!v005!   BR MI SPI IR4 66 17-76
+!v005!   BR MN JF.0.DR,MN.108/49
+!v005!   Museu Nacional (Brasil)</li></br>
+!v005!<br>
+!v005!<li><b>Exemplo para objetos museólogicos</b>
+!v005!   01.2.311
+!v005!   2764 ART</br>
+
+!ID 000004
+!v004!<b>004 - Bases de dados</b> (facultativo)</a>
+!v004!Campo de dado utilizado para identificar outras bases de dados a qual o registro poderá ser exportado. Esta informação é necessária quando a biblioteca participa de alguma rede de catalogação cooperativa.
+!v005!Exemplo: LILACS
+
+!ID 000005
+!v004!<b>005 - Tipo de Documento</b> (obrigatório)
+!v004!Tipo de documento ou objeto para composição do formulário de entrada e edição de dados e como parâmetro para a definição das regras de empréstimos. O tipo de documento também poderá ser utilizado como filtro na rotina de buscas e como parâmetro para geração de relatórios estatísticos sobre a composição e uso do acervo.
+!v004!As opções apresentadas nesta caixa de seleção serão aquelas definidas na <b>Base de dados Formulário do Catálogo</b>. Cada registro desta base de dados irá corresponder a um tipo de documento previsto. Havendo necessidade, novos tipos podem ser criados.
+!v004!O tipo de documento ou objeto pode ser complementado com informações que caracterizam o tipo de suporte ou mídia do documento. Esta complementação é feita selecionando o tipo de suporte na caixa de seleção apresentada no campo #022 do formulário. Por exemplo, um documento do tipo "Vídeo" pode ser complementado com o tipo de suporte (CD, DVD, Película, VHS, etc.). Os tipos de suporte serão aqueles definidos na <b>Base de dados Tipo de suporte</b>.
+
+!ID 000006
+!v004!<b>006 - Nível Bibliográfico</b> (obrigatório)</a>
+!v004!Código que identifica o nível de tratamento bibliográfico dado na descrição do documento. Este código é gerado automaticamente pelo PHL a partir da escolha do nível de tratamento da caixa de seleção que antecede o formulário de entrada de dados.
+!v004!O PHL considera os seguintes níveis:
+!v004!<ul>
+!v004!<li><b>Monográfico (m):</b><br>Nível utilizado para a descrição de um documento no todo, desde que não pertença a uma série periódica. Por exemplo: Livro, Tese, CD, Vídeo, etc.</li>
+!v004!<li><b>Analítico monográfico (am):</b><br>Nível utilizado para a descrição de partes de um documento que não pertença a uma série periódica. Por exemplo: capítulos de livros, faixas de CDs, etc.</li>
+!v004!<li><b>Série (s):</b><br>Nível utilizado para a descrição de um fascículo de periódico.</li>
+!v004!<li><b>Analítico de série (as):</b><br>Nível utilizado para a descrição de artigos de periódicos.</li>
+!v004!<li><b>Coleção (c):</b><br>Nível utilizado para a descrição das coleções como um todo.</li>
+!v004!</ul>
+
+!ID 000007
+!v004!<b>007 - Tombos</b> (essencial)
+!v004!Campo criado e atualizado automaticamente pelo PHL a partir de informações dos exemplares registrados na base de dados de tombo. Toda vêz que um registro do catálogo é editado, o PHL lê a base de dados de tombo e obtém os tombos vinculados ao registro do catálogo e atualiza este campo com estas informações.
+!v004!O objetivo em se manter os números de tombos em um campo de dado do catálogo é permitir que sejam incluidos no índice do catálogo, permitindo buscas por eles.
+!v004!O conteúdo deste campo de dado não pode ser modificado através do formulário do catálogo, ele é gerado automaticamente a partir de informações da base de dados de tombo.
+
+!ID 000008
+!v004!<b>008 - Meio Eletrônico</b> (facultativo)
+!v004!Indicação do endereço (URL) onde se encontra o documento completo descrito neste registro.
+!v004!O endereço eletrônico deverá ser transcrito com o prefixo "^i". A data do último acesso deverá ser registrada com o prefixo "^u".
+!v004!Havendo necessidade de indicação de vários endereços, recomendamos utilizar o campo #084 para o registro dos outros links.
+!v005!Exemplo: ^ihttp://www.elysio.com.br^u3 maio de 2007
+
+!ID 000009
+!v004!<b>009 - Separata</b> (facultativo)
+!v004!Indicação de separatas. Quando selecionada a opção "Sim", a informação do documento no todo do qual a analítica é parte será apresentada na referência bibliográfica precedida da palavra "Separata de:".
+
+!ID 000010
+!v004!<b>010 - Autor (nível analítico)</b> (essencial)
+!v004!Nome da pessoa responsável pelo conteúdo intelectual de um documento que é parte integrante de outro (capítulo, artigo, etc.).
+!v004!<ul>
+!v004!<li>Existindo mais de uma pessoa responsável, seus nomes deverão ser registrados um em cada linha da caixa de texto do formulário;</li>
+!v004!<li>Registra-se o nome da pessoa responsável a partir do sobrenome, seguido de uma vírgula, um espaço e o nome propriamente dito. Deve-se registrá-lo de preferência na forma completa;</li>
+!v004!<li>Existindo informação tanto sobre autor pessoal como autor coletivo, dar preferência ao autor pessoal (campo 10);</li>
+!v004!<li>Existindo informação sobre a afiliação do autor, registra-se a Instituição e seus níveis hierárquicos, nos subcampos ^1, ^2 e ^3, do terceiro nível hierárquico em diante, separados por um ponto e espaço; para o País, registra-se no subcampo ^p; e para a Cidade, no subcampo ^c. O registro desta informação é facultativa.
+!v004!<li>Quando houver indicação explícita de responsabilidade pelo conjunto da obra, em coletâneas de vários autores, registra-se o nome do responsável, seguido da abreviatura correspondente ao tipo de participação, tais como:
+!v004!(Org.) - Organizador<br>
+!v004!(Coord.) - Coordenador<br>
+!v004!(Ed.) - Editor<br>
+!v004!(Comp.) - Compilador
+!v004!</ul>
+!v005!Exemplo: SILVA, Regina
+!v005!         SIMIONE, Pablo Martins
+
+!ID 000011
+!v004!<b>011 - Autor Coletivo (nível analítico)</b> (facultativo)
+!v004!Nome da instituição responsável pelo conteúdo intelectual de um documento que é parte integrante de outro (artigo, capítulo, etc.). O nome deve ser registrado segundo as regras do AACR2, ABNT NBR6023 ou Vancouver.
+!v005!Exemplo: Universidade de São Paulo
+!v005!         Universidade Federal da Bahia
+
+!ID 000012
+!v004!<b>012 - Título e Subtítulo (nível analítico)</b> (essencial)
+!v004!Título e subtítulo da parte do documento, transcrito segundo as regras do AACR2, ABNT NBR6023 ou Vancouver. Havendo subtítulo, este deve ser transcrito logo após o título, separado por dois pontos e espaço.
+!v005!Exemplo: Desmatamento da amazônia: realidade que incomoda
+
+!ID 000013
+!v004!<b>013 - Título traduzido (nível analítico)</b> (facultativo)
+!v004!Tradução do título registrado no campo #012 ou título em outro idioma.
+!v005!Exemplo: Hilstory of Brazil
+
+!ID 000014
+!v004!<b>014 - Paginação</b> (essencial)
+!v004!Intervalo de páginas do documento descrito. No caso de documentos com outro dipo de divisão, a informação deverá ser registrada no campo #038. A abreviatura "p." que antecede ao intervalo de páginas deverá ser omitida. Ela será exibida automaticamente na referência bibliográfica.
+!v005!Exemplo: 22-39
+
+!ID 000015
+!v004!<b>015 - Créditos ou Ementa</b> (facultativo)
+!v004!Créditos sobre a produção no caso de documentos de áudio ou vídeo.
+!v004!Ementa do documento no caso de legislação.
+!v004!Nome do orientador no caso de tese, trabalho de conclusão de curso ou monografias.
+!v004!Havendo mais que um ítem da ementa ou várias notas de créditos, estas deverão ser registradas, uma em cada linha na caixa de texto do formulário.
+!v005!Exemplos: Direção artística: Miguel Propschi
+!v005!          Traduzido do original: The man and the hearth
+!v005!          Orientador: José Paulo Silva
+!v005!          Ilustração de Ciça
+
+!ID 000016
+!v004!<b>016 - Autor/Produtor</b> (essencial)
+!v004!Nome do responsável pela autoria intelectual do documento tratado no todo. Havendo mais que um nome, estes deverão ser registrados um em cada linha da caixa de texto do formulário.
+!v004!Recomenda-se que o nome seja padronizado para evitar que um mesmo autor seja representado na base de dados com nomes transcritos de formas diferentes.
+!v004!Logo acima da caixa de texto, são apresentados 2 links que podem ser utilizados como auxílio na padronização de nomes. O link <b>DB Autoridades</b> irá fornecer acesso ao conteúdo da base de dados de "Autoridades". Esta base de dados é distribuída sem nenhum registro para permitir que cada biblioteca tenha liberdade de alimentá-la com os nomes de uso mais frequentes. O link <b>DB Catálogo</b> irá fornecer acesso ao índice de autores dos documentos já catalogados e registrados na base de dados Catálogo.
+!v004!Registra-se o nome do autor pelo último sobrenome, seguido do(s) prenome(s) e outros sobrenomes, abreviado(s) ou não. Caso deseje que o nome seja apresentado segundos as regras da ABNT, o sobrenome deverá ser transcrito em caixa alta (maiúsculas).
+!v004!Quando houver indicação explícita de responsabilidade pelo conjunto da obra, em coletâneas de vários autores, registra-se o nome do responsável seguido da abreviatura correspondente ao tipo de participação, tais como:
+!v004!<tt>(Org.) - Organizador<br>
+!v004!(Coord.) - Coordenador<br>
+!v004!(Ed.) - Editor<br>
+!v004!(Comp.) - Compilador</tt>
+!v004!Os outros níveis de responsabilidade tais como: diretor, ilustrador, tradutor, etc., deverão ser registrados no campo #015.
+!v004!<li><b><u>Para documentos de arquivo/Obdjetos Museológicos - Produtor</b></u>
+!v004!Seja o produtor uma pessoa, uma entidade coletiva ou família, registre a forma autorizada do nome, recomenda-se, para a forma normalizada do nome, sejam considerados o Código de Catalogação Anglo-Americano (AACR2) e a norma NBR 1084, da Associação Brasileira de Normas Técnicas
+!v005!<li><b>Exemplo:</b></li>
+!v005!              <tt>PIAZZA, Míriam
+!v005!              SOUTO PEREIRA, Roberto (Ed.)</tt></br>
+!v005!              GOULART, João, 1919-1976
+!v005!              SCHULTZ, Harald</li></br>
+!v005!              Índio kafukaina Kalapalo  (Iniciais em maiúscula, contando com o termo "Índio" e nome completo do indivíduo)
+
+
+!ID 000017
+!v004!<b>017 - Autor Coletivo/Produtor Institucional/Órgão produtor da unidade de descrição (nível monográfico)</b> (facultativo / essencial)
+!v004!Nome da entidade responsável pela autoria intelectual do documento tratado no todo, segundo as regras do AACR2, ABNT NBR6023 ou Vancouver. Havendo mais que uma entidade, estas deverão ser registradas uma em cada linha da caixa de texto do formulário.
+!v004!No caso de eventos (congressos, seminários, conferências, etc.) o preenchimento deste campo de dado se torna <b>essencial</b>.
+!v004!<li><b><u>Para Objetos Museológicos</b></u>
+!v004!Indique com iniciais maíuscula o nome do responsável pela guarda do material
+!v005!<li><b>Exemplo:</b></li>
+!v005!               Instituto de Pesquisas Energéticas e Nucleares
+!v005!               Museu do Índio
+
+!ID 000018
+!v004!<b>018 - Título</b> (obrigatório)
+!v004!Título do documento tratado no todo, segundo as regras do Código de Catalogação AACR2.
+!v004!No caso de filmes, fitas de vídeo e DVD, recomenda-se transcrever a primeira palavra do título em caixa alta para que a citação bibliográfica seja apresentada conforme as regras da ABNT NBR6023. Havendo subtítulo, este deverá ser registrado no campo #181.
+!v004!<li><b><u>Para documentos de arquivo</b></u>
+!v004!Deve-se registrar o título original. Caso isso não seja possível, deve-se atribuir um título elaborado a partir de elementos de informação presentes na unidade que está sendo descrita entre colchetes.
+!v004!Quando o documento não possuir um título devemos atribui um pensando sempre em: 
+!v004!       <b>o que, de que, para quem, sobre o que</b>.
+!v004!<li><b><u>Para Objetos Museológicos</b></u>
+!v004!Nome técnico da peça
+!v005!<li><b>Exemplo para bibliotecas:</b></li>
+!v005!               Estudo da influência climática no nordeste
+!v005!<li><b>Exemplo para documentos de arquivo:</b></li>
+!v005!               [Ofício encaminhando as portarias do ministro da Educação e Saúde Pública 
+!v005!               nomeando Carlos de Magalhães Lebéis, Jônatas Serrano e Roberto das Trinas 
+!v005!               da Silveira para a Comissão de Censura  cinematográfica]
+!v005!<li><b>Exemplo para objetos museológicos:</b></li>
+!v005!               Carimbo-corda
+!v005!               Xicara de chá
+
+!ID 000019
+!v004!<b>019 - Título traduzido</b> (facultativo)
+!v004!Tradução do título registrado no campo #018 para o inglês ou título em outro idioma.
+!v004!<li><b><u>Para Objetos Museológicos</b></u>
+!v004!Nome do objeto em língua nativa sempre entre aspas (")
+!v005!<li><b>Exemplo:</b></li>
+!v005!               Study of climatic infuence in northeast               I
+
+!ID 000020
+!v004!<b>020 - Total de Páginas</b> (essencial)
+!v004!Número total de páginas do documento. No caso de documentos não convencionais que utilizam outro tipo de divisão, a descrição deverá ser registrada no campo #038. A abreviatura "p." deverá ser omitida. Ela será apresentada automaticamente na referência bibliográfica.
+!v005!Exemplo: 207
+
+!ID 000021
+!v004!<b>021 - Volume (nível monográfico)</b> (essencial)
+!v004!Número que identifica o volume do documento que é parte de uma coleção tratada a nível monográfico. O termo volume significa o volume propriamente dito ou também suas possíveis subdivisões como tomo, parte, etc.
+!v004!O registro desse campo torna-se obrigatório quando o nível de tratamento dado ao documento for Monográfico/Coleção ou Analítico/Monográfico/Coleção.
+!v004!Registra-se o volume, tomo ou parte precedido da abreviatura que o identifique.
+!v004!Se o volume tiver subdivisões, registram-se estas separadas por uma vírgula e sem espaço intermediário.
+!v005!Exemplo: v.3
+
+!ID 000022
+!v004!<b>022 - Tipo de suporte</b> (obrigatório)
+!v004!Tipo de suporte ou de mídia utilizada pelo documento. Por exemplo:<ul><li>Acetato</li><li>Cartolina, cartão</li><li>Cassete</li><li>CD</li><li>CD-ROM</li><li>Cerâmica</li><li>Diapositivo</li><li>Disco</li><li>Disquete</li><li>DVD</li><li>Ferro, aço</li><li>Fibra sintética</li><li>Fibra vegetal</li><li>Impresso</li><li>Madeira</li><li>Microforma</li><li>Película</li><li>Tecido</li><li>Tela</li><li>Videocassete</li><li>Vidro</li><li>WWW</li></ul>
+
+!ID 000023
+!v004!<b>023 - Autor (nível coleção)</b> (facultativo)
+!v004!Nome ou nomes dos autores de uma coleção segundo as regras AACR2, ABNT ou Vancouver.
+!v004!<u>Nota:</u> <i>Este campo foi considerado pelo PHL somente para permitir compatibilidade com a base de dados LILACS/Bireme. Não recomendamos seu uso na biblioteca por ser um nível de tratamento muito genérico. Cada volume de uma coleção deverá ser tratado a nível monográfico e os dados da coleção registrado no campo #030 destinado ao registro das séries periódicas, monográficas e coleções.</i>
+
+!ID 000024
+!v004!<b>024 - Autor coletivo (nível coleção)</b> (facultativo)
+!v004!Nome ou nomes das instituições responsáveis pelo conteúdo intelectual de uma coleção segundo as regras AACR2, ABNT ou Vancouver.
+!v004!<u>Nota:</u> <i>Este campo foi considerado pelo PHL somente para permitir compatibilidade com a base de dados LILACS/Bireme. Não recomendamos seu uso na biblioteca por ser um nível de tratamento muito genérico. Cada volume de uma coleção deverá ser tratado a nível monográfico e os dados da coleção registrado no campo #030 destinado ao registro das séries periódicas, monográficas e coleções.</i>
+
+!ID 000025
+!v004!<b>025 - Título (nível coleção)</b> (facultativo)
+!v004!Título de uma coleção segundo as regras AACR2, ABNT ou Vancouver.
+!v004!<u>Nota:</u> <i>Este campo foi considerado pelo PHL somente para permitir compatibilidade com a base de dados LILACS/Bireme. Não recomendamos seu uso na biblioteca por ser um nível de tratamento muito genérico. Cada volume de uma coleção deverá ser tratado a nível monográfico e o título da coleção registrado no campo #030 destinado ao registro das séries periódicas, monográficas e coleções.</i>
+!v004!<li><b><u>Para Objetos Museológicos</b></u>
+!v004!Coleção/Doador
+!v004!Faça a indicação do doador da coleção usando sempre as iniciais em maiúscula
+!v005!<li><b>Exemplo para objetos museológicos</b></li>
+!v005!               Museu do Índio
+!v005!               Darcy Ribeiro
+!v005!               Berta G. Ribeiro
+!v005!               Eduardo Galvão
+
+!ID 000026
+!v004!<b>026 - Tipo de Coleção</b> (obrigatório)
+!v004!Tipo da coleção no acervo da biblioteca na qual o documento é parte. As opções apresentadas na caixa de seleção do formulário serão aquelas definidas na <b>Base de dados Tipo de coleção</b>.
+!v004!Algumas bibliotecas organizam seus acervos em coleções, separando-o em estantes ou salas específicas, reunindo os documentos segundo algumas características de seu conteúdo ou suporte. Por exemplo, coleção das obras de referência, coleção de vídeos, coleção de CDs, coleção de obras raras, coleção de relatórios, coleção de teses, coleção de normas, coleção de mapas, etc.
+
+!ID 000027
+!v004!<b>027 - Total de volumes (nível coleção)</b> (facultativo)
+!v004!Total de volumes que compõe uma coleção.
+!v004!<u>Nota:</u> <i>Este campo foi considerado pelo PHL somente para permitir compatibilidade com a base de dados LILACS/Bireme. Não recomendamos seu uso na biblioteca. Cada volume de uma coleção deverá ser tratado a nível monográfico e o título da coleção registrado no campo #030 destinado ao registro das séries periódicas, monográficas e coleções.</i>
+
+!ID 000028
+!v004!<b>028 - Nacionalidade do documento</b> (facultativo)
+!v004!Indicação da nacionalidade do documento para efeito de relatórios estatísticos exigidos pelo MEC.
+!v004!O registro da informação sobre a nacionalidade do documento é essencial para bibliotecas de instituições de ensino obrigadas a fornecer relatórios estatísticos para o MEC (Ministério da Educação) para reconhecimento de novos cursos ou para avaliação de cursos já reconhecidos.
+!v004!As opções apresentadas na caixa de seleção são aquelas definidas na "Base de dados Tipo de procedência".
+
+!ID 000029
+!v004!<b>029 - Divulgar</b> (facultativo)
+!v004!Controle da divulgação do documento na lista de aquisições do mês corrente.
+!v004!<blockquote>
+!v004!Sim = Será exibido quando o usuário clicar no link "Aquisições do mês" e o documento tiver sido catalogado no mês corrente;
+!v004!Não = Não será exibido na lista de gerada pelo link "Aquisições do mês" mesmo que o documento tenha sido catalogado no mês corrente.
+
+!ID 000030
+!v004!<b>030 - Nota de Série</b> (essencial)
+!v004!Título de uma série periódica ou monográfica. Utiliza-se  também este campo para registro do título de uma série monográfica ou coleção seguido do número do volume correspondente, separado por vírgula.
+!v004!<u>Nota:</u> <i>Caso a biblioteca opte pelo formato Vancouver como padrão para apresentação das referências bibliográficas, o título de periódico deverá ser transcrito de forma abreviada conforme as regras internacionais.</i>
+!v005!Exemplos:
+!v005!     Revista Lationo-americana de filosofia
+!v005!     Novos rumos, 4
+
+!ID 000031
+!v004!<b>031 - Ano e/ou volume</b> (essencial)
+!v004!Indicação correspondente à maior subdivisão de uma série periódica. Normalmente apresentada como ano ou volume ou ano e volume.
+!v004!Não confundir o ano (subdivisão) com o ano de publicação do periódico que deverá ser registrado no campo #64 e #65.
+!v005!Exemplos:
+!v005!    ano 10
+!v005!    v.3
+!v005!    ano 12, v.9
+
+!ID 000032
+!v004!<b>032 - Fascículo</b> (essencial)
+!v004!Indicação do número correspondente ao fascículo do periódico. Normalmente os volumes ou anos de uma série periódicas são subdivididos em partes numeradas e é este número que deve ser registrado neste campo com o prefixo "n.", sem espaços entre o prefixo e o número.
+!v005!Exemplo: n.9
+
+!ID 000033
+!v004!<b>033 - Número do título no Kardex</b> (obrigatório)
+!v004!Número que identifica a coleção do periódico na base de dados Kardex. Este campo é preenchido automaticamente pelo PHL com o número que identifica o título do periódico obtido a partir do campo #771 da base de dados kardex.
+!v004!<u>Nota:</u> <i>Este número será utilizado como um elo de ligação entre o registro descritivo da coleção, fascículo ou artigo com o registro do título no kardex para fins de emissão de relatórios estatísticos.</i>
+!v005!Exemplo: 504021545571
+
+!ID 000034
+!v004!<b>034 - Suplemento</b> (essencial)
+!v004!Nome do suplemento de uma série periódica.
+!v005!Exemplo: Caderno de informática
+
+!ID 000035
+!v004!<b>035 - ISSN - <i>International Standard Serial Number</i></b> (essencial)
+!v004!Número que identifica internacionalmente uma série periódica. O número deverá ser registrado na forma em que aparece na publicação. O prefixo ISSN deverá ser omitido.
+!v005!Exemplo: 0100-7122
+
+!ID 000038
+!v004!<b>038 - Informação Descritiva do Suporte</b> (essencial)
+!v004!Informações descritivas sobre características físicas do suporte material que possui outra características que não seja a divisão por páginas. Tais como, folhas, dimensões, peso, tempo de duração, tamanho, escalas, etc.
+!v004!<li><b><u>Para Objetos Museológicos</b></u>
+!v004!Dimensões da peça.Na ordem: largura, altura e profundidade (L x A x P)
+!v004!<br>Usa-se, a princípio, o número da medida, depois o nome da medida (em minúscula),sequenciado por ponto e vírgula entre tais. Entre parênteses, informações que especifiquem ou detalhem a medida.</br>
+!v005!<li><b>Exemplo para bibliotecas,</b></li>
+!v005!
+!v005!12 f
+!v005!1 folder
+!v005!5 CD-ROM
+!v005!1 fita de vídeo (30 min), VHS, son., color
+!v005!1 filme (106 min), son., color., 35 mm
+!v005!1 DVD (117 min), widescreen, color
+!v005!1 fot., color. 16 cm x 56 cm
+!v005!22 transparências, color., 25 cm x 20 cm
+!v005!31 diapositivos: color + 1 fita cassete sonoro (15 min) mono
+!v005!1 grav., serigraf., color., 46 cm x 63 cm
+!v005!1 original de arte, óleo sobre tela, 40 cm x 50 cm
+!v005!Altura: 1083 pixels. Largura: 827 pixels. 300 dpi. 32 BIT CMYK, 3.5 Mb
+!v005!Escala 1:2000
+!v005!1 mapa, color., 79 cm x 95 cm. Escala 1:600.000
+!v005!Fx 28, n. 15. Escala 1:35.000
+!v005!Imagem de satélite. Canais 3, 4 e composição colorida 3, 4 e 5.
+!v005!Escala 1:100.000
+!v005!Imagem de satélite: 1999071318.GIF: 557 Kb
+!v005!1 CD (50 min)
+!v005!1 disco sonoro (45 min), 33 1/3 rpm, estereo, 12 pol
+!v005!2 fitas cassete (120 min), 3 3/4 pps, estereo
+!v005!1 partitura (73 p.)
+!v005!10,7 cm de diâm. x 24,5 cm de alt
+!v005!17 cm de alt
+!v005!5 disquetes, 3 1/2 pol.
+!v005!<br>
+!v005!<li><b>Exemplo para objetos museológicos</b></li>
+!v005!10,0 cm de comprimento (haste); 19,2 cm de altura</br>
+
+!ID 000039
+!v004!<b>039 - Nível de Descrição Arquivística</b> (facultativo)
+!v004!Nível de descrição arquivística conforme regra NOBRADE (Norma Brasileira de Descrição Arquivística).
+!v004!Identificar o nível da unidade de descrição em relação às demais.
+!v004!São considerados seis principais níveis de descrição, a saber:
+!v004!    nível 0 = acervo da entidade custodiadora;
+!v004!    nível 1 = fundo ou coleção;
+!v004!    nível 2 = seção;
+!v004!    nível 3 = série;
+!v004!    nível 4 = dossiê ou processo;
+!v004!    nível 5 = item documental.
+
+!ID 000040
+!v004!<b>040 - Idioma do Texto</b> (essencial)
+!v004!Idioma ou idiomas do documento.
+!v004!O registro de informação sobre o idioma do documento poderá ser utilizada na emissão de relatórios estatísticos do acervo e também como filtro de busca que será apresentado em uma caixa de seleção de idiomas entres as opções de preferências.
+!v004!As opções de idioma são obtidas a partir da <b>Base de dados Tipo de idioma</b>. Havendo necessidade, novas opções poderão ser acrescentadas.
+!v004!Caso o documento seja multilingue, mantenha a tecla [<b>ctrl</b>] pressionada, para a seleção de múltiplos códigos.
+
+!ID 000041
+!v004!<b>041 - Idioma do Resumo</b> (facultativo)
+!v004!Idioma do resumo do documento. As opções de idioma apresentadas na caixa de seleção são aquelas previstas na <b>Base de dados de Tipo de idioma.</b> Havendo necessidade, novos idiomas poderão ser acrescentados.
+
+!ID 000043
+!v004!<b>043 - Nome da etnia/Povo (Museu)</b> (facultativo)
+!v004!Nome da etinia/Povo relacionado ao objeto do museu.
+!v004!Primeira letra em maiúscula
+!v005!<li><b>Exemplo para objetos museológicos</b></li>
+!v005!               Wajãpi
+!v005!               Portugueses
+
+!ID 000050
+!v004!<b>050 - Nome da instituição na qual a tese foi apresentada</b> (essencial)
+!v004!Nome da instituição na qual a tese, dissertação ou trabalho de conclusão de curso foi apresentada como requisito para obtenção de um grau ou título acadêmico. Registra-se o nome conforme as regras de entrada do AACR2.
+!v005!Exemplo: Universidade de São Paulo. Faculdade de Saúde Pública
+
+!ID 000051
+!v004!<b>051 - Notas de tese, dissertação ou trabalho de conclusão de curso</b> (essencial)
+!v004!Identificação do tipo de tese (tese, dissertação ou trabalho acadêmico) e grau acadêmico que se obtém com a apresentação de um trabalho acadêmico. Registra-se o tipo precedido do prefixo "^a" e o grau acadêmico no idioma do documento, precedido do prefixo "^b".
+!v005!Exemplos: ^aTese^bDoutorado em Nutrição
+!v005!          ^aTrabalho de conclusão de curso^bEspecialização
+!v005!          ^aDissertação^bMestrado em Ciências Sociais
+
+!ID 000052
+!v004!<b>052 - Instituição patrocinadora do evento</b> (facultativo)
+!v004!Nome ou nomes das instituções patrocinadoras do evento (reunião, encontro, congresso, seminário, conferência, etc).
+!v005!Exemplo: Universidade de Campinas
+!v005!         Laboratório Karmin
+
+!ID 000053
+!v004!<b>053 - Nome do evento</b> (facultativo)
+!v004!Nome do evento (reunião, seminário, encontro, congresso, conferência, etc.) seguido de seu número separado por vírgula.
+!v004!Exemplo: Congresso Brasileiro de Oftalmologia, 8
+!v004!<u>Nota:</u> <i>Este campo foi previsto para se manter compatibilidade com a base de dados LILACS/Bireme. Recomendamos o uso do campo de autor coletivo, campo #017 para o registro do nome do evento, por ser considerado para fins catalográficos como o autor intelectual do documento.</i>
+
+!ID 000054
+!v004!<b>054 - Data do Evento</b> (essencial)
+!v004!Data de realização do evento (encontro, seminário, congresso, conferência, reunião, etc.).
+!v005!Exemplo: 14-17 jan. 2001
+
+!ID 000055
+!v004!<b>055 - Data patronizada do início do evento</b> (facultativo)
+!v004!Data do início do evento no padrão AAAAMMDD conforme norma ISO.
+!v005!Exemplo: 20010114
+
+!ID 000056
+!v004!<b>056 - Local de realização do evento</b> (essencial)
+!v004!Nome da cidade onde se realizou o evento (seminário, congresso, conferência, reunião, etc).
+!v005!Exemplo: São Paulo
+
+!ID 000057
+!v004!<b>057 - País do evento</b> (facultativo)
+!v004!Nome do país de realização do evento (reunião, encontro, seminário, congresso, conferência, etc.).
+!v005!Exemplo: Estados Unidos
+
+!ID 000058
+!v004!<b>058 - Patrocinadores do Projeto</b> (facultativo)
+!v004!Nome ou nomes dos patrocinadores do projeto de pesquisa.
+!v005!Exemplo: Infoarte
+!v005!         Conectlan
+
+!ID 000059
+!v004!<b>059 - Nome do Projeto de Pesquisa</b> (facultativo)
+!v004!Nome do projeto de pesquisa.
+!v005!Exemplo: Redes neurais
+
+!ID 000060
+!v004!<b>060 - Número do Projeto de Pesquisa</b> (facultativo)
+!v004!Registra-se o número ou o código que identifica o projeto de pesquisa.
+!v005!Exemplo: 1234
+
+!ID 000061
+!v004!<b>061 - Notas Gerais</b> (facultativo)
+!v004!Notas gerais acerca do documento segundo os padrões definidos na ABNT NBR6023.
+!v004!Fornecer informação que não possa ser incluída em nenhuma das outras áreas ou que se destine a completar informações que já tenham sido fornecidas.
+!v004!
+!v004!Registre neste elemento informação que, por sua especificidade, não é pertinente a nenhum dos elementos de descrição definidos, ou complete informações que já tenham sido fornecidas, devendo, neste caso, ser indicado o elemento de descrição ao qual se faz referência.
+!v004!
+!v004!Neste elemento podem ser registradas informações cuja especificidade implique inexistência de elemento de descrição específico ou para complementar, relativizar ou explicar informação registrada em elementos de descrição anteriores. Deve-se, entretanto, avaliar sempre a pertinência do registro da informação.
+!v005!<li><b>Exemplo para bibliotecas,</b></li>
+!v005!               Contém um CD-ROM como encarte
+
+!ID 000062
+!v004!<b>062 - Editora / Produtora / Gravadora</b> (obrigatório)
+!v004!Nome da editora, produtora, gravadora ou empresa responsável pela publicação do documento. Na ausência desta informação, registra-se [s.n.].
+!v005!Exemplo: Vozes
+
+!ID 000063
+!v004!<b>063 - Edição</b> (essencial)
+!v004!Número da edição do documento quando este não for a primeira edição e indicação das revisões quando for o caso.
+!v005!Exemplo (1): 2 ed
+!v005!Exemplo (2): 2 ed. rev. aum
+
+!ID 000064
+!v004!<b>064 - Data de Publicação / Produção / Gravação</b> (obrigatório)
+!v004!Data de publicação, produção ou gravação do documento. Quando a data for desconhecida, registra-se [s.d.].
+!v004!<li><b>Para documentos de Arquivos</b>
+!v004!Data da produção do material conforme aparece no documento lembrando-se das abreviações dos meses quando houver.
+!v004!<li><b>Para Peças de Museu</b>
+!v004!Ano de confecção do objeto
+
+!ID 000065
+!v004!<b>065 - Data de Publicação Padronizada</b> (obrigatório)
+!v004!Padronização da data registrada no campo (064 - Data), no padrão ISO (AAAAMMDD) para efeito de busca e ordenação do resultado de uma busca ou geração de relatórios e gráficos estatísticos.
+!v004!Exemplo: 19880900
+!v004!<u>Nota:</u> <i>Quando o mês e/ou o dia for desconhecido, registra-se "00". Exemplo: 19880000</i>
+
+!ID 000066
+!v004!<b>066 - Cidade de Publicação / Produção / Gravação</b> (obrigatório)
+!v004!Nome da cidade onde foi publicado, produzido ou gravado o documento ou objeto. Quando a cidade não for conhecida, transcreve-se [s.l.]
+!v004!<li><b><u>Para Objetos Museológicos</b></u>
+!v004!Deve-se registrar o local de produção da unidade de descrição, levando em consideração a nomenclatura de época, seguido, quando for o caso, de outras informações importantes para a identificação da localidade, como município, departamento, província, estado, país etc.
+!v005!Exemplo: São Paulo
+
+!ID 000067
+!v004!<b>067 - País de Publicação</b> (facultativo)
+!v004!Nome do país de publicação do documento.
+!v004!<li><b><u>Para Objetos Museológicos</b></u>
+!v004!As duas primeiras letras do país. Br
+!v005!Exemplo: Costa Rica
+
+!ID 000068
+!v004!<b>068 - Número de publicação de organismos internacionais</b> (facultativo)
+!v004!Código atribuído por organismos internacionais para a identificação de suas publicações.
+!v004!Exemplo: UNESCO-023VA
+
+!ID 000069
+!v004!<b>069 - ISBN</b> - <i>International Standard Book Number</i> (facultativo)
+!v004!Número que identifica internacionalmente uma monografia. O número deverá ser transcrito na forma em que aparece na publicação, omitindo-se o prefixo "ISBN".
+!v005!Exemplo: 85-7061-209-5
+
+!ID 000070
+!v004!<b>070 - Imagem do Objeto</b> (facultativo)
+!v004!Endereço (URL) do arquivo que corresponde a imagem do objeto catalogado. Esta imagem será apresentada à esquerda da citacão bibliográfica no resultado de uma busca.
+!v004!Exemplo: http://www.elysio.com.br/p2341.jpg
+!v004!Para os usuários da versão "localhost", basta instalar o arquivo "nomedoarquivo.jpg" no diretório "c:\phl84\" e utilizar neste campo a URL:
+!v004!http://localhost:8080/nomedoarquivo.jpg
+!v004!Para os usuários da versão licenciada para servidores de rede, o primeiro passo será solicitar ao administrador do servidor que crie um diretório público no servidor para o armazenamento dos arquivos correspondentes às imagens das capas e que crie uma conta de acesso FTP ou SFTP para a transferência destes arquivos ao diretório criado. O próprio administrador do servidor é quem vai lhe orientar o procedimento de transferência que deverá ser adotado, se FTP ou SFTP, etc., etc. Se os arquivos forem transferidos para o diretório "/capas" do servidor, a URL a ser fornecida neste campo será:
+!v004!http://dominiodoseuservidor/capas/nomedoarquivo.jpg
+!v004!O PHL permite a apresentação de imagens que estão hospedadas em outros servidores. Muitas bibliotecas preferem não digitalizar as capas e nem utilizar espaço em seus servidores para hospedá-las. Simplesmente registram a URL da imagem obtida do site de uma editora ou livraria. Neste caso, o PHL irá apresentar a imagem que estiver disponível na URL fornecida.
+
+!ID 000071
+!v004!<b>071 - Tipo de Conteúdo</b> (obrigatório)
+!v004!Tipo de conteúdo ou tipo de informação contida no documento.
+!v004!As opções apresentadas na caixa de seleção do formulário, serão aquelas definidas na <b>Base de dados Tipo de conteúdo</b>.
+!v004!Havendo necessidade, novas opções de tipo de conteúdo poderão ser criadas.
+
+!ID 000072
+!v004!<b>072 - Total de Referências</b> (facultativo)
+!v004!Número total de referências bibliográficas apresentadas no documento.
+!v005!Exemplo: 322
+
+!ID 000073
+!v004!<b>073 - Total de Referências</b> (facultativo)
+!v004!Número total de referências bibliográficas apresentadas no documento.
+!v005!Exemplo: 322
+
+
+!ID 000074
+!v004!<b>074 - Alcance Temporal - Desde</b> (facultativo)
+!v004!Ano inicial do período que representa o conteúdo de um documento que contenha dados históricos ou estatísticos.
+!v005!Exemplo: 1960
+
+!ID 000075
+!v004!<b>075 - Alcance Temporal - Até</b> (facultativo)
+!v004!Ano final do período que representa o conteúdo de um documento que contenha dados históricos ou estatísticos.
+!v005!Exemplo: 1970
+
+!ID 000076
+!v004!<b>076 - Descritor Precodificado</b> (facultativo)
+!v004!Termos ou códigos predefinidos que representam o conteúdo de um documento.
+!v004!<u>Nota:</u> <i>Este campo de dados foi previsto para manter compatibilidade com a base de dados LILACS/Bireme. Recomendamos que os descritores de conteúdo sejam registrados no campo #087 (Descritores principais) ou campo #088 (Descritores secundários).</i>
+!v005!Exemplo: Idoso
+
+!ID 000078
+!v004!<b>078 - Biografado</b> (facultativo)
+!v004!Nome do biografado.
+!v004!Exemplo: Osvaldo Cruz
+!v004!<u>Nota></u> <i>Este campo está previsto para manter compatibilidade com a base de dados LILACS/Bireme. Se sua biblioteca não contribui com a alimentação desta base de dados, recomendamos que o nome do indivíduo seja registrado no campo #087 (Descritores) ou #088 (Descritores secundários).</i>
+
+!ID 000079
+!v004!<b>079 - Bibliografia de cursos</b> (facultativo)
+!v004!Nome do(s) curso(s) para o(s) qual(is) o título seja indicado para compor sua bibliografia.
+!v004!O registro desta informação é essencial para bibliotecas de instituições de ensino obrigadas a fornecer relatórios estatísticos para o MEC (Ministério da Educação) para reconhecimento de novos cursos ou para avaliação de cursos já reconhecidos.
+!v004!As opções apresentadas na caixa de seleção do formulário serão aquelas definidas na tabela de <b>Tipos de cursos</b>. Havendo necessidade, novas opções poderão ser acrescentadas, habilitadas ou desabilitadas.
+!v004!Para a seleção de mais que uma opção da caixa de texto, mantenha a tecla [CTRL] pressionada durante a seleção.
+!v004!Se a caixa de seleção estiver vazia, significa que nenhum curso da base de dados de configurações de <b>Tipos de Cursos</b> foi definido para ser apresentado como opção de escolha.
+
+!ID 000082
+!v004!<b>082 - Outras Localidades</b> (facultativo)
+!v004!Descritores utilizados para representar conceitos geográficos.
+!v004!<u>Nota:</u> <i>Este campo foi previsto para se manter compatibilidade com a base de dados LILACS/Bireme. Se sua biblioteca não coopera com a alimentação desta base de dados, recomendamos utilizar o campo #087 (Descritores) ou #088 (Descritores secundários) para o registro desta informação.</i>
+!v005!Exemplo: Bacia do Rio Amazonas
+!v005!         Rio Negro
+!v005!         Rio Amazonas
+
+!ID 000083
+!v004!<b>083 - Resumo</b> (facultativo)
+!v004!Resumo ou dados descritivos do documento ou objeto.
+!v004!De preferência, o resumo não deve conter mais que 250 palavras.
+!v004!<li><b><u>Para Documentos de Arquivo
+!v004!Âmbito e conteúdo
+!v004!<li><b><u>Para Objetos Museológicos</b></u>
+!v004!Descrição do objeto
+!v004!Iniciar sempre com o nome técnico da peça Primeira letra em maiúscula.
+!v004!<li><b>Para documentos de Arquivos</b>
+!v004!Descreva de forma clara e objetiva o conteúdo do documento começando sempre pelo título do documento.
+!v005!<li><b>Exemplo para doucmentos de arquivo</b>
+!v005!               Guia de remessa que refere-se ao encaminhamento de material de transporte da Delegacia para o Posto Indígena Tocantinia
+!v005!<br>
+!v005!<li><b>Exemplo para objetos museólogicos</b>
+!v005!               Carimbo corda constituído de rolete de madeira não identificada revestido com fios de algodão. Apresenta cabo roliço da mesma matéria-prima.
+
+
+!ID 000084
+!v004!<b>084 - Código HTML</b> (facultativo)
+!v004!Código HTML que será interpretado pelo PHL. Este recurso quando utilizado com criatividade pode permitir a inclusão de links para outros sites, imagens, sons, videos, tabelas, etc. como parte da citação bibliográfica, interpretando todos os comandos disponíveis na linguagem html.
+!v005!<u>Exemplo 1:</u>
+!v005!&lt;a href="http://www.elysio.com.br"&gt;Site do Elysio&lt;/a&gt;
+!v005!Este exemplo vai gerar o link <a href=http://www.elysio.com.br>Site do Elysio</a>
+!v005!<u>Exemplo 2:</u>
+!v005!&lt;img src="http://www.elysio.com.br/site/gifs/phl.jpg" border="0"&gt;
+!v005!Este exemplo vai mostrar a imagem <img src="http://www.elysio.com.br/site/gifs/phl.jpg" border="0">
+
+!ID 000085
+!v004!<b>085 - Área do Conhecimento</b> (facultativo)
+!v004!Area do conhecimento para efeito de relatórios do MEC.
+!v004!O registro da informação sobre a área do conhecimento à qual o documento se insere é essencial para bibliotecas de instituições de ensino obrigadas a fornecer relatórios estatísticos para o MEC (Ministério da Educação) para reconhecimento de novos cursos ou para avaliação de cursos já reconhecidos.
+!v004!As opções apresentadas na caixa de seleção são aquelas recomendadas pelo MEC.
+!v004!Somente os registros que estiverem com o campo de área temática preenchido é que serão contabilizados nos relatórios estatísticos gerados pelo PHL.
+
+!ID 000086
+!v004!<b>086 - Notas de conteúdo</b> (facultativo)
+!v004!Notas relativas ao conteúdo do documento. Cada nota deverá ser transcrita em uma linha da caixa de texto.
+!v005!Exemplo: Capítulo I - História da Medicina
+!v005!         Capítulo II - História da Educação
+
+!ID 000087
+!v004!<b>087 - Descritores principais</b> (essencial)
+!v004!Palavras chaves que representam o conteúdo temático principal do documento.
+!v004!Este campo de dado dispõe de um subcampo (subcampo "s") que permite vincular um qualificador ao descritor.
+!v004!Havendo necessidade do registro de mais de um descritor, estes deverão ser registrados um em cada linha da caixa de texto do formulário. O formulário de entrada de dados apresenta um link para a bases de dados de controle de vocabulário.
+!v005!Exemplo: Meio Ambiente
+!v005!         Rio das Velhas^spoluição
+
+!ID 000088
+!v004!<b>088 - Descritores Secundários</b> (facultativo)
+!v004!Descritores secundários para serem utilizados em combinação com os descritores de conteúdo. Os descritores registrados neste campo não aparecerão na referência bibliográfica apresentada no resultado de uma busca. Serão utilizados somente como chaves de acesso ao registro.
+!v005!Exemplo: Dotação orçamentária
+
+!ID 000089
+!v004!<b>089 - Observações do Bibliotecário/Arquivista/Museólogo</b> (facultativo)
+!v004!Informações restritas sobre o título catalogado. Estas informações não são apresentadas ao público.
+!v005!Exemplo: Os tombos 000123 e 000321 estão extraviados
+
+!ID 000090
+!v004!<b>090 - Disponibilidade</b> (obrigatório)
+!v004!Indicação sobre a disponibilidade do registro durante a apresentação de resultados de buscas no catálogo.
+!v004!<ul>
+!v004!<li><b>Apresentar:</b> O registro estará disponível para o usuário.</li>
+!v004!<li><b>Ocultar:</b> O registro ficará temporariamente indisponível até que seja liberado pelo bibliotecário. Esta opção é indicada quando o registro ainda requer revisões.</li>
+!v004!<li><b>Restrito:</b> Restringe o acesso ao documento aos usuários matriculados ou a uma classe específica de usuário.</li>
+!v004!</ul>
+
+!ID 000091
+!v004!<b>091 - Nível da restrição</b> (facultativo)
+!v004!Havendo restrições de acesso ao documento, indicar a classe (tipo) de usuário matriculados que poderá ter acesso ao documento restrito.
+!v004!A caixa de opções apresentada no formulário do registro do catálogo será composta a partir das opções de tipos de usuários definidos pela biblioteca ou centro de informação na base de dados de tipos de usuários.
+!v004!Se nenhum nível de restrição for selecionado, o documento estará disponível a todos os usuários matriculados.
+
+!ID 000096
+!v004!<b>096 - Código HTML para uso restrito</b> (facultativo)
+!v004!Código HTML que será interpretado pelo PHL e apresentado somente aos usuários cadastrados na biblioteca. Este recurso quando utilizado com criatividade pode permitir a inclusão de links para outros sites, imagens, sons, videos, tabelas, etc. como parte da citação bibliográfica, interpretando todos os comandos disponíveis na linguagem html.
+!v005!<u>Exemplo 1:</u>
+!v005!&lt;a href="http://www.elysio.com.br"&gt;Site do Elysio&lt;/a&gt;
+!v005!Este exemplo vai gerar o link <a href=http://www.elysio.com.br>Site do Elysio</a>
+!v005!<u>Exemplo 2:</u>
+!v005!&lt;img src="http://www.elysio.com.br/site/gifs/phl.jpg" border="0"&gt;
+!v005!Este exemplo vai mostrar a imagem <img src="http://www.elysio.com.br/site/gifs/phl.jpg" border="0">
+
+!ID 000103
+!v004!<b>103 - Cutter / PHA</b> (essencial)</a>
+!v004!Número de classificação do autor obtido através da tabela de classificação de autores adotada pela biblioteca (Ex: Cutter, PHA, etc.).
+!v005!Exemplo: T17a
+
+!ID 000105
+!v004!<b>105 - Gênero documental</b> (facultativo)
+!v004!Tipo de gênero documental segundo as normas NOBRADE (Norma Brasileira de Descrição Arquivística). Este tipo de informação é necessário para complementar a descrição de documentos de arquivos.
+!v004!As opções apresentadas nesta caixa de seleção serão aquelas definidas na <b>Base de dados Tipo de gênero</b>. Cada registro desta base de dados irá corresponder a um tipo de gênero previsto. Havendo necessidade, novos tipos podem ser criados.
+!v004!O tipo de gênero pode ser complementado com informações que caracterizam o tipo de suporte ou mídia do documento. Esta complementação é feita selecionando o tipo de suporte na caixa de seleção apresentada no campo #022 do formulário. Por exemplo, um documento do gênero "Bibliográfico" pode ser complementado com o tipo de suporte papel. Os tipos de suporte serão aqueles definidos na <b>Base de dados Tipo de suporte</b>.
+
+!ID 000121
+!v004!<b>121 - Créditos ou Ementa (nível analítico)</b> (facultativo)
+!v004!Créditos sobre a produção no caso de partes de documentos de áudio ou vídeo ou ementa do documento no caso de legislação. Havendo mais que um ítem da ementa ou várias notas de créditos, estas deverão ser registradas, uma em cada linha na caixa de texto do formulário.
+!v005!Exemplo: Diretor: Miguel Propschi
+
+!ID 000141
+!v004!<b>141 - Informação Descritiva (nível analítico)</b> (essencial)
+!v004!Informações descritivas sobre características físicas do parte que possui outra características que não seja a divisão por páginas. Tais como, folhas, dimensões, peso, tempo de duração, tamanho, escalas, etc.
+!v005!Exemplos:
+!v005!
+!v005!fls. 12-13
+!v005!1 fot., color. 16 cm x 56 cm
+!v005!1 transparência, color., 25 cm x 20 cm
+!v005!31 diapositivos: color + 1 fita cassete sonoro (15 min) mono
+!v005!1 grav., serigraf., color., 46 cm x 63 cm
+!v005!Altura: 1083 pixels. Largura: 827 pixels. 300 dpi. 32 BIT CMYK, 3.5 Mb
+!v005!Escala 1:2000
+!v005!1 mapa, color., 79 cm x 95 cm. Escala 1:600.000
+!v005!Fx 28, n. 15. Escala 1:35.000
+!v005!Imagem de satélite. Canais 3, 4 e composição colorida 3, 4 e 5.
+!v005!Escala 1:100.000
+!v005!Imagem de satélite: 1999071318.GIF: 557 Kb
+!v005!1 partitura
+!v005!10,7 cm de diâm. x 24,5 cm de alt
+!v005!17 cm de alt
+
+!ID 000143
+!v004!<b>143 - Existência e localização de Originais - Para documentos de Arquivo</b> (essencial)
+!v004!Indicar a existência e a localização, ou inexistência, dos originais de uma unidade de descrição constituída por cópias.
+!v004!Registre a localização do original da unidade de descrição, bem como quaisquer números de controle significativos, se o original pertencer à entidade custodiadora ou a outra entidade. No caso dos originais não existirem ou ser desconhecida a sua localização, registre essa informação.
+!v004!Este elemento não se aplica a cópias parciais ou integrais de um fundo ou coleção sob a custódia da mesma entidade, devendo, neste caso, a descrição ser feita pelo original, indicando-se as cópias existentes conforme prescreve o elemento Existência e localização de cópias. Por outro lado, este elemento se aplica a situações em que um fundo ou coleção é integral ou parcialmente constituído de documentos em microforma, por exemplo, cujos originais achem-se sob a custódia de uma outra entidade. Aplica-se igualmente a situações em que as cópias integrantes de um fundo são de originais integrantes de um outro fundo, mesmo que sob a custódia da mesma entidade.
+!v005!Exemplo: 0100-7122 Museu do Índio
+
+!ID 000144
+!v004!<b>144 - Existência e localização de cópias - Para documentos de Arquivo</b> (essencial)
+!v004!Indicar a existência e localização de cópias da unidade de descrição.
+!v004!Registre a existência de cópia na entidade custodiadora, fornecendo a referência de controle pela qual seja recuperada. Se existir cópia em outra entidade, registre a forma autorizada do nome da entidade custodiadora e sua localização geográfica, como, por exemplo, a cidade, bem como outros elementos que facilitem sua recuperação, como seu sítio na internet e endereço eletrônico.
+!v004!Um dos efeitos desse procedimento é o controle de diferentes modalidades de cópia disponíveis, tanto numa mesma quanto numa outra entidade custodiadora, que se prestam à consulta, à reprodução e/ou à preservação. Este elemento permite o reconhecimento formal e, por conseguinte, o controle de cópias fac-similares existentes, podendo garantir referências corretas e novas reproduções, além de outros usos. Cópias de época, entretanto, feitas simultaneamente ou quase simultaneamente ao original, têm valor de original, como ocorre com os livros de registro, por exemplo, e não devem ser aqui registradas.
+!v005!Exemplo: CEDOCTK, UCDB, MS
+
+!ID 0000145
+!v004!<b>145 - Incorporações - Para documentos de Arquivo</b> (facultativo)
+!v004!Informar ao usuário sobre acréscimos previstos à unidade de descrição.
+!v004!Registre incorporações previstas, informando uma estimativa de suas quantidades e frequência.
+!v004!Este elemento destina-se ao registro de entradas previstas de documentos que complementem unidades de descrição, e devem ocorrer nos níveis pertinentes, normalmente os mais gerais.
+
+!ID 000146
+!v004!<b>146 - Destinatários - Para documentos de Arquivo</b> (facultativo)
+!v004!Nome do destinatário da Correspondência.
+!v005!Exemplo: Getulio Vargas
+
+!ID 000147
+!v004!<b>147 - Microfilme/Fotograma - Para documentos de Arquivo</b> (facultativo)
+!v004!Quando houver colocar o número do Microfilme e do fotograma
+!v005!<li><b>Exemplo para documentos de arquivo</b></li>
+!v005!               Microfilme 543/fot 116
+
+!ID 000148
+!v004!<b>148 - Referência Bibliográfica  - Para documentos de Arquivo/Museu</b> (facultativo)
+!v004!Indicação de quando esse documento ou peça foi indicado em uma bibliografia, e/ou as fontes consultadas para descrever o material
+!v004!Segue normas da ABNT.
+!v005!<li><b>Exemplo para documentos de arquivo</b></li>
+!v005!                RIBEIRO, Berta G. Dicionário do Artesanato Indígena/1988; MALCHER, José M. da Gama. Índios/1964
+
+!ID 000149
+!v004!<b>149 - Fundo/Serie/Subsérie - Para documentos de Arquivo</b> (facultativo)
+!v004!Escrever o Fundo, a série e a Subsérie do documento. Havendo mais que um deve-se colocar um em cada linha da caixa de texto.
+!v005!<li><b>Exemplo para documentos de arquivo</b></li>
+!v005!               SPI
+!v005!               IR6
+!v005!               AB
+
+!ID 000150
+!v004!<b>150 - Condições de acesso - Para documentos de Arquivo</b> (facultativo)
+!v004!Informar como é a condição de acesso do documento com um texto objetivo
+!v005!<li><b>Exemplo para documentos de arquivo</b></li>
+!v005!               Acessível somente por microfilme
+
+!ID 000151
+!v004!<b>151 - Condições de reprodução - Para documentos de Arquivo</b> (facultativo)
+!v004!Informar se o documento pode ser reproduzido e de qual forma
+!v005!<li><b>Exemplo para documentos de arquivo</b></li>
+!v005!               Autorizada de acordo com as normas e procedimentos da Instituição
+
+!ID 000152
+!v004!<b>152 - Sistema de Arranjo- Para documentos de Arquivo</b> (facultativo)
+!v004!Informações sobre o arranjo ou o método de classificação devem conter os critérios adotados nas subdivisões, sendo os mais usuais: assunto, funções/atividades, hierarquia administrativa,
+!v005!<li><b>Exemplo para documentos de arquivo</b></li>
+!v005!               O Fundo esta organizado com base em critérios geográficos: por inspetoria e por postos indígenas.
+
+!ID 000153
+!v004!<b>153 - História administrativa/- Para documentos de Arquivo</b> (facultativo)
+!v004!Escreva de forma clara e objetiva a historia administrativa
+!v005!<li><b>Exemplo para documentos de arquivo</b></li>
+!v005!               O Fundo esta organizado com base em critérios geográficos: por inspetoria e por postos indígenas.
+
+
+!ID 000154
+!v004!<b>154 - Âmbito e conteúdo- Para documentos de Arquivo</b> (facultativo)
+!v004!Informações sobre o arranjo ou o método de classificação devem conter os critérios adotados nas subdivisões, sendo os mais usuais: assunto, funções/atividades, hierarquia administrativa,
+!v005!<li><b>Exemplo para documentos de arquivo</b></li>
+!v005!               O Fundo esta organizado com base em critérios geográficos: por inspetoria e por postos indígenas.
+
+!ID 000155
+!v004!<b>155 - Estado de Conservação/- Para documentos de Arquivo/Museu</b> (facultativo)
+!v004!Escreva de forma clara e objetiva o estado de conservação do documento
+!v004!Primeira letra em maiúscula. Colocar entre parênteses qualquer minúcia do estado físico da peça/documento
+
+!ID 000156
+!v004!<b>156 - Código de Reprodução/- Para documentos de Arquivo</b> (facultativo)
+!v004!Indique o código de reprodução
+!v005!<li><b>Exemplo para documentos de arquivo</b></li>
+!v005!spi00003.jpg
+
+!ID 000157
+!v004!<b>157 - História arquivista/- Para documentos de Arquivo</b> (facultativo)
+!v004!Conte a história dos documentos
+!v005!<li><b>Exemplo para documentos de arquivo</b></li>
+!v005!               Com o incendio do arquivo do SPI em 1967, perdeu-se grande parte da documentação. Foi possível recuperar parte dela através das cópias localizadas nos arquivos das unidades regionais. 
+!v005!               Posteriormente toda esta documentação foi recolhida ao arquivo do Museu do Índio.
+
+!ID 000158
+!v004!<b>158 - Localização física - Para documentos de Arquivo</b> (facultativo)
+!v004!Faça a indicação do material para ser localizado no acervo
+!v005!<li><b>Exemplo para documentos de arquivo</b></li>
+!v005!Reserva Audio visual/Sala do Arquivo/estante 1 prateleira 2
+
+!ID 000160
+!v004!<b>160 - Total de Documentos/Peças</b> (facultativo)
+!v004!Indique a quantidade de documentos/Peças com números arábicos que compõe uma coleção.
+!v004!<li><b><u>Para Peças de Museu</b></u>
+!v004!Colocar o número de peças que compõe o objeto sempre em algarismo arábico acompanhado dela palavra peças (s)
+!v005!<li><b>Exemplo para Documentos de Arquivo</b></li>
+!v005!               24
+!v005!<li><b>Exemplo para objetos museológicos</b></li>
+!v005!               2 peças
+
+!ID 000161
+!v004!<b>161 - Categorias</b> (obrigatório)
+!v004!Tipo de categoria da peça.
+!v004!As opções apresentadas na caixa de seleção do formulário, serão aquelas definidas na <b>Base de dados Tipo de Categoria</b>.
+!v004!Havendo necessidade, novas opções de tipo de conteúdocategoria poderão ser criadas.
+!v005!<li><b>Exemplo</b></li>
+!v005!Adorno de Materiais Ecléticos
+!v005!Indumentária e Toucador
+!v005!Adornos Plumários
+!v005!Armas
+!v005!Cerâmica
+!v005!Etnobotânica
+
+!ID 000162
+!v004!<b>162 - Quantidade de partes/Peças</b> (Facultativo)
+!v004!Informar cada parte do objeto
+!v004!Fazer ficha analítica para cada parte da peça
+
+!ID 000163
+!v004!<b>163 - Matéria-prima</b> (Facultativo)
+!v004!Primeira letra em maiúscula (somente do primeiro nome), com uso de vírgulas e conjunção "e" para o último
+!v005!<li><b>Exemplo</b></li>
+!v005!Taquara, fios de algodão e madeira não identificada
+
+!ID 000164
+!v004!<b>164 - Instituição Detentora</b> (Facultativo)
+!v004!Quando objeto não estiver no Museu
+!v005!<li><b>Exemplo</b></li>
+!v005!Museu Imperial
+
+!ID 000166
+!v004!<b>166 - Função do Objeto</b> (Facultativo)
+!v004!Descreve-se brevemente a função da peça descrita
+!v005!<li><b>Exemplo</b></li>
+!v005!Implemento de toucador utilizado para realizar pintura corporal
+
+!ID 000181
+!v004!<b>181 - Subtítulo</b> (essencial)
+!v004!Subtítulo que acompanha o título do documento registrado no campo (18 - Título). Esta informação será apresentada na referência bibliográfica, separada do título com dois pontos, portanto, este sinal não deverá ser transcrito como conteúdo do campo.
+!v005!Exemplo: um enfoque histórico
+
+!ID 000182
+!v004!<b>182 - Subtítulo do periódico</b> (essencial)
+!v004!Subtítulo que acompanha o título do periódico registrado no campo #030 (Série Periódica).
+!v005!Exemplo: notícias
+
+!ID 000186
+!v004!<b>186 - Comentários - Wiki</b> (facultativo)
+!v004!Comentário feito pelo usuário sobre o documento catalogado.
+
+!ID 000200
+!v004!<b>200 - Nome da Instituição</b>
+!v004!Sigla e nome da instituição da qual a biblioteca ou sistema de bibliotecas é parte integrante.
+!v005!Exemplo: IPEN. Instituto de Pesquisas Energéticas e Nucleares
+
+!ID 000201
+!v004!<b>201 - Manutenção</b>
+!v004!Opção que permite a suspensão temporária dos serviços de busca, reservas, renovações, empréstimos e devoluções.
+!v004!Esta suspensão é necessária quando há necessidade de manutenção em algumas das bases de dados utilizadas pelo PHL devido a problemas com interrupção temporária de energia; problemas de mal funcionamento do servidor hospedeiro do PHL ou reinicialização do servidor hospedeiro após a instalação de algum pacote de atualização.
+
+!ID 000202
+!v004!<b>202 - Mensagem de manutenção</b>
+!v004!Código HTML da mensagem que será exibida pelo usuário quando o sistema for colocado em estado de manutenção.
+!v004!Exemplo:
+!v005!Sistema em MANUTENÇÂO!&lt;br&gt;
+!v005!Previsão de término, às 18 horas de hoje.&lt;br&gt;
+!v005!Obrigado pela compreensão.
+
+!ID 000204
+!v004!<b>204 - URL de acesso à página do PHL utilizado pela biblioteca</b>
+!v004!Registre neste campo a URL correspondente ao endereço de acesso à página principal do PHL referente à sua biblioteca ou sistema de bibliotecas. Esta informação será utilizada pelo PHL para criação de um link da página da biblioteca nos textos de e-mails que serão gerados automaticamente pelo PHL.
+!v004!URL significa "Uniform Resource Locator" - Localizador Uniforme de Recursos.
+!v004!Um exemplo de URL é:
+!v004!http://hcanc.phlnet.com.br/phl84/index.html
+!v004!Esse endereço identifica:
+!v004!<blockquote>
+!v004!- o protocolo de acesso ao recurso desejado (http),
+!v004!- a máquina a ser contactada (hcanc.phlnet.com.br),
+!v004!- o caminho de diretórios até o recurso (/phl84), e
+!v004!- o recurso (arquivo) a ser obtido (/index.html).
+!v004!</blockquote>
+
+!ID 000205
+!v004!<b>205 - Campos para filtro</b>
+!v004!Parâmetros que permitem a definição da caixa de filtro de buscas por campos de dados específicos. Para a indicação, informe o campo de dado e no subcampo (b) indique a legenda que será apresentada como opção da caixa de filtros para buscas em campos de dados específicos.
+!v004!Para indicação de vários campos de buscas em uma mesma opção, informe o número de cada campo separado por virgula.
+!v004!<ul>Exemplos:
+!v004!<li>62^bEditora<br>
+!v004!(onde 62 é o campo de dado para o filtro e "Editora" a legenda que será apresentada como opção na caixa de seleção.)</li>
+!v004!<li>10,11,16,17^bAutores<br>
+!v004!(onde 10,11,16,17 são os campos de dados para o filtro e "Autores" a legenda que será apresentada como opção na caixa de seleção.)</li>
+!v004!</ul>
+
+!ID 000206
+!v004!<b>206 - Amostra</b>
+!v004!Quantidade de registros que serão apresentados em cada página do resultado de uma busca no modo de buscas ou edição.
+
+!ID 000207
+!v004!<b>207 - Amostra (busca)</b>
+!v004!Quantidade de registros que serão apresentados em cada página do resultado de uma busca no modo de buscas.
+
+!ID 000208
+!v004!<b>208 - Tipo de Coleção</b>
+!v004!Habilita ou desabilita a apresentação da caixa de seleção de filtro de coleção no formulário de busca.
+
+!ID 000210
+!v004!<b>210 - Solicita senha para busca ?</b>
+!v004!Habilita ou desabilita a opção que restringe às buscas ao catálogo. Se marcado "SIM", somente os usuários cadastrados é que terão acesso ao catálogo, ficando indisponível para o público em geral.
+!v004!Esta alternativa de solicitar senha para acesso ao catálogo é recomendada somente quando o PHL estiver sendo utilizado para a gestão de documentos ou arquivos confidenciais.
+
+!ID 000211
+!v004!<b>211 - Código de Barras</b>
+!v004!Padrão de código de barras que será adotado para a impressão de etiquetas de lombadas e identificação do usuário.
+!v004!O processo de geração do código de barras pode ser através de fontes específicas (True Type Fonts) instaladas na máquina do cliente caso ele não tenha uma conexão com a internet ou através de uma rotina em PHP executada no servidor do autor. Por padrão o PHL vem configurado para gerar o código de barras através do servidor WWW do autor (www.elysio.com.br).
+!v004!Caso a máquina do usuário não possua conexão com a internet ou esta conexão não é constante, recomendamos optar pela geração do código de barras através de fontes TTF (True Type Fonts), neste caso, estas fontes deverão ser instaladas no diretório (<i>pasta</i>) de fontes do computador do bibliotecário. Se optar pela geração TTF e as fontes não forem instaladas no seu computador, o código de barras não será apresentado. <a class=link href="http://www.elysio.com.br/downloads/fontes.zip">Clique aqui</a> para efetuar o "download" do arquivo que contém estas fontes.
+
+!ID 000212
+!v004!<b>212 - Tipo de Idioma</b>
+!v004!Habilita ou desabilita a apresentação da caixa de seleção de filtro de idioma no formulário de busca.
+
+!ID 000213
+!v004!<b>213 - Tipo de conteúdo</b>
+!v004!Habilita ou desabilita a apresentação da caixa de seleção de filtro de tipo de conteúdo no formulário de busca.
+
+!ID 000214
+!v004!<b>214 - Descritores</b>
+!v004!Habilita ou desabilita a apresentação dos descritores abaixo das referências do resultado de busca.
+
+!ID 000215
+!v004!<b>215 - Filtro de Tipo de Documento</b>
+!v004!Habilita ou desabilita a apresentação da caixa de filtro por tipos de documentos.
+
+!ID 000217
+!v004!<b>217 - Altura da área do cabecalho</b>
+!v004!Altura em "pixels" da área que será reservada para a apresentação do cabeçalho na página principal do PHL.
+!v004!Por padrão, o PHL vem configurado com o valor "0" (zero).
+!v004!Caso queira incluir na página principal do PHL, um cabeçalho, este será apresentado acima do menu horizontal e o conteúdo será correspondente ao código HTML transcrito no arquivo "cabecalho.html". O valor da altura em "pixels" deverá ser ajustado para o tamanho da área que irá ocupar o cabeçalho.
+
+!ID 000218
+!v004!<b>218 - Filtro de tipo de suporte ou mídia</b>
+!v004!Habilita ou desabilita a apresentação da caixa de seleção de filtro de tipo de suporte no formulário de busca.
+
+!ID 000219
+!v004!<b>219 - Tempo de conexão</b>
+!v004!Tempo, em minutos, de duração de uma sessão. Não sendo informado, o PHL considera o tempo de 1 minuto para a sua sessão. Findo este prazo, por questões de segurança, a sessão corrente será interrompida.
+
+!ID 000220
+!v004!<b>220 - Mostrar índice de chaves</b>
+!v004!Habilita ou desabilita a apresentação do índice de chaves durante a transcrição da chave de busca.
+!v004!Quando habilitado, o sistema apresenta durante a transcrição da chave de busca, um índice com os 10 primeiros termos encontrados no índice, que se iniciam com a sequência de caracteres transcritos na caixa de texto do formulário de busca.
+!v004!Neste modalidade, o sistema apresenta uma caixa de busca que será preenchida pelo termo selecionado no índice de chaves. Somente o termo selecionado é que será utilizado na busca. Para as outras modalidades de buscas “todas as palavras” haverá que utilizar o operador booleano “AND”, exemplo “economia AND brasil” e para a modalidade de busca “qualquer palavra” haverá que utilizar o operador booleano “OR”, exemplo: “geografia OR história”.
+
+!ID 000221
+!v004!<b>221 - Regulamento para empréstimo</b>
+!v004!Indicação de como serão estabelecidas as regras específicas de empréstimo.
+!v004!O PHL permite o estabelecimento de regras específicas de empréstimos para cada <b>tipo de usuário</b> combinado com <b>tipos de documentos</b> ou <b>tipos de coleção</b>. A decisão sobre estas regras irá depender do regulamento de cada biblioteca.
+!v004!Caso a biblioteca não pratique empréstimos diferenciados, a adoção de uma regra ou outra terá efeito somente para a emissão de relatórios estatísticos do empréstimo.
+!v004!<b>IMPORTANTE:</b><br>
+!v004!Uma vêz definida qual a regra a ser adotada, esta regra não mais poderá ser alterada, salvo se ainda não tenha sido feita nenhuma operação de empréstimo.
+
+!ID 000222
+!v004!<b>222 - Solicita senha no empréstimo</b>
+!v004!Habilita ou desabilita a solicitação da senha do usuário durante uma transação de empréstimo. A solicitação só deve ser habilitada caso a biblioteca opte pelo uso de microteclado para registro de senhas semelhante aos utilizados nas agências bancárias.
+
+!ID 000223
+!v004!<b>223 - Mostra nota de conteúdo</b>
+!v004!Habilita ou desabilita a apresentação das notas de conteúdo na referência bibliográfica.
+
+!ID 000224
+!v004!<b>224 - Informação adicional</b>
+!v004!Habilita a apresentação de informações adicionais no cabeçalho do registro bibliográfico apresentado ao usuário como resultado de uma busca quando o formato de exibição for o formato completo. Por padrão, o PHL vem configurado para apresentar um ícone correspondente ao tipo de suporte e o nome do tipo de suporte.
+
+!ID 000225
+!v004!<b>225 - Padronização de descritores</b>
+!v004!Indicação de qual índice de termos será utilizado para a padronização de descritores. O sistema oferece duas opções:
+!v004!1) <b>Termos obtidos da base de dados do catálogo:</b> <i>Se marcada esta opção, o campo de descritores do formulário de entrada do catálogo, apresentará uma caixa de seleção de termos que já foram utilizados na indexação de documentos catalogados.</i>
+!v004!2) <b>Termos obtidos da base de dados de controle de vocabulário:</b> <i>Se marcada esta opção, o campo de descritores do formulário de entrada do catálogo, apresentará uma caixa de seleção de termos obtidos da base de dados de controle de vocabulário.</i>
+
+!ID 000226
+!v004!<b>226 - Padronização de autores</b>
+!v004!Indicação de qual índice de termos será utilizado para a padronização de nomes de autores. O sistema oferece duas opções:
+!v004!1) <b>Nomes obtidos da base de dados do catálogo:</b> <i>Se marcada esta opção, o campo de autores do formulário de entrada do catálogo, apresentará uma caixa de seleção de nomes que já foram utilizados na indexação de documentos catalogados.</i>
+!v004!2) <b>Nomes obtidos da base de dados de controle de autoridades:</b> <i>Se marcada esta opção, o campo de autores do formulário de entrada do catálogo, apresentará uma caixa de seleção de nomes obtidos da base de dados de controle de autoridades.</i>
+
+!ID 000227
+!v004!<b>227 - Senha do usuário externo</b>
+!v004!Indicação do tipo de senha permitido para o usuário externo. O sistema prevê a validação da senha do usuário, caso a biblioteca opte por permitir somente senhas que contenha caracteres numéricos. Esta validação é necessária caso a biblioteca opte por utilizar terminais numéricos para verificação de senhas durante a rotina de empréstimo, impedindo que o usuário altere sua senha por outra que contenha caracteres alfabéticos ou alfanuméricos.
+
+!ID 000228
+!v004!<b>228 - Largura do código de barras (width)</b>
+!v004!Largura (width) em pixels do código de barras quando for dos tipos abaixo:
+!v004!PHP-C128A
+!v004!PHP-C128B
+!v004!PHP-C128C
+!v004!PHP-I25
+!v004!PHP-C39
+
+!ID 000229
+!v004!<b>229 - Altura do código de barras (height)</b>
+!v004!Altura (height) em pixels do código de barras quando for dos tipos abaixo:
+!v004!PHP-C128A
+!v004!PHP-C128B
+!v004!PHP-C128C
+!v004!PHP-I25
+!v004!PHP-C39
+
+!ID 000230
+!v004!<b>230 - Formato padrão</b>
+!v004!Seleção do formato padrão de apresentação de um resultado de busca. O formato selecionado será apresentado como padrão na caixa de filtro de seleção do formato disponível no formulário de busca.
+
+!ID 000232
+!v004!<b>232 - Cor principal</b>
+!v004!Código hexadecimal da cor principal a ser adotada nas janelas e menus do PHL.
+!v004!Exemplo: #6487DC
+!v004!<table>
+!v004!<tr><td width="50%">#000000</td><td width="50%" bgcolor="#000000">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#000080</td><td width="50%" bgcolor="#000080">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#00008B</td><td width="50%" bgcolor="#00008B">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#0000CD</td><td width="50%" bgcolor="#0000CD">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#0000FF</td><td width="50%" bgcolor="#0000FF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#006400</td><td width="50%" bgcolor="#006400">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#008000</td><td width="50%" bgcolor="#008000">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#008080</td><td width="50%" bgcolor="#008080">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#008B8B</td><td width="50%" bgcolor="#008B8B">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#00BFFF</td><td width="50%" bgcolor="#00BFFF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#00CED1</td><td width="50%" bgcolor="#00CED1">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#00FA9A</td><td width="50%" bgcolor="#00FA9A">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#00FF00</td><td width="50%" bgcolor="#00FF00">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#00FF7F</td><td width="50%" bgcolor="#00FF7F">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#00FFFF</td><td width="50%" bgcolor="#00FFFF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#00FFFF</td><td width="50%" bgcolor="#00FFFF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#191970</td><td width="50%" bgcolor="#191970">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#1E90FF</td><td width="50%" bgcolor="#1E90FF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#20B2AA</td><td width="50%" bgcolor="#20B2AA">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#228B22</td><td width="50%" bgcolor="#228B22">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#2E8B57</td><td width="50%" bgcolor="#2E8B57">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#2F4F4F</td><td width="50%" bgcolor="#2F4F4F">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#32CD32</td><td width="50%" bgcolor="#32CD32">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#3CB371</td><td width="50%" bgcolor="#3CB371">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#40E0D0</td><td width="50%" bgcolor="#40E0D0">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#4169E1</td><td width="50%" bgcolor="#4169E1">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#4682B4</td><td width="50%" bgcolor="#4682B4">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#483D8B</td><td width="50%" bgcolor="#483D8B">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#48D1CC</td><td width="50%" bgcolor="#48D1CC">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#4B0082</td><td width="50%" bgcolor="#4B0082">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#556B2F</td><td width="50%" bgcolor="#556B2F">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#5F9EA0</td><td width="50%" bgcolor="#5F9EA0">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#6495ED</td><td width="50%" bgcolor="#6495ED">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#66CDAA</td><td width="50%" bgcolor="#66CDAA">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#696969</td><td width="50%" bgcolor="#696969">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#6A5ACD</td><td width="50%" bgcolor="#6A5ACD">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#6B8E23</td><td width="50%" bgcolor="#6B8E23">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#708090</td><td width="50%" bgcolor="#708090">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#778899</td><td width="50%" bgcolor="#778899">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#7B68EE</td><td width="50%" bgcolor="#7B68EE">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#7CFC00</td><td width="50%" bgcolor="#7CFC00">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#7FFF00</td><td width="50%" bgcolor="#7FFF00">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#7FFFD4</td><td width="50%" bgcolor="#7FFFD4">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#800000</td><td width="50%" bgcolor="#800000">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#800080</td><td width="50%" bgcolor="#800080">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#808000</td><td width="50%" bgcolor="#808000">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#808080</td><td width="50%" bgcolor="#808080">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#8470FF</td><td width="50%" bgcolor="#8470FF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#87CEEB</td><td width="50%" bgcolor="#87CEEB">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#87CEFA</td><td width="50%" bgcolor="#87CEFA">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#8A2BE2</td><td width="50%" bgcolor="#8A2BE2">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#8B0000</td><td width="50%" bgcolor="#8B0000">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#8B008B</td><td width="50%" bgcolor="#8B008B">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#8B4513</td><td width="50%" bgcolor="#8B4513">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#8FBC8F</td><td width="50%" bgcolor="#8FBC8F">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#90EE90</td><td width="50%" bgcolor="#90EE90">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#9370D8</td><td width="50%" bgcolor="#9370D8">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#9400D3</td><td width="50%" bgcolor="#9400D3">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#98FB98</td><td width="50%" bgcolor="#98FB98">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#9932CC</td><td width="50%" bgcolor="#9932CC">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#9ACD32</td><td width="50%" bgcolor="#9ACD32">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#A0522D</td><td width="50%" bgcolor="#A0522D">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#A52A2A</td><td width="50%" bgcolor="#A52A2A">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#A9A9A9</td><td width="50%" bgcolor="#A9A9A9">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#ADD8E6</td><td width="50%" bgcolor="#ADD8E6">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#ADFF2F</td><td width="50%" bgcolor="#ADFF2F">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#AFEEEE</td><td width="50%" bgcolor="#AFEEEE">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#B0C4DE</td><td width="50%" bgcolor="#B0C4DE">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#B0E0E6</td><td width="50%" bgcolor="#B0E0E6">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#B22222</td><td width="50%" bgcolor="#B22222">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#B8860B</td><td width="50%" bgcolor="#B8860B">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#BA55D3</td><td width="50%" bgcolor="#BA55D3">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#BC8F8F</td><td width="50%" bgcolor="#BC8F8F">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#BDB76B</td><td width="50%" bgcolor="#BDB76B">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#C0C0C0</td><td width="50%" bgcolor="#C0C0C0">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#C71585</td><td width="50%" bgcolor="#C71585">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#CD5C5C</td><td width="50%" bgcolor="#CD5C5C">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#CD853F</td><td width="50%" bgcolor="#CD853F">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#D02090</td><td width="50%" bgcolor="#D02090">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#D19275</td><td width="50%" bgcolor="#D19275">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#D2691E</td><td width="50%" bgcolor="#D2691E">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#D2B48C</td><td width="50%" bgcolor="#D2B48C">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#D3D3D3</td><td width="50%" bgcolor="#D3D3D3">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#D87093</td><td width="50%" bgcolor="#D87093">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#D8BFD8</td><td width="50%" bgcolor="#D8BFD8">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#DA70D6</td><td width="50%" bgcolor="#DA70D6">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#DAA520</td><td width="50%" bgcolor="#DAA520">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#DC143C</td><td width="50%" bgcolor="#DC143C">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#DCDCDC</td><td width="50%" bgcolor="#DCDCDC">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#DDA0DD</td><td width="50%" bgcolor="#DDA0DD">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#DEB887</td><td width="50%" bgcolor="#DEB887">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#E0FFFF</td><td width="50%" bgcolor="#E0FFFF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#E6E6FA</td><td width="50%" bgcolor="#E6E6FA">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#E9967A</td><td width="50%" bgcolor="#E9967A">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#EE82EE</td><td width="50%" bgcolor="#EE82EE">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#EEE8AA</td><td width="50%" bgcolor="#EEE8AA">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#F08080</td><td width="50%" bgcolor="#F08080">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#F0E68C</td><td width="50%" bgcolor="#F0E68C">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#F0F8FF</td><td width="50%" bgcolor="#F0F8FF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#F0FFF0</td><td width="50%" bgcolor="#F0FFF0">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#F0FFFF</td><td width="50%" bgcolor="#F0FFFF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#F4A460</td><td width="50%" bgcolor="#F4A460">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#F5DEB3</td><td width="50%" bgcolor="#F5DEB3">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#F5F5DC</td><td width="50%" bgcolor="#F5F5DC">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#F5F5F5</td><td width="50%" bgcolor="#F5F5F5">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#F5FFFA</td><td width="50%" bgcolor="#F5FFFA">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#F8F8FF</td><td width="50%" bgcolor="#F8F8FF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FA8072</td><td width="50%" bgcolor="#FA8072">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FAEBD7</td><td width="50%" bgcolor="#FAEBD7">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FAF0E6</td><td width="50%" bgcolor="#FAF0E6">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FAFAD2</td><td width="50%" bgcolor="#FAFAD2">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FDF5E6</td><td width="50%" bgcolor="#FDF5E6">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FF0000</td><td width="50%" bgcolor="#FF0000">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FF00FF</td><td width="50%" bgcolor="#FF00FF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FF00FF</td><td width="50%" bgcolor="#FF00FF">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FF1493</td><td width="50%" bgcolor="#FF1493">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FF4500</td><td width="50%" bgcolor="#FF4500">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FF6347</td><td width="50%" bgcolor="#FF6347">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FF69B4</td><td width="50%" bgcolor="#FF69B4">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FF7F50</td><td width="50%" bgcolor="#FF7F50">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FF8C00</td><td width="50%" bgcolor="#FF8C00">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFA07A</td><td width="50%" bgcolor="#FFA07A">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFA500</td><td width="50%" bgcolor="#FFA500">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFB6C1</td><td width="50%" bgcolor="#FFB6C1">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFC0CB</td><td width="50%" bgcolor="#FFC0CB">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFD700</td><td width="50%" bgcolor="#FFD700">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFDAB9</td><td width="50%" bgcolor="#FFDAB9">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFDEAD</td><td width="50%" bgcolor="#FFDEAD">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFE4B5</td><td width="50%" bgcolor="#FFE4B5">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFE4C4</td><td width="50%" bgcolor="#FFE4C4">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFE4E1</td><td width="50%" bgcolor="#FFE4E1">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFEBCD</td><td width="50%" bgcolor="#FFEBCD">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFEFD5</td><td width="50%" bgcolor="#FFEFD5">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFF0F5</td><td width="50%" bgcolor="#FFF0F5">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFF5EE</td><td width="50%" bgcolor="#FFF5EE">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFF8DC</td><td width="50%" bgcolor="#FFF8DC">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFFACD</td><td width="50%" bgcolor="#FFFACD">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFFAF0</td><td width="50%" bgcolor="#FFFAF0">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFFAFA</td><td width="50%" bgcolor="#FFFAFA">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFFF00</td><td width="50%" bgcolor="#FFFF00">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFFFE0</td><td width="50%" bgcolor="#FFFFE0">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFFFF0</td><td width="50%" bgcolor="#FFFFF0">&nbsp;</td></tr>
+!v004!<tr><td width="50%">#FFFFFF</td><td width="50%" bgcolor="#FFFFFF">&nbsp;</td></tr>
+!v004!</table>
+
+!ID 000233
+!v004!<b>233 - Cor dos textos</b>
+!v004!Código hexadecimal da cor a ser utilizada nos textos das páginas principais do PHL.
+!v005!Exemplo: #006699
+
+!ID 000234
+!v004!<b>234 - Cor dos fundos de tela</b>
+!v004!Código hexadecimal da cor a ser utilizada nos fundos de telas das páginas do PHL.
+!v005!Exemplo: #FFFFFF
+
+!ID 000235
+!v004!<b>235 - Padrões de fontes</b>
+!v004!Padrões de fontes a serem adotadas nos textos do PHL.
+!v005!Exemplo: Arial, Helvetica, sans-serif
+
+!ID 000236
+!v004!<b>236 - Cor secundária</b>
+!v004!Código hexadecimal da cor secundária a ser adotada nas janelas e menus do PHL.
+!v005!Exemplo: #E6E6FA
+
+!ID 000237
+!v004!<b>237 - Barra de idiomas</b>
+!v004!Habilita ou desabilita a apresentação da barra que contem as opções de idiomas de diálogo do PHL.
+
+!ID 000239
+!v004!<b>239 - Altura da área de logotipo</b>
+!v004!Altura em "pixels" da área que será reservada para a apresentação do logotipo da instituição no cabeçalho do frame esquerdo do PHL.
+!v004!O codigo HTML do logotipo será aquele transcrito no arquivo "logo.html". A altura em "pixels" da área do logotipo poderá ser ajustada para o tamanho desejado.
+
+!ID 000240
+!v004!<b>240 - Cor do link</b>
+!v004!Código hexadecimal que irá representar a cor dos links das páginas do PHL.
+
+!ID 000241
+!v004!<b>241 - Cor do link selecionado</b>
+!v004!Código hexadecimal que irá representar a cor dos links selecionados das páginas do PHL.
+
+!ID 000242
+!v004!<b>242 - Diagnóstico</b>
+!v004!A opção "Parcial" indica ao sistema que ao editar ou criar um registro em qualquer uma das bases de dados do PHL, somente os erros detectados serão apresentados. A opção "Completa", ativa o diagnóstico com alertas de inconsistência que não constituem erros, mas que devem ser considerados para o perfeito funcionamento do sistema.
+
+!ID 000243
+!v004!<b>243 - Habilita filtros na caixa de busca</b>
+!v004!A opção "Sim" irá compor a caixa de busca com filtros de restrições de buscas, ao invés de apresentá-os somente quando solicitado a opção de "Preferências". A opção "Não", irá apresentar os filtros de buscas somente quando solicitado a partir do link "Preferências"
+
+!ID 000301
+!v004!<b>301 - Português</b>
+!v004!Nome no idioma português
+
+!ID 000302
+!v004!<b>302 - Espanhol</b>
+
+!ID 000303
+!v004!<b>303 - Inglês</b>
+
+!ID 000304
+!v004!<b>304 - Italiano</b>
+
+!ID 000305
+!v004!<b>305 - Francês</b>
+
+!ID 000310
+!v004!<b>310 - Classe: Tabela de Classificação</b>
+!v004!Número da classe da tabela de classificação.
+!v005!Exemplo: 368.1
+
+!ID 000311
+!v004!<b>311 - Descrição: Tabela de Classificação</b>
+!v004!Descrição dos assuntos cobertos pela classe. Cada assunto deverá ser registrado em uma linha da caixa de texto do formulário.
+!v005!Exemplo: Seguro de coisas materiais em geral
+!v005!         Seguro de objetos
+!v005!         Seguro da propriedade
+!v005!         Seguro de mercadorias
+!v005!         Seguro contra perdas e danos
+
+!ID 000312
+!v004!<b>312 - ISO-639 (3 caracteres)</b>
+!v004!Código obtido da norma ISO-639 de 3 caracteres
+!v004!Fonte original: http://www.loc.gov/standards/iso639-2/ISO-639-2_8859-1.txt
+
+!ID 000313
+!v004!<b>313 - ISO-639 (2 caracteres)</b>
+!v004!Código obtido da norma ISO-639 de 2 caracteres
+!v004!Fonte original: http://www.loc.gov/standards/iso639-2/ISO-639-2_8859-1.txt
+
+!ID 000324
+!v004!<b>324 - Estado da biblioteca</b>
+!v004!Informação sobre o estado da biblioteca, se aberta ou fechada nesta data do calendário.
+
+!ID 000325
+!v004!<b>325 - Observações sobre a data</b>
+!v004!Observações gerais sobre a data do calendário.
+!v005!Exemplo: Dia de finados
+
+!ID 000390
+!v004!<b>390 - Ocultar / Apresentar</b>
+!v004!Código numérico que indica se o idioma deverá ser apresentado ou não nas caixas de seleção dos formulários utilizados pelo PHL. Apresentar=1, Ocultar=0.
+
+!ID 000401
+!v004!<b>401 - Termo autorizado (idioma português)</b>
+!v004!Registre o termo autorizado em português.
+!v0054!Exemplo: Economia
+
+!ID 000411
+!v004!<b>411 - Notas de abrangência do termo (idioma português)</b>
+!v004!Notas de abrangência ou de uso relativas ao descritor no idioma português.
+
+!ID 000421
+!v004!<b>421 - Sinônimos do termo (idioma português</b>
+!v004!Registre os sinônimos no idioma português do termo registrado no campo #401, um em cada linha da caixa de texto.
+
+!ID 000450
+!v004!<b>450 - Nome do autor</b>
+!v004!Registre a forma padronizada do nome do autor segundo as regras adotadas pela biblioteca. (AACR2, ABNT, Vancouver, etc.).
+!v005!Exemplo: SILVA, Luis
+
+!ID 000451
+!v004!<b>451 - Notas</b>
+!v004!Notas sobre o autor
+
+!ID 000452
+!v004!<b>452 - Formas Variantes</b>
+!v004!Registre as outras formas conhecidas do nome, uma em cada linha da caixa de texto.
+
+!ID 000502
+!v004!<b>502 - Título do Relatório</b>
+!v004!Nome que identifique o relatório.
+!v005!Exemplo: Meu primeiro relatório personalizado
+
+!ID 000503
+!v004!<b>503 - Folha de estilos</b>
+!v004!Se for marcado "Sim", o PHL irá apresentar automaticamente o cabeçalho do relatório utilizando uma folha de estilos padrão.
+!v005!Se for marcado "Não", o relatório será gerado considerando somente o código HTML registrado no campo #510.
+
+!ID 000504
+!v004!<b>504 - Base de Dados</b>
+!v004!Indicação da base de dados que fornecerá dados para a composição do relatório.
+
+!ID 000505
+!v004!<b>505 - Expressão de Busca</b>
+!v004!Expressão de busca para a seleção do conjunto de dados a ser utilizado na geração do relatório. O relatório irá considerar somente os dados obtidos a partir da expressão de busca registrada neste campo.
+!v004!Para considerar todo o conteúdo da base de dados utilize o sinal [$] na expressão de busca.
+!v005!Exemplo: $
+!v005!Este campo é também utilizado para indicar o intervalo de chaves que irão compor os relatórios do tipo "Índice". Para a indicação do intervalo de chaves utilize a seguinte sintaxe:
+!v005!^a[chave inicial]^b[chave final]
+!v005!Exemplo: ^aDES=A^bDES=Z
+!v005!         (Se a base de dados selecionada for a Catálogo, esta instrução irá apresentar a frequencia de cada descritor no intervalo
+!v005!          de DES=A até DES=Z).
+
+!ID 000508
+!v004!<b>508 - Tipo</b>
+!v004!São 4 os tipos de relatórios personalizados previstos:
+!v004!<ul>
+!v004!<li><u>Simples:</u> Apresenta os registros da base de dados selecionada na ordem em que foram inseridos. Para a composição do formato de apresentação de cada registro do relatório, o usuário poderá contar com as seguintes variáveis de controle:<br>v1001: número de ordem do registro;<br>v1002: total de registros do conjunto selecionado.</li>
+!v004!<li><u>Ordenado:</u> Apresenta os registros segundo a ordem definida pelo usuário. Para a definição das regras de ordenação siga as orientações apresentadas na descrição do campo #513 - Formato de Ordenação. Para a composição do formato de apresentação de cada registro do relatório, o usuário poderá contar com as seguintes variáveis de controle:<br>v1: chave descrita do campo #513;<br>v1001: número de ordem do registro;<br>v1002: total de registros do conjunto selecionado.</li>
+!v004!<li><u>Freqüência:</u> Apresenta a freqüência do elemento de dado obtido a partir do formato indicado no campo #513. Para a composição do formato de apresentação de cada registro do relatório, o usuário poderá contar com as seguintes variáveis de controle:<br>v1: chave descrita no campo #513;<br>v2: freqüência da chave descrita no campo #513;<br>v100: total de chaves obtidas pelo formato descrito no campo #513;<br>v1001: número de ordem do registro;<br>v1002: total de registros do conjunto selecionado</li>
+!v004!<li><u>Índice:</u> Apresenta a freqüência de cada chave do intervalo de chaves fornecido no campo da expressão de busca (#505). O intervalo de chaves é feito indicando a chave inicial no subcampo (a) e a chave final no subcampo (b). Exemplo: ^aDES=A^bDES=Z. Para a composição do formato de apresentação de cada registro do relatório, o usuário poderá contar com as seguintes variáveis de controle:<br>v1: chave do índice;<br>v2: freqüência da chave no índice;<br>v100: total de chaves obtidas no intervalo.
+!v004!<b>NOTA:</b> A geração de relatórios estatísticos utilizando chaves do índice da base de dados é um método bastante eficiente por utilizar a ordem e o número de frequencia que já está vinculado a cada chave no índice.</li>
+!v004!</ul>
+
+!ID 000510
+!v004!<b>510 - Cabeçalho</b>
+!v004!Código HTML que irá corresponder ao cabeçalho do relatório. O Código deverá ser transcrito entre apóstrofe.
+!v005!Exemplo: '&lt;html&gt;'
+
+!ID 000511
+!v004!<b>511 - Formato do registro</b>
+!v004!Indicação dos elementos que irão compor cada um dos registros. A indicação deverá ser feita utilizando a linguagem de formato CISIS.
+!v005!Exemplo: '&lt;b&gt;',v18,'&lt;/b&gt;&lt;br&gt;'
+!v005!No exemplo acima, o conteúdo do campo #018 (título) de cada registro da base de dados "Catálogo" será apresentado em negrito, um em cada linha do relatório. Note que os comandos HTMLs que irão indicar o negrito e a mudança de linha estão transcritos dentro de apóstrofes.
+!v005!Exemplo: '&lt;tr&gt;&lt;td&gt;',v16[1],'&lt;/td&gt;&lt;td&gt;',v18,'&lt;/td&gt;&lt;/tr&gt;'
+!v005!No exemplo acima, o conteúdo da primeira linha do campo #016 (primeiro autor) de cada registro da base de dados "Catálogo" e o conteúdo do campo #018 (título) serão apresentados em uma tabela de duas colunas.
+
+!ID 000512
+!v004!<b>512 - Rodapé</b>
+!v004!Indicação dos elementos que irão compor o rodapé do formulário. A indicação deverá ser feita utilizando a linguagem de formato CISIS.
+!v005!Exemplo: '&lt;/html&gt;'
+
+!ID 000513
+!v004!<b>513 - Formato de ordenação</b>
+!v004!Indicação da chave de ordenação ou freqüência utilizando a sintaxe da linguagem de formato CISIS.
+!v005!Exemplo: Supondo um conjunto de registros cujos campos de dados 
+!v005!         tenham o seguinte conteúdo:
+!v005!         v87 = Chile
+!v005!         v87 = Argentina
+!v005!         v87 = Brasil
+!v005!         v87 = Brasil
+!v005!         v87 = Brasil
+!v005!         v87 = Chile
+!v005!A instrução de formato: (v87/)
+!v005!Irá produzir uma base de dados virtual com os seguintes registros:
+!v005!           v1 = Argentina
+!v005!           v2 = 1
+!v005!         v100 = 6
+!v005!        v1001 = 1
+!v005!        v1002 = 3
+!v005!           v1 = Brasil
+!v005!           v2 = 3
+!v005!         v100 = 6
+!v005!        v1001 = 2
+!v005!        v1002 = 3
+!v005!           v1 = Chile
+!v005!           v2 = 2
+!v005!         v100 = 6
+!v005!        v1001 = 3
+!v005!        v1002 = 3
+!v005!Onde:    v1 = Chave gerada pela instrução do formato;
+!v005!         v2 = Freqüência da chave no conjunto;
+!v005!       v100 = Total de chaves na lista inicial;
+!v005!      v1001 = Posição da chave na lista;
+!v005!      v1002 = Total de chaves geradas;
+!v005!Exemplo de um registro de configuração do relatório acima:
+!v005!       #502 = Exemplo de Relatório
+!v005!       #504 = Catálogo
+!v005!       #505 = $
+!v005!       #508 = Frequencia
+!v005!       #511 = v1'-'v2
+!v005!       #512 = 'Total='v100
+!v005!       #513 = (v87/)
+!v005!Irá produzir:
+!v005!       Exemplo de Relatório
+!v005!       Argentina-1
+!v005!       Brasil-3
+!v005!       Chile-2
+!v005!       Total=6
+!v005!<b>Nota:</b> <i>Edite a base de dados de <b>Configuração de Relatório</b> e veja exemplos concretos.</i>
+
+!ID 000514
+!v004!<b>514 - Observações</b>
+!v004!Observações sobre o relatório.
+
+!ID 000527
+!v004!<b>527 - Limite de objetos</b>
+!v004!Quantidade total de objetos limitada ao usuário. A quantidade registrada neste campo irá limitar a quantidade de objetos que o usuário poderá ter em seu poder, independentemente do tipo de cada um. O sistema não irá permitir o empréstimo de nenhum outro objeto quando este limite for alcançado.
+
+!ID 000528
+!v004!<b>528 - Limite de renovações</b>
+!v004!Quantidade total de renovações limitada ao usuário. A quantidade registrada neste campo irá limitar a quantidade de renovações permitidas ao usuário para um mesmo empréstimo.
+
+!ID 000538
+!v004!<b>538 - Limite de Reservas</b>
+!v004!Quantidade máxima de reservas permitidas para o usuário. O sistema não irá permitir a reserva de nenhum outro objeto se este limite estiver esgotado.
+!v005!Exemplo: 20
+
+!ID 000557
+!v004!<b>557 - Limite total da multa para empréstimo</b>
+!v004!Valor em moeda corrente que representa o limite de débito que o usuário possa ter com a biblioteca para que utilize o serviço de empréstimo.
+!v005!Exemplo: 20
+!v005!Neste caso do exemplo, se o usuário atingir o limite de R$ 20,00 de débito com a biblioteca, não poderá utilizar o serviço de empréstimo.
+
+!ID 000601
+!v004!<b>601 - Código da Unidade</b>
+!v004!Código que identifica cada unidade do sistema de bibliotecas. Por padrão o PHL reconhece o código 001  como sendo a primeira unidade do sistema de bibliotecas.
+!v005!Exemplos: 001 <i>(Deverá corresponder ao MFN=1 da base de dados)</i>
+                002 <i>(Deverá corresponder ao MFN=2 da base de dados)</i>
+                003 <i>(Deverá corresponder ao MFN=3 da base de dados)</i>
+
+!ID 000602
+!v004!<b>602 - Nome da Biblioteca</b>
+!v004!Nome que identifica a biblioteca. Este nome será utilizado no rodapé dos recibos e cabeçalho dos relatórios gerados pelo PHL.
+!v005!Exemplos: Biblioteca Monteiro Lobato
+!v005!          Biblioteca Central da Unifesp
+
+!ID 000603
+!v004!<b>603 - Endereço da Biblioteca</b>
+!v004!Endereço completo da biblioteca com os devidos complementos (Rua, Av., apto, etc).
+!v005!Exemplo: Rua Joaquim Nabuco, 123 - 3º andar - apto. 33
+
+!ID 000604
+!v004!<b>604 - Cidade</b>
+!v004!Cidade correspondente ao endereço registrado no campo 603.
+!v005!Exemplo: Porto Alegre
+
+!ID 000605
+!v004!<b>605 - Unidade da Federação</b>
+!v004!Nome ou sigla da unidade da federação, estado ou província correspondente ao endereço registrado no campo 603.
+!v005!Exemplo: RS ou Rio Grande do Sul
+
+!ID 000606
+!v004!<b>606 - CEP (Código de endereçamento postal)</b>
+!v004!Código de Endereçamento Postal.
+!v005!Exemplo: 77413-290
+
+!ID 000607
+!v004!<b>607 - Telefones</b>
+!v004!Número do telefone ou telefones de contato com a biblioteca. Havendo mais que um número, estes deverão ser registrados um após o outro, separados por ponto e vírgula.
+!v005!Exemplo: (063) 3128823; (063) 3125954
+
+!ID 000608
+!v004!<b>608 - E-mails</b>
+!v004!Endereço eletrônico da biblioteca.
+!v005!Exemplo: biblioteca@uniandrade.com.br
+
+!ID 000609
+!v004!<b>609 - Responsável pela unidade</b>
+!v004!Nome do responsável pela unidade do sistema de bibliotecas.
+!v005!Exemplo: Sonia Bernini
+
+!ID 000610
+!v004!<b>610 - CNPJ</b>
+!v004!Número do Cadastro Nacional de Contribuintes Pessoa Jurídica correspondente à unidade do sistema. Esta informação é utilizada nos pedidos de compra e faturamento.
+
+!ID 000611
+!v004!<b>611 - Numeração automática</b>
+!v004!Indicação da quantidade de dígitos para o número de tombo e para o número de matrícula do usuário sugerido automaticamente pelo sistema. Por padrão o PHL sugere número de 6 dígitos para o tombo e 6 dígitos para o número de matrícula do usuário. Caso adote numeração com número de dígitos superior a 12 dígitos, o PHL não irá efetuar o controle automático da numeração. Neste caso, o controle da numeração deverá ser feito manualmente.
+
+!ID 000612
+!v004!<b>612 - Sugerir número de tombo</b>
+!v004!Se a opção estiver marcada o PHL irá sugerir um novo tombo, somando o valor 1 ao número anterior sugerido. A quantidade de dígitos do tombo sugerido será aquela definida no campo #611.
+!v004!O controle da numeração de tombo é feito através do arquivo "001_tbo.ctl" distribuído juntamente com o PHL e configurado para iniciar em "1". Havendo necessidade, este número poderá ser reajustado editando este arquivo e substituindo o número "1" pelo número de sua preferência.
+
+!ID 000613
+!v004!<b>613 - Prazo de empréstimo</b>
+!v004!Quantidade de dias para cálculo do prazo de empréstimo quando não houver regra específica de prazos e quantidade definidas para o tipo de usuário e objeto.
+!v004!Em uma operação normal de empréstimo o PHL, através do número de matrícula do usuário e do número de tombo, identifica o tipo de usuário e o tipo de documento que está sendo submetido ao empréstimo. Com base nesta informação, o PHL procura na base de dados de configuração de prazos e quantidades a existência de uma regra específica para este tipo de usuário e documento. Não encontrando esta regra, ele recorre ao prazo definido neste campo de dado.
+
+!ID 000614
+!v004!<b>614 - Quantidade permitida para o empréstimo</b>
+!v004!Quantidade máxima de objetos que o usuário poderá ter em seu poder quando não existir uma regra específica para ele definida na base de dados de configuração de prazos e quantidades.
+
+!ID 000615
+!v004!<b>615 - Auto-empréstimo</b>
+!v004!Identificação do IP ou faixa de IP das estações clientes que terão permissão para auto-empréstimo.
+!v005!Exemplo: 127.0.0.1 <i>(Neste exemplo, somente as máquinas da biblioteca com este IP é que irão permitir a rotina de auto-empréstimo)</i>
+!v005!Exemplo: 127 <i>(Neste exemplo, todas as máquinas que iniciam nesta faixa de IP terão permissão para a rotina de auto-empréstimo)</i>
+
+!ID 000616
+!v004!<b>616 - Número de chamada</b>
+!v004!Indicação dos elementos e da ordem de cada elemento que a irá compor o número de chamada e as etiquetas de lombadas de cada documento ou objeto catalogado.
+
+!ID 000618
+!v004!<b>618 - Logotipo</b>
+!v004!URL do arquivo de imagem (JPG, GIF, etc.) correspondente ao logotipo da biblioteca.
+!v004!O logotipo será utilizado para compor a carteirinha de identificação do usuário.
+!v005!Exemplo: http://localhost:8080/fotos/logo.jpg
+
+!ID 000622
+!v004!<b>622 - Tipo de penalidade</b>
+!v004!Tipo de penalidade que será aplicada ao usuário quando devolver um objeto de empréstimo além do prazo estabelecido.
+
+!ID 000623
+!v004!<b>623 - Penalidade</b>
+!v004!Valor e tipo da pena que será aplicada ao usuário em cada dia de atraso na devolução do objeto do empréstimo e quando não houver regra específica definida na base de dados de configurações de prazos e quantidades.
+
+!ID 000637
+!v004!<b>637 - Mensagem de Rodapé</b>
+!v004!Mensagem a ser impressa no rodapé dos recibos emitidos pelas operações de empréstimo, devolução, reservas e renovação.
+
+!ID 000638
+!v004!<b>638 - Registro</b>
+!v004!Número de registro de licença que irá habilitar o uso do PHL&copy;Elysio em ambiente de rede. Este número é fornecido juntamente com o Termo de Licenciamento do PHL. Para os usuários da versão "localhost" (gratuita), o PHL é distribuído com o número "123456".
+
+!ID 000640
+!v004!<b>640 - Horário do Expediente (seg/sex)</b>
+!v004!Horário de expediente normal da biblioteca durante o período de segunda à sexta feira. Esta informação é utilizada nas rotinas de empréstimo para controlar os horários de empréstimos e devoluções na modalidade "Overninght". Nesta modalidade de empréstimo o usuário somente poderá retirar o material no final do expediente da biblioteca e devolvê-lo na primeira hora de próximo dia útil de abertura da biblioteca.
+!v005!Exemplo: ^a08:00^b18:00
+
+!ID 000641
+!v004!<b>641 - Horário do Expediente (sábado)</b>
+!v004!Horário de expediente normal da biblioteca aos sábados.
+!v005!Exemplo: ^a08:00^b12:00
+
+!ID 000642
+!v004!<b>642 - Código da biblioteca no IBICT</b>
+!v004!Campo utilizado para registro do código da biblioteca caso participe como centro cooperante do Catálogo Coletivo Nacional (CCN) coordenado pelo IBICT.
+!v005!Exemplo: 005443-7
+
+!ID 000643
+!v004!<b>643 - Código da biblioteca na BIREME</b>
+!v004!Campo utilizado para registro do código da biblioteca caso participe como centro cooperante da Rede coordenada pela BIREME.
+!v005!Exemplo: BR57.1
+
+!ID 000644
+!v004!<b>644 - Fuso horário</b>
+!v004!Fuso horário com base na Hora Universal (UTC). O horário de Brasília, corresponde a UTC -03:00 e no horário de verão, corresponde a UTC -02:00.
+!v004!Segundo a Lei nº 11.662, de 24 de abril de 2008, a partir de zero hora de 24 de junho de 2008 passaram a vigorar no Brasil 3 (três) fusos horários:
+!v004!UTC -04:00 (Acre, Amazonas, Mato Grosso, Mato Grosso do Sul, Rondônia, Roraima);
+!v004!UTC -03:00 (Alagoas, Amapá, Bahia, Ceará, Espírito Santo, Goiás, Maranhão, Minas Gerais, Pará, Paraíba, Paraná, Pernambuco, Piauí, Rio de Janeiro, Rio Grande do Norte, Rio Grande do Sul, Santa Catarina, São Paulo, Sergipe, Tocantins);
+!v004!UTC -02:00 (Fernando de Noronha).
+!ID 000651
+!v004!<b>651 - Chave de acesso (login)</b>
+!v004!Chave de acesso ao PHL e que identifica um funcionário da biblioteca. Esta chave pode conter letras e/ou números. É obrigatório que a chave de identificação do funcionário tenha no máximo 12 caracteres, sem espaços em branco.
+!v005!Exemplo: Elysio
+
+!ID 000645
+!v004!<b>645 - Servidor SMTP</b>
+!v004!Domínio (DNS) do servidor SMTP (Send Mail Transfer Protocol) para autenticação no envio automático de e-mails.
+!v005!Exemplo: smtp.dominio.com.br
+
+!ID 000646
+!v004!<b>646 - Usuário SMTP</b>
+!v004!Login do usuário do serviço de autenticação SMTP (Send Mail Transfer Protocol)
+!v005!Exemplo: elysio
+
+!ID 000647
+!v004!<b>647 - Senha SMTP</b>
+!v004!Senha do usuário do serviço de autenticação SMTP (Send Mail Transfer Protocol)
+!v005!Exemplo: abc$%123
+
+!ID 000648
+!v004!<b>648 - Mensagem de atraso</b>
+!v004!Texto da mensagem de atraso que irá compor o corpo do e-mail que será enviado pela rotina de envio automático de e-mails com autenticação SMTP.
+!v005!Exemplo: Informamos que o documento descrito abaixo está com a data de devolução vencida e sujeito às penalidades previstas no regulamento da biblioteca
+
+!ID 000649
+!v004!<b>649 - Mensagem de alerta</b>
+!v004!Texto da mensagem de alerta de vencimento que irá compor o corpo do e-mail que será enviado pela rotina de envio automático de e-mails com autenticação SMTP.
+!v005!Exemplo: Informamos que o documento descrito abaixo está com a data de devolução próxima do vencimento
+
+!ID 000650
+!v004!<b>650 - Mensagem de disponibilidade</b>
+!v004!Texto da mensagem de disponibilidade de documento que foi reservado e que irá compor o corpo do e-mail que será enviado pela rotina de envio automático de e-mails com autenticação SMTP.
+!v005!Exemplo: Informamos que o documento descrito abaixo se encontra disponível para o empréstimo
+
+!ID 000651
+!v004!<b>651 - Porta SMTP</b>
+!v004!Número da porta utilizada pelo servidor de SMTP (Send Mail Transfer Protocol)
+!v005!Exemplo: 25
+
+!ID 000652
+!v004!<b>652 - Senha</b>
+!v004!Senha de acesso à área restrita. Máximo de 12 caracteres.
+!v005!Exemplo: xyz123
+
+!ID 000654
+!v004!<b>654 - Unidades permitidas</b>
+!v004!Identificação das unidades (bibliotecas) que o funcionário registrado terá direito ao acesso. Para a seleção de mais que uma unidade pressione [Shift] e selecione as unidades permitidas.
+
+!ID 000655
+!v004!<b>655 - Entrada e Edição</b>
+!v004!Habilita ou desabilita a permisão para consulta, entrada de dados e edição das bases de dados do PHL.
+
+!ID 000659
+!v004!<b>659 - Faixa de IP</b>
+!v004!Indicação de restrição de acesso por faixa de IP. Este tipo de restrição é de grande utilidade quando a biblioteca se utiliza de estagiários e por medida de segurança quer garantir que este usuário somente utilize seu login de acesso a partir de um computador da biblioteca com um IP determinado.
+!v005!Exemplo: 200.241.12.123
+!v005!Exemplo: 200.241.12
+!v005!Exemplo: 200.241
+
+!ID 000671
+!v004!<b>671 - Tipo de usuário</b>
+!v004!Identificação do tipo de usuário ao qual as regras serão aplicadas. O formulário apresenta as opções de usuários definidas na <b>Base de dados Tipo de usuário</b>. Havendo necessidade, novos tipos podem ser acrescentados nesta base de dados.
+
+!ID 000672
+!v004!<b>672 - Tipo de objeto ou documento</b>
+!v004!Identificação do tipo de objeto ao qual esta regra irá ser aplicada. O formulário apresenta as opções de tipos de documentos definidas na <b>Base de dados Formulário do Catálogo</b>. Havendo necessidade, novos tipos podem ser acrescentados.
+
+!ID 000673
+!v004!<b>673 - Prazo de empréstimo</b>
+!v004!Quantidade de dias permitidos para o empréstimo do tipo de objeto definido. A biblioteca deverá decidir sobre a forma de cálculo do prazo de empréstimo, considerando dias corridos ou dias úteis.
+!v004!<ul>
+!v004!<li><b>Dias corridos:</b> O prazo de empréstimo será contado em dias corridos a partir da data que o empréstimo foi efetuado;</li>
+!v004!<li><b>Dias úteis:</b> O prazo de empréstimo será contado com base nos dias úteis. Domingos e feriados não serão considerados. A informação sobre dias úteis é sempre obtida a partir das informações registradas na <b>Base de dados Calendário</b>.</li>
+!v004!</ul>
+!v004!Em ambas as modalidades, a data de devolução nunca irá coindicidir com uma data que esteja assinalada na <b>Base de dados Calendário</b> como dia não útil.
+!v005!Exemplo: 3
+
+!ID 000674
+!v004!<b>674 - Quantidade de objetos permitidos</b>
+!v004!Quantidade de objetos do tipo indicado no campo #672, permitidos para este tipo de usuário.
+!v005!Exemplo: 5
+
+!ID 000676
+!v004!<b>676 - Penalidade aplicada</b>
+!v004!Valor da multa ou prazo de suspensão no caso de atraso na devolução. O Valor da multa deverá ser registrado em moeda corrente e será válido para cada dia de atraso na devolução do objeto. As casas decimais devem ser separadas por ponto. O prazo de suspensão será a quantidade de dias que o usuário ficará suspenso para cada dia de atraso.
+!v005!Exemplo: 1.50
+
+!ID 000679
+!v004!<b>679 - Forma de cálculo da multa</b>
+!v004!Características do dia que será considerado para cálculo da multa. O sistema apresenta duas opções:
+!v004!<ul>
+!v004!<li><b>Dias úteis:</b> Somente os dias úteis de atraso serão considerados para o cálculo da multa ou suspensão;</li>
+!v004!<li><b>Dias corridos:</b> Todos os dias de atraso serão considerados para o cálculo da multa ou suspensão, independentemente de serem dias úteis ou não.</li>
+!v004!</ul>
+
+!ID 000700
+!v004!<b>700 - Login do usuário</b> (obrigatório)
+!v004!Chave de no máximo 9 caracteres e que combinada com uma senha irá permitir ao usuário da biblioteca o acesso à área de serviços do PHL, permitindo que ele faça reservas; renovações; atualização de cadastro; sugestões de compra e buscas segundo seu perfil de interesse (DSI).
+!v004!A chave pode ser composta de letras e números. Caracteres especiais não são permitidos.
+!v005!Exemplo: ElysioMSO
+
+!ID 000701
+!v004!<b>701 - Número de Matrícula do Usuário</b> (obrigatório)
+!v004!Número sequencial correspondente à matricula do usuário. Este número irá identificar o usuário em todas as operações com a biblioteca e deverá corresponder ao código de barras impresso na carteirinha de identificação do usuário.  O controle da sequência numérica é feito automaticamente pelo PHL, iniciando a partir do número fornecido como parâmetro do arquivo "phl_usr.ctl".
+!v004!O arquivo "phl_usr.ctl" que controla esta numeração, é um arquivo texto que pode ser editado com qualquer editor de texto.
+!v004!Caso a identificação da matrícula do usuário não seja um código numérico, a biblioteca poderá efetuar o controle manual da numeração, substituindo o número sequencial fornecido pelo PHL, por outro código de identificação qualquer.
+!v005!Exemplo: 001234
+
+!ID 000702
+!v004!<b>702 - Senha do Usuário</b> (obrigatório)
+!v004!Senha alfanumérica de até 15 caracteres necessária para o acesso do usuário aos serviços da biblioteca. Ao cadastrar o usuário, recomendamos utilizar o número de matrícula como senha e orientar o usuário que a partir da sua primeira conexão ele deve alterar sua senha por outra de sua preferência.
+!v005!Exemplo: asdf34
+
+!ID 000703
+!v004!<b>703 - Status</b> (obrigatório)
+!v004!Situação do registro do usuário. Por padrão, durante a criação de um novo registro, o sistema considera-o como ativo. Esta opção permite o bloqueio temporário ou permanente do usuário aos serviços da biblioteca.
+!v004!O registro de um usuário nunca deve ser eliminado. Quando ele não fizer mais parte da instituição ou quando a instituição quizer interromper o vínculo deste usuário com a biblioteca, recomendamos suspendê-lo. Esta orientação visa permitir a manutenção de uma série histórica de todos os usuários que já utilizaram o serviço de biblioteca, permitindo a emissão de relatórios de históricos de tombo. Se o registro do usuário for eliminado, o sistema ficará impossibilitado de gerar o relatório de histórico de tombos, de grande utilidade, pois substitui as antigas fichas que eram armazenadas nos bolsões dos objetos de empréstimo.
+
+!ID 000704
+!v004!<b>704 - Prazo de Validade</b> (facultativo)
+!v004!Prazo de validade da matrícula do usuário transcrita no padrão ISO (AAAAMMDD). O objetivo deste prazo de validade é controlar a atualização dos dados cadastrais do usuário. Após o vencimento deste prazo, o usuário ficará obrigado a se dirigir à biblioteca para atualização de seus dados cadastrais, caso contrário ficará impedido de continuar a utilizando os serviços de reservas, DSI, renovação e empréstimo.
+!v004!Exemplo: 20101231
+
+!ID 000705
+!v004!<b>705 - Nome completo do Usuário</b> (obrigatório)
+!v004!Nome completo do usuário, na forma apresentada em seu documento de identidade.
+!v005!Exemplo: Elysio Mira Soares de Oliveira
+
+!ID 000706
+!v004!<b>706 - Endereço completo do Usuário</b> (essencial)
+!v004!Endereço completo do usuário com os devidos complementos (Rua, Av., apto, etc).
+!v005!Exemplo: Rua Joaquim Nabuco, 234
+
+!ID 000707
+!v004!<b>707 - Nome da Cidade</b> (essencial)
+!v004!Nome da cidade de residência do usuário, correspondente ao endereço registrado no campo 706.
+!v005!Exemplo: Porto Alegre
+
+!ID 000708
+!v004!<b>708 - Unidade da Federação, Estado ou Província</b> (essencial)
+!v004!Nome ou sigla da unidade da federação, Estado ou Província correspondente ao endereço registrado no campo 706.
+!v005!Exemplos: São Paulo
+!v005!          SP
+
+!ID 000709
+!v004!<b>709 - Código de Endereçamento Postal</b> (essencial)
+!v004!Código de Endereçamento Postal referente ao endereço do usuário.
+!v005!Exemplo: 77.413-290
+
+!ID 000710
+!v004!<b>710 - Fones</b> (essencial)
+!v004!Número do telefone ou telefones de contato com o usuário. Havendo mais que um número de telefone, estes deverão ser registrados um em cada linha da caixa de texto do formulário.
+!v005!Exemplo: (11) 3387-1279
+
+!ID 000711
+!v004!<b>711 - Período de freqüencia do Usuário</b> (facultativo)
+!v004!Período de frequência do usuário na instituição de ensino.
+
+!ID 000712
+!v004!<b>712 - Turma</b> (facultativo)
+!v004!Turma, grau ou série a que pertence o usuário no estabelecimento de ensino.
+!v004!Exemplo: 3a série
+
+!ID 000713
+!v004!<b>713 - Curso</b> (facultativo)
+!v004!Curso principal, ao qual o usuário está regularmente matriculado no estabelecimento de ensino.
+!v004!As opções disponíveis na caixa de seleção serão aquelas definidas na tabela de <b>Tipos de Cursos</b>. Havendo necessidade, novos cursos poderão ser acrescentados, desabilitados ou habilitados.
+!v004!Se a caixa de seleção estiver vazia, significa que nenhum curso da tabela de <b>Tipos de Cursos</b> foi definido para ser apresentado como opção de escolha.
+
+!ID 000714
+!v004!<b>714 - Correio eletrônico (e-mail)</b> (essencial)
+!v004!Transcrição do e-mail do usuário. 
+!v004!Esta informação é essencial para a rotina de envio automático de e-mails ao usuário quando um documento reservado for devolvido. Neste caso, somente os usuários com e-mail registrado neste campo é que receberão este tipo de informação.
+!v005!Exemplo: jpereira@bol.com.br
+
+!ID 000716
+!v004!<b>716 - Expressão de Busca para o Perfil</b> (facultativo)
+!v004!Transcrição da expressão de busca a ser executada pelo PHL para obter os novos documentos inseridos no acervo da biblioteca pertinentes ao perfil de interesse do usuário.
+!v004!Esta informação é utilizada na rotina de Disseminação Seletiva da Informação (DSI), permitindo que o usuário mantenha controle periódico de todo material de interesse que chega à biblioteca.
+!v005!Exemplo: geografia AND brasil
+
+!ID 000717
+!v004!<b>717 - Hyperlinks</b> (facultativo)
+!v004!Indicação de links à textos disponíveis na web que tenha alguma relação com este usuário. A indicação deverá ser feita nos seguintes subcampos:
+!v005![^a] Legenda do hyperlink
+!v005![^b] URL do hyperlink
+!v005!Exemplo: ^aCurriculum Lates^bhttp://www.capes.com.br/lates/1234.htm
+
+!ID 000719
+!v004!<b>719 - Foto do Usuário</b> (facultativo)
+!v004!Endereço do arquivo de imagem correspondente à foto do usuário. A foto do usuário é utilizada para fins de impressão das carteirinhas de indentificação e também serão apresentadas durante uma operação de empréstimo ou devolução. As fotos podem ser digitalizadas em qualquer padrão e transferidas para o servidor.
+!v005!Exemplo: http://localhost:8080/000123.jpg
+
+!ID 000720
+!v004!<b>720 - Departamento</b> (facultativo)
+!v004!Nome do departamento ao qual o usuário esteja vinculado, no caso de funcionário ou professor da instituição ou nome da empresa onde trabalha, no caso de bibliotecas públicas.
+!v005!Exemplos: Departamento de Fisiologia Animal
+!v005!          Companhia Siderúrgica Nacional
+!v005!          Pestalozzi (setor de vendas)
+
+!ID 000723
+!v004!<b>723 - Tipo de Usuário</b> (obrigatório)
+!v004!Esta informação é utilizada pelo PHL para definição dos prazos e quantidades de documentos permitidos para o empréstimo. Os tipos disponíveis serão aqueles definidos na <b>Base de dados Tipo de usuário</b>. Havendo necessidade, novos tipos poderão ser acrescentados.
+!v004!Exemplo: Acadêmico
+
+!ID 000724
+!v004!<b>724 - Lembrete/Alerta</b> (facultativo)
+!v004!Informação que estará disponível durante uma operação de empréstimo, devolução, ou de geração de extrato deste usuário. Havendo informação registrada neste campo, será apresentado um link que dará acesso a esta informação.
+
+!ID 000725
+!v004!<b>725 - Observações Gerais</b> (facultativo)
+!v004!Observações gerais sobre o usuário ou sua situação com a biblioteca.
+!v005!Exemplo: Deve comprovante de endereço
+
+!ID 000726
+!v004!<b>726 - Data de Nascimento do Usuário</b> (facultativo)
+!v004!Data de nascimento do usuário. A data deverá ser registrada no padrão ISO (AAAAMMDD).
+!v005!Exemplo: 19540823
+
+!ID 000727
+!v004!<b>727 - Número do Documento de Identidade</b> (facultativo)
+!v004!Número do documento de identidade do usuário seguido da informação sobre o órgão expedidor.
+!v005!Exemplo: 721.844.320 SSP/SP
+
+!ID 000728
+!v004!<b>728 - Número do CPF do Usuário</b> (facultativo)
+!v004!Número do documento do Cadastro de Pessoas Físicas do usuário.
+!v005!Exemplo: 821.766.988-14
+
+!ID 000730
+!v004!<b>730 - Código da biblioteca</b> (obrigatório)
+!v004!Código que identifica a biblioteca ou unidade responsável pela matrícula deste usuário no caso da biblioteca fazer parte de um sistema de bibliotecas.
+!v004!Este código é gerado automaticamente pelo PHL durante a matrícula do usuário.
+!v004!Exemplo: 001
+
+!ID 000750
+!v004!<b>750 - Código da Unidade</b> (obrigatório)
+!v004!Código que identifica a biblioteca no sistema de bibliotecas administrado pelo PHL. Este código é gerado automaticamente pelo PHL durante a criação de um novo registro.
+
+!ID 000751
+!v004!<b>751 - Código do fornecedor</b> (obrigatório)
+!v004!Código numérico que identifica cada fornecedor no banco de dados. Este código é criado automaticamente pelo PHL durante a criação de um novo registro e é utilizado como elo de ligação com a base de dados de sugestões de compra.
+
+!ID 000752
+!v004!<b>752 - Nome do fornecedor</b> (obrigatório)
+!v004!Nome do fornecedor.
+!v005!Exemplo: Distribuidora Barros Ltda
+
+!ID 000753
+!v004!<b>753 - CNPJ / CPF</b> (facultativo)
+!v004!Número do CNPJ o CPF do fornecedor.
+!v005!Exemplo: 04.123.788/0001-90
+
+!ID 000754
+!v004!<b>754 - Endereço do Fornecedor</b> (essencial)
+!v004!Endereço completo do fornecedor com os devidos complementos (Rua, Av., num., apto., Bairro, etc).
+!v005!Exemplo: Rua Ceará,456
+
+!ID 000755
+!v004!<b>755 - Cidade</b> (essencial)
+!v004!Cidade correspondente ao endereço registrado no campo 754.
+!v005!Exemplo: Porto Alegre
+
+!ID 000756
+!v004!<b>756 - Unidade da Federação</b> (essencial)
+!v004!Nome ou sigla da unidade da federação, estado ou província correspondente ao endereço registrado no campo 754.
+!v005!Exemplo: Tocantins
+
+!ID 000757
+!v004!<b>757 - CEP</b> (essencial)
+!v004!Código de Endereçamento Postal.
+!v005!Exemplo: 77.413-290
+
+!ID 000758
+!v004!<b>758 - Fones</b> (essencial)
+!v004!Número do telefone ou telefones de contato com o fornecedor.
+!v005!Exemplo: (11) 4321-8778
+
+!ID 000759
+!v004!<b>759 - Correio eletrônico (e-mail)</b> (essencial)
+!v004!E-mail ou e-mails do fornecedor. Havendo mais que um endereço, estes deverão ser registrados um em cada linha da caixa de texto do formulário.
+!v005!Exemplo: barros@barros.com.br
+
+!ID 000760
+!v004!<b>760 - Títulos Agenciados</b> (facultativo)
+!v004!Títulos dos periódicos agenciados por este fornecedor. Os títulos deverão ser registrados um em cada linha da caixa de texto do formulário.
+!v005!Exemplo: Revista Veja
+!v005!         Revista Isto-é
+!v005!         Glogo Rural
+
+!ID 000761
+!v004!<b>761 - Editoras</b> (facultativo)
+!v004!Nomes das editoras agenciadas por este fornecedor. Os nomes deverão ser registrados um em cada linha da caixa de texto do formulário.
+!v005!Exemplo: Makrom books</pre>
+
+!ID 000762
+!v004!<b>762 - Observações</b> (facultativo)
+!v004!Observações referentes ao fornecedor.
+!v005!Exemplo: Fornecedor não cumpre prazo de entrega do contrato
+
+!ID 000763
+!v004!<b>763 - Endereço WEB</b> (facultativo)
+!v004!URL do sítio Web do fornecedor.
+!v005!Exemplo: www.barros.com.br
+
+!ID 000764
+!v004!<b>764 - País do Fornecedor</b> (facultativo)
+!v004!Nome do país do fornecedor caso extrangeiro.
+!v005!Exemplo: França</pre>
+
+!ID 000768
+!v004!<b>768 - Coleção eletrônica</b> (essencial)
+!v004!Notação que indica os fascículos ou volumes disponíveis através da internet. Cada nota deverá ser transcrita em uma linha da caixa de texto, conforme exemplos abaixo:
+!v005!1985-89 12-17
+!v005!Este exemplo indica que os volumes de 12 até 17 que correspondem aos anos de 1985 a 1989 estão completos
+!v005!1990 18(1-7,9-12)
+!v005!Este exemplo indica que o volume 18 correspondente ao ano de 1990 está incompleto. As informações registradas entre parênteses indicam os exemplares disponíveis.
+
+!ID 000769
+!v004!<b>769 - Menção de Responsabilidade</b> (facultativo)
+!v004!Nome do editor responsável pelo conteúdo intelectual do documento.
+!v005!Exemplo: Universidade de São Paulo. Faculdade de Saúde Pública
+
+!ID 000770
+!v004!<b>770 - Coden</b> (facultativo)
+!v004!Código internacional utilizado por alguns editores para representar as séries periódicas.
+!v005!Exemplo: 12345
+
+!ID 000771
+!v004!<b>771 - Código da Coleção</b> (obrigatório)
+!v004!Código que identificará a coleção de periódico. Este código é utilizado como elo de ligação entre a base de dados do kardex com a base de dados do catálogo através do campo #033 permitindo vincular as informações sobre a coleção quando o usuário solicita o status de um documento pertencente a uma série periódica.
+!v004!Este código é gerado automaticamente pelo PHL através da data, hora, minuto e segundo da criação do registro e pelo código da chave de login do bibliotecário responsável pela criação do registro, tornando-se um código único, sem duplicidades e sua atribuição independe da posição do registro na base de dados.
+!v004!Em versões anteriores do PHL, este código era uma cópia do MFN do registro. Esta prática foi abandonada devido ao fato do MFN ser um número transitório, causando problemas de duplicidades quando a base de dados era exportada e importada novamente expurgando os MFNs deletados. Assim, a nova base de dados passava a ter um número de MFNs menor que a originale e o novo número atribuido acabava coincidindo com um número já existente.
+!v004!Este código, uma vez criado, não pode ser modificado, portanto, não aparece no formulário de edição de dados.
+
+!ID 000772
+!v004!<b>772 - ISSN - <i>International Standard Serial Number</i></b> (essencial)
+!v004!Número que identifica internacionalmente uma série periódica. O número deverá ser registrado na forma em que aparece na publicação. O prefixo ISSN deverá ser omitido.
+!v005!Exemplo: 0100-7122
+
+!ID 000773
+!v004!<b>773 - Título do Periódico</b> (obrigatório)
+!v004!Título completo que identifica o periódico.
+!v005!Exemplo: Rebistra Brasileira de Odontologia
+
+!ID 000774
+!v004!<b>774 - Continua como</b> (facultativo)
+!v004!Título da continuação do periódico, caso tenha sido encerrado e continuado com outro nome.
+!v005!Exemplo: Semanário de Frutas e Legumes
+
+!ID 000775
+!v004!<b>775 - Continuação de</b> (facultativo)
+!v004!Título encerrado do periódico do qual o título descrito seja sua continuação.
+!v005!Exemplo: Frutas e Legumes
+
+!ID 000776
+!v004!<b>776 - Periodicidade</b> (obrigatório)
+!v004!Frequência de publicação do periódico. As opções apresentadas na caixa de seleção do formulário serão aquelas definidas na <b>Base de dados Tipo de periodicidade</b>. Havendo necessidade, novas opções poderão ser criadas.
+
+!ID 000777
+!v004!<b>777 - Local de Publicação</b> (obrigatório)
+!v004!Nome da cidade de publicação do periódico. Se esta inforamção não for conhecida, registra-se "[s.l.]".
+!v005!Exemplo: Rio de Janeiro
+
+!ID 000778
+!v004!<b>778 - Editora</b> (obrigatório)
+!v004!Nome da editora responsável pela publicação do periódico. Se esta informação não for conhecida, registra-se "[s.n.]".
+!v005!Exemplo: Abril Cultural
+
+!ID 000779
+!v004!<b>779 - Seção / Parte</b> (facultativo)
+!v004!Nome da seção ou parte de um periódico.
+!v005!Exemplo: Seção II
+
+!ID 000780
+!v004!<b>780 - Curso(s) indicado(s)</b> (facultativo)
+!v004!Curso ou cursos para o qual o documento tenha sido indicado ou adquirido. Esta informação  é utilizada na emissão de relatórios estatísticos exigidos pelo MEC.
+!v004!As opções apresentadas no formulário serão aquelas definidas pelo bibliotecário na base de dados de configuração de <b>Tipos de Cursos</b>.
+!v004!Para a seleção de mais de um curso, mantenha pressionada a tecla [CTRL] durante a seleção.
+!v004!Se a caixa de seleção estiver vazia, significa que nenhum curso da base de dados de configurações de <b>Tipos de Cursos</b> foi definido para ser apresentado como opção de escolha.
+
+!ID 000781
+!v004!<b>781 - Endereço eletrônico</b> (essencial)
+!v004!Endereço eletrônico (URL) onde o periódico pode ser encontrado na internet.
+!v005!Exemplo: http://revista.ibict.br/index.php/ciinf
+
+!ID 000782
+!v004!<b>782 - Procedência do periódico</b> (obrigatório)
+!v004!Procedência do periódico. Este dado é utilizado durante a emissão de relatórios estatísticos para o MEC. As opções apresentadas na caixa de seleção do formulário são aquelas definidas na <b>Base de dados Tipo de procedência</b>. Havendo necessidade novas opções poderão ser acrescentadas.
+
+!ID 000783
+!v004!<b>783 - Assinatura</b> (obrigatório)
+!v004!Estado da coleção, se corrente ou não corrente. Este dado é utilizado  durante a emissão de relatórios estatísticos do acervo. As opções disponíveis na caixa de seleção do formulário são aquelas definidas na <b>Base de dados Tipo de assinatura</b>. Havendo necessidade, novas opções poderão ser acrescentadas.
+
+!ID 000784
+!v004!<b>784 - Forma de aquisição</b> (obrigatório)
+!v004!Forma de aquisição do periódico. Este dado é utilizado na emissão de relatórios estatísticos do acervo. As opções apresentadas na caixa de seleção do formulário são aquelas definidas na <b>Base de dados Tipo de aquisição</b>. Havendo necessidade, novas opções poderão ser acrescentadas. O preenchimento deste campo torna-se obrigatório para a geração correta dos relatórios estatísticos para o MEC.
+
+!ID 000785
+!v004!<b>785 - Subtítulo do periódico</b> (essencial)
+!v004!Subtítulo do periódico, quando houver.
+!v005!Exemplo: fatos em revista
+
+!ID 000786
+!v004!<b>786 - Histórico da coleção</b> (facultativo)
+!v004!Informações relativas a históricos das assinaturas, valor pago pela assinatura,  indicação dos fascículos que inclui a compra e o agente correspondente. Subcampos  que compõe o campo de dado:
+!v005!
+!v005!   (d) Data do pagamento da assinatura
+!v005!   (v) Valor pago pela assinatura
+!v005!   (f) Fascículos que inclui a assinatura
+!v005!   (a) Agente
+!v005!   (c) Código da assinatura
+!v005!
+!v005!Exemplo: ^d20040302^v230,00^f12-37^aEBSCO^c123
+!v005!         ^d20050322^v240,00^f38-48^aEBSCO^c124
+
+!ID 000787
+!v004!<b>787 - Permuta com</b> (facultativo)
+!v004!Título do periódico utilizado na permuta, quando houver.
+!v005!Exemplo: Revista da ABRASCO
+
+!ID 000788
+!v004!<b>788 - Renovar em</b> (facultativo)
+!v004!Ano e mês da próxima renovação da assinatura. A data deverá ser registrada no formato AAAAMM para facilitar as buscas.
+!v005!Exemplo: 200603
+
+!ID 000789
+!v004!<b>789 - Idioma(s) do Texto</b> (obrigatório)
+!v004!Idioma ou idiomas do texto. As opções apresentadas na caixa de seleção do formulário serão aquelas definidas na <b>Base de dados Tipo de idioma</b>. Havendo necessidade, novas opções de idiomas poderão ser acrescentadas.
+!v004!Se o texto for multilingüe, os idiomas poderão ser selecionados mantendo-se a tecla [CTRL] pressionada para a seleção de mais que um idioma.
+
+!ID 000790
+!v004!<b>790 - Coleção</b> (obrigatório)
+!v004!Notação que indica os fascículos ou volumes existente na biblioteca. Cada nota deverá ser transcrita em uma linha da caixa de texto, conforme exemplos abaixo:
+!v004!<ul><li>1985-89 12-17<br><i>Este exemplo indica que os volumes de 12 até 17 que correspondem aos anos de 1985 a 1989 estão completos)</i></li>
+!v004!<li>1990 18(1-7,9-12)<br><i>Este exemplo indica que o volume 18 correspondente ao ano de 1990 está incompleto. A informação fornecida entre parênteses indica os exemplares disponíveis.)</i></li></ul>
+!v005!Exemplo: 1985-1989 12-17
+!v005!         1990 18(1-7,9-12)
+
+!ID 000791
+!v004!<b>791 - Notas Gerais</b> (facultativo)
+!v004!Notas gerais relativas ao periódico ou situação da coleção ou assinatura.
+!v005!Exemplo: Vários volumes encadernados juntos
+
+!ID 000792
+!v004!<b>792 - Descritores de conteúdo</b> (facultativo)
+!v004!Palavras chaves que representam o conteúdo temático do periódico. Havendo necessidade do registro de mais de um descritor, estes deverão ser transcritos um em cada linha da caixa de texto do formulário.
+!v004!O ícone <img src="/phl84/arquivo.gif" border="0"> apresentado junto ao nome do campo abre o formulário para buscas na base de dados do vocabulário.
+!v005!Exemplo: História da Medicina
+!v005!         Medicina Familiar
+
+!ID 000793
+!v004!<b>793 - Área do conhecimento</b> (facultativo)
+!v004!Area do conhecimento para efeito de relatórios do MEC.
+!v004!O registro da informação sobre a área do conhecimento à qual o documento se insere é essencial para bibliotecas de instituições de ensino obrigadas a fornecer relatórios estatísticos para o MEC (Ministério da Educação) para reconhecimento de novos cursos ou para avaliação de cursos já reconhecidos.
+!v004!As opções apresentadas na caixa de seleção são aquelas recomendadas pelo MEC.
+!v004!Somente os registros que estiverem com o campo de área temática preenchido é que serão contabilizados nos relatórios estatísticos gerados pelo PHL.
+
+!ID 000794
+!v004!<b>794 - Variações do título</b> (facultativo)
+!v004!Outras formas de apresentação do título do periódico.
+
+!ID 000795
+!v004!<b>795 - País de publicação</b> (facultativo)
+!v004!País de publicação do título conforme normas ISO.
+
+!ID 000796
+!v004!<b>796 - Ano de publicação do primeiro fascículo</b> (essencial)
+!v004!Ano de publicação do primeiro fascículo do periódico.
+!v005!Exemplo: 1940
+
+!ID 000797
+!v004!<b>797 - Ano de encerramento da publicação</b> (essencial)
+!v004!Ano de encerramento da publicação.
+!v005!Exemplo: 1962
+
+!ID 000798
+!v004!<b>798 - Número do Título no CCN</b> (facultativo)
+!v004!Número correspondente ao título do periódico no Catálogo Coletivo Nacional.
+!v005!Exemplo: 09898
+
+!ID 000799
+!v004!<b>799 - Título abreviado</b> (facultativo)
+!v004!Título abreviado do periódico.
+!v005!Exemplo: Rev. Veja
+
+!ID 000800
+!v004!<b>800 - Identificação do Título</b> (obrigatório)
+!v004!Código que identifica o título do qual este exemplar é parte. Este código é gerado automaticamente durante a criação de um novo registro de tombo com a informação do campo #002 do registro do catálogo do qual este exemplar é parte. Todos os exemplares de um mesmo título sempre terão o mesmo número de identificação do título.
+!v004!<hr>
+!v004!<b>IMPORTANTE:</b> Se este número for alterado, o exemplar perderá o vínculo com o registro do título no catálogo do qual é parte.
+!v004!<hr>
+
+!ID 000801
+!v004!<b>801 - Número de tombo</b> (obrigatório)
+!v004!Número patrimonial que identifica unicamente cada objeto do acervo da biblioteca. O controle seqüencial desta numeração é feito automaticamente pelo PHL, iniciando na numeração com o valor fornecido no arquivo de configuração "001_tbo.ctl". Ao instalar o PHL pela primeira vêz, o conteúdo deste arquivo terá o valor 1.
+!v004!A configuração do número de tombo inicial para o controle automático da numeração é feito através da edição do arquivo "001_tbo.ctl", registrando neste arquivo o número inicial da següencia numérica. A edição pode ser feita com qualquer editor de texto (notepad, edit, vi, etc.).
+!v004!Algumas bibliotecas utilizam notações compostas com letras e números para representar o número de tombo. Nestes casos, basta transcrever a notação neste campo e efetuar manualmente o controle desta numeração para que não haja duplicidades.
+!v004!Recomendamos a utilização de tombos numéricos para poder usufruir da vantagem do controle automático da numeração oferecido pelo PHL, evitando duplicidades na numeração.
+!v004!Embora não seja recomentado, o PHL permite números de tombo duplicados quando forem de bibliotecas distintas. Isto pode acontecer quando o PHL estiver sendo utilizado para administrar um sistema de bibliotecas que possuem as mesmas sequencias de número de tombos, iniciando todas a partir do tombo 1.
+!v004!Neste caso, o bibliotecário deverá estar sempre alerta e identificar se objeto devolvido é realmente da sua biblioteca. Este cuidado não será necessário quando não houver duplicidades de números de objetos em todo o sistema de bibliotecas.
+!v004!A quantidade máxima de caracteres permitidos no número de tombo são 26 caracteres. Por padrão, o PHL gera o número de tomos com 6 dígitos mas este padrão pode ser alterado para 9 ou 12 dígitos na base de dados de configuração do sistema.
+!v005!Exemplo: 000029
+
+!ID 000802
+!v004!<b>802 - Complemento</b> (facultativo)
+!v004!Informação complementar ao número de chamada de cada exemplar e que será apresentada na lista de tombos da tabela de status do título.
+
+!ID 000803
+!v004!<b>803 - Exemplar</b> (essencial)
+!v004!Número de ordem que identifica o exemplar.
+!v004!Este número é gerado e controlado automaticamente pelo PHL durante o processo de registro de um novo exemplar. Havendo necessidade ele pode ser alterado.
+!v005!Exemplo: 1
+
+!ID 000804
+!v004!<b>804 - Livre</b> (facultativo)
+
+!ID 000806
+!v004!<b>806 - Aquisição com verba do curso:</b> (facultativo)
+!v004!Nome do curso que forneceu verba para aquisição do objeto.
+!v004!Esta informação é utilizada na geração de relatórios quantitativos sobre o valor investido na biblioteca por cada coordenação de cursos caso a biblioteca faça parte de uma instituição de ensino de nível superior.
+!v004!Se a caixa de seleção estiver vazia, significa que nenhum curso da tabela de <b>Tipos de Cursos</b> foi definido para ser apresentado como opção de escolha.
+
+!ID 000807
+!v004!<b>807 - Status</b> (obrigatório)
+!v004!Código de controle de disponibilidade do objeto.
+!v004!O sistema prevê 3 classes de disponibilidade:
+!v004!<ul>
+!v004!<li><b>Circulante:</b> Objeto que estará disponível nas rotinas de reservas e empréstimos;</li>
+!v004!<li><b>Consulta local:</b> Objeto que estará disponível somente para consulta local, sendo permitido o empréstimo para devolução no mesmo dia.</li>
+!v004!<li><b>Indisponível:</b> Objeto descartado ou desaparecido.</li>
+!v004!</ul>
+
+!ID 000819
+!v004!<b>819 - Modo de aquisição</b> (obrigatório)
+!v004!Forma de aquisição do documento para fins de emissão de relatórios estatísticos exigidos pelo MEC. As opções apresentadas na caixa de seleção do formulário são aquelas definidas na <b>Base de dados Tipo de aquisição</b>. Havendo necessidade, novas opções podem ser inseridas.
+
+!ID 000820
+!v004!<b>820 - Data da Aquisição</b> (obrigatório)
+!v004!Data da aquisição do documento ou objeto padronizada no formato ISO (AAAAMMDD) para fins de emissão de relatórios estatísticos exigidos pelo MEC.
+!v004!Caso a data de aquisição não seja conhecida, registre a data de publicação do documento.
+!v005!Exemplo: 20050401
+
+!ID 000821
+!v004!<b>821 - Fornecedor/Doador</b> (facultativo)
+!v004!Nome do fornecedor ou doador do documento. Este campo não deve ser preenchido quando o exemplar se referir a um fascículo de periódico.
+!v005!Exemplo: Distribuidora Barros Ltda
+
+!ID 000822
+!v004!<b>822 - Nota fiscal</b> (facultativo)
+!v004!Número da nota fiscal correspondente à compra do documento.
+!v004!Exemplo: 000321
+
+!ID 000823
+!v004!<b>823 - Valor em moeda corrente</b> (facultativo)
+!v004!Valor pago ao documento ou objeto para fins de emissão de relatórios patrimoniais.
+!v004!Registra-se somente o valor e havendo casas decimais estas deverão ser separadas por uma vírgula.
+!v005!Exemplo: 23,10
+
+!ID 000824
+!v004!<b>824 - Valor em Dólar</b> (facultativo)
+!v004!Conversão para U$ dolar do valor registrado no campo 823.
+!v005!Exemplo: 4,30
+
+!ID 000825
+!v004!<b>825 - Prazo excepcional</b> (facultativo)
+!v004!Prazo de empréstimo para este exemplar, quando o mesmo <b>NÃO</b> for seguir as mesmas regras gerais de empréstimo configurada para este tipo de documento ou objeto. Este campo <b>NÃO</b> deverá ser preenchido se o documento ou objeto for seguir as mesmas regras já estabelecidas nas configurações de prazos e quantidades.
+!v004!A opção (Não circula) somente poderá ser utilizada quando o objeto for de "Consulta local"  e se decidir não permitir que seja emprestado nem pela modalidade de "Consulta local" (devolver no mesmo dia). Os objetos marcados com a opção de "Não circula" não terão permissão de circularem por nenhuma das modalidades de empréstimos previstos.
+!v004!A opção (Overnight) quando selecionada vai impedir que o documento seja emprestado antes de uma hora do término do expediente e obriga que a devolução seja feita até uma hora após a abertura da biblioteca no próximo dia útil. Se o usuário devolver fora deste horário, incidirá multa ou pena de suspensão, para cada hora de atraso. O cálculo da multa será feito pela quantidade de horas de atraso multiplicado pelo valor da multa diária definida no regulamento da biblioteca.
+
+!ID 000826
+!v004!<b>826 - Restauração</b> (facultativo)
+!v004!Data, descrição de técnicas, materiais e métodos de restaurações de fotografias e objetos de museu e nome do responsável. Estas informações deverão ser registradas obedecendo a seguinte sintaxe:
+!v004!<ul>
+!v004!<li><b>Data da restauração:</b> Registra-se a data da restauração no formato AAAAMMDD com o prefixo "^a". Exemplo: ^a20060530</li>
+!v004!<li><b>Descrição de técnicas:</b> Registra-se a descrição de técnicas, materiais e métodos de restauração imediatamente após a data e prefixada por "^b". Exemplo: ^a20060530^bLimpeza geral utilizando água e sabão</li>
+!v004!<li><b>Nome do responsável:</b> Registra-se o nome do responsável imediatamente após a descrição de técnicas e prefixado com o "^c". Exemplo: ^a20060530^bLimpeza geral utilizando água e sabão^cRoberto Souto Pereira</li>
+!v004!</ul>
+!v005!Exemplo: ^a20041201^bLimpeza geral utilizando água e sabão^cRoberto Souto Pereira
+!v005!         ^a20051401^bLimpeza geral utilizando água e sabão e detergente^cMiriam Piazza
+
+!ID 000827
+!v004!<b>827 - Prevenção</b> (facultativo)
+!v004!Data, descrição de técnicas, materiais e métodos de prevenção de fotografias e objetos de museu e nome do responsável. Estas informações deverão ser registradas em 3 subcampos:
+!v004!<ul>
+!v004!<li>Subcampo "a": registra-se a data da prevenção no formato ISO (AAAAMMDD);</li>
+!v004!<li>Subcampo "b": para registro da descrição de técnicas, materiais e métodos de prevenção;</li>
+!v004!<li>Subcampo "c": para registro do nome do responsável pela prevenção.</li>
+!v004!</ul>
+!v005!Exemplo: ^a20041201^bLimpeza geral utilizando água e sabão^cRoberto Souto Pereira
+!v005!         ^a20051401^bLimpeza geral utilizando água e sabão e detergente^cMiriam Piazza
+
+!ID 000830
+!v004!<b>830 - Nome dos antigos proprietários do objeto</b> (facultativo)
+!v004!Nomes dos antigos proprietários do objeto inserido no acervo.
+!v005!Exemplo: Paulo Diniz
+
+!ID 000831
+!v004!<b>831 - Cedência</b> (facultativo)
+!v004!Informações que identificam o processo de cedência de uma foto ou objeto de museu. Este campo é composto dos seguintes subcampos:
+!v004!   (d) Data da cedência
+!v004!   (n) Nome do cedente
+!v004!   (o) Objetivo da cedência
+!v004!   (u) Utilizada em
+!v004!   (a) Autorizado por
+!v005!Exemplo: ^d20070123^nJosé Carlos^oExposição^aPedro Manoel
+
+!ID 000833
+!v004!<b>833 - Valor do seguro</b> (facultativo)
+!v004!Valor segurado do objeto.
+!v005!Exemplo: R$ 2.340.000,00
+
+!ID 000837
+!v004!<b>837 - Observações Gerais</b> (facultativo)
+!v004!Observações gerais acerca do documento ou objeto.
+!v004!Exemplo: Suspenso em 25/03/2007 porque se encontra extraviado
+
+!ID 000838
+!v004!<b>838 - Número da Conservação</b> (facultativo)
+!v004!Número que o obleto recebe quando chega no laboratório de consevação.
+!v005!<ul>
+!v005!<li><b>Exemplo:</b></li>
+!v005!12345
+!v004!</ul>
+
+!ID 000839
+!v004!<b>839 - Data da entrada do Objeto na restauração</b> (facultativo)
+!v004!Data da entrada do objeto no laboratório de restauração padronizada no formato ISO (AAAAMMDD) para fins de emissão de relatórios estatísticos.
+!v005!Exemplo: 20050401
+
+!ID 000840
+!v004!<b>840 - Diagnóstico da restauração</b> (facultativo)
+!v004!Descrição do diagnóstico da restauração
+!v005!Exemplo: Peça chegou partida em 5 partes
+
+!ID 000841
+!v004!<b>840 - Imagens do material (facultativo)
+!v004!Código HTML que será interpretado pelo PHL. Este recurso permiti a inclusão de links com imagens do objeto da forma em que chegou na restauração e como ficou depois de restaurado. É uma imagem interna.
+!v005!<u>Exemplo 1:</u>
+!v005!&lt;a href="http://www.elysio.com.br"&gt;Site do Elysio&lt;/a&gt;
+!v005!Este exemplo vai gerar o link <a href=http://www.elysio.com.br>Site do Elysio</a>
+!v005!<u>Exemplo 2:</u>
+!v005!&lt;img src="http://www.elysio.com.br/site/gifs/phl.jpg" border="0"&gt;
+!v005!Este exemplo vai mostrar a imagem <img src="http://www.elysio.com.br/site/gifs/phl.jpg" border="0">
+
+!ID 000842
+!v004!<b>842- Data final do procedimento de restauração</b> (facultativo)
+!v004!Data final do procedimento de restauração do objeto no laboratório de restauração padronizada no formato ISO (AAAAMMDD) para fins de emissão de relatórios estatísticos.
+!v005!Exemplo: 20050401
+
+!ID 000843
+!v004!<b>843 - Tratamentos anteriores</b> (facultativo)
+!v004!Descrição dos tratamentos anteriores na peça
+!v005!Exemplo: Peça ja sofreu intervenção por ter caido.
+
+!ID 000844
+!v004!<b>844 - Recomendações</b> (facultativo)
+!v004!Recomendação do laboratório de conservação para a peça
+!v005!Exemplo: Peça ja sofreu intervenção por ter caido, tenha mais cuidado.
+
+!ID 000845
+!v004!<b>845 - Data da coleta</b> (facultativo)
+!v004!Data da coleta do material
+!v005!Exemplo: 20080914.
+
+!ID 000846
+!v004!<b>846 - Reserva Técnica</b> (facultativo)
+!v004!Endereço do local onde se encontra armazenada a peça e ou documento.
+!v004!Esse é um endereço sigiloso.
+!v005!Exemplo: Reserva Técnica 4
+
+!ID 000850
+!v004!<b>850 - Lançamentos</b>
+!v004!Este campo é preenchido e controlado automaticamente pelo PHL. Está subdividido com os seguintes subcampos:
+!v005!   (d) Data do lançamento
+!v005!   (t) Número do tombo
+!v005!   (u) Número do usuário
+!v005!   (b) Login do bibliotecário
+
+!ID 000871
+!v004!<b>871 - Autor</b>
+!v004!Nome do autor do documento sugerido a partir de seu sobrenome.
+!v005!Exemplo: SILVA, Mário
+
+!ID 000872
+!v004!<b>872 - Título</b>
+!v004!Título do documento sugerido.
+!v005!Exemplo: História da humanidade
+
+!ID 000873
+!v004!<b>873 - Editora</b>
+!v004!Nome da editora do documento sugerido.
+!v004!Exemplo: Vozes
+
+!ID 000874
+!v004!<b>874 - Local</b>
+!v004!Nome da cidade onde foi publicado o documento sugerido.
+!v005!Exemplo: Rio de Janeiro
+
+!ID 000875
+!v004!<b>875 - Ano</b>
+!v004!Ano de publicação do documento sugerido.
+!v005!Exemplo: 2004
+
+!ID 000876
+!v004!<b>876 - Páginas</b>
+!v004!Número total de páginas do documento sugerido.
+!v005!Exemplo: 212
+
+!ID 000877
+!v004!<b>877 - Nome do Solicitante</b> (obrigatório)
+!v004!Nome do usuário responsável pela sugestão de compra.
+!v005!Exemplo: Pedro Lins
+
+!ID 000878
+!v004!<b>878 - Correio eletrônico (e-mail)</b>
+!v004!E-mail do usuário responsável pela sugestão.
+!v005!Exemplo: jsilva@uol.com.br
+
+!ID 000879
+!v004!<b>879 - Curso</b>
+!v004!Nome do curso no qual o aluno esteja matriculado.
+!v004!Se a caixa de seleção estiver vazia, significa que nenhum curso da base de dados de configurações de <b>Tipos de Cursos</b> foi definido para ser apresentado como opção de escolha.
+!v005!Exemplo: Administração
+
+!ID 000880
+!v004!<b>880 - Departamento</b>
+!v004!Nome do departamento ao qual o usuário esteja vinculado.
+!v005!Exemplo: Departamento de Filosofia
+
+!ID 000881
+!v004!<b>881 - Quantidade de exemplares</b>
+!v004!Quantidade de exemplares sugeridos para a compra.
+!v005!Exemplo: 10
+
+!ID 000882
+!v004!<b>882 - Justificativa</b>
+!v004!Justificativa para a compra do objeto sugerido.
+!v005!Exemplo: Faz parte da bibliografia do curso de enfermagem
+
+!ID 000883
+!v004!<b>883 - Biblioteca</b>
+!v004!Biblioteca a qual será sugerida a compra do documento.
+
+!ID 000884
+!v004!<b>884 - Aprovação de compra</b>
+!v004!Indicação se o objeto sugerido foi aprovado pelo comitê que decide as compras. Este campo deverá ser preenchido somente após a decisão final do comitê.
+!v004!Ao assinalar uma compra aprovada, a sugestão passará a integrar a lista dos objetos em processo de cotação. A emissão da lista para cotação é feita através do link "Email/cotação" vinculado a cada registro da base de dados de fornecedores.
+
+!ID 000885
+!v004!<b>885 - Observações internas</b>
+!v004!Observações do bibliotecário.
+!v005!Exemplo: Já existem 12 exemplares no acervo
+
+!ID 000886
+!v004!<b>886 - Providências</b>
+!v004!Notas sobre as providências tomadas no encaminhamento da sugestão de compra e a data da providência no formato ISO.
+!v005!Exemplo: 20020401 Encaminhado para o comitê
+!v005!         20020415 Aprovado pelo comitê
+!v005!         20020415 Solicitado cotação
+
+!ID 000887
+!v004!<b>887 - Código do Fornecedor e valor da melhor cotação</b>
+!v004!Código do fornecedor selecionado para solicitação do pedido de compra e valor da cotação. O valor da cotação deverá ser registrado no subcampo "v".
+!v004!Este campo somente deverá ser preenchido quando a biblioteca já tiver o fornecedor que ofereceu a melhor cotação.
+!v004!Ao preencher o código do fornecedor, a sugestão será automaticamente incluida na lista de objetos em processo de compra. A emissão da lista de objetos em processo de compra é feita a partir da base de dados de fornecedores através do link "Email/compra" vinculado a cada registro de fornecedor.
+!v005!Exemplo: 000123
+
+!ID 000888
+!v004!<b>888 - Data da Compra</b>
+!v004!Data da compra do documento sugerido no formato AAAAMMDD.
+!v005!Exemplo: 20020416
+
+!ID 000889
+!v004!<b>889 - Matrícula</b>
+!v004!Número de matrícula do usuário na biblioteca.
+
+!ID 000890
+!v004!<b>890 - Tipo de documento sugerido</b>
+!v004!Tipo de documento sugerido.
+
+!ID 000891
+!v004!<b>891 - Tipo de operação</b>
+!v004!Tipo de operação (eeb - empréstimo entre bibliotecas ou sc - sugestão de compra).
+
+!ID 000892
+!v004!<b>892 - Biblioteca que possui o objeto</b>
+!v004!Biblioteca que possui o objeto a ser emprestado pelo eeb e que participam do sistema.
+
+!ID 000900
+!v004!<b>900 - Lançamentos</b>
+!v004!Este campo é preenchido e controlado automaticamente pelo PHL. Está subdividido com os seguintes subcampos:
+!v005!   (a) Número do título
+!v005!   (b) Login do usuário/bibliotecário
+!v005!   (c) Código de tipo de usuário
+!v005!   (d) Data da operação
+!v005!   (e) Código de tipo de documento ou coleção
+!v005!   (h) Hora da operação
+!v005!   (n) Mfn da data de devolucao
+!v005!   (o) Tipo de operação
+!v005!   (t) Número do tombo
+!v005!   (u) Número do usuário
+!v005!   (v) Data de devolução
+
+!ID 000910
+!v004!<b>910 - Lançamentos</b>
+!v004!Armazena todas as operações da rotina de circulação (empréstimo, empréstimo local, renovação, devolução e reservas). Este campo é preenchido e controlado automaticamente pelo PHL. Está subdividido com os seguintes subcampos:
+!v005!   (a) Número do título
+!v005!   (b) Nome do bibliotecário
+!v005!   (c) Código de tipo de usuário
+!v005!   (d) Data da operação
+!v005!   (e) Código de tipo de objeto
+!v005!   (f) MFN do título na base de dados do catálogo
+!v005!   (h) Hora da operação
+!v005!   (n) Mfn da data de devolucao
+!v005!   (o) Tipo de operação
+!v005!   (t) Número do tombo
+!v005!   (u) Número do usuário
+!v005!   (v) Data de devolução
+!v005!   (y) Código da biblioteca
+
+!ID 000920
+!v004!<b>920 - Tombo consultado</b>
+
+!ID 000940
+!v004!<b>940 - Penalidade</b>
+!v004!Campo preenchido e controlado automaticamente pelo PHL. Está subdividido nos seguintes subcampos:
+!v005!   (a) código da biblioteca
+!v005!   (d) data do lançamento no formato AAAAMMDD
+!v005!   (m) valor da multa
+!v005!   (o) tipo de operação (sus = suspensão, mul = multa).
+!v005!   (p) limite da penalidade (mfn do calendário)
+!v005!   (t) número de tombo do objeto da multa
+!v005!   (u) número do usuário
+
+!ID 000996
+!v004!<b>996 - Identificação do Todo</b> (obrigatório)</a>
+!v004!Código correspondente ao número de identicação registrado no campo #002 do registro que contém os dados do documento do qual esta analítica é parte. Este código é utilizado como elo entre as partes de um documento ou objeto e o seu todo.
+!v004!Este código é obtido automaticamente quando o link "analítica" é clicado e não deve ser modificado.
+
+!ID 000997
+!v004!<b>997 - MFN do título</b> (obrigatório)</a>
+!v004!Número do MFN do registro do título do qual este exemplar é parte. Este número é gerado automaticamente pelo PHL e é utilizado como elo de ligação entre cada registro de exemplar com o título do qual é parte.
+
+!ID 001001
+!v004!<b>Rotina de Importação</b>
+!v004!Esta opção permite a importação de registros de outras bibliotecas que disponibilizam seus registros na Web em formatos PHL, MARC, RIS, etc. O processo de importação é bastante simples, bastando efetuar uma busca no catálogo da biblioteca desejada, marcar o registro e colar na caixa de texto apresentada pelo PHL.
+!v004!Somente registros bibliográficos de documentos que não possuem vínculos é que poderão ser importados, por exemplo: Livros, Teses, Monografias, Anais de congressos, Vídeos, Mapas. 
+!v004!Não é permitida a importação de registros que descrevem partes de outros documentos ou séries periódicas, por exemplo: Fascículos de periódicos, artigos, capítulos de livros, faixas de CDs. Nestes casos, recomendamos que seja importado o registro do todo e depois descrever as partes diretamente no PHL para que se mantenha o vínculo entre elas.
+!v004!O processo de importação de registros de outras bibliotecas que utilizam o formato PHL é feito através de um servidor <font size="+1" color="#5f9ea0" face="mistral">PHL.net</font><font size="+1" color="red" face="mistral">opac</font> que mantém os endereços WWW de todas as bibliotecas que utilizam o PHL na Web.
+!v005!<b>Exemplo de um registro de importação no formato MARC obtido
+!v005!através do catálogo da <a class="link" href="http://www.bn.br" target="_new">Biblioteca Nacional</a></b>.
+!v005!================================================================<br>
+!v005!LDR 01068nam0022002657  4500
+!v005!001 100062613370254063
+!v005!003 Br
+!v005!005 20000913191243.7
+!v005!008 100062s2000    spba          000 0 por d
+!v005!020  __ |a 8534611874 (broch.)
+!v005!040  __ |a Br |b por
+!v005!082  04 |2 19 |a 658.3
+!v005!092  __ |a I-168,5,3
+!v005!100  1_ |a Chiavenato, Idalberto, |d 1929-
+!v005!245  10 |a Como transformar RH : |b de um centro de despesa em um centro de lucro / |c Idalberto Chiavento. -
+!v005!250  __ |a 2. ed. -
+!v005!260  __ |a São Paulo : |b Makron Books, |c 2000.
+!v005!300  __ |a xii, 196p. : |b il. ; |c 24cm.
+!v005!504  __ |a Bibliografia: p. 195-196.
+!v005!650  04 |a Administração de pessoal.
+!v005!650  04 |a Recursos humanos.
+!v005!852  __ |a DRG
+!v005!913  __ |a 100090610185710073
+!v005!949  __ |a 994.541 DL 29/06/2000
+!v005!<br>
+!v005!Exemplo do mesmo registro de importação no formato PHL:
+!v005!================================================================<br>
+!v005!001: 001
+!v005!003: 658.3
+!v005!005: L
+!v005!006: m
+!v005!016: Chiavenato, Idalberto
+!v005!018: Como transformar RH
+!v005!020: xii, 196
+!v005!040: Pt
+!v005!061: Bibliografia: p. 195-196
+!v005!062: Makron Books
+!v005!063: 2. ed
+!v005!064: 2000
+!v005!066: São Paulo
+!v005!069: 8534611874
+!v005!087: Administração de pessoal
+!v005!087: Recursos humanos
+!v005!181: de um centro de despesa em um centro de lucro
+!v005!<br>
+!v005!Exemplo de um registro de importação no formato RIS:
+!v005!================================================================<br>
+!v005!TY  - CHAP
+!v005!T1  - Physiological studies of the natriuretic peptide family
+!v005!A1  - Lewicki,J.A.
+!v005!A1  - Protter,A.A.
+!v005!Y1  - 1995///
+!v005!N1  - Atrial Natriuretic Peptide   Cardiac synthesis and secretion of /
+!v005!KW  - natriuretic
+!v005!KW  - receptors
+!v005!KW  - hypertension
+!v005!KW  - congestive heart failure
+!v005!RP  - IN FILE
+!v005!SP  - 1029
+!v005!EP  - 1053
+!v005!VL  - 2
+!v005!T2  - Hypertension: Pathophysiology, Diagnosis, and Management
+!v005!A2  - Laragh,J.H.
+!v005!A2  - Brenner,B.M.
+!v005!IS  - 61
+!v005!CY  - New York
+!v005!PB  - Raven Press, Ltd.
+!v005!<br>
+!v005!</pre>Para a importação basta marcar com o "mouse" todo o registro a ser importado,
+!v005!copiar e colar na caixa de texto do formulário de importação. Após a colagem basta
+!v005!pressionar o botão "Importar" que o PHL se incumbirá de efetuar a conversão apresentando
+!v005!o registro em um formulário de entrada de dados apresentando o registro já convertido
+!v005!para o padrão do PHL. O processo se conclui ao pressionar o botão "Salvar/Sair" do
+!v005!formulário de entrada.
+
+!ID 001002
+!v004!<b>Rotina de Exportação</b>
+!v004!Esta opção permite a exportação dos registros de todas as bases de dados utilizadas pelo PHL. O produto da exportação será apresentado ao usuário na tela do navegador, oferecendo a opção de marcar, copiar e colar para um arquivo texto qualquer.
+!v004!<b>PARÂMETROS DE EXPORTAÇÃO</b><br><br>
+!v004!<ul>
+!v004!<li><b>Nome da base de dados:</b><br>
+!v004!Nome da base de dados da qual se pretende exportar registros.
+!v004!</li>
+!v004!<li><b>Padrão:</b><br>
+!v004!Padrão do arquivo de exportação. As opções disponíveis são:
+!v004!<ul>
+!v004!<li><b>ISO2709</b>:<br>Apresenta os registros em um padrão que pode ser importado para qualquer aplicação que utilize softwares da família ISIS <i>(MX, MicroIsis, Winisis, etc)</i>
+!v004!Veja abaixo um registro bibliográfico exportado no formato ISO2709:
+!v004!<pre>
+!v004!00580000000000301000450000100040000000300060000400500020001000600020001200700070
+!v004!00140160022000210180020000430200009000630400003000720610025000750620013001000630
+!v004!00600113064000500119066001000124069001100134087002500145087001700170091000900187
+!v004!092000600196181004600202999002400248001000300272002000300275#001#658.3#L#m#00003
+!v004!0#Chiavenato, Idalberto#Como transformar RH#xii, 196#Pt#Bibliografia: p. 195-196
+!v004!#Makron Books#2. ed#2000#São Paulo#8534611874#Administração de pessoal#Recursos
+!v004!humanos#20041203#super#de um centro de despesa em um centro de lucro#^d20041203^
+!v004!h0547^bsuper#15#16##
+!v004!</pre>
+!v004!</li>
+!v004!<li><b>XML</b>:<br>Apresenta os registros com marcações XML, permitindo sua manipulação através de uma XSL.
+!v004!<pre>- [record mfn="15"]<br>
+!v004!  [field tag="1"]001[/field]<br>
+!v004!  [field tag="3"]658.3[/field]<br>
+!v004!  [field tag="5"]L[/field]<br>
+!v004!  [field tag="6"]m[/field]<br>
+!v004!  [field tag="7"]000030[/field]<br>
+!v004!  [field tag="16"]Chiavenato, Idalberto[/field]<br>
+!v004!  [field tag="18"]Como transformar RH[/field]<br>
+!v004!  [field tag="20"]xii, 196[/field]<br>
+!v004!  [field tag="40"]Pt[/field]<br>
+!v004!  [field tag="61"]Bibliografia: p. 195-196[/field]<br>
+!v004!  [field tag="62"]Makron Books[/field]<br>
+!v004!  [field tag="63"]2. ed[/field]<br>
+!v004!  [field tag="64"]2000[/field]<br>
+!v004!  [field tag="66"]São Paulo[/field]<br>
+!v004!  [field tag="69"]8534611874[/field]<br>
+!v004!  [field tag="87"]Administração de pessoal[/field]<br>
+!v004!  [field tag="87"]Recursos humanos[/field]<br>
+!v004!  [field tag="91"]20041203[/field]<br>
+!v004!  [field tag="92"]super[/field]<br>
+!v004!  [field tag="181"]de um centro de despesa em um centro de lucro[/field]<br>
+!v004!- [field tag="999"]<br>
+!v004!  [subfield id="d"]20041203[/subfield]<br>
+!v004!  [subfield id="h"]0547[/subfield]<br>
+!v004!  [subfield id="b"]super[/subfield]<br>
+!v004!  [/field]<br>
+!v004!  [field tag="1001"]15[/field]<br>
+!v004!  [field tag="1002"]16[/field]<br>
+!v004!  [/record]<br>
+!v004!</li></pre>
+!v004!<li><b>CISIS</b>:<br>Apresenta os registros com marcações de tags que podem ser importados para qualquer base de dados CDS/ISIS com o utilitário <a class="link" href="por208.html#id2i">ID2I(c)Bireme</a>.
+!v004!<pre>!ID 000015<br>
+!v004!!v001!001<br>
+!v004!!v003!658.3<br>
+!v004!!v005!L<br>
+!v004!!v006!m<br>
+!v004!!v016!Chiavenato, Idalberto<br>
+!v004!!v018!Como transformar RH<br>
+!v004!!v020!xii, 196<br>
+!v004!!v040!Pt<br>
+!v004!!v061!Bibliografia: p. 195-196<br>
+!v004!!v062!Makron Books<br>
+!v004!!v063!2. ed<br>
+!v004!!v064!2000<br>
+!v004!!v066!São Paulo<br>
+!v004!!v069!8534611874<br>
+!v004!!v087!Administração de pessoal<br>
+!v004!!v087!Recursos humanos<br>
+!v004!!v091!20041203<br>
+!v004!!v092!super<br>
+!v004!!v181!de um centro de despesa em um centro de lucro<br>
+!v004!!v999!^d20041203^h0547^bsuper<br></pre>
+!v004!<li><b>IBICT-CCN(T)</b>:<br>Apresenta registros da base de dados Kardex em um padrão requerido pelo IBICT para alimentar o Catálogo Coletivo Nacional de Séries Periódicas. Este arquivo é estruturado com marcações de tags que pode ser manipulado através da rotina de importação do MINISIS(c)IDRC.
+!v004!<pre>!REC-ID<br>
+!v004!!S001!010441-8<br>
+!v004!!S200!Bibliografia brasileira de documentação<br>
+!v004!!S440!0067-6624<br>
+!v004!</li></pre>
+!v004!<li><b><a name="10">IBICT-CCN(C)</a></b>:<br>Apresenta registros da base de dados Kardex em um padrão requerido pelo IBICT para atualizar o Catálogo Coletivo Nacional de Séries Periódicas com os dados da coleção. Este arquivo é estruturado com marcações de tags que pode ser manipulado através da rotina de importação do MINISIS(c)IDRC.
+!v004!<pre>!REC-ID<br>
+!v004!!C010!<br>
+!v004!!C020!001526-1<br>
+!v004!!C030!1948-1967 1-11; 1970-1974 13-15<br>
+!v004!</li></pre>
+!v004!</ul>
+!v004!</li>
+!v004!<li><b>MFN inicial:</b><br>
+!v004!Número do registro da base de dados, a partir do qual iniciará o processo de exportação.
+!v004!</li>
+!v004!<li><b>MFN final:</b><br>
+!v004!Número do último registro da base de dados que será incluído no arquivo exportado.
+!v004!</li>
+!v004!<li><b>Expressão:</b><br>
+!v004!Expressão de busca para seleção do conjunto de registros que será exportado. Se a expressão for omitida serão apresentados todos os registros da base de dados.
+!v004!</li>
+!v004!</ul>
+
+!ID 001003
+!v004!<b>Rotina de Buscas</b>
+!v004!A busca pode ser expressa com um termo simples, um termo truncado, um termo composto, um elemento específico, ou através de uma expressão de busca utilizando os operadores lógicos (AND), (OR) e (NOT) ou seus símbolos equivalentes.
+!v004!Para buscas no catálogo, além das opções citadas o formulário fornece a opção de selecionar o tipo da busca e caixas de preferências que facilitam a pesquisa por parte de usuários que não estão habituados ao uso de expressões booleanas.
+!v004!<ul><li><b>Termo simples</b>
+!v004!Basta transcrever a palavra que representa o assunto desejado. O PHL reconhece todos os tipos de grafia, por exemplo:
+!v004!<pre>
+!v004!  HISTóRIA
+!v004!  HISTORIA
+!v004!  História
+!v004!  Historia
+!v004!  historia
+!v004!  hiStOria
+!v004!</pre>
+!v004!</li></ul>
+!v004!<ul><li><b>Termo truncado</b></a>
+!v004!<pre>
+!v004!  ECONO$
+!v004!</pre>
+!v004!Utilizando o cifrão após a raiz de um termo, todas os registros que contenha qualquer palavra com a raiz fornecida serão recuperados. Na busca com a expressão acima, serão recuperados os registros que contenham as palavras:
+!v004!<pre>
+!v004!  ECONOMIA
+!v004!  ECONOMIAS
+!v004!  ECONÔMICO
+!v004!  ECONÔMICOS
+!v004!  ECONOMICAMENTE
+!v004!</pre>
+!v004!</li></ul>
+!v004!<ul><li><b>Termo composto</b></a><br>
+!v004!Os termos compostos são termos obtidos a partir de um vocabulário controlado pela biblioteca (tesauro) e agregados pelo bibliotecário para a representação do conteúdo temático dos documentos. As buscas por termos compostos são mais precisas.
+!v004!<pre>
+!v004!  POLíTICA SOCIAL * POLíTICA ECONÔMICA
+!v004!</pre>
+!v004!</li></ul>
+!v004!<ul><li><b>Expressão de busca</b></a><br>
+!v004!A expressão de busca é composta de elementos lógicos para a formação do conjunto de interesse. A transcrição de uma expressão de busca segue as regras da álgebra booleana de operações com conjuntos. Veja abaixo alguns exemplos de expressões utilizando operadores booleanos:
+!v004!<ul>
+!v004!<li><b>(+) - "OU" lógico</b>
+!v004!<pre>
+!v004!  HISTORIA + GEOGRAFIA
+!v004!  HISTORIA OR GEOGRAFIA
+!v004!  história + geografia
+!v004!  história or geografia
+!v004!</pre>
+!v004!As quatro expressões produzem o mesmo resultado, ou seja, buscam todos os registros que contenham a palavra HISTóRIA ou que contenham a palavra GEOGRAFIA;</li>
+!v004!<li><b>(*) - "E" lógico</b>
+!v004!<pre>
+!v004!  HISTORIA * BRASIL
+!v004!  HISTORIA AND BRASIL
+!v004!  história * brasil
+!v004!  história and brasil
+!v004!</pre>
+!v004!As quatro expressões produzem o mesmo resultado, ou seja, buscam todos os registros que contenham a palavra HISTóRIA e que contenham também a palavra BRASIL;</li>
+!v004!<li><b>(AND NOT) - "E NãO" lógico</b>
+!v004!<pre>
+!v004!  HISTORIA AND NOT BRASIL
+!v004!  história and not brasil
+!v004!</pre>
+!v004!As quatro expressões produzem o mesmo resultado, ou seja, buscam todos os registros que contenham a palavra HISTóRIA menos aqueles que contenham também a palavra BRASIL;</li></ul>
+!v004!Os operadores booleanos podem ser combinados em uma mesma expressão:
+!v004!<pre>
+!v004!  (história + geografia) * brasil
+!v004!</pre>
+!v004!</li></ul>
+!v004!<ul><li><b>Buscas por elementos específicos:</b></a><br>
+!v004!Permite a busca em um elemento de dado específico do índice da base de dados através da indicação de um prefixo. Por exemplo, para efetuar uma busca no campo de descritores, utilize o prefixo DES= seguido do descritor ou palavra chave que represente o conteúdo que pretende encontrar.  Os campos indexados com prefixo e seu respectivo prefixo podem ser obtidos na descrição de campos de cada uma das bases de dados utilizadas pelo PHL.
+!v004!<pre>
+!v004!  DES=HISTÓRIA DO BRASIL
+!v004!</pre>
+!v004!</li></ul>
+
+!ID 001004
+!v004!<b>Preferências</b>
+!v004!O formulário para buscas no catálogo, permite o usuário a indicar o tipo de busca pretendida. Por padrão, o PHL efetuará a busca nos registros que contenha todas as palavras fornecidas na caixa de texto da expressão de busca. Para buscas por qualquer uma das palavras fornecidas, ou para uso de operadores booleanos na expressão de busca, o usuário deverá marcar a opção desejada no cabeçalho do formulário.
+!v004!Além da opção de seleção da modalidade da busca, o formulário de buscas dependendo das configurações adotadas pela biblioteca, poderá apresentar caixas de seleção permitindo filtros por: biblioteca, coleção, idioma, tipo de documento, tipo de suporte, formato de exibição, tipo de conteúdo e campos de dados.
+!v004!Todos os campos de dados que compõe a referência bibliográfica estão indexados por palavra. Os acentos, cedilhas e tils não interferem no resultado da busca.
+!v004!Por padrão, o resultado da busca será apresentado em um formato que apresenta a imagem da capa do objeto, quando existir. As referências são apresentadas na ordem de entrada na base de dados.
+!v004!<ul><li><b>Biblioteca</b><br>
+!v004!A caixa de seleção para filtro de biblioteca é apresentada somente quando o PHL estiver sendo utilizado para gestão de um sistema de bibliotecas. Esta caixa irá apresentar opções para que a busca seja executada no catálogo de todas as bibliotecas ou no de uma biblioteca específica. Por padrão, a busca sempre é feita em todas as bibliotecas do sistema.
+!v004!</li></ul>
+!v004!<ul><li><b>Coleção</b><br>
+!v004!Esta caixa irá apresentar opções para filtrar o resultado da busca em um acervo ou coleção específica definida pela biblioteca. Se nenhuma coleção específica for selecionada a busca será feita em todas as coleções da biblioteca.
+!v004!</li></ul>
+!v004!<ul><li><b>Idioma</b><br>
+!v004!A caixa de seleção para filtro de idioma é apresentada quando ativada no arquivo de configuração do sistema. Caso não seja ativada, o PHL não apresentará esta opção de filtro. Por padrão o PHL já vem configurado para que apresente esta opção.
+!v004!As opções apresentadas nesta caixa de seleção são obtidas a partir da Base de dados Idiomas.
+!v004!</li></ul>
+!v004!<ul><li><b>Tipo de conteúdo</b><br>
+!v004!A caixa de seleção para filtro do tipo de conteúdo é apresentada quando ativada no arquivo de configuração do sistema. Caso seja desativada, o PHL não apresentará esta opção no formulário de busca.
+!v004!As opções de tipo de conteúdo serão aquelas configuradas pela biblioteca na Base de dados Tipo de conteúdo.
+!v004!</li></ul>
+!v004!<ul><li><b>Tipo de documento</b><br>
+!v004!A caixa de seleção para filtro do tipo de documento é apresentada quando ativada no arquivo de configuração do sistema. Caso seja desativada, o PHL não apresentará esta opção no formulário de busca. Por padrão o PHL já vem configurado para que apresente esta opção.
+!v004!As opções apresentadas nesta caixa de seleção são obtidas a partir da Base de dados Formulário do Catálogo.
+!v004!</li></ul>
+!v004!<ul><li><b>Tipo de suporte</b><br>
+!v004!A caixa de seleção para filtro do tipo de suporte é apresentada quando ativada no arquivo de configuração do sistema. Caso seja desativada, o PHL não apresentará esta opção no formulário de busca. Por padrão o PHL já vem configurado para que apresente esta opção.
+!v004!As opções apresentadas nesta caixa de seleção são obtidas a partir da Base de dados Tipo de suporte.
+!v004!</li></ul>
+!v004!<ul><li><b>Quantidade de registros por página</b><br>
+!v004!Caixa de texto para indicação da quantidade de registros que serão exibidos por página. Por padrão, o PHL vem configurado para apresentar 20 registros em cada página. O tempo de apresentação do resultado da busca é diretamente proporcional à quantidade de registros que serão apresentados em cada página. Valores elevados podem resultar em morosidade neste processo.
+!v004!</li></ul>
+!v004!<ul><li><b>Formatos</b><br>
+!v004!O sistema permite ao usuário escolher o formato de apresentação, selecionando uma das opções disponíveis na caixa de seleção de formatos. Os formatos disponíveis são: <i>completo, curto, bibliografia, tabela, exportação e Vancouver</i>.
+!v004!<ul>
+!v004!<li><b>Completo</b><br>
+!v004!Cada registro resultante da busca é apresentado no padrão ABNT NBR-6023:2002, ilustrado com a foto da capa do documento referenciado, quando houver.
+!v004!</li>
+!v004!<li><b>Curto</b><br>
+!v004!Cada registro resultante da busca é apresentado no padrão ABNT NBR-6023:2002, sem ilustração. Este formato dispõe de recursos de ordenação do conjunto de registros recuperados por autor, título, data de publicação e classe.
+!v004!</li>
+!v004!<li><b>Bibliografia</b><br>
+!v004!Semelhante ao formato curto, omitindo as informações sobre o número de chamada e apresentando informação sobre o total de exemplares disponíveis no acervo.
+!v004!</li>
+!v004!<li><b>Tabela</b><br>
+!v004!Apresenta o registro com as informações colunadas.
+!v004!</li>
+!v004!<li><b>Exportação</b><br>
+!v004!Apresenta o registro com a identificação dos campos de dados (tags) para uso na rotina de importação de dados.
+!v004!</li>
+!v004!<li><b>Vancouver</b><br>
+!v004!Apresenta o registro conforme as regras definidas pelo formato Vancouver. A apresentação correta do registro neste formato está diretamente relacionado com a forma de entrada de dados adotada pela biblioteca.
+!v004!</li>
+!v004!</ul></ul>
+!v004!<ul><li><b>Campos de dados</b><br>
+!v004!Apresenta as opções de filtro pelo campo de dado ao qual a busca deverá incidir.
+!v004!</li></ul>
+
+!ID 001005
+!v004!<b>Índice de Autores</b>
+!v004!Função de auxílio na padronização de nomes de autores.
+!v004!Digite as iniciais do sobrenome do autor que o sistema irá recorrer à lista de nomes certos registrados na <b>base de dados de controle de autoridades</b>. Selecione o nome desejado e clique sobre ele que será transferido automaticamente para o campo de autores do formulário.
+!v004!A base de dados de controle de autoridades é distribuída vazia. Cabe ao bibliotecário alimentá-la com a lista de nomes certos que deverão ser utilizados para transcrição do nome do autor.
+
+!ID 001006
+!v004!<b>Índice de Autores</b>
+!v004!Função de auxílio na padronização de nomes de autores.
+!v004!Digite as iniciais do sobrenome do autor que o sistema irá recorrer à lista de nomes já registrados na <b>base de dados do catálogo</b>. Selecione o nome desejado e clique sobre ele que será transferido automaticamente para o campo de autores do formulário.
+
+!ID 001007
+!v004!<b>Índice de Assuntos</b>
+!v004!Função de auxílio na padronização de termos que representam o conteúdo do documento.
+!v004!Digite as iniciais do termo que o sistema irá recorrer à lista de termos registrados na <b>base de dados de controle de vocabulário</b>. Selecione o termo desejado e clique sobre ele que será transferido automaticamente para o campo de descritores (palavras-chave) do formulário.
+!v004!A base de dados de controle de vocabulário é distribuída vazia. Cabe ao bibliotecário alimentá-la com a lista de termos que deverão ser utilizados para representação do conteúdo temático dos documentos.
+
+!ID 001008
+!v004!<b>Índice de Assuntos</b>
+!v004!Função de auxílio na padronização de termos que representam o conteúdo do documento.
+!v004!Digite as iniciais do termo que o sistema irá recorrer à lista de termos já registrados na <b>base de dados do catálogo</b>. Selecione o termo desejado e clique sobre ele que será transferido automaticamente para o campo de descritores (palavras-chave) do formulário.
+
+!ID 001009
+!v004!<b>Índice de Periódicos</b>
+!v004!Função de auxílio à lista de títulos de periódicos cadastrados na base de dados Kardex.
+!v004!Digite as iniciais do título que o sistema irá recorrer à lista de títulos já registrados na <b>base de dados Kardex</b>. Selecione o título desejado e clique sobre ele que será transferido automaticamente para o campo de títulos do formulário.
+
+!ID 001010
+!v004!<b>Índice de Cursos</b>
+!v004!Função de auxílio à lista cursos cadastrados na base de dados de cursos.
+!v004!Digite as iniciais do nome do curso que o sistema irá recorrer à lista de cursos já registrados na <b>base de dados Cursos</b>. Selecione o curso desejado e clique sobre ele que será transferido automaticamente para o campo de cursos do formulário.
+
+

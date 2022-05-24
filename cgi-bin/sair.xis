@@ -1,0 +1,51 @@
+<!-- Script de encerramento
+     04/11/2010 15:51:06 -->
+
+     <IsisScript name="sair.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     <include>phl84/log.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     <!--
+     <field action="add" tag="3009"><pft>,getenv('HTTP_COOKIE'),</pft></field>
+     <field action="replace" tag="3009" split="occ"><pft>,replace(v3009,'; ',s('',#)),</pft></field>
+     <field action="replace" tag="3009" split="occ"><pft>,(if v3009.4='phl=' then v3009*4 fi,),</pft></field>
+     -->
+
+     <field action="add" tag="3009"><pft>,cat(v4001),</pft></field>
+
+     <do task="update">
+       <parm name="db">phl_idx</parm>
+       <parm name="mfn"><pft>,v3009^m,</pft></parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+       <update>
+       <field action="export" tag="list">3000</field>
+       <field action="delete" tag="list">ALL</field>
+       <write>Delete</write>
+       <field action="import" tag="list">3000</field>
+       <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zDEL|sair.xis'/,</pft></field>
+       <call name="log">now</call>
+       </update>
+
+     </do>
+
+     <display><pft>,cat('index.html'),</pft></display>
+     
+     <flow action="exit">1</flow>
+
+<!-- Finaliza a secao -->
+     </section>
+
+<!-- Finaliza o script -->
+     </IsisScript>

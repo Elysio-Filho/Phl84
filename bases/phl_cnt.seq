@@ -1,0 +1,268 @@
+!ID 000001
+!v301!Almanaque
+!v302!Almanaque
+!v303!Almanaque
+!v304!Almanaque
+!v305!Almanaque
+!v999!^d20010501^belysio
+!ID 000002
+!v301!Atlas
+!v302!Atlas
+!v303!Atlas
+!v304!Atlas
+!v305!Atlas
+!v999!^d20010501^belysio
+!ID 000003
+!v301!Base de Dados
+!v302!Base de Datos
+!v303!Database
+!v304!Base de Dados
+!v305!Base de Dados
+!v999!^d20010501^belysio
+!ID 000004
+!v301!Bibliografia
+!v302!Bibliografia
+!v303!Bibliography
+!v304!Bibliografia
+!v305!Bibliografia
+!v999!^d20010501^belysio
+!ID 000005
+!v301!Biografia
+!v302!Biografia
+!v303!Biography
+!v304!Biografia
+!v305!Biografia
+!v999!^d20010501^belysio
+!ID 000006
+!v301!Boletim
+!v302!Boletin
+!v303!Boletin
+!v304!Boletim
+!v305!Boletim
+!v999!^d20010501^belysio
+!ID 000007
+!v301!Catálogo
+!v302!Catalogo
+!v303!Catálogue
+!v304!Catálogo
+!v305!Catálogo
+!v999!^d20010501^belysio
+!ID 000008
+!v301!Correspondência enviada
+!v302!Correspondência enviada
+!v303!Send mail
+!v304!Correspondência enviada
+!v305!Correspondência enviada
+!v999!^d20010501^belysio
+!ID 000009
+!v301!Correspondência recebida
+!v302!Correspondência recebida
+!v303!Received mail
+!v304!Correspondência recebida
+!v305!Correspondência recebida
+!v999!^d20010501^belysio
+!ID 000010
+!v301!Desenho técnico
+!v302!Desenho técnico
+!v303!Technical Draw
+!v304!Desenho técnico
+!v305!Desenho técnico
+!v999!^d20010501^belysio
+!ID 000011
+!v301!Dicionário
+!v302!Dicionário
+!v303!Dictionary
+!v304!Dicionário
+!v305!Dicionário
+!v999!^d20010501^belysio
+!ID 000012
+!v301!Didático
+!v302!Didáctico
+!v302!Didactic
+!v303!Didatic
+!v303!Didático
+!v304!Didático
+!v305!Didático
+!v999!^d20010501^belysio
+!ID 000013
+!v301!Dissertação
+!v302!Dissertación
+!v303!Dissertation
+!v304!Dissertação
+!v305!Dissertação
+!v999!^d20010501^belysio
+!ID 000014
+!v301!Doutrina
+!v302!Doutrina
+!v303!Doutrina
+!v304!Doutrina
+!v305!Doutrina
+!v999!^d20010501^belysio
+!ID 000015
+!v301!Enciclopédia
+!v302!Enciclopédia
+!v303!Enciclopedy
+!v304!Enciclopédia
+!v305!Enciclopédia
+!v999!^d20010501^belysio
+!ID 000016
+!v301!Entrevista
+!v302!Entrevista
+!v303!Interview
+!v304!Entrevista
+!v305!Entrevista
+!v999!^d20010501^belysio
+!ID 000017
+!v301!Evento, Congresso, Conferência, etc.
+!v302!Evento, Congresso, Conferência, etc.
+!v303!Meeting, Congress, Conference
+!v304!Evento, Congresso, Conferência, etc.
+!v305!Evento, Congresso, Conferência, etc.
+!v999!^d20010501^belysio
+!ID 000018
+!v301!Jurisprudência
+!v302!Jurisprudência
+!v303!Jurisprudência
+!v304!Jurisprudência
+!v305!Jurisprudência
+!v999!^d20010501^belysio
+!ID 000019
+!v301!Legislação
+!v302!Legislación
+!v303!Legislation
+!v304!Legislação
+!v305!Legislação
+!v999!^d20010501^belysio
+!ID 000020
+!v301!Literatura
+!v302!Literatura
+!v303!Literature
+!v304!Literatura
+!v305!Literatura
+!v999!^d20010501^belysio
+!ID 000021
+!v301!Manual
+!v302!Manual
+!v303!Manual
+!v304!Manual
+!v305!Manual
+!v999!^d20010501^belysio
+!ID 000022
+!v301!Norma técnica
+!v302!Norma técnica
+!v303!Technical Standard
+!v304!Norma técnica
+!v305!Norma técnica
+!v999!^d20010501^belysio
+!ID 000023
+!v301!Notícia
+!v302!Notícia
+!v303!Notícia
+!v304!Notícia
+!v305!Notícia
+!v999!^d20010501^belysio
+!ID 000024
+!v301!Patente
+!v302!Patente
+!v303!Patent
+!v304!Breveto
+!v305!Brevet
+!v999!^d20010501^belysio
+!ID 000025
+!v301!Projeto arquitetônico
+!v302!Proyecto arquitetónico
+!v303!Architectural Project
+!v304!Projeto arquitetônico
+!v305!Projeto arquitetônico
+!v999!^d20010501^belysio
+!ID 000026
+!v301!Projeto de pesquisa
+!v302!Proyecto de investigación
+!v303!Research Project
+!v304!Projeto de pesquisa
+!v305!Projeto de pesquisa
+!v999!^d20010501^belysio
+!ID 000027
+!v301!Relatório técnico
+!v302!Informe técnico
+!v303!Technical report
+!v304!Relatório técnico
+!v305!Relatório técnico
+!v999!^d20010501^belysio
+!ID 000028
+!v301!Resolução do senado
+!v302!Resolução do senado
+!v303!Resolução do senado
+!v304!Resolução do senado
+!v305!Resolução do senado
+!v999!^d20010501^belysio
+!ID 000029
+!v301!Tese
+!v302!Tese
+!v303!Tesis
+!v304!Tese
+!v305!Tese
+!v999!^d20010501^belysio
+!ID 000030
+!v301!Trabalho de Conclusão de Curso
+!v302!Trabalho de Conclusão de Curso
+!v303!Trabalho de Conclusão de Curso
+!v304!Trabalho de Conclusão de Curso
+!v305!Trabalho de Conclusão de Curso
+!v999!^d20010501^belysio
+!ID 000031
+!v301!Outro
+!v302!Otro
+!v303!Another
+!v304!Outro
+!v305!Outro
+!v999!^d20010501^belysio
+!ID 000032
+!v301!Artístico
+!v302!Artístico
+!v303!Artístic
+!v304!Artístico
+!v305!Artístico
+!v999!^d20010501^belysio
+!ID 000033
+!v301!Científico
+!v302!Científico
+!v303!Scientific
+!v304!Científico
+!v305!Científico
+!v999!^d20010501^belysio
+!ID 000034
+!v301!Música
+!v302!Música
+!v303!Music
+!v304!Música
+!v305!Música
+!v999!^d20010501^belysio
+!ID 000035
+!v301!Guia
+!v302!Guia
+!v303!Guia
+!v304!Guia
+!v305!Guia
+!v999!^d20010501^belysio
+!ID 000036
+!v301!Fotografia
+!v302!Fotografia
+!v303!Photography
+!v304!Photography
+!v305!Photography
+!v999!^d20010501^belysio
+!ID 000037
+!v301!Software
+!v302!Software
+!v303!Software
+!v304!Software
+!v305!Software
+!v999!^d20010501^belysio
+!ID 000038
+!v301!Cartográfico
+!v302!Cartográfico
+!v303!Cartográfico
+!v304!Cartográfico
+!v305!Cartográfico
+!v999!^d20010501^belysio

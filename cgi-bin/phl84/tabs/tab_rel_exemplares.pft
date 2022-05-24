@@ -1,0 +1,155 @@
+'
+<tr>
+<td class="td1o">Variável 01:</td><td class="td2">
+<select size="1" name="var1">
+<option value="01">Ano de aquisição</option>
+<option value="02">Ano de publicação</option>
+<option value="03">Ano do tombamento</option>
+<option value="04">Area do conhecimento</option>
+<option value="05">Classificacao</option>
+<option value="06">Data da aquisição</option>
+<option value="07">Data de publicação</option>
+<option value="09">Data do tombamento</option>
+<option value="10">Disponibilidade</option>
+<option value="18">Editora</option>
+<option value="11">Forma de aquisição</option>
+<option value="13">Fornecedor</option>
+<option value="14">Local de publicacão</option>
+<option value="15">Mês de aquisicao</option>
+<option value="16">Nacionalidade</option>
+<option value="17">Nivel bibliografico</option>
+<option value="19">Responsável pela criação</option>
+<option value="20">Responsável pela modificação</option>
+<option value="26">Status</option>
+<option value="21">Tipo de coleção</option>
+<option value="22">Tipo de conteúdo</option>
+<option value="23">Tipo de documento</option>
+<option value="24">Tipo de suporte</option>
+<option value="25">Verba do curso</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 02:</td><td class="td2">
+<select size="1" name="var2">
+<option value=""></option>
+<option value="01">Ano de aquisição</option>
+<option value="02">Ano de publicação</option>
+<option value="03">Ano do tombamento</option>
+<option value="04">Area do conhecimento</option>
+<option value="05">Classificacao</option>
+<option value="06">Data da aquisição</option>
+<option value="07">Data de publicação</option>
+<option value="09">Data do tombamento</option>
+<option value="10">Disponibilidade</option>
+<option value="18">Editora</option>
+<option value="11">Forma de aquisição</option>
+<option value="13">Fornecedor</option>
+<option value="14">Local de publicacão</option>
+<option value="15">Mês de aquisicao</option>
+<option value="16">Nacionalidade</option>
+<option value="17">Nivel bibliografico</option>
+<option value="19">Responsável pela criação</option>
+<option value="20">Responsável pela modificação</option>
+<option value="26">Status</option>
+<option value="21">Tipo de coleção</option>
+<option value="22">Tipo de conteúdo</option>
+<option value="23">Tipo de documento</option>
+<option value="24">Tipo de suporte</option>
+<option value="25">Verba do curso</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 03:</td><td class="td2">
+<select size="1" name="var3">
+<option value=""></option>
+<option value="01">Ano de aquisição</option>
+<option value="02">Ano de publicação</option>
+<option value="03">Ano do tombamento</option>
+<option value="04">Area do conhecimento</option>
+<option value="05">Classificacao</option>
+<option value="06">Data da aquisição</option>
+<option value="07">Data de publicação</option>
+<option value="09">Data do tombamento</option>
+<option value="10">Disponibilidade</option>
+<option value="18">Editora</option>
+<option value="11">Forma de aquisição</option>
+<option value="13">Fornecedor</option>
+<option value="14">Local de publicacão</option>
+<option value="15">Mês de aquisicao</option>
+<option value="16">Nacionalidade</option>
+<option value="17">Nivel bibliografico</option>
+<option value="19">Responsável pela criação</option>
+<option value="20">Responsável pela modificação</option>
+<option value="26">Status</option>
+<option value="21">Tipo de coleção</option>
+<option value="22">Tipo de conteúdo</option>
+<option value="23">Tipo de documento</option>
+<option value="24">Tipo de suporte</option>
+<option value="25">Verba do curso</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 04:</td><td class="td2">
+<select size="1" name="var4">
+<option value=""></option>
+<option value="01">Ano de aquisição</option>
+<option value="02">Ano de publicação</option>
+<option value="03">Ano do tombamento</option>
+<option value="04">Area do conhecimento</option>
+<option value="05">Classificacao</option>
+<option value="06">Data da aquisição</option>
+<option value="07">Data de publicação</option>
+<option value="09">Data do tombamento</option>
+<option value="10">Disponibilidade</option>
+<option value="18">Editora</option>
+<option value="11">Forma de aquisição</option>
+<option value="13">Fornecedor</option>
+<option value="14">Local de publicacão</option>
+<option value="15">Mês de aquisicao</option>
+<option value="16">Nacionalidade</option>
+<option value="17">Nivel bibliografico</option>
+<option value="19">Responsável pela criação</option>
+<option value="20">Responsável pela modificação</option>
+<option value="26">Status</option>
+<option value="21">Tipo de coleção</option>
+<option value="22">Tipo de conteúdo</option>
+<option value="23">Tipo de documento</option>
+<option value="24">Tipo de suporte</option>
+<option value="25">Verba do curso</option>
+</select>
+</td></tr>
+
+<tr>
+<td class="td1e">Variável 05:</td><td class="td2">
+<select size="1" name="var5">
+<option value=""></option>
+<option value="01">Ano de aquisição</option>
+<option value="02">Ano de publicação</option>
+<option value="03">Ano do tombamento</option>
+<option value="04">Area do conhecimento</option>
+<option value="05">Classificacao</option>
+<option value="06">Data da aquisição</option>
+<option value="07">Data de publicação</option>
+<option value="09">Data do tombamento</option>
+<option value="10">Disponibilidade</option>
+<option value="18">Editora</option>
+<option value="11">Forma de aquisição</option>
+<option value="13">Fornecedor</option>
+<option value="14">Local de publicacão</option>
+<option value="15">Mês de aquisicao</option>
+<option value="16">Nacionalidade</option>
+<option value="17">Nivel bibliografico</option>
+<option value="19">Responsável pela criação</option>
+<option value="20">Responsável pela modificação</option>
+<option value="26">Status</option>
+<option value="21">Tipo de coleção</option>
+<option value="22">Tipo de conteúdo</option>
+<option value="23">Tipo de documento</option>
+<option value="24">Tipo de suporte</option>
+<option value="25">Verba do curso</option>
+</select>
+</td></tr>
+'

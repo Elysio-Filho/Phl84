@@ -1,0 +1,56 @@
+/* 01/02/2008 09:20:25 - Eliminei MHU do campo #30 devido a erros no XML */
+ 	select s(v6.1)
+
+	  case 'm': '<a>'
+                      MHL,
+                      ,if nocc(v16)>3 then v16[1],' et al. '
+                        else v16+|; |". ",
+                      ,fi
+                      v17+|; |".","  "v54", ",v56".",'</a>'
+		     ,if p(v16) or p(v17)
+		       then 
+                         '<b>',v18,". "n181,": "d181,'</b>',
+			  else '<c>',v18,". "n181,": "d181,'</c>'
+		     ,fi,
+                     '<d>',v181". ","["v19"]. ",v15+|; |". ",v63". ",v630". ",
+
+                     ,if p(v62) and v62<>v17 and v62<>v16 then " "v66[1],": "d62,v62+|; |", ",
+                     else
+                     ," "v66[1]", ",
+                     ,fi,
+		     ,v64". ",v21". ",v31". ",if p(v19) then v20" p., ",v38". ","("v30"). " else
+			 v20" p. ",v38". ","("v30"). " fi,
+		     v51^a," ("v51^b")"," - "v50".", "Escala: "v39". "," "v61+|; |".",
+                     ,if p(v8) then "Disponível em: "v8^i,". Acesso em: "v8^u fi,'</d>'
+
+	  case 'a': '<a>',MHL,v10+|; |". ",v12,". In: "d18,
+		     ,if p(v10) and s(v10)=s(v16) then '___.' else,v16+|; |".",v17+|; |".",fi,
+		     "	"v54", ",v56".",'</a>','<b> ',v18,". "n181,": "d181,'</b>',
+		     ,if v6:'s' then '<r>',v30". ",'</r>',fi,
+                     '<c>'v181". ", v63". ",
+		     ,if p(v62) then " "v66[1],else " "v66[1]", " fi,
+		     ,if v6:'s' then
+		     ": "v62[1]", ",
+                     if val(v31.1)<>0 then "v."v31", " else v31", " fi,"n."v32", ",
+                     if v14:'p' then v14". " else "p."v14". ",fi,v64". ",
+		     v61+|; |".", else,
+		     ": "v62[1]", ",v64". ","("v30"). "," "v50".","p. "v14".",
+		     v61+|; |".",fi,'</c>',
+
+	  case 's': '<a>'v30^*". ",
+		     if p(v62) then " "v66[1],else " "v66[1]", " fi,
+		     ": "v62[1]", ",
+		     if val(v31.1)<>0 then "v."v31", " else v31", " fi,"n."v32". ",
+                     v64". ",
+                     if v20:'p' then v20 else v20"p. ",fi,
+		     " "v61+|; |".",'</a>'
+		     
+	  case 'c': '<a>',v30^*". ",,
+		     if p(v62) then " "v66[1],else " "v66[1]", " fi,
+		     ": "v62[1]", ",
+                     if val(v31.1)<>0 then "v."v31", " else v31", " fi,"n."v32". ",
+                     v64". ",
+                     if v20:'p' then v20 else v20"p. ",fi,
+		     " "v61+|; |".",'</a>'
+
+	 endsel,

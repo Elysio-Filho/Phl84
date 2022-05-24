@@ -1,0 +1,9 @@
+    <etiqueta>
+           <column>
+               <line><barcode>'v801'</barcode></line>
+           </column>
+           <column>
+               <line>'v3'</line>
+               <line>M636e</line>
+           </column>    
+       </etiqueta>

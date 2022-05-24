@@ -1,0 +1,193 @@
+!ID 000001
+!v001!acv
+!v004!,@tab_acv.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000002
+!v001!cal
+!v004!,@tab_fmt.cab,
+!v004!,@tab_cal.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000003
+!v001!cdu
+!v004!,@tab_fmt.cab,
+!v004!,@tab_cdu.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000005
+!v001!cnf
+!v004!,@tab_cnf.fmt
+!v004!,@tab_fmt.rod,
+
+!ID 000006
+!v001!cpa
+!v004!,@tab_cpa.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000007
+!v001!cxa
+!v004!,@tab_fmt.cab,
+!v004!,@tab_cxa.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000008
+!v001!emp
+!v004!,@tab_fmt.cab,
+!v004!,@tab_emp.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000010
+!v001!for
+!v004!,@tab_for.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000011
+!v001!tdo
+!v004!,@tab_fmt.cab,
+!v004!,@tab_tdo.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000013
+!v001!log
+!v004!,@tab_fmt.cab,
+!v004!,@tab_log.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000014
+!v001!pen
+!v004!,@tab_fmt.cab,
+!v004!,@tab_pen.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000015
+!v001!col
+!v004!,@tab_fmt.cab,
+!v004!,@tab_col.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000016
+!v001!pqt
+!v004!,@tab_fmt.cab,
+!v004!,@tab_pqt.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000017
+!v001!pwd
+!v004!,@tab_fmt.cab,
+!v004!,@tab_pwd.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000019
+!v001!rgl
+!v004!,@tab_fmt.cab,
+!v004!,@tab_rgl.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000021
+!v001!ser
+!v004!,@tab_ser.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000022
+!v001!set
+!v004!,@tab_fmt.cab,
+!v004!,@tab_set.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000023
+!v001!tbo
+!v004!,@tab_tbo.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000025
+!v001!usr
+!v004!,@tab_usr.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000027
+!v001!rel
+!v004!,@tab_rel.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000028
+!v001!voc
+!v004!,@tab_fmt.cab,
+!v004!,@tab_voc.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000029
+!v001!aut
+!v004!,@tab_fmt.cab,
+!v004!,@tab_aut.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000030
+!v001!usc
+!v004!,@tab_fmt.cab,
+!v004!,@tab_usc.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000046
+!v001!etp
+!v004!,@tab_fmt.cab,
+!v004!,@tab_etp.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000100
+!v001!acv_fmt
+!v004!,@tab_fmt.cab,
+!v004!,@tab_acv_fmt.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000110
+!v001!for_fmt
+!v004!,@tab_fmt.cab,
+!v004!,@tab_for_fmt.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000121
+!v001!ser_fmt
+!v004!,@tab_fmt.cab,
+!v004!,@tab_ser_fmt.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000123
+!v001!tbo_fmt
+!v004!,@tab_fmt.cab,
+!v004!,@tab_tbo_fmt.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000125
+!v001!usr_fmt
+!v004!,@tab_fmt.cab,
+!v004!,@tab_usr_fmt.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000126
+!v001!usr
+!v004!,@tab_fmt.cab,
+!v004!,@tab_usr_cad.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 000231
+!v001!acvtbo
+!v004!,@tab_fmt.cab,
+!v004!,@tab_acvtbo.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 001123
+!v001!tbo
+!v004!,@tab_tbo2.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 001127
+!v001!rel
+!v004!,@tab_fmt.cab,
+!v004!,@tab_rel2.fmt,
+!v004!,@tab_fmt.rod,
+
+!ID 001128
+!v001!acv_importacao
+!v004!,@tab_acv_imp.fmt,
+!v004!,@tab_fmt.rod,

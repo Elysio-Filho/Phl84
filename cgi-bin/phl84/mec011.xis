@@ -1,0 +1,274 @@
+<!-- Relatorios estatisticos para o MEC
+     27/08/2010 15:31:45 - Revisado  -->
+
+     <IsisScript name="mec011.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/xml; charset=iso-8859-1'/#</pft></display>
+     
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+     
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="966">campo</field>
+     <field action="cgi" tag="5001">tipo</field>
+     <field action="cgi" tag="5002">ano</field>
+     <field action="cgi" tag="5003">area</field>
+     <field action="cgi" tag="5004">prc</field>
+
+<!-- Carrega variaveis de configuracao -->
+     <field action="add" tag="7004"><pft>,ref(['phl_set']l(['phl_set'],'ACV='v3000^1),v602),</pft></field>
+     <file action="close" type="database">phl_set</file>
+     
+<!-- Direciona fluxo do processamento -->
+     <flow action="jump">
+       <pft>,v950,</pft>
+     </flow>
+     <flow action="exit">saida</flow>
+     
+<!-- Carrega variaveis do relatorio 1 -->
+     <label>relat1</label>
+
+     <field action="add" tag="6001"><pft>,v3000^1'TBO',</pft></field>
+     <field action="add" tag="6002"><pft>,v3000^1'TBX',</pft></field>
+     <field action="add" tag="6003">EXEMPLARES</field>
+     <field action="add" tag="6004">TIPO</field>
+     <field action="add" tag="6005">ANO</field>
+     <field action="add" tag="6006">AREA</field>
+     <field action="add" tag="6007">PROCEDENCIA</field>
+     <flow action="jump">processa</flow>
+     
+<!-- Carrega variaveis do relatorio 2 -->
+     <label>relat2</label>
+     
+     <field action="add" tag="6001"><pft>,v3000^1'TIT',</pft></field>
+     <field action="add" tag="6002"><pft>,v3000^1'TIX',</pft></field>
+     <field action="add" tag="6003">TÍTULOS</field>
+     <field action="add" tag="6004">TIPO</field>
+     <field action="add" tag="6005">ANO</field>
+     <field action="add" tag="6006">AREA</field>
+     <field action="add" tag="6007">PROCEDENCIA</field>
+     <flow action="jump">processa</flow>
+     
+<!-- Processa relatorio -->
+     <label>processa</label>
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,v6001,</pft></parm>
+       <parm name="to"><pft>,v6002,</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+
+       <loop>
+         <field action="import" tag="list">5001/5004</field>
+
+         <list action="load" type="list">
+           <pft>
+            
+            /* 0000 */
+            ,if v5001='' and v5002='' and v5003='' and v5004='' then
+               
+               ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+               ,'^b'v1^b
+               ,'^c'v1^c
+               ,'^d'v1^d
+               ,'^t'v2,/,
+
+             else
+                 /* 1111 */
+                 ,if v5001=v1^a and v5002=v1^b and v5003=v1^c and v5004=v1^d then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+
+                 ,fi
+
+                 /* 1000 */
+                 ,if v5001=v1^a and v5002='' and v5003='' and v5004='' then
+
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+
+                 ,fi
+                 
+                 /* 1100 */
+                 ,if v5001=v1^a and v5002=v1^b and v5003='' and v5004='' then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+
+                 ,fi
+
+                 /* 1110 */
+                 ,if v5001=v1^a and v5002=v1^b and v5003=v1^c and v5004='' then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+
+                 ,fi
+                 
+                 /* 0111 */
+                 ,if v5001='' and v5002=v1^b and v5003=v1^c and v5004=v1^d then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+
+                 ,fi
+                 
+                 /* 0011 */
+                 ,if v5001='' and v5002='' and v5003=v1^c and v5004=v1^d then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+
+                 ,fi
+                 
+                 /* 0001 */
+                 ,if v5001='' and v5002='' and v5003='' and v5004=v1^d then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+
+                 ,fi
+                 
+                 /* 1011 */
+                 ,if v5001=v1^a and v5002='' and v5003=v1^c and v5004=v1^d then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+
+                 ,fi
+                 
+                 /* 1001 */
+                 ,if v5001=v1^a and v5002='' and v5003='' and v5004=v1^d then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+
+                 ,fi
+                 
+                 /* 1101 */
+                 ,if v5001=v1^a and v5002=v1^b and v5003='' and v5004=v1^d then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+
+                 ,fi
+                 
+                 /* 0100 */
+                 ,if v5001='' and v5002=v1^b and v5003='' and v5004='' then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+
+                 ,fi
+                 
+                 /* 1010 */
+                 ,if v5001=v1^a and v5002='' and v5003=v1^c and v5004='' then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+                 ,fi
+
+                 /* 0010 */
+                 ,if v5001='' and v5002='' and v5003=v1^c and v5004='' then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+                 ,fi
+
+                 /* 0110 */
+                 ,if v5001='' and v5002=v1^b and v5003=v1^c and v5004='' then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+                 ,fi
+                 
+                 /* 0101 */
+                 ,if v5001='' and v5002=v1^b and v5003='' and v5004=v1^d then
+                 
+                   ,'^a'ref(['phl_tdo']val(v1^a),@tab_txt.pft,),
+                   ,'^b'v1^b
+                   ,'^c'v1^c
+                   ,'^d'v1^d
+                   ,'^t'v2,/,
+                 ,fi
+            ,fi
+
+           </pft>
+         </list>
+       </loop>
+       <field action="export" tag="list">1</field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+     
+     <do task="list">
+       <field action="define" tag="200">Isis_Item</field>
+
+       <display><htmlpft><pft>,ref(['tab_fmx']167,v4),</pft></htmlpft></display>
+
+       <loop>
+       <field action="import" tag="list">20,966,4001,6009/6011</field>
+       <field action="replace" tag="10"><pft>,f(val(v20)+val(v200^t),0,0),</pft></field>
+
+         <display><htmlpft><pft>,ref(['tab_fmx']168,v4),</pft></htmlpft></display>
+         <field action="replace" tag="20"><pft>,v10,</pft></field>
+         <field action="export" tag="list">20</field>
+        </loop>
+        <display><pft>,'<tot>',v20,'</tot>'/,</pft></display>
+
+       <display></db></display>
+     </do>
+     <flow action="exit">0</flow>
+     
+</section>
+</IsisScript>

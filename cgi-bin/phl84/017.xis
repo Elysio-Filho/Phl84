@@ -1,0 +1,148 @@
+<!-- Gera extratos
+     14/03/2007 - Revisado -->
+     
+     <IsisScript name="017.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inclue funcao (007) que obtem emprestimos do usuario -->
+     <include>phl84/007.fnc</include>
+
+<!-- Inclue funcao (003) que carrega status do titulo -->
+     <include>phl84/003.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>     
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="951">usr</field>
+     <field action="replace" tag="951"><pft>,replace(v951,' ',''),</pft></field>
+
+<!-- Armazena em v2211 dados sobre permissoes do usuario -->
+     <field action="add" tag="2211"><pft>,ref(['phl_pwd']val(v3000^4),v656,),</pft></field>
+ 
+<!-- Verifica se usuário tem permissões para esta rotina -->
+     <flow action="jump">
+      <pft>,if ref(['phl_pwd']val(v3000^4),v656^c)<>'1' and v3000^3<>'usuario' then '271' fi,</pft>
+     </flow>
+
+    <field action="replace" tag="951">
+      <pft>,
+        if p(v951) then mhu,v951,mpl, else
+         if s(v3000^3)='usuario' then mhu,v3000^2,mpl, fi,
+        fi
+      </pft></field>
+    <field action="cgi" tag="952">tbo</field>
+    <field action="replace" tag="952"><pft>,mhu,v952,mpl,</pft></field>
+
+    <flow action="jump">
+      <pft>,
+        if a(v3000^3) then 'login_invalido' else
+          if p(v951) and a(v952) then 'usuario' else
+           if a(v951) and p(v952) then 'tombo' else '184' fi
+          fi
+        fi
+      </pft>
+    </flow>
+    <flow action="exit">1</flow>
+
+    <label>login_invalido</label>
+    <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+    <display><htmlpft><pft>,ref(['tab_fmx']55,v4),</pft></htmlpft></display>
+    <flow action="exit">1</flow>
+
+    <label>184</label>
+    <field action="replace" tag="250">184</field>
+    <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+    <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+    <flow action="exit">1</flow>
+    
+     <label>271</label>
+     <field action="add" tag="250">271</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+    
+<!--Verifica se usuario é valido -->
+    <label>usuario</label>
+    <flow action="jump">
+           <pft>
+             if npost(['phl_usr'],'USR='v951)<>0 then 'EXTUSR' else '380' fi,,
+           </pft>
+           <file action="close" type="database">phl_usr</file>
+         </flow>
+
+    <label>380</label>
+    <field action="replace" tag="250">380</field>
+    <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+    <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+    <flow action="exit">1</flow>
+
+<!--Verifica se tombo é valido -->
+    <label>tombo</label>
+    <flow action="jump">
+      <pft>,if npost([v3000^1'_tbo'],'TBO='v952,)<>0 then 'EXTTBO' else '368' fi,</pft>
+      <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+    </flow>
+    <flow action="exit">1</flow>
+
+    <label>368</label>
+    <field action="replace" tag="250">368</field>
+    <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+    <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+    <flow action="exit">1</flow>
+
+    <label>EXTTBO</label>
+
+    <field action="add" tag="1"><pft>,v3000^1,</pft></field>
+
+    <field action="add" tag="2">
+      <pft>,ref([v3000^1'_tbo']l([v3000^1'_tbo'],'TBO='v952),v800),</pft>
+    </field>
+    <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+
+    <do task="search">
+      <parm name="db"><pft>,v1'_tbo',</pft></parm>
+      <parm name="expression"><pft>,'X'v2,</pft></parm>
+
+      <loop>
+      <field action="import" tag="list">8000</field>
+      <field action="add" tag="8000">
+        <pft>
+          "^a"v807,
+          "^c"v803,
+          "^d"v801,
+          "^e"v825,
+          '^m'mfn(1),
+        </pft>
+      </field>
+      <field action="replace" tag="8000" split="occ"><pft>,(v8000/),</pft></field>
+      <field action="export" tag="8000">8000</field>
+    </loop>
+    <field action="export" tag="8000">8000</field>
+  </do>
+  <file action="close" type="database"><pft>,v1'_tbo',</pft></file>
+
+    <call name="003">now</call>
+    
+    <flow action="exit">1</flow>
+
+    <label>EXTUSR</label>
+    <call name="007">now</call>
+    <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

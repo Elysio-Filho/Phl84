@@ -1,0 +1,74 @@
+
+                  select v1^1.4
+                    case 'col=' : ref(['phl_col']val(v1^1*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^1*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^1*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^1*4),@tab_txt.pft,)
+                    case 'cur=' : ref(['phl_cur']val(v1^1*4),@tab_txt.pft,)
+                    elsecase "<line><![CDATA["v1^1"]]></line>" /,
+                  endsel,
+                
+                  select v1^2.4
+                    case 'col=' : ref(['phl_col']val(v1^2*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^2*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^2*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^2*4),@tab_txt.pft,)
+                    elsecase "<line><![CDATA["v1^2"]]></line>"/,
+                  endsel,
+                   
+                  select v1^3.4
+                    case 'col=' : ref(['phl_col']val(v1^3*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^3*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^3*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^3*4),@tab_txt.pft,,)
+                    elsecase "<line><![CDATA["v1^3"]]></line>"/,
+                  endsel,
+                  
+                  select v1^4.4
+                    case 'col=' : ref(['phl_col']val(v1^4*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^4*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^4*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^4*4),@tab_txt.pft,)
+                    elsecase "<line><![CDATA["v1^4"]]></line>"/,
+                  endsel,
+                  
+                  select v1^5.4
+                    case 'col=' : ref(['phl_col']val(v1^5*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^5*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^5*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^5*4),@tab_txt.pft,)
+                    elsecase "<line><![CDATA["v1^5"]]></line>"/,
+                  endsel,
+                  
+                  select v1^6.4
+                    case 'col=' : ref(['phl_col']val(v1^6*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^6*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^6*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^6*4),@tab_txt.pft,)
+                    elsecase "<line><![CDATA["v1^6"]]></line>"/,
+                  endsel,
+                  
+                  select v1^7.4
+                    case 'col=' : ref(['phl_col']val(v1^7*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^7*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^7*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^7*4),@tab_txt.pft,)
+                    elsecase "<line><![CDATA["v1^7"]]></line>"/,
+                  endsel,
+                  
+                  select v1^8.4
+                    case 'col=' : ref(['phl_col']val(v1^8*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^8*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^8*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^8*4),@tab_txt.pft,)
+                    elsecase "<line><![CDATA["v1^8"]]></line>"/,
+                  endsel,
+                  
+                  select v1^9.4
+                    case 'col=' : ref(['phl_col']val(v1^9*4),@tab_txt.pft,)
+                    case 'spt=' : ref(['phl_spt']val(v1^9*4),@tab_txt.pft,)
+                    case 'tdo=' : ref(['phl_tdo']val(v1^9*4),@tab_txt.pft,)
+                    case 'cnt=' : ref(['phl_cnt']val(v1^9*4),@tab_txt.pft,)
+                    elsecase "<line><![CDATA["v1^9"]]></line>"/,
+                  endsel,
+		

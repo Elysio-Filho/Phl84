@@ -1,0 +1,38 @@
+<IsisScript>
+
+  <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+  <section>
+  
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+  
+     <field action="cgi" tag="10">q</field>
+     <field action="cgi" tag="201">rpp</field>
+     <field action="cgi" tag="3004">dbvar</field>
+
+     <do task="keyrange">
+       <parm name="db"><pft>,v3004^a,</pft></parm>
+       <parm name="from"><pft>,v10,</pft></parm>
+       <parm name="to"><pft>,v10,'Z'</pft></parm>
+       <parm name="count">5</pft></parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <loop>
+       <field action="import" tag="list">201,953/977,3004,4001</field>
+       <display>
+        <pft>,
+          '<a href="/cgi-bin/wxis.exe?IsisScript=phl84/301.xis&exp=',v1,'&bool=exp&opc=busca&rpp='v201'&tmp='v4001'&dbvar='v3004'">'v1'</a> - ['v2']<br>'/
+        </pft>
+      </display>
+      <display></table></display>
+    </loop>
+
+  </do>
+  <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

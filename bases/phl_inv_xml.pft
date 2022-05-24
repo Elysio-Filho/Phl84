@@ -1,0 +1,14 @@
+'<registro>'/
+  '<ordem>'select v966
+    case 'status' : '<![CDATA['select f(npost([v1^k'_emp']'TBO='v1^g),0,0) case '1':'Emprestado' elsecase 'Acervo' endsel,']]>'
+    case 'chamada' : '<![CDATA[',@phl_nch_inv.pft,']]>'
+    case 'titulo' : '<![CDATA[',v1^q,']]>'
+    case 'tombo' : '<![CDATA['v1^g']]>'
+    elsecase 'chamada'
+    endsel,
+  '</ordem>'/
+'  <status>'select f(npost([v1^k'_emp']'TBO='v1^g),0,0) case '1':'Emprestado' elsecase 'Acervo' endsel,'</status>'/
+'  <chamada><![CDATA[',@phl_nch_inv.pft,']]></chamada>'/
+'  <titulo><![CDATA[',v1^q,']]></titulo>'/
+'  <tombo>'v1^g'</tombo>'/
+'</registro>'/

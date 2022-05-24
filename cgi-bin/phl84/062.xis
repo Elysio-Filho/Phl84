@@ -1,0 +1,110 @@
+<!-- Grava tombo editado a partir do catálogo
+     25/10/2010 14:20:58 -->
+
+     <IsisScript name="062.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (008) que atualiza tombos no catálogo -->
+     <include>phl84/008.fnc</include>
+
+<!-- Inclue funcao (009) que divide campos repetitivos -->
+     <include>phl84/009.fnc</include>
+
+<!-- Inclue funcao (tbo) que obtem dados sobre o tombo -->
+     <include>phl84/801.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="957">mfn</field>
+     <field action="cgi" tag="990">chk_numb</field>
+     <field action="cgi" tag="991">chk_name</field>
+     <field action="cgi" tag="997">997</field>
+
+<!-- Carrega permissões de entrada e edição do usuário -->
+     <field action="add" tag="2000"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>
+
+     <field action="add" tag="1"><pft>,ref(['phl_acv']val(v997),v1),</pft></field>
+     <field action="add" tag="2"><pft>,ref(['phl_acv']val(v997),v2),</pft></field>
+     <call name="801">now</call>
+     
+     <field action="replace" tag="7" split="occ"><pft>(v8000/)</pft></field>
+
+     <file action="close" type="database">phl_set</file>
+     <file action="close" type="database">phl_cnf</file>
+     <file action="close" type="database"><pft>,v1'_tbo',</pft></file>
+     
+     <label>outra</label>
+
+     <file action="close" type="database"><pft>,v1'_tbo',</pft></file>
+
+     <do task="update">
+       <parm name="db"><pft>,v1'_tbo',</pft></parm>
+       <parm name="mfn"><pft>,v957,</pft></parm>
+       <parm name="uctab"><pft>cat('uctab')</pft></parm>
+       <parm name="actab"><pft>cat('actab')</pft></parm>
+       <parm name="fst"><pft>,cat(v1'_tbo.fst'),</pft></parm>
+       <parm name="buffersize">90000</parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+       <field action="define" tag="1006">Isis_RecordStatus</field>
+
+       <update>
+
+       <field action="delete" tag="list">1/9999</field>
+       <field action="import" tag="list">3000,4001,7003</field>
+       <cgitable><htmlpft><pft>,ref(['tab_fdt']23,'[pft]',v4,'[/pft]',),</pft></htmlpft></cgitable>
+       <field action="replace" tag="655"><pft>,v655,</pft></field>
+       <field action="replace" tag="656"><pft>,v656,</pft></field>
+       <field action="replace" tag="657"><pft>,v657,</pft></field>
+       <field action="replace" tag="658"><pft>,v658,</pft></field>
+       
+       <field action="add" tag="999"><pft>'^d'v7003.8,'^h'v7003*9.4,'^b'v3000^2,</pft></field>
+       
+       <call name="009">now</call>
+
+       <field action="delete" tag="list">3000,4001,7003</field>
+       <field action="export" tag="list">800,801</field>
+       <write>Unlock</write>
+       <field action="import" tag="list">957,958,990,991,2000,3000/3004,4001,7003,1010</field>
+       <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zMOD|TBO#'v801'|TIT#'v800'|062.xis'/,</pft></field>
+       <call name="log">now</call>
+
+       <display>
+         <pft>,
+           ,if val(v1003)<>0
+            then
+            '<p align="right"><font color="red">
+            <b>062.xis - Operação de atualização do tombo terminou em estado de erro: 'v1003'</b>
+            </font></p>'
+            ,fi
+         </pft>
+       </display>
+
+       </update>
+       
+     </do>
+
+     <file action="close" type="database"><pft>,v1'_tbo',</pft></file>
+
+     <field action="replace" tag="5000"><pft>,v997,</pft></field>
+     <call name="008">now</call>
+
+<label>exit</label>
+<flow action="exit">1</flow>
+
+</section>
+</IsisScript>

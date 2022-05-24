@@ -1,0 +1,36 @@
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'/
+'<input type="hidden" name="999" value="'v999[1]'">'/
+'<input type="hidden" name="mfn" value="'v957'">'/
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'/
+'<input type="hidden" name="opc" value="grava">'/
+'<input type="hidden" name="dbvar" value="^aphl_rel^b1127^crel">'/
+'<tr><td class="td1o"></td><td class="topico">'ref(['tab_txt']771,@tab_txt.pft,)'</td></tr>'
+,if v960='027' then '<input type="hidden" name="508" value="'v5'">',fi,
+'<tr><td class="td1o">',ref(['tab_txt']360,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(502");>[502]</a></td><td class="td2"><input type="text" class="textbox" name="502" value="'v502'"></td></tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']347,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(508");>[508]</a></td><td class="td2"><select size="1" name="508"><option selected value="',v508,'">',v508,'</option><option value="Simples">'ref(['tab_txt']772,@tab_txt.pft,)'</option><option value="Ordenado">'ref(['tab_txt']773,@tab_txt.pft,)'</option><option value="Frequencia">'ref(['tab_txt']774,@tab_txt.pft,)'</option></select></td></tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']29,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(504");>[504]</td><td class="td2"><select size="1" name="504">
+ <option selected value="',v504,'">'v504^*,ref(['tab_txt']val(v504^b),' - ',@tab_txt.pft,),'</option>
+ <option value="^aacv^b40">'ref(['tab_txt']40,@tab_txt.pft,)'</option>
+ <option value="^atbo^b367">'ref(['tab_txt']367,@tab_txt.pft,)'</option>
+ <option value="^ausr^b379">'ref(['tab_txt']379,@tab_txt.pft,)'</option>
+ <option value="^afor^b162">'ref(['tab_txt']162,@tab_txt.pft,)'</option>
+ <option value="^aser^b425">'ref(['tab_txt']425,@tab_txt.pft,)'</option>
+ <option value="^acpa^b775">'ref(['tab_txt']775,@tab_txt.pft,)'</option>
+ <option value="^alog^b171">'ref(['tab_txt']171,@tab_txt.pft,)'</option>
+ <option value="^aemp^b118">'ref(['tab_txt']118,@tab_txt.pft,)'</option>
+ <option value="^ares^b304">'ref(['tab_txt']304,@tab_txt.pft,)'</option>
+ <option value="^acxa^b688">'ref(['tab_txt']688,@tab_txt.pft,)'</option>
+ <option value="^apen^b219">'ref(['tab_txt']219,@tab_txt.pft,)'</option>
+ <option value="^apqt^b282">'ref(['tab_txt']282,@tab_txt.pft,)'</option>
+ <option value="^avoc^b780">'ref(['tab_txt']780,@tab_txt.pft,)'</option>
+ <option value="^ausc^b616">'ref(['tab_txt']616,@tab_txt.pft,)'</option>
+ <option value="^acdu^b46">'ref(['tab_txt']46,@tab_txt.pft,)'</option>
+ <option value="^aaut^b757">'ref(['tab_txt']757,@tab_txt.pft,)'</option>
+ <option value="^amec^b849">'ref(['tab_txt']849,@tab_txt.pft,)'</option>
+ </select></td></tr>'/
+'<tr><td class="td1o">',ref(['tab_txt']146,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(505");>[505]</a></td><td class="td2"><input type="text" class="textbox" name="505" value="'v505'"></td></tr>'/
+,if v508<>'Simples' then '<tr><td class="td1e">',ref(['tab_txt']776,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(513");>[513]</a></td><td class="td2"><textarea rows="10" name="513">',(v513/),'</textarea></td></tr>',fi,
+'<tr><td class="td1e">',ref(['tab_txt']777,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(510");>[510]</a></td><td class="td2"><textarea rows="10" name="510">',(v510/),'</textarea></td></tr>'/
+'<tr><td class="td1e">',ref(['tab_txt']778,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(511");>[511]</a></td><td class="td2"><textarea rows="10" name="511">',(v511/),'</textarea></td></tr>'/
+'<tr><td class="td1e">',ref(['tab_txt']779,@tab_txt.pft,)'&nbsp;<a href=JavaScript:tab_man(512");>[512]</a></td><td class="td2"><textarea rows="10" name="512">',(v512/),'</textarea></td></tr>'/

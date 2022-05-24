@@ -1,0 +1,44 @@
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'
+'<input type="hidden" name="999" value="'v999[1]'">'
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="mfn" value="'v3000^4'">'
+'<input type="hidden" name="opc" value="grava">'
+'<input type="hidden" name="701" value="'v701'">'
+'<input type="hidden" name="pwd" value="'v702'">'
+'<input type="hidden" name="703" value="'v703'">'
+'<input type="hidden" name="704" value="'v704'">'
+'<input type="hidden" name="705" value="'v705'">'
+'<input type="hidden" name="717" value="'v717'">'
+'<input type="hidden" name="718" value="'v718'">'
+'<input type="hidden" name="719" value="'v719'">'
+'<input type="hidden" name="721" value="'v721'">'
+'<input type="hidden" name="722" value="'v722'">'
+'<input type="hidden" name="723" value="'v723'">'
+'<input type="hidden" name="724" value="'v724'">'
+'<input type="hidden" name="725" value="'v725'">'
+'<input type="hidden" name="726" value="'v726'">'
+'<input type="hidden" name="727" value="'v727'">'
+'<input type="hidden" name="728" value="'v728'">'
+'<input type="hidden" name="730" value="'v730'">'
+'<input type="hidden" name="998" value="'v998'">'
+'<input type="hidden" name="chk_numb" value="'v701'">'
+'<input type="hidden" name="dbvar" value="^aphl_usr^b25^cusr^m'v3000^4'">'
+'<tr><td class="td1o"></td><td class="topico">'ref(['tab_txt']383,@tab_txt.pft,)'</td></tr>'
+,,,,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v701),'&nbsp;<a href=JavaScript:tab_man(701);>[701]</a></td><td class="td2">'v701'</td></tr>'/
+,,,,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v705),'&nbsp;<a href=JavaScript:tab_man(705);>[705]</a></td><td class="td2">'v705'</td></tr>'/
+,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v723),'&nbsp;<a href=JavaScript:tab_man(723);>[723]</a></td><td class="td2">'ref(['phl_rgl']val(v723),@tab_txt.pft,/)'</td></tr>'/
+,'<tr><td class="td1o">',ref(['phl_usr_fmt']1,v700),'&nbsp;<a href=JavaScript:tab_man(700);>[700]</a></td><td class="td2"><input type="text" class="textbox" name="700" value="',v700,'"></td></tr>'/
+,if ref(['phl_usr_fmt']1,v6704)<>'' then '<tr><td class="td1o">',ref(['phl_usr_fmt']1,v704),'&nbsp;<a href=JavaScript:tab_man(704);>[704]</a></td><td class="td2">'v704'</td></tr>' fi,/
+,if ref(['phl_usr_fmt']1,v6706)<>'' then '<tr><td class="td1e">',ref(['phl_usr_fmt']1,v706),'&nbsp;<a href=JavaScript:tab_man(706);>[706]</a></td><td class="td2"><input type="text" class="textbox" name="706" value="',v706,'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6707)<>'' then '<tr><td class="td1e">',ref(['phl_usr_fmt']1,v707),'&nbsp;<a href=JavaScript:tab_man(707);>[707]</a></td><td class="td2"><input type="text" class="textbox" name="707" value="',v707,'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6709)<>'' then '<tr><td class="td1e">',ref(['phl_usr_fmt']1,v709),'&nbsp;<a href=JavaScript:tab_man(709);>[709]</a></td><td class="td2"><input type="text" class="textbox" name="709" value="',v709,'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6708)<>'' then '<tr><td class="td1e">',ref(['phl_usr_fmt']1,v708),'&nbsp;<a href=JavaScript:tab_man(708);>[708]</a></td><td class="td2"><input type="text" class="textbox" name="708" value="'v708'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6710)<>'' then '<tr><td class="td1e">',ref(['phl_usr_fmt']1,v710),'&nbsp;<a href=JavaScript:tab_man(710);>[710]</a></td><td class="td2"><textarea rows="2" name="710">',(v710/),'</textarea></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6714)<>'' then '<tr><td class="td1e">',ref(['phl_usr_fmt']1,v714),'&nbsp;<a href=JavaScript:tab_man(714);>[714]</a></td><td class="td2"><textarea rows="2" name="714">',(v714/),'</textarea></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6711)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v711),'&nbsp;<a href=JavaScript:tab_man(711);>[711]</a></td><td class="td2"><select size="1" name="711"><option selected value="'v711'">',v711,'</option>',('<option value="'v3101'">',v3101,'</option>'/),'</select></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6712)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v712),'&nbsp;<a href=JavaScript:tab_man(712);>[712]</a></td><td class="td2"><input type="text" class="textbox" name="712" value="',v712,'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6713)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v713),'&nbsp;<a href=JavaScript:tab_man(713);>[713]</a></td><td class="td2"><select size="1" name="713"><option selected value="',v713,'">',v713,'</option><option value=""><option>',('<option value="'v3092'">'v3092'</option>'),'</select></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6715)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v715),'&nbsp;<a href=JavaScript:tab_man(715);>[715]</a></td><td class="td2"><input type="text" class="textbox" name="715" value="'v715'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6716)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v716),'&nbsp;<a href=JavaScript:tab_man(716);>[716]</a></td><td class="td2"><input type="text" class="textbox" name="716" value="'v716'"></td></tr>',fi
+,if ref(['phl_usr_fmt']1,v6720)<>'' then '<tr><td class="td1f">',ref(['phl_usr_fmt']1,v720),'&nbsp;<a href=JavaScript:tab_man(720);>[720]</a></td><td class="td2"><input type="text" class="textbox" name="720" value="',v720,'"></td></tr>',fi

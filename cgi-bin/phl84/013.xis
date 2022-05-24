@@ -1,0 +1,774 @@
+<!-- Rotina de emprestimo
+     04/12/2018 16:23:16
+-->
+
+     <IsisScript name="013.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+     
+<!-- Inclue funcao (012) que verifica penalidades do usuario -->
+     <include>phl84/012.fnc</include>
+
+<!-- Inclue funcao (003) que verifica o status do titulo -->
+     <include>phl84/003.fnc</include>
+     
+<!-- Inclue funcao (100) que obtem dados do registro de usuário -->
+     <include>phl84/100.fnc</include>
+     
+<!-- Inclue funcao (101) que verifica atrasos do usuario -->
+     <include>phl84/101.fnc</include>
+     
+<!-- Inclue funcao (103) que verifica total de multas do usuário -->
+     <include>phl84/103.fnc</include>
+     
+<!-- Inclue funcao (159) que obtem horario de funcionamento da biblioteca -->
+     <include>phl84/159.fnc</include>
+     
+<!-- Inclue funcao (200) que obtem MFN da data de hoje -->
+     <include>phl84/200.fnc</include>
+     
+<!-- Inclue funcao (300) que obtem dados do regulamento -->
+     <include>phl84/300.fnc</include>
+     
+<!-- Inclue funcao (400) que obtem regras para o emprestimo -->
+     <include>phl84/400.fnc</include>
+     
+<!-- Inclue funcao (700) que obtem quantidade de objetos em poder do usuário -->
+     <include>phl84/700.fnc</include>
+     
+<!-- Inclue funcao (701) que obtem quantidade de objetos do mesmo tipo em poder do usuário -->
+     <include>phl84/701.fnc</include>
+     
+<!-- Inclue funcao (800) que verifica disponibilidade para o emprestimo -->
+     <include>phl84/800.fnc</include>
+
+<!-- Inclue funcao (013) que carrega informacoes sobre o tombo -->
+     <include>phl84/013.fnc</include>
+
+<!-- Inclue funcao (901) que calcula data de devolução -->
+     <include>phl84/901.fnc</include>
+     
+<!-- Inclue funcao (log) -->
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+     
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>     
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="951">usr</field>
+     <field action="replace" tag="951"><pft>,replace(v951,' ',''),</pft></field>
+     <field action="cgi" tag="952">tbo</field>
+     <field action="replace" tag="952"><pft>,replace(v952,' ',''),</pft></field>
+     <field action="cgi" tag="1953">pwd</field>
+     <field action="replace" tag="951"><pft>,mhu,v951,mdl,</pft></field>
+     <field action="replace" tag="952"><pft>,mhu,v952,mdl,</pft></field>
+
+<!-- Armazena em v2211 dados sobre permissoes do usuario -->
+     <field action="add" tag="2211"><pft>,ref(['phl_pwd']val(v3000^4),v656,),</pft></field>
+
+<!-- Verifica condições previas para processamento do empréstimo -->
+    
+     <!-- Verifica se usuário tem permissões para esta rotina -->
+          <flow action="jump"><pft>,if ref(['phl_pwd']val(v3000^4),v656^a)<>'1' then '271' fi,</pft></flow>    
+       
+     <!-- (2) Verifica se funcionário tem permissão para empréstimo -->
+          <flow action="jump"><pft>,if s(v3000^3)<>'funcionario' then '271' fi,</pft></flow>
+
+     <!-- (3) Verifica se tombo foi fornecido -->
+          <flow action="jump"><pft>,if a(v952) then '242' fi,</pft></flow>
+          
+     <!-- (3.1) Verifica se existem brancos no tombo fornecido -->
+          <flow action="jump"><pft>,if p(v952) and s(v952):' ' then '1183' fi,</pft></flow>
+         
+     <!-- (4) Verifica se usuário foi fornecido -->
+          <flow action="jump"><pft>,if a(v951) then '243' fi,</pft></flow>
+          
+     <!-- (4.1) Verifica se existem brancos no usuário fornecido -->
+          <flow action="jump"><pft>,if p(v951) and s(v951):' ' then '1184' fi,</pft></flow>
+    
+     <!-- (5) Verifica se usuário existe -->
+          <flow action="jump"><pft>,if npost(['phl_usr'],'USR='v951)=0 then '380' fi,</pft>
+          <file action="close" type="database">phl_usr</file>
+          </flow>
+
+     <!-- (6) Verifica se tombo existe -->
+          <flow action="jump"><pft>,if npost([v3000^1'_tbo'],'TBO='v952)=0 then '368' fi,</pft>
+          <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+          </flow>
+
+     <!-- (7) Verifica se tombo não está emprestado -->
+          <flow action="jump"><pft>,if npost([v3000^1'_emp'],'TBO='v952)<>0 then '136' fi,</pft>
+          <file action="close" type="database"><pft>,v3000^1'_emp',</pft></file>
+          </flow>
+
+     <!-- Obtém identificação do título -->
+          <field action="add" tag="2">
+            <pft>,ref([v3000^1'_tbo']l([v3000^1'_tbo'],'TBO='v952,),v800,),</pft>
+          </field>
+          <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+
+     <!-- Obtém tipo de documento  -->
+          <field action="add" tag="500">
+          <pft>,
+            ,if ref(['phl_cnf']1,v221)='1' then
+             ,ref(['phl_acv']l(['phl_acv'],'TIT='v2),'^a'v1,'^b'v26,'^c'mfn(1),),
+            ,else
+             ,ref(['phl_acv']l(['phl_acv'],'TIT='v2),'^a'v1,'^b'v5,'^c'mfn(1),),
+            ,fi
+          </pft>
+          </field>
+          <file action="close" type="database">phl_acv</file>
+
+          <field action="replace" tag="1"><pft>,v500^a,</pft></field>
+
+     <!-- Verifica se os dados sobre o título foram carregados -->
+          <flow action="jump"><pft>,if a(v1) then '594' fi,</pft></flow>
+
+     <!-- Obtém dados do tombo a ser emprestado -->
+          <call name="013">now</call>
+          
+     <!-- Verifica se os dados sobre o tombo foram carregados -->
+          <flow action="jump"><pft>,if a(v8000) then '665' fi,</pft></flow>          
+          
+     <!-- Verifica se tombo circula -->
+          <flow action="jump">
+            <pft>
+               ,if v8000^e<>'Overnight' then
+                 ,if v8000^e='N' or v8000^a='2' or v8000^a='0' then '137' fi,
+               ,fi
+            </pft>
+          </flow>
+   
+     <!-- Obtem dados sobre o usuario -->
+          <call name="100">now</call>
+
+     <!-- Carrega penalidades do usuário
+          110 - Total do débito
+          111 - Limite da suspensão -->
+          
+          <call name="012">now</call>
+        
+     <!-- Carrega quantidade de objetos em poder do usuário -->
+          <call name="700">now</call>
+
+     <!-- Carrega horários de funcionamento da biblioteca
+             159^a horário de abertura do dia
+             159^b horário de encerramento do dia -->
+
+             <call name="159">now</call>
+
+     <!-- Carrega quantidade de objetos do mesmo tipo em poder do usuário -->
+          <call name="701">now</call>
+
+     <!-- Obtem dados do regulamento -->
+          <call name="300">now</call>
+
+     <!-- **********************************************************************
+          Dados do Calendário
+          Nota: Nas comparacoes com datas ha sempre que se referir ao
+          MFN da base de calendário pois por um problema no algoritimo
+          do Wxis/Bireme quando executado em servidor Linux, ele nao
+          consegue distiguir as datas com 8 dígitos tipo: 20030611 para
+          efetuar comparacoes de valores 
+         *******************************************************************-->
+         <field action="replace" tag="953"><pft>,v3000^1,</pft></field>
+         <call name="200">now</call>
+     
+          <!-- Carrega mfn da data de vencimento da matricula -->
+          
+          <field action="add" tag="802">
+           <pft>
+            ,ref([v3000^1'_cal']l([v3000^1'_cal'],v100^b,),mfn(1),),
+           </pft>
+          </field>
+          <file action="close" type="database"><pft>,v3000^1'_cal'</pft></file>
+          
+     <!-- **********************************************************************
+          Obtém dados de atrasos deste usuário em todas as bibliotecas do
+          sistema
+          *******************************************************************-->
+          <call name="101">now</call>
+
+     <!-- **********************************************************************
+          Dados de Prazos e Quantidades
+          ******************************************************************-->
+          <call name="400">now</call>
+
+     <!-- *************************************************************************
+          Define o prazo de empréstimo
+          ***********************************************************************-->
+
+          <field action="add" tag="1026">
+          <pft>,if v8000^e='' then v400^a else
+                 ,if v8000^e='Overnight' then '1' else v8000^e fi,
+              ,fi
+          </pft>
+          </field>
+      
+          <field action="replace" tag="1026">
+           <pft>,f((val(v1026)+1),0,0),</pft>
+          </field>
+  
+     <!-- Define data de devolução -->
+          <field action="replace" tag="953"><pft>,v3000^1,</pft></field>
+          <call name="901">now</call>
+
+     <!-- Verifica disponibilidade para o empréstimo -->
+          <call name="800">now</call>
+     
+     <!-- Obtém total de multas do usuário -->
+          <call name="103">now</call>
+        
+<!-- Inicia o processo final de verificações para o empréstimo -->
+
+     <!-- Verifica se dados do usuário foram carregados -->
+          <flow action="jump"><pft>,if a(v100) then '662' fi,</pft></flow>
+          
+     <!-- Verifica se dados do regulamento foram carregados -->
+          <flow action="jump"><pft>,if a(v300) then '667' fi,</pft></flow>
+        
+     <!-- Verifica se data de validade da matrícula foi obtida -->
+          <flow action="jump">
+            <pft>,if v300^h='1' and v100^b='' then '593' fi,</pft>
+          </flow>
+        
+     <!-- Verifica senha do usuário -->
+          <flow action="jump"><pft>,if v300^p<>'1' and v100^d<>v1953 then '327' fi,</pft></flow>
+        
+     <!-- Verifica se quantidade de documentos em poder do usuário foi carregada -->
+          <flow action="jump"><pft>,if a(v120) then '663' fi,</pft></flow>
+        
+     <!-- Verifica se os dados sobre a biblioteca foram carregados -->
+          <flow action="jump"><pft>,if a(v159) then '664' fi,</pft></flow>
+              
+     <!-- Verifica se quantidade de objetos do mesmo tipo foi carregada -->
+          <flow action="jump"><pft>,if a(v130) then '666' fi,</pft></flow>
+
+     <!-- Verifica se mfn da data de hoje foi obtido -->
+          <flow action="jump"><pft>,if a(v1022) then '668' fi,</pft></flow>
+        
+     <!-- Verifica se mfn da data de vencimento da matrícula foi obtido -->
+          <flow action="jump"><pft>,if v300^h='1' and a(v802) then '668' fi,</pft></flow>
+        
+     <!-- Verifica se informações sobre prazos e quantidades puderam ser obtidas -->
+          <flow action="jump"><pft>,if a(v400) then '669' fi,</pft></flow>
+        
+     <!-- Verifica se o prazo de empréstimo pode ser definido -->
+          <flow action="jump"><pft>,if a(v1026) then '670' fi,</pft></flow>
+
+     <!-- Verifica se informações sobre o título foram obtidas -->
+          <flow action="jump"><pft>,if a(v500) then '671' fi,</pft></flow>
+
+     <!-- Verifica se quantidade de exemplares emprestados foi obtida -->
+          <flow action="jump"><pft>,if a(v501) then '672' fi,</pft></flow>
+        
+     <!-- Verifica se quantidade de exemplares reservados foi obtida -->
+          <flow action="jump"><pft>,if a(v502) then '673' fi,</pft></flow>
+                      
+     <!-- Verifica se é overnight e está no horário -->
+          <flow action="jump"><pft>,if v8000^e='Overnight' and val(v7003*9.2) < val(v159^b.2)-1 then '660' fi,</pft></flow>
+    
+     <!-- Verifica quantidade permitida para empréstimo -->
+          <flow action="jump"><pft>,if val(v300^o)=0 then '355' fi,</pft></flow>
+        
+     <!-- Não emprestar se usuário estiver suspenso -->
+          <flow action="jump"><pft>,if v300^j='1' and v100^a='1' then '382' fi,</pft></flow>
+        
+     <!-- Não emprestar se prazo de validade da matrícula estiver expirado -->
+          <flow action="jump"><pft>,if v300^h='1' and val(v802)<val(v1022) then '244' fi,</pft></flow>
+
+     <!-- Não emprestar se usuário tiver documentos em atraso -->
+          <flow action="jump"><pft>,if v300^i='1' and getenv('atraso')='sim' then '245' fi,</pft></flow>
+
+     <!-- Não emprestar se usuário estiver com pena de suspensão -->
+          <flow action="jump"><pft>,if v300^k='1' and val(v111)>=val(v1022) then 'suspenso' fi,</pft></flow>
+
+     <!-- Não emprestar se usuário tiver multa pendente -->
+
+          <flow action="jump">
+            <pft>,if val(v557)<val(v743) then
+                   ,if v300^k='1' and val(v110)>0 then '252' fi,
+                 ,fi
+            </pft>
+          </flow>
+
+     <!-- Não emprestar se limite de objetos foi ultrapassado -->
+          <flow action="jump"><pft>,if v300^m='1' and val(v300^o)-val(v120)<=0 then '196' fi,</pft></flow>
+
+     <!-- Não emprestar mais que um exemplar para um mesmo usuário -->
+     
+          <do task="search">
+            <parm name="db"><pft>,v3000^1'_emp',</pft></parm>
+            <parm name="expression"><pft>,'TIT=',v2'*USR='v951,</pft></parm>
+            <field action="define" tag="1002">Isis_Total</field>
+            <loop></loop>
+            <field action="export" tag="1002">1002</field>
+         </do>
+         <file action="close" type="database"><pft>,v3000^1'_emp',</pft></file>
+
+          <flow action="jump">
+            <pft>,if v300^n='1' then
+                   ,if val(v1002)<>0 then '390' fi,
+                 ,fi,
+            </pft>
+          </flow>
+
+     <!-- Não emprestar se limite de tipo de objeto foi ultrapassado -->
+          <flow action="jump"><pft>if v300^m='1' and val(v130)-val(v400^b)>=0 then '196' fi,</pft></flow>
+
+     <!-- Emprestar se objeto for de consulta local (prazo 0 dias) -->
+          <flow action="jump"><pft>,if v8000^e='0' then 'grava_emprestimo' else 'ver_reserva_titulo' fi,</pft></flow>
+          <flow action="exit">1</flow>
+
+     <!-- Verifica se existe reserva ou espera para este título -->
+          
+          <label>ver_reserva_titulo</label>
+          <flow action="jump">
+            <pft>,
+                   if val(v502)>=1 then 
+                     ,if v300^l='1' then 'verifica_reserva' else 'grava_emprestimo' fi,
+                      else 
+                     'grava_emprestimo' fi,</pft>
+          </flow>
+          <flow action="exit">1</flow>
+
+<!-- Verifica reservas do título -->
+     
+     <label>verifica_reserva</label>
+     <do task="search">
+      <parm name="db">phl_res</parm>
+      <parm name="expression"><pft>,'TIT=',v2,</pft></parm>
+      <loop>
+        <field action="import" tag="2020">2020</field>
+        <field action="add" tag="2020"><pft>,v930,'^r'mfn(1),</pft></field>
+        <field action="replace" tag="2020" split="occ"><pft>,(v2020/),</pft></field>
+        <field action="export" tag="list">2020</field>
+      </loop>
+      <field action="export" tag="2020">2020</field>
+     </do>
+     <file action="close" type="database">phl_res</file>
+    
+<!-- Obtém posição dos usuários na lista de reservas -->
+
+     <field action="replace" tag="1213" split="occ"><pft>,('^z'f(iocc,0,0),v2020/),</pft></field>
+     <field action="add" tag="1214"><pft>(if s(mpu,v1213^u,mpl)=s(mpu,v951[1],mpl) then '^a'v1213^z,'^r'v1213^r fi)</pft></field>
+
+<!-- Verifica se sua posição na lista lhe permite o empréstimo -->
+
+     <flow action="jump">
+       <pft>,if val(v1214^a)>=1 and val(v1214^a)<=val(v503) then 'permitido_emprestimo' else 'ver_disponibilidade' fi,</pft>
+     </flow>
+     <flow action="exit">1</flow>
+
+<!-- Verifica se há disponibilidade para o empréstimo -->
+
+     <label>ver_disponibilidade</label>
+     <flow action="jump"><pft>,if val(v5030)>0 then 'grava_emprestimo' else '134' fi,</pft></flow>
+
+     <label>134</label>
+     <field action="replace" tag="250">134</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <call name="003">now</call>
+     <flow action="exit">1</flow>
+     
+<!-- Elimina reserva do titulo para este usuario -->
+     
+     <label>permitido_emprestimo</label>
+
+     <file action="close" type="database">phl_res</file>
+
+     <do task="update">
+       <parm name="db">phl_res</parm>
+       <parm name="mfn"><pft>,v1214^r,</pft></parm>
+       <parm name="fst"><pft>,cat('phl_res.fst'),</pft></parm>
+       <parm name="uctab"><pft>,cat('uctab'),</pft></parm>
+       <parm name="actab"><pft>,cat('actab'),</pft></parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+       <update>
+         <field action="export" tag="list">930</field>
+         <field action="delete" tag="list">1/999</field>
+         <write>Delete</write>
+         <field action="import" tag="list">930,3000,7003</field>
+         <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zCAN|013.xis|TIT='v930^a,'|USR=',v930^u,/,</pft></field>
+         <call name="log">now</call>
+       </update>
+     </do>
+     <file action="close" type="database">phl_res</file>
+      
+<!-- Grava emprestimo -->
+
+     <label>grava_emprestimo</label>
+     
+     <!-- 29/05/2008 10:49:12 --><file action="close" type="database"><pft>,v3000^1'_emp',</pft></file>
+
+     <do task="update">
+     <parm name="db"><pft>,v3000^1'_emp',</pft></parm>
+     <parm name="mfn">New</parm>
+     <parm name="fst"><pft>,cat(v3000^1'_emp.fst'),</pft></parm>
+     <parm name="uctab"><pft>,cat('uctab'),</pft></parm>
+     <parm name="actab"><pft>,cat('actab'),</pft></parm>
+     <field action="define" tag="1003">Isis_Status</field>
+
+     <update>
+        <field action="import" tag="list">2,100,400,500,951,952,3000,7003,8000/8004</field>
+        <field action="add" tag="900">
+          <pft>,
+            '^d',v7003*0.8,
+            '^h',v7003*9.6,
+            '^oemp',
+            '^u',v951,
+            '^k',v100^k,/* MFN do usuario */
+            '^t',v952,
+            
+            ,if v400^e='U' then
+                '^v',getenv('u_dev'),
+                '^n',getenv('u_mfn'),
+                 else
+                '^v',getenv('c_dev'),
+                '^n',getenv('c_mfn'),
+            ,fi,
+
+            '^a',v2,
+            '^f',v500^c,/* MFN do titulo no catalogo */
+            '^c',v100^e,
+            '^e',v500^b,
+            '^b',v3000^2,
+            ,if v8000^e='Overnight' then '^yover' fi
+          </pft>
+        </field>
+
+        <field action="replace" tag="900"><pft>,replace(v900,' ',''),</pft></field>
+        <field action="export" tag="900">900</field>
+        <field action="delete" tag="list">2,100,400,500,951,952,3000,7003,8000/8004</field>
+        <write>Unlock</write>
+        <field action="import" tag="list">900,3000</field>
+        <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zEMP|013.xis|TBO#'v900^t,'|USR#',v900^u,/</pft></field>
+        <call name="log">now</call>
+       </update>
+       <field action="export" tag="900">900</field>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_emp',</pft></file>
+
+<!-- Verifica se é empréstimo múltiplo e direciona gravação do log -->
+
+     <field action="cgi" tag="759">mfn_log</field>
+
+     <flow action="jump"><pft>,if val(v759)>1 then 'multiplo' else 'simples' fi,</pft></flow>
+     <flow action="exit">1</flow>
+
+<!-- Grava log de empréstimo simples -->
+
+     <label>simples</label>
+
+     <!-- 29/05/2008 10:49:12 --><file action="close" type="database"><pft>,v3000^1'_log',</pft></file>
+
+     <do task="update">
+       <parm name="db"><pft>,v3000^1'_log',</pft></parm>
+       <parm name="mfn">New</parm>
+       <parm name="fst"><pft>,cat(v3000^1'_log.fst'),</pft></parm>
+       <parm name="uctab"><pft>,cat('uctab'),</pft></parm>
+       <parm name="actab"><pft>,cat('actab'),</pft></parm>
+       <field action="define" tag="1003">Isis_Status</field>
+       <update>
+         <field action="import" tag="900">900</field>
+         <field action="add" tag="910"><pft>,v900,</pft></field>
+         <field action="replace" tag="910" split="occ"><pft>(v910/)</pft></field>
+         <field action="export" tag="list">910</field>
+         <field action="delete" tag="900">ALL</field>
+         <write>Unlock</write>
+         <field action="add" tag="2902"><pft>,mfn(1),</pft></field>
+         <field action="export" tag="list">910,2902</field>
+       </update>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_log'</pft></file>
+
+     <flow action="jump">imprime_comprovante</flow>
+
+<!-- Grava log de emprestimo multiplo -->
+
+     <label>multiplo</label>
+     
+     <file action="close" type="database"><pft>,v3000^1'_log',</pft></file>
+
+     <do task="update">
+       <parm name="db"><pft>,v3000^1'_log',</pft></parm>
+       <parm name="mfn"><pft>,v759,</pft></parm>
+       <parm name="fst"><pft>,cat(v3000^1'_log.fst'),</pft></parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+       <update>
+         <field action="import" tag="list">900</field>
+         <field action="add" tag="910"><pft>,v900,</pft></field>
+         <field action="replace" tag="910" split="occ"><pft>(v910/)</pft></field>
+         <field action="export" tag="list">910</field>
+         <field action="delete" tag="900">ALL</field>
+         <write>Unlock</write>
+         <field action="add" tag="2902"><pft>,mfn(1),</pft></field>
+         <field action="export" tag="list">910,2902</field>
+       </update>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_log'</pft></file>
+
+<!-- Imprime comprovante de empréstimo -->
+     
+     <label>imprime_comprovante</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']66,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- Mensagens de erro -->
+
+          <label>52</label>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']52,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>suspenso</label>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']70,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>135</label>
+          <field action="replace" tag="250">135</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>136</label>
+          <field action="replace" tag="250">136</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>137</label>
+          <field action="replace" tag="250">137</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>196</label>
+          <field action="replace" tag="250">196</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']153,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>242</label>
+          <field action="replace" tag="250">242</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>243</label>
+          <field action="replace" tag="250">243</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>244</label>
+          <field action="replace" tag="250">244</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>245</label>
+          <field action="replace" tag="250">245</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>251</label>
+          <field action="replace" tag="250">251</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>252</label>
+          <field action="replace" tag="250">252</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>271</label>
+          <field action="replace" tag="250">271</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>327</label>
+          <field action="replace" tag="250">327</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>355</label>
+          <field action="replace" tag="250">355</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>368</label>
+          <field action="replace" tag="250">368</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>380</label>
+          <field action="replace" tag="250">380</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>382</label>
+          <field action="replace" tag="250">382</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>390</label>
+          <field action="replace" tag="250">390</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>593</label>
+          <field action="replace" tag="250">593</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>594</label>
+          <field action="replace" tag="250">594</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>660</label>
+          <field action="replace" tag="250">660</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>662</label>
+          <field action="replace" tag="250">662</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>663</label>
+          <field action="replace" tag="250">663</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>664</label>
+          <field action="replace" tag="250">664</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>665</label>
+          <field action="replace" tag="250">665</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>666</label>
+          <field action="replace" tag="250">666</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>667</label>
+          <field action="replace" tag="250">667</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>668</label>
+          <field action="replace" tag="250">668</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>669</label>
+          <field action="replace" tag="250">669</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <display><pft>,
+          '<blockquote><font class="ft12">Não existe definição de prazos e quantidades para
+          este tipo de usuário e tipo de documento:<br><br>
+          Tipo de usuário  : ',v100^e,'<br>
+          Tipo de documento: ',v500^b,'<br><br>
+          <b>Soluções</b>
+          <ul>
+          <li>Revise a base de dados de "configurações do sistema" e verifique se estes
+          tipos foram previstros;
+          </li>
+          <li>Revise a base de dados de "prazos e quantidades" e verifique se existe
+          definição para o tipo: <b>'v100^e,'#',v500^b'</b>;
+          </ul></font></blockquote></pft></display>
+          <flow action="exit">1</flow>
+
+          <label>670</label>
+          <field action="replace" tag="250">670</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>671</label>
+          <field action="replace" tag="250">671</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>672</label>
+          <field action="replace" tag="250">672</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>673</label>
+          <field action="replace" tag="250">673</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>674</label>
+          <field action="replace" tag="250">674</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+          
+          <label>1183</label>
+          <field action="replace" tag="250">1183</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+          
+          <label>1184</label>
+          <field action="replace" tag="250">1183</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']75,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

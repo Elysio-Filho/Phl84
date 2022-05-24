@@ -1,0 +1,48 @@
+<!-- Fornece conteudo de variaveis CGI -->
+
+     <IsisScript name="cgi.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+
+
+     <display>
+       <pft>
+        'Content-type: text/html; charset=iso-8859-1'/#
+       </pft>
+     </display>
+
+     <section>
+<display><pft>
+    
+'<html>'
+'<table>'
+'<tr><td>SERVER_SOFTWARE:</td><td>',getenv('SERVER_SOFTWARE'),'</td></tr>'
+'<tr><td>SERVER_NAME:</td><td>',getenv('SERVER_NAME'),'</td></tr>'
+'<tr><td>GATEWAY_INTERFACE:</td><td>',getenv('GATEWAY_INTERFACE'),'</td></tr>'
+'<tr><td>SERVER_PROTOCOL:</td><td>',getenv('SERVER_PROTOCOL'),'</td></tr>'
+'<tr><td>SERVER_PORT:</td><td>',getenv('SERVER_PORT'),'</td></tr>'
+'<tr><td>REQUEST_METHOD:</td><td>',getenv('REQUEST_METHOD'),'</td></tr>'
+'<tr><td>PATH_INFO:</td><td>',getenv('PATH_INFO'),'</td></tr>'
+'<tr><td>PATH_TRANSLATED:</td><td>',getenv('PATH_TRANSLATED'),'</td></tr>'
+'<tr><td>SCRIPT_NAME:</td><td>',getenv('SCRIPT_NAME'),'</td></tr>'
+'<tr><td>QUERY_STRING:</td><td>',getenv('QUERY_STRING'),'</td></tr>'
+'<tr><td>REMOTE_HOST:</td><td>',getenv('REMOTE_HOST'),'</td></tr>'
+'<tr><td>REMOTE_ADDR:</td><td>',getenv('REMOTE_ADDR'),'</td></tr>'
+'<tr><td>AUTH_TYPE:</td><td>',getenv('AUTH_TYPE'),'</td></tr>'
+'<tr><td>REMOTE_USER:</td><td>',getenv('REMOTE_USER'),'</td></tr>'
+'<tr><td>REMOTE_IDENT:</td><td>',getenv('REMOTE_IDENT'),'</td></tr>'
+'<tr><td>CONTENT_TYPE:</td><td>',getenv('CONTENT_TYPE'),'</td></tr>'
+'<tr><td>CONTENT_LENGTH:</td><td>',getenv('CONTENT_LENGTH'),'</td></tr>'
+'<tr><td>HTTP_ACCEPT:</td><td>',getenv('HTTP_ACCEPT'),'</td></tr>'
+'<tr><td>HTTP_USER_AGENT:</td><td>',getenv('HTTP_USER_AGENT'),'</td></tr>'
+'<tr><td>ALL_HTTP:</td><td>',getenv('ALL_HTTP'),'</td></tr>'
+'<tr><td>HTTP_COOKIE:</td><td>',getenv('HTTP_COOKIE'),'</td></tr>'
+'<tr><td>CERT_COOKIE:</td><td>',getenv('CERT_COOKIE'),'</td></tr>'
+'</table>'
+'</html>'
+
+</pft>
+</display>
+
+</section>
+</IsisScript>

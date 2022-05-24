@@ -1,0 +1,294 @@
+<!-- Importacao
+     26/10/2010 17:38:33 Incluida instrução de eliminacao de arquivos temporarios na rotina de importacao MARC -->
+
+     <IsisScript name="050.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inclue funcao que obtem opcoes das caixas de seleção -->
+     <include>phl84/tipo.documento.fnc</include>
+     <include>phl84/tipo.conteudo.fnc</include>
+     <include>phl84/tipo.idioma.fnc</include>
+     <include>phl84/tipo.suporte.fnc</include>
+     <include>phl84/tipo.colecao.fnc</include>
+
+<!-- Inicia secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="1010">rec</field>
+     <field action="cgi" tag="1020">formato</field>
+
+<!-- Direciona fluxo do script -->
+     <flow action="jump"><pft>,v950,</pft></flow>
+
+<!-- Abre formulário para colar o registro que sera importado -->
+     <label>form</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']8,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+    
+<!-- Inicia processo de conversão do registro PHL -->    
+     <label>phl</label>
+     <field action="add" tag="1"><pft>,v3000^1,</pft></field>
+     <field action="replace" tag="1010" split="occ"><pft>,(v1010/),</pft></field>       
+	 <proc><pft>
+       ( select v1010.3
+           
+           case '003': 'a3~'v1010*5'~'/
+           case '004': 'a4~'v1010*5'~'/
+           case '005': 'a5~'v1010*5'~'/
+	   case '006': 'a6~'v1010*5'~'/
+	   case '008': 'a8~'v1010*5'~'/
+	   case '010': 'a10~'v1010*5'~'/
+	   case '011': 'a11~'v1010*5'~'/
+	   case '012': 'a12~'v1010*5'~'/
+	   case '013': 'a13~'v1010*5'~'/
+	   case '014': 'a14~'v1010*5'~'/
+	   case '015': 'a15~'v1010*5'~'/
+	   case '016': 'a16~'v1010*5'~'/
+	   case '017': 'a17~'v1010*5'~'/
+	   case '018': 'a18~'v1010*5'~'/
+	   case '019': 'a19~'v1010*5'~'/
+	   case '020': 'a20~'v1010*5'~'/
+	   case '021': 'a21~'v1010*5'~'/
+	   case '022': 'a22~'v1010*5'~'/
+	   case '023': 'a23~'v1010*5'~'/
+	   case '024': 'a24~'v1010*5'~'/
+	   case '025': 'a25~'v1010*5'~'/
+	   case '027': 'a27~'v1010*5'~'/
+	   case '028': 'a28~'v1010*5'~'/
+	   case '030': 'a30~'v1010*5'~'/
+	   case '031': 'a31~'v1010*5'~'/
+	   case '032': 'a32~'v1010*5'~'/
+	   case '033': 'a33~'v1010*5'~'/
+	   case '034': 'a34~'v1010*5'~'/
+	   case '035': 'a35~'v1010*5'~'/
+	   case '038': 'a38~'v1010*5'~'/
+	   case '039': 'a39~'v1010*5'~'/
+	   case '040': 'a40~'v1010*5'~'/
+	   case '041': 'a41~'v1010*5'~'/
+	   case '042': 'a42~'v1010*5'~'/
+	   case '043': 'a43~'v1010*5'~'/
+	   case '044': 'a44~'v1010*5'~'/
+	   case '045': 'a45~'v1010*5'~'/
+	   case '046': 'a46~'v1010*5'~'/
+           case '047': 'a47~'v1010*5'~'/
+           case '048': 'a48~'v1010*5'~'/
+	   case '050': 'a50~'v1010*5'~'/
+	   case '051': 'a51~'v1010*5'~'/
+	   case '052': 'a17~'v1010*5'~'/
+	   case '053': 'a53~'v1010*5'~'/
+	   case '054': 'a54~'v1010*5'~'/
+	   case '055': 'a55~'v1010*5'~'/
+	   case '056': 'a56~'v1010*5'~'/
+	   case '057': 'a57~'v1010*5'~'/
+	   case '060': 'a60~'v1010*5'~'/
+	   case '061': 'a61~'v1010*5'~'/
+	   case '062': 'a62~'v1010*5'~'/
+	   case '063': 'a63~'v1010*5'~'/
+	   case '064': 'a64~'v1010*5'~'/
+	   case '065': 'a65~'v1010*5'~'/
+	   case '066': 'a66~'v1010*5'~'/
+	   case '069': 'a69~'v1010*5'~'/
+	   case '070': 'a70~'v1010*5'~'/
+	   case '071': 'a71~'v1010*5'~'/
+	   case '072': 'a72~'v1010*5'~'/
+	   case '073': 'a73~'v1010*5'~'/
+	   case '074': 'a74~'v1010*5'~'/
+	   case '075': 'a75~'v1010*5'~'/
+	   case '076': 'a76~'v1010*5'~'/
+	   case '078': 'a78~'v1010*5'~'/
+	   case '082': 'a82~'v1010*5'~'/
+	   case '083': 'a83~'v1010*5'~'/
+	   case '084': 'a84~'v1010*5'~'/
+	   case '085': 'a85~'v1010*5'~'/
+	   case '086': 'a86~'v1010*5'~'/
+	   case '087': 'a87~'v1010*5'~'/
+	   case '088': 'a88~'v1010*5'~'/
+	   case '089': 'a89~'v1010*5'~'/
+	   case '103': 'a103~'v1010*5'~'/
+	   case '121': 'a121~'v1010*5'~'/
+	   case '141': 'a141~'v1010*5'~'/
+	   case '181': 'a181~'v1010*5'~'/
+	   case '182': 'a182~'v1010*5'~'/
+          endsel, )
+          
+       </pft></proc>
+       
+       <proc>
+         <pft>
+           ,'d3d5d6d40',
+           ,if nocc(v3)>1 then
+             'a3~'v3[1]'~',
+             'a103~'v3[2]'~',
+           ,else
+           ,if v3^a<>'' then 
+            'a3~'v3^a'~',
+            'a103~'v3^b'~' 
+              else ('a3~'v3'~') 
+           ,fi,
+           ,fi
+           ,select v5^*.1
+             case 'L' : 'a5~7~',
+             case 'E' : 'a5~4~',
+             case 'T' : 'a5~21~',
+             case 'V' : 'a5~22~',
+             elsecase 'a5~7~',
+           ,endsel
+           ,select v40[1]^*
+             case 'Pt' : 'a40~1~',
+             case 'Es' : 'a40~2~',
+             case 'En' : 'a40~3~',
+             case 'Fr' : 'a40~4~',
+             elsecase 'a40~1~',
+           ,endsel
+           ,'a6~'replace(v6,' ','')'~',
+         </pft>
+       </proc>
+     
+     <flow action="jump">importa</flow>
+
+<!-- Inicia processo de conversão do registro MARC -->    
+     
+     <label>marc</label>
+     
+     <field action="add" tag="1"><pft>,v3000^1,</pft></field>
+     <field action="add" tag="5">7</field>
+     <field action="add" tag="6">m</field>
+     <field action="add" tag="40">1</field>
+     <field action="add" tag="960">027</field>
+     <field action="replace" tag="1010" split="occ"><pft>(v1010/)</pft></field>
+     <field action="add" tag="1011" split="occ"><pft>,(replace(v1010,'\','^')/),</pft></field>
+          <field action="delete" tag="1010">ALL</field>
+     <field action="add" tag="1012" split="occ"><pft>,(replace(v1011,'|','^')/),</pft></field>
+          <field action="delete" tag="1011">ALL</field>
+     <field action="add" tag="1013" split="occ"><pft>,(replace(v1012,'$','^')/),</pft></field>
+          <field action="delete" tag="1012">ALL</field>
+     <field action="add" tag="1014" split="occ"><pft>,(replace(v1013,' :','')/),</pft></field>
+          <field action="delete" tag="1013">ALL</field>
+     <field action="add" tag="1015" split="occ"><pft>,(replace(v1014,' /','')/),</pft></field>
+          <field action="delete" tag="1014">ALL</field>
+     <field action="add" tag="1016" split="occ"><pft>,(replace(v1015,' ^','^')/),</pft></field>
+          <field action="delete" tag="1015">ALL</field>
+     <field action="add" tag="1017" split="occ"><pft>,(replace(v1016,';^','^')/),</pft></field>
+          <field action="delete" tag="1016">ALL</field>
+     <field action="add" tag="1018" split="occ"><pft>,(replace(v1017,',^','^')/),</pft></field>
+          <field action="delete" tag="1017">ALL</field>
+     <field action="add" tag="1019" split="occ"><pft>,(replace(v1018,'.^','^')/),</pft></field>
+          <field action="delete" tag="1018">ALL</field>
+     <field action="add" tag="1020" split="occ"><pft>,(replace(v1019,'^a ','^a')/),</pft></field>
+          <field action="delete" tag="1019">ALL</field>
+     <field action="add" tag="1021" split="occ"><pft>,(replace(v1020,'^b ','^b')/),</pft></field>
+          <field action="delete" tag="1020">ALL</field>
+     <field action="add" tag="1022" split="occ"><pft>,(replace(v1021,'^c ','^c')/),</pft></field>
+          <field action="delete" tag="1021">ALL</field>
+     <field action="add" tag="1023" split="occ"><pft>,(replace(v1022,' -','')/),</pft></field>
+     <field action="delete" tag="list">1010/1022</field>
+
+     <!--
+     <display><pft>,(v1023'<br>'),</pft></display>
+     -->
+
+     <proc><pft>
+          ( select v1023.3
+           
+           case '020': 'a69~'v1023^a'~'/
+           case '050': 'a3~^a'v1023^a'~'/
+           case '060': 'a3~^a'v1023^a,'^b'v1023^b'~'/
+           case '082': 'a3~^a'v1023^a,'^b'v1023^b,'^c'v1023^c,'~'/
+           case '090': 'a3~^a'v1023^a,'^b'v1023^b,'~'/
+           case '100': 'a16~'v1023^a'~'/
+           case '110': 'a17~'v1023^a'~'/
+           case '111': 'a17~'v1023^a'~'/
+           case '245': 'a18~'v1023^a'~'/
+                      'a181~'v1023^b'~'/
+                       'a17~'v1023^c'~'/
+           case '250': 'a63~'v1023^a'~'/
+           case '260': 'a66~'v1023^a'~'/
+                       'a62~'v1023^b'~'/
+                       'a64~'v1023^c'~'/
+           case '300': 'a20~'replace(v1023,'p.','^x')'~'/
+           case '440': 'a30~'v1023^a'~'/
+           case '504': 'a61~'v1023^a'~'/
+           case '505': 'a86~'v1023^a'~'/
+           case '650': 'a87~'v1023^a'~'/
+           case '651': 'a87~'v1023^a'~'/
+           case '700': 'a16~'v1023^a'~'/
+           case '856': 'a8~^i'v1023^u'~'/
+
+         endsel, )
+      </pft></proc>
+      
+      <proc><pft>,if v3^a<>'' then 'd3','a3~'v3^a'~','a103~'v3^b'~' fi,</pft></proc>
+      
+      <field action="replace" tag="8"><pft>,replace(v8,' ',''),</pft></field>
+      <field action="replace" tag="20"><pft>,v20^a,</pft></field>
+      <field action="replace" tag="30"><pft>,replace(v30,'(',''),</pft></field>
+      <field action="replace" tag="30"><pft>,replace(v30,')',''),</pft></field>
+
+      <flow action="jump">importa</flow>
+
+<!-- Inicia processo de conversão do registro RIS -->    
+     <label>ris</label>
+     <field action="add" tag="1"><pft>,v3000^1,</pft></field>
+     <field action="add" tag="5">10</field>
+     <field action="add" tag="6">m</field>
+     <field action="add" tag="40">90</field>
+     <field action="add" tag="960">027</field>
+     <field action="replace" tag="1010" split="occ"><pft>(v1010/)</pft></field>
+
+     <proc><pft>
+          ( select v1010.2
+           case 'AU': 'a16~'v1010*6'~'/
+           case 'A1': 'a16~'v1010*6'~'/
+           case 'CY': 'a66~'v1010*6'~'/
+           case 'IS': 'a32~'v1010*6'~'/
+           case 'JF': 'a30~'v1010*6'~'/
+           case 'KW': 'a87~'v1010*6'~'/
+           case 'N1': 'a61~'v1010*6'~'/
+           case 'N2': 'a83~'v1010*6'~'/
+           case 'AB': 'a83~'v1010*6'~'/
+           case 'PB': 'a62~'v1010*6'~'/
+           case 'PY': 'a64~'v1010*6'~'/
+           case 'SN': 'a69~'v1010*6'~'/
+           case 'SP': 'a20~'v1010*6'~'/
+           case 'T1': 'a18~'v1010*6'~'/
+           case 'BT': 'a18~'v1010*6'~'/
+           case 'T2': 'a12~'v1010*6'~'/
+           case 'T3': 'a30~'v1010*6'~'/
+           case 'VL': 'a31~'v1010*6'~'/
+           case 'Y1': 'a64~'v1010*6'~'/
+
+         endsel, )
+     </pft></proc>
+     <label>importa</label>
+
+<!-- Chama função que gera o conteúdo das caixas de seleção -->
+     <label>importa</label>
+
+          <call name="tipo.documento">now</call>
+          <call name="tipo.suporte">now</call>
+          <call name="tipo.idioma">now</call>
+          <call name="tipo.conteudo">now</call>
+          <call name="tipo.colecao">now</call>
+
+<!-- Abre formulário com registro PHL convertido -->
+
+     <display>
+       <htmlpft>
+         <pft>
+           ,ref(['tab_fmt']1128,'[pft]',(v4/),'[/pft]')
+         </pft>
+       </htmlpft>
+     </display>
+    <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

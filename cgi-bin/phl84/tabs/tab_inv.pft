@@ -1,0 +1,18 @@
+ (,if p(v7) and ref([v1[1]'_tbo']val(v7^m),v807)<>'0' then
+  '^a'v3[1],
+  '^b'v103[1],
+ ,'^c'v63[1],
+ ,'^d'v21[1],
+ ,'^e'v31[1],
+ ,'^f'v32[1],
+ ,'^i'v65[1].4,
+ ,'^j'ref(['phl_col']val(v26[1]),@tab_txt.pft,),
+ ,'^k'v1[1],
+ ,'^l'v22[1],
+ ,'^m'ref(['phl_tdo']val(v5[1]),@tab_txt.pft,),
+ ,'^n'v71[1],
+ ,'^g'v7^a,
+ ,'^h'v7^b,
+ ,'^o'ref([v1[1]'_tbo']val(v7^m),v807),
+ ,'^q'if v18[1]<>'' then v18[1],": "v181[1] else v30[1] fi,
+ ,fi/)

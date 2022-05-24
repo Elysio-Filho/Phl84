@@ -1,0 +1,9 @@
+id2i tab_dag.seq create=tab_dag
+id2i tab_ent.seq create=tab_ent
+id2i tab_fdt.seq create=tab_fdt
+id2i tab_fmt.seq create=tab_fmt
+id2i tab_fmx.seq create=tab_fmx
+id2i tab_man.seq create=tab_man
+id2i tab_pft.seq create=tab_pft
+id2i tab_txt.seq create=tab_txt
+id2i tab_xml.seq create=tab_xml

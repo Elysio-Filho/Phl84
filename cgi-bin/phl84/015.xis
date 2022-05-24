@@ -1,0 +1,780 @@
+<!-- Caixa de seleção de bases de dados para entrada
+     25/09/2017 15:40:48 - Revisado -->
+     
+     <IsisScript name="015.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inclue funcao (15) que controla numeracao de tombos -->
+     <include>phl84/015.fnc</include>
+
+<!-- Inclue funcao que obtem opcoes das caixas de seleção -->
+     <include>phl84/rede.bibliotecas.fnc</include>
+     <include>phl84/tipo.aquisicao.fnc</include>
+     <include>phl84/tipo.colecao.fnc</include>
+     <include>phl84/tipo.conteudo.fnc</include>
+     <include>phl84/tipo.curso.fnc</include>
+     <include>phl84/tipo.documento.fnc</include>
+     <include>phl84/tipo.formulario.fnc</include>
+     <include>phl84/tipo.idioma.fnc</include>
+     <include>phl84/tipo.mec.fnc</include>
+     <include>phl84/tipo.suporte.fnc</include>
+     <include>phl84/tipo.usuario.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+     
+     <parm name="buffersize">90000</parm>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="957">mfn</field>
+     <field action="add" tag="960">027</field>
+     <field action="cgi" tag="5">005</field>
+     <field action="cgi" tag="6">006</field>
+     <field action="cgi" tag="22">022</field>
+     <field action="cgi" tag="26">026</field>
+     <field action="cgi" tag="71">071</field>
+     <field action="cgi" tag="1010">marc_rec</field>
+     
+<!-- Verifica se código existe e é válido-->
+     <flow action="jump"><pft>,if p(v3002) and a(v3000) then '47' fi,</pft></flow>
+        
+<!-- Carrega permissões de entrada e edição do usuário -->  
+     <field action="add" tag="2000"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>        
+     <field action="add" tag="2001"><pft>,ref(['phl_pwd']val(v3000^4),v658),</pft></field>
+        
+<!-- Direciona fluxo do script -->
+     <flow action="jump"><pft>,v950,</pft></flow>
+
+     <label>47</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']47,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Compõe formulário para seleção da base de dados -->
+     <label>base</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']58,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- 01 catalogo  -->
+     <label>acv</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+          <flow action="jump"><pft>,if v2000^a<>'1' then '271' fi,</pft></flow>
+          
+     <!-- Opções de tipos de documentos  -->
+
+          <call name="tipo.documento">now</call>
+          <call name="tipo.suporte">now</call>
+          <call name="tipo.conteudo">now</call>
+          <call name="tipo.colecao">now</call>
+          <call name="tipo.usuario">now</call>
+          <!-- <call name="tipo.mec">now</call>  -->
+
+     <!-- Abre formulário para seleção do tipo e nível de tratamento -->
+
+          <display><htmlpft><pft>,ref(['tab_fmx']101,v4),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+          <label>acv_form</label>
+          
+          <!-- Verifica ausencia do tipo de documento e nivel bibliografico -->
+               <flow action="jump"><pft>,if a(v5) and a(v6) then '681' fi,</pft></flow>
+               
+          <!-- Verifica se o nível selecionado foi analitico e emite alerta -->
+               <flow action="jump"><pft>,if v6:'a' then '1175' fi,</pft></flow>
+               
+          <!-- Verifica se o nível selecionado foi de serie e emite alerta -->
+               <flow action="jump"><pft>,if v6='s' then '1176' fi,</pft></flow>
+
+          <!-- Verifica se o nível selecionado foi colecao e emite alerta -->
+               <flow action="jump"><pft>,if v6='c' then '1177' fi,</pft></flow>
+
+          <label>acv_form_confirmado</label>
+
+          <call name="tipo.documento">now</call>
+          <call name="tipo.suporte">now</call>
+          <call name="tipo.idioma">now</call>
+          <call name="tipo.conteudo">now</call>
+          <call name="tipo.colecao">now</call>
+          <call name="tipo.curso">now</call>
+          <call name="tipo.usuario">now</call>
+          
+          <!-- <call name="tipo.mec">now</call>  -->
+          
+    <!-- Atribui valores às variáveis que serão passadas ao formulário -->
+
+          <field action="add" tag="1"><pft>,v3000^1,</pft></field>
+          <field action="add" tag="5000"><pft>,ref(['phl_tdo']val(v5),v350),</pft></field>
+         <!--
+          <field action="cgi" tag="952">tbo</field>
+          <field action="replace" tag="952"><pft>,mhu,v952,mpl,</pft></field>
+          -->
+
+          <!--
+          <display>
+            <htmlpft>
+               <pft>
+                  select v5
+                   case '3' : ,@tab_arquivo.fmt,
+                    elsecase ref(['tab_fmt']1,'[pft]',v4,'[/pft]',),
+                  endsel,
+               </pft>
+            </htmlpft>
+          </display>
+          -->
+          
+          <display>
+            <htmlpft>
+               <pft>
+                 ref(['tab_fmt']1,'[pft]',v4,'[/pft]',),
+               </pft>
+            </htmlpft>
+          </display>
+
+          <flow action="exit">1</flow>
+          
+          <label>271</label>
+          <field action="add" tag="250">271</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">0</flow>
+
+          <label>681</label>
+          <field action="add" tag="250">681</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">0</flow>
+
+          <label>801</label>
+          <field action="add" tag="250">801</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">0</flow>
+          
+          <label>1175</label>
+          <field action="add" tag="250">1175</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <display>
+            <pft>
+              '<br><center>'
+              '<a href="/cgi-bin/wxis.exe?IsisScript=phl84/015.xis&opc=acv_form_confirmado&tmp='v4001'&005='v5'&006='v6'&022='v22'&026='v26'&071='v71'">Quero continuar, mesmo sabendo que este procedimento não seja correto.</a>'/
+              '</center>
+            </pft>
+          </display>
+          <flow action="exit">0</flow>
+
+          <label>1176</label>
+          <field action="add" tag="250">1176</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">0</flow>
+          
+          <label>1177</label>
+          <field action="add" tag="250">1177</field>
+          <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+          <flow action="exit">0</flow>
+          
+<!-- 02 calendario -->
+     <label>cal</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^f<>'1' then '271' fi,</pft></flow> 
+
+     <display><htmlpft><pft>,ref(['tab_fmt']2,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 03 tabela de classificacao -->
+     <label>cdu</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^n<>'1' then '271' fi,</pft></flow> 
+
+     <display><htmlpft><pft>,ref(['tab_fmt']3,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 06 sugestoes -->
+     <label>cpa</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^o<>'1' then '271' fi,</pft></flow>
+      
+     <!-- Opções de tipos de cursos -->
+          <call name="tipo.curso">now</call>
+          <call name="tipo.documento">now</call>
+
+     
+     <!-- Rede de bibliotecas -->
+          <call name="rede.bibliotecas">now</call>
+
+          <field action="add" tag="883"><pft>,v3000^1,</pft></field>
+          <field action="add" tag="891">sc</field>
+          <display><htmlpft><pft>,ref(['tab_fmt']6,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+          <flow action="exit">1</flow>
+
+<!-- 10 fornecedores -->
+     <label>for</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^e<>'1' then '271' fi,</pft></flow> 
+     <display><htmlpft><pft>,ref(['tab_fmt']10,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- 11 tipo de documento -->
+     <label>tdo</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+
+     <call name="tipo.formulario">now</call>
+     
+     <display><htmlpft><pft>,ref(['tab_fmt']11,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 15 coleções -->
+     <label>col</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+     
+     <display><htmlpft><pft>,ref(['tab_fmt']15,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 16 prazos e quantidades -->
+     <label>pqt</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+     
+     <call name="tipo.usuario">now</call>
+     <call name="tipo.documento">now</call>
+     <call name="tipo.colecao">now</call>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']16,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 17 permissoes -->
+     <label>pwd</label>
+     
+     <!-- Rede de bibliotecas -->
+     <call name="rede.bibliotecas">now</call>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+     
+     <!-- Define configuracao padrao -->
+     
+     <field action="add" tag="655">^p1^f1^a1^n1^e1^d1^k1^o1^b1^71^c1^m1</field>
+     <field action="add" tag="656">^a1^c1^i1^d1^j1</field>
+     <field action="add" tag="657">^a1^b1^c1^d1^e1^f1^g1^h1^i1^j1^k1</field>
+     <field action="add" tag="658">^p1^f1^a1^n1^e1^d1^k1^o1^b1^71^c1^m1</field>
+     <field action="add" tag="660">^w1^n1^p1^m1^o1^q1^t1^s1^u1^v1^a1^b1^d1^c1^e1^i1^f1^g1^j1^k1^r1^h1^l1</field>
+     <field action="add" tag="661">^w1^n1^p1^m1^o1^q1^t1^s1^u1^v1^a1^b1^d1^c1^e1^i1^f1^g1^j1^k1^r1^h1^l1</field>
+     <field action="add" tag="662">^a1^b1^c1^d1</field>
+     <field action="add" tag="663">^a1^b1^c1^d1</field>
+     <field action="add" tag="664">^a1^b1^c1^d1^e1^f1^g1^h1^i1</field>
+
+     <!-- Abre formulario de configuracao -->
+     <display><htmlpft><pft>,ref(['tab_fmt']17,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 19 regulamentos -->
+     <label>rgl</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+     
+     <!-- Carrega opcoes de tipos de usuarios -->
+     <call name="tipo.usuario">now</call>
+     
+     <field action="add" tag="520">1</field>
+     <field action="add" tag="521">1</field>
+     <field action="add" tag="522">1</field>
+     <field action="add" tag="523">1</field>
+     <field action="add" tag="524">1</field>
+     <field action="add" tag="525">1</field>
+     <field action="add" tag="526">1</field>
+     <field action="add" tag="527">10</field>
+     <field action="add" tag="528">10</field>
+     <field action="add" tag="529">1</field>
+     <field action="add" tag="530">1</field>
+     <field action="add" tag="531">1</field>
+     <field action="add" tag="532">1</field>
+     <field action="add" tag="533">1</field>
+     <field action="add" tag="534">1</field>
+     <field action="add" tag="535">1</field>
+     <field action="add" tag="536">1</field>
+     <field action="add" tag="537">1</field>
+     <field action="add" tag="538">10</field>
+     <field action="add" tag="539">1</field>
+     <field action="add" tag="540">1</field>
+     <field action="add" tag="541">1</field>
+     <field action="add" tag="542">1</field>
+     <field action="add" tag="550">1</field>
+     <field action="add" tag="551">1</field>
+     <field action="add" tag="552">1</field>
+     <field action="add" tag="553">1</field>
+     <field action="add" tag="554">1</field>
+     <field action="add" tag="555">1</field>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']19,'[pft]',v4,'[/pft]'),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 21 kardex -->
+     <label>ser</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+          <flow action="jump"><pft>,if v2000^d<>'1' then '271' fi,</pft></flow>
+     
+          <call name="tipo.idioma">now</call>
+          <call name="tipo.curso">now</call>
+          <call name="tipo.aquisicao">now</call>
+
+     <!-- Atribui número de identificação da coleção -->
+          <field action="add" tag="771"><pft>,v7003*3.12,v3000^4,</pft></field>
+          <field action="replace" tag="771">
+           <pft>
+             ,replace(v771,' ',''),
+           </pft>
+         </field>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']21,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- 21 kardex - copy -->
+     <label>serc</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^d<>'1' then '271' fi,</pft></flow>
+
+     <do task="mfnrange">
+       <parm name="db"><pft>,v3000^1'_ser',</pft></parm>
+       <parm name="from"><pft>,v957,</pft></parm>
+       <parm name="count">1</parm>
+       <loop>
+        <field action="export" tag="list">769/770,772/799</field>
+      </loop>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_ser',</pft></file>
+     
+     <!-- Atribui número de identificação da coleção -->
+          <field action="add" tag="771"><pft>,v7003*3.12,v3000^4,</pft></field>
+          <field action="replace" tag="771">
+           <pft>
+             ,replace(v771,' ',''),
+           </pft>
+         </field>     
+
+     <field action="delete" tag="list">957</field>
+     <display><htmlpft><pft>,ref(['tab_fmt']21,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 22 biblioteca -->
+     <label>set</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow> 
+
+     <display><htmlpft><pft>,ref(['tab_fmt']22,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 23 tombo - copy -->
+     <label>tboc</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^b<>'1' then '271' fi,</pft></flow> 
+
+     <do task="mfnrange">
+       <parm name="db"><pft>,v3000^1'_tbo',</pft></parm>
+       <parm name="from"><pft>,v957,</pft></parm>
+       <parm name="count">1</parm>
+       <loop>
+        <field action="export" tag="list">800,802/835</field>
+      </loop>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+
+     <!-- Função responsável pelo controle automático da numeração -->
+          <call name="015">now</call>
+
+      <field action="delete" tag="list">957</field>
+      <display><htmlpft><pft>,ref(['tab_fmt']23,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+      <flow action="exit">1</flow>
+      
+<!-- 30 Uso da coleção -->
+     <label>usc</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^7<>'1' then '271' fi,</pft></flow>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']30,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- 44 gêneros -->
+     <label>gen</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+     
+     <display><htmlpft><pft>,ref(['tab_fmt']44,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- 45 Nivel Arquivistico -->
+     <label>nda</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+     
+     <display><htmlpft><pft>,ref(['tab_fmt']45,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- 46 Etiquetas PDF -->
+     <label>etp</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+     
+     <display><htmlpft><pft>,ref(['tab_fmt']46,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+      
+<!-- 100 Tipos de documentos e formulario -->
+     <label>acv_fmt</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+
+     <field action="add" tag="001">Código da biblioteca</field>
+     <field action="add" tag="002">Identificação do título</field>
+     <field action="add" tag="003">Número de chamada</field>
+     <field action="add" tag="004">Base de dados</field>
+     <field action="add" tag="005">Tipo do documento</field>
+     <field action="add" tag="006">Nível bibliográfico</field>
+     <field action="add" tag="008">Endereço Web</field>
+     <field action="add" tag="009">Separata (sim/não)</field>
+     <field action="add" tag="010">Autor (nivel analítico)</field>
+     <field action="add" tag="011">Autor coletivo (nível analítico)</field>
+     <field action="add" tag="012">Título (nivel analítico)</field>
+     <field action="add" tag="013">Título traduzido (nivel analítico)</field>
+     <field action="add" tag="014">Paginação (nivel analítico)</field>
+     <field action="add" tag="015">Créditos (nivel analítico)</field>
+     <field action="add" tag="016">Autor (nivel monográfico)</field>
+     <field action="add" tag="017">Autor coletivo (nivel mongráfico)</field>
+     <field action="add" tag="018">Título (nivel monográfico)</field>
+     <field action="add" tag="019">Título traduzido (nivel monográfico)</field>
+     <field action="add" tag="020">Total de páginas (nível monográfico) </field>
+     <field action="add" tag="021">Volume (nível monográfico)</field>
+     <field action="add" tag="022">Tipo de suporte</field>
+     <field action="add" tag="026">Tipo de coleção</field>
+     <field action="add" tag="027">Total de volumes (monográfico)</field>
+     <field action="add" tag="030">Título (série/coleção)</field>
+     <field action="add" tag="031">Volume (série)</field>
+     <field action="add" tag="032">Fascículo (série)</field>
+     <field action="add" tag="033">ID. Kardex (série)</field>
+     <field action="add" tag="034">Suplemento (série)</field>
+     <field action="add" tag="035">ISSN (série)</field>
+     <field action="add" tag="038">Descrição do suporte</field>
+     <field action="add" tag="040">Idioma do documento</field>
+     <field action="add" tag="041">Idioma do resumo </field>
+     <field action="add" tag="050">Instituição (tese)</field>
+     <field action="add" tag="051">Notas (tese)</field>
+     <field action="add" tag="052">Patrocinadores (evento)</field>
+     <field action="add" tag="053">Nome (evento)</field>
+     <field action="add" tag="054">Data (evento)</field>
+     <field action="add" tag="055">Data Normalizada (evento)</field>
+     <field action="add" tag="056">Cidade (evento)</field>
+     <field action="add" tag="057">País (evento)</field>
+     <field action="add" tag="058">Patrocinadores (projeto) </field>
+     <field action="add" tag="059">Nome (projeto)</field>
+     <field action="add" tag="060">Número (projeto) </field>
+     <field action="add" tag="061">Notas gerais</field>
+     <field action="add" tag="062">Editora/Produtora/Gravadora</field>
+     <field action="add" tag="063">Edição, revisão, etc</field>
+     <field action="add" tag="064">Data da publicação</field>
+     <field action="add" tag="065">Data ISO para efeito de ordenação </field>
+     <field action="add" tag="066">Local de publicação</field>
+     <field action="add" tag="067">País de publicação</field>
+     <field action="add" tag="068">Código da publicação</field>
+     <field action="add" tag="069">ISBN</field>
+     <field action="add" tag="070">imagem da capa</field>
+     <field action="add" tag="071">Tipo de conteúdo</field>
+     <field action="add" tag="072">Total de referências</field>
+     <field action="add" tag="074">Alcance temporal - desde </field>
+     <field action="add" tag="075">Alcance temporal - até</field>
+     <field action="add" tag="076">Descritor pré-codificado </field>
+     <field action="add" tag="078">Indivíduo como tema</field>
+     <field action="add" tag="079">Bibliografia de cursos</field>
+     <field action="add" tag="082">Outras localidades</field>
+     <field action="add" tag="083">Resumo do documento</field>
+     <field action="add" tag="084">Texto HTML</field>
+     <field action="add" tag="085">Área do conhecimento (CNPq)</field>
+     <field action="add" tag="086">Notas de Conteúdo</field>
+     <field action="add" tag="087">Descritores do conteúdo, palavras-chaves</field>
+     <field action="add" tag="088">Descritores Secundários</field>
+     <field action="add" tag="089">Observações</field>
+     <field action="add" tag="090">Disponibilidade</field>
+     <field action="add" tag="121">Créditos (nivel analítico)</field>
+     <field action="add" tag="141">Suporte físico (nivel analítico) </field>
+     <field action="add" tag="181">Subtítulo (nível monográfico)</field>
+     <field action="add" tag="182">Subtítulo (nível série)</field>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']100,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>      
+
+<!-- Colecao de periodico -->
+     <label>sertit</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^a<>'1' then '271' fi,</pft></flow>
+ 
+     <do task="mfnrange">
+       <parm name="db"><pft>,v3000^1'_ser',</pft></parm>
+       <parm name="from"><pft>,v957,</pft></parm>
+       <parm name="count">1</parm>
+       <loop>
+         <field action="export" tag="8">781</field>
+         <field action="export" tag="28">782</field>
+         <field action="export" tag="33">771</field>
+         <field action="export" tag="35">772</field>
+         <field action="export" tag="30">773</field>
+         <field action="export" tag="66">777</field>
+         <field action="export" tag="62">778</field>
+         <field action="add" tag="64"><pft>,v796,"-"v797,</pft></field>
+         <field action="export" tag="64">64</field>
+         <field action="add" tag="182"><pft>,v785,if p(v785) and p(v799) then '. ' fi,v779</pft></field>
+         <field action="export" tag="182">182</field>
+         <field action="export" tag="40">789</field>
+         <field action="export" tag="85">793</field>
+         <field action="export" tag="87">792</field>
+       </loop>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_ser',</pft></file>
+
+     <field action="add" tag="1"><pft>,v3000^1,</pft></field>
+     <field action="add" tag="5">16</field>
+     <field action="add" tag="6">c</field>
+     <field action="replace" tag="8"><pft>,'^i',v8,</pft></field>
+     <field action="add" tag="5000"><pft>,ref(['phl_tdo']16,v350),</pft></field>
+     <field action="delete" tag="list">957</field>
+     
+          <call name="tipo.documento">now</call>
+          <call name="tipo.suporte">now</call>
+          <call name="tipo.idioma">now</call>
+          <call name="tipo.conteudo">now</call>
+          <call name="tipo.colecao">now</call>
+          <call name="tipo.curso">now</call>
+          <call name="tipo.mec">now</call>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']1,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Fasciculos de periodicos (kardex para catalogo) -->
+     <label>serfac</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^a<>'1' then '271' fi,</pft></flow>
+ 
+     <do task="mfnrange">
+       <parm name="db"><pft>,v3000^1'_ser',</pft></parm>
+       <parm name="from"><pft>,v957,</pft></parm>
+       <parm name="count">1</parm>
+       <loop>
+         <field action="export" tag="28">782</field>
+         <field action="export" tag="33">771</field>
+         <field action="export" tag="35">772</field>
+         <field action="export" tag="30">773</field>
+         <field action="export" tag="66">777</field>
+         <field action="export" tag="62">778</field>
+         <field action="export" tag="64">796</field>
+         <field action="add" tag="182"><pft>,v785,if p(v785) and p(v799) then '. ' fi,v779</pft></field>
+         <field action="export" tag="182">182</field>
+         <field action="export" tag="40">789</field>
+         <field action="export" tag="85">793</field>
+         <field action="export" tag="87">792</field>
+       </loop>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_ser',</pft></file>
+     <field action="add" tag="1"><pft>,v3000^1,</pft></field>
+     <field action="add" tag="5">16</field>
+     <field action="add" tag="5000"><pft>,ref(['phl_tdo']16,v350),</pft></field>
+     <field action="add" tag="6">s</field>
+     <field action="delete" tag="list">957</field>
+
+          <call name="tipo.documento">now</call>
+          <call name="tipo.suporte">now</call>
+          <call name="tipo.idioma">now</call>
+          <call name="tipo.conteudo">now</call>
+          <call name="tipo.colecao">now</call>
+          <call name="tipo.curso">now</call>
+          <call name="tipo.mec">now</call>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']1,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- Fasciculos de periodicos (catalogo para catalogo) -->
+     <label>acvfac</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^a<>'1' then '271' fi,</pft></flow>
+ 
+     <do task="mfnrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,v957,</pft></parm>
+       <parm name="count">1</parm>
+       <loop>
+         <field action="export" tag="list">30,33,35,40,85,87,62,66,182</field>
+       </loop>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+     <field action="add" tag="1"><pft>,v3000^1,</pft></field>
+     <field action="add" tag="5">16</field>
+     <field action="add" tag="6">s</field>
+     <field action="add" tag="5000"><pft>,ref(['phl_tdo']16,v350),</pft></field>
+     <field action="delete" tag="list">957</field>
+
+          <call name="tipo.documento">now</call>
+          <call name="tipo.suporte">now</call>
+          <call name="tipo.idioma">now</call>
+          <call name="tipo.conteudo">now</call>
+          <call name="tipo.colecao">now</call>
+          <call name="tipo.curso">now</call>
+          <call name="tipo.mec">now</call>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']1,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 25 usuarios -->
+     <label>usr</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^c<>'1' then '271' fi,</pft></flow>
+     
+          <call name="tipo.usuario">now</call>
+          <call name="tipo.curso">now</call>
+
+     <field action="add" tag="7001">
+      <pft>,ref(['phl_set']l(['phl_set'],'ACV='v3000^1),'^a'v611^b,),</pft>
+    </field>
+    <file action="close" type="database">phl_set</file>
+
+     <field action="statusfile" tag="1091">phl_usr.ctl</field>
+     <field action="add" tag="2002"><pft>,if v1091^s:'e' then cat('phl_usr.ctl'),else '1' fi,</pft></field>
+
+     <file action="create" type="output">phl_usr.ctl</file>
+     <display><pft>,f(val(v2002)+1,0,0),</pft></display>
+     <file action="close" type="output">phl_usr.ctl</file>
+     
+     <!--Obtem e define tamanho do numero de matricula -->
+     <field action="replace" tag="701">
+       <pft>,select v7001^a
+              case '3' : f((val(v2002)),3,0)
+              case '9' : f((val(v2002)),9,0)
+              elsecase f((val(v2002)),6,0)
+             endsel,
+       </pft>
+     </field>
+
+     <field action="replace" tag="701"><pft>,replace(v701,' ','0'),</pft></field>
+     <field action="add" tag="730"><pft>,v3000^1,</pft></field>
+
+     <field action="delete" tag="list">957</field>
+     <display><htmlpft><pft>,ref(['tab_fmt']25,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 25 usuario - copy -->
+     <label>usrc</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^c<>'1' then '271' fi,</pft></flow> 
+
+     <do task="mfnrange">
+       <parm name="db">phl_usr</parm>
+       <parm name="from"><pft>,v957,</pft></parm>
+       <parm name="count">1</parm>
+       <loop>
+        <field action="export" tag="list">705/728</field>
+      </loop>
+     </do>
+     <file action="close" type="database">phl_usr</file>
+     
+          <call name="tipo.usuario">now</call>
+          <call name="tipo.curso">now</call>
+
+     <field action="delete" tag="list">957</field>
+     <field action="add" tag="730"><pft>,v3000^1,</pft></field>
+     <display><htmlpft><pft>,ref(['tab_fmt']25,'[pft]',v4,'[/pft]'),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 27 relatorios -->
+     <label>rel</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow> 
+
+     <display><htmlpft><pft>,ref(['tab_fmt']27,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 28 vocabulario -->
+     <label>voc</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^m<>'1' then '271' fi,</pft></flow> 
+
+     <display><htmlpft><pft>,ref(['tab_fmt']28,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 29 controle de autoridades -->
+     <label>aut</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^p<>'1' then '271' fi,</pft></flow>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']29,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- 37 opcoes de conteudo -->
+     <label>cnt</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']37,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- 38 opcoes de idiomas -->
+     <label>idm</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']38,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 41 opcoes de suporte -->
+     <label>spt</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']41,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+    
+<!-- 44 opcoes de usuarios -->
+     <label>tus</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v2000^k<>'1' then '271' fi,</pft></flow>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']44,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+</section>
+</IsisScript>

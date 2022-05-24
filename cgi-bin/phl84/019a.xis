@@ -1,0 +1,60 @@
+<!-- Historicos livre
+     16/01/2017 10:05:25 -->
+     
+     <IsisScript name="019a.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+     <field action="cgi" tag="951">usr</field>
+     <field action="replace" tag="951"><pft>,replace(v951,' ',''),</pft></field>
+     <field action="replace" tag="951"><pft>,mhu,v951,mpl,</pft></field>
+
+     <do task="mfnrange">
+       <parm name="db">phl_set</parm>
+       <loop>
+         <field action="import" tag="list">951,3000,4001,1001</field>
+    
+         <do task="search">
+         <parm name="db"><pft>,v601'_log',</pft></parm>
+         <parm name="expression"><pft>,'USR='v951</pft></parm>
+         <field action="define" tag="1012">Isis_Total</field>
+         <field action="define" tag="1013">Isis_Current</field>
+
+         <loop>
+           <field action="import" tag="list">601,602,951,3000,4001,7003</field>
+           <display><htmlpft><pft>,if val(v1012)<>0 then ref(['tab_fmx']131,v4) fi,</pft></htmlpft></display>
+           <file action="close" type="database"><pft>,v601'_log',</pft></file>
+           <file action="close" type="database">phl_usr</file>
+           <file action="close" type="database">phl_acv</file>
+         </loop>
+
+         <display><pft>,if val(v1012)>0 then putenv('hits=1') fi,</pft></display>
+
+       </do>
+       <file action="close" type="database"><pft>,v601'_log',</pft></file>
+
+       </loop>
+       <display><htmlpft><pft>,if val(getenv('hits'))<1 then ref(['tab_fmx']108,v4) fi,</pft></htmlpft></display>
+     </do>
+     <file action="close" type="database">phl_set</file>
+
+<flow action="exit">1</flow>
+
+</section>
+</IsisScript>

@@ -1,0 +1,254 @@
+<!-- Diagnostico
+     11/11/2015 08:01:05 -->
+
+     <IsisScript name="011.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="956">base</field>
+     <field action="cgi" tag="957">mfn</field>
+     <field action="cgi" tag="970">fst</field>
+     <field action="cgi" tag="3004">dbvar</field>
+     <field action="cgi" tag="6001">from</field>
+     <field action="cgi" tag="6002">to</field>
+ 
+<!-- Verifica se código existe e é válido-->
+     <flow action="jump"><pft>,if p(v3002) and a(v3000) then '47' fi,</pft></flow>
+
+     <flow action="jump">
+       <pft>,if s(v3000^3)='funcionario' then v950 else '251' fi,</pft>
+     </flow>
+     <flow action="exit">0</flow>
+     
+     <label>47</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']47,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>251</label>
+     <field action="add" tag="250">251</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),'</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>tipo</label>
+
+<!-- Compõe formulário para seleção do tipo de diagnóstico -->
+     <display><htmlpft><pft>,ref(['tab_fmx']18,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+     <label>bases</label>
+       <display><htmlpft><pft>,ref(['tab_fmx']54,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+     <label>sistema</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']56,v4),</pft></htmlpft></display>
+     
+     <field action="replace" tag="956"><pft>,v3000^1'_tbo',</pft></field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+     
+     <field action="replace" tag="956"><pft>,v3000^1'_tbo_fmt',</pft></field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+      
+     <field action="replace" tag="956"><pft>,v3000^1'_ser'</pft></field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+     
+     <field action="replace" tag="956"><pft>,v3000^1'_ser_fmt'</pft></field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+      
+     <field action="replace" tag="956"><pft>,v3000^1'_cxa',</pft></field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+      
+     <field action="replace" tag="956"><pft>,v3000^1'_cal'</pft></field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+      
+     <field action="replace" tag="956"><pft>,v3000^1'_emp',</pft></field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+      
+     <field action="replace" tag="956"><pft>,v3000^1'_log',</pft></field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+
+     <field action="replace" tag="956">phl_rel</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+     
+     <field action="replace" tag="956">phl_cnf</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+      
+     <field action="replace" tag="956">phl_set</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+     
+     <field action="replace" tag="956">phl_pwd</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+         
+     <field action="replace" tag="956">phl_aut</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+
+     <field action="replace" tag="956">phl_acv</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+     
+     <field action="replace" tag="956">phl_acv_fmt</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+     
+     <field action="replace" tag="956">phl_rgl</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+
+     <field action="replace" tag="956">phl_usr</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+
+     <field action="replace" tag="956">phl_for</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+      
+     <field action="replace" tag="956">phl_cpa</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+
+     <field action="replace" tag="956">phl_res</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+     
+     <field action="replace" tag="956">phl_pen</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+               
+     <field action="replace" tag="956">phl_voc</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+      
+     <field action="replace" tag="956">phl_pqt</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+
+     <field action="replace" tag="956">phl_col</field>
+     <field action="statusdb" tag="1090"><pft>,v956,</pft></field>
+     <file action="close" type="database"><pft>,v956,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']57,v4),</pft></htmlpft></display>
+
+     <flow action="exit">1</flow>
+     
+<!-- Desbloqueia base de dados -->
+     <label>desbloqueia</label>
+     <file action="unlock" type="database"><pft>,v956,</pft></file>
+     <flow action="jump">sistema</flow>
+
+<!-- Efetua diagnostico na base selecionada -->
+     <label>diag_db</label>
+     <field action="statusdb" tag="928"><pft>,v3004^a,</pft></field>
+     <file action="close" type="database"><pft>,v3004^a,</pft></file>
+
+     <flow action="jump"><pft>,if val(v6001)>=val(v928^n) then
+      'fora_do_intervalo' else 'start_diag' fi,</pft></flow>
+     <flow action="exit">0</flow>
+
+     <label>start_diag</label>
+     <do task="mfnrange">
+       <parm name="db"><pft>,v3004^a,</pft></parm>
+       <parm name="from"><pft>,if p(v957) then v957 else v6001,"1"n6001 fi,</pft></parm>
+       <parm name="to"><pft>,if p(v957) then v957 else v6002,"999999"n6002 fi,</pft></parm>
+       <field action="define" tag="2004">Isis_RecordStatus</field>
+       
+         <display><htmlpft><pft>,ref(['tab_fmx']198,v4),</pft></htmlpft></display>
+
+       <loop>
+         <field action="import" tag="list">3000,3004,4001,7000/7006</field>
+         <field action="add" tag="3004"><pft>'^m',mfn(1),</pft></field>
+         <field action="add" tag="5000"><pft>,ref(['phl_tdo']val(v5),v350),</pft></field>
+
+         <display><htmlpft><pft>,@tab_dag.pft,</pft></htmlpft></display>
+         
+
+       </loop>
+
+<!-- 11/06/2013 18:51:32 --><file action="close" type="database"><pft>,if v3004^a='phl_acv' then v1[1]'_cal' else v3000^1'_cal',fi,</pft></file>
+<!-- 11/06/2013 18:51:32 --><file action="close" type="database"><pft>,if v3004^a='phl_acv' then v1[1]'_emp' else v3000^1'_emp',fi,</pft></file>
+<!-- 11/06/2013 18:51:32 --><file action="close" type="database"><pft>,if v3004^a='phl_acv' then v1[1]'_ser' else v3000^1'_ser',fi,</pft></file>
+<!-- 11/06/2013 18:51:32 --><file action="close" type="database"><pft>,if v3004^a='phl_acv' then v1[1]'_tbo' else v3000^1'_tbo',fi,</pft></file>
+
+<file action="close" type="database">phl_acv_fmt</file>
+<file action="close" type="database">phl_acv</file>
+<file action="close" type="database">phl_aut</file>
+<file action="close" type="database">phl_cnf</file>
+<file action="close" type="database">phl_pqt</file>
+<file action="close" type="database">phl_pwd</file>
+<file action="close" type="database">phl_rel</file>
+<file action="close" type="database">phl_rgl</file>
+<file action="close" type="database">phl_set</file>
+<file action="close" type="database">phl_usr</file>
+<file action="close" type="database">phl_voc</file>
+
+        <display>
+          </table>
+          </body>
+          </html>
+        </display>
+
+      <display><htmlpft><pft>,if getenv('Erro')='' then ref(['tab_fmx']50,v4),fi,</pft></htmlpft></display>
+     </do>
+     <file action="close" type="database"><pft>,v3004^a,</pft></file>
+     <display><htmlpft><pft>,ref(['tab_fmx']51,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+         
+     <label>fora_do_intervalo</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']115,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<flow action="exit">1</flow>
+
+</section>
+</IsisScript>

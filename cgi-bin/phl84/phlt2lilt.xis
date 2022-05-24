@@ -1,0 +1,49 @@
+<!-- Exporta em arquivo ISO2709 registros de Teses (tipo=21) da unidade 001 do catálogo
+     para formato Lilacs da Bireme -->
+
+<IsisScript>
+<display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+  <section>
+  
+     <do task="search">
+     <parm name="db">phl_acv</parm>
+     <parm name="expression">acv=001*tip=21</parm>
+<!-- <parm name="file">STDOUT</parm> -->
+     <parm name="file"><pft>/phl84/phl84/teses.iso'</pft></parm>
+     <parm name="type">ISO2709</parm>
+     <field action="define" tag="1001">Isis_Current</field>
+     <field action="define" tag="1002">Isis_Total</field>
+     <loop>
+     <field action=replace tag=40 split=occ>
+      <pft>
+        (select v40
+          case '1':'Po'
+          case '2':'Es'
+          case '3':'In'
+          case '4':'Fr'
+          case '5':'It'
+          case '6':'Al'
+          case '7':'Ja'
+          case '8':'La'
+          case '9':'Bi'
+          endsel,)
+      </pft>
+     </field>
+     
+     <field action=replace tag=5>T</field>
+     <export>this</export>
+     </loop>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+     
+     <display>
+      <pft>'<a href=http://unifesp.phlnet.com.br/teses.iso>Clique aqui</a> para efetuar o download do arquivo',</pft>
+     </display>
+
+     <flow action="exit">1</flow>
+
+  
+  </section>
+
+</IsisScript>

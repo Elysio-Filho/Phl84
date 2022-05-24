@@ -1,0 +1,39 @@
+<!-- Edição de arquivos do phl
+     18/12/2011 07:30:36 
+     29/09/2015 16:39:43
+     -->
+     
+     <IsisScript name="070.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega dados da sessao -->
+     <call name="001">now</call>
+     
+<!-- Verifica se código existe e é válido-->
+     <flow action="jump"><pft>,if p(v3002) and a(v3000) then '47' fi,</pft></flow>
+     
+<!-- Armazena em v664 as permissoes do usuario -->
+     <field action="add" tag="664"><pft>,ref(['phl_pwd']val(v3000^4),v664),</pft></field>
+     
+<!-- 29/09/2015 16:39:58 Armazena em v660 as permissoes do usuario -->
+     <field action="add" tag="660"><pft>,ref(['phl_pwd']val(v3000^4),v660),</pft></field>
+
+<!-- Abre formulário de parâmetros -->
+     <label>abre_form</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']242,(v4/)),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+     <label>47</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']47,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

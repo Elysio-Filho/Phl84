@@ -1,0 +1,308 @@
+<!-- Elimina registro
+     08/02/2012 09:04:57 - Revisado
+
+      Autoridades              655^p
+      Biblioteca               661^w
+      Calendário               655^f
+      Catálogo                 655^a
+      Classificação            655^n
+      Formulário do catálogo   661^n
+      Formulário do fornecedor 661^p
+      Formulário do kardex     661^m
+      Formulário do tombo      661^o
+      Formulário do usuário    661^q
+      Fornecedores             655^e
+      Kardex                   655^d
+      Nível arquivístico       661^t
+      Permissões               655^k
+      Prazos e Quantidades     661^s
+      Registro de empréstimos  663^d
+      Registro de históricos   663^b
+      Registro de penalidades  663^c
+      Registro do caixa        663^a
+      Relatórios personalizados661^u
+      Sistema                  661^v
+      Sugestões de compra      655^o
+      Tipo de coleção          661^d
+      Tipo de conteúdo         661^c
+      Tipo de curso            661^e
+      Tipo de documento        661^i
+      Tipo de gênero           661^f
+      Tipo de idioma           661^g
+      Tipo de suporte          661^h
+      Tipo de usuário          661^l
+      Tombo                    655^b
+      Uso da coleção           655^7
+      Usuários                 655^c
+      Vocabulário              655^m
+      -->
+
+     <IsisScript name="007.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="951">usr</field>
+     <field action="cgi" tag="952">tbo</field>
+     <field action="cgi" tag="956">db</field>
+     <field action="cgi" tag="960">opc</field>
+     <field action="cgi" tag="961">top</field>
+     <field action="cgi" tag="957">mfn</field>
+     <field action="cgi" tag="958">exp</field>
+     <field action="cgi" tag="1010">rec</field>
+     <field action="cgi" tag="3004">dbvar</field>
+
+<!--Carrega permissões de entrada e edição do usuário -->
+    <field action="add" tag="661"><pft>,ref(['phl_pwd']val(v3000^4),v661),</pft></field>
+    <field action="add" tag="663"><pft>,ref(['phl_pwd']val(v3000^4),v663),</pft></field>
+    <field action="add" tag="655"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>
+    <field action="add" tag="657"><pft>,ref(['phl_pwd']val(v3000^4),v657),</pft></field>
+
+    <flow action="jump"><pft>,v960,"271"n960,</pft></flow>
+
+<!-- 01 catalogo -->
+     <label>acv</label>
+
+     <!-- Verifica se usuário tem permissões para esta rotina -->
+          <flow action="jump"><pft>,if v655^a<>'1' and v3000^3<>'usuario' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 02 calendario -->
+     <label>cal</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v655^f<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 03 tabela de classificacao -->
+     <label>cdu</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v655^n<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 06 sugestoes -->
+     <label>cpa</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v655^o<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 07 livro caixa -->
+     <label>cxa</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v663^a<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 08 emprestimo -->
+     <label>emp</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v663^d<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 09 tabela de cursos -->
+     <label>cur</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^e<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 10 fornecedores -->
+     <label>for</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v655^e<>'1' then '271' else 'deleta' fi,</pft></flow>
+     
+<!-- 11 Tipo de documento -->
+     <label>tdo</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^i<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 13 historico -->
+     <label>log</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v663^b<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 14 penalidade -->
+     <label>pen</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v663^c<>'1' then '271' else 'deleta' fi,</pft></flow>
+     
+<!-- 15 colecoes -->
+     <label>col</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^d<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 16 prazos e quantidades -->
+     <label>pqt</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^s<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 17 permissoes -->
+     <label>pwd</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v655^k<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 19 regulamentos -->
+     <label>rgl</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^l<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 21 kardex -->
+     <label>ser</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v655^d<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 22 biblioteca -->
+     <label>set</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^w<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 23 tombo -->
+    <label>tbo</label>
+
+    <!-- Armazena no campo 100 a quantidade de vezes que o tombo passou pelos
+         serviços de circulação (empréstimo, devolução, renovação)  -->
+
+         <field action="add" tag="100">
+           <pft>,f(npost([v3000^1'_log'],"TBO="v952),0,0),</pft>
+         </field>
+         <file action="close" type="database"><pft>,v3000^1'_log',</pft></file>
+
+    <!-- Permite que seja eliminado caso nunca tenha passado pelos serviços
+         de circulação -->
+
+         <display>
+           <htmlpft>
+             <pft>,if val(v100)=0 then ref(['tab_fmx']88,v4) else ref(['tab_fmx']91,v4) fi,</pft>
+           </htmlpft>
+         </display>
+
+     <flow action="exit">1</flow>
+
+<!-- 25 usuario -->
+     <label>usr</label>
+
+     <!-- Verifica se usuário tem permissões para esta rotina -->
+     <flow action="jump"><pft>,if v655^c<>'1' then '271' fi,</pft></flow>
+
+     <!-- Verifica se usuário já efetuou alguma transação de empréstimo -->
+
+     <do task="mfnrange">
+        <parm name="db">phl_set</parm>
+           <loop>
+           <field action="import" tag="951">951</field>
+
+           <do task="search">
+           <parm name="db"><pft>,v601'_log',</pft></parm>
+           <parm name="expression"><pft>,'USR='v951,</pft></parm>
+             <loop>
+               <field action="import" tag="list">601</field>
+               <list action="load" type="list"><pft>,(v910/),</pft></list>
+             </loop>
+             </do>
+             <file action="close" type="database"><pft>,v601'_log',</pft></file>
+             </loop>
+          </do>
+         <file action="close" type="database">phl_set</file>
+         
+        <do task="list">
+           <field action="define" tag="1">Isis_Item</field>
+           <field action="define" tag="1002">Isis_Itens</field>
+             <loop></loop>
+        </do>
+     
+     <!-- Permite que seja eliminado caso nunca tenha passado pela rotina de
+          circulação das unidades do sistema ou impede que seja eliminado caso
+          tenha algum registro no histórico de algumas das unidades -->
+
+          <display>
+            <htmlpft>
+              <pft>,if val(v1002)=0 then ref(['tab_fmx']88,v4) else ref(['tab_fmx']14,v4) fi,</pft>
+            </htmlpft>
+          </display>
+
+     <flow action="exit">1</flow>
+
+<!-- 27 relatorios personalizados -->
+    <label>rel</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^u<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 28 vocabulario -->
+     <label>voc</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v655^m<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 29 autoridades -->
+     <label>aut</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v655^p<>'1' then '271' else 'deleta' fi,</pft></flow>
+         
+<!-- 37 conteudo -->
+     <label>cnt</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^c<>'1' then '271' else 'deleta' fi,</pft></flow>
+     
+<!-- 38 idioma -->
+     <label>idm</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^g<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+<!-- 41 suporte -->
+     <label>spt</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^h<>'1' then '271' else 'deleta' fi,</pft></flow>
+
+
+<!-- 44 tipo de gênero -->
+     <label>gen</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^f<>'1' then '271' else 'deleta' fi,</pft></flow>
+     
+<!-- 45 tipo de nivel de descricao arquivistica -->
+     <label>nda</label>
+
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^t<>'1' then '271' else 'deleta' fi,</pft></flow>
+     
+<!-- 100 tipo de formulario -->
+     <label>acv_fmt</label>
+     
+     <!-- Verifica se usuário tem permissões para esta base de dados -->
+     <flow action="jump"><pft>,if v661^n<>'1' then '271' else 'deleta' fi,</pft></flow>
+     
+     <label>271</label>
+     <field action="add" tag="250">271</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+     
+     <label>deleta</label>
+     <label>res</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']88,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

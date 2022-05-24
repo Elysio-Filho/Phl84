@@ -1,0 +1,195 @@
+<!-- Copia de registros
+      21/05/2013 18:22:18 -->
+     
+     <IsisScript name="006.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inclue funcao (100) que obtem dados do usuario -->
+     <include>phl84/100.fnc</include>
+
+<!-- Inclue funcao (015) que controla numero de tombo -->
+     <include>phl84/015.fnc</include>
+
+<!-- Inclue funcao que obtem opcoes das caixas de seleção -->
+
+     <include>phl84/tipo.colecao.fnc</include>
+     <include>phl84/tipo.conteudo.fnc</include>
+     <include>phl84/tipo.curso.fnc</include>
+     <include>phl84/tipo.documento.fnc</include>
+     <include>phl84/tipo.idioma.fnc</include>
+     <include>phl84/tipo.suporte.fnc</include>
+     <include>phl84/tipo.usuario.fnc</include>
+     <include>phl84/tipo.aquisicao.fnc</include>
+
+<!-- Inclue funcao (tbo) que obtem dados do tombo -->
+     <include>phl84/801.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="958">exp</field>
+     <field action="add" tag="960">027</field>
+     <field action="cgi" tag="997">mfn</field>
+     <field action="cgi" tag="1010">rec</field>
+     <field action="cgi" tag="3003">log</field>
+
+<!-- Verifica se login é válido -->
+     <flow action="jump"><pft>,if v3000^2='' then '271' fi,</pft></flow>
+         
+<!-- Direciona fluxo do script -->
+     <flow action="jump"><pft>,v950,</pft></flow>
+     <flow action="exit">0</flow>
+
+     <label>271</label>
+     <field action="replace" tag="250">271</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 22 biblioteca -->
+     <label>set</label>
+     
+     <!-- Verifica se usuário tem permissões para esta rotina -->
+
+     <flow action="jump">
+      <pft>,if ref(['phl_pwd']val(v3000^4),v655^k)<>'1' then '271' fi,</pft>
+     </flow>
+
+     <do task="mfnrange">
+       <parm name="db">phl_set</parm>
+       <parm name="from"><pft>,v997,</pft></parm>
+       <parm name="count">1</parm>
+       <loop>
+        <field action="export" tag="list">603/651</field>
+       </loop>
+     </do>
+     <file action="close" type="database">phl_set</file>
+     <display><htmlpft><pft>,ref(['tab_fmt']22,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+    <label>acv2tbo</label>
+     
+     <!-- Verifica se usuário tem permissões para esta rotina -->
+    
+     <field action="cgi" tag="1">acv</field>
+     <field action="cgi" tag="2">tit</field>
+
+     <!-- Obtem mfn da configuracao da biblioteca -->
+          <field action="add" tag="9957"><pft>,ref(['phl_set']l(['phl_set'],'ACV='v1,),mfn(1),),</pft></field>
+
+     <!-- Obtem dados do registro de tombo -->
+          <call name="801">now</call>
+
+ <!-- Função responsável pelo controle automático da numeração -->
+      <call name="015">now</call>
+
+ <!-- Função responsável pelo conteúdo das caixas de seleção -->
+          <call name="tipo.colecao">now</call>
+          <call name="tipo.conteudo">now</call>
+          <call name="tipo.curso">now</call>
+          <call name="tipo.documento">now</call>
+          <call name="tipo.idioma">now</call>
+          <call name="tipo.suporte">now</call>
+          <call name="tipo.aquisicao">now</call>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']1123,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- 27 relatorio -->
+     <label>rel</label>
+     
+     <!-- Verifica se usuário tem permissões para esta rotina -->
+
+     <do task="mfnrange">
+       <parm name="db">phl_rel</parm>
+       <parm name="from"><pft>,v997,</pft></parm>
+       <parm name="count">1</parm>
+       <loop>
+        <field action="export" tag="list">502/513</field>
+       </loop>
+     </do>
+     <file action="close" type="database">phl_rel</file>
+
+     <display><htmlpft><pft>,ref(['tab_fmt']27,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- 02 catalogo -->
+     <label>acv</label>
+     
+     <!-- Verifica se usuário tem permissões para esta rotina -->
+
+     <flow action="jump">
+      <pft>,if ref(['phl_pwd']val(v3000^4),v655^a)<>'1' then '271' fi,</pft>
+     </flow>    
+
+     <do task="search">
+       <parm name="db">phl_acv</parm>
+       <parm name="expression"><pft>,'mfn='v997,</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <field action="define" tag="1003">Isis_Status</field>
+       <parm name="buffersize">90000</parm>
+       <parm name="count">1</parm>
+       <loop>
+         <field action="export" tag="list">3/6,8,10/182,996</field>
+       </loop>
+       <field action="replace" tag="1"><pft>,v3000^1,</pft></field>
+       
+       <!--Compões box de cursos e disciplinas para os formulários -->
+
+           <call name="tipo.documento">now</call>
+           <call name="tipo.suporte">now</call>
+           <call name="tipo.idioma">now</call>
+           <call name="tipo.conteudo">now</call>
+           <call name="tipo.colecao">now</call>
+           <call name="tipo.curso">now</call>
+
+       <field action="add" tag="5000"><pft>,ref(['phl_tdo']val(v5),v350),</pft></field>
+       <display><htmlpft><pft>,ref(['tab_fmt']1,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+     <flow action="exit">1</flow>
+     
+     <label>271</label>
+     <field action="add" tag="250">271</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+
+<!-- 06 sugestoes -->
+     <label>cpa</label>
+     
+     <do task="search">
+       <parm name="db">phl_cpa</parm>
+       <parm name="expression"><pft>,'mfn='v997,</pft></parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <field action="define" tag="1003">Isis_Status</field>
+       <parm name="count">1</parm>
+       <loop>
+         <field action="import" tag="list">3000,4001</field>
+         <field action="add" tag="951"><pft>,if v3000^3='usuario' then v889 fi,</pft></field>
+         <field action="export" tag="list">883,877/880,889,951,</field>
+       </loop>
+       <call name="100">now</call>
+       <display><htmlpft><pft>,ref(['tab_fmt']6,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+     </do>
+     <file action="close" type="database">phl_cpa</file>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

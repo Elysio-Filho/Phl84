@@ -1,0 +1,63 @@
+<IsisScript>
+  <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+  <section>
+
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+
+     <field action="cgi" tag="1015">q</field>
+
+     <do task="search">
+       <parm name="db">phl_acv</parm>
+       <parm name="expression"><pft>,v1015'$/(87)',</pft></parm>
+
+       <display>
+         <pft>
+           '<div id="title">
+              <div id="sidebar">
+                <div id="sidebar-content">Termo</div>
+              </div>
+              <div id="main">
+                <div id="main-content">Frequência</div>
+              </div>
+              <hr class="cleaner" />
+            </div>'
+         </pft>
+       </display>
+
+       <loop>
+         <field action="import" tag="list">1015</field>
+         <list action="load" type="freq"><pft>,(if s(mhu,v87^*,mpl):s(mhu,v1015[1],mpl) then v87^* fi,/),</pft></list>
+       </loop>
+     </do>
+     
+     <do task="list">
+       <field action="define" tag="1">Isis_Item</field>
+       <field action="define" tag="2">Isis_Value</field>
+       <parm name="count">10</parm>
+
+       <loop>
+         <display>
+           <pft>
+            '<div id="content">
+             <div id="sidebar">
+               <div id="sidebar-content">'v1'</div>
+             </div>
+             <div id="main">
+               <div id="main-content">'v2'</div>
+             </div>
+             <hr class="cleaner" />
+           </div>'
+           </pft>
+         </display>
+    </loop>
+
+  </do>
+  <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

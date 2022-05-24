@@ -1,0 +1,67 @@
+<!-- Mostra tabela auxiliar do conteudo da base de dados de classificacao (00X_cdu)
+     09/11/2008 06:11:13 -->
+
+     <IsisScript name="077.xis">
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+     <section>
+  
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+     
+<!-- Carrega variáveis do javascript (tab_fmx/mfn=256) -->
+     <field action="cgi" tag="10">q</field>
+
+<!-- Percorre indice de chaves da base de dados de classificacao (00X_cdu) -->
+     <do task="search">
+       <parm name="db"><pft>,v3000^1'_cdu',</pft></parm>
+       <parm name="expression"><pft>,v10,'$',</pft></parm>
+       <parm name="count">10</pft></parm>
+
+       <display>
+         <pft>
+           '<div id="title">
+              <div id="sidebar">
+                <div id="sidebar-content">Classe</div>
+              </div>
+              <div id="main">
+                <div id="main-content">Conteúdo</div>
+              </div>
+              <hr class="cleaner" />
+            </div>'
+         </pft>
+       </display>
+
+       <loop>
+         <list action="load" type="sort"><pft>,'^a'f(val(v310),6,0),'^m'mfn(1)/,</pft></list>
+       </loop>
+     </do>
+     
+     <do task="list">
+       <field action="define" tag="1">Isis_Item</field>
+       <field action="define" tag="2">Isis_Value</field>
+       <loop>
+       <field action="import" tag="list">3000</field>
+         <display>
+           <pft>
+            '<div id="content">
+             <div id="sidebar">
+               <div id="sidebar-content">'v1^a'</div>
+             </div>
+             <div id="main">
+               <div id="main-content">'ref([v3000^1'_cdu']val(v1^m),v311[1])'</div>
+             </div>
+             <hr class="cleaner" />
+           </div>'
+           </pft>
+         </display>
+    </loop>
+
+  </do>
+  <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

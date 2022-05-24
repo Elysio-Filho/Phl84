@@ -1,0 +1,1385 @@
+!ID 000001
+!v502!Títulos X Tipo de Documento (*) - (MFN=1)
+!v503!S
+!v504!^aacv^b40
+!v505!tip=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0" cellpadding="5">'
+!v510!'<th width=50%>Tipo de documento</th>'
+!v510!'<th width=50%>Qtde</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align=right>'v2'</td>
+!v511! </tr>'/
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p align="center" class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,ref(['phl_tdo']val(v5),@tab_txt.pft,/,)
+!v514!Apresenta um relatório estatístico da quantidade de títulos reunidos pelo tipo de documento
+!v999!^d20010501^belysio
+!v999!^d20081126^h0019^bsuper
+!ID 000002
+!v502!Títulos X Área do Conhecimento (*) - (MFN=2)
+!v503!S
+!v504!^aacv^b40
+!v505!niv=m*001ATE=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=80%>Área do conhecimento</th>'
+!v510!'<th width=20%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=80%>'v1'</td>
+!v511!  <td width=20% align="right">'v2'</td>
+!v511! </tr>'/
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p align="center" class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,v85/
+!v514!Quantidade de títulos de documentos não seriados por área do conhecimento da biblioteca 001
+!v514!Caso pretenda tabular o resultado de outra biblioteca, basta alterar na expressão de busca a chave 001ATE=$ por 002ATE=$ para obter os dados da biblioteca 002, por exemplo
+!v999!^d20010501^belysio
+!v999!^d20081125^h2114^bsuper
+!ID 000003
+!v502!Empréstimos X Tipo de Usuário (*) - (MFN=3)
+!v503!S
+!v504!^alog^b171
+!v505!(TOP=EMP+TOP=REN+TOP=LOC)
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Tipo de usuário</th>'
+!v510!'<th width=50%>Qtde. de empréstimos</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!(ref(['phl_rgl']val(v910^c),,@tab_txt.pft,)/)
+!v514!Apresenta um relatório estatístico da quantidade de empréstimos conforme tipo de usuário
+!v999!^d20010501^belysio
+!v999!^d20081126^h1020^bsuper
+!ID 000004
+!v502!Empréstimos X Área do Conhecimento (*) - (MFN=4)
+!v503!S
+!v504!^alog^b171
+!v505!(TOP=EMP+TOP=REN+TOP=LOC)
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Área do conhecimento</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>',v1,'</td>
+!v511!  <td width=50% align="right">'v2'</td></tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,(,if v910^f<>'' then ref(['phl_acv']val(v910^f),v85/) fi),
+!v514!Apresenta relatório estatístico da quantidade de empréstimos por área do conhecimento do CNPq
+!v999!^d20010501^belysio
+!v999!^d20081126^h1016^bsuper
+!ID 000005
+!v502!Empréstimos X Tipo de Documento ou Coleção (*) - (MFN=5)
+!v503!S
+!v504!^alog^b171
+!v505!(TOP=EMP+TOP=REN+TOP=LOC)
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Tipo de documento ou coleção</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td></tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,if ref(['phl_cnf']1,v221)='1' then
+!v513!,(ref(['phl_col']val(v910^e),@tab_txt.pft,)/)
+!v513!,else,
+!v513!,(ref(['phl_tdo']val(v910^e),@tab_txt.pft,)/)
+!v513!,fi,
+!v514!Apresenta um relatório estatístico da quantidade de empréstimos segundo o tipo de documento ou tipo de coleção
+!v514!Se a biblioteca optou por definir regras para empréstimo de acordo com tipo de documento e tipo de usuário ou de acordo com o tipo de coleção e tipo de usuário
+!v999!^d20010501^belysio
+!v999!^d20081126^h1001^bsuper
+!ID 000006
+!v502!Títulos X Data de Publicação (*) - (MFN=6)
+!v503!S
+!v504!^aacv^b40
+!v505!$
+!v508!Frequencia
+!v510!'<table width="100%" border="1" cellspacing="0" cellpadding="5">'
+!v510!'<th width=50%>Data</th>'
+!v510!'<th width="50%">Qtde.</th>'
+!v510!'</table>'
+!v511!'<table width="100%" border="1" cellspacing="0" cellpadding="5">
+!v511!  <tr>
+!v511!   <td align="right" width=50%>'v1'</td>
+!v511!   <td align="right" width=50%>'v2'</td>
+!v511!  </tr>
+!v511!</table>'
+!v512!'</table>'
+!v512!'<p aling="center" class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!v65/
+!v514!Apresenta um relatório estatístico da quantidade de títulos reunidos pela data de publicação
+!v999!^d20010501^belysio
+!v999!^d20081126^h0013^bsuper
+!ID 000007
+!v502!Títulos X Curso (*) - (MFN=7)
+!v503!S
+!v504!^aacv^b40
+!v505!cur=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Cursos</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p align="center" class="head">Total: 'f(val(v100),0,0)'</p></html>'
+!v513!(mhu,v79/)
+!v514!Apresenta um relatório estatístico da quantidade de títulos catalogados, reunidos pelo curso ao qual é pertinente para a composição da sua bibliografia básica
+!v999!^d20010501^belysio
+!v999!^d20081126^h0108^bsuper
+!ID 000008
+!v502!Exemplares X Curso (*) - (MFN=8)
+!v503!S
+!v504!^aacv^b40
+!v505!cur=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Curso</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align=right>'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!(if p(v7) then v79[1] fi/),
+!v514!Apresenta um relatório estatístico da quantidade de exemplares catalogados, reunidos pelo tipo de curso ao qual compõe sua bibliografia básica
+!v999!^d20010501^belysio
+!v999!^d20081126^h0040^bsuper
+!ID 000009
+!v502!Periódicos X Procedência (*) - (MFN=9)
+!v503!S
+!v504!^aser^b425
+!v505!prc=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Procedência</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,ref(['phl_prc']val(v782),@tab_txt.pft,)/,
+!v514!Fornece dados estatísticos sobre a nacionalidade dos titulos de periódicos registrados na base de dados Kardex.
+!v514!teste teste  
+!v999!^d20010501^belysio
+!v999!^d20081125^h1702^bsuper
+!ID 000010
+!v502!Empréstimos X Curso do usuário (*) - (MFN=10)
+!v503!S
+!v504!^alog^b171
+!v505!(TOP=EMP+TOP=REN+TOP=LOC)
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Curso do usuário</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!(
+!v513!,,ref(['phl_usr']val(v910^k),if p(v713) then v713[1],fi),
+!v513!/)
+!v514!Apresenta um relatório estatístico da quantidade de empréstimos efetuados conforme o curso do usuário
+!v999!^d20010501^belysio
+!v999!^d20081126^h0948^bsuper
+!ID 000011
+!v502!Usuários  X Tipo (*) - (MFN=11)
+!v503!S
+!v504!^ausr^b379
+!v505!cod=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Tipo de usuário</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!ref(['phl_rgl']val(v723),@tab_txt.pft,/)
+!v514!Apresenta um relatório estatístico da quantidade de usuários reunidos pelo seu tipo
+!v999!^d20010501^belysio
+!v999!^d20081126^h0714^bsuper
+!ID 000012
+!v502!Usuários  X Cidade (*) - (MFN=12)
+!v503!S
+!v504!^ausr^b379
+!v505!^acid=^bcid=zzz
+!v508!Index
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Cidade de residência</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1*4'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v514!Apresenta um relatório estatístico da quantidade de usuários reunidos pela cidade de residência
+!v999!^d20010501^belysio
+!v999!^d20081126^h0707^bsuper
+!ID 000013
+!v502!Títulos X Tipo de Coleção (*) - (MFN=13)
+!v503!S
+!v504!^aacv^b40
+!v505!col=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Coleção</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table><p align="center" class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,ref(['phl_col']val(v26),@tab_txt.pft,)/
+!v514!Apresenta um relatório estatísticos de títulos catalogados, reunidos pelo tipo de coleção a que pertence
+!v999!^d20010501^belysio
+!v999!^d20081126^h0032^bsuper
+!ID 000014
+!v502!Títulos X Idiomas (*) - (MFN=14)
+!v503!S
+!v504!^aacv^b40
+!v505!idm=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Idioma</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table><p class="head">Total: 'f(val(v100),0,0)'</p></html>'
+!v513!(,ref(['phl_idm']val(v40),@tab_txt.pft,),"?"n40/),
+!v514!Apresenta um relatório estatístico da quantidade de títulos reunidos pelo idioma do texto
+!v999!^d20010501^belysio
+!v999!^d20081126^h0017^bsuper
+!ID 000015
+!v502!Títulos X Tipos de Conteúdo (*) - (MFN=15)
+!v503!S
+!v504!^aacv^b40
+!v505!cnt=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Tipo de conteúdo</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table><p class="head">Total: 'f(val(v100),0,0)'</p></html>'
+!v513!,ref(['phl_cnt']val(v71),@tab_txt.pft,),"?"n71/
+!v514!Apresenta um relatório estatístico da quantidade de títulos catalogados, reunidos pelo tipo de seu conteúdo
+!v999!^d20010501^belysio
+!v999!^d20081126^h0031^bsuper
+!ID 000016
+!v502!Títulos X Tipo de Suporte (*) - (MFN=16)
+!v503!S
+!v504!^aacv^b40
+!v505!spt=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Tipo de suporte</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p align="center" class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,ref(['phl_spt']val(v22),@tab_txt.pft,)/
+!v514!Apresenta um relatório estatístico da quantidade de títulos catalogados, reunidos pelo seu tipo de suporte
+!v999!^d20010501^belysio
+!v999!^d20081126^h0033^bsuper
+!ID 000017
+!v502!Títulos X Data da Catalogação (*) - (MFN=17)
+!v503!S
+!v504!^aacv^b40
+!v505!dtr=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Data</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align=right>'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!v999[1]^d.8/
+!v514!Apresenta um relatório estatístico da quantidade de títulos catalogados, reunidos pela data da catalogação
+!v999!^d20010501^belysio
+!v999!^d20081126^h0010^bsuper
+!ID 000018
+!v502!Usuários X Curso (*) - (MFN=18)
+!v503!S
+!v504!^ausr^b379
+!v505!cur=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Nome do curso</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,v713/
+!v514!Apresenta um relatório estatístico da quantidade de usuários reunidos pelo seu curso
+!v999!^d20010501^belysio
+!v999!^d20081126^h0741^bsuper
+!ID 000019
+!v502!Usuários X Turma (*) - (MFN=19)
+!v503!S
+!v504!^ausr^b379
+!v505!^atrm=^btrm=zzz
+!v508!Index
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Turma</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1*4'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v514!Relatório estatístico que fornece a quantidade de usuários reunidos pelo nome de cada turma
+!v999!^d20010501^belysio
+!v999!^d20081126^h0855^bsuper
+!ID 000020
+!v502!Usuários X Período (*) - (MFN=20)
+!v503!S
+!v504!^ausr^b379
+!v505!pri=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Período de frequencia</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,v711/
+!v514!Apresenta um relatório estatístico da quantidade de usuários reunídos pelo seu período de frequencia na instituição de ensino
+!v999!^d20010501^belysio
+!v999!^d20081126^h0811^bsuper
+!ID 000021
+!v502!Usuários X Departamento (*) - (MFN=21)
+!v503!S
+!v504!^ausr^b379
+!v505!^adpt=^bdpt=ZZZ
+!v508!Index
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Nome do departamento</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1*4'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v514!Apresenta um relatório estatístico da quantidade de usuários reunidos pelo departamento onde estão alocados
+!v999!^d20010501^belysio
+!v999!^d20081126^h0801^bsuper
+!ID 000022
+!v502!Usuários X Ano de Nascimento - (MFN=22)
+!v503!S
+!v504!^ausr^b379
+!v505!dtn=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Ano do nascimento</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,v726.4/
+!v514!Apresenta um relatório estatístico da quantidade de usuários reunido pelo seu ano de nascimento
+!v999!^d20010501^belysio
+!v999!^d20081126^h0725^bsuper
+!ID 000023
+!v502!Periódicos X Área do Conhecimento (*) - (MFN=23)
+!v503!S
+!v504!^aser^b425
+!v505!ate=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Área do conhecimento</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,v793/
+!v514!Apresenta um relatório estatístico da quantidade de títulos de periódicos reunidos pela área de conhecimento do CNPq
+!v999!^d20010501^belysio
+!v999!^d20081126^h0938^bsuper
+!ID 000024
+!v502!Periódicos X Idioma (*) - (MFN=24)
+!v503!S
+!v504!^aser^b425
+!v505!idm=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Idioma</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'</html>'
+!v513!(,ref(['phl_idm']val(v789),@tab_txt.pft,)/)
+!v514!Apresenta um relatório estatístico da quantidade de títulos de periódicos reunidos pelo idioma do texto
+!v999!^d20010501^belysio
+!v999!^d20081126^h0934^bsuper
+!ID 000025
+!v502!Periódicos X Forma de Assinatura (*) - (MFN=25)
+!v503!S
+!v504!^aser^b425
+!v505!col=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=80%>Forma de assinatura</th>'
+!v510!'<th width=20%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=80%>'v1'</td>
+!v511!  <td width=20% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</html>'
+!v512!'</table><p class="head">Total: 'f(val(v100),0,0)'</p>'
+!v513!,v783/,
+!v514!Apresenta um relatório estatístico da quantidade de títulos de periódicos reunidos pela forma de assinatura
+!v999!^d20010501^belysio
+!v999!^d20081126^h0931^bsuper
+!ID 000026
+!v502!Periódicos X  Periodicidade (*) - (MFN=26)
+!v503!S
+!v504!^aser^b425
+!v505!per=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=80%>Tipo de periodicidade</th>'
+!v510!'<th width=20%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=80%>'v1'</td>
+!v511!  <td width=20% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</html>'
+!v512!'</table><p class="head">Total: 'f(val(v100),0,0)'</p>'
+!v513!,v776/
+!v514!Apresenta um relatório estatístico da quantidade de periódicos reunidos por tipo de periodicidade
+!v999!^d20010501^belysio
+!v999!^d20081126^h0932^bsuper
+!ID 000027
+!v502!Periódicos X Tipo de Aquisição (*) - (MFN=27)
+!v503!S
+!v504!^aser^b425
+!v505!aqu=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=80%>Tipo de aquisição</th>'
+!v510!'<th width=20%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=80%>'v1'</td>
+!v511!  <td width=20% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</html>'
+!v512!'</table><p class="head">Total: 'f(val(v100),0,0)'</p>'
+!v513!ref(['phl_aqu']val(v784),@tab_txt.pft,)/
+!v514!Apresenta um relatório estatístico da quantidade de títulos de periódicos reunidos por Tipo de aquisição
+!v999!^d20010501^belysio
+!v999!^d20081126^h0936^bsuper
+!ID 000028
+!v502!Periódicos X País de Publicação - (MFN=28)
+!v503!S
+!v504!^aser^b425
+!v505!$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0" cellpadding="5">'
+!v510!'<th>PAÍS</th>'
+!v510!'<th>QTDE</th>'
+!v511!'<tr><td>'v1'</td><td  align="right">'v2'</td></tr>'
+!v512!'</html>'
+!v512!'</table><p class="head">Total: 'f(val(v100),0,0)'</p>'
+!v513!,if p(v795) then mpu,v795,mpl else '?' fi/
+!v999!^d20010501^belysio
+!ID 000029
+!v502!Periódicos  X  Curso (*) - (MFN=29)
+!v503!S
+!v504!^aser^b425
+!v505!cur=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Nome do curso</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'</html>'
+!v513!(v780/)
+!v514!Apresenta relatório estatístico da quantidade de títulos de periódicos do Kardex, reunidos pelo nome do curso para o qual foram indicados
+!v999!^d20010501^belysio
+!v999!^d20081126^h0829^bsuper
+!ID 000030
+!v502!Exemplares X Fornecedor (*) - (MFN=30)
+!v503!S
+!v504!^atbo^b367
+!v505!for=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Nome do fornecedor</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align=right>'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!mpu,v821,mpl/
+!v514!Apresenta um relatório estatístico da quantidade de exemplares adquiridos, reunidos pelo nome do fornecedor
+!v999!^d20010501^belysio
+!v999!^d20081126^h0051^bsuper
+!ID 000031
+!v502!Exemplares X Modo de aquisição - (MFN=31)
+!v503!S
+!v504!^atbo^b367
+!v505!aqu=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Modo de aquisição</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align=right>'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,ref(['phl_aqu']val(v819),@tab_txt.pft,)/
+!v514!Apresenta um relatório estatístico da quantidade de exemplares, reunidos pelo modo de aquisição (compra, permuta, doação, etc.)
+!v999!^d20010501^belysio
+!v999!^d20081126^h0056^bsuper
+!ID 000032
+!v502!Exemplares X Status de Circulação (*) - (MFN=32)
+!v503!S
+!v504!^atbo^b367
+!v505!sta=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Status da circulação</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!select v807 case '1':'Circulante' case '2':'Consulta local' case '0':'Indisponível' endsel,"*ausente*"n807/
+!v514!Apresenta um relatório estatístico da quantidade de exemplares, reunidos pelo status de circulação (circulante, não circulante, etc.)
+!v999!^d20010501^belysio
+!v999!^d20081126^h0105^bsuper
+!ID 000033
+!v502!Exemplares X Prazo Excepcional - (MFN=33)
+!v503!S
+!v504!^atbo^b367
+!v505!$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0" cellpadding="5">'
+!v510!'<th>PRAZO</th>'
+!v510!'<th>QTDE</th>'
+!v511!'<tr><td>'v1'</td><td align="right">'v2'</td></tr>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,if p(v825) then mpu,v825,mpl else '?' fi/
+!v999!^d20010501^belysio
+!v999!^d20081126^h0106^bsuper
+!ID 000034
+!v502!Exemplares X Data do Tombamento (*) - (MFN=34)
+!v503!S
+!v504!^atbo^b367
+!v505!dtr=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Data do tombamento</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0)'</p></html>'
+!v513!v999^d[1]/
+!v514!Apresenta um relatório estatístico da quantidade de exemplares, reunidos pela data de tombamento
+!v999!^d20010501^belysio
+!v999!^d20081126^h0048^bsuper
+!ID 000035
+!v502!Exemplares X Tipo de Documento - (MFN=35)
+!v503!S
+!v504!^atbo^b367
+!v505!$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Tipo de documento</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>',ref(['phl_tdo']val(v1),@tab_txt.pft,),'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!ref(['phl_acv']val(v997),v5/,)
+!v514!A expressão de busca poderá ser qualquer expressão válida para a base de dados de Tombo
+!v999!^d20010501^belysio
+!v999!^d20121018^h1647^belysio
+!ID 000036
+!v502!Exemplares X Área do Conhecimento (*) - (MFN=36)
+!v503!S
+!v504!^aacv^b40
+!v505!001ATE=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Área do conhecimento</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,(if p(v7) then v85[1],fi,/)
+!v514!A expressão de busca deste exemplo considera a biblioteca 001
+!v514!Caso necessite obter dados de outra unidade, por exemplo, da biblioteca 002, altere a expressão de busca para 002ATE=$, etc.
+!v999!^d20010501^belysio
+!v999!^d20081125^h1821^belysio
+!ID 000037
+!v502!Empréstimos X Título (*) - (MFN=37)
+!v503!S
+!v504!^alog^b171
+!v505!(top=emp+top=ren+top=loc)
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=90%>Título</th>'
+!v510!'<th width=10%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=90%>'v1'</td>
+!v511!  <td width=10% align=right>'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total de títulos na lista: 'v4,'</p>'
+!v512!'</body>'
+!v512!'</html>'
+!v513!(ref(['phl_acv']val(v910^f),if a(v18) then mhu,v30,mpl else mhu,v18,": "v181,mpl, fi/))
+!v514!Apresenta um relatório estatístico da quantidade de empréstimos por cada título do acervo
+!v999!^d20010501^belysio
+!v999!^d20081126^h1014^bsuper
+!ID 000038
+!v502!Uso da coleção X Título (*) - (MFN=38)
+!v503!S
+!v504!^ausc^b616
+!v505!$
+!v508!Frequencia
+!v510!'<table width=100%>'
+!v510!'<th width=90%>Título do documento</th>'
+!v510!'<th width=10%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table width=100%>'
+!v511!'<tr>
+!v511! <td width=90%>'v1^b'</td>
+!v511! <td width=10% align=right>'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table></html>'
+!v513!if npost(['phl_acv'],v3000^1'#TBO#'v920)<>0 then
+!v513! ,ref(['phl_acv']l(['phl_acv'],v3000^1'#TBO#'v920),"^b"v18/) fi,
+!v514!Relatório estatístico da quantidade de consultas contabilizadas através do registro do material consultado, reunidas pelo título do documento consultado
+!v999!^d20010501^belysio
+!v999!^d20081126^h0154^bsuper
+!ID 000039
+!v502!Uso da coleção X Data (*) - (MFN=39)
+!v503!S
+!v504!^ausc^b616
+!v505!dtr=$
+!v508!Frequencia
+!v510!'<table width=100%>'
+!v510!'<th width=50%>Data do uso</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table width=100%>'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align=right>'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table></html>'
+!v513!v999[1]^d.8/
+!v514!Apresenta um relatório estatístico da quantidade o documentos consultados na biblioteca, que não passaram pela rotina de circulação, reunidos pela data do uso
+!v999!^d20010501^belysio
+!v999!^d20081126^h0133^bsuper
+!ID 000040
+!v502!Fornecedores (*) - (MFN=40)
+!v503!S
+!v504!^afor^b162
+!v505!^anfo=^bnfo=zzz
+!v508!Index
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=100%>Nome do fornecedor</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width="100%">'v1*4'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table></html>'
+!v514!Lista alfabética por nome de fornecedores cadastrados
+!v999!^d20010501^belysio
+!v999!^d20081126^h0710^bsuper
+!ID 000041
+!v502!Usuários suspensos (*) - (MFN=41)
+!v503!S
+!v504!^ausr^b379
+!v505!usr=suspenso
+!v508!Ordenado
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=60%>Nome do usuário</th>'
+!v510!'<th width=10%>Matrícula</th>'
+!v510!'<th width=30%>Observações</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=60%>'v1^a'</td>
+!v511!  <td width=10% align=center>'ref(['phl_usr']val(v1^b),v701)'</td>
+!v511!  <td width=30%>'ref(['phl_usr']val(v1^b),v725+|. |)'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table></html>'/
+!v513!'^a'v705,'^b'mfn(1)/
+!v514!Apresenta uma lista alfabética de nomes de usuários que estão com seus serviços suspensos
+!v999!^d20010501^belysio
+!v999!^d20081126^h0758^bsuper
+!ID 000042
+!v502!Sugestões pendentes - (MFN=42)
+!v503!S
+!v504!^acpa^b775
+!v505!pendente
+!v508!Simples
+!v510!'<table align="center" width="100%" border="1" cellspacing="0" cellpadding="5">'
+!v510!'<th>DATA</th>'
+!v510!'<th>OBJETO SUGERIDO</th>'
+!v510!'<th>QTDE</th>'
+!v510!'<th>SOLICITANTE</th>'
+!v510!'<th>JUSTIFICATIVAS</th>'
+!v511!'<tr><td>'v999[1]^d,'</td>'
+!v511!'<td>',v871,' - <b>',v872'</b>. ',v874,": "v873,", "v875". ",
+!v511!v876,'</td><td>',v881,'</td>'
+!v511!'<td>',v877,'</td>',
+!v511!'<td>',(v882'<br>'),'</td></tr>'
+!v512!'</table></html>'
+!v999!^d20010501^belysio
+!ID 000043
+!v502!Usuários - Lista ordenada por nome - (MFN=43)
+!v503!S
+!v504!^ausr^b379
+!v505!$
+!v508!Ordenado
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=70%>Nome do usuário</th>'
+!v510!'<th width=10%>Matrícula</th>'
+!v510!'<th width=10%>Status</th>'
+!v510!'<th width=10%>Validade</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=70%>'v1^a'</td>
+!v511!  <td width=10% align=center>'v1^b'</td>
+!v511!  <td width=10% align=center>',if v1^c='0' then 'ATIVO' else 'SUSPENSO' fi,'</td>
+!v511!  <td width=10% align=center>'v1^d*6.2,'/',v1^d*4.2,'/'v1^d.4,'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table></html>'
+!v513!,(mpu,'^a'v705,'^b'v701,'^c'v703,'^d'v704/,mpl,)
+!v514!Lista alfabética de nomes de usuários contendo informação do número de matrícula, validade e status
+!v999!^d20010501^belysio
+!v999!^d20081126^h0747^bsuper
+!ID 000044
+!v502!Periódicos - Lista ordenada por título (*) - (MFN=44)
+!v503!S
+!v504!^aser^b425
+!v505!^atit=^btit=zz
+!v508!Index
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=80%>Título do periódico</th>'
+!v510!'<th width=20%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=80%>'v1*4'</td>
+!v511!  <td width=20% align=right>'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table></html>'
+!v514!Apresenta uma lista ordenada de títulos de periódicos registrados no Kardex e a frequência de cada um para fins de controle de duplicidade
+!v514!Não pode haver títulos com frequencia de registro diferente de "1"
+!v999!^d20010501^belysio
+!v999!^d20081126^h0931^bsuper
+!ID 000045
+!v502!Periódicos - Lista de próximas renovações (*) - (MFN=45)
+!v503!S
+!v504!^aser^b425
+!v505!ren=$
+!v508!Ordenado
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=10%>Renovar em</th>'
+!v510!'<th width=50%>Título do periódico</th>'
+!v510!'<th width=10%>Última assinatura</th>'
+!v510!'<th width=10%>Valor pago</th>'
+!v510!'<th width=20%>Agente</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=10% align=center>'v1^x*6.2,'/',v1^x*4.2,'/'v1^x.4'</td>
+!v511!  <td width=50%>'v1^t'</td>
+!v511!  <td width=10% align=center>'v1^d*6.2,'/',v1^d*4.2,'/'v1^d.4'</td>
+!v511!  <td width=10% align=right>'v1^v'</td>
+!v511!  <td width=20%>'v1^a'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table></html>'
+!v513!'^x'v788,v786[LAST],'^t',mpu,v773,mpl,/
+!v514!Apresenta uma lista com informações sobre os títulos de periódicos a serem renovados
+!v999!^d20010501^belysio
+!v999!^d20081126^h0918^bsuper
+!ID 000046
+!v502!Valor da coleção (*) - (MFN=46)
+!v503!S
+!v504!^atbo^b367
+!v505!aqu=$
+!v508!Ordenado
+!v510!'<center>
+!v510!<font class="ft12c"><b>Nota:</b> Para obter a soma dos valores pagos, copie esta tabela e cole em uma planilha eletrônica e efetue a soma da coluna "valor".</font>
+!v510!</center>
+!v510!<hr>'
+!v510!'<table align="center" width="100%" border="1" cellspacing="1">'
+!v510!'<th width=40%>Título do documento</th>'
+!v510!'<th width=10%>Tombo</th>'
+!v510!'<th width=10%>Aquisição</th>'
+!v510!'<th width=20%>Fornecedor</th>'
+!v510!'<th width=10%>NF</th>'
+!v510!'<th width=10%>Valor</th>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="1">'
+!v511!'<tr>
+!v511!  <td width=40%>',v1^a,'</td>
+!v511!  <td width=10%>'v1^b'</td>
+!v511!  <td width=10%>'v1^d'</td>
+!v511!  <td width=20%>'v1^f'</td>
+!v511!  <td width=10%>'v1^n'</td>
+!v511!  <td width=10% align=right width=10%>'v1^c'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'</html>'
+!v513!,ref(['phl_acv']val(v997),
+!v513!  ,if p(v18) then 
+!v513!    '^a'v18.40, 
+!v513!      else '^a'v30 
+!v513!  ,fi,),'^b'v801,'^d'v820,'^f'v821,"-.-"n821,'^n'v822,"-.-"n822,
+!v513!  ,if p(v823) then '^c'replace(v823,'.',',') else '^c00,00' fi/,
+!v514!Apresenta um relatório ordenado pelo título contendo informações sobre o valor de cada documento do acervo e sua procedência
+!v999!^d20010501^belysio
+!v999!^d20081126^h0939^bsuper
+!ID 000047
+!v502!Regulamento da Biblioteca - (MFN=47)
+!v503!S
+!v504!^argl^b530
+!v505!$
+!v508!Simples
+!v511!'<font class="head">',@tab_txt.pft,'</font><hr>'
+!v511!'<table align="center" width="100%" border="0" cellspacing="0" cellpadding="5">'
+!v511!'<tr><td>'
+!v511!'<ul>'
+!v511!'<li>Limite de objetos: 'v527'</li>'
+!v511!'<li>Limite de renovações: 'v528'</li>'
+!v511!'<li>Limite de reservas: 'v538'</li>'
+!v511!,if v520='1' then '<li>Não emprestar se usuário estiver com cadastro vencido</li>' fi,
+!v511!,if v521='1' then '<li>Não emprestar se usuário tiver objetos atrasados</li>' fi, 
+!v511!,if v522='1' then '<li>Não emprestar se usuário estiver suspenso</li>' fi, 
+!v511!,if v523='1' then '<li>Não emprestar se usuário tiver débitos pendentes</li>' fi, 
+!v511!,if v524='1' then '<li>Não emprestar se houver reserva para outro usuário</li>' fi, 
+!v511!,if v525='1' then '<li>Não emprestar se limite foi ultrapassado</li>' fi, 
+!v511!,if v526='1' then '<li>Não emprestar mais que um exemplar para um mesmo usuário</li>' fi, 
+!v511!,if v550='1' then '<li>Não renovar se usuário estiver com cadastro vencido</li>' fi, 
+!v511!,if v551='1' then '<li>Não renovar se usuário estiver suspenso</li>' fi, 
+!v511!,if v552='1' then '<li>Não renovar se existir reserva para outro usuário</li>' fi, 
+!v511!,if v553='1' then '<li>Não renovar se prazo estiver expirado</li>' fi, 
+!v511!,if v554='1' then '<li>Não renovar se usuário estiver com penalidade</li>' fi, 
+!v511!,if v555='1' then '<li>Não renovar se usuário tiver objetos atrasados</li>' fi, 
+!v511!,if v530='1' then '<li>Não permitir que usuário suspenso efetue reservas</li>' fi, 
+!v511!,if v531='1' then '<li>Não permitir que usuário com débitos efetue reservas</li>' fi, 
+!v511!,if v532='1' then '<li>Não permitir que usuário com cadastro vencido efetue reservas</li>' fi, 
+!v511!,if v533='1' then '<li>Não permitir que usuário com atrasos efetue reservas</li>' fi,
+!v511!,if v534='1' then '<li>Não permitir que usuário reserve um título que está em seu poder</li>' fi, 
+!v511!,if v535='1' then '<li>Não permitir que usuário efetue várias reservas do mesmo título</li>' fi, 
+!v511!,if v536='1' then '<li>Não permitir reservas para títulos disponíveis</li>' fi, 
+!v511!,if v537='1' then '<li>Cancelar reserva a partir do prazo de validade</li>' fi, 
+!v511!,if v529='1' then '<li>Não solicitar senha durante operação de empréstimo.</li>' fi,
+!v511!'</ul>'
+!v511!'</td></tr>'
+!v511!'</table>' 
+!v512!'</html>'
+!v514!Lista o regulamento da biblioteca para cada tipo de usuário
+!v999!^d20010501^belysio
+!v999!^d20081125^h1855^belysio
+!ID 000048
+!v502!Regulamento da Circulação - (MFN=48)
+!v503!S
+!v504!^apqt^b282
+!v505!$
+!v508!Simples
+!v511!'<table align="center" width="80%" border="0" cellspacing="0" cellpadding="5">'
+!v511!'<tr><td><b>',ref(['phl_rgl']val(v671),@tab_txt.pft,)' / 'ref(['phl_tdo']val(v672),@tab_txt.pft,)'</b></td></tr>'
+!v511!'<tr><td><hr></td></tr>'
+!v511!'<tr><td>'
+!v511!'<ul>'
+!v511!'<li>Prazo de empréstimo: 'v673,select v678 case 'C':' dias corridos' case 'U':' dias úteis' endsel,'</li>'
+!v511!'<li>Quantidade permitida: 'v674'</li>' 
+!v511!'<li>Penalidade: 'v676,select val(v677) case 1:' (multa)' case 0:' (nenhuma)' case 2:' (suspensão)' endsel,'</li>'
+!v511!'</ul>'
+!v511!'</td></tr>'
+!v511!'</table>' 
+!v512!'</html>'
+!v514!Apresenta os dados de configuração do regulamento de circulação (prazos de empréstimo, quantidade permitida, penalidades, etc.)
+!v999!^d20010501^belysio
+!v999!^d20081126^h0008^bsuper
+!ID 000049
+!v502!Fascículos X Área do Conhecimento (*) - (MFN=49)
+!v503!S
+!v504!^aacv^b40
+!v505!niv=s*001ate=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Área do conhecimento</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align=right>'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,v85/
+!v514!A expressão de busca deste exemplo considera a biblioteca 001. Caso necessite obter dados de outra unidade, por exemplo, da biblioteca 002, altere a expressão de busca para 002ATE=$, etc.. 
+!v999!^d20010501^belysio
+!v999!^d20081125^h1822^belysio
+!ID 000050
+!v502!Empréstimos X Data do empréstimo (*) - (MFN=50)
+!v503!S
+!v504!^alog^b171
+!v505!(TOP=REN+TOP=EMP+TOP=LOC)
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Data do empréstimo</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1*6.2,'/',v1*4.2,'/',v1.4'</td>
+!v511!  <td width=50% align=right>'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!(v910^d.8/)
+!v514!Apresenta um relatório estatístico da quantidade de empréstimos por data do empréstimo
+!v999!^d20010501^belysio
+!v999!^d20081126^h0957^bsuper
+!ID 000051
+!v502!Exemplares X Data de Aquisição - (MFN=51)
+!v503!S
+!v504!^atbo^b367
+!v505!dta=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Data da aquisição</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!v820/
+!v514!Apresenta um relatório estatístico da quantidade de exemplares, reunidos pela data de sua aquisição
+!v999!^d20010501^belysio
+!v999!^d20081126^h0044^bsuper
+!ID 000052
+!v502!Descartes (*) - (MFN=52)
+!v503!S
+!v504!^aacv^b40
+!v505!val=$
+!v508!Ordenado
+!v510!'<table width=100%>'
+!v510!'<th width=10%>Localização</th>'
+!v510!'<th width=50%>Titulo</th>'
+!v510!'<th width=30%>Conteúdo</th>'
+!v510!'<th width=10%>Validade</th>'
+!v510!'</table>'
+!v511!'<table width=100%>
+!v511! <tr>
+!v511!  <td width=10% align=center>',v1^b,'</td>
+!v511!  <td width=50%>'v1^c'</td>
+!v511!  <td width=30%>'v1^a'</td>
+!v511!  <td width=10% align=center>'v1^v*6.2,'/',v1^v*4.2,'/',v1^v.4,'</td>
+!v511!</tr>
+!v511!</table>'
+!v512!'</table>'
+!v513! (,if val(s(date).8) > val(v86^v) then 
+!v513!   '^a'v86+|<br>|,'^b'v3,| / |v103,'^c'v18[1],|: |v181[1],
+!v513!  ,fi/) 
+!v514!Apresenta uma lista com os documentos que deverão ser descartados conforme a tabela de temporalidade
+!v999!^d20010501^belysio
+!v999!^d20081125^h1746^belysio
+!ID 000053
+!v502!Controle de assinaturas (*) - (MFN=53)
+!v503!S
+!v504!^aacv^b40
+!v505!stt=c*tip=16*niv=s
+!v508!Ordenado
+!v510!'<table width=100%>'
+!v510!'<th width=70%>Título</th>'
+!v510!'<th width=10%>Volume</th>'
+!v510!'<th width=10%>Número</th>'
+!v510!'<th width=10%>Data</th>'
+!v510!'</table>'
+!v511!'<table width=100%>'
+!v511!'<tr>
+!v511! <td width=70%>'v1^a'</td>
+!v511! <td width=10% align=center>'v1^b'</td>
+!v511! <td width=10% align=center>'v1^c'</td>
+!v511! <td width=10% align=center>'v1^e'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v513!'^a'v30,'^b'f(val(v31),6,0),'^c'f(val(v32),6,0),'^d'v65,'^e'v64/
+!v514!Fornece uma lista dos fascículos que ainda não foram recebidos
+!v514!Para a utilização deste recurso, o bibliotecário deverá ter registrado no catálogo todos os fascículos que compõe o período coberto pela assinatura
+!v999!^d20080410^h0936^bsuper
+!v999!^d20081125^h1719^bsuper
+!ID 000054
+!v502!Etiqueta (exportação) - (MFN=54)
+!v503!S
+!v504!^atbo^b367
+!v505!$
+!v508!Frequencia
+!v510!'<table width=100% border=0>
+!v510! <th width=10% align=center>1</th>
+!v510! <th width=10% align=center>2</th>
+!v510! <th width=10% align=center>3</th>
+!v510! <th width=10% align=center>4</th>
+!v510! <th width=10% align=center>5</th>
+!v510! <th width=10% align=center>6</th>
+!v510! <th width=10% align=center>7</th>
+!v510! <th width=10% align=center>8</th>
+!v510! <th width=10% align=center>9</th>
+!v510! <th width=10% align=center>0</th>'
+!v510! '</table>'
+!v511!'<table width=100% border=0>'
+!v511!'<tr>
+!v511!  <td width=10% align=right>'v1^t'</td>
+!v511!  <td width=10% align=right>'v1^1'</td>
+!v511!  <td width=10% align=right>'v1^2'</td>
+!v511!  <td width=10% align=right>'v1^3'</td>
+!v511!  <td width=10% align=right>'v1^4'</td>
+!v511!  <td width=10% align=right>'v1^5'</td>
+!v511!  <td width=10% align=right>'v1^6'</td>
+!v511!  <td width=10% align=right>'v1^7'</td>
+!v511!  <td width=10% align=right>'v1^8'</td>
+!v511!  <td width=10% align=right>'v1^9'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v513!,@phl_etq_list.pft,
+!v514!Exporta dados que compõe a etiqueta de lombada em uma tabela que poderá ser copiada e colada em uma planilha, documento MS-Word ou aplicativo de geração de etiquetas, tipo aplicativo distribuído pela PIMACO
+!v514!Os dados que compõe a etiqueta serão aqueles configurados no campo #616 do formulário de configuração da biblioteca
+!v514!A expressão de busca poderá ser qualquer expressão válida para a base de dados de Tombo
+!v514!Por exemplo: DTR=200812$ (serão geradas as etiquetas de todos os objetos tombados em dezembro de 2008)
+!v999!^d20081010^h1723^bsuper
+!v999!^d20081125^h1850^belysio
+!ID 000055
+!v502!Títulos X Ano de Publicação (*) - (MFN=55)
+!v503!S
+!v504!^aacv^b40
+!v505!ano=$
+!v508!Frequencia
+!v510!'<table width="100%" border="1" cellspacing="0" cellpadding="5">'
+!v510!'<th width=50%>Ano de publicação</th>'
+!v510!'<th width="50%">Qtde.</th>'
+!v510!'</table>'
+!v511!'<table width="100%" border="1" cellspacing="0" cellpadding="5">
+!v511!  <tr>
+!v511!   <td align="right" width=50%>'v1'</td>
+!v511!   <td align="right" width=50%>'v2'</td>
+!v511!  </tr>
+!v511!</table>'
+!v512!'</table>'
+!v512!'<p aling="center" class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!v65.4/
+!v514!Apresenta um relatório estatístico da quantidade de títulos catalogados, reunidos pelo ano de publicação.
+!v999!^d20081126^h0013^bsuper
+!v999!^d20081126^h0015^bsuper
+!ID 000056
+!v502!Exemplares X Ano de Aquisição - (MFN=56)
+!v503!S
+!v504!^atbo^b367
+!v505!dta=$
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Ano da aquisição</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511! </tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!v820.4/
+!v514!Apresenta um relatório estatístico da quantidade de exemplares, reunidos pelo ano da sua aquisição
+!v998!59
+!v999!^d20081126^h0045^bsuper
+!ID 000057
+!v502!Aniversariantes de hoje (*) - (MFN=57)
+!v503!S
+!v504!^ausr^b379
+!v505!anv=0823
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Aniversariante</th>'
+!v510!'<th width=30%>E-mail</th>'
+!v510!'<th width=20%>Telefone</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1^a'</td>
+!v511!  <td width=30%>'v1^b'</td>
+!v511!  <td width=20%>'v1^c'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!,'^a'v705,'^b'v714[1],'^c'v710[1]/
+!v514!Apresenta uma lista alfabética dos aniversariantes do dia fornecido no formato "ANV=MMDD", onde MM é o mês correspondente ao dia de hoje e DD o dia de hoje
+!v999!^d20081126^h0728^bsuper
+!v999!^d20081126^h0857^bsuper
+!ID 000058
+!v502!Empréstimos X Ano do empréstimo (*) - (MFN=58)
+!v503!S
+!v504!^alog^b171
+!v505!(TOP=REN+TOP=EMP+TOP=LOC)
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Ano do empréstimo</th>'
+!v510!'<th width=50%>Qtde.</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align=right>'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!(v910^d.4/)
+!v514!Apresenta um relatório estatístico da quantidade de empréstimos por ano
+!v999!^d20081126^h0956^bsuper
+!v999!^d20081126^h1013^bsuper
+!ID 000059
+!v502!Empréstimos X Usuário (*) - (MFN=59)
+!v503!S
+!v504!^alog^b171
+!v505!(TOP=EMP+TOP=REN+TOP=LOC)
+!v508!Frequencia
+!v510!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v510!'<th width=50%>Nome usuário</th>'
+!v510!'<th width=50%>Qtde. de empréstimos</th>'
+!v510!'</table>'
+!v511!'<table align="center" width="100%" border="1" cellspacing="0">'
+!v511!'<tr>
+!v511!  <td width=50%>'v1'</td>
+!v511!  <td width=50% align="right">'v2'</td>
+!v511!</tr>'
+!v511!'</table>'
+!v512!'</table>'
+!v512!'<p class="head">Total: 'f(val(v100),0,0),'</p></html>'
+!v513!(ref(['phl_usr']val(v910^k),v705,)/)
+!v514!Apresenta um relatório estatístico da quantidade de empréstimos por usuário
+!v998!62
+!v999!^d20081126^h1021^bsuper
+!ID 000060
+!v502!Autoridades
+!v503!S
+!v504!^aaut^b757
+!v505!$
+!v508!Ordenado
+!v510!'<html>'
+!v511!'<table width=100%>'
+!v511!'<tr><td>'
+!v511!,if v1^b='' then '<b>'v1^a'</b>' else '<i>'v1^a'</i> - <u>Use:</u>&nbsp;<b>'v1^b'</b>' fi,
+!v511!'</td></tr>'
+!v511!'</table>'
+!v512!'</html>'
+!v513!'^a'v450/,(,if p(v452) then '^a'v452,'^b'v450[1]/ fi),
+!v514!Apresenta uma lista em ordem alfabética de todas as entradas de autores cadastradas na base de dados de autoridades
+!v999!^d20090718^h0727^bElysio
+!v999!^d20090718^h0850^bElysio
+!ID 000061
+!v502!Vocabulário
+!v503!S
+!v504!^avoc^b780
+!v505!$
+!v508!Ordenado
+!v510!'<html>'
+!v511!'<table width=100%>'
+!v511!'<tr><td>'
+!v511!,if v1^b='' then '<b>'v1^a'</b>' else '<i>'v1^a'</i> - <u>Use:</u>&nbsp;<b>'v1^b'</b>' fi,
+!v511!'</td></tr>'
+!v511!'</table>'
+!v512!'</html>'
+!v513!'^a'v401/,(,if p(v421) then '^a'v421,'^b'v401[1]/ fi),
+!v514!Apresenta uma lista em ordem alfabética de todos os termos cadastrados na base de dados de controle do vocabulário.
+!v999!^d20090718^h0810^bElysio
+

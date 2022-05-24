@@ -1,0 +1,744 @@
+<!-- Rotina de buscas
+     15/02/2012 09:40:12 - Revisado 
+     27/10/2017 11:26:11 - Revisado 
+     18/02/2019 11:18:08 - Revisado -->
+     
+     <IsisScript name="003.xis">
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inclue funcao (003) que obtem status do titulo -->
+     <include>phl84/003.fnc</include>
+     
+<!-- Inclue funcoes que geram opçoes para caixas de filtros -->
+     <include>phl84/preferencia.documento.fnc</include>
+     <include>phl84/preferencia.conteudo.fnc</include>
+     <include>phl84/preferencia.idioma.fnc</include>
+     <include>phl84/preferencia.colecao.fnc</include>
+     <include>phl84/preferencia.suporte.fnc</include>
+     <include>phl84/rede.bibliotecas.fnc</include>
+
+<!-- Inclue funcao (tbo) que obtem dados sobre o tombo -->
+     <include>phl84/801.fnc</include>
+     
+<!-- 06/11/2008 05:36:54 Inclue funcao 800 que obtem dados sobre o tombo -->
+     <include>phl84/800.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+     
+<!-- Carrega permissões de entrada e edição do usuário -->
+     <field action="add" tag="2000"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>
+
+<!-- Carrega variáveis do formulário do cliente -->
+
+     <field action="cgi" tag="200">pag</field>
+     <field action="cgi" tag="201">rpp</field>
+     <field action="cgi" tag="202">bool</field>
+     <field action="cgi" tag="203">tag</field>
+     <field action="cgi" tag="934">ser</field>
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="951">opcx</field>
+     <!-- <field action="cgi" tag="951">nav</field> -->
+     <field action="cgi" tag="953">acv</field>
+     <field action="cgi" tag="958">exp</field>
+     <field action="replace" tag="958"><pft>,replace(v958,'+',' or '),</pft></field>
+     <field action="cgi" tag="964">tip</field>
+     <field action="cgi" tag="980">idx</field>
+     <field action="cgi" tag="965">pft</field>
+     <field action="replace" tag="965"><pft>,if v980='indice_periodicos.xis' then 'tree' else v965 fi,</pft></field>
+     <field action="cgi" tag="966">campo</field>
+     <field action="cgi" tag="967">idm</field>
+     <field action="cgi" tag="968">cnt</field>
+     <field action="cgi" tag="970">col</field>
+     <field action="cgi" tag="971">spt</field>
+     <field action="cgi" tag="977">stf</field>
+
+     <field action="cgi" tag="2">tit</field>
+     <field action="cgi" tag="2015">sel</field>
+     <field action="replace" tag="2015" split="occ"><pft>(v2015/)</pft></field>
+     
+<!-- Adiciona palavras da busca em ocorrencias de campo repetitivo -->
+
+     <field action="add" tag="9581" split="occ">
+       <pft>
+       ,if v980='' then
+         ,replace(v958,' ',s('',#)),
+           ,else
+             v958
+       ,fi
+       </pft>
+     </field>
+
+<!-- Adiciona em cada palavra a indicação do campo de busca -->
+     <field action="replace" tag="9581" split="occ">
+       <pft>
+         ,(v9581,"/("v203[1]")",/),
+       </pft>
+     </field>
+
+<!-- Recompõe a expressão de busca -->
+     <field action="replace" tag="9581">
+       <pft>
+        ,v9581+| |,
+       </pft>
+     </field>
+
+<!-- Adiciona o operador de busca selecionado -->
+     <field action="add" tag="959">
+       <pft>
+          select v202
+          case 'or' : replace(v9581,' ',' OR '),
+          case 'and' : replace(v9581,' ',' AND '),
+          elsecase v9581
+          endsel,
+       </pft>
+     </field>
+
+     <field action="replace" tag="959"><pft>,mhu,v959,</pft></field>
+
+     <field action="replace" tag="959">
+      <pft>
+       ,if v202='or' and v959:' AND ' then replace(v959,' AND OR','') else v959 fi,
+     </pft>
+     </field>
+
+     <field action="replace" tag="959">
+      <pft>
+       ,if v202='and' and v959:' OR ' then replace(v959,' OR AND','') else v959 fi,
+      </pft>
+     </field>
+     
+     <field action="replace" tag="959">
+       <pft>
+         ,if v202='frase' then v958'$',"/("v203[1]")" else v959 fi,
+       </pft>
+     </field>
+     
+<!-- Verifica se expressão de busca foi fornecida -->
+     <flow action="jump"><pft>,if a(v958) and a(v2015) and a(v964) and v950:'decorado' then 'exp_indefinida' fi,</pft></flow>
+
+<!-- Direciona para opção fornecida -->
+     <flow action="jump"><pft>,if p(v950) then v950 fi,</pft></flow>
+
+<!-- Interpreta barra de navegação -->
+     <flow action="jump"><pft>,v951,</pft></flow>
+
+        <label>pri</label>
+        <field action="add" tag="2011">1</field>
+        <flow action="jump">decorado</flow>
+
+        <label>pro</label>
+        <field action="cgi" tag="2011">prox</field>
+        <flow action="jump">decorado</flow>
+
+        <label>ant</label>
+        <field action="cgi" tag="2011">ante</field>
+        <flow action="jump">decorado</flow>
+
+        <label>ult</label>
+        <field action="cgi" tag="2011">ulti</field>
+        <flow action="jump">decorado</flow>
+
+     <label>exp_indefinida</label>
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     <field action="add" tag="250">101</field>
+
+     <display><htmlpft><pft>,ref(['tab_fmx']102,v4),</pft></htmlpft></display>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+
+<!-- Apresenta registros selecionados do resultado de busca -->
+
+     <label>sel</label>
+     
+     <flow action="jump">
+       <pft>
+         if a(v2015) then 'nao_selecionado' else 'mostra_selecao' fi,
+       </pft>
+     </flow>
+     <flow action="exit">1</flow>
+     
+     <label>nao_selecionado</label>
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     <display>Não há registro selecionado para a mostra</display>
+     <flow action="exit">1</flow>
+
+        <label>mostra_selecao</label>
+        <field action="replace" tag="959"><pft>,(v2015+| or |),</pft></field>
+        <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+        
+        <do task="search">
+         <parm name="db">phl_acv</parm>
+         <parm name="expression"><pft>,v959,</pft></parm>
+         <field action="define" tag="1003">Isis_Status</field>
+         <field action="define" tag="1004">Isis_ErrorInfo</field>
+         <field action="define" tag="1022">Isis_Keys</field>
+         <field action="define" tag="1001">Isis_Current</field>
+         <field action="define" tag="1002">Isis_Total</field>
+         <field action="delete" tag="list">951,959,2015,</field>
+         <display><htmlpft><pft>,ref(['tab_fmx']195,v4),</pft></htmlpft></display>
+          <loop>
+          <field action="import" tag="list">200/203,901/958,960/978,988,990,2011,3000,4001</field>
+          <display><pft>,@phl_nch.pft,'<br>',@phl_acv.pft,
+          '<br><i>('ref(['phl_set']l(['phl_set'],'ACV='v1),v602)')</i><br><hr>'
+          </pft></display>
+          <file action="close" type="database">phl_set</file>
+          </loop>
+          <display><htmlpft><pft>,ref(['tab_fmx']196,v4),</pft></htmlpft></display>
+        </do>
+        <file action="close" type="database">phl_acv</file>
+        <flow action="exit">1</flow>
+
+<!-- Compõe expressão de busca para o SDI -->
+     <label>sdi</label>
+
+     <field action="replace" tag="959">
+       <pft>,ref(['phl_usr']l(['phl_usr'],'USR='v3000^2),"("v716")*",),'DTR='v7003.6'$*DIV=S',</pft>
+     </field>
+     <file action="close" type="database">phl_usr</file>
+     <field action="replace" tag="958"><pft>,v959,</pft></field>
+     <flow action="jump">decorado</flow>
+
+<!-- Formulário de busca -->
+
+     <label>busca</label>
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+     <flow action="jump">
+       <pft>,if ref(['phl_cnf']1,v210,)='S' then 'restrita' else 'publica' fi,</pft>
+     </flow>
+     <flow action="exit">1</flow>
+
+     <label>restrita</label>
+     <flow action="jump">
+     <pft>,if v3000^2='' then 'login_invalido' else 'publica' fi,</pft></flow>
+     <flow action="exit">1</flow>
+
+        <label>login_invalido</label>
+        <display><htmlpft><pft>,ref(['tab_fmx']64,v4),</pft></htmlpft></display>
+        <flow action="exit">1</flow>
+
+     <label>publica</label>
+
+     <display><htmlpft><pft>,ref(['tab_fmx']102,v4),</pft></htmlpft></display>
+     
+     <field action="statusdb" tag="1090">phl_idx</field>
+     <file action="close" type="database">phl_idx</file>
+     
+     <flow action="jump">
+       <pft>,if val(v1090^n)<5 then 'boas_vindas' else 'html_203' fi,</pft>
+     </flow>
+         
+     <label>boas_vindas</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']225,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+         
+     <label>html_restrito</label>
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     <display><htmlpft><pft>,'[pft]',cat('restrito.html'),'[/pft]',</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+     <label>html_203</label>
+     <display><htmlpft><pft>,'[pft]',cat('mensagens.html'),'[/pft]',</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+<!-- Formulário de busca com filtro -->
+
+     <label>filtro</label>
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     <call name="preferencia.idioma">now</call>
+     <call name="preferencia.documento">now</call>
+     <call name="preferencia.colecao">now</call>
+     <call name="preferencia.suporte">now</call>
+     <call name="preferencia.conteudo">now</call>
+     <call name="rede.bibliotecas">now</call>
+     
+     <display>
+       <htmlpft>
+         <pft>,ref(['tab_fmx']149,v4),</pft>
+       </htmlpft>
+     </display>
+     <flow action="exit">1</flow>
+     
+<!-- Status do título -->
+     <label>status_tit</label>
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+     <!--Carrega código da unidade -->
+
+     <field action="replace" tag="953">
+     <pft>,ref(['phl_acv']l(['phl_acv'],'TIT='v2),'^a'v1,'^b'v33,'^c'v6,),</pft></field>
+     <file action="close" type="database">phl_acv</file>
+
+     <field action="cgi" tag="1">acv</field>
+     <field action="replace" tag="1"><pft>,if a(v1) then v953^a else v1 fi,</pft></field>
+     
+     <!-- Obtem dados do tombo -->
+          <call name="801">now</call>
+     
+     <call name="003">now</call>
+
+     <file action="close" type="database">phl_acv</file>
+     <flow action="jump"><pft>,if v953^b<>'' then 'colecao' else fi,</pft></flow>
+     <flow action="exit">0</flow>
+      
+      <label>colecao</label>
+
+      <do task="search">
+        <parm name="db"><pft>,v953^a'_ser',</pft></parm>
+        <parm name="expression"><pft>,'SER='v953^b,</pft></parm>
+        <field action="define" tag="1001">Isis_Current</field>
+        <field action="define" tag="1002">Isis_Total</field>
+        <loop>
+         <field action="import" tag="list">4001</field>
+         <display><htmlpft><pft>,ref(['tab_fmx']94,v4),</pft></htmlpft></display>
+        </loop>
+       <display><pft>'</table></body></html>'</pft></display>
+      </do>
+      <file action="close" type="database"><pft>,v953^a'_ser',</pft></file>
+      <flow action="exit">1</flow>
+      
+<!-- Formato decorado -->
+     <label>decorado</label>
+     <label>decoradox</label>
+
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+     <field action="replace" tag="201"><pft>,if a(v201) then ref(['phl_cnf']1,v207) else v201 fi,</pft></field>
+
+<!--
+     <display>
+        <htmlpft><pft>,ref(['tab_fmx']227,v4),</pft></htmlpft>
+     </display>
+-->
+
+     <do task="search">
+       <parm name="db">phl_acv</parm>
+       <parm name="expression"><htmlpft><pft>,ref(['tab_fmx']227,v4),</pft></htmlpft></parm>
+       <parm name="from"><pft>,v2011,"1"n2011,</pft></parm>
+       <parm name="count"><pft>,v201,</pft></parm>
+       <parm name="buffersize">90000</parm>
+       <parm name="reverse"><pft>,if v965='decorado' then 'Off' else 'On' fi,</pft></parm>
+       <field action="define" tag="1003">Isis_Status</field>
+       <field action="define" tag="1004">Isis_ErrorInfo</field>
+       <field action="define" tag="1022">Isis_Keys</field>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+
+       <display><htmlpft><pft>,ref(['tab_fmx']102,v4),</pft></htmlpft></display>
+       <display><htmlpft><pft>,ref(['tab_fmx']206,v4),</pft></htmlpft></display>
+
+       <!-- Obtém da base de dados do vocabulário o termo adotado -->
+            <display><pft>,ref(['phl_voc']l(['phl_voc'],"UF="v958),"Veja também:<font class=label>&nbsp;&nbsp;"v401"&nbsp;&nbsp;</font><br><br>",),</pft></display>
+            <file action="close" type="database">phl_voc</file>
+
+       <!-- Obtém da base de dados de autoridades forma padronizada do nome -->
+            <display><pft>,ref(['phl_aut']l(['phl_aut'],"UF="v958),"Veja também:<font class=label>&nbsp;&nbsp;"v450"&nbsp;&nbsp;</font><br><br>",),</pft></display>
+            <file action="close" type="database">phl_aut</file>
+
+       <!-- Obtém configuração do cabeçalho -->
+            <field action="add" tag="2240"><pft>,ref(['phl_cnf']1,v224),</pft></field>
+            
+       <loop>
+
+       <field action="import" tag="list">200/203,901/978,988,990,2000,2011,2015,2240,3000,4001</field>
+
+       <field action="add" tag="8000"><pft>,f(nocc(v7),0,0),</pft></field>
+       <field action="add" tag="8001"><pft>,f(npost([v1'_tbo'],'X'v2,),0,0),</pft></field>
+       <field action="add" tag="8002"><pft>,f(npost([v1'_tbo'],v2'#1',),0,0),</pft></field>
+       <field action="add" tag="8003"><pft>,f(npost([v1'_tbo'],v2'#2',),0,0),</pft></field>
+       <field action="add" tag="8004"><pft>,f(npost([v1'_tbo'],v2'#0',),0,0),</pft></field>
+       <file action="close" type="database"><pft>,v1'_tbo'</pft></file>
+
+       <!--
+       <call name="800">now</call>
+       -->
+
+       <hl>
+        <!-- 27/10/2017 11:23:18 -->
+        <parm name="prefix"><span style="background-color:#FFFF00; font-weight:bold"></parm>
+        <parm name="suffix"></span></parm>
+        <parm name="keys"><pft>(v1022/)</pft></parm>
+
+        <field action="hl" tag="10" split="occ"><pft>,(v10/),</pft></field>
+        <field action="hl" tag="11" split="occ"><pft>,(v11/),</pft></field>
+        <field action="hl" tag="12" split="occ"><pft>,(v12/),</pft></field>
+        <field action="hl" tag="15" split="occ"><pft>,(v15/),</pft></field>
+        <field action="hl" tag="16" split="occ"><pft>,(v16/),</pft></field>
+        <field action="hl" tag="17" split="occ"><pft>,(v17/),</pft></field>
+        <field action="hl" tag="18" split="occ"><pft>,(v18/),</pft></field>
+        <field action="hl" tag="19" split="occ"><pft>,(v19/),</pft></field>
+        <field action="hl" tag="181" split="occ"><pft>,(v181/),</pft></field>
+        <field action="hl" tag="30" split="occ"><pft>,(v30/),</pft></field>
+        <field action="hl" tag="34" split="occ"><pft>,(v34/),</pft></field>
+        <field action="hl" tag="61" split="occ"><pft>,(v61/),</pft></field>
+        <field action="hl" tag="62" split="occ"><pft>,(v62/),</pft></field>
+        <field action="hl" tag="64" split="occ"><pft>,(v64/),</pft></field>
+        <field action="hl" tag="66" split="occ"><pft>,(v66/),</pft></field>
+        <field action="hl" tag="83" split="occ"><pft>,(v83/),</pft></field>
+        <field action="hl" tag="86" split="occ"><pft>,(v86/),</pft></field>
+
+        <field action="hl" tag="870" split="occ"><pft>,(mhu,v87^*,mhl,|/|v87^s/),</pft></field>
+
+        <display><htmlpft><pft>,ref(['tab_fmx']93,v4),</pft></htmlpft></display>
+
+        </hl>
+        
+       <file action="close" type="database">phl_set</file>
+       <file action="close" type="database">phl_res</file>
+       <file action="close" type="database">phl_rgl</file>
+       <file action="close" type="database">phl_acv</file>
+       <file action="close" type="database">phl_spt</file>
+       <file action="close" type="database">phl_col</file>
+       <file action="close" type="database">phl_tdo</file>
+       <file action="close" type="database">phl_cnt</file>
+       <file action="close" type="database"><pft>,v1'_ser'</pft></file>
+       <file action="close" type="database"><pft>,v1'_emp'</pft></file>
+
+       </loop>
+       
+       <proc><pft>,if val(v1002)=0 then 'a250~411~' fi,</pft></proc>
+       <display><htmlpft><pft>,if val(v1002)=0 then ref(['tab_fmx']10,v4),fi,</pft></htmlpft></display>
+
+       <field action="add" tag="8"><pft>,if val(v1002)>val(v201) then f(( val(v1002)/val(v201) ),0,0) else '1' fi,</pft></field>
+       <field action="add" tag="9"><pft>,f(( val(v1002)/val(v201) ),0,2),</pft></field>
+       <field action="add" tag="10"><pft>if val(v9)>val(v8) then f(val(v8)+1,0,0),fi,if val(v9)<=val(v8) then f(val(v8),0,0),fi,</pft></field>
+       <field action="add" tag="11"><pft>f(( val(v1001)/val(v201) ),0,0),</pft></field>
+       <field action="add" tag="12"><pft>f(( val(v1001)/val(v201) ),0,2),</pft></field>
+       <field action="add" tag="13"><pft>if val(v12)>val(v11) then f(val(v11)+1,0,0),fi,if val(v12)<=val(v11) then f(val(v11),0,0),fi,</pft></field>
+       
+       <!-- <display><htmlpft><pft>,if val(v1002)>val(v201) then ref(['tab_fmx']90,v4) fi,</pft></htmlpft></display> -->
+       <display><htmlpft><pft>,ref(['tab_fmx']90,v4),</pft></htmlpft></display>
+       <display><htmlpft><pft>,if val(v1002)=1 then ref(['tab_fmx']48,v4),fi,</pft></htmlpft></display>
+
+     </do>
+     <file action="close" type="database">phl_acv</file>
+     <flow action="exit">1</flow>
+     
+<!-- Formato RIS -->
+     <label>ris</label>
+     <field action="cgi" tag="2011">from</field>
+
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     
+      <do task="search">
+      <parm name="db">phl_acv</parm>
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Total</field>
+      <parm name="expression"><htmlpft><pft>,ref(['tab_fmx']227,v4),</pft></htmlpft></parm>
+      <parm name="from"><pft>,v2011,"1"n2011,</pft></parm>
+      <parm name="count"><pft>,v201,"20"n201,</pft></parm>
+      <loop>
+       <field action="import" tag="list">200/203,208,901/978,990,3000,4001</field>
+       <display><pft>
+       '<html>'/
+'<head>'/
+'<style>'
+ '<!--
+   body {font-family: courier new}
+ -->'
+'</style>'/
+'</head>'/
+'<body>'/
+'<table border="0" width="100%" cellpadding="5" cellspacing="0">'
+'<tr><td width="100%" valign="top"><hr>',mpl,
+       ,@phl_ris.pft,
+       '</td></tr></table></body></html>'
+       ,</pft></display>
+      </loop>
+      <field action="add" tag="8"><pft>f(( val(v1002)/val(v201) ),0,0)</pft></field>
+      <field action="add" tag="9"><pft>f(( val(v1002)/val(v201) ),0,2)</pft></field>
+      <field action="add" tag="10"><pft>if val(v9)>val(v8) then f(val(v8)+1,0,0),fi,if val(v9)<=val(v8) then f(val(v8),0,0),fi,</pft></field>
+      <field action="add" tag="11"><pft>f(( val(v1001)/val(v201) ),0,0),</pft></field>
+      <field action="add" tag="12"><pft>f(( val(v1001)/val(v201) ),0,2),</pft></field>
+      <field action="add" tag="13"><pft>if val(v12)>val(v11) then f(val(v11)+1,0,0),fi,if val(v12)<=val(v11) then f(val(v11),0,0),fi,</pft></field>
+      <display><htmlpft><pft>,ref(['tab_fmx']86,v4),</pft></htmlpft></display>
+      </do>
+      <file action="close" type="database">phl_acv</file>
+     <flow action="exit">1</flow>
+
+<!-- Formato PHL -->
+     <label>phl</label>
+     <field action="cgi" tag="2011">from</field>
+
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     
+      <do task="search">
+      <parm name="db">phl_acv</parm>
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Total</field>
+      <parm name="expression"><htmlpft><pft>,ref(['tab_fmx']227,v4),</pft></htmlpft></parm>
+      <parm name="from"><pft>,v2011,"1"n2011,</pft></parm>
+      <parm name="count"><pft>,v201,"20"n201,</pft></parm>
+      <loop>
+       <field action="import" tag="list">200/203,208,901/978,990,3000,4001</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']16,v4),</pft></htmlpft></display>
+      </loop>
+      <field action="add" tag="8"><pft>f(( val(v1002)/val(v201) ),0,0)</pft></field>
+      <field action="add" tag="9"><pft>f(( val(v1002)/val(v201) ),0,2)</pft></field>
+      <field action="add" tag="10"><pft>if val(v9)>val(v8) then f(val(v8)+1,0,0),fi,if val(v9)<=val(v8) then f(val(v8),0,0),fi,</pft></field>
+      <field action="add" tag="11"><pft>f(( val(v1001)/val(v201) ),0,0),</pft></field>
+      <field action="add" tag="12"><pft>f(( val(v1001)/val(v201) ),0,2),</pft></field>
+      <field action="add" tag="13"><pft>if val(v12)>val(v11) then f(val(v11)+1,0,0),fi,if val(v12)<=val(v11) then f(val(v11),0,0),fi,</pft></field>
+      <display><htmlpft><pft>,ref(['tab_fmx']86,v4),</pft></htmlpft></display>
+      </do>
+      <file action="close" type="database">phl_acv</file>
+     <flow action="exit">1</flow>
+
+<!-- Formato referencia -->
+     <label>referencia</label>
+     <field action="cgi" tag="2011">from</field>
+
+     <display><pft>'Content-type: text/xml; charset=iso-8859-1'/#</pft></display>
+      <do task="search">
+      <parm name="db">phl_acv</parm>
+      <parm name="gizmo">tab_xml</parm>
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Total</field>
+      <parm name="expression"><htmlpft><pft>,ref(['tab_fmx']227,v4),</pft></htmlpft></parm>
+      <parm name="from"><pft>,v2011,"1"n2011,</pft></parm>
+      <parm name="count"><pft>,v201,"20"n201,</pft></parm>
+      <display><htmlpft><pft>,ref(['tab_fmx']87,v4),</pft></htmlpft></display>
+      <loop>
+       <field action="import" tag="list">200/203,208,901/978,990,3000,4001</field>
+       
+       <!-- obtem quantidade de exemplares do titulo -->
+       <field action="add" tag="8001"><pft>,f(nocc(v7),0,0),</pft></field>
+       <display><htmlpft><pft>,ref(['tab_fmx']3,(v4/)),</pft></htmlpft></display>
+      </loop>
+
+      <field action="add" tag="8"><pft>f(( val(v1002)/val(v201) ),0,0)</pft></field>
+      <field action="add" tag="9"><pft>f(( val(v1002)/val(v201) ),0,2)</pft></field>
+      <field action="add" tag="10"><pft>if val(v9)>val(v8) then f(val(v8)+1,0,0),fi,if val(v9)<=val(v8) then f(val(v8),0,0),fi,</pft></field>
+      <field action="add" tag="11"><pft>f(( val(v1001)/val(v201) ),0,0),</pft></field>
+      <field action="add" tag="12"><pft>f(( val(v1001)/val(v201) ),0,2),</pft></field>
+      <field action="add" tag="13"><pft>if val(v12)>val(v11) then f(val(v11)+1,0,0),fi,if val(v12)<=val(v11) then f(val(v11),0,0),fi,</pft></field>
+      <display><htmlpft><pft>,ref(['tab_fmx']86,v4),</pft></htmlpft></display>
+      </do>
+      <file action="close" type="database">phl_acv</file>
+     <flow action="exit">1</flow>
+
+<!-- Formato curto -->
+     <label>curto</label>
+     
+      <display><pft>'Content-type: text/xml; charset=iso-8859-1'/#</pft></display>
+      <field action="cgi" tag="2011">from</field>
+
+      <do task="search">
+      <parm name="db">phl_acv</parm>
+      <parm name="gizmo">tab_xml</parm>
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Total</field>
+      <parm name="expression"><htmlpft><pft>,ref(['tab_fmx']227,v4),</pft></htmlpft></parm>
+      <parm name="from"><pft>,v2011,"1"n2011,</pft></parm>
+      <parm name="count"><pft>,v201,"20"n201,</pft></parm>
+      <display><htmlpft><pft>,ref(['tab_fmx']85,v4),</pft></htmlpft></display>
+      <loop>
+        <field action="import" tag="list">200/203,208,901/978,990,3000,4001</field>
+        <field action="add" tag="8001"><pft>,f(nocc(v7),0,0),</pft></field>
+        <display><htmlpft><pft>,ref(['tab_fmx']19,(v4/)),</pft></htmlpft></display>
+      </loop>
+      
+      <field action="add" tag="8"><pft>f(( val(v1002)/val(v201) ),0,0)</pft></field>
+      <field action="add" tag="9"><pft>f(( val(v1002)/val(v201) ),0,2)</pft></field>
+      <field action="add" tag="10"><pft>if val(v9)>val(v8) then f(val(v8)+1,0,0),fi,if val(v9)<=val(v8) then f(val(v8),0,0),fi,</pft></field>
+      <field action="add" tag="11"><pft>f(( val(v1001)/val(v201) ),0,0),</pft></field>
+      <field action="add" tag="12"><pft>f(( val(v1001)/val(v201) ),0,2),</pft></field>
+      <field action="add" tag="13"><pft>if val(v12)>val(v11) then f(val(v11)+1,0,0),fi,if val(v12)<=val(v11) then f(val(v11),0,0),fi,</pft></field>
+      <display><htmlpft><pft>,ref(['tab_fmx']83,v4),</pft></htmlpft></display>
+      </do>
+      <file action="close" type="database">phl_acv</file>
+     <flow action="exit">1</flow>
+
+<!-- Formato arvore -->
+     <label>tree</label>
+     
+      <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+      
+      <field action="cgi" tag="2011">from</field>
+
+      <do task="search">
+      <parm name="db">phl_acv</parm>
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Total</field>
+      <parm name="from"><pft>,v2011,"1"n2011,</pft></parm>
+      <parm name="count"><pft>,v201,"20"n201,</pft></parm>
+      <parm name="expression">
+      <pft>
+       ,if v3000^3='' then
+         ,'(',v959,"$"n959,')',"*ACV="v953,"*IDM="v967,"*TIP="v964,"*CNT="v968,"*COL="v970,"*SPT="v971,'*(NIV=C+NIV=M)*STT=B',
+       ,else
+      ,'(',v959,"$"n959,')',"*ACV="v953,"*IDM="v967,"*TIP="v964,"*CNT="v968,"*COL="v970,"*SPT="v971,'*(NIV=C+NIV=M)*(STT=B + STT=R)',
+      ,fi
+      </pft>
+      </parm>
+      
+      <display><htmlpft><pft>,ref(['tab_fmx']102,v4),</pft></htmlpft></display>
+
+      <display>
+      <pft>
+      '<html>'/
+      '<head>'/
+	'<link rel="stylesheet" href="/phl84/css/folder-tree-static.css" type="text/css">'/
+	'<link rel="stylesheet" href="/phl84/css/context-menu.css" type="text/css">'/
+	'<script type="text/javascript" src="/phl84/js/ajax.js"></script>'/
+	'<script type="text/javascript" src="/phl84/js/folder-tree-static.js"></script> '/
+	'<script type="text/javascript" src="/phl84/js/context-menu.js"></script>'/
+	'<script language="JavaScript" src="/phl84/js/tab_mfn.js"></script> '/
+     '</head>'/
+     '<body>'/
+     '<blockquote>'/
+     '<ul id="dhtmlgoodies_tree" class="dhtmlgoodies_tree">'/
+     </pft>
+     </display>
+
+      <loop>
+
+        <field action="import" tag="list">200/203,208,901/978,990,3000,4001</field>
+        <display>
+        <pft>
+
+         ,if v6='c' and p(v33) then
+	 '<LI><A href="#" id="node_1">'v30'</A>
+	    <UL>
+	      <LI parentId="ser='v33'*niv=s*stt=b"><A href="#" id="node_2">Aguarde...</A></LI>
+	   </UL>
+	  </LI>'
+	  fi
+
+         ,if v6='m' then
+	 '<LI><A href="#" id="node_1">',v18,'</A>
+	    <UL>
+	      <LI parentId="pai='v2'*niv=am"><A href="#" id="node_2">Aguarde...</A></LI>
+	   </UL>
+	  </LI>'
+         ,fi
+
+	</pft>
+        </display>
+
+      </loop>
+
+      <display>
+      </ul>
+      </blockquote>
+      <hr>
+      <center>
+      <a href="#" onclick="expandAll('dhtmlgoodies_tree');return false">Expandir</a> |
+      <a href="#" onclick="collapseAll('dhtmlgoodies_tree');return false">Contrair</a>
+      </center>
+      </body>
+      </html>
+      </display>
+      
+      <field action="add" tag="8"><pft>f(( val(v1002)/val(v201) ),0,0)</pft></field>
+      <field action="add" tag="9"><pft>f(( val(v1002)/val(v201) ),0,2)</pft></field>
+      <field action="add" tag="10"><pft>if val(v9)>val(v8) then f(val(v8)+1,0,0),fi,if val(v9)<=val(v8) then f(val(v8),0,0),fi,</pft></field>
+      <field action="add" tag="11"><pft>f(( val(v1001)/val(v201) ),0,0),</pft></field>
+      <field action="add" tag="12"><pft>f(( val(v1001)/val(v201) ),0,2),</pft></field>
+      <field action="add" tag="13"><pft>if val(v12)>val(v11) then f(val(v11)+1,0,0),fi,if val(v12)<=val(v11) then f(val(v11),0,0),fi,</pft></field>
+
+<display><pft>
+'<center>'/
+'<a href=/cgi-bin/wxis.exe?IsisScript=phl84/003.xis&opc=tree&exp='mhu,v958,mhl'&tag='v203'&bool='v202'&pag='v200'&rpp='v201'&from=1&acv='v953'&idm='v967'&tip='v964'&cnt='v968'&pft='v965'&tmp='v4001'>Primeira</a> | '/
+'<a href=/cgi-bin/wxis.exe?IsisScript=phl84/003.xis&opc=tree&exp='mhu,v958,mhl'&tag='v203'&bool='v202'&pag='v200'&rpp='v201'&from='if ((val(v13)-2)*val(v201)) <1 then '1' else f(  ((val(v13)-2)*val(v201))+1,0,0   ) fi'&acv='v953'&idm='v967'&tip='v964'&cnt='v968'&pft='v965'&tmp='v4001'>Anterior</a> | '/
+'<a href=/cgi-bin/wxis.exe?IsisScript=phl84/003.xis&opc=tree&exp='mhu,v958,mhl'&tag='v203'&bool='v202'&pag='v200'&rpp='v201'&from='f(val(v1001)+1,0,0)'&acv='v953'&idm='v967'&tip='v964'&cnt='v968'&pft='v965'&tmp='v4001'>Próxima</a> | '/
+'<a href=/cgi-bin/wxis.exe?IsisScript=phl84/003.xis&opc=tree&exp='mhu,v958,mhl'&tag='v203'&bool='v202'&pag='v200'&rpp='v201'&from='f( (val(v10)*val(v201))-(val(v201)-1),0,0)'&acv='v953'&idm='v967'&tip='v964'&cnt='v968'&pft='v965'&tmp='v4001'>Última</a>'/
+'</center>'/
+</pft></display>
+
+      </do>
+
+      <file action="close" type="database">phl_acv</file>
+     <flow action="exit">1</flow>
+
+<!-- Formato vancouver -->
+     <label>vancouver</label>
+      <field action="cgi" tag="2011">from</field>
+
+      <display><pft>'Content-type: text/xml; charset=iso-8859-1'/#</pft></display>
+      <do task="search">
+      <parm name="db">phl_acv</parm>
+      <parm name="gizmo">tab_xml</parm>
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Total</field>
+      <parm name="expression"><htmlpft><pft>,ref(['tab_fmx']227,v4),</pft></htmlpft></parm>
+      <parm name="from"><pft>,v2011,"1"n2011,</pft></parm>
+      <parm name="count"><pft>,v201,"20"n201,</pft></parm>
+      <display><htmlpft><pft>,ref(['tab_fmx']146,v4),</pft></htmlpft></display>
+      <loop>
+        <field action="import" tag="list">200/203,208,901/978,990,3000,4001</field>
+        <display><htmlpft><pft>,ref(['tab_fmx']147,(v4/)),</pft></htmlpft></display>
+      </loop>
+      
+      <field action="add" tag="8"><pft>f(( val(v1002)/val(v201) ),0,0)</pft></field>
+      <field action="add" tag="9"><pft>f(( val(v1002)/val(v201) ),0,2)</pft></field>
+      <field action="add" tag="10"><pft>if val(v9)>val(v8) then f(val(v8)+1,0,0),fi,if val(v9)<=val(v8) then f(val(v8),0,0),fi,</pft></field>
+      <field action="add" tag="11"><pft>f(( val(v1001)/val(v201) ),0,0),</pft></field>
+      <field action="add" tag="12"><pft>f(( val(v1001)/val(v201) ),0,2),</pft></field>
+      <field action="add" tag="13"><pft>if val(v12)>val(v11) then f(val(v11)+1,0,0),fi,if val(v12)<=val(v11) then f(val(v11),0,0),fi,</pft></field>
+      <display><htmlpft><pft>,ref(['tab_fmx']83,v4),</pft></htmlpft></display>
+      </do>
+      <file action="close" type="database">phl_acv</file>
+     <flow action="exit">1</flow>
+    
+<!-- Formato tabela -->
+     <label>tabela</label>
+     <field action="cgi" tag="2011">from</field>
+
+     <display><pft>'Content-type: text/xml; charset=iso-8859-1'/#</pft></display>
+      <do task="search">
+      <parm name="db">phl_acv</parm>
+      <parm name="gizmo">tab_xml</parm>
+      <field action="define" tag="1001">Isis_Current</field>
+      <field action="define" tag="1002">Isis_Total</field>
+      <parm name="expression"><htmlpft><pft>,ref(['tab_fmx']227,v4),</pft></htmlpft></parm>
+      <parm name="from"><pft>,v2011,"1"n2011,</pft></parm>
+      <parm name="count"><pft>,v201,"20"n201,</pft></parm>
+      <display><htmlpft><pft>,ref(['tab_fmx']81,v4),</pft></htmlpft></display>
+      <loop>
+        <field action="import" tag="list">200/203,208,901/978,990,3000,4001</field>
+        <display><htmlpft><pft>,ref(['tab_fmx']76,v4),</pft></htmlpft></display>
+      </loop>
+    
+      <field action="add" tag="8"><pft>f(( val(v1002)/val(v201) ),0,0)</pft></field>
+      <field action="add" tag="9"><pft>f(( val(v1002)/val(v201) ),0,2)</pft></field>
+      <field action="add" tag="10"><pft>if val(v9)>val(v8) then f(val(v8)+1,0,0),fi,if val(v9)<=val(v8) then f(val(v8),0,0),fi,</pft></field>
+      <field action="add" tag="11"><pft>f(( val(v1001)/val(v201) ),0,0),</pft></field>
+      <field action="add" tag="12"><pft>f(( val(v1001)/val(v201) ),0,2),</pft></field>
+      <field action="add" tag="13"><pft>if val(v12)>val(v11) then f(val(v11)+1,0,0),fi,if val(v12)<=val(v11) then f(val(v11),0,0),fi,</pft></field>
+      <display><htmlpft><pft>,ref(['tab_fmx']73,v4),</pft></htmlpft></display>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+     <flow action="exit">1</flow>
+
+<!-- Indice -->
+     <label>indice</label>
+
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     
+     <!--08/12/2007 09:32:07-->
+     
+     <display><htmlpft><pft>,ref(['tab_fmx']151,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+        
+     <label>indice_executa</label>
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+        
+     <display><htmlpft><pft>,ref(['tab_fmx']150,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+
+</section>
+</IsisScript>

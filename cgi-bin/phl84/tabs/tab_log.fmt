@@ -1,0 +1,12 @@
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'
+'<input type="hidden" name="999" value="'v999[1]'">'
+'<input type="hidden" name="mfn" value="'v957'">'
+'<input type="hidden" name="rec" value="'v1010'">'
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'
+'<input type="hidden" name="opc" value="grava">'
+'<input type="hidden" name="dbvar" value="^a'v3000^1'_log^b13^clog">'
+'<tr><td class="td1o"></td><td class="topico">Histórico</td></tr>'
+,if p(v910) then 
+'<tr><td class="td1o">Lançamento&nbsp;<a href=JavaScript:tab_man(910);>[910]</a></td>
+ <td class="td2"><textarea rows="4" name="910">',(v910/),'</textarea></td>
+ </tr>',fi,

@@ -1,0 +1,58 @@
+ 	select s(v6.1)
+
+	  case 'm': '<a>'MHL,
+                     ,if nocc(v16)>6 then
+                      v16[1]", ",v16[2]", ",v16[3]", ",v16[4]", ",v16[5]", ",v16[6]", et all. "
+                      else,
+                      v16+|, |". ",
+                     ,fi
+                     v17+|; |".","  "v54", ",v56".",'</a>'
+		     ,if p(v16)
+		       then 
+                         '<b>',v18,". "n181,": "d181,'</b>',
+			  else '<c>',v18,". "n181,": "d181,'</c>'
+		     ,fi,
+                     '<d>',v181," ["d71,ref(['phl_cnt']val(v71),v300,),"]. "d71,v63". ",v630". ",
+		     ,if p(v62) then " "v66[1],else " "v66[1]", ",fi,
+		     ": "v62[1]", ",v64". ",v21". ",v31". ",if p(v19) then v20" p., ",v19". ","("v30"). " else
+			 v20" p. ",v19". ","("v30"). " fi,
+		     " "v50".", "Escala: "v39". "," "v61+|; |".",
+                     ,if p(v8) then "Disponível em: "v8^i,". Acesso em: "v8^u fi,'</d>'
+
+	  case 'a': '<a>',MHL,
+                     ,if nocc(v10)>6 then
+                      v10[1]", ",v10[2]", ",v10[3]", ",v10[4]", ",v10[5]", ",v10[6]", et all. "
+                      else,
+                      v10+|, |". ",
+                     ,fi
+                     v12," ["d71,ref(['phl_cnt']val(v71),v300,),"]"d71,". In: "d18,
+		     ,if p(v10) and s(v10)=s(v16) then '___.' else,v16+|; |".",v17+|; |".",fi,
+		     "	"v54", ",v56".",'</a>','<b> ',v18,". "n181,": "d181,'</b>',
+		     ,if v6:'s' then '<r>',v30". ",'</r>',fi,
+                     '<c>'v181". ", v63". ",
+		     ,if p(v62) then " "v66[1],else " "v66[1]", " fi,
+		     ,if v6:'s' then
+		     ": "v62[1]", ",
+                     ,if val(v31.1)<>0 then "v."v31", " else v31", " fi," n."v32", ",
+                     if v14:'p' then v14". " else "p."v14". ",fi,v64". ",
+		     v61+|; |".", else,
+		     ": "v62[1]", ",v64". ","("v30"). "," "v50".","p. "v14".",
+		     v61+|; |".",fi,'</c>',
+
+	  case 's': '<a>',MHU,v30^*". ",mhl,
+		     if p(v62) then " "v66[1],else " "v66[1]", " fi,
+		     ": "v62[1]", ",
+		     ,if val(v31)<>0 then "v."v31", " else v31", " fi," n."v32", ",
+                     ,v64". ",
+                     if v20:'p' then v20 else v20"p. ",fi,
+		     " "v61+|; |".",'</a>'
+		     
+	  case 'c': '<a>',MHU,v30^*". ",mhl,
+		     if p(v62) then " "v66[1],else " "v66[1]", " fi,
+		     ": "v62[1]", ",
+		     ,if val(v31.1)<>0 then "v."v31", " else v31", " fi," n."v32". ",
+                     v64". ",
+                     if v20:'p' then v20 else v20"p. ",fi,
+		     " "v61+|; |".",'</a>'
+
+	 endsel,

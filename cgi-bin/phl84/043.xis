@@ -1,0 +1,43 @@
+<!-- Opções de formatos de importacao de registros
+     19/12/2011 08:35:50 - Revisado -->
+     
+     <IsisScript name="043.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inicia secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="950">opc</field>
+   
+<!-- Verifica se código existe e é válido-->
+     <flow action="jump"><pft>,if p(v3002) and a(v3000) then '47' fi,</pft></flow>
+
+<!-- Direciona fluxo do script -->
+     <flow action="jump"><pft>,v950,</pft></flow>
+    
+     <label>fonte</label>
+
+     <display><htmlpft><pft>,ref(['tab_fmx']114,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>47</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']47,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

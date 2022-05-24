@@ -1,0 +1,7 @@
+**************************************************
+     CODIGOS DE BARRAS COM TTF (True Type Fonts)
+**************************************************
+
+ Para instalar os arquivos de fontes, basta
+ copiar os arquivos .TTF para o diretório "Fonts"
+ do Windows.

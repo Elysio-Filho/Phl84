@@ -1,0 +1,35 @@
+<!-- 13/06/2008 05:51:54 Mapa
+     Este script foi desenvolvido para dar suporte ao processo de criação de
+     links em pontos específicos de uma imagem gif ou jpg. Veja uma aplicação
+     de imagem com links em http://www.elysio.com.br/site/phlnet_index.html
+     -->
+     
+     <IsisScript name="mapa.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+     
+     <section>
+     
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="951">opc.x</field>
+     <field action="cgi" tag="952">opc.y</field>
+
+     <display><pft>,'x=',v951,'<br>y='v952</pft></display>
+
+     <flow action="jump"><pft>,v950,</pft></flow>
+     
+     <label>mapa</label>
+     <display>
+      <pft>
+        '<form action="/cgi-bin/wxis.exe" method="POST" target="result">'/
+        '<input type="hidden" name="IsisScript" value="phl84/mapa.xis">'/
+        '<input type="hidden" name="tmp" value="'v4001'">'/
+        '<input type="image" name="opc" src="/phl84/img/mapa_brasil.gif">'/
+        '</form>'
+     </pft>
+     </display>
+     <flow action="exit">1</flow>
+
+ </section>
+</IsisScript>

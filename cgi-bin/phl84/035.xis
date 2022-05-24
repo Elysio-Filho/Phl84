@@ -1,0 +1,73 @@
+<!-- Relatorios personalizados -->
+
+     <IsisScript name="035.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inicia secao do script -->
+     <section>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="958">exp</field>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+<!--Carrega permissões de entrada e edição do usuário -->
+    <field action="add" tag="2000"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>
+     
+     <flow action="jump">
+       <pft>,if s(v3000^3)='funcionario' then 'login_valido' else '251' fi,</pft>
+     </flow>
+     <flow action="exit">0</flow>
+
+     <label>login_valido</label>
+     <flow action="jump"><pft>,v950,</pft></flow>
+     <flow action="exit">1</flow>
+
+     <label>opcoes</label>
+     
+     <do task="search">
+       <parm name="db">phl_rel</parm>
+       <field action="define" tag="1001">Isis_Current</field>
+       <field action="define" tag="1002">Isis_Total</field>
+       <parm name="expression">$</parm>
+       <loop>
+         <list action="load" type="sort"><pft>,'^a',v502,'^b',mfn(1)/,</pft></list>
+       </loop>
+     </do>
+
+     <do task="list">
+       <field action="define" tag="1">Isis_Item</field>
+       <field action="define" tag="2">Isis_Value</field>
+       <field action="import" tag="3">1002</field>
+       <field action="define" tag="4">Isis_Items</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']165,v4),</pft></htmlpft></display>
+       <loop>
+       <field action="import" tag="list">2000,3000,4001</field>
+       <display><htmlpft><pft>,ref(['tab_fmx']166,v4),</pft></htmlpft></display>
+       </loop>
+       <display><pft>'</blockquote></html>'</pft></display>
+     </do>
+     <flow action="exit">0</flow>
+     
+<!-- Mensagens de erro -->
+
+     <label>251</label>
+     <field action="add" tag="250">251</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),'</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+</section>
+</IsisScript>

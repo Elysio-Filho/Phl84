@@ -1,0 +1,108 @@
+<!-- Script de Pré catalogacao e tombamento
+     25/10/2010 16:14:00 -->
+     
+     <IsisScript name="041.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (009) que efetua a separação dos múltiplos elementos
+     (ocorrencias) dos campos de dados -->
+     <include>phl84/009.fnc</include>
+
+<!-- Inclue funcao (015) responsável pelo controle automático da sequencia
+     numerica dos tombos -->
+     <include>phl84/015.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+     
+<!-- Chama funcao para a carga das variaveis de configuracao -->
+     <call name="001">now</call>
+
+<!-- Armazena em v2000 o conteudo de v655 da base de dados de permissões -->
+     <field action="add" tag="2000"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>
+     
+<!-- Cria novo registro na BD do catálogo com os dados de precatalogacao -->
+
+     <file action="close" type="database">phl_acv</file>
+
+     <do task="update">
+       <parm name="db">phl_acv</parm>
+       <parm name="mfn">New</parm>
+       <parm name="uctab"><pft>cat('uctab')</pft></parm>
+       <parm name="actab"><pft>cat('actab')</pft></parm>
+       <parm name="fst"><pft>,cat('phl_acv.fst'),</pft></parm>
+       <parm name="buffersize">90000</parm>
+       <field action="define" tag="1003">Isis_Status</field>
+
+       <update>
+         <field action="import" tag="list">3000/3004,7003</field>
+         <field action="replace" tag="2"><pft>,if a(v2) then ,v7003*3.12,v3000^4, else v2 fi,</pft></field>
+         <field action="replace" tag="2"><pft>,replace(v2,' ',''),</pft></field>
+         <cgitable><htmlpft><pft>,ref(['tab_fdt']1,'[pft]',v4,'[/pft]',),</pft></htmlpft></cgitable>
+         <field action="add" tag="999"><pft>'^d'v7003.8,'^h'v7003*9.4,'^b'v3000^2,</pft></field>
+         <call name="009">now</call>
+         <field action="export" tag="list">1/999,3000/3004</field>
+         <field action="delete" tag="list">3000/3004,7003</field>
+         <write>Unlock</write>
+         <field action="import" tag="list">1090,2000,3000/3004,1010,7003</field>
+         <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zNEW|041.xis'/</pft></field>
+         <call name="log">now</call>
+       </update>
+       <field action="export" tag="2">2</field>
+     </do>
+     <file action="close" type="database">phl_acv</file>
+
+<!-- Cria novo registro na BD tombo com os dados do exemplar tombado -->
+     
+     <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+
+     <do task="update">
+       <parm name="db"><pft>,v3000^1'_tbo',</pft></parm>
+       <parm name="mfn">New</parm>
+       <parm name="uctab"><pft>cat('uctab')</pft></parm>
+       <parm name="actab"><pft>cat('actab')</pft></parm>
+       <parm name="fst"><pft>,cat(v3000^1'_tbo.fst'),</pft></parm>
+       <field action="define" tag="1003">Isis_Status</field>
+
+       <update>
+         <field action="import" tag="list">2,998,3000/3004,7003</field>
+         <cgitable><htmlpft><pft>,ref(['tab_fdt']23,'[pft]',v4,'[/pft]',),</pft></htmlpft></cgitable>
+         <field action="replace" tag="800"><pft>v2</pft></field>
+         <field action="replace" tag="803">1</field>
+         <field action="add" tag="999"><pft>'^d'v7003.8,'^h'v7003*9.4,'^b'v3000^2,</pft></field>
+         <call name="009">now</call>
+         <field action="export" tag="list">1/999,3000/3004</field>
+         <field action="delete" tag="list">2,3000/3004,7003</field>
+         <write>Unlock</write>
+         <field action="import" tag="list">1090,2000,3000/3004,7003,1010,</field>
+         <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zNEW|041.xis'/,</pft></field>
+         <call name="log">now</call>
+
+         <!-- Mostra registro que foi gravado -->
+         
+          <display><htmlpft><pft>,ref(['tab_pft']23,'[pft]',v4,'[/pft]',),if p(v1010) then ref(['tab_fmx']15,v4),fi,</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_fmx']198,v4),</pft></htmlpft></display>
+          <display><htmlpft><pft>,ref(['tab_dag']23,'[pft]',v4,'[/pft]',),</pft></htmlpft></display>
+         
+        <display>
+          </table>
+          </body>
+          </html>
+        </display>
+
+        </update>
+     </do>
+     <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+     
+<!-- Finaliza a secao -->
+     </section>
+
+<!-- Finaliza o script -->
+     </IsisScript>

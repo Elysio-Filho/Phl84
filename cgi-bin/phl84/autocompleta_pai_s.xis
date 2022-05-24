@@ -1,0 +1,52 @@
+<!-- Gera caixa de selecao de registros de fascículos de periódicos (registros pai, nível s)
+     29/11/2008 05:11:37 -->
+
+     <IsisScript name="autocompleta_pai_s.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+  
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+     <section>
+  
+<!-- Carrega variáveis de configuração  -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis passadas pelo http  -->
+     <field action="cgi" tag="10">exp</field>
+
+<!-- Percorre indice de chaves de títulos de periódicos no catálogo  -->
+     <do task="keyrange">
+       <parm name="db">phl_acv</parm>
+       <parm name="from"><pft>,'TSR='v10,</pft></parm>
+       <parm name="to"><pft>,'TSR='v10'Z'</pft></parm>
+       <parm name="count">10</parm>
+       <parm name="posting">ALL</parm>
+       <field action="define" tag="1">Isis_Key</field>
+       <field action="define" tag="2">Isis_Postings</field>
+       <field action="define" tag="3">Isis_Posting</field>
+
+       <loop>
+       <field action="import" tag="list">3000</field>
+         <display>
+           <pft>,
+            s2:=(v1*4),
+
+           ,ref(
+                ['phl_acv']val(v3^m),
+
+                     ,if v6='s' then
+                     ,if s(mhu,v30.26,mpl):s2 then v30," vol."v31," num."v32,", "v64'='v2/ fi,
+                     ,fi,
+
+               ,),
+           ,</pft>
+         </display>
+       </loop>
+     </do>
+     <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

@@ -1,0 +1,79 @@
+<!-- Relatorios
+     19/12/2011 08:37:19 - Revisado -->
+     
+     <IsisScript name="031.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="950">opc</field>
+
+<!--Verifica se código existe e é válido-->
+    <flow action="jump"><pft>,if p(v3002) and a(v3000) then '47' fi,</pft></flow>
+
+    <flow action="jump">
+       <pft>,if s(v3000^3)='funcionario' then 'login_valido' else '251' fi,</pft>
+    </flow>
+    <flow action="exit">0</flow>
+     
+    <label>47</label>
+    <display><htmlpft><pft>,ref(['tab_fmx']47,v4),</pft></htmlpft></display>
+    <flow action="exit">1</flow>
+
+    <label>251</label>
+    <field action="add" tag="250">251</field>
+    <display><htmlpft><pft>,ref(['tab_fmx']10,v4),'</pft></htmlpft></display>
+    <flow action="exit">1</flow>
+
+    <label>login_valido</label>
+    <flow action="jump"><pft>,v950,</pft></flow>
+    <flow action="exit">0</flow>
+
+    <label>tipo</label>
+     
+     <!-- Compõe formulário para seleção do tipo de relatório -->
+     <display><htmlpft><pft>,ref(['tab_fmx']82,v4),'</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+<!-- Relatórios da circulação -->
+     <label>cir</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']124,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+
+<!-- Relatórios do acervo -->
+     <label>ace</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']155,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+
+<!-- Relatórios operacionais -->
+     <label>operacionais</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']123,v4),</pft></htmlpft></display>
+     <flow action="exit">0</flow>
+
+<!-- Relatórios gráficos -->
+     <label>graficos</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']113,v4),</pft></htmlpft></display>
+
+<!-- Outros relatorios -->
+     <label>outros</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']208,v4),'</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

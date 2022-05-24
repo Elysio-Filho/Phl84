@@ -1,0 +1,320 @@
+<!-- phl84r1
+
+     * 11/09/2011 07:00:00 - Formulário de entrada e edição da base de dados de usuários. O campo #730 foi alterado de caixa de texto
+                             para caixa de seleção no caso do uso do PHL para administrar várias bibliotecas;
+     * 11/09/2011 07:00:00 - Implementado o formato de exportação RIS;
+     * 12/09/2011 07:00:00 - Implementado novos recursos de segurança na verificação do login do usuário (phl_usr.fst, phl_pwd.fst, 026.xis);
+     * 22/09/2011 07:00:00 - PHL passa a controlar o tempo de conexão para evitar que links obtidos por "robots" 
+                             sejam reutilizados;
+     * 24/09/2011 07:55:39 - Corrigido bug no campo #181 das analíticas referentes à capítulo de livros;
+     * 27/09/2011 09:22:10 - Atualizado manual do phl84r1;
+     * 07/10/2011 09:45:59 - Atualizada a apresentação do campo #62 no script phlnet_search.xis. Incluido (if), se autor pessoal
+                             igual a editor (v62=v16), omitir o valor de v62;
+                             
+     phl84r2
+     * 13/10/2011 10:44:21 - 072.xis - Incluido o prefixo "log_" no arquivo de backup
+     * 13/10/2011 10:44:55 - tab_fmx.seq - editado registro 000242 e incluido a variável 30000^1 no nome do arquivo
+                             de controle sequencial de tombos.
+     * 17/10/2011 10:23:13 - tab_fmx - mfn=67 - Link "Extrato" passa a aparecer incondicionalmente no comprovante de 
+                             devolução, independente de haver ou não multas.
+     * 08/11/2011 08:54:21 - Corrigido problemas com formatação de arquivos xml com textos acentuados
+     * 22/11/2011 08:00:00 - 009.xis - suspens~ao por dias uteis
+     * 16/12/2011 16:18:09 - Corrigido bug na estatistica apresentado no status do título (001_log.fst e reg.11 do tab_fmx)
+     * 28/12/2011 10:37:50 - Incluido opcao de cookie utilizada pelo formato FRBR no script mfn.xis
+     * 08/02/2012 09:58:18 - Revisado permissões de eliminação de registros no arquivo 007.xis
+     * 08/02/2012 09:59:15 - Revisada chamada xml no arquivo tab_fmx.seq
+     * 15/02/2012 09:19:43 - Revisado 033.xis (entidade XML que compoe campo 18 de & para &amp;) evitando bug na geração dos relatórios de 
+                             circulacao.
+     * 28/02/2012 07:36:33 - Revisado formato TREE no script 003.xis. Etiquetas html li, a, e ul devem ficar em maiusculas.
+     * 01/03/2012 09:00:43   075.xis e-mail Importante: O diretorio onde será criada a base de dados "phl_tmp" tem que ter permissões de gravação
+     * 19/03/2012 10:28:17 - Revisada a FST da base de log (001_log.fst). Corrigido TUS= e TDO= (910^c e 910^e).
+     * 19/03/2012 10:31:05 - Revisada a FST da base de emp (001_emp.fst). Substituido COD= por TUS= (900^c)
+     * 19/03/2012 14:44:08 - Revisado a tab_acv.fmt e incluido opção de índice no campo de autores de analitica de serie (010)
+     * 04/04/2012 11:00:56 - Revisado "tab_dag.pft" e atualizado diagnóstico da base de dados de históricos
+     * 12/04/2012 06:47:37 - Revisado "phl84.xis" e incluido verificação do conteúdo da variável "lang".
+     * 16/04/2012 17:16:18 - Revisado "075.xis". Alterado para New o parametro mfn da base phl_tmp.
+     * 04/05/2012 09:31:14 - Revisado "003.fnc". Substituido de subcampo "n" para subcampo "m" o campo de armazenagem do MFN do título para não conflitar com o subcampo "n" do MFN da data de validade da reserva
+     * 04/05/2012 09:31:14 - Revisado "003.fnc". Incluida a chamada do formato "tab_fmx 11" após a carga do campo #1.
+     * 04/05/2012 09:32:26 - Revisado "tab_fmx", mfn=000129 - Incluido informação de "disponível até" no status da reserva
+     * 21/05/2012 08:31:28 - Revisadas as "tab_man.seq" e "tab_fdt.seq" com os novos campos de dados criados por Hilda para museus e arquivos
+     * 21/05/2012 08:55:06 - Criado para museus, a tabela "phl_cat"
+     * 14/06/2012 11:27:44 - Incluido campo (#022 - tipo de suporte) no "tab_acv_fmt.fmt"
+     * 16/06/2012 08:33:59 - Revisada a FST da base de dados cpa (phl_cpa.fst) e incluido chaves para a rotina de EEB (emprestimo entre bibliotecas)
+     * 16/06/2012 08:34:57 - Criado o script eeb.xis responsável pela rotina de EEB
+     * 16/06/2012 08:36:57 - Revisado o script 042.xis responsável pelas sugestoes de compra e incluido rotinas para EEB
+     * 16/06/2012 08:39:23 - Revisado tabela "tab_fdt.seq" e incluido novos campos para a base de dados phl_cpa (sugestao de compras e EEB)
+     * 16/06/2012 08:40:48 - Revisado formulário "tab_cpa.fmt" e incluido novos campos para EEB
+     * 16/06/2012 08:42:08 - Revisado compatibilizado com o EEB o mfn=6 do "tab_pft.seq"
+     * 16/06/2012 08:48:06 - Revisado "tab_fmx.seq" e incluido novas opções para EEB
+     * 22/06/2012 11:07:55 - Revisado "tab_dag.seq" mfn=711
+     * 16/08/2012 17:06:45 - Revisado "tab_acv.fmt" e incluido nome das etiquetas dos campos #22, #26 e #71
+     * 17/08/2012 09:53:27 - Revisato "tab_pft.seq" e corrigido permissão para edição do calendário
+     * 18/09/2012 16:13:53 - Revisado relatório personalizado de empréstimos x área do conhecimento (mfn=4 de phl_rel.seq).
+     * 16/10/2012 14:30:46 - Eliminada a opção "Calendário" no menu de opções para a entrada de dados (tab_fmx.seq, mfn=58)
+     * 18/10/2012 15:40:44 - Atualizado o formulário de registro do uso da coleção "tab_usc.fmt", a caixa de entrada passa a ser zerada para o registro do próximo tombo. Na versão anterior, o tombo anterior permanecia na caixa de entrada, havendo necessidade de apagá-lo mmanualmente para o registro do novo tombo.
+     * 18/10/2012 16:48:09 - Corrigido bug no relatório personalizado (mfn=35) - phl_rel.seq
+     * 12/11/2012 16:45:30 - Corrigido bug no reg. 67 da tab_fmx.seq (comprovante de devolução não estava trazendo as observações no caso de objetos de consulta local ou indisponível) 
+     * 21/11/2012 11:30:48 - 069.xis (aviso de disponibilidade) - Corrigido bug na obtencao dos dados do usuario [Elysio]
+     * 12/03/2013 09:39:24 - 069.xis (aviso de disponibilidade) - Corrigido bug na obtencao dos dados do titulo [Elysio]
+     * 05/04/2013 15:51:15 - 029.xis Incluida nova função na rotina de alteração de senha do funcionário [Elysio]
+     * 05/04/2013 15:54:01 - 027.xis Incluida nova função na rotina de gravação de novos registros [Elysio]
+     * 05/04/2013 15:55:47 - 002.xis Incluida nova função na rotina de gravação de registros editados [Elysio]
+     * 05/04/2013 15:57:28 - tab_pwd.fmt Alterado a forma de edição do campo de senha (#652) [Elysio]
+     * 16/04/2013 11:00:50 - Foi criado um novo sistema para gestão das opções das caixas de seleção dos formulários do PHL. 
+                             Nas versões anteriores, o usuário era obrigado a informar previamente estas opções, alimentando previamente uma tabela antes de 
+                             iniciar o uso do PHL. Por exemplo, existia uma tabela com as opções de cursos, outra com as opções de idiomas, etc. 
+                             Embora algumas tabelas já vinham preenchidas com as opçoes mais comuns, o desconforto era grande quando se necessitava de uma 
+                             opção que não tinha sido prevista. Nesta nova versão, não há mais necessidade de se prever opções. Não existindo a opção, 
+                             o próprio bibliotecário digita o termo no campo de dado e automaticamente ele passa a constituir automaticamente uma nova 
+                             opção da caixa de seleção.
+     * 12/09/2013 10:19:13   Editado registro 000168 da tab_fmx responsável pela composição do relatório estatistico do acervo I [elysio]
+     * 12/09/2013 10:20:25   Editado arquivo phl_acv.fst e alteradas chaves que geram entradas para os relatórios estatísticos
+     * 12/09/2013 10:21:18   Editado manual do phl84 [elysio]
+     * 16/09/2013 16:30:47   Editado e corrigido campo #26 da "tab_acv.fmt"  [elysio]
+     * 28/01/2014 15:37:46   042.xis Corrigido bug no acompanhamento de sugestões de compra
+     * 18/03/2014 10:04:36   tab_ser.fmt Corrigido bug na caixa de seleção de cursos do formulário do kardex (campo #780) [Elysio]:
+     * 05/08/2014 16:00:42   corrigido bug na opção de preferência de buscas nos formatos curto, referencia e biblio (curto.xsl, referencia.xsl, biblio.xsl)
+     * 08/08/2014 11:24:45   corrigido bug do status do registro no 002.xis
+     * 15/08/2014 10:02:52   alterada rotina de seleçao de registros para geração do inventário do acervo. Os registros marcados como indisponíveis
+                             no campo 807 do registro de tombo, não serão mais considerados no inventário. Os scripts editados foram:
+                             tab_inv.pft, phl_inv_xml.pft, tab_fmx.seq (mfn=43).
+     * 26/08/2014 16:17:19   Corrigido o campo de idioma do formulário de entrada e edição da base de dados kardex  (tab_ser.fmt). 
+     * 03/09/2014 09:45:25   Corrigido bug na geração de gráfico de frequencia no mfn=201 da tab_fmx.seq.
+     * 05/09/2014 17:15:49   Corrigido bug no formulário de entrada do tipo de coleção (tab_fmx.seq) mfn=101
+     * 13/01/2015 09:38:49   067.xis - Incluido código da biblioteca no nome do arquivo XML gerado na rotina para envio de e-mails de atraso; - elysio
+     * 13/01/2015 09:48:52   068.xis - Incluido código da biblioteca no nome do arquivo XML gerado na rotina para envio de e-mails de alerta; - elysio
+     * 13/01/2015 09:51:32   069.xis - Incluido código da biblioteca no nome do arquivo XML gerado na rotina para envio de e-mails de disponibilidade; - elysio
+     * 06/02/2015 16:30:50   tab_fmx.seq mfn=249 - Corrigido o link "enviar lote". - elysio
+     * 06/02/2015 16:50:04   067.xis, 068.xis, 069.xis Incluido comando de importacao da variavel 3000 para gerar o link de enviar lote. - elysio
+     * 13/03/2015 10:28:53   038.xis - corrigido bug que verifica data de validade da matricula para reservas [elysio]
+     * 26/03/2015 11:08:22   tab_fmx.seq - mfn 249, 252, 253 - Envio de e-mails em lotes [elysio]
+     * 09/04/2015 16:58:01   tab_mod1.pft - corrigido bug na emissao da carteirinha do usuario [elysio]
+     * 10/04/2015 09:06:31   029.xis - corrigido bug que registra responsável pela alteração de senha [elysio]
+     * 28/04/2015 16:34:21   E-mail. (tab_fmx.seq), susbstituido o link para o texto de e-mail de atraso na devolução para ler o conteúdo do campo 648 da phl_set e não mais o registro
+                             345 da tab_txt. [elysio]
+     * 24/06/2015 10:04:12   Editado registro #79 da tab_fmx.seq e incluidas as opções de exportação para Autoridades, Fornecedores e Vocabulário [elysio]
+     * 20/07/2015 08:59:54   Editado registro #79 da tab_fmx.seq e incluida a opção de exportação do catálogo em formato de tabela para importação ao excel [elysio]
+     * 20/07/2015 09:00:50   Editado o 016.xis e incluida a opção CSV que permite a exportação de registros do catálogo em formato de tabela para importação ao excel [elysio]
+     * 08/08/2015 10:16:46   Criado o registro 261 da tab_fmx.seq que gera o arquivo de exportação do catalogo para excel [elysio]
+     * 10/08/2015 11:10:56   Criado o registro 262 da tab_fmx.seq que gera o arquivo de exportação do tombo para excel [elysio]
+     * 10/08/2015 11:11:28   Criado o registro 263 da tab_fmx.seq que gera o arquivo de exportação do kardex para excel [elysio]
+     * 10/08/2015 11:13:08   Criado o registro 264 da tab_fmx.seq que gera o arquivo de exportação dos históricos da circulação para excel [elysio]
+     * 10/08/2015 11:14:13   Atualizado manual do phl84 [elysio]
+     * 24/08/2015 09:24:59   053.xis - Corrigido bug na devolucao expressa quando objeto estava atrasado [elysio]
+     * 01/09/2015 18:49:00   001.xis - Incluida função que impede que registros de tombos e usuários com operações de empréstimo sejam editados, evitando 
+                             erros que eram comuns nas operações de reservas e renovações. [elysio]
+     * 14/09/2015 11:27:00   008.xis - Incluida função que elimina tombos associados ao registro do título no catálogo quando o registro do título for eliminado. [elysio]
+     * 18/09/2015 10:32:45   034.xis - Corrigido bug de ordenação da lista de fasciculos catalogados. [elysio].
+     * 22/09/2015 12:08:43   tab_legenda.pft - Corrigido bug de apresentação no formato completo, que omitia o tipo de conteudo na legenda [elysio]
+     * 15/10/2015 09:42:24   tab_acv_imp.fmt - Atualizada composição de tabelas de tipos no formulário de importação de dados [elysio]
+     * 11/11/2015 08:02:19   011.xis - eliminado diagnostico das bases de dados que foram extintas (idm, cnt, spt e cur) [elysio]
+     * 28/01/2016 09:36:12   tab_fmx.seq mfn=242, incluida opção de tipos de cursos [elysio]
+     * 12/02/2016 15:20:37   tab_tbo.fmt - Corrigido parametros dos campos 800, 801, 807 e 825 [elysio]
+     * 12/02/2016 15:21:37   001.xis - Comentada rotina que verifica se tombo esta emprestado e se usuário tem objeto emprestado [elysio]
+     * 12/02/2016 15:44:43   tab_usr.fmt - Corrigido parametros dos campos 701,703,704,705 e 723 [elysio]
+     * 12/02/2016 15:57:51   tab_fmx.seq - Editado os registros 193, 252, 253 [elysio]
+     * 29/04/2016 10:30:15   phl_nch.pft - Corrigida apresentação de volume quando não tem o fascículo [elysio]
+     * 05/05/2016 08:27:40   tab_fmx.seq mfn=107 incluido icone de impressora no relatório de multas pagas [elysio]
+     * 05/05/2016 08:28:27   rel_cxa.xsl incluido rodapé com total de multas pagas e ícone de impressora [elysio]
+     * 13/05/2016 07:43:41   003.xis - Alterada a barra de navegação dos resultados de busca de imagem para links [elysio]
+     * 13/05/2016 07:47:17   tab_fmx.seq - Alterado o registro #90, incluindo links para a nova barra de navegação nos resultados de busca [elysio]
+     * 27/06/2016 08:46:56   tab_fmx.seq - Alterado o registro #155, incluido numero do telefone junto ao nome do usuário no relatório de empréstimos vencidos [elysio]
+     * 27/06/2016 08:46:56   tab_fmx.seq - Alterado rotina de envio de e-mails em lotes mfns 252,253,254 [elysio filho]
+     * 27/06/2016 08:46:56   tab_fmx.seq - Alterado mfn=193 [elysio filho]
+     * 27/06/2016 08:46:56   mail_lote.php - reescrito código fonte [elysio filho]
+     * 04/08/2016 11:40:26   tab_man.seq - Aterado o registro 103 [elysio]
+     * 05/08/2016 09:05:18   tab_fmx.seq - Alterado o registro 242 comentado a edição da tabela CSS [elysio] 
+     * 01/12/2016 17:33:30   tab_fmx.seq - Alterado o registro 149 (tipo de conteudo) (tipo de suporte) que compõe a caixa de seleção dos filtros de preferências [elysio]
+     * 16/01/2017 10:41:46   019a.xis - Implementada opção de histório de empréstimos no menu da área restrita do usuário [elysio]
+     * 16/01/2017 10:42:29   tab_fmx  - Corrigido apresentação da data do FMX 131
+     * 16/01/2017 10:42:29   tab_fmx  - Incluida a opção de histórico de empréstimos no FMX 122
+     * 19/01/2017 14:00:36   tab_fmx  - Alterado FMX 149
+     * 19/01/2017 14:01:20   preferencia.idioma.fnc eliminado subcampos e decodificação pela base phl_idm [elysio]
+     * 18/02/2017 09:52:05   tab_fmx.seq mfn=66 - incluido link para envio do comprovante de empréstimo por e-mail [elysio]
+     * 18/02/2017 09:53:02   tab_fmx.seq mfn=67 - incluido link para envio do comprovante de devolução por e-mail [elysio]
+     * 18/02/2017 11:28:02   tab_fmx.seq criado mfn=265 -  formulário de justificativa de cancelamento de multa [elysio]
+     * 18/02/2017 11:29:09   tab_fmx.seq criado mfn=266 - recibo de confirmação de cancelamento de multa [elysio]
+     * 18/02/2017 11:30:03   tab_fmx.seq criado mfn=267 e 268 - relatório de multas canceladas [elysio]
+     * 18/02/2017 11:31:26   028A.xis - criada rotina de cancelamento de multas [elysio]
+     * 18/02/2017 11:40:29   tab_pwd.fmt - incluido permissão de cancelamento de multa [elysio]
+     * 20/02/2017 16:14:40   tab_inv.pft -  corrigido bug que considerava no relatório os tombos cancelados [elysio]
+     * 20/02/2017 16:38:52   mail_lote.php - correção na acentuação e destinatário [elysio filho]
+     * 06/03/2017 10:52:13   067.xis 068.xis 069.xis incluido nota quando não existe e-mal a ser enviado [elysio]
+     * 21/03/2017 09:19:18   012.xis - Eliminado aspas da string da variável de busca 958 [elysio]
+     * 01/06/2017 11:22:58   tab_fmx.seq mfn=223 - corrigido bug nas permissões de registro de controle [elysio]
+     * 03/07/2017 14:34:43   tab_tbo.fmt - corrigido apresentação da lista de opções do campo #806  [elysio]
+     * 09/08/2017 15:14:35   012.xis - novo tratamento na variavel 958 [elysio] 
+     * 23/08/2017 10:34:56   tab_fmx.seq mfn=66 incluido a data de devolução no comprovante de empréstimo enviado por e-mail [elysio] 
+     * 29/08/2017 09:46:43   tab_fmx.seq mfn=66 habilitado data de devolução no comprovante para empréstimos múltiplos [elysio]
+     * 06/09/2017 09:10:36   046.xis - incluida informação do título junto com número de tombo na lista de uso da coleção [elysio]
+     * 25/09/2017 15:41:59   015.xis - incluido a chamada para lista de tipos de usuários #091 [elysio]
+     * 02/10/2017 09:06:43   phl_nch.pft - incluido um espaço antes do "v.".[elysio]
+     * 27/10/2017 11:26:53   003.xis - alterado forma de chamada do prefixo e sufixo para destaque de texto da busca [elysio]
+     * 14/12/2017 10:04:04   preferencia.conteudo.fnc - alterado forma de criação da chave do tipo de conteudo [elysio]
+     * 06/02/2018 09:34:00   Versão alterada PHL83 para PHL84_r0 - inclusão etiqueta de formulário em PDF [Elysio Filho]
+     * 27/02/2018 11:43:00   013.xis - corrigido suspensao v111 ">=" [elysio]
+     * 05/03/2018 16:36:00   tab_fmx.seq - corrigido função de envio de email [elysio filho]
+     * 06/03/2018 18:02:00   061.xis inserido link voltar a lista inicial base do tombo [elysio filho]
+     * 08/03/2018 10:54:00   tab_usr.fmt removido restrição de acesso ao campo #703 quando usuário possui objeto em seu poder [Elysio Filho]
+     * 15/03/2018 11:30:00   tab_fmx.seq alterado extrutura do extrato de empréstimo e devolução para envio por e-mail [Elysio Filho]
+     * 19/03/2018 17:45:30   tab_fmx.seq mfn=162 correção relatório XML removido barras no final da linha [Elysio Filho]
+     * 28/05/2018 09:59:00   tab_fmx.seq correção todos CDATA para uso de XML no navegador Chrome [Elysio Filho]
+     * 28/05/2018 10:03:10   tab_fmx.seq mfn=157 incluida CDATA no campo título emprestado correção xml [Elysio Filho]
+     * 04/06/2018 10:04:10   tab_fmx.seq mfn=250 incluida CDATA nos campos para envio de e-mail correção xml [Elysio Filho]
+     * 11/06/2018 10:04:10   bkp.xis gera links apenas para bases com registro [Elysio Filho]
+     * 15/06/2018 09:38:22   gera_bases.bat eliminado instrução de geração de indice da base phl_idx [elysio]
+     * 16/06/2018 08:12:48   phl_tdo.seq - alterado caminho dos arquivos gif de phl83 para phl84 [elysio]
+
+     * 25/06/2018 08:41:10   tab_fmx.seq mfn=161 correção mensagem e-mail individual [Elysio Filho]
+     * 21/08/2018 09:08:00   tab_fmx.seq mfn=97 correção comentário código inclussão de barra no final [Elysio]
+     * 21/08/2018 11:30:00   tab_fmx.seq mfn=118 incluido link para impressão do nada consta - 100.xis script nada consta [Elysio Filho]
+
+
+     * 04/12/2018 10:49:10   013.xis- incluida condição de empréstimo que verifica total de débitos do usuário [elysio]
+     * 04/12/2018 10:49:10   tab_rgl.fmt - incluido no formulário de tipo de usuário, o campo 557 para registro do valor limite de débito [elysio]
+     * 04/12/2018 10:49:10   103.fnc - criada nova função que obtém total de multas do usuário [elysio]
+     * 04/12/2018 10:49:10   tab_fdt.seq - definido o novo campo 557 para registro do limite de débito [elysio]
+     * 04/12/2018 10:49:10   tab_man.seq - incluido descrição do novo campo de dado 557 [elysio]
+     * 18/02/2019 11:16:48   tab_fmx.seq - alterada a barra de navegação para solucionar problema da amostra da seleção [elysio]
+     * 18/02/2019 11:20:51   003.xis - corrigido bug da barra de navegação no rodapé do resultado da busca [elysio]
+     * 15/03/2019 09:24:02   tab_fmx - mfn 97 faltou fechar comentário */ [elysio]
+     * 30/08/2019 10:00:00   001_cxa.fst - Incluido na fst "CANCELADA"d851/,
+
+-->
+
+<!-- Script de abertura -->
+
+     <IsisScript name="phl84.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+<!-- Inicia a secao do script -->
+     <section>
+<!-- <trace>BR</trace>  -->   
+<!-- Carrega variaveis do cliente -->
+     <field action="cgi" tag="4001">tmp</field>
+     <file action="delete" type="output"><pft>,v4001,</pft></file>
+
+     <field action="cgi" tag="7001">lang</field>
+     <field action="cgi" tag="7002">cipar</field>
+     
+<!-- 12/04/2012 06:48:00
+     Verifica se a variável que foi passada com o nome de "lang" não é um script malicioso, tipo javascript <script>alert(document.cookie)</script> -->
+     
+     <flow action="jump">
+       <pft>
+         if size(v7001)=3 then 'continua' fi,
+       </pft>
+     </flow>
+     <field action="replace" tag="7001">por</field>
+
+     <label>continua</label>
+
+     <parm name="cipar"><pft>,cat(v7002),</pft></parm>
+     <display><pft>,putenv('cod.idioma='v7001),</pft></display>
+     <list action="load"><pft>,cat('index.html'),</pft></list>
+     
+     <do task="list">
+     <field action="define" tag="1">Isis_Item</field>
+       <loop>
+         <display>
+           <pft>,proc('<10>'replace(v1,';','#')'</10>')</pft>
+         </display>
+       <field action="export" tag="10">10</field>
+       </loop>
+     </do>
+
+<!-- Armazena dados da sessao -->
+
+     <do task="update">
+       <parm name="db">phl_idx</parm>
+       <parm name="mfn">New</parm>
+       <parm name="fst"><pft>,cat('phl_idx.fst'),</pft></parm>
+
+       <parm name="uctab"><pft>cat('uctab')</pft></parm>
+       <parm name="actab"><pft>cat('actab')</pft></parm>
+
+       <field action="define" tag="1003">Isis_Status</field>
+       <update>
+         <field action="import" tag="list">10,7001,7002</field>
+         <field action="add" tag="3000">
+           <pft>
+             '^a'v7001,
+             '^b'v7002,
+             '^c'v10.17,
+             '^d's(date),
+             '^e',getenv('REMOTE_ADDR'),
+             '^f',getenv('SERVER_SOFTWARE'),
+             '^g',getenv('SERVER_PORT'),
+             '^h',getenv('REQUEST_METHOD'),
+             '^i',getenv('PATH_INFO'),
+             '^j',getenv('PATH_TRANSLATED'),
+             '^k',getenv('SCRIPT_NAME'),
+             '^l',getenv('REMOTE_HOST'),
+           </pft>
+         </field>
+
+         <field action="export" tag="list">3000</field>
+         <field action="delete" tag="list">10,7001,7002</field>
+         <write>Unlock</write>
+
+         <!-- Armazena dados da sessao corrente em tempfile do servidor -->
+
+              <file action="create" type="tempfile">4001</file>
+              <file action="append" type="output"><pft>,v4001,</pft></file>
+              <display><pft>,'^m'mfn'^c'v3000^b,</pft></display>
+              <file action="close" type="output"><pft>,v4001,</pft></file>
+              <field action="export" tag="list">4001</field>
+
+       </update>
+     </do>
+     
+<!-- Compõe página principal do PHL -->
+
+     <!-- Conta conexoes para compor o contador -->
+         <field action="statusdb" tag="6789">phl_idx</field>
+
+     <display>
+       <pft>,
+        '<html>'/
+        '<head>'/
+        '<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">'
+        '<META HTTP-EQUIV="Pragma" CONTENT="no-cache">'/
+        '<META HTTP-EQUIV="Expires" CONTENT="-1">'/
+        '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">'/
+        '<title>'ref(['tab_fmx']1,v1)' - 'ref(['phl_cnf']1,v200)'</title>'/
+        '</head>'/
+        '<frameset framespacing="0" rows="'ref(['phl_cnf']1,f(val(v217)+21,0,0),)',*" frameborder="0">'/
+					'<frameset framespacing="0" rows="'ref(['phl_cnf']1,v217,)',*" frameborder="0">'/
+							'<frame name="logo_cabe" scrolling="no" src="/cgi-bin/wxis.exe?IsisScript=phl84/004.xis&opc=logo_cabe&tmp='v4001'" target="_self" marginwidth="0" marginheight="0">'/
+							'<frame name="cabecalho" scrolling="no" src="/cgi-bin/wxis.exe?IsisScript=phl84/004.xis&opc=cabecalho&tmp='v4001'&counter='f((val(v6789^n)-1),0,0)'" target="_self" marginwidth="0" marginheight="0">'/
+					'</frameset>'/
+					'<frameset cols="46,161">'/
+							'<frameset framespacing="0" rows="'ref(['phl_cnf']1,v239)',*" frameborder="0">'/
+										'<frame name="logo" scrolling="no" src="/cgi-bin/wxis.exe?IsisScript=phl84/025.xis&opc=logo&tmp='v4001'" marginwidth="0" marginheight="0" scrolling="auto" target="_self">'/
+										,if ref(['phl_cnf']1,v210,)='S' then
+										'<frame name="menu" src="/cgi-bin/wxis.exe?IsisScript=phl84/021.xis&opc=form_login&tmp='v4001'&counter='f((val(v6789^n)-1),0,0)'" target="_self" scrolling="auto">'/,
+										,else
+
+										'<frame name="menu" scrolling="no" src="/cgi-bin/wxis.exe?IsisScript=phl84/025.xis&opc=menu&tmp='v4001'&counter='f((val(v6789^n)-1),0,0)'" marginwidth="0" marginheight="0" scrolling="auto" target="_self">'/
+
+										,fi,
+							'</frameset>'/
+							 ,if ref(['phl_cnf']1,v210,)<>'S' then
+							 '<frame name="result" src="/cgi-bin/wxis.exe?IsisScript=phl84/003.xis&opc=busca&tmp='v4001'" target="_self" scrolling="auto">'/,
+							 else
+							'<frame name="result" src="/cgi-bin/wxis.exe?IsisScript=phl84/003.xis&opc=html_restrito&tmp='v4001'" target="_self" scrolling="auto">'/,
+							,fi,
+					'</frameset>'/
+        '</frameset>'/
+        '</html>'/
+       </pft>
+     </display>
+     <flow action="exit">1</flow>
+
+<!-- Finaliza a secao -->
+     </section>
+
+<!-- Finaliza o script -->
+     </IsisScript>

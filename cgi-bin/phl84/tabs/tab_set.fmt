@@ -1,0 +1,439 @@
+'<input type="hidden" name="IsisScript" value="phl84/'v960'.xis">'/
+'<input type="hidden" name="999" value="'v999[1]'">'/
+'<input type="hidden" name="rec" value="'v1010'">'/
+'<input type="hidden" name="exp" value="'v958,"$"n958,'">'/
+'<input type="hidden" name="mfn" value="'v957'">'/
+'<input type="hidden" name="opc" value="grava">'/
+'<input type="hidden" name="dbvar" value="^aphl_set^b22^cset">'/
+'<tr><td class="td1o"><b>'v601'</b></td><td class="topico">'v602' - Registro: 'v638'</td></tr>'/
+,if v960='027' then
+,,,,'<tr><td class="td1o">Código&nbsp;<a href=JavaScript:tab_man(601);>[601]</a></td><td class="td2"><input type="text" class="textbox" name="601" value="',v601,'"></td></tr>'/
+,,,,else
+,,,,'<input type="hidden" name="601" value="'v601'">'/
+,fi
+'<tr><td class="td1o">',ref(['tab_txt']228,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(602);>[602]</a></td><td class="td2"><input type="text" class="textbox" name="602" value="',v602,'"></td></tr>'/
+'<tr><td class="td1e">Logotipo&nbsp;<a href=JavaScript:tab_man(618);>[618]</a></td><td class="td2"><input type="text" class="textbox" name="618" value="',v618,'"></td></tr>'/
+'<tr><td class="td1e">',ref(['tab_txt']121,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(603);>[603]</a></td><td class="td2"><input type="text" class="textbox" name="603"  value="',v603,'"></td></tr>'/
+'<tr><td class="td1e">',ref(['tab_txt']202,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(604);>[604]</a></td><td class="td2"><input type="text" class="textbox" name="604"  value="',v604,'"></td></tr>'/
+'<tr><td class="td1e">',ref(['tab_txt']132,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(605);>[605]</a></td><td class="td2"><input type="text" class="textbox" name="605"  value="',v605,'"></td></tr>'/
+'<tr><td class="td1e">',ref(['tab_txt']42,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(606);>[606]</a></td><td class="td2"><input type="text" class="textbox" name="606"  value="',v606,'"></td></tr>'/
+
+'<tr><td class="td1e">Fuso horário&nbsp;<a href=JavaScript:tab_man(644);>[644]</a></td><td class="td2">
+ <select size="1" name="644">
+ <option 'if s(v644)='-9' then 'selected' fi' value="-9">UTC -12:00</option>
+ <option 'if s(v644)='-8' then 'selected' fi' value="-8">UTC -11:00</option>
+ <option 'if s(v644)='-7' then 'selected' fi' value="-7">UTC -10:00</option>
+ <option 'if s(v644)='-6' then 'selected' fi' value="-6">UTC -09:00</option>
+ <option 'if s(v644)='-5' then 'selected' fi' value="-5">UTC -08:00</option>
+ <option 'if s(v644)='-4' then 'selected' fi' value="-4">UTC -07:00</option>
+ <option 'if s(v644)='-3' then 'selected' fi' value="-3">UTC -06:00</option>
+ <option 'if s(v644)='-2' then 'selected' fi' value="-2">UTC -05:00</option>
+ <option 'if s(v644)='-1' then 'selected' fi' value="-1">UTC -04:00</option>
+ <option 'if s(v644)='+0' or s(v644)='' then 'selected' fi' value="+0">UTC -03:00</option>
+ <option 'if s(v644)='+1' then 'selected' fi' value="+1">UTC -02:00</option>
+ <option 'if s(v644)='+2' then 'selected' fi' value="+2">UTC -01:00</option>
+ <option 'if s(v644)='+3' then 'selected' fi' value="+3">UTC  00:00</option>
+ <option 'if s(v644)='+4' then 'selected' fi' value="+4">UTC +01:00</option>
+ <option 'if s(v644)='+5' then 'selected' fi' value="+5">UTC +02:00</option>
+ <option 'if s(v644)='+6' then 'selected' fi' value="+6">UTC +03:00</option>
+ <option 'if s(v644)='+7' then 'selected' fi' value="+7">UTC +04:00</option>
+ <option 'if s(v644)='+8' then 'selected' fi' value="+8">UTC +05:00</option>
+ <option 'if s(v644)='+9' then 'selected' fi' value="+9">UTC +06:00</option>
+ <option 'if s(v644)='+10' then 'selected' fi' value="+10">UTC +07:00</option>
+ <option 'if s(v644)='+11' then 'selected' fi' value="+11">UTC +08:00</option>
+ <option 'if s(v644)='+12' then 'selected' fi' value="+12">UTC +09:00</option>
+ <option 'if s(v644)='+13' then 'selected' fi' value="+13">UTC +10:00</option>
+ <option 'if s(v644)='+14' then 'selected' fi' value="+14">UTC +11:00</option>
+ <option 'if s(v644)='+15' then 'selected' fi' value="+15">UTC +12:00</option>
+ </select>
+ </td></tr>'
+
+'<tr><td class="td1e">',ref(['tab_txt']159,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(607);>[607]</a></td><td class="td2"><input type="text" class="textbox" name="607"  value="',v607,'"></td></tr>'/
+'<tr><td class="td1e">E-mail&nbsp;<a href=JavaScript:tab_man(608);>[608]</a></td><td class="td2"><input type="text" class="textbox" name="608" value="',v608,'"></td></tr>'/
+'<tr><td class="td1e">',ref(['tab_txt']312,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(609);>[609]</a></td><td class="td2"><input type="text" class="textbox" name="609"  value="',v609,'"></td></tr>'/
+'<tr><td class="td1e">CNPJ&nbsp;<a href=JavaScript:tab_man(610);>[610]</a></td><td class="td2"><input type="text" class="textbox" name="610"  value="',v610,'"></td></tr>'/
+'<tr><td class="td1e">',ref(['tab_txt']422,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(638);>[638]</a></td><td class="td2"><input type="text" class="textbox" name="638"  value="',v638,'"></td></tr>'/
+'<tr><td class="td1e">',ref(['tab_txt']787,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(640);>[640]</a></td><td class="td2"><input type="text" class="textbox" name="640" value="',v640,'"></td></tr>'/
+'<tr><td class="td1e">',ref(['tab_txt']315,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(641);>[641]</a></td><td class="td2"><input type="text" class="textbox" name="641" value="',v641,'"></td></tr>'/
+'<tr><td class="td1e">CCN&nbsp;<a href=JavaScript:tab_man(642);>[642]</a></td><td class="td2"><input type="text" class="textbox" name="642" value="',v642,'"></td></tr>'/
+'<tr><td class="td1e">BIREME&nbsp;<a href=JavaScript:tab_man(643);>[643]</a></td><td class="td2"><input type="text" class="textbox" name="643" value="',v643,'"></td></tr>'/
+'<tr><td class="td1e">',ref(['tab_txt']397,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(637);>[637]</a></td><td class="td2"><input type="text" class="textbox" name="637" value="',v637,'"></td></tr>'/
+'<tr><td class="td1e">Sugerir nº de tombo?&nbsp;<a href=JavaScript:tab_man(612);>[612]</a></td><td class="td2"><input type="radio" value="S"',if v612='S' or v612='' then 'checked' fi,' name="612">',ref(['tab_txt']331,@tab_txt.pft,),'<input type="radio" value="N"',if v612='N' then 'checked' fi,' name="612">',ref(['tab_txt']223,@tab_txt.pft,),'</td></tr>'
+'<tr><td class="td1e">Tombo&nbsp;<a href=JavaScript:tab_man(611);>[611A]</a></td><td class="td2"><input type="radio" value="^a6"',if v611^a='6' or v611^a='' then 'checked' fi,' name="611A">6 dígitos&nbsp;<input type="radio" value="^a9"',if v611^a='9' then 'checked' fi,' name="611A">9 dígitos&nbsp;<input type="radio" value="^a12"',if v611^a='12' then 'checked' fi,' name="611A">12 dígitos</td></tr>'
+'<tr><td class="td1e">Matrícula&nbsp;<a href=JavaScript:tab_man(611);>[611B]</a></td><td class="td2"><input type="radio" value="^b3"',if v611^b='3' then 'checked' fi,' name="611B">3 dígitos&nbsp;<input type="radio" value="^b6"',if v611^b='6' or v611^b='' then 'checked' fi,' name="611B">6 dígitos&nbsp;<input type="radio" value="^b9"',if v611^b='9' then 'checked' fi,' name="611B">9 dígitos</td></tr>'
+'<tr><td class="td1o">Prazo de empréstimo&nbsp;<a href=JavaScript:tab_man(613);>[613]</a></td><td class="td2"><input type="text" class="textbox" name="613" value="',v613,'"></td></tr>'
+'<tr><td class="td1o">Qtde. permitida&nbsp;<a href=JavaScript:tab_man(614);>[614]</a></td><td class="td2"><input type="text" class="textbox" name="614" value="',v614,'"></td></tr>'
+'<tr><td class="td1o">Tipo de pena&nbsp;<a href=JavaScript:tab_man(622);>[622]</a></td><td class="td2"><input type="radio" value="1"',if v622='1' then 'checked' fi,' name="622">',ref(['tab_txt']218,@tab_txt.pft,),'<input type="radio" value="2"',if v622='2' then 'checked' fi,' name="622">'ref(['tab_txt']490,@tab_txt.pft,),'<input type="radio" value="0"',if v622='0' then 'checked' fi,' name="622">'ref(['tab_txt']491,@tab_txt.pft,),'</td></tr>'/
+'<tr><td class="td1o">Penalidade&nbsp;<a href=JavaScript:tab_man(623);>[623]</a></td><td class="td2"><input type="text" class="textbox" name="623" value="',v623,'"></td></tr>'
+'<tr><td class="td1o">Auto-empréstimo&nbsp;<a href=JavaScript:tab_man(615);>[615]</a></td><td class="td2"><input type="text" class="textbox" name="615" value="',v615,'"></td></tr>'
+
+'<table>'/
+'<tr>
+  <td class="td1o">',ref(['tab_txt']1172,@tab_txt.pft,),'&nbsp;<a href=JavaScript:tab_man(616);>[616]</a></td>
+  <td class="td2">
+  </td>
+ </tr>'/
+
+'<tr>
+<td class="td1e">Elemento 01:</td><td class="td2">
+<select size="1" name="6161">
+<option selected value="'v616[1]'">'/
+select v616[1]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+case '15':'Curso'
+endsel,
+'</option>
+<option value="01">Ano de publicação</option>
+<option value="02">Classificação</option>
+<option value="12">Cutter/PHA</option>
+<option value="03">Exemplar</option>
+<option value="04">Edição</option>
+<option value="05">Volume/Fascículo</option>'/
+,if ref(['phl_cnf']1,v208)='S' then '<option value="06">Tipo de coleção</option>' fi,/
+,if ref(['phl_cnf']1,v213)='S' then '<option value="07">Tipo de conteúdo</option>' fi,/
+'<option value="08">Tipo de documento</option>'
+,if ref(['phl_cnf']1,v218)='S' then '<option value="09">Tipo de suporte</option>' fi,/
+'<option value="10">Volume (monografia)</option>
+<option value="11">Tombo</option>
+<option value="14">Título do periódico</option>
+<option value="15">Curso</option>
+</select>
+</td></tr>
+<tr><td class="td1e">Elemento 02:</td><td class="td2">
+<select size="1" name="6162">
+<option selected value="'v616[2]'">'/
+select v616[2]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+endsel,
+'</option>
+<option value="00"></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Classificação</option>
+<option value="12">Cutter/PHA</option>
+<option value="03">Exemplar</option>
+<option value="04">Edição</option>
+<option value="05">Volume/Fascículo</option>'/
+,if ref(['phl_cnf']1,v208)='S' then '<option value="06">Tipo de coleção</option>' fi,/
+,if ref(['phl_cnf']1,v213)='S' then '<option value="07">Tipo de conteúdo</option>' fi,/
+'<option value="08">Tipo de documento</option>'/
+,if ref(['phl_cnf']1,v218)='S' then '<option value="09">Tipo de suporte</option>' fi,/
+'<option value="10">Volume (monografia)</option>
+<option value="11">Tombo</option>
+<option value="14">Título do periódico</option>
+</select>
+</td></tr>
+<tr><td class="td1e">Elemento 03:</td><td class="td2">
+<select size="1" name="6163">
+<option selected value="'v616[3]'">'/
+select v616[3]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+endsel,
+'</option>
+<option value="00"></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Classificação</option>
+<option value="12">Cutter/PHA</option>
+<option value="03">Exemplar</option>
+<option value="04">Edição</option>
+<option value="05">Volume/Fascículo</option>'/
+,if ref(['phl_cnf']1,v208)='S' then '<option value="06">Tipo de coleção</option>' fi,/
+,if ref(['phl_cnf']1,v213)='S' then '<option value="07">Tipo de conteúdo</option>' fi,/
+'<option value="08">Tipo de documento</option>'/
+,if ref(['phl_cnf']1,v218)='S' then '<option value="09">Tipo de suporte</option>' fi,/
+'<option value="10">Volume (monografia)</option>
+<option value="11">Tombo</option>
+<option value="14">Título do periódico</option>
+</select>
+</td></tr>
+<tr><td class="td1e">Elemento 04:</td><td class="td2">
+<select size="1" name="6164">
+<option selected value="'v616[4]'">'/
+select v616[4]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+endsel,
+'</option>
+<option value="00"></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Classificação</option>
+<option value="12">Cutter/PHA</option>
+<option value="03">Exemplar</option>
+<option value="04">Edição</option>
+<option value="05">Volume/Fascículo</option>'/
+,if ref(['phl_cnf']1,v208)='S' then '<option value="06">Tipo de coleção</option>' fi,/
+,if ref(['phl_cnf']1,v213)='S' then '<option value="07">Tipo de conteúdo</option>' fi,/
+'<option value="08">Tipo de documento</option>'/
+,if ref(['phl_cnf']1,v218)='S' then '<option value="09">Tipo de suporte</option>' fi,/
+'<option value="10">Volume (monografia)</option>
+<option value="11">Tombo</option>
+<option value="14">Título do periódico</option>
+</select>
+</td></tr>
+<tr><td class="td1e">Elemento 05:</td><td class="td2">
+<select size="1" name="6165">
+<option selected value="'v616[5]'">'/
+select v616[5]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+endsel,
+'</option>
+<option value="00"></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Classificação</option>
+<option value="12">Cutter/PHA</option>
+<option value="03">Exemplar</option>
+<option value="04">Edição</option>
+<option value="05">Volume/Fascículo</option>'/
+,if ref(['phl_cnf']1,v208)='S' then '<option value="06">Tipo de coleção</option>' fi,/
+,if ref(['phl_cnf']1,v213)='S' then '<option value="07">Tipo de conteúdo</option>' fi,/
+'<option value="08">Tipo de documento</option>'/
+,if ref(['phl_cnf']1,v218)='S' then '<option value="09">Tipo de suporte</option>' fi,/
+'<option value="10">Volume (monografia)</option>
+<option value="11">Tombo</option>
+<option value="14">Título do periódico</option>
+</select>
+</td></tr>
+<tr><td class="td1e">Elemento 06:</td><td class="td2">
+<select size="1" name="6166">
+<option selected value="'v616[6]'">'/
+select v616[6]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+endsel,
+'</option>
+<option value="00"></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Classificação</option>
+<option value="12">Cutter/PHA</option>
+<option value="03">Exemplar</option>
+<option value="04">Edição</option>
+<option value="05">Volume/Fascículo</option>'/
+,if ref(['phl_cnf']1,v208)='S' then '<option value="06">Tipo de coleção</option>' fi,/
+,if ref(['phl_cnf']1,v213)='S' then '<option value="07">Tipo de conteúdo</option>' fi,/
+'<option value="08">Tipo de documento</option>'/
+,if ref(['phl_cnf']1,v218)='S' then '<option value="09">Tipo de suporte</option>' fi,/
+'<option value="10">Volume (monografia)</option>
+<option value="11">Tombo</option>
+<option value="14">Título do periódico</option>
+</select>
+</td></tr>
+<tr><td class="td1e">Elemento 07:</td><td class="td2">
+<select size="1" name="6167">
+<option selected value="'v616[7]'">'/
+select v616[7]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+endsel,
+'</option>
+<option value="00"></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Classificação</option>
+<option value="12">Cutter/PHA</option>
+<option value="03">Exemplar</option>
+<option value="04">Edição</option>
+<option value="05">Volume/Fascículo</option>'/
+,if ref(['phl_cnf']1,v208)='S' then '<option value="06">Tipo de coleção</option>' fi,/
+,if ref(['phl_cnf']1,v213)='S' then '<option value="07">Tipo de conteúdo</option>' fi,/
+'<option value="08">Tipo de documento</option>'/
+,if ref(['phl_cnf']1,v218)='S' then '<option value="09">Tipo de suporte</option>' fi,/
+'<option value="10">Volume (monografia)</option>
+<option value="11">Tombo</option>
+<option value="14">Título do periódico</option>
+</select>
+</td></tr>
+<tr><td class="td1e">Elemento 08:</td><td class="td2">
+<select size="1" name="6168">
+<option selected value="'v616[8]'">'/
+select v616[8]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+endsel,
+'</option>
+<option value="00"></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Classificação</option>
+<option value="12">Cutter/PHA</option>
+<option value="03">Exemplar</option>
+<option value="04">Edição</option>
+<option value="05">Volume/Fascículo</option>'/
+,if ref(['phl_cnf']1,v208)='S' then '<option value="06">Tipo de coleção</option>' fi,/
+,if ref(['phl_cnf']1,v213)='S' then '<option value="07">Tipo de conteúdo</option>' fi,/
+'<option value="08">Tipo de documento</option>'
+,if ref(['phl_cnf']1,v218)='S' then '<option value="09">Tipo de suporte</option>' fi,/
+'<option value="10">Volume (monografia)</option>
+<option value="11">Tombo</option>
+<option value="14">Título do periódico</option>
+</select>
+</td></tr>
+<tr><td class="td1e">Elemento 09:</td><td class="td2">
+<select size="1" name="6169">
+<option selected value="'v616[9]'">'/
+select v616[9]
+case '00':''
+case '01':'Ano de publicação'
+case '02':'Classificação'
+case '12':'Cutter/PHA'
+case '03':'Exemplar'
+case '04':'Edição'
+case '05':'Volume/Fascículo'
+case '06':'Tipo de coleção'
+case '07':'Tipo de conteúdo'
+case '08':'Tipo de documento'
+case '09':'Tipo de suporte'
+case '10':'Volume (monografia)'
+case '11':'Tombo'
+case '14':'Título do periódico'
+endsel,
+'</option>
+<option value="00"></option>
+<option value="01">Ano de publicação</option>
+<option value="02">Classificação</option>
+<option value="12">Cutter/PHA</option>
+<option value="03">Exemplar</option>
+<option value="04">Edição</option>
+<option value="05">Volume/Fascículo</option>'/
+,if ref(['phl_cnf']1,v208)='S' then '<option value="06">Tipo de coleção</option>' fi,/
+,if ref(['phl_cnf']1,v213)='S' then '<option value="07">Tipo de conteúdo</option>' fi,/
+'<option value="08">Tipo de documento</option>'/
+,if ref(['phl_cnf']1,v218)='S' then '<option value="09">Tipo de suporte</option>' fi,/
+'<option value="10">Volume (monografia)</option>
+<option value="11">Tombo</option>
+<option value="14">Título do periódico</option>
+</select>
+</td></tr>'
+,if ref(['phl_pwd']val(v3000^4),v657^i,)='1' then
+'<tr>
+  <td class="td1o"></td><td class="topico">E-mails - (envio em lote com autenticação)</td>
+</tr>'
+
+'<tr>
+  <td class="td1e">Porta SMTP <a href=JavaScript:tab_man(651);>[651]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="651" value="',v651,'"></td>
+</tr>'
+
+'<tr>
+  <td class="td1e">Servidor SMTP <a href=JavaScript:tab_man(645);>[645]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="645" value="',v645,'"></td>
+</tr>'
+
+'<tr>
+  <td class="td1e">Usuário SMTP <a href=JavaScript:tab_man(646);>[646]</a></td>
+  <td class="td2"><input type="text" class="textbox" name="646" value="',v646,'"></td>
+</tr>'
+'<tr>
+  <td class="td1e">Senha SMTP <a href=JavaScript:tab_man(647);>[647]</a></td>
+  <td class="td2"><input type="password" class="textbox" name="647" value="',v647,'"></td>
+</tr>'
+'<tr>
+  <td class="td1e">Mensagem de atraso <a href=JavaScript:tab_man(648);>[648]</a></td>
+  <td class="td2"><textarea name="648" rows="3">'(v648/),'</textarea></td>
+</tr>'
+'<tr>
+  <td class="td1e">Mensagem de alerta <a href=JavaScript:tab_man(649);>[649]</a></td>
+  <td class="td2"><textarea name="649" rows="3">'(v649/),'</textarea></td>
+</tr>'
+'<tr>
+  <td class="td1e">Mensagem de disponibilidade <a href=JavaScript:tab_man(650);>[650]</a></td>
+  <td class="td2"><textarea name="650" rows="3">'(v650/),'</textarea></td>
+</tr>'
+,fi
+'</table>'

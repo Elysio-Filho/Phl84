@@ -1,0 +1,47 @@
+                          CONTRATO DE LICENCIAMENTO
+                          PHL(c)Elysio M.S.Oliveira
+                          =========================
+
+Este Contrato de Licenciamento não é um contrato de venda, mas um contrato
+entre  o  autor  e  você em relação  ao uso do PHL(c)Elysio. Ao instalar o
+PHL(c)Elysio  significa que  você  concorda com os  termos deste contrato.
+Se não estiver de acordo com alguma parte deste contrato de licenciamento, 
+não instale o PHL(c)Elysio.
+
+                         DIREITO DE USO DO SOFTWARE
+                         ==========================
+
+O autor, lhe dá o  direito de usar o  PHL-Personal Home Library  por tempo
+indeterminado em servidores locais com IP 127.0.0.1 (localhost).  O uso do
+PHL em servidores de redes (intranet/internet), ou qualquer outro servidor
+com IP diferente ao citado, requer  consentimento  expresso e firmado pelo
+autor mediante pagamento de direitos autorais.
+
+O autor, lhe fornece  todos os roteiros (scripts) que compõe o  PHL com os
+códigos fontes abertos, dando-lhe o direito de modificá-los e personalizá-
+los conforme suas necessidades locais.
+
+                                  COPYRIGHT
+                                  =========
+
+O copyright  e os direitos de propriedade intelectual do PHL(c)Elysio e de
+sua documentação são do autor e são protegidos pelas leis de copyright  da 
+República Brasileira e tratados internacionais de propriedade intelectual.
+
+                            LIMITAÇÃO DA GARANTIA
+                            =====================
+
+O autor, não garante que o uso do PHL(c)Elysio será adequado aos propósitos
+específicos de cada usuário e não poderá ser responsabilizado por quaisquer 
+danos causados pelo uso desta aplicação.
+
+                               RECONHECIMENTO
+                               ==============
+                               
+Você  reconhece ter  lido e entendido  este contrato de licenciamento e ter
+concordado com seus termos. Você reconhece que este contrato tem prioridade
+sobre  qualquer ordem,  acordo, anúncio ou outro contrato por escrito que o
+preceda.
+
+                       Elysio Mira Soares de Oliveira
+		       .Todos os direitos reservados.

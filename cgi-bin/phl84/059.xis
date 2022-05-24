@@ -1,0 +1,50 @@
+<!-- Busca analiticas -->
+
+     <IsisScript name="059.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+     <field action="cgi" tag="958">exp</field>
+
+     <do task="search">
+       <parm name="db">phl_acv</parm>
+       <parm name="expression"><pft>,'PAI='v958,</pft></parm>
+       <field action="define" tag="1001">Isis_Status</field>
+       <display>
+       <pft>
+         '<html>'
+         '<head>'
+         '<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+         '</head>'
+         '<h1>'ref(['tab_txt']740,@tab_txt.pft,)'</h1>'
+         '<blockquote>'
+       </pft>
+       </display>
+       <loop>
+         <display>
+           <pft>
+             '<img src="/phl84/img/030.gif" border="0">&nbsp;',@phl_acv_geral.pft,
+             '<hr>'
+           </pft>
+         </display>
+       </loop>
+       <display>
+         <pft>
+         '</blockquote><hr><center><a href="javascript:history.back();">'ref(['tab_txt']392,@tab_txt.pft,)'</a></center>
+         </html>'
+         </pft>
+       </display>
+     </do>
+     
+</section>
+</IsisScript>

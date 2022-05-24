@@ -1,0 +1,124 @@
+<!-- Altera senha de permissao do funcionario
+     * 05/04/2013 15:48:58 
+     * 10/04/2015 09:05:16 corrigido bug que grava responsável pela alteração da senha [elysio] 
+     -->
+
+     <IsisScript name="029.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao (vars) que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (manutencao) que verifica estado de manutencao do sistema -->
+     <include>phl84/manutencao.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     
+<!-- Verifica estado de manutencao  -->
+     <call name="manutencao">now</call>
+
+<!-- Carrega variáveis do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="957">mfn</field>
+     <field action="cgi" tag="996">new_pwd</field>
+     <field action="cgi" tag="997">conf_new_pwd</field>
+
+     <flow action="jump"><pft>v950</pft></flow>
+     <flow action="exit">1</flow>
+
+     <label>form_new_pwd</label>
+     <display><htmlpft><pft>,ref(['tab_fmx']23,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+     
+     <label>verifica_senha</label>
+     <flow action="jump">
+     <pft>,if p(v996) and v996=v997 then 'SENHA_OK' else '327' fi,</pft></flow>
+
+     <label>327</label>
+     <field action="add" tag="250">327</field>
+     <display><htmlpft><pft>,ref(['tab_fmx']10,v4),</pft></htmlpft></display>
+     <flow action="exit">1</flow>
+
+     <label>SENHA_OK</label>
+
+       <file action="close" type="database">phl_pwd</file>
+
+       <do task="update">
+       <parm name="db">phl_pwd</parm>
+       <parm name="mfn"><pft>,v957,</pft></parm>
+       <parm name="uctab"><pft>cat('uctab')</pft></parm>
+       <parm name="actab"><pft>cat('actab')</pft></parm>
+       <parm name="fst"><pft>,cat('phl_pwd.fst'),</pft></parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+
+       <update>
+           <field action="import" tag="list">3000,7003</field>
+           <field action="add" tag="1234"><pft>,v999[1],</pft></field>
+           <field action="export" tag="list">651</field>
+           <field action="delete" tag="list">652,999</field>
+           <field action="cgi" tag="652">new_pwd</field>
+           <field action="add" tag="999"><pft>,v1234,</pft></field>
+           <field action="add" tag="999"><pft>'^d'v7003.8,'^h'v7003*9.4,'^b'v3000^2,</pft></field>
+           <field action="delete" tag="list">1234,3000,7003</field>
+           
+           <write>Unlock</write>
+           <field action="import" tag="list">651,3000,7003</field>
+           <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zMOD|029.xis',</pft></field>
+           <call name="log">now</call>
+           <proc><pft>,if val(v1003)=0 then 'a250~326~' fi,</pft></proc>
+           <display>
+           <htmlpft>
+             <pft>,if val(v1003)=0 then ref(['tab_fmx']10,v4) else ref(['tab_fmx']133,v4) fi</pft>
+           </htmlpft>
+           </display>
+
+         </update>
+
+      </do>
+      <file action="close" type="database">phl_pwd</file>
+      
+      <display>
+        <pft>
+          '<p align="center">
+          <font type="courier" size="+1">',
+          ,ref(['phl_pwd']val(v957),
+          'Login: ',v651'<br>'/
+          'Senha: 'v652,/
+           ),
+          '</font></p>'/
+        </pft>
+      </display>
+
+    <!-- Nova rotina criada em 05/04/2013 15:49:29  -->
+
+     <do task="update">
+       <parm name="db">phl_pwd</parm>
+       <parm name="mfn"><pft>,v957,</pft></parm>
+       <parm name="buffersize">90000</parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+       <update>
+        <proc><pft>,'d652','a652#xxxxxx#',</pft></proc>
+        <write>Unlock</write>
+       </update>
+     </do>
+     
+     <!-- Fim da nova rotina      -->
+
+   <flow action="exit">1</flow>
+
+</section>
+</IsisScript>

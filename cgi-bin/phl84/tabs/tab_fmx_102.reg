@@ -1,0 +1,124 @@
+!ID 000102
+!v004![pft]
+!v004!'<!-- FMX000102 -->'/
+!v004!'<html>'/
+!v004!'<head>'/
+!v004!'<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'/
+!v004!'<link href="/phl84/css/buscaphl.css" rel="stylesheet" type="text/css">'/
+!v004!'<script language="JavaScript" src="/phl84/js/submit.js"></script>'/
+!v004!'<script language="JavaScript" src="/phl84/js/url.js"></script>'/
+!v004!'<script>'/
+!v004!'function comentario(x){'/
+!v004!' ajuda = window.open("/cgi-bin/wxis.exe?IsisScript=phl84/051.xis&&tmp='v4001'&opc=form&mfn="+x,"janela","height=400,width=600,menubar=yes,resizable=yes,scrollbars=yes,status=yes")'/
+!v004!' } '/
+!v004!'</script>'/
+!v004!'<script>'/
+!v004!'function tab_man(x)'/
+!v004!' { '/
+!v004!'  window.open("/cgi-bin/wxis.exe?IsisScript=phl84/049.xis&tmp='v4001'&mfn="+x,"janela","height=400,width=600,menubar=no,resizable=yes,scrollbars=yes,status=no") '/
+!v004!' } '/
+!v004!'</script>'/
+!v004!'<script>'/
+!v004!'var xmlHttp'/
+!v004!'function showResult(str)'/
+!v004!'{ '/
+!v004!'if (str.length==0)'/
+!v004!' { '/
+!v004!' document.getElementById("buscaphl").'/
+!v004!' innerHTML="";'/
+!v004!' document.getElementById("buscaphl").'/
+!v004!' style.border="0px";'/
+!v004!' return '/
+!v004!' } '/
+!v004!'xmlHttp=GetXmlHttpObject()'/
+!v004!'if (xmlHttp==null) '/
+!v004!' { '/
+!v004!' alert ("Browser does not support HTTP Request")'/
+!v004!' return '/
+!v004!' } '/
+!v004!'var url="/cgi-bin/wxis.exe?IsisScript=phl84/'v980,"087.xis"n980,'&opc=busca&rpp='v201'&acv='v953'&tip='v964'&bool='v202'&idm='v967'&cnt='v968'&col='v970'&spt='v971'&stf='v977'&pft='v965'&tmp='v4001'" '/
+!v004!'url=url+"&q="+str '/
+!v004!'url=url+"&sid="+Math.random()'/
+!v004!'xmlHttp.onreadystatechange=stateChanged '/
+!v004!'xmlHttp.open("GET",url,true)'/
+!v004!'xmlHttp.send(null)'/
+!v004!'}'/
+!v004!'function stateChanged()'/
+!v004!'{ '/
+!v004!'if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")'/
+!v004!' { '/
+!v004!' document.getElementById("buscaphl").'/
+!v004!' innerHTML=xmlHttp.responseText;'/
+!v004!' document.getElementById("buscaphl").'/
+!v004!' style.border="0px solid #A5ACB2"; '/
+!v004!' } '/
+!v004!'}'/
+!v004!'function GetXmlHttpObject() '/
+!v004!'{ '/
+!v004!'var xmlHttp=null;'/
+!v004!'try '/
+!v004!' {  '/
+!v004!' // Firefox, Opera 8.0+, Safari '/
+!v004!' xmlHttp=new XMLHttpRequest(); '/
+!v004!' } '/
+!v004!'catch (e) '/
+!v004!' {  '/
+!v004!' // Internet Explorer '/
+!v004!' try '/
+!v004!'  {  '/
+!v004!'  xmlHttp=new ActiveXObject("Msxml2.XMLHTTP"); '/
+!v004!'  }  '/
+!v004!' catch (e) '/
+!v004!'  {  '/
+!v004!'  xmlHttp=new ActiveXObject("Microsoft.XMLHTTP"); '/
+!v004!'  }  '/
+!v004!' }  '/
+!v004!'return xmlHttp;  '/
+!v004!'}'/
+!v004!'</script>'/
+!v004!'<script Language="JavaScript">'/
+!v004!' <!-- ' /
+!v004!' function openwindow(x,y){ '/
+!v004!' ajuda = window.open("/phl84/por"+x+".html#"+y,"janela","height=600,width=800,scrollbars=yes")'/
+!v004!' } ' /
+!v004!' --> '/
+!v004!'</script>'/
+!v004!'<script>'/
+!v004!' function sf(){document.formulario.exp.focus()}'
+!v004!'</script>'/
+!v004!'</head>'/
+!v004!'<body onload="sf();">'/
+!v004!'<form name="formulario" action="/cgi-bin/wxis.exe" method="POST" target="result">'/
+!v004!'<input type="hidden" name="tmp" value="'v4001'">'/
+!v004!'<table width="100%" align="center" bgcolor="'ref(['phl_cnf']1,v236)'">'/
+!v004!'<tr><td width="70%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;'/
+!v004!'<input type="radio" name="bool"' if v202='and' or v202='' then 'checked' fi,' value="and">'ref(['tab_txt']802,@tab_txt.pft,)'&nbsp;'
+!v004!'<input type="radio" name="bool"' if v202='or' then 'checked' fi,' value="or">'ref(['tab_txt']803,@tab_txt.pft,)'&nbsp;'/
+!v004!'<input type="radio" name="bool"' if v202='frase' then 'checked' fi,' value="frase">'ref(['tab_txt']1140,@tab_txt.pft,)'&nbsp;'/
+!v004!'<input type="radio" name="bool"' if v202='exp' then 'checked' fi,' value="exp">'ref(['tab_txt']146,@tab_txt.pft,)'&nbsp;'/
+!v004!'</td><td width="30%"></td></tr>'/
+!v004!'<tr><td width="70%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;'/
+!v004!'<input size="70" name="exp" onsubmit="showResult(this.value)" onkeyup="showResult(this.value)" value="'mhu,v958,mhl'">&nbsp;<input class="botao" name="submitter" onClick="return DoubleClickTrapperAction();" type="submit" value="'ref(['tab_txt']31,@tab_txt.pft,)'"></td>'/
+!v004!'</td><td width="30%"><a href=/cgi-bin/wxis.exe?IsisScript=phl84/003.xis&opc=filtro&rpp='v201'&tag='v203'&acv='v953'&tip='v964'&idm='v967'&pft=',if a(v965) then ref(['phl_cnf']1,v230) else v965 fi,'&col='v970'&spt='v971'&cnt='v968'&ordem='v966'&tmp='v4001'&idx='v980'>',if val(v977)=1 then '<b>* ',ref(['tab_txt']981,@tab_txt.pft,),' *</b>' else ref(['tab_txt']981,@tab_txt.pft,) fi,'</a></td></tr>'/
+!v004!'<tr><td width="70%" align="center"><b>'ref(['phl_set']l(['phl_set']'ACV='v953),v602,)'</b>'/
+!v004!'</td><td width="30%">&nbsp;</td></tr>'/
+!v004!'</table>'/
+!v004!,if ref(['phl_cnf']1,v220)='S' or p(v980) then
+!v004!'<div id="buscaphl"></div>'/
+!v004!,fi
+!v004!'<input type="hidden" name="IsisScript" value="phl84/003.xis">'/
+!v004!'<input type="hidden" name="acv" value="',v953'">'/
+!v004!'<input type="hidden" name="cnt" value="',v968,'">'/
+!v004!'<input type="hidden" name="col" value="',v970,'">'/
+!v004!'<input type="hidden" name="idm" value="',v967,'">'/
+!v004!'<input type="hidden" name="opc" value="',if p(v965) then v965 else ref(['phl_cnf']1,v230) fi,'">'/
+!v004!'<input type="hidden" name="pft" value="',if p(v965) then v965 else ref(['phl_cnf']1,v230) fi,'">'/
+!v004!'<input type="hidden" name="rpp" value="',if p(v201) then v201 else ref(['phl_cnf']1,v207) fi,'">'/
+!v005!'<input type="hidden" name="sel" value="'(v2015/)'">'/
+!v004!'<input type="hidden" name="spt" value="',v971,'">'/
+!v004!'<input type="hidden" name="stf" value="',v977,'">'/
+!v004!'<input type="hidden" name="tag" value="',v203,'">'/
+!v004!'<input type="hidden" name="tip" value="',v964,'">'/
+!v004!'<input type="hidden" name="idx" value="',v980,'">'/
+!v004!'</form>'/
+!v004![/pft]

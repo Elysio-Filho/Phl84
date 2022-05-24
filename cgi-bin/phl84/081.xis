@@ -1,0 +1,76 @@
+<IsisScript name="081.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+     <field action="cgi" tag="950">opc</field>
+     
+     <flow action="jump"><pft>,v950,</pft></flow>
+
+     <label>versoes</label>
+     <field action="statusfile" tag="1">c:\phl7\cgi-bin\phl7\bases\phl_acv.mst</field>
+     <field action="statusfile" tag="2">c:\phl8\cgi-bin\phl8\bases\phl_acv.mst</field>
+     <field action="statusfile" tag="3">c:\phl81\cgi-bin\phl81\bases\phl_acv.mst</field>
+
+     <flow action="jump">
+       <pft>
+         ,if s(v1^s,v2^s,v3^s):'e' then 'phl_detectado' else 'finaliza' fi,
+       </pft>
+     </flow>
+     <flow action="exit">1</flow>
+     
+     <label>phl_detectado</label>
+     <field action="statusfile" tag="1">c:\phl7\cgi-bin\phl7\bases\phl_acv.mst</field>
+     <field action="statusfile" tag="2">c:\phl8\cgi-bin\phl8\bases\phl_acv.mst</field>
+     <field action="statusfile" tag="3">c:\phl81\cgi-bin\phl81\bases\phl_acv.mst</field>
+     <display>
+       <pft>
+         '<html>'
+         '<head>'
+         '<link href="/phl84/css/phl.css" rel="stylesheet" type="text/css">'
+         '</head>'
+         '<body>'
+         '<br><br><br><br>'
+         '<h1>As versões listadas abaixo foram encontradas no seu computador</h1>'
+
+         '<br>'
+         '<blockquote><blockquote>'
+         '<ul>'
+          ,if v1^s='e' then '<li><b>PHL7</b>
+          <p>Para a importação das bases de dados, copie e cole o comando abaixo na caixa de texto de execução do windows:</p>
+                              <pre>c:\phl84\bases\importar_phl7.bat</pre>
+                             </li>' fi
+          ,if v2^s='e' then '<li><b>PHL8</b>
+          <p>Para a importação das bases de dados, copie e cole o comando abaixo na caixa de texto de execução do windows:</p>
+                              <pre>c:\phl84\bases\importar_phl8.bat</pre>
+                             </li>' fi
+          ,if v3^s='e' then '<li><b>PHL8.1</b>
+          <p>Para a importação das bases de dados, copie e cole o comando abaixo na caixa de texto de execução do windows:</p>
+                             <pre>c:\phl84\bases\importar_phl81.bat</pre>
+                             </li>' fi
+          '</ul>'
+          '</blockquote></blockquote>'
+          '<blockquote>'
+          '<fieldset><blockquote><br>Para abrir a caixa de texto de execução do windows, clique
+          no botão "<b>Iniciar</b>" do windows, selecione a opção "<b>Run</b>" ou "<b>Executar</b>" e cole
+          o comando correspondente à versão que pretende importar<br><br>
+          <font color="red"><center>***  <b>Não prossiga com o uso do phl84 antes de executar o procedimento de atualização!</b>  ***</center></font></blockquote></fieldset>
+          </blockquote>'
+          '</body>'
+          '</html>'
+       </pft>
+     </display>
+     <flow action="exit">1</flow>
+     
+     <label>finaliza</label>
+     <flow action="exit">1</flow>
+
+  </section>
+</IsisScript>

@@ -1,0 +1,677 @@
+!ID 000001
+!v001!acv
+!v002!,'phl_acv'
+!v004!'001 001'/,/* Código da biblioteca (unidade do sistema)*/
+!v004!'002 002'/,/* Número de identificação (chave de ligação)*/
+!v004!'003 003'/,/* Classificação*/
+!v004!'004 004'/,/* Base de dados*/
+!v004!'005 005'/,/* Código de tipo de documento*/
+!v004!'006 006'/,/* Código de nível de tratamento*/
+!v004!'008 008'/,/* Suporte eletrônico*/
+!v004!'009 009'/,/* Separata (s/n) */
+!v004!'010 010'/,/* Autor (nível analítico)*/
+!v004!'011 011'/,/* Autor Coletivo (nivel analitico)*/
+!v004!'012 012'/,/* Título (nível analítico) */
+!v004!'013 013'/,/* Título traduzido (nível analítico)*/
+!v004!'014 014'/,/* Paginação (nível analítico)*/
+!v004!'015 015'/,/* Ementa e créditos (nivel monográfico)*/
+!v004!'016 016'/,/* Autor Pessoal  (nível monográfico)*/
+!v004!'017 017'/,/* Autor Coletivo (nível monográfico)*/
+!v004!'018 018'/,/* Título (nível monográfico)*/
+!v004!'019 019'/,/* Título traduzido (nivel monográfico)*/
+!v004!'020 020'/,/* Paginação (nível monográfico) */
+!v004!'021 021'/,/* Volume (nível monográfico)*/
+!v004!'022 022'/,/* (0) Subtipo do documento*/
+!v004!'023 023'/,/* Autor (nível coleção)*/
+!v004!'024 024'/,/* Autor Coletivo (nível coleção)*/
+!v004!'025 025'/,/* Título (nível coleção)*/
+!v004!'026 026'/,/* (0) Tipo de coleção*/
+!v004!'027 027'/,/* Total de volumes (monográfico)*/
+!v004!'028 028'/,/* Nacionalidade */
+!v004!'029 029'/,/* Nova aquisição */
+!v004!'030 030'/,/* Título (série/coleção)*/
+!v004!'031 031'/,/* Número do volume */
+!v004!'032 032'/,/* Número do fascículo*/
+!v004!'033 033'/,/* Número do título no kardex*/
+!v004!'034 034'/,/* Suplemento*/
+!v004!'035 035'/,/* ISSN*/
+!v004!'036 036'/,/* livre */
+!v004!'037 037'/,/* livre */
+!v004!'038 038'/,/* Informação Descritiva */
+!v004!'039 039'/,/* Nivel de descrição arquivistica */
+!v004!'040 040'/,/* Idioma do documento*/
+!v004!'041 041'/,/* Idioma do resumo */
+!v004!'042 042'/,/* livre */
+!v004!'043 043'/,/* Povo (museu)*/
+!v004!'044 044'/,/* livre */
+!v004!'045 045'/,/* livre */
+!v004!'046 046'/,/* livre */
+!v004!'047 047'/,/* livre */
+!v004!'048 048'/,/* livre */
+!v004!'049 049'/,/* livre */
+!v004!'050 050'/,/* Tese - Instituição*/
+!v004!'051 051'/,/* Tese - Notas*/
+!v004!'052 052'/,/* Evento - Patrocinadores*/
+!v004!'053 053'/,/* Evento - Nome*/
+!v004!'054 054'/,/* Data do evento*/
+!v004!'055 055'/,/* Data Normalizada */
+!v004!'056 056'/,/* Local do evento*/
+!v004!'057 057'/,/* Evento - País*/
+!v004!'058 058'/,/* Projeto - Patrocinadores */
+!v004!'059 059'/,/* Projeto - Nome*/
+!v004!'060 060'/,/* Projeto - Número */
+!v004!'061 061'/,/* Notas gerais*/
+!v004!'062 062'/,/* Editora*/
+!v004!'063 063'/,/* Edição, revisão, etc*/
+!v004!'064 064'/,/* Data da publicação*/
+!v004!'065 065'/,/* Data ISO para efeito de ordenação */
+!v004!'066 066'/,/* Local de publicação*/
+!v004!'067 067'/,/* País de publicação*/
+!v004!'068 068'/,/* Símbolo*/
+!v004!'069 069'/,/* ISBN*/
+!v004!'070 070'/,/* imagem da capa */
+!v004!'071 071'/,/* Tipo de Publicação*/
+!v004!'072 072'/,/* Total de referências*/
+!v004!'073 073'/,/* livre */
+!v004!'074 074'/,/* Alcance temporal - desde */
+!v004!'075 075'/,/* Alcance temporal - até*/
+!v004!'076 076'/,/* Descritor precodificado */
+!v004!'077 077'/,/* livre */
+!v004!'078 078'/,/* Indivíduo como tema*/
+!v004!'079 079'/,/* Bibliografia de cursos*/
+!v004!'080 080'/,/* livre */
+!v004!'081 081'/,/* livre */
+!v004!'082 082'/,/* Outras localidades*/
+!v004!'083 083'/,/* Resumo do documento*/
+!v004!'084 htm'/,/* Código HTML*/
+!v004!'085 085'/,/* Área do conhecimento (CNPQ)*/
+!v004!'086 086'/,/* Notas de Conteúdo*/
+!v004!'087 087'/,/* Descritores do conteúdo, palavras-chaves*/
+!v004!'088 088'/,/* Descritores Secundários*/
+!v004!'089 089'/,/* Observações*/
+!v004!'090 090'/,/* (0) Status de publicação na Web*/
+!v004!'091 091'/,/* Nivel de permissao */
+!v004!'092 092'/,/* livre */
+!v004!'093 093'/,/* livre */
+!v004!'094 094'/,/* livre */
+!v004!'095 095'/,/* livre */
+!v004!'096 htr'/,/* livre */
+!v004!'097 097'/,/* livre */
+!v004!'098 098'/,/* livre */
+!v004!'099 099'/,/* livre */
+!v004!'103 103'/,/* Cutter / PHA */
+!v004!'105 105'/,/* Genero (arquivo)*/
+!v004!'121 121'/,/* Ementa - Créditos (nivel analítico)*/
+!v004!'141 141'/,/* Suporte físico (nivel analítico) */
+!v004!'181 181'/,/* Subtítulo (nível monográfico)*/
+!v004!'182 182'/,/* Subtítulo (nível série)*/
+!v004!'186 186'/,/* Comentários do usuário (wiki) */
+!v004!'996 996'/,/* ID nivel superior*/
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/* Controle de datas*/
+
+!ID 000002
+!v001!cal
+!v004!'320 320'/,/* Dia do mes*/
+!v004!'321 321'/,/* Dia da semana*/
+!v004!'322 322'/,/* Mes*/
+!v004!'323 323'/,/* Ano*/
+!v004!'324 324'/,/* Status do dia*/
+!v004!'325 325'/,/* Nota sobre a data*/
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/* Controle*/
+
+!ID 000003
+!v001!cdu
+!v004!'310 310'/,/*Classe*/,
+!v004!'311 311'/,/*Descrição (repetitivo)*/,
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/*Controle (repetitivo)*/
+
+!ID 000004
+!v001!txt
+!v004!'301 301'/,/*portugues*/,
+!v004!'302 302'/,/*espanhol*/,
+!v004!'303 303'/,/*ingles*/,
+!v004!'304 304'/,/*italiano*/,
+!v004!'305 305'/,/*frances*/,
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/*Controle (repetitivo)*/
+
+!ID 000005
+!v001!cnf
+!v004!'200 200'/,/* Nome do Sistema de Bibliotecas*/
+!v004!'201 201'/,/* Flag de manutenção*/
+!v004!'202 202'/,/* Tempo estimado de manutenção*/
+!v004!'203 203'/,/* Mensagem de abertura*/
+!v004!'204 204'/,/* Link para página do PHL*/
+!v004!'205 205'/,/* Campos para filtro de busca*/
+!v004!'206 206'/,/* Conjunto da amostra na edição*/
+!v004!'207 207'/,/* Conjunto da amostra na busca*/
+!v004!'208 208'/,/* Filtro de coleções*/
+!v004!'209 209'/,/* Tamanho da fonte do codigo de barras - TTF */
+!v004!'210 210'/,/* Restrição na busca*/
+!v004!'211 211'/,/* Padrão do código de barras*/
+!v004!'212 212'/,/* Filtro de idioma*/
+!v004!'213 213'/,/* Filtro de conteúdo*/
+!v004!'214 214'/,/* Flag para descritores*/
+!v004!'215 215'/,/* Filtro de tipo*/
+!v004!'216 216'/,/* Altura do cabeçalho */
+!v004!'217 217'/,/* Conteúdo do cabeçalho*/
+!v004!'218 218'/,/* Filtro de suportes*/
+!v004!'219 219'/,/* Cookie ou Tempfile (C=cookie T=tempfile)*/
+!v004!'220 220'/,/* Mostra índice de chaves (S=mostra N=nao mostra)*/
+!v004!'221 221'/,/* Regras de empréstimo (1 = tipo de coleção / 2 = tipo de documento)*/
+!v004!'222 222'/,/* Solicita senha no emprestimo*/
+!v004!'223 223'/,/* Mostra nota de conteudo*/
+!v004!'224 224'/,/* Icones de tipo de suporte*/
+!v004!'225 225'/,/* Auto completar (catalogo = C / vocabulario = V) */
+!v004!'226 226'/,/* Auto completar (catalogo = C / autoridades = A) */
+!v004!'227 227'/,/* Tipo de senha do usuário externo (N=Numerica, A=Alfanumerica)*/
+!v004!'228 228'/,/* Largura do código de barras (width)*/
+!v004!'229 229'/,/* Altura do código de barras (height)*/
+!v004!'230 230'/,/* Formato default*/
+!v004!'231 231'/,/* Menu personalizado*/
+!v004!'232 232'/,/* Cor principal */
+!v004!'233 233'/,/* Cor dos textos */
+!v004!'234 234'/,/* Cor invertida dos textos */
+!v004!'235 235'/,/* Padrão de fonte */
+!v004!'236 236'/,/* Cor secundaria */
+!v004!'237 237'/,/* Idiomas de trabalho */
+!v004!'238 238'/,/* Logotipo PHL */
+!v004!'239 239'/,/* Altura do frame do logotipo PHL */
+!v004!'240 240'/,/* Link */
+!v004!'241 241'/,/* Link over */
+!v004!'242 242'/,/* Diagnostico */
+!v004!'243 243'/,/* Habilitar filtro na pagina de busca (S - habilita N - Não habilita) */
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/* Controle*/
+
+!ID 000006
+!v001!cpa
+!v004!'870 870'/,/* ISBN*/
+!v004!'871 871'/,/* Autor do documento sugerido*/
+!v004!'872 872'/,/* Título do documento sugerido*/
+!v004!'873 873'/,/* Editora do documento sugerido*/
+!v004!'874 874'/,/* Local da editora*/
+!v004!'875 875'/,/* Ano de publicação do documento sugerido*/
+!v004!'876 876'/,/* Número total de páginas*/
+!v004!'877 877'/,/* Nome do solicitante*/
+!v004!'878 878'/,/* E-mail do solicitante*/
+!v004!'879 879'/,/* Curso matriculado*/
+!v004!'880 880'/,/* Departamento do solicitante*/
+!v004!'881 881'/,/* Quantidade de exemplares sugeridos*/
+!v004!'882 882'/,/* Justificativas para a compra*/
+!v004!'883 883'/,/* Código da Unidade ou biblioteca*/
+!v004!'884 884'/,/* Status da aprovação da compra*/
+!v004!'885 885'/,/* Observações de uso interno*/
+!v004!'886 886'/,/* Providências tomadas*/
+!v004!'887 887'/,/* Codigo do fornecedor*/
+!v004!'888 888'/,/* Data da compra do documento sugerido*/
+!v004!'889 889'/,/* Matricula do usuário*/
+!v004!'890 890'/,/* Tipo de documento*/
+!v004!'891 891'/,/* Tipo de operação (eeb - empréstimo entre bibliotecas ou sc - sugestão de compra*/
+!v004!'892 892'/,/* Biblioteca que possui o objeto a ser emprestado pelo eeb e que participam do sistema*/
+!v004!'893 893'/,/* Providencia (temporario)*/
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/* Controle*/
+
+!ID 000007
+!v001!cxa
+!v004!'850 850'/,
+!v004!'851 851'/,/* Observaçoes */
+
+!ID 000008
+!v001!emp
+!v004!'900 900'/
+
+!ID 000009
+!v001!cur
+!v004!'301 301'/,/*PT  nome do curso e disciplina*/,
+!v004!'302 302'/,/*ES  nome do curso e disciplina*/,
+!v004!'303 303'/,/*EN  nome do curso e disciplina*/,
+!v004!'304 304'/,/*IT  nome do curso e disciplina*/,
+!v004!'305 305'/,/*FR  nome do curso e disciplina*/,
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/,/*Controle (repetitivo)*/
+
+!ID 000010
+!v001!for
+!v004!'750 750'/,/* Código da Unidade*/
+!v004!'751 751'/,/* Numero de identificação (chave de ligação)*/
+!v004!'752 752'/,/* Nome do fornecedor*/
+!v004!'753 753'/,/* CNPJ/CPF do fornecedor*/
+!v004!'754 754'/,/* Endereço do fornecedor*/
+!v004!'755 755'/,/* Cidade do fornecedor*/
+!v004!'756 756'/,/* Estado do fornecedor*/
+!v004!'757 757'/,/* CEP do fornecedor*/
+!v004!'758 758'/,/* Fones do fornecedor*/
+!v004!'759 759'/,/* E-mails do fornecedor*/
+!v004!'760 760'/,/* Títulos agenciados*/
+!v004!'761 761'/,/* Editoras representadas pelo fornecedor*/
+!v004!'762 762'/,/* Notas gerais*/
+!v004!'763 763'/,/* Site Web*/
+!v004!'764 764'/,/* País do Fornecedor*/
+!v004!'765 765'/,/* livre */
+!v004!'766 766'/,/* livre */
+!v004!'767 767'/,/* livre */
+!v004!'768 768'/,/* livre */
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/* Controle*/
+
+!ID 000011
+!v001!tdo
+!v004!'301 301'/,/* PT - Tipo de objeto */,
+!v004!'302 302'/,/* ES - Tipo de objeto */,
+!v004!'303 303'/,/* EN - Tipo de objeto */,
+!v004!'304 304'/,/* IT - Tipo de objeto */,
+!v004!'305 305'/,/* FR - Tipo de objeto */,
+!v004!'350 350'/,/* Tipo de formulário */,
+!v004!'370 370'/,/* Icone */,
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/,/*Controle (repetitivo)*/
+
+!ID 000013
+!v001!log
+!v004!'910 910'/
+!v004!'911 911'/
+
+!ID 000014
+!v001!pen
+!v004!'940 940'/
+
+!ID 000015
+!v001!col
+!v004!'301 301'/,/* PT - nome da coleção */,
+!v004!'302 302'/,/* ES - nome da coleção */,
+!v004!'303 303'/,/* EN - nome da coleção */,
+!v004!'304 304'/,/* IT - nome da coleção */,
+!v004!'305 305'/,/* FR - nome da coleção */,
+!v004!'370 370'/,/* icone */,
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/*Controle (repetitivo)*/
+
+!ID 000016
+!v001!pqt
+!v004!'671 671'/,/* Tipo de usuário*/
+!v004!'672 672'/,/* Tipo de documento*/
+!v004!'673 673'/,/* Prazo de empréstimo (dias)*/
+!v004!'674 674'/,/* Quantidade permitida*/
+!v004!'676 676'/,/* Penalidade*/
+!v004!'677 677'/,/* Tipo de pena (0=nenhuma,1=multa, 2=suspensao)*/
+!v004!'678 678'/,/* Tipo de prazo (U=dias úteis ou C=corridos)*/
+!v004!'679 679'/,/* Tipo de cálculo da multa (U=dias úteis ou C=corridos)*/
+!v004!'680 680'/,/* Permite renovar  (S=Sim N=Nao) */
+!v004!'681 681'/,/* Permite reservar (S=Sim N=Nao) */
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/,/* Controle*/
+
+!ID 000017
+!v001!pwd
+!v004!'651 651'/,/* Login*/
+!v004!'652 652'/,/* Senha*/
+!v004!'653 653'/,/* Nível de permissão*/
+!v004!'654 654'/,/* Unidades permitidas*/
+!v004!'655 655'/,/* Entrada e edição (bases)*/
+!v004!'656 656'/,/* Rotinas*/
+!v004!'657 657'/,/* Menu Inicial*/
+!v004!'658 658'/,/* bases de dados*/
+!v004!'659 659'/,/* restricoes de IP */
+!v004!'660 660'/,/* tabelas de configuração */
+!v004!'661 661'/,/* entrada e edição (tabelas) */
+!v004!'662 662'/,/* registos de controle */
+!v004!'663 663'/,/* entrada e edição (registros) */
+!v004!'664 664'/,/* edição (arquivos) */
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/,/* Controle*/
+
+!ID 000018
+!v001!res
+!v004!'930 930'/
+
+!ID 000019
+!v001!rgl
+!v004!'301 301'/,/* PT - tipo de usuario */,
+!v004!'302 302'/,/* ES - tipo de usuario */,
+!v004!'303 303'/,/* EN - tipo de usuario */,
+!v004!'304 304'/,/* IT - tipo de usuario */,
+!v004!'305 305'/,/* FR - tipo de usuario */,
+!v004!'520 520'/,/* Não emprestar se usuário estiver com cadastro vencido*/
+!v004!'521 521'/,/* Não emprestar se usuário tiver objetos atrasados*/
+!v004!'522 522'/,/* Não emprestar se usuário estiver suspenso*/
+!v004!'523 523'/,/* Não emprestar se usuário tiver débitos ou penalidade*/
+!v004!'524 524'/,/* Não emprestar se houver reserva para outro usuário*/
+!v004!'525 525'/,/* Não emprestar se limite foi ultrapassado*/
+!v004!'526 526'/,/* Não emprestar mais que um exemplar para um mesmo usuário*/
+!v004!'527 527'/,/* Limite de objetos*/
+!v004!'528 528'/,/* Limite de renovações*/
+!v004!'529 529'/,/* Não solicitar senha do usuário durante o empréstimo*/
+!v004!'530 530'/,/* Não permitir que usuário suspenso efetue reservas*/
+!v004!'531 531'/,/* Não permitir que usuário com débitos efetue reservas*/
+!v004!'532 532'/,/* Não permitir que usuário com cadastro vencido efetue reservas*/
+!v004!'533 533'/,/* Não permitir que usuário com atrasos efetue reservas*/
+!v004!'534 534'/,/* Não permitir que usuário reserve um título que está em seu poder*/
+!v004!'535 535'/,/* Não permitir que usuário efetue várias reservas do mesmo título*/
+!v004!'536 536'/,/* Não permitir reservas para títulos disponíveis*/
+!v004!'537 537'/,/* Cancelar reserva a partir do prazo de validade*/
+!v004!'538 538'/,/* Limite de reservas*/
+!v004!'539 539'/,/* Não permitir que usuário altere seu cadastro*/
+!v004!'540 540'/,/* Não permitir que usuário faça comentários (wiki)*/
+!v004!'541 541'/,/* Não permitir que usuário faça sugestões de compra */
+!v004!'542 542'/,/* Não permitir auto-emprestimo */
+!v004!'550 550'/,/* Não renovar se usuário estiver com cadastro vencido*/
+!v004!'551 551'/,/* Não renovar se usuário estiver suspenso*/
+!v004!'552 552'/,/* Não renovar se existir reserva para outro usuário*/
+!v004!'553 553'/,/* Não renovar se prazo estiver expirado*/
+!v004!'554 554'/,/* Não renovar se usuário tiver penalidades*/
+!v004!'555 555'/,/* Não renovar se usuário tiver outros objetos atrasados*/
+!v004!'556 556'/,/* Não permitir solicitação de empréstimo em outra biblioteca (EEB)*/
+!v004!'557 557'/,/* Não permitir empréstimo se multa ultrapassar valor definido*/
+!v004!'998 998'/,/* MFN do registro*/
+!v004!'999 999'/,/* Controle*/
+
+!ID 000021
+!v001!ser
+!v004!'768 768'/,/* Coleção eletrônica*/
+!v004!'769 769'/,/* Menção de responsabilidade*/
+!v004!'770 770'/,/* Coden*/
+!v004!'771 771'/,/* Código da Coleção (chave de ligação)*/
+!v004!'772 772'/,/* ISSN*/
+!v004!'773 773'/,/* Título do periódico*/
+!v004!'774 774'/,/* Continua como*/
+!v004!'775 775'/,/* Continuacao de*/
+!v004!'776 776'/,/* Periodicidade*/
+!v004!'777 777'/,/* Local da publicação*/
+!v004!'778 778'/,/* Editora*/
+!v004!'779 779'/,/* Secão/Parte*/
+!v004!'780 780'/,/* Curso indicado*/
+!v004!'781 781'/,/* Endereço eletrônico*/
+!v004!'782 782'/,/* Procedência*/
+!v004!'783 783'/,/* Estado da coleção*/
+!v004!'784 784'/,/* Forma de aquisição*/
+!v004!'785 785'/,/* Subtítulo do periódico*/
+!v004!'786 786'/,/* Histórico*/
+!v004!'787 787'/,/* Permuta com*/
+!v004!'788 788'/,/* Renovar em*/
+!v004!'789 789'/,/* Idiomas*/
+!v004!'790 790'/,/* Coleção impressa*/
+!v004!'791 791'/,/* Observações*/
+!v004!'792 792'/,/* Descritores de conteúdo*/
+!v004!'793 793'/,/* Área Temática*/
+!v004!'794 794'/,/* Variações do Título*/
+!v004!'795 795'/,/* País da publicação (ISO)*/
+!v004!'796 796'/,/* Ano do primeiro fascículo*/
+!v004!'797 797'/,/* Data de encerramento*/
+!v004!'798 798'/,/* Numero no CCN*/
+!v004!'799 799'/,/* Título abreviado*/
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/* Controle*/
+
+!ID 000022
+!v001!set
+!v004!'601 601'/,/* Código da unidade*/
+!v004!'602 602'/,/* Nome da biblioteca*/
+!v004!'603 603'/,/* Endereço*/
+!v004!'604 604'/,/* Cidade*/
+!v004!'605 605'/,/* Estado*/
+!v004!'606 606'/,/* CEP*/
+!v004!'607 607'/,/* Fones*/
+!v004!'608 608'/,/* Email*/
+!v004!'609 609'/,/* Nome do responsável pela biblioteca*/
+!v004!'610 610'/,/* CNPJ*/
+!v004!'611 611A'/,/* Tamanho do tombo*/
+!v004!'611 611B'/,/* Tamanho da matricula*/
+!v004!'612 612'/,/* Sugerir número de tombo*/
+!v004!'613 613'/,/* Prazo de empréstimo (dias corridos)*/
+!v004!'614 614'/,/* Quantidade permitida */
+!v004!'615 615'/,/* Faixa IP (auto-emprestimo) */
+!v004!'616 6161'/,/* Etiqueta */
+!v004!'616 6162'/,/* Etiqueta */
+!v004!'616 6163'/,/* Etiqueta */
+!v004!'616 6164'/,/* Etiqueta */
+!v004!'616 6165'/,/* Etiqueta */
+!v004!'616 6166'/,/* Etiqueta */
+!v004!'616 6167'/,/* Etiqueta */
+!v004!'616 6168'/,/* Etiqueta */
+!v004!'616 6169'/,/* Etiqueta */
+!v004!'616 6160'/,/* Etiqueta */
+!v004!'618 618'/,/* Logotipo da biblioteca */
+!v004!'620 620'/,/* Box - Unidade da federação*/
+!v004!'622 622'/,/* Tipo de pena (0=nenhuma,1=multa, 2=suspensao)*/
+!v004!'623 623'/,/* Penalidade */
+!v004!'637 637'/,/* Mensagem no rodapé dos comprovantes*/
+!v004!'638 638'/,/* Registro*/
+!v004!'639 639'/,/* Cod. aquisição p/ doacao*/
+!v004!'640 640'/,/* Horario de abertura (^a) e Fechamento (^b) - seg/sexta*/
+!v004!'641 641'/,/* Horario de abertura (^a) e Fechamento (^b) - sábado*/
+!v004!'642 642'/,/* Codigo no CCN/IBICT*/
+!v004!'643 643'/,/* Código da BIREME*/
+!v004!'644 644'/,/* Fuso horario*/
+!v004!'645 645'/,/* Servidor SMTP*/
+!v004!'646 646'/,/* Usuário SMTP*/
+!v004!'647 647'/,/* Senha SMTP*/
+!v004!'648 648'/,/* Mensagem de atraso */
+!v004!'649 649'/,/* Mensagem de alerta */
+!v004!'650 650'/,/* Mensagem de disponibilidade */
+!v004!'651 651'/,/* Porta SMTP*/
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/* Controle*/
+
+!ID 000023
+!v001!tbo
+!v004!'800 800'/,/* Número do titulo (chave de ligação)*/
+!v004!'801 801'/,/* Número do tombo*/
+!v004!'802 802'/,/* Livre */
+!v004!'803 803'/,/* Exemplar */
+!v004!'804 804'/,/* Etiqueta */
+!v004!'805 805'/,/* Livre */
+!v004!'806 806'/,/* Livre (substituido pelo #79 do catálogo) */
+!v004!'807 807'/,/* Circula? (S/N) */
+!v004!'808 808'/,/* Livre */
+!v004!'809 809'/,/* Livre (substituido pelo #28 do catálogo) */
+!v004!'810 810'/,/* Livre */
+!v004!'811 811'/,/* Livre */
+!v004!'812 812'/,/* Livre */
+!v004!'813 813'/,/* Livre */
+!v004!'814 814'/,/* Livre */
+!v004!'815 815'/,/* Livre */
+!v004!'816 816'/,/* Livre */
+!v004!'817 817'/,/* Livre */
+!v004!'818 818'/,/* Livre */
+!v004!'819 819'/,/* Forma de aquisição*/
+!v004!'820 820'/,/* Data da aquisição*/
+!v004!'821 821'/,/* Fornecedor, doador*/
+!v004!'822 822'/,/* Nota Fiscal*/
+!v004!'823 823'/,/* Valor em moeda corrente*/
+!v004!'824 824'/,/* Valor em dolar*/
+!v004!'825 825'/,/* Prazo exepcional*/
+!v004!'826 826'/,/* Técnicas e métodos de restaurações*/
+!v004!'827 827'/,/* Materiais empregados no tratamento*/
+!v004!'828 828'/,/* Livre */
+!v004!'829 829'/,/* Livre */
+!v004!'830 830'/,/* Antigos proprietários*/
+!v004!'831 831'/,/* Cedência*/
+!v004!'832 832'/,/* Livre */
+!v004!'833 833'/,/* Valor do seguro*/
+!v004!'834 834'/,/* Livre */
+!v004!'835 835'/,/* Livre */
+!v004!'836 836'/,/* Livre */
+!v004!'837 837'/,/* Observações*/
+!v004!'997 997'/,/* mfn_acv*/
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/* Controle*/
+
+!ID 000025
+!v001!usr
+!v004!'700 700'/,/* Login */,
+!v004!'701 701'/,/* Número de matrícula (chave de ligação)*/
+!v004!'702 pwd'/,/* Senha*/
+!v004!'703 703'/,/* Status*/
+!v004!'704 704'/,/* Validade da matrícula*/
+!v004!'705 705'/,/* Nome do usuário*/
+!v004!'706 706'/,/* Endereço*/
+!v004!'707 707'/,/* Cidade*/
+!v004!'708 708'/,/* Unidade da federação*/
+!v004!'709 709'/,/* CEP*/
+!v004!'710 710'/,/* Fones*/
+!v004!'711 711'/,/* Período*/
+!v004!'712 712'/,/* Turma*/
+!v004!'713 713'/,/* Curso*/
+!v004!'714 714'/,/* Email*/
+!v004!'715 715'/,/* Livre */
+!v004!'716 716'/,/* Perfil (SDI)*/
+!v004!'717 717'/,/* hiperlink*/
+!v004!'718 718'/,/* Pronome de tratamento */,
+!v004!'719 719'/,/* Fotografia*/
+!v004!'720 720'/,/* Departamento*/
+!v004!'721 721'/,/* Sexo */
+!v004!'722 722'/
+!v004!'723 723'/,/* Tipo de usuário*/
+!v004!'724 724'/,/* Lembrete/alerta*/
+!v004!'725 725'/,/* Observaçoes*/
+!v004!'726 726'/,/* Data de nascimento ISO*/
+!v004!'727 727'/,/* Numero doc. Identidade*/
+!v004!'728 CPF'/,/* CPF*/
+!v004!'730 730'/,/* Unidade da matricula*/
+!v004!'998 998'/,/* mfn*/
+!v004!'999 999'/,/* Controle*/
+
+!ID 000027
+!v001!rel
+!v004!'501 501'/,/*Grupo do Relatório*/
+!v004!'502 502'/,/*Título do Relatório*/
+!v004!'503 503'/,/*Cabecalho padrao (S=Sim N=Nao)*/
+!v004!'504 504'/,/*Base de dados*/
+!v004!'505 505'/,/*Expressão de Busca para seleção do conjunto*/
+!v004!'506 506'/,/*Base de dados para combinação*/
+!v004!'507 507'/,/*Chave de ligação*/
+!v004!'508 508'/,/*Tipo de relatório*/
+!v004!'509 509'/,/*Tamanho das colunas em porcentagem*/
+!v004!'510 510'/,/*Cabeçalho*/
+!v004!'511 511'/,/*Formato da lista*/
+!v004!'512 512'/,/*Rodapé*/
+!v004!'513 513'/,/*Lista Ordenada*/
+!v004!'514 514'/,/*Observacoes*/
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/,/*Controle*/
+
+!ID 000028
+!v001!voc
+!v004!'401 401'/,/*Termo autorizado*/
+!v004!'411 411'/,/*Notas*/
+!v004!'421 421'/,/*Sinonimos*/
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/,/*Controle*/
+
+!ID 000029
+!v001!aut
+!v004!'450 450'/,/*Nome*/,
+!v004!'451 451'/,/*Notas*/,
+!v004!'452 452'/,/*Formas Variantes (repetitivo)*/,
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/,/*Controle (repetitivo)*/
+
+!ID 000030
+!v001!usc
+!v004!'920 920'/
+!v004!'999 999'/
+
+!ID 000037
+!v001!cnt
+!v004!'301 301'/,/* PT - tipo de conteudo */,
+!v004!'302 302'/,/* ES - tipo de conteudo */,
+!v004!'303 303'/,/* EN - tipo de conteudo */,
+!v004!'304 304'/,/* IT - tipo de conteudo */,
+!v004!'305 305'/,/* FR - tipo de conteudo */,
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/,/*Controle (repetitivo)*/
+
+!ID 000038
+!v001!idm
+!v004!'301 301'/,/* PT - idioma */,
+!v004!'302 302'/,/* ES - idioma */,
+!v004!'303 303'/,/* EN - idioma */,
+!v004!'304 304'/,/* IT - idioma */,
+!v004!'305 305'/,/* FR - idioma */,
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/,/*Controle (repetitivo)*/
+
+!ID 000041
+!v001!spt
+!v004!'301 301'/,/* PT - tipo de suporte */,
+!v004!'302 302'/,/* ES - tipo de suporte */,
+!v004!'303 303'/,/* EN - tipo de suporte */,
+!v004!'304 304'/,/* IT - tipo de suporte */,
+!v004!'305 305'/,/* FR - tipo de suporte */,
+!v004!'370 370'/,/*ícone*/,
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/,/*Controle (repetitivo)*/
+
+!ID 000046
+!v001!etp
+!v004!'200 200'/,/* USO RESTRITO DO SISTEMA  */,
+!v004!'201 201'/,/* Largura da página  */,
+!v004!'202 202'/,/* Altura da página  */,
+!v004!'203 203'/,/* Escala  */,
+!v004!'204 204'/,/* Orientação  */,
+!v004!'205 205'/,/* Tipo da Fonte  */,
+!v004!'206 206'/,/* Tamanho da Fonte  */,
+!v004!'207 207'/,/* Estilo da Fonte  */,
+!v004!'208 208'/,/* Margem superior  */,
+!v004!'209 209'/,/* Margem esquerda  */,
+!v004!'210 210'/,/* Densidade vertical  */,
+!v004!'211 211'/,/* Densidade horizontal  */,
+!v004!'212 212'/,/* Altura da etiqueta  */,
+!v004!'213 213'/,/* Largura da etiqueta  */,
+!v004!'214 214'/,/* Etiquetas por linha  */,
+!v004!'215 215'/,/* Linhas por página  */,
+!v004!'216 216'/,/* Código de barras  */,
+!v004!'217 217'/,/* Estilo do código de barras  */,
+!v004!'218 218'/,/* Tipo do código de barras  */,
+!v004!'219 219'/,/* Tamanho da fonte do código de barras */,
+!v004!'220 220'/,/*  */,
+!v004!'221 221'/,/* Alinhamento da coluna da etiqueta */,
+!v004!'222 222'/,/* Largura entre etiquetas */,
+!v004!'223 223'/,/* Altura da coluna */,
+!v004!'224 224'/,/* Número de linhas por coluna */,
+!v004!'225 225'/,/* Coluna etiqueta */,
+!v004!'226 226'/,/* Largura etiqueta */,
+!v004!'227 227'/,/* Altura da coluna */,
+!v004!'228 228'/,/* Numero de linhas por coluna */,
+!v004!'229 229'/,/* Nome/modelo da etiqueta */,
+!v004!'601 601'/,/*  */,
+!v004!'602 602'/,/*  */,
+!v004!'638 638'/,/*  */,
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/,/*Controle (repetitivo)*/
+
+!ID 000100
+!v001!acv_fmt
+!v004!'301 301'/,/* PT - tipo de documento */,
+!v004!'302 302'/,/* ES - tipo de documento */,
+!v004!'303 303'/,/* EN - tipo de documento */,
+!v004!'304 304'/,/* IT - tipo de documento */,
+!v004!'305 305'/,/* FR - tipo de documento */,
+!v004!'0 ^t'/
+!v004!'998 998'/,/* MFN do registro */
+!v004!'999 999'/
+
+!ID 000110
+!v001!for_fmt
+!v004!'0 ^t'/
+!v004!'999 999'/
+
+!ID 000121
+!v001!ser_fmt
+!v004!'0 ^t'/
+!v004!'999 999'/
+
+!ID 000123
+!v001!tbo_fmt
+!v004!'0 ^t'/
+!v004!'999 999'/
+
+!ID 000125
+!v001!usr_fmt
+!v004!'0 ^t'/
+!v004!'999 999'/

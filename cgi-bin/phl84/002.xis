@@ -1,0 +1,240 @@
+<!-- Grava registro editado
+     08/08/2014 11:24:00 - Revisado -->
+
+     <IsisScript name="002.xis">
+
+<!-- Define o tipo de conteúdo dos htmls que gerados dinamicamente -->
+     <display><pft>'Content-type: text/html; charset=iso-8859-1'/#</pft></display>
+
+<!-- Inclue funcao que carrega as variaveis de configuracao -->
+     <include>phl84/001.fnc</include>
+     
+<!-- Inclue funcao (009) que divide campos repetitivos -->
+     <include>phl84/009.fnc</include>
+
+<!-- Inclue funcao (tbo) que obtem dados sobre o tombo -->
+     <include>phl84/801.fnc</include>
+
+<!-- Inclue funcao (401) que atuaiza vocabulario -->
+     <include>phl84/401.fnc</include>
+     
+<!-- Inclue funcao (450) que atuaiza autoridades -->
+     <include>phl84/450.fnc</include>
+     
+     <include>phl84/log.fnc</include>
+
+<!-- Inicia a secao do script -->
+     <section>
+
+<!-- Carrega variáveis de configuração -->
+     <call name="001">now</call>
+
+<!-- Carrega variáveis do formulário do cliente -->
+     <field action="cgi" tag="950">opc</field>
+     <field action="cgi" tag="957">mfn</field>
+     <field action="cgi" tag="958">exp</field>
+     <field action="cgi" tag="990">chk_numb</field>
+     <field action="cgi" tag="991">chk_name</field>
+     <field action="cgi" tag="1010">rec</field>
+     <field action="cgi" tag="3004">dbvar</field>
+
+<!-- Carrega permissões de entrada e edição do usuário -->
+     <field action="add" tag="2000"><pft>,ref(['phl_pwd']val(v3000^4),v655),</pft></field>
+     <field action="add" tag="661"><pft>,ref(['phl_pwd']val(v3000^4),v661),</pft></field>
+
+<!-- Desvia fluxo do script -->
+     <flow action="jump"><pft>,v950,</pft></flow>
+   
+<!-- Grava registro -->
+     <label>grava</label>
+     
+     <flow action="jump">
+     <pft>,if v3004^a = 'phl_acv' then v3000^c*2.1 else 'outra' fi,</pft>
+     </flow>
+
+     <label>L</label>
+     <field action="cgi" tag="1">001</field>
+     <field action="cgi" tag="2">002</field>
+     <call name="801">now</call>
+     <field action="replace" tag="7" split="occ"><pft>(v8000/)</pft></field>
+
+     <file action="close" type="database">phl_set</file>
+     <file action="close" type="database">phl_cnf</file>
+     <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+     
+     <label>outra</label>
+
+     <file action="close" type="database"><pft>,v3004^a,</pft></file>
+
+     <do task="update">
+       <parm name="db"><pft>,v3004^a,</pft></parm>
+       <parm name="mfn"><pft>,v957,</pft></parm>
+       <parm name="uctab"><pft>cat('uctab')</pft></parm>
+       <parm name="actab"><pft>cat('actab')</pft></parm>
+       <parm name="fst"><pft>,if v3004^a<>'phl_pwd' then cat(v3004^a'.fst'),fi,</pft></parm>
+       <parm name="buffersize">90000</parm>
+       <parm name="expire">60</parm>
+       <parm name="lockid"><pft>,v3000^2,</pft></parm>
+       <field action="define" tag="1105">Isis_Lock</field>
+       <field action="define" tag="1003">Isis_Status</field>
+       <field action="define" tag="1006">Isis_RecordStatus</field>
+       
+       <update>
+
+       <field action="delete" tag="list">1/9999</field>
+       <field action="import" tag="list">3000,3004,4001,7,7003,15661</field>
+       <cgitable><htmlpft><pft>,ref(['tab_fdt']val(v3004^b),'[pft]',v4,'[/pft]',),</pft></htmlpft></cgitable>
+
+       <field action="replace" tag="655"><pft>,v655,</pft></field>
+       <field action="replace" tag="656"><pft>,v656,</pft></field>
+       <field action="replace" tag="657"><pft>,v657,</pft></field>
+       <field action="replace" tag="658"><pft>,v658,</pft></field>
+       <field action="replace" tag="660"><pft>,v660,</pft></field>
+       <field action="replace" tag="661"><pft>,v661,</pft></field>
+       <field action="replace" tag="662"><pft>,v662,</pft></field>
+       <field action="replace" tag="663"><pft>,v663,</pft></field>
+       <field action="replace" tag="664"><pft>,v664,</pft></field>
+
+<!--   08/08/2014 11:22:30 --> <proc><pft>,if v90='b' or v90='c' then 'd91',fi,</pft></proc>
+       <proc><pft>'d652'</pft></proc>
+       
+       <field action="add" tag="886" split="occ">
+           <pft>,if p(v893) then v893,'^d's(date),'^r'v3000^2 fi,</pft>
+       </field>
+       <field action="delete" tag="893">ALL</field>
+
+
+       <field action="add" tag="999"><pft>'^d'v7003.8,'^h'v7003*9.6,'^b'v3000^2,</pft></field>
+
+       
+       <call name="009">now</call>
+
+       <!--
+       <call name="401">now</call>
+       <call name="450">now</call>
+       -->
+       
+       <field action="export" tag="list">3004</field>
+       <field action="delete" tag="list">3000,3004,4001,7003,</field>
+
+       <write>Unlock</write>
+       <field action="import" tag="list">661,663,957,958,990,991,2000,3000/3004,4001,1010</field>
+       <field action="replace" tag="3000"><pft>,v3000,'^w'v1003,'^x'mstname,'^y'mfn,'^zMOD|002.xis',</pft></field>
+       <call name="log">now</call>
+
+       <display><pft>,select v1003
+        case '1':'<p align="right"><font color="red"><b>1 - Negado o bloqueio na entrada de dados</b></font>'
+        case '2':'<p align="right"><font color="red"><b>2 - Negado o bloqueio do registro</b></font>'
+        case '3':'<p align="right"><font color="red"><b>3 - Negada a atualização do registro</b></font>'
+        case '4':'<p align="right"><font color="red"><b>4 - Registro desbloqueado</b></font>'
+        case '5':'<p align="right"><font color="red"><b>5 - Chave de bloqueio inválida</b></font>'
+        case '6':'<p align="right"><font color="red"><b>6 - O índice não foi atualizado!</b></font>'
+        case '7':'<p align="right"><font color="red"><b>7 - Lock expire time not reached</b></font>'
+        endsel,
+       </pft></display>
+
+       <flow action="jump">
+         <pft>,
+              if v3004^a = 'phl_acv' then 'tbofnc' fi,
+         </pft>
+       </flow>
+       <flow action="jump">browserec</flow>
+
+        <label>tbofnc</label>
+        <call name="801">now</call>
+        <field action="add" tag="5000"><pft>,ref(['phl_tdo']val(v5),v350),</pft></field>
+        <flow action="jump">browserec</flow>
+
+       <label>browserec</label>
+
+       <display>
+         <htmlpft>
+           <pft>
+             ,if v3000^3='usuario' and v3004^c='usr' then
+               '<h1>',ref(['tab_txt']1055,@tab_txt.pft,),'</h1>',
+               else,
+                ,ref(['tab_pft']val(v3004^b),'[pft]',v4,'[/pft]',),
+             ,fi,
+           </pft>
+         </htmlpft>
+       </display>
+       
+            <file action="close" type="database"><pft>,v3000^1'_emp',</pft></file>
+            <file action="close" type="database"><pft>,v3000^1'_ser',</pft></file>
+            <file action="close" type="database"><pft>,v3000^1'_ser_fmt',</pft></file>
+            <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+            <file action="close" type="database">phl_acv_fmt</file>
+            <file action="close" type="database">phl_acv</file>
+            <file action="close" type="database">phl_aut</file>
+            <file action="close" type="database">phl_cnf</file>
+            <file action="close" type="database">phl_cnt</file>
+            <file action="close" type="database">phl_cur</file>
+            <file action="close" type="database">phl_idm</file>
+            <file action="close" type="database">phl_set</file>
+            <file action="close" type="database">phl_spt</file>
+            <file action="close" type="database">phl_voc</file>
+
+         <display><htmlpft><pft>,ref(['tab_fmx']192,v4),</pft></htmlpft></display>
+         
+         <display><htmlpft><pft>,@tab_dag.pft,</pft></htmlpft></display>
+
+        <display>
+          </table>
+          </body>
+          </html>
+        </display>       
+
+       <display>
+         <pft>,if v3004^c<>'tbo' and v3000^3='funcionario' then
+         '<hr><center><a href="/cgi-bin/wxis.exe?IsisScript=phl84/012.xis&opc=busca_recs&rec='v1010'&dbvar='v3004'&exp='v958'&tmp='v4001'">Voltar para a lista inicial</a>',fi,
+         </pft>
+       </display>
+                              
+        <!--Verifica se chaves de link de usuário foram alteradas-->
+            <display><htmlpft><pft>,if v3004^c='usr' and v701<>v990 then ref(['tab_fmx']49,v4),fi,</pft></htmlpft></display>
+
+        <!--Verifica se chaves de link do kardex foram alteradas-->
+            <display><htmlpft><pft>,if v3004^c='ser' and v773<>v991 then ref(['tab_fmx']40,v4),fi,</pft></htmlpft></display>
+
+            <file action="close" type="database"><pft>,v3000^1'_emp',</pft></file>
+            <file action="close" type="database"><pft>,v3000^1'_ser',</pft></file>
+            <file action="close" type="database"><pft>,v3000^1'_ser_fmt',</pft></file>
+            <file action="close" type="database"><pft>,v3000^1'_tbo',</pft></file>
+            <file action="close" type="database">phl_acv_fmt</file>
+            <file action="close" type="database">phl_acv</file>
+            <file action="close" type="database">phl_aut</file>
+            <file action="close" type="database">phl_cnf</file>
+            <file action="close" type="database">phl_cnt</file>
+            <file action="close" type="database">phl_cur</file>
+            <file action="close" type="database">phl_idm</file>
+            <file action="close" type="database">phl_set</file>
+            <file action="close" type="database">phl_spt</file>
+            <file action="close" type="database">phl_voc</file>
+
+       </update>
+       
+     </do>
+
+     <file action="close" type="database"><pft>,v3004^a,</pft></file>
+
+     <flow action="jump">
+       <pft>,if v3004^a='phl_cnf' then 'atualiza_formatos' else 'exit' fi,</pft>
+     </flow>
+
+     <label>atualiza_formatos</label>
+
+<!-- CSS -->
+     <file action="create" type="output">phl.css</file>
+     <display><htmlpft><pft>,ref(['tab_fmx']193,v4),</pft></htmlpft></display>
+     <file action="close" type="output">phl.css</file>
+
+<!-- index.html -->
+     <file action="create" type="output">index.html</file>
+     <display><htmlpft><pft>,ref(['tab_fmx']194,v4),</pft></htmlpft></display>
+     <file action="close" type="output">index.html</file>
+    
+<label>exit</label>
+<flow action="exit">1</flow>
+
+</section>
+</IsisScript>
